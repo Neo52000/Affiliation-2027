@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+.netlify/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs & caches
+*.log
+.cache/
+.DS_Store
+
+# Test artifacts
+coverage/
+playwright-report/
+test-results/
