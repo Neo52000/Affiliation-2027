@@ -35,3 +35,9 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Anti-duplication (Jaccard, pages métier)
+        run: pnpm check:similarity
+
+      - name: SEO (titles/descriptions uniques et bornés)
+        run: pnpm check:seo
