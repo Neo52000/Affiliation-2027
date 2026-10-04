@@ -7,7 +7,7 @@ import { z } from 'astro/zod';
  */
 
 const dateIso = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'date au format YYYY-MM-DD');
-const url = z.string().url();
+const url = z.url();
 
 export const FAMILLES = [
   'batiment',

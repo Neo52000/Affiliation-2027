@@ -1,0 +1,150 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import { formatDateFr } from '../../lib/dates';
+import { pageTitle } from '../../lib/seo';
+import { SITE } from '../../config';
+
+export async function getStaticPaths() {
+  const outils = await getCollection('outils');
+  return outils.map((o) => ({ params: { outil: o.data.slug }, props: { entry: o } }));
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+
+const FONCTIONNALITES: { cle: keyof typeof d.fonctionnalites; label: string }[] = [
+  { cle: 'emission', label: 'Émission de factures électroniques' },
+  { cle: 'reception', label: 'Réception de factures électroniques' },
+  { cle: 'e_reporting', label: 'E-reporting' },
+  { cle: 'compte_pro', label: 'Compte professionnel' },
+  { cle: 'compta', label: 'Comptabilité' },
+  { cle: 'devis', label: 'Devis' },
+  { cle: 'acomptes', label: 'Factures d’acompte' },
+  { cle: 'app_mobile', label: 'Application mobile' },
+  { cle: 'export_comptable', label: 'Export comptable' },
+  { cle: 'lien_expert_comptable', label: 'Accès expert-comptable' },
+];
+
+const cell = (v: boolean | null) => (v === true ? 'Oui' : v === false ? 'Non' : 'À vérifier');
+const pageTarifs = d.sources.find((s) => s.objet.toLowerCase().includes('tarif'));
+---
+
+<Base
+  title={pageTitle(`${d.nom} : avis et conformité`, SITE.name)}
+  description={`${d.nom} pour la facturation électronique : statut de plateforme agréée, fonctionnalités vérifiées, pour qui — données datées et sourcées.`}
+>
+  <Breadcrumb items={[{ label: 'Logiciels' }, { label: d.nom }]} />
+
+  <article class="mt-4">
+    <h1 class="prose-measure text-3xl font-bold">{d.nom} : facturation électronique</h1>
+    <p class="mt-2 text-sm text-ink-soft">
+      Mis à jour le {formatDateFr(d.date_maj)} · Note : <strong>Test en cours</strong>
+    </p>
+
+    <section class="prose-measure mt-6 rounded border border-border bg-paper-soft p-4">
+      <p>
+        {d.est_plateforme_agreee.valeur ? (
+          <>
+            <strong>{d.nom} est une plateforme agréée</strong> (présence au{' '}
+            <a href={d.est_plateforme_agreee.source} rel="noopener">
+              registre DGFiP
+            </a>
+            ) : émission, réception et e-reporting sans plateforme intermédiaire.
+          </>
+        ) : (
+          <>{d.nom} n'est pas lui-même une plateforme agréée.</>
+        )}
+      </p>
+      <p class="mt-2">Cible revendiquée par l'éditeur : {d.cible.join(', ')}.</p>
+    </section>
+
+    <section aria-labelledby="fonctionnalites" class="mt-8">
+      <h2 id="fonctionnalites" class="text-2xl font-bold">
+        Fonctionnalités
+      </h2>
+      <div class="table-scroll mt-3 max-w-xl">
+        <table class="w-full border-collapse text-sm">
+          <tbody>
+            {FONCTIONNALITES.map((f) => (
+              <tr class="border-b border-border">
+                <th scope="row" class="py-2 pr-3 text-left font-normal">
+                  {f.label}
+                </th>
+                <td class="py-2">{cell(d.fonctionnalites[f.cle])}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2 text-xs text-ink-soft">
+        « À vérifier » : donnée en cours de relevé sur le site officiel de l'éditeur.
+      </p>
+    </section>
+
+    <section aria-labelledby="tarifs" class="prose-measure mt-8">
+      <h2 id="tarifs" class="text-2xl font-bold">
+        Tarifs
+      </h2>
+      {d.plans.length === 0 ? (
+        <p class="mt-3">
+          Les prix sont en cours de relevé, avec date et source pour chaque donnée.
+          {pageTarifs && (
+            <>
+              {' '}
+              En attendant, consultez la{' '}
+              <a href={pageTarifs.url} rel="noopener">
+                page tarifs officielle
+              </a>
+              .
+            </>
+          )}
+        </p>
+      ) : null}
+    </section>
+
+    <section aria-labelledby="pour-qui" class="prose-measure mt-8">
+      <h2 id="pour-qui" class="text-2xl font-bold">
+        Pour qui — et pour qui pas
+      </h2>
+      <ul class="mt-3 list-disc space-y-1 pl-5">
+        {d.points_forts.map((p) => (
+          <li>{p}</li>
+        ))}
+      </ul>
+      <h3 class="mt-4 text-lg font-bold">Pour qui cet outil n'est pas adapté</h3>
+      <p class="mt-2">
+        L'éditeur cible {d.cible.join(', ')} : si votre profil est éloigné de cette cible, comparez
+        d'abord avec les outils pensés pour lui. Cette section sera détaillée après notre test réel
+        documenté.
+      </p>
+    </section>
+
+    <div class="mt-8">
+      <AffiliateButton
+        outil={d.slug}
+        urlOfficielle={d.url_officielle}
+        label={`Découvrir ${d.nom}`}
+        emplacement={`fiche-${d.slug}`}
+      />
+    </div>
+
+    <section aria-labelledby="sources-outil" class="prose-measure mt-8">
+      <h2 id="sources-outil" class="text-2xl font-bold">
+        Sources
+      </h2>
+      <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
+        {d.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener">
+              {s.objet}
+            </a>{' '}
+            — relevé le {formatDateFr(s.date_releve)}
+          </li>
+        ))}
+      </ul>
+    </section>
+  </article>
+</Base>

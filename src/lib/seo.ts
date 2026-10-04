@@ -25,6 +25,24 @@ export function validateMeta(title: string, description: string): string[] {
   return violations;
 }
 
+/** Title d'une page métier : la première variante qui respecte TITLE_MAX. */
+export function metierTitle(nom: string): string {
+  const variantes = [
+    `Facturation électronique ${nom} : obligations et outils`,
+    `${nom} : facturation électronique, le guide`,
+    `Facturation électronique : ${nom}`,
+  ];
+  return variantes.find((v) => v.length < TITLE_MAX) ?? variantes[2]!.slice(0, TITLE_MAX - 1);
+}
+
+/** Meta description d'une page métier (< DESCRIPTION_MAX, unique par métier). */
+export function metierDescription(nom: string): string {
+  const d = `Facturation électronique pour ${nom} : obligations, spécificités du métier, exemple de facture conforme et logiciels adaptés. Données datées et sourcées.`;
+  return d.length < DESCRIPTION_MAX
+    ? d
+    : `Facturation électronique pour ${nom} : obligations, exemple de facture et logiciels adaptés.`;
+}
+
 /** URL canonique absolue, sans slash final (sauf racine), sans query string. */
 export function canonicalUrl(site: string, pathname: string): string {
   const base = site.replace(/\/+$/, '');
