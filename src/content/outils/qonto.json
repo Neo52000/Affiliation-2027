@@ -1,0 +1,68 @@
+{
+  "nom": "Qonto",
+  "slug": "qonto",
+  "url_officielle": "https://qonto.com/fr",
+  "est_plateforme_agreee": {
+    "valeur": true,
+    "date_immatriculation": null,
+    "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+  },
+  "offre_gratuite": null,
+  "plans": [],
+  "cible": ["PME", "indépendants"],
+  "fonctionnalites": {
+    "emission": true,
+    "reception": true,
+    "e_reporting": true,
+    "compte_pro": true,
+    "compta": null,
+    "devis": null,
+    "acomptes": null,
+    "app_mobile": null,
+    "export_comptable": null,
+    "lien_expert_comptable": null
+  },
+  "notes": {
+    "conformite": null,
+    "prix": null,
+    "simplicite": null,
+    "fonctionnalites_metier": null,
+    "support": null,
+    "perennite": null,
+    "finale": null
+  },
+  "points_forts": [
+    "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
+    "Compte professionnel et facturation dans un même outil"
+  ],
+  "points_faibles": [],
+  "statut_test": "a_tester",
+  "date_maj": "2026-10-04",
+  "sources": [
+    {
+      "objet": "Présence au registre DGFiP des plateformes agréées",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Annonce d'immatriculation définitive par l'éditeur",
+      "url": "https://community.qonto.com/fr/clubqonto/articles/qonto-obtient-son-immatriculation-definitive-de-plateforme-agreee",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Positionnement et cible (« gestion financière pour les PME et les indépendants »)",
+      "url": "https://qonto.com/fr/about",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Page tarifs — prix non encore relevés (TODO.md #13)",
+      "url": "https://qonto.com/fr/pricing",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Programme d'affiliation (candidature directe)",
+      "url": "https://qonto.com/fr/affiliate",
+      "date_releve": "2026-10-04"
+    }
+  ]
+}

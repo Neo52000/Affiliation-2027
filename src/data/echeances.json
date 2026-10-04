@@ -1,0 +1,91 @@
+{
+  "date_releve": "2026-10-04",
+  "methode": "Relevé du 2026-10-04 sur extraits indexés restreints aux domaines officiels (accès direct bloqué par le proxy de l'environnement de build), recoupé sur au moins deux pages officielles par échéance. Relecture humaine directe recommandée avant mise en ligne (TODO.md #16).",
+  "echeances": [
+    {
+      "id": "reception-toutes-entreprises",
+      "date": "2026-09-01",
+      "obligation": "Être en mesure de recevoir des factures électroniques via une plateforme agréée",
+      "concernes": "Toutes les entreprises établies en France et assujetties à la TVA, y compris en franchise en base",
+      "statut": "en_vigueur",
+      "complement": null,
+      "sources": [
+        "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique",
+        "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises",
+        "https://entreprendre.service-public.gouv.fr/actualites/A18953"
+      ]
+    },
+    {
+      "id": "emission-ge-eti",
+      "date": "2026-09-01",
+      "obligation": "Émettre l'intégralité de ses factures au format électronique",
+      "concernes": "Grandes entreprises et entreprises de taille intermédiaire (ETI)",
+      "statut": "en_vigueur",
+      "complement": null,
+      "sources": [
+        "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises",
+        "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+      ]
+    },
+    {
+      "id": "emission-pme-tpe-micro",
+      "date": "2027-09-01",
+      "obligation": "Émettre l'intégralité de ses factures au format électronique",
+      "concernes": "PME, TPE et micro-entreprises (y compris auto-entrepreneurs)",
+      "statut": "a_venir",
+      "complement": "Émission volontaire possible dès le 1er septembre 2026",
+      "sources": [
+        "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique",
+        "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+      ]
+    },
+    {
+      "id": "e-reporting-ge-eti",
+      "date": "2026-09-01",
+      "obligation": "Transmettre à l'administration les données de transaction et de paiement (e-reporting)",
+      "concernes": "Grandes entreprises et ETI",
+      "statut": "en_vigueur",
+      "complement": "L'e-reporting suit le même calendrier que l'obligation d'émission",
+      "sources": [
+        "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+      ]
+    },
+    {
+      "id": "e-reporting-pme-tpe-micro",
+      "date": "2027-09-01",
+      "obligation": "Transmettre à l'administration les données de transaction et de paiement (e-reporting)",
+      "concernes": "PME, TPE et micro-entreprises",
+      "statut": "a_venir",
+      "complement": "L'e-reporting suit le même calendrier que l'obligation d'émission",
+      "sources": [
+        "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+      ]
+    }
+  ],
+  "base_legale": [
+    {
+      "texte": "Article 91, loi n° 2023-1322 du 29 décembre 2023 de finances pour 2024 (calendrier ; faculté de report par décret non exercée, plafonds 01/12/2026 et 01/12/2027)",
+      "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000048727444"
+    },
+    {
+      "texte": "Article 290 B du code général des impôts (plateformes agréées, immatriculation DGFiP 3 ans renouvelables)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044045452"
+    },
+    {
+      "texte": "Article 123, loi n° 2026-103 du 19 février 2026 de finances pour 2026 (calendrier inchangé)",
+      "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000053508878"
+    },
+    {
+      "texte": "Décret n° 2026-677 du 27 juillet 2026 relatif à la généralisation de la facturation électronique",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054499487"
+    },
+    {
+      "texte": "Arrêté du 27 juillet 2026 relatif à la généralisation de la facturation électronique",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054499535"
+    }
+  ],
+  "tolerance_2026": {
+    "texte": "Communiqué ministériel du 1er septembre 2026 : « un coup d'envoi, pas un couperet » — aucune sanction appliquée en 2026, priorité à l'accompagnement des entreprises de bonne foi.",
+    "source": "https://presse.economie.gouv.fr/la-facturation-demarre-aujourdhui-priorite-a-laccompagnement-des-entreprises/"
+  }
+}

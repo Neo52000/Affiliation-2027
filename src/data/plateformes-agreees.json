@@ -1,0 +1,1166 @@
+{
+  "provenance": {
+    "source_officielle": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees",
+    "copie_consultee": "https://www.data.gouv.fr/datasets/plateformes-agreees-pa-ex-pdp-pour-la-facturation-electronique-registre-dgfip-relu-le-7-septembre-2026",
+    "date_registre": "2026-09-07",
+    "date_releve": "2026-10-04",
+    "avertissement": "Copie tierce (FactureMatch) du registre DGFiP relu le 07/09/2026. À re-vérifier sur la liste officielle impots.gouv.fr avant toute mise en ligne publique (TODO.md #8-10)."
+  },
+  "plateformes": [
+    {
+      "nom": "A-Cube",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-07-21",
+      "localisation": "Italie",
+      "site": "https://www.acubeapi.com/"
+    },
+    {
+      "nom": "ABBY",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-29",
+      "localisation": "Nancy",
+      "site": "https://abby.fr/"
+    },
+    {
+      "nom": "ACCENTURE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "Paris",
+      "site": "https://www.accenture.com/fr-fr"
+    },
+    {
+      "nom": "ADEMICO SOFTWARE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-16",
+      "localisation": "Belgique",
+      "site": "https://ademico-software.com/"
+    },
+    {
+      "nom": "AGENA 3000",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Cholet",
+      "site": "https://www.agena3000.com/fr/nos-solutions/a3-e-facture"
+    },
+    {
+      "nom": "AGICAP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-20",
+      "localisation": "Lyon",
+      "site": "https://agicap.com/fr/"
+    },
+    {
+      "nom": "AGS RECORDS MANAGEMENT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-07-15",
+      "localisation": "La Chevrolière",
+      "site": "https://www.ags-recordsmanagement.com/"
+    },
+    {
+      "nom": "Arratech",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-07-03",
+      "localisation": "Suède",
+      "site": "https://www.arratech.com/"
+    },
+    {
+      "nom": "ARTEVA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Limonest",
+      "site": "https://www.arteva.fr"
+    },
+    {
+      "nom": "Aruba S.p.A.",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-07-29",
+      "localisation": "Italie",
+      "site": "https://www.arubaonesuite.fr/"
+    },
+    {
+      "nom": "ATGP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Montélier",
+      "site": "https://www.atgp.net/"
+    },
+    {
+      "nom": "AVALARA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Paris",
+      "site": "https://www.avalara.com/eu/fr"
+    },
+    {
+      "nom": "AXELOR",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-13",
+      "localisation": "Champs-sur-Marne",
+      "site": "https://axelor.com/fr/"
+    },
+    {
+      "nom": "AXONAUT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-08",
+      "localisation": "Balma",
+      "site": "https://axonaut.com/"
+    },
+    {
+      "nom": "AXWAY SOFTWARE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-14",
+      "localisation": "Paris La Défense Cedex",
+      "site": "https://www.axway.com/fr"
+    },
+    {
+      "nom": "AZOPIO",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "Paris",
+      "site": "https://www.azopio.com/fr/"
+    },
+    {
+      "nom": "B2BRouter",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-12",
+      "localisation": "Espagne",
+      "site": "https://www.b2brouter.net/fr"
+    },
+    {
+      "nom": "B4VALUE.NET",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-03-04",
+      "localisation": "Allemagne",
+      "site": "https://www.b4value.net/en/"
+    },
+    {
+      "nom": "BASWARE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Finlande",
+      "site": "https://www.basware.com/fr"
+    },
+    {
+      "nom": "BC SOLUTIONS",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Aix-en-Provence",
+      "site": "https://bcsolutions.fr/"
+    },
+    {
+      "nom": "BILLIT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-19",
+      "localisation": "Belgique",
+      "site": "https://www.billit.eu/fr-be/"
+    },
+    {
+      "nom": "BLG",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-08-26",
+      "localisation": "Compiègne",
+      "site": "https://www.blgcloud.fr/"
+    },
+    {
+      "nom": "CBS Corporate Business Solutions",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-02-25",
+      "localisation": "Allemagne",
+      "site": "https://www.cbs-consulting.com/en/"
+    },
+    {
+      "nom": "CECURITY",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Paris",
+      "site": "https://www.cecurity.com"
+    },
+    {
+      "nom": "CEGEDIM",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Boulogne-Billancourt",
+      "site": "https://www.cegedim.fr"
+    },
+    {
+      "nom": "CEGI ALFA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-14",
+      "localisation": "Clermont-Ferrand",
+      "site": "https://www.cegi.fr/"
+    },
+    {
+      "nom": "CEGID",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Lyon Cedex 09",
+      "site": "https://www.cegid.com/fr"
+    },
+    {
+      "nom": "CHAINTRUST by Visma",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Paris",
+      "site": "https://www.chaintrust.io"
+    },
+    {
+      "nom": "CLEARTAX",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-24",
+      "localisation": "Paris",
+      "site": "https://www.cleartax.com/fr"
+    },
+    {
+      "nom": "COMARCH SA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Pologne",
+      "site": "https://www.comarch.com/"
+    },
+    {
+      "nom": "CYCLOPE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-08-25",
+      "localisation": "Lyon",
+      "site": "https://cyclope.digital/"
+    },
+    {
+      "nom": "DARVA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Chauray",
+      "site": "https://www.darva.com"
+    },
+    {
+      "nom": "DEXT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Paris",
+      "site": "https://dext.com/fr/produits/logiciel-facturation"
+    },
+    {
+      "nom": "DIGIPHARMACIE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-23",
+      "localisation": "Paris",
+      "site": "https://digipharmacie.fr/"
+    },
+    {
+      "nom": "DIGITAL TECHNOLOGIES",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-15",
+      "localisation": "Italie",
+      "site": "https://digtechs.com/?lang=fr"
+    },
+    {
+      "nom": "Docnova, MELASOFT GmbH",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-05-13",
+      "localisation": "Allemagne",
+      "site": "https://www.melasoft.com/"
+    },
+    {
+      "nom": "DOCOON",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-15",
+      "localisation": "Paris",
+      "site": "https://docoon.com"
+    },
+    {
+      "nom": "DOCOON IMMO / FREEDZ",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-23",
+      "localisation": "Marseille",
+      "site": "https://docoon.immo/"
+    },
+    {
+      "nom": "DOCPROCESS",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-15",
+      "localisation": "Meylan",
+      "site": "https://doc-process.com/fr"
+    },
+    {
+      "nom": "DOCUWARE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "Paris",
+      "site": "https://start.docuware.com/fr/"
+    },
+    {
+      "nom": "DOKAPI",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-07-08",
+      "localisation": "Belgique",
+      "site": "https://www.dokapi.io/"
+    },
+    {
+      "nom": "Dougs Facturation gratuite",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-12",
+      "localisation": "Fay-aux-Loges",
+      "site": "https://www.dougs.fr/logiciel-facturation-gratuit/"
+    },
+    {
+      "nom": "DOXALLIA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Bozouls",
+      "site": "https://www.doxallia.com"
+    },
+    {
+      "nom": "ecosio InterCom, a Vertex Company",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-30",
+      "localisation": "Allemagne",
+      "site": "https://ecosio.com/fr/"
+    },
+    {
+      "nom": "EDICOM France",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Paris",
+      "site": "https://edicomgroup.fr"
+    },
+    {
+      "nom": "EDICOM Group",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Espagne",
+      "site": "https://edicomgroup.com"
+    },
+    {
+      "nom": "EDICS France",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-08",
+      "localisation": "Écully",
+      "site": "https://edics.fr/"
+    },
+    {
+      "nom": "EdiEyes Vision Care",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-06-01",
+      "localisation": "Angers",
+      "site": "https://www.edieyes.fr/"
+    },
+    {
+      "nom": "EDT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-08",
+      "localisation": "Montbonnot-Saint-Martin",
+      "site": "https://www.group-edt.fr/"
+    },
+    {
+      "nom": "EEZI powered by VAT IT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-13",
+      "localisation": "SaintGermain-en-Laye",
+      "site": "https://eezi.io/"
+    },
+    {
+      "nom": "Effinum by SPEE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Paris",
+      "site": "https://www.effinum.fr/"
+    },
+    {
+      "nom": "ENERJ",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Dardilly",
+      "site": "https://www.enerj.fr/"
+    },
+    {
+      "nom": "ENTROPICS",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-13",
+      "localisation": "Lyon",
+      "site": "https://entropics.fr"
+    },
+    {
+      "nom": "ESALINK",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Bezannes",
+      "site": "https://www.esalink.com"
+    },
+    {
+      "nom": "ESI",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-13",
+      "localisation": "Saint-Priest",
+      "site": "https://www.esi-groupe.com/"
+    },
+    {
+      "nom": "ESKER",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Villeurbanne",
+      "site": "https://www.esker.fr"
+    },
+    {
+      "nom": "EURO INFORMATION",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "Strasbourg",
+      "site": "https://www.e-i.com/fr"
+    },
+    {
+      "nom": "FACNOTE PDP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "MARSEILLE",
+      "site": "https://www.facnote.com/"
+    },
+    {
+      "nom": "FIDUCIAL CLOUD",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-08",
+      "localisation": "Courbevoie",
+      "site": "https://www.fiducial.fr"
+    },
+    {
+      "nom": "FISKALTRUST",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-08-28",
+      "localisation": "Lyon",
+      "site": "https://fiskaltrust.eu/fr-fr/"
+    },
+    {
+      "nom": "FLOWIE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-07",
+      "localisation": "Paris",
+      "site": "https://www.get-flowie.com/"
+    },
+    {
+      "nom": "Fonoa Technologies Limited",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-29",
+      "localisation": "Irlande",
+      "site": "https://www.fonoa.com/"
+    },
+    {
+      "nom": "FULLL",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Lyon",
+      "site": "https://www.fulll.fr/"
+    },
+    {
+      "nom": "GENERIX Group",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Paris La Défense",
+      "site": "https://www.generixgroup.com/fr"
+    },
+    {
+      "nom": "GEP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-06-17",
+      "localisation": "Espoo (Finlande)",
+      "site": "https://www.gep.com/software/e-invoicing"
+    },
+    {
+      "nom": "GESTAV",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-19",
+      "localisation": "Saint Quentin",
+      "site": "https://gestav.com/"
+    },
+    {
+      "nom": "GROUPE SIGMA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "La Chapelle-sur-Erdre",
+      "site": "https://www.sigma.fr/"
+    },
+    {
+      "nom": "GURUSOFT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-03-31",
+      "localisation": "Espagne",
+      "site": "https://guru-soft.com/fr/france/"
+    },
+    {
+      "nom": "IAF",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-06-15",
+      "localisation": "Champs-sur-Marne",
+      "site": "https://www.assistances.fr/"
+    },
+    {
+      "nom": "ICD International",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "Meudon",
+      "site": "https://icdint.fr"
+    },
+    {
+      "nom": "iEDI ApS",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-02-11",
+      "localisation": "Danemark",
+      "site": "https://www.iedi.com/"
+    },
+    {
+      "nom": "IGA ASSURANCE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-03-03",
+      "localisation": "Malakoff",
+      "site": "https://www.iga-assurance.fr/"
+    },
+    {
+      "nom": "In.Te.S.A. spa",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-08-06",
+      "localisation": "Italie",
+      "site": "https://www.intesa.it/"
+    },
+    {
+      "nom": "INDICOM",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-13",
+      "localisation": "Italie",
+      "site": "https://www.indicom.eu/en/idc-home"
+    },
+    {
+      "nom": "INDY",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-09",
+      "localisation": "LYON",
+      "site": "https://www.indy.fr/"
+    },
+    {
+      "nom": "INFOLOGIC",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-28",
+      "localisation": "Bourg-lès-Valence",
+      "site": "https://www.infologic-copilote.fr/"
+    },
+    {
+      "nom": "INVOPOP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Espagne",
+      "site": "https://www.invopop.com/"
+    },
+    {
+      "nom": "IOPOLE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Pérols",
+      "site": "https://www.iopole.com"
+    },
+    {
+      "nom": "iPaidThat",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-06",
+      "localisation": "Saint-Grégoire",
+      "site": "https://ipaidthat.io/fr"
+    },
+    {
+      "nom": "ITESOFT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Aimargues",
+      "site": "https://www.itesoft.com/fr"
+    },
+    {
+      "nom": "jefacture.com",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Paris",
+      "site": "https://www.ecma-solutions.com"
+    },
+    {
+      "nom": "KLEKOON",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-16",
+      "localisation": "Sevran",
+      "site": "https://www.klekoon.com/"
+    },
+    {
+      "nom": "KOLECTO PA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-22",
+      "localisation": "Paris",
+      "site": "https://www.kolecto.fr"
+    },
+    {
+      "nom": "KOLECTO PDP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Paris",
+      "site": "https://www.kolecto.fr"
+    },
+    {
+      "nom": "LE VILLAGE CONNECTE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-08",
+      "localisation": "Fauguerolles",
+      "site": "https://village-connecte.fr/"
+    },
+    {
+      "nom": "Legalinvoice by Tinexta Infocert",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-13",
+      "localisation": "Italie",
+      "site": "https://www.infocert.it/"
+    },
+    {
+      "nom": "LOGILEC",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-06",
+      "localisation": "Le Relecq-Kerhuon",
+      "site": "https://www.logilec.fr/"
+    },
+    {
+      "nom": "LUCCA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-24",
+      "localisation": "Paris",
+      "site": "https://www.lucca.fr"
+    },
+    {
+      "nom": "LUNDI MATIN",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-08-24",
+      "localisation": "Montpellier",
+      "site": "https://www.lundimatin.fr/"
+    },
+    {
+      "nom": "MACOMPTA.FR",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Lagord",
+      "site": "https://www.macompta.fr/"
+    },
+    {
+      "nom": "MAROSA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Espagne",
+      "site": "https://marosavat.com/"
+    },
+    {
+      "nom": "MEDIUS",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-08",
+      "localisation": "Paris",
+      "site": "https://www.medius.com/fr"
+    },
+    {
+      "nom": "MY FITECO",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-05-12",
+      "localisation": "Changé",
+      "site": "https://myfiteco.com/"
+    },
+    {
+      "nom": "MY UNISOFT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-15",
+      "localisation": "Montigny-le-Bretonneux",
+      "site": "https://myunisoft.fr/"
+    },
+    {
+      "nom": "MyKinexo PDP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Rennes",
+      "site": "https://www.kinexo.fr/"
+    },
+    {
+      "nom": "MySupply Aps",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-03-03",
+      "localisation": "Danemark",
+      "site": "https://mysupply.dk/en"
+    },
+    {
+      "nom": "N2F PDP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-19",
+      "localisation": "Montagnat",
+      "site": "https://www.n2f.com/fr/note-de-frais/"
+    },
+    {
+      "nom": "NEOTIMO",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-13",
+      "localisation": "Amilly",
+      "site": "https://neotimo.com/"
+    },
+    {
+      "nom": "NTT DATA Business Solutions",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-05-13",
+      "localisation": "Allemagne",
+      "site": "https://fr.nttdata.com/"
+    },
+    {
+      "nom": "ODOO",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-15",
+      "localisation": "Belgique",
+      "site": "https://www.odoo.com/fr_FR"
+    },
+    {
+      "nom": "OfficeIn",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-07-09",
+      "localisation": "Paris",
+      "site": "https://officein.fr/"
+    },
+    {
+      "nom": "ONE UP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-08",
+      "localisation": "Paris",
+      "site": "https://smallbusiness.oneup.com/fr/"
+    },
+    {
+      "nom": "OPEN BEE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-13",
+      "localisation": "Epagny Metz-Tessy",
+      "site": "https://www.openbee.com"
+    },
+    {
+      "nom": "OPENTEXT",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-12",
+      "localisation": "Pays-Bas",
+      "site": "https://www.opentext.fr"
+    },
+    {
+      "nom": "PAGERO",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-19",
+      "localisation": "Suède",
+      "site": "https://www.pagero.com/fr"
+    },
+    {
+      "nom": "PARAGON",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "Marcq-en-Barœul",
+      "site": "https://www.paragon.world/fr"
+    },
+    {
+      "nom": "PAYFLOWS",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-15",
+      "localisation": "Paris",
+      "site": "https://payflows.io"
+    },
+    {
+      "nom": "PENNYLANE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Paris",
+      "site": "https://www.pennylane.com/fr"
+    },
+    {
+      "nom": "PITNEY BOWES",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-13",
+      "localisation": "Saint-Denis",
+      "site": "https://www.pitneybowes.com/fr"
+    },
+    {
+      "nom": "QONTO",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Paris",
+      "site": "https://qonto.com/fr"
+    },
+    {
+      "nom": "QWEEBY",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "Saint-Étienne",
+      "site": "https://www.qweeby.fr/"
+    },
+    {
+      "nom": "SAGE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "La Garenne-Colombes",
+      "site": "https://www.sage.com/fr-fr/"
+    },
+    {
+      "nom": "SAP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Allemagne",
+      "site": "https://www.sap.com/france/"
+    },
+    {
+      "nom": "SCRIBEE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "Paris",
+      "site": "https://www.scribee.tech/"
+    },
+    {
+      "nom": "SEEBURGER",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Allemagne",
+      "site": "https://www.seeburger.com/"
+    },
+    {
+      "nom": "SEPTEO",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-09",
+      "localisation": "Lattes",
+      "site": "https://www.septeopdp.com"
+    },
+    {
+      "nom": "SEQINO",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Gif-sur-Yvette",
+      "site": "https://seqino.com"
+    },
+    {
+      "nom": "SERENSIA by Quadient",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Paris",
+      "site": "https://www.serensia.com/"
+    },
+    {
+      "nom": "SERES",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Ivry-sur-Seine",
+      "site": "https://www.seres.fr"
+    },
+    {
+      "nom": "Shine",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-05-21",
+      "localisation": "Danemark",
+      "site": "https://www.shine.fr/"
+    },
+    {
+      "nom": "SNI",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-13",
+      "localisation": "Slovénie",
+      "site": "https://snitechnology.net/fr"
+    },
+    {
+      "nom": "SOLO",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-02-16",
+      "localisation": "Suède",
+      "site": "https://www.solo.fr"
+    },
+    {
+      "nom": "SOVOS",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Portugal",
+      "site": "https://www.saphety.com/fr"
+    },
+    {
+      "nom": "SPENDESK",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Paris",
+      "site": "https://www.spendesk.com/fr/"
+    },
+    {
+      "nom": "SPS COMMERCE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Pays-Bas",
+      "site": "https://tiekinetix.com/fr"
+    },
+    {
+      "nom": "SRCI",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-19",
+      "localisation": "Chartres",
+      "site": "https://solutions.srci.fr/"
+    },
+    {
+      "nom": "STORECOVE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-28",
+      "localisation": "Pays-Bas",
+      "site": "https://www.storecove.com/fr/fr"
+    },
+    {
+      "nom": "SUPER PDP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-22",
+      "localisation": "Paris",
+      "site": "https://www.superpdp.tech/"
+    },
+    {
+      "nom": "SYMTRAX",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Nîmes",
+      "site": "https://www.symtrax.com/fr"
+    },
+    {
+      "nom": "TAXERA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-06-04",
+      "localisation": "Paris",
+      "site": "https://taxera.tech/"
+    },
+    {
+      "nom": "TeamSystem Sellsy",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-24",
+      "localisation": "La Rochelle",
+      "site": "https://go.sellsy.com/"
+    },
+    {
+      "nom": "TENOR",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Oullins",
+      "site": "https://tenorsolutions.com"
+    },
+    {
+      "nom": "TESISQUARE SPA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Italie",
+      "site": "https://www.tesisquare.com/fr"
+    },
+    {
+      "nom": "TESSI Technologies",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Le Haillan",
+      "site": "https://www.tessi.eu/fr"
+    },
+    {
+      "nom": "TIIME PDP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Paris",
+      "site": "https://www.tiime.fr"
+    },
+    {
+      "nom": "TRADESHIFT BABELWAY",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-06",
+      "localisation": "Belgique",
+      "site": "https://tradeshift.com/fr"
+    },
+    {
+      "nom": "Transalis Limited",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-19",
+      "localisation": "Chypre",
+      "site": "https://www.transalis.com/"
+    },
+    {
+      "nom": "TRESO2",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-08",
+      "localisation": "Paris",
+      "site": "http://www.treso2.com"
+    },
+    {
+      "nom": "TUNGSTEN AUTOMATION FRANCE",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-23",
+      "localisation": "Paris",
+      "site": "https://www.tungstenautomation.fr/"
+    },
+    {
+      "nom": "TX2 Concept",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-14",
+      "localisation": "Olivet",
+      "site": "https://tx2.fr"
+    },
+    {
+      "nom": "VENTYA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-18",
+      "localisation": "Nanterre",
+      "site": "https://www.ventya.fr"
+    },
+    {
+      "nom": "VERYSWING",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Versailles",
+      "site": "https://veryswing.com/"
+    },
+    {
+      "nom": "VosFactures",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-04-15",
+      "localisation": "Nice",
+      "site": "https://vosfactures.fr/"
+    },
+    {
+      "nom": "VOXEL, an Amadeus company",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Espagne",
+      "site": "https://www.voxelgroup.net/facture-electronique/"
+    },
+    {
+      "nom": "WEPROC",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-23",
+      "localisation": "Toulon",
+      "site": "https://www.weproc.com/fr/"
+    },
+    {
+      "nom": "WiseTech GLOBAL",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-01-15",
+      "localisation": "Australie",
+      "site": "https://www.wisetechglobal.com/fr-fr/"
+    },
+    {
+      "nom": "XELYA",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-05-13",
+      "localisation": "Saint-Cloud",
+      "site": "https://www.xelya.com/"
+    },
+    {
+      "nom": "YOOZ PDP",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2025-12-11",
+      "localisation": "Aimargues",
+      "site": "https://www.getyooz.com/fr"
+    },
+    {
+      "nom": "YTEMS",
+      "statut": "immatriculation_definitive",
+      "date_immatriculation": "2026-08-03",
+      "localisation": "Paris",
+      "site": "https://com.ytems.app/"
+    },
+    {
+      "nom": "Basikon",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Garches",
+      "site": "https://www.basikon.com/fr"
+    },
+    {
+      "nom": "BE FRESH S.à r.l.",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Luxembourg",
+      "site": "https://befresh.lu/"
+    },
+    {
+      "nom": "CENSE",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Marseille",
+      "site": "https://www.cpem.fr/o"
+    },
+    {
+      "nom": "EAGLESSOFT",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Belgique",
+      "site": "https://eaglessoft.com/"
+    },
+    {
+      "nom": "EY Expertises & Transactions",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Courbevoie",
+      "site": "https://www.ey.com/fr_fr"
+    },
+    {
+      "nom": "FACTUREAPP",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Lyon",
+      "site": "https://www.factureapp.com/"
+    },
+    {
+      "nom": "Insiders Technologies GmbH",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Allemagne",
+      "site": "https://insiders-technologies.com/en/"
+    },
+    {
+      "nom": "KALANDA",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "La Ciotat",
+      "site": "https://www.kalanda.net/"
+    },
+    {
+      "nom": "MY-EDDY",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Rillieux-la-Pape",
+      "site": "https://dailyapps.fr/"
+    },
+    {
+      "nom": "NUMERIA",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Eragny",
+      "site": "https://www.numeria.fr/"
+    },
+    {
+      "nom": "RATIOO",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Cappelle-en-Pévèle",
+      "site": "https://ratioo.fr"
+    },
+    {
+      "nom": "SWILE",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Montpellier",
+      "site": "https://www.swile.co/"
+    },
+    {
+      "nom": "Taxilla Europe BV",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Belgique",
+      "site": "https://www.taxilla.com/"
+    },
+    {
+      "nom": "WAKASTELLAR",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "La Chevrolière",
+      "site": "https://www.wakastellar.com/"
+    },
+    {
+      "nom": "YUMAN",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Belgique",
+      "site": "https://www.yuman.io/"
+    },
+    {
+      "nom": "ZEFYR",
+      "statut": "dossier_en_attente",
+      "date_immatriculation": null,
+      "localisation": "Paris",
+      "site": "https://www.zefyr.net/"
+    }
+  ]
+}

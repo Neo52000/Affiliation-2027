@@ -1,0 +1,68 @@
+{
+  "nom": "Pennylane",
+  "slug": "pennylane",
+  "url_officielle": "https://www.pennylane.com/fr",
+  "est_plateforme_agreee": {
+    "valeur": true,
+    "date_immatriculation": null,
+    "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+  },
+  "offre_gratuite": null,
+  "plans": [],
+  "cible": ["TPE", "PME", "experts-comptables"],
+  "fonctionnalites": {
+    "emission": true,
+    "reception": true,
+    "e_reporting": true,
+    "compte_pro": null,
+    "compta": true,
+    "devis": null,
+    "acomptes": null,
+    "app_mobile": null,
+    "export_comptable": null,
+    "lien_expert_comptable": true
+  },
+  "notes": {
+    "conformite": null,
+    "prix": null,
+    "simplicite": null,
+    "fonctionnalites_metier": null,
+    "support": null,
+    "perennite": null,
+    "finale": null
+  },
+  "points_forts": [
+    "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
+    "Pensé pour le travail avec l'expert-comptable (plateforme commune dirigeant / cabinet)"
+  ],
+  "points_faibles": [],
+  "statut_test": "a_tester",
+  "date_maj": "2026-10-04",
+  "sources": [
+    {
+      "objet": "Présence au registre DGFiP des plateformes agréées",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Annonce d'immatriculation par l'éditeur",
+      "url": "https://www.pennylane.com/fr/blog/pennylane-news/annonce-pdp",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Positionnement et cible (« gestion financière & comptabilité », dirigeants et experts-comptables)",
+      "url": "https://www.pennylane.com/fr",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Page tarifs — prix non encore relevés (TODO.md #13)",
+      "url": "https://www.pennylane.com/fr/tarifs",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Programme d'affiliation (Affilae)",
+      "url": "https://affilae.com/fr/programme-affiliation-pennylane-fr/",
+      "date_releve": "2026-10-04"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "outil_slug": "abby",
+  "statut": "a_tester",
+  "date_test": null,
+  "testeur": null,
+  "protocole": [
+    "Créer un compte et paramétrer une entreprise de test (SIRET, TVA, mentions)",
+    "Émettre une première facture conforme et mesurer le temps écoulé depuis l'inscription",
+    "Vérifier la réception d'une facture électronique entrante",
+    "Tester l'export comptable et, le cas échéant, l'accès expert-comptable",
+    "Poser une question type au support et mesurer le délai et la qualité de réponse",
+    "Relever les prix réellement facturés sur 12 mois, promotions comprises"
+  ],
+  "resultats": null
+}

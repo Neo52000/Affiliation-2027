@@ -17,3 +17,13 @@ Outillage : ESLint 10 (flat, plugin astro + jsx-a11y), Prettier, Vitest (9 tests
 netlify.toml : build, en-têtes de sécurité (CSP, HSTS…), cache immutable /_astro, emplacement réservé aux redirections /go/ (Phase 7).
 Dépendances ajoutées (justification) : esbuild autorisé en postinstall (binaire requis par Vite/Astro) ; @fontsource/inter (polices auto-hébergées imposées).
 Build vert (2 pages). Lighthouse local (Chromium headless, accueil) : perf 100, accessibilité 100, bonnes pratiques 100, SEO 100 — LCP 0,8 s, CLS 0, 52 KiB transférés, zéro JS. Critère « ≥ 95 sur les 4 axes » atteint.
+
+## Phase 2 — Données (2026-10-04)
+
+Schémas Zod complets (`src/lib/schemas.ts`) : outil, métier, fiche de test, guide, échéances, plateformes agréées, affiliation ; règles encodées (note finale null si a_tester, prix non null ⇒ date + URL obligatoires).
+Collections Astro `outils` et `tests` actives (metiers en Phase 3, guides en Phase 5). Décision : fichiers JSON plutôt que YAML (loader glob natif, zéro dépendance ajoutée).
+`echeances.json` : 5 échéances, chacune avec ≥ 1 source .gouv.fr ; base légale (5 textes Légifrance) ; tolérance 2026 sourcée.
+`plateformes-agreees.json` : registre complet (165 entrées : 149 définitives + 16 en attente) transcrit depuis la copie tierce du registre DGFiP (data.gouv.fr, relue 07/09/2026), provenance et avertissement dans le fichier — à re-vérifier sur impots.gouv.fr (TODO #8-10).
+Décision : dates d'immatriculation à null dans les 6 fiches outil tant que non confirmées sur la liste officielle ; prix non relevés (sites éditeurs bloqués par le proxy) → plans vides + TODO #13.
+6 fiches outil sourcées (statut PA, cible, URLs tarifs/affiliation) + 6 fiches de test `a_tester` avec protocole en 6 points.
+19 tests Vitest verts (validation Zod de toutes les données + règles métier). Dépendance ajoutée : @types/node (tests Node ESM).

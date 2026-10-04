@@ -1,0 +1,68 @@
+{
+  "nom": "Shine",
+  "slug": "shine",
+  "url_officielle": "https://www.shine.fr/",
+  "est_plateforme_agreee": {
+    "valeur": true,
+    "date_immatriculation": null,
+    "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+  },
+  "offre_gratuite": null,
+  "plans": [],
+  "cible": ["indépendants", "freelances", "TPE"],
+  "fonctionnalites": {
+    "emission": true,
+    "reception": true,
+    "e_reporting": true,
+    "compte_pro": true,
+    "compta": null,
+    "devis": null,
+    "acomptes": null,
+    "app_mobile": null,
+    "export_comptable": null,
+    "lien_expert_comptable": null
+  },
+  "notes": {
+    "conformite": null,
+    "prix": null,
+    "simplicite": null,
+    "fonctionnalites_metier": null,
+    "support": null,
+    "perennite": null,
+    "finale": null
+  },
+  "points_forts": [
+    "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
+    "Compte professionnel en ligne pensé pour les freelances et petites entreprises"
+  ],
+  "points_faibles": [],
+  "statut_test": "a_tester",
+  "date_maj": "2026-10-04",
+  "sources": [
+    {
+      "objet": "Présence au registre DGFiP des plateformes agréées (entrée Shine)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Page facturation électronique de l'éditeur",
+      "url": "https://www.shine.fr/facturation-electronique/",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Positionnement et cible (« Le compte pro en ligne des freelances et des entrepreneurs »)",
+      "url": "https://www.shine.fr/clients-2/",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Page tarifs — prix non encore relevés (TODO.md #13)",
+      "url": "https://www.shine.fr/tarifs/",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Programme d'affiliation (Affilae — confirmation 2026 à refaire, TODO.md #14)",
+      "url": "https://affilae.com/fr/cas-clients/shine/",
+      "date_releve": "2026-10-04"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "nom": "Abby",
+  "slug": "abby",
+  "url_officielle": "https://abby.fr/",
+  "est_plateforme_agreee": {
+    "valeur": true,
+    "date_immatriculation": null,
+    "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+  },
+  "offre_gratuite": null,
+  "plans": [],
+  "cible": ["indépendants", "micro-entrepreneurs"],
+  "fonctionnalites": {
+    "emission": true,
+    "reception": true,
+    "e_reporting": true,
+    "compte_pro": null,
+    "compta": null,
+    "devis": null,
+    "acomptes": null,
+    "app_mobile": null,
+    "export_comptable": null,
+    "lien_expert_comptable": null
+  },
+  "notes": {
+    "conformite": null,
+    "prix": null,
+    "simplicite": null,
+    "fonctionnalites_metier": null,
+    "support": null,
+    "perennite": null,
+    "finale": null
+  },
+  "points_forts": [
+    "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
+    "Se définit comme « le logiciel des indépendants » (facturation et gestion)"
+  ],
+  "points_faibles": [],
+  "statut_test": "a_tester",
+  "date_maj": "2026-10-04",
+  "sources": [
+    {
+      "objet": "Présence au registre DGFiP des plateformes agréées (entrée ABBY)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Positionnement et cible (« logiciel de facturation et de gestion pour indépendants »)",
+      "url": "https://abby.fr/ai-info",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Page tarifs — prix non encore relevés (TODO.md #13)",
+      "url": "https://abby.fr/tarifs",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Programme d'affiliation (Affilae)",
+      "url": "https://lp.abby.fr/partenaires/affiliation",
+      "date_releve": "2026-10-04"
+    }
+  ]
+}
