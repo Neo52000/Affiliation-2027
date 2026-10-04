@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+import { pageTitle } from '../lib/seo';
+---
+
+<Base
+  title={pageTitle('Page introuvable', SITE.name)}
+  description="Cette page n'existe pas ou a été déplacée."
+  noindex
+>
+  <div class="prose-measure">
+    <h1 class="text-3xl font-bold">Page introuvable</h1>
+    <p class="mt-4">
+      Cette page n'existe pas ou a été déplacée.
+      <a href="/">Retourner à l'accueil</a>
+    </p>
+  </div>
+</Base>

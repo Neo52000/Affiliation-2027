@@ -1,0 +1,36 @@
+---
+import { SITE } from '../config';
+import { canonicalUrl, validateMeta } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Date de mise à jour (balisage + affichage géré par les pages) */
+  updatedAt?: Date | undefined;
+  noindex?: boolean | undefined;
+}
+
+const { title, description, updatedAt, noindex = false } = Astro.props;
+
+const site = (Astro.site ?? new URL(SITE.url)).toString();
+const canonical = canonicalUrl(site, Astro.url.pathname);
+
+if (import.meta.env.DEV) {
+  for (const v of validateMeta(title, description)) {
+    console.warn(`[seo] ${Astro.url.pathname} : ${v}`);
+  }
+}
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex" />}
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:locale" content="fr_FR" />
+{updatedAt && <meta property="og:updated_time" content={updatedAt.toISOString()} />}

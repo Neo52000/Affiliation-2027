@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+import { pageTitle } from '../lib/seo';
+
+// Accueil définitif en Phase 3 (quiz au-dessus de la ligne de flottaison,
+// preuves de confiance, accès par famille de métiers).
+const title = pageTitle('Facturation électronique par métier', SITE.name);
+---
+
+<Base title={title} description={SITE.description}>
+  <div class="prose-measure">
+    <h1 class="text-3xl font-bold">Facturation électronique : quel logiciel pour votre métier ?</h1>
+    <p class="mt-4 text-ink-soft">
+      Comparatifs indépendants par métier, données datées et sourcées. Le site est en cours de
+      construction : les pages métier, les fiches logiciels et les outils arrivent prochainement.
+    </p>
+  </div>
+</Base>

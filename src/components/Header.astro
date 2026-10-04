@@ -1,0 +1,27 @@
+---
+import { SITE } from '../config';
+// La navigation s'enrichit au fil des phases (métiers, logiciels, guides, outils)
+// pour ne jamais pointer vers une page qui n'existe pas encore.
+const nav: { label: string; href: string }[] = [];
+---
+
+<header class="border-b border-border bg-paper">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
+    <a href="/" class="font-bold text-ink no-underline hover:text-accent">
+      {SITE.name}
+    </a>
+    {nav.length > 0 && (
+      <nav aria-label="Navigation principale">
+        <ul class="flex gap-4">
+          {nav.map((item) => (
+            <li>
+              <a href={item.href} class="text-ink-soft no-underline hover:text-accent">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+  </div>
+</header>
