@@ -2,16 +2,28 @@
 
 ## Variables de lancement non renseignées (section 0 de la spécification)
 
-| # | Variable | Placeholder utilisé | Impact tant que non renseigné |
-|---|---|---|---|
-| 1 | `NOM_SITE` | `TODO_NOM_SITE` | Nom de marque absent du layout, des titles et du JSON-LD Organization |
-| 2 | `DOMAINE` | `TODO_DOMAINE` | Canonical, sitemap et Open Graph générés avec un domaine placeholder |
-| 3 | `EDITEUR_LEGAL` | `TODO_EDITEUR_LEGAL` | `/mentions-legales` non conforme LCEN (raison sociale, SIRET, adresse, directeur de publication manquants) — **bloquant avant mise en ligne** |
-| 4 | `EMAIL_CONTACT` | `TODO_EMAIL_CONTACT` | Mentions légales et page contact incomplètes |
-| 5 | `EXPERT_RELECTEUR` | `TODO_EXPERT_RELECTEUR` | Bloc relecteur masqué sur guides et pages métier (aucun faux relecteur ne sera affiché) |
-| 6 | `LIENS_AFFILIES` | `TODO_LIENS_AFFILIES` | Les boutons pointent vers les URL officielles des éditeurs, sans mention d'affiliation (règle section 8) — zéro revenu tant que non renseigné |
-| 7 | `OUTIL_EMAIL` | `TODO_OUTIL_EMAIL` | Formulaire de capture email désactivé (pas de fournisseur ni de clé API) |
+| #   | Variable           | Placeholder utilisé     | Impact tant que non renseigné                                                                                                                 |
+| --- | ------------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `NOM_SITE`         | `TODO_NOM_SITE`         | Nom de marque absent du layout, des titles et du JSON-LD Organization                                                                         |
+| 2   | `DOMAINE`          | `TODO_DOMAINE`          | Canonical, sitemap et Open Graph générés avec un domaine placeholder                                                                          |
+| 3   | `EDITEUR_LEGAL`    | `TODO_EDITEUR_LEGAL`    | `/mentions-legales` non conforme LCEN (raison sociale, SIRET, adresse, directeur de publication manquants) — **bloquant avant mise en ligne** |
+| 4   | `EMAIL_CONTACT`    | `TODO_EMAIL_CONTACT`    | Mentions légales et page contact incomplètes                                                                                                  |
+| 5   | `EXPERT_RELECTEUR` | `TODO_EXPERT_RELECTEUR` | Bloc relecteur masqué sur guides et pages métier (aucun faux relecteur ne sera affiché)                                                       |
+| 6   | `LIENS_AFFILIES`   | `TODO_LIENS_AFFILIES`   | Les boutons pointent vers les URL officielles des éditeurs, sans mention d'affiliation (règle section 8) — zéro revenu tant que non renseigné |
+| 7   | `OUTIL_EMAIL`      | `TODO_OUTIL_EMAIL`      | Formulaire de capture email désactivé (pas de fournisseur ni de clé API)                                                                      |
 
-## Données non vérifiées pendant la Phase 0
+## Données non vérifiées pendant la Phase 0 (relevé du 2026-10-04)
 
-(Alimenté par la recherche — voir PLAN.md § Sources.)
+Contexte : le proxy réseau de l'environnement de build bloque l'accès direct aux domaines .gouv.fr et aux sites des éditeurs. Tout le relevé repose sur des extraits indexés restreints aux domaines officiels. Actions humaines ou Phase 2 :
+
+| #   | Donnée                                                                                                                   | Pourquoi non publiable                                                                                         | Action                                                                                                                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 8   | Nombre actuel de plateformes agréées (≈150)                                                                              | Source tierce uniquement (CSV data.gouv.fr non DGFiP)                                                          | Relever sur impots.gouv.fr (page liste) depuis un réseau non bloqué ; seul « 101 au 16/01/2026 » est publiable (economie.gouv.fr) |
+| 9   | Dates et numéros d'immatriculation PA des 6 outils                                                                       | Sources tierces ; contradictions entre relevés (Pennylane 11/12 vs 22/12/2025, Indy 09/01 vs 22/01/2026)       | Télécharger les fichiers officiels de la liste PA et trancher                                                                     |
+| 10  | Sous-statut « immatriculation définitive » vs « en attente de rapport d'audit » pour Tiime, Pennylane, Abby, Indy, Shine | Le PDF officiel cité est celui des PA « en attente d'audit » : il ne prouve pas une immatriculation définitive | Idem #9                                                                                                                           |
+| 11  | Détail de l'article 123, loi 2026-103 (rôle du PPF, sanctions, annuaire central)                                         | Texte intégral non lu sur Légifrance (accès bloqué)                                                            | Lecture directe avant rédaction des guides « Sanctions » et « Plateforme agréée »                                                 |
+| 12  | Détail des nouvelles mentions obligatoires sur les factures                                                              | Seules l'existence et les dates d'entrée sont sourcées                                                         | Relevé exact requis pour le vérificateur de facture et le guide « Mentions obligatoires »                                         |
+| 13  | Prix des 6 outils (y c. tarifs Shine aperçus)                                                                            | Aucun prix relevé avec date + URL vérifiées en direct                                                          | Phase 2 : relevé complet prix/fonctionnalités, 1 date + 1 URL par donnée                                                          |
+| 14  | Programme d'affiliation Shine via Affilae                                                                                | Dernière confirmation publique datée de 2022                                                                   | Confirmer avant signature du programme                                                                                            |
+| 15  | Entité juridique Shine titulaire de l'agrément (RCS Paris vs entité danoise Ageras)                                      | Incohérence entre sources                                                                                      | Clarifier avant rédaction de la fiche outil                                                                                       |
+| 16  | Relecture humaine directe des pages .gouv.fr citées dans PLAN.md §6                                                      | Vérifiées via extraits indexés, jamais en fetch direct                                                         | Relire chaque URL avant mise en ligne publique                                                                                    |
