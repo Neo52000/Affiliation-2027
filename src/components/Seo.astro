@@ -34,3 +34,27 @@ if (import.meta.env.DEV) {
 <meta property="og:site_name" content={SITE.name} />
 <meta property="og:locale" content="fr_FR" />
 {updatedAt && <meta property="og:updated_time" content={updatedAt.toISOString()} />}
+
+{/* JSON-LD Organization + WebSite sur toutes les pages (section 9) */}
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify([
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      '@id': `${site}#organisation`,
+      name: SITE.name,
+      url: site,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      '@id': `${site}#site`,
+      name: SITE.name,
+      url: site,
+      inLanguage: 'fr-FR',
+      publisher: { '@id': `${site}#organisation` },
+    },
+  ])}
+/>

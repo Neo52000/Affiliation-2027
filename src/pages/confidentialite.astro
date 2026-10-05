@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { SITE } from '../config';
+import { pageTitle } from '../lib/seo';
+---
+
+<Base
+  title={pageTitle('Politique de confidentialité', SITE.name)}
+  description="Vos données sur ce site : aucun cookie soumis à consentement, aucun traceur publicitaire, un seul formulaire (rappel d'échéance) en double opt-in."
+>
+  <Breadcrumb items={[{ label: 'Confidentialité' }]} />
+  <article class="prose-measure mt-4">
+    <h1 class="text-3xl font-bold">Politique de confidentialité</h1>
+
+    <h2 class="mt-8 text-2xl font-bold">Ce que ce site ne fait pas</h2>
+    <ul class="mt-3 list-disc space-y-2 pl-5">
+      <li>Aucun cookie soumis à consentement, d'où l'absence de bandeau cookies.</li>
+      <li>Aucun traceur publicitaire, aucune revente de données.</li>
+      <li>
+        Le vérificateur de facture fonctionne entièrement dans votre navigateur : ce que vous y
+        cochez n'est jamais transmis.
+      </li>
+    </ul>
+
+    <h2 class="mt-8 text-2xl font-bold">
+      La seule donnée collectée : votre email, si vous le demandez
+    </h2>
+    <p class="mt-3">
+      Le formulaire « Recevoir un rappel avant mon échéance » collecte votre adresse email et, si
+      vous le souhaitez, votre métier. Base légale : votre consentement (case à cocher, jamais
+      précochée), confirmé par un email de validation (double opt-in).
+    </p>
+    <ul class="mt-3 list-disc space-y-2 pl-5">
+      <li>Finalité : vous envoyer un rappel avant votre échéance de facturation électronique.</li>
+      <li>
+        Désinscription : lien présent dans chaque email ; vos données sont alors supprimées de la
+        liste.
+      </li>
+      <li>
+        Destinataire : notre prestataire d'emailing, agissant comme sous-traitant ; aucune autre
+        transmission.
+      </li>
+    </ul>
+
+    <h2 class="mt-8 text-2xl font-bold">Vos droits</h2>
+    <p class="mt-3">
+      Vous disposez des droits d'accès, de rectification, d'effacement et d'opposition (RGPD, loi
+      Informatique et libertés). Pour les exercer : {SITE.emailContact}. Vous pouvez aussi saisir la
+      CNIL (
+      <a href="https://www.cnil.fr" rel="noopener">
+        cnil.fr
+      </a>
+      ).
+    </p>
+
+    <h2 class="mt-8 text-2xl font-bold">Hébergement et liens sortants</h2>
+    <p class="mt-3">
+      Le site est hébergé par Netlify. Les liens vers les sites des éditeurs (y compris les liens
+      affiliés, signalés comme tels) vous font quitter ce site : leurs politiques de confidentialité
+      s'appliquent alors.
+    </p>
+  </article>
+</Base>

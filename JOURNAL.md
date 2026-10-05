@@ -55,3 +55,10 @@ Dépendances ajoutées : preact + @astrojs/preact (îlots imposés par la spec),
 Redirections /go/ : bloc de netlify.toml généré au prebuild depuis affiliation.json (302 force, triées, idempotent, testé) — 0 active tant que LIENS_AFFILIES est vide (TODO #6), bascule URL officielle déjà en place dans AffiliateButton. Attribut data-emplacement posé sur chaque bouton ; événement analytics branché quand l'analytics sans cookie sera activé (option désactivée par défaut, section 4).
 Capture email (section 12) : fonction Netlify rappel-email (double opt-in via le fournisseur, prête pour Brevo), validation pure testée (consentement explicite exigé, case jamais précochée), formulaire sur /outils/echeance (métier facultatif) — répond « pas encore activé » tant que EMAIL_API_KEY/TEMPLATE/LISTE ne sont pas posées dans Netlify (TODO #7). Clé uniquement en variable d'environnement.
 74 tests Vitest + 6 parcours Playwright verts.
+
+## Phase 8 — SEO technique + légal + confiance (2026-10-06)
+
+JSON-LD : Organization + WebSite sur toutes les pages (Seo.astro), BreadcrumbList partout (Breadcrumb.astro), FAQPage sur les pages métier, SoftwareApplication sans AggregateRating sur les fiches outil. Sitemap segmenté (@astrojs/sitemap) + ligne Sitemap dans robots.txt (domaine placeholder, TODO #2).
+Pages : /methode (pondérations publiques + protocole de test), /transparence (financement, règles d'affichage des liens affiliés), /a-propos, /mentions-legales (placeholders TODO_EDITEUR_LEGAL, page noindex tant que non conforme LCEN — TODO #3), /confidentialite (RGPD : seul l'email du formulaire de rappel est collecté, double opt-in), /plateformes-agreees (165 PA, provenance affichée, filtre JS natif léger — décision : « tableau filtrable » de la section 6 l'emporte, dégradation = tableau complet).
+Footer 3 colonnes + navigation header (Quiz, Plateformes agréées, Méthode). Design system v2 appliqué sur main entre-temps (thème sombre, mouvements) conservé tel quel.
+Build 43 pages, garde-fous verts, 74 tests + 6 parcours e2e.

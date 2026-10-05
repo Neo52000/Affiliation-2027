@@ -42,9 +42,21 @@ if (!reception || !emissionTpe) throw new Error('echeances.json : échéances cl
 
 const avecAffiliation = hasAffiliate(recommandes.map((r) => r.outil.data.slug));
 const familleLabel = FAMILLE_LABELS[d.famille];
+
+// JSON-LD FAQPage (section 9) — questions réellement affichées sur la page.
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: d.faq.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.reponse },
+  })),
+};
 ---
 
 <Base title={metierTitle(d.nom)} description={metierDescription(d.nom)}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
   {avecAffiliation && (
     <p class="mb-6 rounded-md border border-border bg-paper-soft px-4 py-2 text-sm text-ink-soft">
       Cette page contient des liens affiliés, signalés individuellement. Ils ne modifient ni l'ordre

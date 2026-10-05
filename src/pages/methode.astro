@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { SITE } from '../config';
+import { pageTitle } from '../lib/seo';
+
+const PONDERATIONS = [
+  { critere: 'Conformité (plateforme agréée, réforme)', poids: '25 %' },
+  { critere: 'Prix réel sur 12 mois', poids: '20 %' },
+  { critere: 'Simplicité de prise en main', poids: '20 %' },
+  { critere: 'Fonctionnalités utiles au métier', poids: '20 %' },
+  { critere: 'Support', poids: '10 %' },
+  { critere: "Pérennité de l'éditeur", poids: '5 %' },
+];
+
+const protocole = (await getCollection('tests'))[0]?.data.protocole ?? [];
+---
+
+<Base
+  title={pageTitle('Notre méthode de notation', SITE.name)}
+  description="Comment nous notons les logiciels de facturation électronique : pondérations publiques, tests réels documentés, commissions exclues de la notation."
+>
+  <Breadcrumb items={[{ label: 'Notre méthode' }]} />
+  <article class="prose-measure mt-4">
+    <h1 class="text-3xl font-bold">Notre méthode de notation</h1>
+
+    <h2 class="mt-8 text-2xl font-bold">Les principes</h2>
+    <ul class="mt-3 list-disc space-y-2 pl-5">
+      <li>
+        <strong>Les commissions n'entrent jamais dans la notation</strong> ni dans l'ordre des
+        recommandations. Les partenariats d'affiliation financent le site, pas les classements (
+        <a href="/transparence">voir la page transparence</a>).
+      </li>
+      <li>
+        <strong>Aucune note n'est publiée avant un test réel documenté.</strong> Tant qu'un outil
+        affiche « Test en cours », sa fiche ne contient que des faits vérifiés sur sources
+        officielles.
+      </li>
+      <li>
+        <strong>Chaque donnée est datée et sourcée.</strong> Une donnée invérifiable est affichée «
+        À vérifier », jamais estimée.
+      </li>
+    </ul>
+
+    <h2 class="mt-8 text-2xl font-bold">La pondération de la note sur 10</h2>
+    <div class="table-scroll mt-3">
+      <table class="w-full border-collapse text-sm">
+        <thead>
+          <tr class="border-b-2 border-border text-left">
+            <th scope="col" class="py-2 pr-3">
+              Critère
+            </th>
+            <th scope="col" class="py-2">
+              Poids
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {PONDERATIONS.map((p) => (
+            <tr class="border-b border-border">
+              <td class="py-2 pr-3">{p.critere}</td>
+              <td class="py-2">{p.poids}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="mt-8 text-2xl font-bold">Le protocole de test réel</h2>
+    <p class="mt-3">Chaque outil passe le même protocole, rempli par un testeur humain :</p>
+    <ol class="mt-3 list-decimal space-y-2 pl-5">
+      {protocole.map((p) => (
+        <li>{p}</li>
+      ))}
+    </ol>
+
+    <h2 class="mt-8 text-2xl font-bold">Corrections</h2>
+    <p class="mt-3">
+      Une erreur constatée est corrigée dès signalement, avec mise à jour de la date affichée sur la
+      page concernée. Les données font l'objet d'une revue mensuelle (prix, liste des plateformes
+      agréées, calendrier).
+    </p>
+  </article>
+</Base>

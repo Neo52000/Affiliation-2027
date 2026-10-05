@@ -1,8 +1,12 @@
 ---
 import { SITE } from '../config';
-// La navigation s'enrichit au fil des phases (métiers, logiciels, guides, outils)
+// La navigation s'enrichit au fil des phases (guides en Phase 5)
 // pour ne jamais pointer vers une page qui n'existe pas encore.
-const nav: { label: string; href: string }[] = [];
+const nav: { label: string; href: string }[] = [
+  { label: 'Quiz', href: '/outils/quiz' },
+  { label: 'Plateformes agréées', href: '/plateformes-agreees' },
+  { label: 'Méthode', href: '/methode' },
+];
 ---
 
 <header class="site-header border-b border-border bg-paper">

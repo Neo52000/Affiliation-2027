@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { SITE } from '../config';
+import { pageTitle } from '../lib/seo';
+import { formatDateFr } from '../lib/dates';
+import registre from '../data/plateformes-agreees.json';
+
+const { provenance, plateformes } = registre;
+const definitives = plateformes.filter((p) => p.statut === 'immatriculation_definitive');
+const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
+---
+
+<Base
+  title={pageTitle('Liste des plateformes agréées', SITE.name)}
+  description={`Les ${plateformes.length} plateformes agréées (PA, ex-PDP) du registre DGFiP : statut, date d'immatriculation et site — avec date de relevé et provenance.`}
+>
+  <Breadcrumb items={[{ label: 'Plateformes agréées' }]} />
+  <article class="mt-4">
+    <h1 class="prose-measure text-3xl font-bold">La liste des plateformes agréées (PA, ex-PDP)</h1>
+    <p class="prose-measure mt-3">
+      {definitives.length} plateformes immatriculées définitivement et {enAttente.length} dossiers
+      complets en attente des tests d'interopérabilité, d'après le registre de la DGFiP.
+    </p>
+
+    <p class="prose-measure mt-4 rounded-md border border-border bg-paper-soft p-4 text-sm">
+      <strong>Provenance :</strong> copie du registre DGFiP (état du{' '}
+      {formatDateFr(provenance.date_registre)}) republiée sur
+      <a href={provenance.copie_consultee} rel="noopener">
+        data.gouv.fr
+      </a>
+      , relevée le {formatDateFr(provenance.date_releve)}. Liste officielle :
+      <a href={provenance.source_officielle} rel="noopener">
+        impots.gouv.fr
+      </a>
+      .
+    </p>
+
+    <div class="mt-6 max-w-md">
+      <label class="font-bold" for="filtre-pa">
+        Filtrer par nom ou localisation
+      </label>
+      <input
+        id="filtre-pa"
+        type="search"
+        placeholder="Ex. : Tiime, Lyon, Italie…"
+        class="mt-1 block w-full rounded-md border border-border px-3 py-2"
+      />
+      <p id="filtre-pa-compte" class="mt-1 text-sm text-ink-soft" aria-live="polite"></p>
+    </div>
+
+    <div class="table-scroll mt-4">
+      <table class="table-interactive w-full border-collapse text-sm" id="table-pa">
+        <thead>
+          <tr class="border-b-2 border-border text-left">
+            <th scope="col" class="py-2 pr-3">
+              Plateforme
+            </th>
+            <th scope="col" class="py-2 pr-3">
+              Statut
+            </th>
+            <th scope="col" class="py-2 pr-3">
+              Immatriculée le
+            </th>
+            <th scope="col" class="py-2">
+              Localisation
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {plateformes.map((p) => (
+            <tr
+              class="border-b border-border"
+              data-recherche={`${p.nom} ${p.localisation}`.toLowerCase()}
+            >
+              <td class="py-2 pr-3">
+                <a href={p.site} rel="noopener">
+                  {p.nom}
+                </a>
+              </td>
+              <td class="py-2 pr-3">
+                {p.statut === 'immatriculation_definitive' ? 'Immatriculée' : 'En attente d’audit'}
+              </td>
+              <td class="py-2 pr-3">
+                {p.date_immatriculation ? formatDateFr(p.date_immatriculation) : '—'}
+              </td>
+              <td class="py-2">{p.localisation}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="prose-measure mt-4 text-sm text-ink-soft">
+      Être immatriculée signifie que la plateforme est autorisée à émettre, transmettre et recevoir
+      des factures électroniques et à transmettre les données à l'administration. Cela ne préjuge ni
+      du prix ni de l'adéquation à votre métier : voir
+      <a href="/methode">notre méthode</a>.
+    </p>
+  </article>
+</Base>
+
+<script>
+  // Filtre du tableau (JS natif léger, dégradation : tableau complet sans JS).
+  const champ = document.getElementById('filtre-pa') as HTMLInputElement | null;
+  const compte = document.getElementById('filtre-pa-compte');
+  const lignes = Array.from(document.querySelectorAll<HTMLTableRowElement>('#table-pa tbody tr'));
+  champ?.addEventListener('input', () => {
+    const q = champ.value.trim().toLowerCase();
+    let visibles = 0;
+    for (const ligne of lignes) {
+      const visible = q === '' || (ligne.dataset['recherche'] ?? '').includes(q);
+      ligne.hidden = !visible;
+      if (visible) visibles++;
+    }
+    if (compte) {
+      compte.textContent =
+        q === '' ? '' : `${visibles} plateforme(s) correspondante(s) sur ${lignes.length}`;
+    }
+  });
+</script>
