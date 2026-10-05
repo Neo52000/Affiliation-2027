@@ -30,6 +30,15 @@ const recommandes = d.outils_recommandes
     Boolean(r.outil),
   );
 
+// Maillage (section 9) : 2 guides liés depuis chaque page métier.
+const guidesUtiles = (await getCollection('guides'))
+  .filter((g) =>
+    ['calendrier-facturation-electronique', 'passer-facturation-electronique-5-etapes'].includes(
+      g.id,
+    ),
+  )
+  .slice(0, 2);
+
 const metiersAll = await getCollection('metiers');
 const voisins = [
   ...metiersAll.filter((m) => m.data.famille === d.famille && m.data.slug !== d.slug),
@@ -233,6 +242,19 @@ const faqJsonLd = {
           {voisins.map((v) => (
             <li>
               <a href={`/facturation-electronique/${v.data.slug}`}>{v.data.nom}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    {guidesUtiles.length > 0 && (
+      <nav aria-label="Guides utiles" class="prose-measure mt-6">
+        <h2 class="text-lg font-bold">Pour aller plus loin</h2>
+        <ul class="mt-2 flex flex-wrap gap-3">
+          {guidesUtiles.map((g) => (
+            <li>
+              <a href={`/guides/${g.id}`}>{g.data.title}</a>
             </li>
           ))}
         </ul>

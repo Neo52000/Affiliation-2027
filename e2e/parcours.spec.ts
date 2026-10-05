@@ -5,9 +5,10 @@ async function attendreHydratation(page: Page) {
   await expect(page.locator('astro-island[ssr]')).toHaveCount(0);
 }
 
-test('1. accueil → page métier plombier', async ({ page }) => {
+test('1. accueil → hub bâtiment → page métier plombier', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('link', { name: /^Plombier/ }).click();
+  await page.getByRole('link', { name: 'Bâtiment' }).click();
+  await page.getByRole('link', { name: /plombier/i }).click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/plombier/i);
   await expect(page.getByText("L'essentiel en 3 lignes")).toBeVisible();
 });
