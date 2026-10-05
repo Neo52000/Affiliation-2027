@@ -37,5 +37,32 @@ const { title, description, updatedAt, noindex } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <script>
+      // Révélation d'entrée (design system, Mouvement, geste 4) : l'état masqué
+      // n'est posé que si l'observateur est actif — sans JavaScript ou avec
+      // prefers-reduced-motion, le contenu reste lisible d'emblée.
+      const els = document.querySelectorAll('.reveal');
+      if (
+        els.length > 0 &&
+        'IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-in');
+                io.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.1 },
+        );
+        for (const el of els) {
+          el.classList.add('reveal-ready');
+          io.observe(el);
+        }
+      }
+    </script>
   </body>
 </html>

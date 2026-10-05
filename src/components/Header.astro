@@ -5,17 +5,17 @@ import { SITE } from '../config';
 const nav: { label: string; href: string }[] = [];
 ---
 
-<header class="border-b border-border bg-paper">
+<header class="site-header border-b border-border bg-paper">
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
     <a href="/" class="font-bold text-ink no-underline hover:text-accent">
       {SITE.name}
     </a>
     {nav.length > 0 && (
       <nav aria-label="Navigation principale">
-        <ul class="flex gap-4">
+        <ul class="flex gap-6">
           {nav.map((item) => (
             <li>
-              <a href={item.href} class="text-ink-soft no-underline hover:text-accent">
+              <a href={item.href} class="nav-link text-ink-soft no-underline hover:text-accent">
                 {item.label}
               </a>
             </li>
@@ -25,3 +25,11 @@ const nav: { label: string; href: string }[] = [];
     )}
   </div>
 </header>
+
+<script>
+  // L'ombre du header collant n'apparaît qu'au défilement (design system, Mouvement).
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 4);
+  onScroll();
+  addEventListener('scroll', onScroll, { passive: true });
+</script>
