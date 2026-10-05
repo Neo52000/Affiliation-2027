@@ -46,7 +46,8 @@ for (const e of entrees) {
   }
   const bloquants = e.verif.problemes.filter((p) => p.gravite === 'bloquant');
 
-  const { notes_redacteur: _notes, ...contenu } = e.final as Record<string, unknown>;
+  const contenu: Record<string, unknown> = { ...e.final };
+  delete contenu['notes_redacteur']; // champ de travail du workflow, hors schéma
   const valide = metierSchema.safeParse(contenu);
   if (!valide.success) {
     erreurs.push(
