@@ -1,0 +1,151 @@
+{
+  "nom": "Développeur freelance",
+  "slug": "developpeur-freelance",
+  "famille": "numerique",
+  "statuts_frequents": ["Micro-entreprise", "Entreprise individuelle (EI) au réel", "EURL", "SASU"],
+  "volume_factures_typique": "Le plus souvent quelques factures par mois : une facture mensuelle par client en régie, complétée par des factures d'acompte et de solde sur les missions au forfait. Un développeur travaillant pour un ou deux clients longs peut n'émettre qu'une poignée de factures par mois.",
+  "clients_types": "B2B",
+  "specificites_facturation": [
+    "La facturation en régie repose sur le TJM (taux journalier moyen) : la facture mensuelle récapitule les jours travaillés, généralement adossée à un compte rendu d'activité (CRA) validé par le client.",
+    "Pour un client professionnel établi dans un autre État membre de l'UE, la facture est émise hors TVA avec la mention « Autoliquidation » et les numéros de TVA intracommunautaire du prestataire et du client. Ces opérations doivent ensuite être reprises dans une déclaration européenne de services (DES).",
+    "Pour un client assujetti établi hors de l'Union européenne, la prestation n'est pas soumise à la TVA française : la facture porte la mention « TVA non applicable – art. 259-1 du CGI ».",
+    "En franchise en base de TVA, cas fréquent en début d'activité, les factures sont émises sans TVA avec la mention « TVA non applicable, article 293 B du CGI », sans possibilité de déduire la TVA sur les achats.",
+    "Les missions au forfait se facturent par jalons : chaque acompte versé doit donner lieu à une facture d'acompte, avant la facture de solde en fin de projet.",
+    "Hors franchise en base, les prestations de développement relèvent du taux normal de TVA de 20 %, comme les prestations de services sans taux particulier."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« TVA non applicable, article 293 B du CGI » sur toutes les factures émises sous le régime de la franchise en base de TVA.",
+    "« Autoliquidation », accompagnée du numéro de TVA intracommunautaire du prestataire et de celui du client, pour une prestation fournie à un assujetti établi dans un autre État membre de l'UE.",
+    "« TVA non applicable – art. 259-1 du CGI » pour une prestation fournie à un client assujetti établi hors de l'Union européenne."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture mensuelle de régie – développement d'application web (client français, prestataire redevable de la TVA)",
+    "lignes": [
+      {
+        "designation": "Développement d'application web en régie – jours travaillés du mois selon CRA validé (TJM)",
+        "quantite": 18,
+        "unite": "jour",
+        "prix_unitaire_ht": 450,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Forfait mensuel de maintenance corrective et support",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 600,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Atelier de cadrage technique avec l'équipe produit",
+        "quantite": 2,
+        "unite": "demi-journée",
+        "prix_unitaire_ht": 240,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Taux normal de TVA de 20 % appliqué à chaque ligne (prestations de services sans taux particulier).",
+      "Numéro de TVA intracommunautaire du prestataire.",
+      "Date d'émission et période d'exécution de la prestation (mois de régie concerné), avec référence au CRA ou au bon de commande.",
+      "Pénalités de retard, indemnité forfaitaire pour frais de recouvrement et conditions d'escompte (facture entre professionnels)."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Transformer un suivi des jours travaillés (CRA) en facture mensuelle de régie au TJM, récurrente client par client.",
+    "Appliquer la bonne règle de TVA selon le client : taux normal en France, mention « Autoliquidation » pour un assujetti de l'UE, hors TVA française pour un client hors UE, mention de l'article 293 B du CGI en franchise en base.",
+    "Chaîner devis, factures d'acompte et facture de solde sur les missions au forfait sans perdre le lien entre les documents.",
+    "Suivre le chiffre d'affaires pour anticiper la sortie de la franchise en base et préparer les déclarations associées (TVA, déclaration européenne de services).",
+    "Émettre et recevoir des factures électroniques via une plateforme agréée, à l'échéance applicable à l'entreprise selon le calendrier de la réforme."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP qui cible notamment les freelances et micro-entrepreneurs. Son périmètre facturation et comptabilité couvre la facture mensuelle de régie comme le suivi de l'activité en micro ou au réel."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée DGFiP destinée aux indépendants, réunissant comptabilité, compte pro et facturation. Ce périmètre convient à un développeur qui veut gérer dans un même outil ses factures et sa comptabilité, en micro-entreprise comme au réel."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme dont le module de facturation, Shine Facture, est immatriculé comme plateforme agréée auprès de la DGFiP. Shine combine compte professionnel en ligne et facturation, avec les freelances dans sa cible. Pertinent pour émettre ses factures et suivre leurs encaissements depuis le même espace."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je suis développeur en micro-entreprise et je facture sans TVA (mention « TVA non applicable, art. 293 B du CGI ») : suis-je concerné par la facturation électronique ?",
+      "reponse": "Oui. La réforme s'applique à tous les assujettis à la TVA, y compris ceux qui n'en sont pas redevables, comme les développeurs en franchise en base. Vous devrez recevoir puis émettre des factures électroniques à l'échéance applicable à votre entreprise, selon le calendrier de la réforme. Vos factures continueront de porter la mention « TVA non applicable, article 293 B du CGI »."
+    },
+    {
+      "question": "Je développe à distance pour des clients établis à l'étranger : mes factures passent-elles par la facturation électronique ?",
+      "reponse": "Non. L'obligation de facturation électronique vise les transactions entre assujettis établis en France. Vos prestations de développement pour des clients établis à l'étranger relèvent de l'e-reporting : vous transmettrez à l'administration les données de ces transactions, à l'échéance applicable à votre entreprise. Une plateforme agréée peut gérer les deux flux."
+    },
+    {
+      "question": "Comment facturer une mission pour un client professionnel établi dans un autre pays de l'UE ?",
+      "reponse": "La facture est émise hors TVA : c'est votre client qui autoliquide la taxe dans son pays. Elle doit porter la mention « Autoliquidation », votre numéro de TVA intracommunautaire et celui de votre client. Vous devez par ailleurs déposer une déclaration européenne de services (DES) récapitulant ces opérations."
+    },
+    {
+      "question": "Dois-je émettre une facture pour chaque acompte sur un développement au forfait (site, application, MVP) ?",
+      "reponse": "Oui. Une facture d'acompte doit être délivrée pour les acomptes qui vous sont versés, avant la facture de solde en fin de projet. Ces factures d'acompte comportent les mentions obligatoires d'une facture classique. Un logiciel qui chaîne devis, factures d'acompte et facture de solde limite les oublis sur vos projets de développement au forfait."
+    },
+    {
+      "question": "Micro-entreprise ou passage au réel : qu'est-ce que cela change pour mes factures ?",
+      "reponse": "Rien pour votre entrée dans la facturation électronique : la réforme concerne tous les assujettis, quel que soit leur régime d'imposition. En revanche, le contenu des factures change. En franchise en base, vous facturez sans TVA avec la mention de l'article 293 B du CGI et sans déduire la TVA sur vos achats. Redevable de la TVA, vous facturez vos prestations de développement au taux normal de 20 %."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Impots.gouv.fr – Prestations entre assujettis (autoliquidation UE, mention « TVA non applicable – art. 259-1 du CGI » hors UE)",
+      "url": "https://www.impots.gouv.fr/professionnel/prestations-entre-assujettis"
+    },
+    {
+      "titre": "BOFiP – Franchise en base : conséquences, mention « TVA non applicable, article 293 B du CGI », absence de droit à déduction (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+    },
+    {
+      "titre": "Economie.gouv.fr – Entreprises : pouvez-vous bénéficier de la franchise de TVA ?",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "BOFiP – Taux normal de TVA (20 %) applicable aux prestations de services sans taux particulier (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
+    },
+    {
+      "titre": "BOFiP – Délivrance de factures, y compris factures d'acompte (BOI-TVA-DECLA-30-20-10-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+    },
+    {
+      "titre": "BOFiP – États récapitulatifs des clients et déclaration européenne de services entre États membres de l'UE (BOI-TVA-DECLA-20-20-40)",
+      "url": "https://bofip.impots.gouv.fr/bofip/979-PGP.html/identifiant=BOI-TVA-DECLA-20-20-40-20220216"
+    },
+    {
+      "titre": "Douane.gouv.fr – La déclaration européenne de services (DES)",
+      "url": "https://www.douane.gouv.fr/fiche/la-declaration-europeenne-de-services-des"
+    },
+    {
+      "titre": "Impots.gouv.fr – Franchisé en base, micro-entrepreneur ou auto-entrepreneur : suis-je concerné par la réforme de la facturation électronique ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/franchise-en-base-micro-entrepreneur-ou-auto-entrepreneur-suis-je-concerne"
+    },
+    {
+      "titre": "Impots.gouv.fr – Fiche réforme : la transmission des données de transactions (e-reporting), opérations B2C et avec l'étranger",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiches_reforme/fiche-e-reporting_transactions.pdf"
+    },
+    {
+      "titre": "Impots.gouv.fr – Je découvre la facturation électronique (e-invoicing et e-reporting)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Impots.gouv.fr – Je consulte la liste des plateformes agréées (facturation électronique)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    },
+    {
+      "titre": "Economie.gouv.fr – Mentions obligatoires d'une facture : tout savoir",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "Impots.gouv.fr – Les régimes d'imposition à la TVA (franchise en base, réel simplifié, réel normal)",
+      "url": "https://www.impots.gouv.fr/professionnel/les-regimes-dimposition-la-tva"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

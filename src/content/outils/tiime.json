@@ -1,0 +1,68 @@
+{
+  "nom": "Tiime",
+  "slug": "tiime",
+  "url_officielle": "https://www.tiime.fr/",
+  "est_plateforme_agreee": {
+    "valeur": true,
+    "date_immatriculation": null,
+    "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+  },
+  "offre_gratuite": null,
+  "plans": [],
+  "cible": ["indépendants", "freelances", "TPE", "micro-entrepreneurs"],
+  "fonctionnalites": {
+    "emission": true,
+    "reception": true,
+    "e_reporting": true,
+    "compte_pro": null,
+    "compta": true,
+    "devis": null,
+    "acomptes": null,
+    "app_mobile": null,
+    "export_comptable": null,
+    "lien_expert_comptable": null
+  },
+  "notes": {
+    "conformite": null,
+    "prix": null,
+    "simplicite": null,
+    "fonctionnalites_metier": null,
+    "support": null,
+    "perennite": null,
+    "finale": null
+  },
+  "points_forts": [
+    "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
+    "Facturation et comptabilité réunies dans un même outil"
+  ],
+  "points_faibles": [],
+  "statut_test": "a_tester",
+  "date_maj": "2026-10-04",
+  "sources": [
+    {
+      "objet": "Présence au registre DGFiP des plateformes agréées (« TIIME PDP »)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Page facturation électronique de l'éditeur",
+      "url": "https://www.tiime.fr/plateforme-dematerialisation-partenaire-pdp",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Positionnement et cible (« Logiciel Facturation électronique & compta pour entrepreneurs »)",
+      "url": "https://www.tiime.fr/",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Page tarifs — prix non encore relevés (TODO.md #13)",
+      "url": "https://www.tiime.fr/tarifs",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Programme d'affiliation (via Affilae)",
+      "url": "https://www.tiime.fr/affiliation",
+      "date_releve": "2026-10-04"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+---
+import { affiliateLink } from '../lib/affiliate';
+
+interface Props {
+  /** slug de l'outil dans affiliation.json */
+  outil: string;
+  /** URL officielle de l'éditeur (bascule si aucun lien affilié, section 8) */
+  urlOfficielle: string;
+  /** Libellé du bouton */
+  label: string;
+  /** Position du bouton, transmise en analytics (Phase 7) */
+  emplacement: string;
+}
+
+const { outil, urlOfficielle, label, emplacement } = Astro.props;
+const lien = affiliateLink(outil, urlOfficielle);
+---
+
+<span class="inline-flex flex-col items-start gap-1">
+  <a
+    href={lien.href}
+    rel={lien.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
+    data-emplacement={emplacement}
+    data-outil={outil}
+    class="inline-block rounded bg-accent px-4 py-2 font-bold text-white no-underline hover:bg-accent-dark"
+  >
+    {label}
+  </a>
+  {lien.sponsored && <span class="text-xs text-ink-soft">lien affilié</span>}
+</span>

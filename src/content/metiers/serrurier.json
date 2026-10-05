@@ -1,0 +1,143 @@
+{
+  "nom": "Serrurier",
+  "slug": "serrurier",
+  "famille": "artisanat",
+  "statuts_frequents": ["Micro-entreprise", "Entreprise individuelle (EI)", "EURL", "SASU", "SARL"],
+  "volume_factures_typique": "Le plus souvent quelques dizaines de factures par mois. Le dépannage génère des factures unitaires de montant modéré, émises au fil de l'eau après chaque intervention. Les chantiers de fourniture et pose (portes, cylindres, blindages) produisent des factures moins nombreuses mais plus élevées, souvent précédées d'un devis et parfois d'un acompte.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "En dépannage à domicile chez un particulier, vous devez informer le client des prix (taux horaire TTC, forfaits, frais de déplacement, caractère payant ou gratuit du devis) et lui remettre un devis avant l'intervention, même en urgence : la serrurerie est expressément visée par cette réglementation.",
+    "Les travaux d'amélioration, de transformation, d'aménagement et d'entretien dans des logements achevés depuis plus de deux ans relèvent en principe de la TVA à 10 % (art. 279-0 bis du CGI), tandis que les locaux professionnels et les logements récents restent à 20 % : une même tournée mélange donc souvent les deux taux.",
+    "Pour appliquer le taux réduit, le client certifie par une mention portée sur le devis ou la facture que les conditions sont remplies (logement de plus de deux ans affecté à l'habitation) : cette mention remplace l'ancienne attestation.",
+    "En tant qu'artisan tenu à une assurance professionnelle obligatoire (notamment la garantie décennale pour les travaux qui y sont soumis), vous devez indiquer sur chaque devis et facture l'assurance souscrite, les coordonnées de l'assureur et la couverture géographique du contrat.",
+    "En sous-traitance de travaux de bâtiment pour un donneur d'ordre assujetti (métallerie, pose sur chantier), vous facturez sans TVA avec la mention « Autoliquidation », la taxe étant due par le preneur.",
+    "Votre clientèle mixte (particuliers, syndics, bailleurs, commerces) vous place à la fois dans le champ de la facture électronique entre assujettis, transmise via une plateforme agréée, et dans celui du e-reporting pour les ventes aux particuliers."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mention portée sur le devis ou la facture par laquelle le client certifie que les conditions du taux réduit de TVA sont remplies (logement achevé depuis plus de deux ans, affecté à l'habitation), pour les travaux éligibles au taux de 10 %.",
+    "Assurance professionnelle obligatoire de l'artisan (notamment garantie décennale pour les travaux concernés) : assurance souscrite au titre de l'activité, coordonnées de l'assureur ou du garant et couverture géographique du contrat, sur chaque devis et facture.",
+    "« TVA non applicable, article 293 B du CGI » pour les serruriers bénéficiant de la franchise en base de TVA.",
+    "« Autoliquidation » sur les factures de sous-traitance de travaux de bâtiment adressées à un preneur assujetti, sans TVA facturée."
+  ],
+  "exemple_facture": {
+    "intitule": "Dépannage serrurerie : ouverture de porte claquée et remplacement de cylindre, logement de plus de deux ans",
+    "lignes": [
+      {
+        "designation": "Forfait déplacement et diagnostic (intervention en zone urbaine)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 45,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Main-d'œuvre : ouverture fine de porte claquée, sans destruction",
+        "quantite": 1,
+        "unite": "heure",
+        "prix_unitaire_ht": 70,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Fourniture et pose d'un cylindre de sécurité débrayable 30 x 30 mm, 3 clés",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 85,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Le client certifie que les travaux portent sur un local achevé depuis plus de deux ans et affecté à l'habitation, et que les conditions d'application du taux réduit de 10 % (art. 279-0 bis du CGI) sont remplies.",
+      "Assurance professionnelle : [compagnie], contrat n° [référence], couverture géographique : [zone couverte].",
+      "Devis remis au client et accepté avant le début de l'intervention."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Créer un devis sur smartphone pendant l'intervention, le faire accepter sur place et le transformer en facture dès la fin du dépannage, pour respecter l'obligation de devis préalable sans retour à l'atelier.",
+    "Gérer les taux de TVA de 10 % et 20 % sur une même facture et insérer automatiquement la mention de certification « logement de plus de deux ans » sur les devis et factures concernés.",
+    "Pré-enregistrer les mentions récurrentes du métier : assurance professionnelle (assureur, contrat, couverture géographique), franchise en base ou autoliquidation selon la situation.",
+    "Encaisser rapidement après le dépannage et suivre les règlements des clients professionnels (syndics, agences, commerces), dont les délais de paiement sont plus longs.",
+    "Distinguer clients particuliers et clients assujettis pour router chaque vente vers la facture électronique ou le e-reporting via une plateforme agréée, sans double saisie."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée par la DGFiP combinant facturation et comptabilité, ciblant les indépendants et TPE. Ce périmètre couvre l'activité mixte du serrurier, dépannage au fil de l'eau et chantiers de pose, avec la préparation comptable qui suit."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée par la DGFiP orientée facturation et gestion, conçue pour les indépendants et micro-entrepreneurs. Elle correspond au profil du serrurier en entreprise individuelle ou micro-entreprise qui doit facturer simplement tout en restant conforme à la réforme."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée par la DGFiP associant compte professionnel et facturation, pour PME et indépendants. Le compte professionnel intégré facilite le rapprochement entre les nombreuses petites factures de dépannage et les paiements reçus."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je dépanne surtout des particuliers : suis-je quand même concerné par la facturation électronique ?",
+      "reponse": "Oui. Vos ventes aux particuliers ne donnent pas lieu à une facture électronique adressée au client : vous continuez à lui remettre sa facture comme aujourd'hui, mais les données de ces transactions devront être transmises à l'administration via une plateforme agréée (e-reporting). Vous devez par ailleurs déjà être en mesure de recevoir les factures électroniques de vos fournisseurs : cette obligation est en vigueur pour toutes les entreprises. Les autres obligations s'appliquent à l'échéance prévue par le calendrier de la réforme pour votre entreprise."
+    },
+    {
+      "question": "Comment facturer un syndic, un bailleur ou un commerçant après la réforme ?",
+      "reponse": "Un syndic professionnel, un bailleur assujetti ou un commerçant sont des clients assujettis : vos factures devront leur parvenir au format électronique via une plateforme agréée, qui transmet aussi les données à l'administration. Le PDF envoyé par e-mail ne suffira plus pour ces clients, à l'échéance applicable à votre entreprise. Vos mentions métier (assurance professionnelle, certification du taux réduit) restent exigées sur ces factures."
+    },
+    {
+      "question": "La TVA à 10 % sur mes interventions en logement est-elle compatible avec la facture électronique ?",
+      "reponse": "Oui. Le taux réduit de 10 % continue de s'appliquer aux travaux éligibles dans les logements achevés depuis plus de deux ans, et la facture électronique porte le détail des taux appliqués. La mention par laquelle le client certifie que les conditions du taux réduit sont remplies doit figurer sur le devis ou la facture. Vérifiez que votre logiciel gère plusieurs taux de TVA sur une même facture et ces mentions."
+    },
+    {
+      "question": "Je suis en micro-entreprise avec la mention « TVA non applicable, art. 293 B du CGI » : la réforme me concerne-t-elle ?",
+      "reponse": "Oui. La franchise en base ne vous place pas hors de la réforme : vous êtes assujetti à la TVA même si vous ne la facturez pas. Vous devez déjà être en mesure de recevoir les factures électroniques de vos fournisseurs (cylindres, quincaillerie, pièces détachées). Vos dépannages chez les particuliers relèveront du e-reporting, et vos factures aux syndics, bailleurs ou commerces passeront par une plateforme agréée, selon le calendrier de la réforme. La mention « TVA non applicable, article 293 B du CGI » reste obligatoire sur vos factures."
+    },
+    {
+      "question": "Puis-je encore établir la facture sur place, juste après un dépannage d'urgence ?",
+      "reponse": "Oui, et c'est même la bonne pratique : en dépannage à domicile, l'information préalable sur les prix, le devis avant travaux et la remise d'une note ou facture au client restent la règle. Avec un logiciel mobile connecté à une plateforme agréée, la facture est émise sur place puis transmise ou e-reportée automatiquement. L'obligation de devis préalable, elle, ne change pas avec la réforme."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Quel taux de TVA appliquer pour les travaux réalisés dans les logements ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+    },
+    {
+      "titre": "TVA à taux réduit : pour quels travaux ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-reduits-travaux"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-20-90-40 : travaux dans les locaux d'habitation de plus de deux ans, modalités d'application et certification sur devis ou facture",
+      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20260909"
+    },
+    {
+      "titre": "Dépannage à domicile : à quoi devez-vous faire attention ? (economie.gouv.fr / DGCCRF)",
+      "url": "https://www.economie.gouv.fr/particuliers/eviter-les-arnaques/depannage-domicile-quoi-devez-vous-faire-attention"
+    },
+    {
+      "titre": "Arrêté du 24 janvier 2017 relatif à la publicité des prix des prestations de dépannage, de réparation et d'entretien dans le secteur du bâtiment (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000033935513"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture : tout savoir (economie.gouv.fr, fiche CEDEF — dont mention de l'assurance professionnelle des artisans)",
+      "url": "https://www.economie.gouv.fr/cedef/fiches-pratiques/mentions-obligatoires-dune-facture-lessentiel"
+    },
+    {
+      "titre": "Devis obligatoire : comment ça marche ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-40-10-20 : conséquences de la franchise en base, mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-10-10-20 : autoliquidation de la TVA en sous-traitance de travaux de bâtiment, mention « Autoliquidation »",
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20251022"
+    },
+    {
+      "titre": "Je découvre la facturation électronique (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Tout savoir sur la facturation électronique pour les entreprises (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

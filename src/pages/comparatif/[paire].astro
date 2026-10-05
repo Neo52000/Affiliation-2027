@@ -1,0 +1,115 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import ComparatifCourt from '../../components/ComparatifCourt.astro';
+import { formatDateFr } from '../../lib/dates';
+import { pageTitle } from '../../lib/seo';
+import { SITE } from '../../config';
+
+export async function getStaticPaths() {
+  // Paires ouvertes progressivement ; les 15 paires des 6 outils en Phase 4.
+  const PAIRES_ACTIVES: [string, string][] = [['tiime', 'qonto']];
+  const outils = await getCollection('outils');
+  return PAIRES_ACTIVES.flatMap(([a, b]) => {
+    const oa = outils.find((o) => o.data.slug === a);
+    const ob = outils.find((o) => o.data.slug === b);
+    return oa && ob ? [{ params: { paire: `${a}-vs-${b}` }, props: { oa, ob } }] : [];
+  });
+}
+
+const { oa, ob } = Astro.props;
+const a = oa.data;
+const b = ob.data;
+const dateMaj = a.date_maj > b.date_maj ? a.date_maj : b.date_maj;
+
+// Verdicts par profil, fondés uniquement sur la cible et le périmètre vérifiés.
+const profils = [
+  {
+    profil: 'Vous cherchez d’abord un compte professionnel',
+    verdict: [a, b].filter((o) => o.fonctionnalites.compte_pro === true),
+  },
+  {
+    profil: 'Vous voulez facturation et comptabilité au même endroit',
+    verdict: [a, b].filter((o) => o.fonctionnalites.compta === true),
+  },
+  {
+    profil: 'Vous êtes indépendant ou micro-entrepreneur',
+    verdict: [a, b].filter((o) => o.cible.some((c) => /indépendant|micro|freelance/i.test(c))),
+  },
+  {
+    profil: 'Vous dirigez une PME',
+    verdict: [a, b].filter((o) => o.cible.some((c) => /PME/i.test(c))),
+  },
+];
+---
+
+<Base
+  title={pageTitle(`${a.nom} ou ${b.nom} : que choisir ?`, SITE.name)}
+  description={`${a.nom} contre ${b.nom} pour la facturation électronique : statut de plateforme agréée, périmètre, cible — comparaison sur données vérifiées et datées.`}
+>
+  <Breadcrumb items={[{ label: 'Comparatifs' }, { label: `${a.nom} vs ${b.nom}` }]} />
+
+  <article class="mt-4">
+    <h1 class="prose-measure text-3xl font-bold">
+      {a.nom} ou {b.nom} : que choisir ?
+    </h1>
+    <p class="mt-2 text-sm text-ink-soft">Mis à jour le {formatDateFr(dateMaj)}</p>
+
+    <p class="prose-measure mt-4">
+      {a.nom} et {b.nom} sont tous deux des plateformes agréées immatriculées par la DGFiP. La
+      comparaison ci-dessous repose uniquement sur des données vérifiées : les notes n'arriveront
+      qu'après nos tests réels, et les prix qu'une fois relevés à la source.
+    </p>
+
+    <section aria-labelledby="tableau" class="mt-8">
+      <h2 id="tableau" class="text-2xl font-bold">
+        Comparaison
+      </h2>
+      <div class="mt-3">
+        <ComparatifCourt outils={[a, b]} />
+      </div>
+    </section>
+
+    <section aria-labelledby="verdict" class="prose-measure mt-8">
+      <h2 id="verdict" class="text-2xl font-bold">
+        Verdict par profil
+      </h2>
+      <ul class="mt-3 space-y-3">
+        {profils.map((p) => (
+          <li class="rounded border border-border p-3">
+            <p class="font-bold">{p.profil}</p>
+            <p class="mt-1">
+              {p.verdict.length === 1
+                ? `${p.verdict[0]!.nom}, d'après le périmètre vérifié à ce jour.`
+                : p.verdict.length === 2
+                  ? 'Les deux répondent à ce besoin d’après leur périmètre vérifié.'
+                  : 'Aucun des deux ne revendique ce profil : comparez avec les autres outils.'}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-8 flex flex-wrap gap-4">
+      <AffiliateButton
+        outil={a.slug}
+        urlOfficielle={a.url_officielle}
+        label={`Découvrir ${a.nom}`}
+        emplacement={`comparatif-${a.slug}-vs-${b.slug}-a`}
+      />
+      <AffiliateButton
+        outil={b.slug}
+        urlOfficielle={b.url_officielle}
+        label={`Découvrir ${b.nom}`}
+        emplacement={`comparatif-${a.slug}-vs-${b.slug}-b`}
+      />
+    </section>
+
+    <p class="prose-measure mt-8 text-sm text-ink-soft">
+      Fiches détaillées : <a href={`/logiciels/${a.slug}`}>{a.nom}</a> ·{' '}
+      <a href={`/logiciels/${b.slug}`}>{b.nom}</a>
+    </p>
+  </article>
+</Base>

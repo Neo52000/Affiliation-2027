@@ -1,0 +1,158 @@
+{
+  "nom": "Plombier",
+  "slug": "plombier",
+  "famille": "batiment",
+  "statuts_frequents": ["Micro-entreprise", "Entreprise individuelle (EI)", "EURL", "SARL", "SASU"],
+  "volume_factures_typique": "Variable selon l'activité : un plombier orienté dépannage émet souvent plusieurs dizaines de petites factures par mois, tandis qu'une activité centrée sur les chantiers de rénovation en génère moins, mais avec devis, factures d'acompte et factures de solde pour chaque chantier.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Plusieurs taux de TVA coexistent selon le chantier : 20 % pour le neuf, 10 % pour les travaux d'amélioration, de transformation, d'aménagement et d'entretien dans les logements achevés depuis plus de deux ans, 5,5 % pour les travaux de rénovation énergétique éligibles.",
+    "Le taux réduit ne s'applique qu'aux travaux facturés par l'entreprise : si le client achète lui-même le matériel, cette fourniture reste à 20 % et seule la prestation de pose bénéficie du taux réduit.",
+    "L'attestation TVA que le client devait remettre est remplacée par une mention portée sur le devis ou la facture, certifiant que les conditions d'application du taux réduit sont remplies.",
+    "Pour les prestations de dépannage, de réparation et d'entretien, un devis doit être remis au client et accepté avant l'exécution des travaux, quel que soit leur montant, la plomberie et les installations sanitaires étant expressément concernées (arrêté du 24 janvier 2017).",
+    "En sous-traitance pour une autre entreprise du bâtiment, la TVA est autoliquidée : le sous-traitant facture hors taxe avec la mention « Autoliquidation », la TVA étant due par l'entreprise principale.",
+    "Les chantiers s'étalent dans le temps : chaque acompte encaissé doit donner lieu à une facture d'acompte et rend la TVA exigible à concurrence du montant encaissé."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mention sur le devis ou la facture certifiant que les conditions d'application du taux réduit de TVA (10 % ou 5,5 %) sont remplies : local affecté à l'habitation, achevé depuis plus de deux ans, nature des travaux éligible.",
+    "Assurance professionnelle obligatoire (responsabilité décennale) sur chaque devis et chaque facture : assurance souscrite, coordonnées de l'assureur ou du garant et couverture géographique du contrat.",
+    "Mention « Autoliquidation » sur les factures de sous-traitance de travaux immobiliers, émises sans TVA, en faisant apparaître que la taxe est due par le preneur.",
+    "Mention « TVA non applicable, art. 293 B du CGI » pour les plombiers en franchise en base de TVA, notamment en micro-entreprise."
+  ],
+  "exemple_facture": {
+    "intitule": "Remplacement d'un chauffe-eau électrique dans une résidence principale achevée depuis plus de deux ans",
+    "lignes": [
+      {
+        "designation": "Chauffe-eau électrique 200 L (fourniture posée par l'entreprise)",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 420,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Groupe de sécurité, flexibles et raccords (fournitures)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 45,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Dépose et évacuation de l'ancien chauffe-eau",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 90,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Main-d'œuvre : pose et raccordements hydraulique et électrique",
+        "quantite": 3,
+        "unite": "heure",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Mention certifiant que les conditions d'application du taux réduit de 10 % sont remplies : logement affecté à l'habitation, achevé depuis plus de deux ans, travaux d'amélioration ou d'entretien éligibles",
+      "Nom et adresse du client et de l'immeuble objet des travaux, nature des travaux",
+      "Assurance responsabilité décennale : assureur, coordonnées et couverture géographique du contrat"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Gérer plusieurs taux de TVA (20 %, 10 %, 5,5 %) sur une même facture, ligne par ligne, selon la nature des travaux et du logement.",
+    "Insérer automatiquement les mentions propres au bâtiment : certification des conditions du taux réduit, assurance décennale, « Autoliquidation » en sous-traitance.",
+    "Enchaîner devis signé, facture d'acompte puis facture de solde sans ressaisie, en suivant la TVA exigible sur chaque acompte encaissé.",
+    "Facturer en mobilité après un dépannage, avec un devis préalable systématique : il est obligatoire avant l'intervention, quel que soit le montant des travaux.",
+    "Se préparer à la facturation électronique : recevoir les factures des fournisseurs, émettre via une plateforme agréée à l'échéance applicable et transmettre les données des ventes aux particuliers (e-reporting)."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP couvrant la facturation et la comptabilité, avec une cible revendiquée d'indépendants, de TPE et de micro-entrepreneurs. Ce périmètre correspond au plombier à son compte qui veut émettre ses factures multi-taux et tenir sa comptabilité au même endroit."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée DGFiP orientée facturation et gestion, destinée aux indépendants et micro-entrepreneurs. Elle s'adresse au plombier en micro-entreprise, y compris en franchise en base avec la mention « TVA non applicable, art. 293 B du CGI » à porter sur chaque facture."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable et ciblant TPE et PME. Elle convient au plombier en société dont les sujets TVA multi-taux, acomptes et sous-traitance sont suivis avec un cabinet comptable."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes factures de dépannage à TVA 10 % passeront-elles telles quelles en facturation électronique ?",
+      "reponse": "Oui, la réforme ne change pas les règles de TVA applicables à vos travaux. Le taux de 10 % reste réservé aux travaux d'amélioration, de transformation, d'aménagement et d'entretien dans les logements achevés depuis plus de deux ans, et le 5,5 % aux travaux de rénovation énergétique éligibles. Votre outil de facturation doit simplement savoir porter plusieurs taux sur une même facture et inclure la mention certifiant que les conditions du taux réduit sont remplies."
+    },
+    {
+      "question": "Je travaille surtout pour des particuliers : la réforme me concerne-t-elle vraiment ?",
+      "reponse": "Oui. Toutes les entreprises doivent être en mesure de recevoir des factures électroniques de leurs fournisseurs, par exemple vos grossistes en sanitaire. Vos ventes aux particuliers ne passent pas par la facturation électronique entre entreprises, mais leurs données de transactions devront être transmises à l'administration via le e-reporting, à l'échéance applicable à votre entreprise. Si vous avez aussi des clients professionnels (syndics, agences, entreprises), ces factures-là relèveront bien de la facturation électronique."
+    },
+    {
+      "question": "Comment l'autoliquidation en sous-traitance se traite-t-elle avec la facturation électronique ?",
+      "reponse": "Le principe reste identique : en sous-traitance de travaux immobiliers, vous facturez hors taxe avec la mention « Autoliquidation », la TVA étant due par l'entreprise principale. Cette facture adressée à un professionnel est une facture inter-entreprises : à l'échéance applicable à votre entreprise, elle devra être émise via une plateforme agréée. Vérifiez que votre outil gère ce cas sans faire apparaître de TVA collectée."
+    },
+    {
+      "question": "Que deviennent mes devis signés et mes factures d'acompte ?",
+      "reponse": "Le devis préalable reste obligatoire pour le dépannage, la réparation et l'entretien, quel que soit le montant de l'intervention. Chaque acompte encaissé doit donner lieu à une facture et rend la TVA exigible à concurrence du montant perçu. Un bon outil doit donc chaîner devis, facture d'acompte et facture de solde, y compris dans le format électronique."
+    },
+    {
+      "question": "Je suis plombier en micro-entreprise, en franchise de TVA : suis-je dispensé de la facturation électronique ?",
+      "reponse": "Non. Toutes les entreprises doivent pouvoir recevoir des factures électroniques, par exemple celles de vos grossistes en sanitaire. L'obligation d'émettre via une plateforme agréée s'appliquera à l'échéance prévue par le calendrier de la réforme pour votre taille d'entreprise. En franchise, vous facturez sans TVA : vos factures ne portent ni 10 % ni 5,5 %, mais la mention « TVA non applicable, art. 293 B du CGI ». Vos dépannages chez les particuliers relèveront du e-reporting, et vos factures aux professionnels (syndics, agences, entreprises) de la facturation électronique. La liste des plateformes agréées est publiée sur impots.gouv.fr."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "impots.gouv.fr — Quel taux de TVA appliquer pour les travaux réalisés dans les logements ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+    },
+    {
+      "titre": "economie.gouv.fr — TVA à taux réduit : pour quels travaux ?",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-reduits-travaux"
+    },
+    {
+      "titre": "BOFiP — BOI-TVA-LIQ-30-20-95 : travaux d'amélioration de la qualité énergétique (TVA 5,5 %)",
+      "url": "https://bofip.impots.gouv.fr/bofip/9417-PGP.html/identifiant=BOI-TVA-LIQ-30-20-95-20260909"
+    },
+    {
+      "titre": "BOFiP — BOI-TVA-LIQ-30-20-90-40 : modalités d'application des taux réduits aux travaux (mention certifiante sur devis ou facture)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20251022"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — Plomberie, serrurerie, chauffage… choisir le bon professionnel pour un dépannage à domicile (devis obligatoire avant intervention)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/plomberie-serrurerie-chauffage-choisir-le-bon-professionnel-pour-un-depannage-domicile"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 24 janvier 2017 relatif à la publicité des prix des prestations de dépannage, de réparation et d'entretien dans le secteur du bâtiment",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033935513/"
+    },
+    {
+      "titre": "BOFiP — BOI-TVA-DECLA-10-10-20 : autoliquidation de la TVA en sous-traitance de travaux immobiliers (mention « Autoliquidation »)",
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+    },
+    {
+      "titre": "Légifrance — Code de l'artisanat, article L132-1 : mention de l'assurance professionnelle obligatoire sur devis et factures",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047362294"
+    },
+    {
+      "titre": "BOFiP — BOI-TVA-DECLA-30-20-20-10 : mentions obligatoires sur les factures, dont « TVA non applicable, art. 293 B du CGI » en franchise en base",
+      "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20131018"
+    },
+    {
+      "titre": "BOFiP — BOI-TVA-DECLA-30-20-10-10 : délivrance de factures, obligation de facturer les acomptes",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+    },
+    {
+      "titre": "BOFiP — BOI-TVA-BASE-20-40 : exigibilité de la TVA dès l'encaissement des acomptes",
+      "url": "https://bofip.impots.gouv.fr/bofip/127-PGP.html/identifiant=BOI-TVA-BASE-20-40-20190807"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique (réception, émission via plateforme agréée, liste des plateformes)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Mes clients sont à la fois des entreprises et des particuliers : facturation électronique et e-reporting",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

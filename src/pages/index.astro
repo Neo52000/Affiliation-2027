@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+import { pageTitle } from '../lib/seo';
+import { FAMILLE_LABELS } from '../lib/familles';
+
+// Accueil définitif en Phase 6 (quiz de recommandation au-dessus de la ligne
+// de flottaison, preuves de confiance) ; en attendant : accès direct aux contenus.
+const title = pageTitle('Facturation électronique par métier', SITE.name);
+const metiers = (await getCollection('metiers')).sort((m1, m2) =>
+  m1.data.nom.localeCompare(m2.data.nom, 'fr'),
+);
+const outils = (await getCollection('outils')).sort((o1, o2) =>
+  o1.data.nom.localeCompare(o2.data.nom, 'fr'),
+);
+---
+
+<Base title={title} description={SITE.description}>
+  <div class="prose-measure">
+    <h1 class="text-3xl font-bold">Facturation électronique : quel logiciel pour votre métier ?</h1>
+    <p class="mt-4">
+      Comparatifs indépendants par métier. Classements jamais influencés par les commissions,
+      données datées et sourcées, tests réels documentés.
+    </p>
+  </div>
+
+  {metiers.length > 0 && (
+    <section aria-labelledby="acces-metiers" class="mt-10">
+      <h2 id="acces-metiers" class="text-2xl font-bold">
+        Votre métier
+      </h2>
+      <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+        {metiers.map((m) => (
+          <li>
+            <a href={`/facturation-electronique/${m.data.slug}`}>
+              {m.data.nom}{' '}
+              <span class="text-sm text-ink-soft">({FAMILLE_LABELS[m.data.famille]})</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {outils.length > 0 && (
+    <section aria-labelledby="acces-outils" class="mt-10">
+      <h2 id="acces-outils" class="text-2xl font-bold">
+        Les logiciels passés au crible
+      </h2>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+        {outils.map((o) => (
+          <li>
+            <a href={`/logiciels/${o.data.slug}`}>{o.data.nom}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Base>

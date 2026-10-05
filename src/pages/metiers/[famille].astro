@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { FAMILLE_LABELS, type Famille } from '../../lib/familles';
+import { pageTitle } from '../../lib/seo';
+import { SITE } from '../../config';
+
+export async function getStaticPaths() {
+  // Hubs ouverts progressivement : un hub n'est publié que lorsque son introduction
+  // est rédigée et qu'au moins une page métier existe (Phase 4 : les 10 familles).
+  const INTROS: Partial<Record<string, string[]>> = {
+    batiment: [
+      'Les métiers du bâtiment cumulent plusieurs particularités de facturation : devis préalables, acomptes et situations de travaux, taux de TVA réduits sous conditions dans la rénovation, autoliquidation en sous-traitance.',
+      "La facturation électronique ne change pas ces règles : elle change le canal d'émission et de réception des factures. Le bon logiciel est celui qui gère déjà vos documents de chantier.",
+    ],
+  };
+  const metiers = await getCollection('metiers');
+  return Object.entries(INTROS)
+    .filter(([f]) => metiers.some((m) => m.data.famille === f))
+    .map(([famille, intro]) => ({ params: { famille }, props: { intro: intro ?? [] } }));
+}
+
+const { intro } = Astro.props;
+const famille = Astro.params.famille as Famille;
+const label = FAMILLE_LABELS[famille];
+const metiers = (await getCollection('metiers')).filter((m) => m.data.famille === famille);
+---
+
+<Base
+  title={pageTitle(`Facturation électronique : ${label.toLowerCase()}`, SITE.name)}
+  description={`Facturation électronique pour les métiers de la famille ${label.toLowerCase()} : obligations communes, spécificités et guides par métier.`}
+>
+  <Breadcrumb items={[{ label: 'Métiers' }, { label }]} />
+
+  <h1 class="prose-measure mt-4 text-3xl font-bold">
+    Facturation électronique : {label.toLowerCase()}
+  </h1>
+
+  <section class="prose-measure mt-4 space-y-3">
+    {intro.map((p) => (
+      <p>{p}</p>
+    ))}
+  </section>
+
+  <section aria-labelledby="liste-metiers" class="mt-8">
+    <h2 id="liste-metiers" class="text-2xl font-bold">
+      Guides par métier
+    </h2>
+    <ul class="mt-3 list-disc space-y-2 pl-5">
+      {metiers.map((m) => (
+        <li>
+          <a href={`/facturation-electronique/${m.data.slug}`}>
+            Facturation électronique pour {m.data.nom.toLowerCase()}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="prose-measure mt-4 text-sm text-ink-soft">
+      D'autres métiers de cette famille seront ajoutés progressivement.
+    </p>
+  </section>
+</Base>

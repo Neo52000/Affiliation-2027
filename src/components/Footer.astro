@@ -1,0 +1,15 @@
+---
+import { SITE } from '../config';
+// Liens légaux et de confiance ajoutés en Phase 8 (mentions légales, confidentialité,
+// méthode, transparence, à propos) pour ne pas créer de liens morts d'ici là.
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-16 border-t border-border bg-paper-soft">
+  <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-ink-soft">
+    <p>Information générale : ce site ne remplace pas l'avis de votre expert-comptable.</p>
+    <p class="mt-2">
+      © {year} {SITE.name}
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,134 @@
+{
+  "nom": "Coiffeur",
+  "slug": "coiffeur",
+  "famille": "services",
+  "statuts_frequents": ["micro-entreprise", "entreprise individuelle (EI)", "EURL", "SARL", "SASU"],
+  "volume_factures_typique": "Un flux quotidien d'encaissements en caisse (souvent plusieurs dizaines de passages par jour en salon), mais peu de factures au sens strict : quelques notes et factures formelles par mois, remises à partir de 25 € TTC de prestation ou à la demande du client.",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Les prestations de coiffure relèvent du taux normal de TVA ; les produits vendus séparément au comptoir suivent leur propre taux, tandis que les produits utilisés pendant la prestation (shampoing, soin) et compris dans son prix ne sont pas taxés à part.",
+    "Pour une clientèle de particuliers, une note doit être remise au client à partir de 25 € TTC de prestation de services, ou dès qu'il la demande.",
+    "Un coiffeur bénéficiant de la franchise en base de TVA (cas possible en micro-entreprise ou en coiffure à domicile) ne doit facturer aucune TVA : ses notes et factures portent alors la mention « TVA non applicable, article 293 B du CGI ».",
+    "Les ventes aux particuliers ne passent pas par la facture électronique entre entreprises mais par le e-reporting : un récapitulatif des transactions, ventilé par taux de TVA, est transmis à l'administration sans aucune donnée nominative sur les clients.",
+    "Un coiffeur qui encaisse ses clients particuliers avec un logiciel ou système de caisse doit utiliser un système respectant les conditions d'inaltérabilité, de sécurisation, de conservation et d'archivage des données, sauf s'il bénéficie de la franchise en base.",
+    "Le ticket de caisse n'est plus imprimé systématiquement : il est remis à la demande du client, qui peut aussi recevoir une version dématérialisée s'il y consent."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« TVA non applicable, art. 293 B du CGI » sur toutes les notes et factures des coiffeurs bénéficiant de la franchise en base de TVA.",
+    "Remise obligatoire d'une note au client particulier à partir de 25 € TTC de prestation de services (ou sur demande du client, quel que soit le montant)."
+  ],
+  "exemple_facture": {
+    "intitule": "Note – salon de coiffure (prestations et vente de produits)",
+    "lignes": [
+      {
+        "designation": "Coupe, brushing et coiffage",
+        "quantite": 1,
+        "unite": "prestation",
+        "prix_unitaire_ht": 35,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Couleur avec soin inclus",
+        "quantite": 1,
+        "unite": "prestation",
+        "prix_unitaire_ht": 45,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Shampoing professionnel 250 ml (vente au comptoir)",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 14.9,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Note remise au client : prestation de services à un particulier d'un montant TTC de 25 € ou plus.",
+      "Les produits vendus séparément de la prestation figurent sur une ligne distincte avec leur propre taux de TVA ; les produits utilisés pendant la prestation sont compris dans son prix et ne sont pas facturés à part.",
+      "Si l'entreprise bénéficie de la franchise en base, aucune TVA ne doit apparaître et la note porte la mention « TVA non applicable, art. 293 B du CGI ».",
+      "Les prix affichés au client sur la note sont TTC ; le détail HT/TVA présenté ici correspond à la structure comptable d'un salon redevable de la TVA."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Générer le e-reporting des ventes aux particuliers (récapitulatif des transactions ventilé par taux de TVA) via une plateforme agréée ou une solution compatible, sans ressaisie depuis la caisse.",
+    "Éditer rapidement une note conforme dès 25 € TTC, en distinguant prestations et ventes de produits.",
+    "Gérer la franchise en base : mention « TVA non applicable, art. 293 B du CGI » automatique et suivi du chiffre d'affaires pour anticiper un passage à la TVA.",
+    "Recevoir les factures électroniques de vos fournisseurs (produits, matériel, consommables) : l'obligation de réception s'applique à toutes les entreprises à la même échéance, quelle que soit leur taille.",
+    "Articuler le logiciel de facturation avec la caisse du salon pour éviter la double saisie des encaissements quotidiens."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée orientée facturation et gestion pour les indépendants et micro-entrepreneurs, un positionnement adapté à la coiffure à domicile. Elle répond au besoin d'éditer des notes conformes et de suivre l'activité en franchise en base."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée qui associe facturation et comptabilité pour les indépendants, TPE et micro-entrepreneurs. Ce périmètre convient à un salon qui veut suivre au même endroit ses prestations et ses ventes de produits."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée combinant compte professionnel en ligne et facturation, pour les indépendants, freelances et TPE. Elle permet de centraliser encaissements et documents de vente d'un salon ou d'une activité à domicile."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je ne fais que des tickets de caisse à des particuliers : suis-je concerné par la facturation électronique ?",
+      "reponse": "Oui, mais pas sous la forme de factures électroniques à vos clients. Vos ventes à des particuliers relèvent du e-reporting : la transmission à l'administration d'un récapitulatif des transactions, ventilé par taux de TVA, via une plateforme agréée ou une solution compatible. Aucune donnée nominative sur vos clients n'est transmise. Vous devez par ailleurs être en mesure de recevoir les factures électroniques de vos fournisseurs : cette obligation s'applique à toutes les entreprises à la même échéance, quelle que soit leur taille."
+    },
+    {
+      "question": "Je suis coiffeur en micro-entreprise, en franchise de TVA : la réforme me concerne-t-elle ?",
+      "reponse": "Oui. En franchise en base, vous restez assujetti à la TVA même sans en être redevable, donc la réforme s'applique à vous : réception des factures électroniques de vos fournisseurs et transmission des données de vos ventes (e-reporting), selon le calendrier de la réforme. Vos documents de vente continuent par ailleurs de porter la mention « TVA non applicable, article 293 B du CGI »."
+    },
+    {
+      "question": "Ma caisse enregistreuse suffit-elle pour le e-reporting ?",
+      "reponse": "Pas forcément. Le e-reporting se transmet via une plateforme agréée ou une solution compatible avec elle, ce qui peut inclure un logiciel de caisse : vérifiez auprès de votre éditeur comment vos données de ventes remonteront. Rappel distinct : si vous encaissez des particuliers avec un logiciel ou système de caisse, il doit respecter les conditions d'inaltérabilité, de sécurisation, de conservation et d'archivage des données, sauf si vous bénéficiez de la franchise en base."
+    },
+    {
+      "question": "Dois-je remettre une facture à chaque client pour une coupe ?",
+      "reponse": "Non. Pour un particulier, l'obligation est de remettre une note à partir de 25 € TTC de prestation, ou si le client la demande. Le ticket de caisse, lui, est remis à la demande du client, éventuellement sous forme dématérialisée s'il y consent. La réforme n'impose pas d'envoyer des factures électroniques à vos clients particuliers : leurs achats sont couverts par le e-reporting."
+    },
+    {
+      "question": "Je vends des shampoings et des soins en plus des prestations : qu'est-ce que cela change ?",
+      "reponse": "Les prestations de coiffure relèvent du taux normal de TVA, et les produits vendus séparément suivent leur propre taux : il faut donc les distinguer sur vos notes et dans votre caisse. Les produits utilisés pendant la prestation et compris dans son prix ne sont pas taxés à part. Cette distinction compte aussi pour le e-reporting, qui ventile votre chiffre d'affaires par taux de TVA."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA – Prestations de services imposables au taux normal (dont soins de coiffure et produits vendus en salon)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
+    },
+    {
+      "titre": "BOFiP – TVA – Franchise en base : conséquences, dont la mention « TVA non applicable, article 293 B du CGI » et l'interdiction de facturer la TVA (version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20"
+    },
+    {
+      "titre": "economie.gouv.fr – Mentions obligatoires d'une facture : cas de la note remise au client particulier (prestations de services à partir de 25 € TTC ou sur demande)",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "impots.gouv.fr – Fiche « La transmission des données de transactions (e-reporting) » : périmètre B2C, récapitulatif par taux de TVA, absence de données nominatives, transmission via plateforme agréée ou solution compatible",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiches_reforme/fiche-e-reporting_transactions.pdf"
+    },
+    {
+      "titre": "impots.gouv.fr – « Franchisé en base, micro-entrepreneur ou auto-entrepreneur, suis-je concerné par la réforme de la facturation électronique ? »",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/franchise-en-base-micro-entrepreneur-ou-auto-entrepreneur-suis-je-concerne"
+    },
+    {
+      "titre": "impots.gouv.fr – Champ d'application de l'obligation de détenir un logiciel ou système de caisse sécurisé (et dispense pour la franchise en base)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de"
+    },
+    {
+      "titre": "economie.gouv.fr – Ticket de caisse remis à la demande du client : ce qu'il faut savoir sur cette obligation",
+      "url": "https://www.economie.gouv.fr/actualites/ticket-de-caisse-remis-la-demande-du-client-ce-quil-faut-savoir-sur-cette-obligation"
+    },
+    {
+      "titre": "economie.gouv.fr – Tout savoir sur la facturation électronique pour les entreprises (obligations d'émission, de réception et de e-reporting)",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (présentation générale de la réforme)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

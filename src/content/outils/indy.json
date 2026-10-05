@@ -1,0 +1,63 @@
+{
+  "nom": "Indy",
+  "slug": "indy",
+  "url_officielle": "https://www.indy.fr/",
+  "est_plateforme_agreee": {
+    "valeur": true,
+    "date_immatriculation": null,
+    "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+  },
+  "offre_gratuite": null,
+  "plans": [],
+  "cible": ["indépendants"],
+  "fonctionnalites": {
+    "emission": true,
+    "reception": true,
+    "e_reporting": true,
+    "compte_pro": true,
+    "compta": true,
+    "devis": null,
+    "acomptes": null,
+    "app_mobile": null,
+    "export_comptable": null,
+    "lien_expert_comptable": null
+  },
+  "notes": {
+    "conformite": null,
+    "prix": null,
+    "simplicite": null,
+    "fonctionnalites_metier": null,
+    "support": null,
+    "perennite": null,
+    "finale": null
+  },
+  "points_forts": [
+    "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
+    "Comptabilité, compte pro et facturation réunis pour les indépendants"
+  ],
+  "points_faibles": [],
+  "statut_test": "a_tester",
+  "date_maj": "2026-10-04",
+  "sources": [
+    {
+      "objet": "Présence au registre DGFiP des plateformes agréées (entrée INDY)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Positionnement et cible (« Comptabilité en ligne, compte pro et facturation » pour indépendants)",
+      "url": "https://www.indy.fr/",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Page tarifs — prix non encore relevés (TODO.md #13)",
+      "url": "https://www.indy.fr/prix/",
+      "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Programme d'affiliation (Affilae)",
+      "url": "https://www.indy.fr/affiliation/",
+      "date_releve": "2026-10-04"
+    }
+  ]
+}

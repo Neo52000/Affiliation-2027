@@ -1,0 +1,143 @@
+{
+  "nom": "Chauffeur VTC",
+  "slug": "vtc",
+  "famille": "transport",
+  "statuts_frequents": ["micro-entreprise", "entreprise individuelle (EI)", "SASU", "EURL"],
+  "volume_factures_typique": "De quelques dizaines à quelques centaines de courses par mois selon l'activité. Une grande partie est facturée par les plateformes pour le compte du chauffeur ; les factures émises en direct (entreprises, grands comptes, particuliers) se comptent plutôt en dizaines par mois.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos courses relèvent du taux réduit de TVA de 10 % applicable au transport de voyageurs (art. 279, b quater du CGI).",
+    "Les suppléments directement liés à la course, comme les bagages, suivent le même taux réduit que le transport lui-même.",
+    "La mise à disposition d'un véhicule avec chauffeur ne bénéficie du taux réduit que si l'opération s'analyse en un véritable contrat de transport de personnes.",
+    "Pour une course payée par un particulier, une note doit être remise au client dès que le prix atteint 25 € TTC, en tout état de cause avant le paiement.",
+    "Les plateformes de mise en relation émettent souvent vos factures de courses dans le cadre d'un mandat de facturation : la facture est établie par un tiers en votre nom et pour votre compte, avec une mention recommandée du type « Facture établie par [plateforme] au nom et pour le compte de [chauffeur] ». La mention « Autofacturation » n'est requise que lorsque c'est votre client lui-même qui établit la facture. Dans tous les cas, ce mandat ne vous décharge pas de vos obligations de facturation.",
+    "Les commissions facturées par une plateforme établie dans un autre État membre de l'UE sont à autoliquider : vous déclarez vous-même cette TVA en France, même si vous relevez de la franchise en base pour vos courses."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« TVA non applicable, art. 293 B du CGI » sur toutes les factures d'un chauffeur bénéficiant de la franchise en base de TVA.",
+    "« Autofacturation » uniquement sur les factures établies par votre client (par exemple une entreprise titulaire d'un compte) en votre nom et pour votre compte ; pour une facture établie par un tiers mandaté (plateforme intermédiaire), une mention du type « Facture établie par A au nom et pour le compte de B » est recommandée. Dans les deux cas, un double doit vous être transmis.",
+    "Sur les factures de commissions reçues d'une plateforme établie dans un autre État membre de l'UE : vérifier la présence de votre numéro de TVA intracommunautaire et de celui de la plateforme, ainsi que de la mention « Autoliquidation » (1 et 2 de l'article 283 du CGI ; article 242 nonies A de l'annexe II au CGI).",
+    "Note remise au client particulier dès 25 € TTC, avant le paiement : date de rédaction de la note, nom et adresse du prestataire, nom du client (sauf opposition de celui-ci), date et lieu d'exécution de la prestation, décompte détaillé en quantité et prix de chaque prestation, somme totale à payer."
+  ],
+  "exemple_facture": {
+    "intitule": "Courses du mois – compte entreprise (client professionnel)",
+    "lignes": [
+      {
+        "designation": "Transfert aéroport – centre-ville (forfait réservé)",
+        "quantite": 2,
+        "unite": "course",
+        "prix_unitaire_ht": 75,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Courses urbaines sur réservation",
+        "quantite": 6,
+        "unite": "course",
+        "prix_unitaire_ht": 28,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Supplément bagages volumineux",
+        "quantite": 2,
+        "unite": "forfait",
+        "prix_unitaire_ht": 8,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux réduit de 10 % – transport de voyageurs (art. 279, b quater du CGI)",
+      "Si le chauffeur relève de la franchise en base : aucune TVA facturée et mention « TVA non applicable, art. 293 B du CGI »",
+      "Si la facture est établie par le client pour le compte du chauffeur : mention « Autofacturation » ; si elle est établie par une plateforme tierce mandatée : mention recommandée « Facture établie par [plateforme] au nom et pour le compte de [chauffeur] »"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Appliquer le bon taux de TVA : 10 % sur les courses relevant d'un contrat de transport de personnes, taux normal sur les prestations qui n'en relèvent pas.",
+    "Rapprocher de sa comptabilité les factures émises en son nom par les plateformes dans le cadre d'un mandat de facturation, ainsi que leurs relevés de commissions.",
+    "Émettre une note ou une facture conforme juste après la course, y compris pour un particulier dès 25 € TTC.",
+    "Transmettre les données des courses réglées par des particuliers (e-reporting) et échanger les factures électroniques avec les clients professionnels via une plateforme agréée.",
+    "Suivre la TVA à autoliquider sur les commissions facturées depuis un autre État membre de l'UE, avec le numéro de TVA intracommunautaire associé."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée conçue pour les indépendants et micro-entrepreneurs, statuts fréquents chez les chauffeurs VTC. Son périmètre facturation et gestion couvre l'émission au quotidien des notes et factures de courses."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée qui associe facturation et comptabilité pour les indépendants, freelances, TPE et micro-entrepreneurs. Ce double périmètre aide à suivre au même endroit les courses facturées en direct et les documents reçus des plateformes."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée destinée aux indépendants, réunissant comptabilité, compte pro et facturation. Ce périmètre convient à un chauffeur seul qui veut encaisser, facturer et préparer ses déclarations sans multiplier les outils."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quel taux de TVA s'applique à mes courses VTC ?",
+      "reponse": "Le transport de voyageurs relève du taux réduit de TVA de 10 %, quel que soit le mode de transport. La mise à disposition d'un véhicule avec chauffeur en bénéficie aussi, à condition que l'opération constitue un véritable contrat de transport de personnes. Les suppléments liés à la course, comme les bagages, suivent le même taux. Si vous êtes en franchise en base, vous ne facturez pas de TVA et portez la mention « TVA non applicable, art. 293 B du CGI »."
+    },
+    {
+      "question": "Ma plateforme établit mes factures à ma place : que dois-je vérifier ?",
+      "reponse": "Votre plateforme agit dans le cadre d'un mandat de facturation : elle établit les factures en votre nom et pour votre compte, et un double doit vous être transmis. Lorsque la facture est établie par un tiers mandaté, comme une plateforme intermédiaire, une mention du type « Facture établie par [plateforme] au nom et pour le compte de [chauffeur] » est recommandée. La mention « Autofacturation » ne s'impose que si c'est votre client lui-même qui établit la facture. Vous restez entièrement responsable de vos obligations de facturation et de leurs conséquences en matière de TVA."
+    },
+    {
+      "question": "Je transporte surtout des particuliers : suis-je concerné par la facturation électronique ?",
+      "reponse": "Oui. Les courses réglées par des particuliers relèvent du e-reporting : vous transmettrez à l'administration les données de ces transactions via une plateforme agréée, à l'échéance applicable à votre entreprise. Aucune donnée nominative sur vos clients n'est transmise. Vos factures aux clients professionnels passeront, elles, par la facturation électronique."
+    },
+    {
+      "question": "Je suis en franchise en base de TVA : la réforme me concerne-t-elle quand même ?",
+      "reponse": "Oui. La réforme vise tous les assujettis, redevables ou non de la TVA : un chauffeur en franchise en base est un assujetti non redevable. Selon le calendrier de la réforme, vous devrez recevoir et émettre des factures électroniques pour vos courses facturées à des clients professionnels, et transmettre les données de vos courses payées par des particuliers (e-reporting). La mention « TVA non applicable, art. 293 B du CGI » reste obligatoire sur vos factures et n'est pas remise en cause par la réforme."
+    },
+    {
+      "question": "Ma plateforme me facture ses commissions depuis l'étranger : ai-je des obligations de TVA ?",
+      "reponse": "Si la plateforme est établie dans un autre État membre de l'UE, ses commissions relèvent de l'autoliquidation : c'est vous, preneur du service, qui déclarez et payez la TVA correspondante en France. Vous devez pour cela demander un numéro de TVA intracommunautaire à votre service des impôts. Cette obligation s'applique même si vous bénéficiez de la franchise en base pour vos courses."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA, liquidation : prestations de services imposables aux taux réduits (dont transports de voyageurs à 10 %)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1496-PGP.html/identifiant=BOI-TVA-LIQ-30-20-20260826"
+    },
+    {
+      "titre": "BOFiP – TVA, taux réduit : transports de voyageurs (taxis, mise à disposition de véhicules avec chauffeur, suppléments bagages)",
+      "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+    },
+    {
+      "titre": "Légifrance – Article 279 du Code général des impôts (version consolidée au 30 décembre 2019 ; le b quater, taux réduit pour les transports de voyageurs, est inchangé depuis)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041496726/2019-12-30"
+    },
+    {
+      "titre": "BOFiP – Mentions obligatoires générales sur les factures (dont « TVA non applicable, art. 293 B du CGI », mention « Autoliquidation » et numéros de TVA intracommunautaire)",
+      "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20131018"
+    },
+    {
+      "titre": "Légifrance – Arrêté n° 83-50/A du 3 octobre 1983 relatif à la publicité des prix de tous les services (note au client dès 25 € TTC, contenu fixé à l'article 3)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "BOFiP – Délivrance de factures : mandat de facturation et autofacturation (mention « Autofacturation » lorsque le client facture, mention recommandée « Facture établie par A au nom et pour le compte de B » pour le tiers mandaté, responsabilité du fournisseur, double de la facture)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13244-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-30-20210813"
+    },
+    {
+      "titre": "impots.gouv.fr – Mes clients sont à la fois des entreprises et des particuliers : quelles obligations dans la réforme de la facturation électronique ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr – Franchisé en base, micro-entrepreneur ou auto-entrepreneur : suis-je concerné par la réforme de la facturation électronique ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/franchise-en-base-micro-entrepreneur-ou-auto-entrepreneur-suis-je-concerne"
+    },
+    {
+      "titre": "impots.gouv.fr – FAQ « Je découvre la facturation électronique » (e-reporting : données transmises, absence de données nominatives)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/faq---fe_je-decouvre-la-facturation-electronique.pdf"
+    },
+    {
+      "titre": "impots.gouv.fr – Je suis micro-entrepreneur : ai-je des obligations déclaratives en matière de TVA ? (autoliquidation des achats de prestations intracommunautaires, numéro de TVA intracommunautaire)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/je-suis-micro-entrepreneur-ou-la-tete-dune-micro-entreprise-ai-je-des"
+    },
+    {
+      "titre": "impots.gouv.fr – Prestations de services entre assujettis (autoliquidation par le preneur, mentions des numéros de TVA)",
+      "url": "https://www.impots.gouv.fr/professionnel/prestations-entre-assujettis"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

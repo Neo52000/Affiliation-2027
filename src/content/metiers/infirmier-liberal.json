@@ -1,0 +1,128 @@
+{
+  "nom": "Infirmier libéral",
+  "slug": "infirmier-liberal",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Entreprise individuelle (BNC, déclaration contrôlée)",
+    "Entreprise individuelle au régime fiscal micro-BNC (le statut de micro-entrepreneur n'est pas ouvert aux infirmiers, praticiens et auxiliaires médicaux relevant de la CARPIMKO)",
+    "SELARL / SELAS",
+    "Exercice en société civile de moyens (SCM) pour le partage des frais du cabinet"
+  ],
+  "volume_factures_typique": "L'essentiel des encaissements ne passe pas par des factures mais par la télétransmission des feuilles de soins à l'Assurance Maladie. Les factures proprement dites restent peu nombreuses : quelques notes d'honoraires pour des actes non pris en charge et des documents liés au remplacement ou à la collaboration, soit au plus quelques dizaines de documents par mois.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Les soins dispensés aux patients par un infirmier libéral, profession paramédicale réglementée, sont exonérés de TVA en application de l'article 261, 4, 1° du CGI.",
+    "L'essentiel des encaissements passe par la télétransmission des feuilles de soins électroniques à l'Assurance Maladie (SESAM-Vitale) et par le tiers payant, un circuit distinct de la facturation entre entreprises.",
+    "En cas de remplacement, les honoraires rétrocédés au remplaçant restent exonérés de TVA, tandis que la redevance conservée par le titulaire pour la mise à disposition du cabinet est soumise à la TVA, sauf remplacement occasionnel.",
+    "Un acte hors nomenclature reste exonéré de TVA s'il conserve une finalité thérapeutique ; une prestation sans finalité thérapeutique ne bénéficie pas de l'exonération.",
+    "Les soins exonérés sont dispensés de facturation électronique et placés hors du champ du e-reporting, mais l'infirmier doit pouvoir recevoir les factures électroniques de ses fournisseurs : cette obligation de réception vaut pour toutes les entreprises depuis la première échéance de la réforme, seul le calendrier d'émission dépendant de la taille de l'entreprise.",
+    "Les recettes taxables, comme les redevances de remplacement ou de collaboration, peuvent relever de la franchise en base de TVA dans la limite de ses seuils, avec la mention « TVA non applicable, art. 293 B du CGI » sur les factures."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur les notes d'honoraires de soins exonérés : la référence au texte d'exonération, par exemple « Exonération de TVA, article 261, 4, 1° du CGI » (ou la disposition correspondante de la directive 2006/112/CE).",
+    "Sur les factures d'opérations taxables couvertes par la franchise en base (redevance de remplacement ou de collaboration, par exemple) : « TVA non applicable, art. 293 B du CGI »."
+  ],
+  "exemple_facture": {
+    "intitule": "Note d'honoraires – soins infirmiers non pris en charge par l'Assurance Maladie",
+    "lignes": [
+      {
+        "designation": "Séance de soins infirmiers à finalité thérapeutique hors nomenclature (suivi à domicile)",
+        "quantite": 4,
+        "unite": "séance",
+        "prix_unitaire_ht": 30,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Forfait de déplacement à domicile",
+        "quantite": 4,
+        "unite": "déplacement",
+        "prix_unitaire_ht": 4,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": ["Exonération de TVA, article 261, 4, 1° du CGI"]
+  },
+  "besoins_prioritaires": [
+    "Émettre des notes d'honoraires exonérées de TVA avec la mention d'exonération correcte (article 261, 4, 1° du CGI), sans TVA appliquée par défaut.",
+    "Suivre séparément les recettes exonérées (soins) et les recettes taxables (redevances de remplacement ou de collaboration) pour surveiller la franchise en base.",
+    "Gérer les rétrocessions d'honoraires entre titulaire et remplaçant : documents de reversement et suivi des montants.",
+    "Rapprocher les virements de l'Assurance Maladie et des mutuelles issus de la télétransmission avec la comptabilité, sans ressaisie.",
+    "Tenir la comptabilité BNC (livre des recettes, préparation de la déclaration contrôlée ou du micro-BNC).",
+    "Pouvoir recevoir les factures électroniques des fournisseurs via une plateforme agréée : cette obligation s'applique à toutes les entreprises depuis la première échéance de la réforme."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Indy est une plateforme agréée DGFiP qui combine comptabilité, compte pro et facturation pour les indépendants. Ce périmètre couvre la tenue comptable d'une activité libérale et la réception des factures électroniques des fournisseurs."
+    },
+    {
+      "slug": "abby",
+      "justification": "Abby est une plateforme agréée DGFiP de facturation et de gestion destinée aux indépendants et micro-entrepreneurs. Elle correspond au profil d'un infirmier en micro-BNC qui émet peu de factures mais doit pouvoir en recevoir au format électronique."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Tiime est une plateforme agréée DGFiP qui réunit facturation et comptabilité, avec pour cible les indépendants, freelances et micro-entrepreneurs. Elle couvre l'émission des notes d'honoraires et le suivi des recettes dans un même outil."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes soins sont exonérés de TVA : suis-je quand même concerné par la facturation électronique ?",
+      "reponse": "Oui, mais partiellement. Les soins exonérés en application de l'article 261 du CGI sont dispensés d'émission de factures électroniques et placés hors du champ du e-reporting. Vous devez en revanche être en mesure de recevoir les factures électroniques de vos fournisseurs (énergie, télécom, matériel) en choisissant une plateforme agréée : cette obligation de réception concerne toutes les entreprises depuis la première échéance de la réforme, quelle que soit leur taille."
+    },
+    {
+      "question": "La télétransmission des feuilles de soins à l'Assurance Maladie va-t-elle changer ?",
+      "reponse": "Non. La télétransmission des feuilles de soins électroniques via SESAM-Vitale et le tiers payant relèvent d'un circuit propre à l'Assurance Maladie. La réforme de la facturation électronique vise les transactions entre entreprises assujetties à la TVA. Vous continuez à facturer vos actes conventionnés comme aujourd'hui."
+    },
+    {
+      "question": "Quelle TVA appliquer aux rétrocessions et redevances dans le cadre d'un remplacement ?",
+      "reponse": "Les honoraires rétrocédés au remplaçant rémunèrent des soins : ils restent exonérés de TVA. En revanche, la redevance conservée par le titulaire pour la mise à disposition du cabinet est soumise à la TVA, sauf si le remplacement garde un caractère occasionnel. Cette redevance peut toutefois relever de la franchise en base, avec la mention « TVA non applicable, art. 293 B du CGI » sur la facture."
+    },
+    {
+      "question": "Mes actes hors nomenclature sont-ils exonérés de TVA ?",
+      "reponse": "L'exonération vise les soins à finalité thérapeutique dispensés par les membres des professions paramédicales réglementées. Un acte non remboursé mais à visée de prévention, de diagnostic ou de traitement reste donc exonéré. Une prestation sans finalité thérapeutique ne bénéficie pas de l'exonération et peut être soumise à la TVA. En cas de doute, faites valider le traitement TVA par votre expert-comptable."
+    },
+    {
+      "question": "Je facture des redevances à mon remplaçant sous la franchise en base : devrai-je les émettre en facture électronique ?",
+      "reponse": "Oui, à terme. La franchise en base ne fait pas sortir du champ de la réforme : les assujettis franchisés sont concernés par la réception comme par l'émission pour leurs opérations taxables entre professionnels établis en France. Ces factures continueront de porter la mention « TVA non applicable, art. 293 B du CGI ». Seuls vos soins exonérés restent dispensés d'émission."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA – Exonération des soins dispensés par les professions médicales et paramédicales réglementées (BOI-TVA-CHAMP-30-10-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+    },
+    {
+      "titre": "BOFiP – Rescrit – Régime de TVA des rétrocessions d'honoraires entre deux professionnels de santé dans le cadre d'un contrat de remplacement (BOI-RES-TVA-000056)",
+      "url": "https://bofip.impots.gouv.fr/bofip/12016-PGP.html/identifiant=BOI-RES-TVA-000056-20210309"
+    },
+    {
+      "titre": "BOFiP – TVA – Mentions obligatoires générales à porter sur les factures (BOI-TVA-DECLA-30-20-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10"
+    },
+    {
+      "titre": "impots.gouv.fr – Fiche réforme : la facturation électronique pour les professions de santé",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiches_reforme/fiche-1_f_ps.pdf"
+    },
+    {
+      "titre": "impots.gouv.fr – Je n'émets pas de facture, ou je facture sans TVA : suis-je concerné par la réforme de la facturation électronique ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/je-nemets-pas-de-facture-ou-je-facture-sans-tva-suis-je-concerne-par-la"
+    },
+    {
+      "titre": "impots.gouv.fr – Franchisé en base, micro-entrepreneur ou auto-entrepreneur : suis-je concerné par la réforme de la facturation électronique ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/franchise-en-base-micro-entrepreneur-ou-auto-entrepreneur-suis-je-concerne"
+    },
+    {
+      "titre": "ameli.fr – Infirmier libéral : la télétransmission des feuilles de soins",
+      "url": "https://www.ameli.fr/infirmier/exercice-liberal/facturation-remuneration/teletransmission-retour-noemie/teletransmission"
+    },
+    {
+      "titre": "Urssaf – Devenir praticien ou auxiliaire médical",
+      "url": "https://www.urssaf.fr/accueil/independant/creer-activite-independant/devenir-PAM.html"
+    },
+    {
+      "titre": "impots.gouv.fr – Facturation électronique : liste des plateformes agréées (ex-PDP) immatriculées",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

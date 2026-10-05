@@ -1,0 +1,41 @@
+---
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-700.css';
+import inter400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
+import inter700 from '@fontsource/inter/files/inter-latin-700-normal.woff2?url';
+import '../styles/global.css';
+import Seo from '../components/Seo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  updatedAt?: Date;
+  noindex?: boolean;
+}
+
+const { title, description, updatedAt, noindex } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="font" type="font/woff2" href={inter400} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={inter700} crossorigin />
+    <Seo title={title} description={description} updatedAt={updatedAt} noindex={noindex} />
+  </head>
+  <body>
+    <a href="#contenu" class="skip-link">
+      Aller au contenu
+    </a>
+    <Header />
+    <main id="contenu" class="mx-auto max-w-5xl px-4 py-8">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

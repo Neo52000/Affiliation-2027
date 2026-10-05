@@ -1,0 +1,32 @@
+# Configuration Netlify — site 100 % statique.
+
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# En-têtes de sécurité sur tout le site.
+# CSP : style-src 'unsafe-inline' requis (Astro inline les petites feuilles de style) ;
+# script-src 'self' suffira tant que les îlots (Phase 6) chargent des modules externes.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+
+# Assets fingerprintés par Astro : cache long immuable.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ---------------------------------------------------------------------------
+# Redirections affiliées /go/{slug} (Phase 7) : générées depuis
+# src/data/affiliation.json — redirection 302, exclues de robots.txt.
+# ---------------------------------------------------------------------------

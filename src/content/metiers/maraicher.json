@@ -1,0 +1,164 @@
+{
+  "nom": "Maraîcher",
+  "slug": "maraicher",
+  "famille": "agriculture",
+  "statuts_frequents": ["Entreprise individuelle (exploitant agricole)", "EARL", "GAEC", "SCEA"],
+  "volume_factures_typique": "Souvent quelques factures à quelques dizaines par mois pour les clients professionnels (restaurants, épiceries, grossistes, cantines). La vente directe aux particuliers (marchés, AMAP, vente à la ferme) génère surtout des encaissements quotidiens sans facture individuelle.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Les légumes et fruits non transformés destinés à l'alimentation humaine relèvent du taux réduit de TVA de 5,5 % lorsque l'exploitant est redevable.",
+    "En dessous d'une moyenne de recettes de 46 000 € sur deux années civiles consécutives, et sauf option pour le paiement de la TVA, l'exploitant n'est pas redevable : il relève du remboursement forfaitaire agricole et ses factures ne portent aucune TVA.",
+    "Le remboursement forfaitaire repose sur des justificatifs émis par les acheteurs professionnels (bulletin d'achat ou bon de livraison à chaque paiement, attestation annuelle d'achats) et sur une déclaration annuelle n° 3520-SD.",
+    "Quel que soit le montant des recettes, l'utilisation de méthodes commerciales entraîne l'assujettissement obligatoire à la TVA selon le régime simplifié de l'agriculture (RSA) : vente en magasin ou sur un marché à emplacement fixe avec du personnel de vente, ou recours à des moyens publicitaires.",
+    "La vente directe aux particuliers ne donne pas lieu à des factures électroniques mais entre dans le champ du e-reporting : transmission de données agrégées par jour et par taux de TVA, sans donnée nominative sur les clients, à l'échéance applicable à votre entreprise.",
+    "La clientèle est souvent mixte (restaurants et épiceries d'un côté, particuliers de l'autre) : les ventes aux professionnels relèvent de la facturation électronique et les ventes aux particuliers du e-reporting, ce qui impose un outil gérant les deux flux."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Exploitant relevant du remboursement forfaitaire (non redevable) : aucune TVA ne doit figurer sur la facture.",
+    "Ventes ouvrant droit au remboursement forfaitaire : bulletin d'achat ou bon de livraison remis par l'acheteur à chaque paiement, indiquant la date, la nature et la valeur des produits, puis attestation annuelle d'achats délivrée par l'acheteur en début d'année civile, à joindre à la déclaration n° 3520-SD.",
+    "Exploitant redevable : taux réduit de 5,5 % à indiquer sur les lignes de produits destinés à l'alimentation humaine."
+  ],
+  "exemple_facture": {
+    "intitule": "Livraison hebdomadaire de légumes frais à un restaurant (maraîcher redevable de la TVA, régime simplifié de l'agriculture)",
+    "lignes": [
+      {
+        "designation": "Tomates anciennes de pleine terre",
+        "quantite": 12,
+        "unite": "kg",
+        "prix_unitaire_ht": 3.8,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Salades batavia",
+        "quantite": 24,
+        "unite": "pièce",
+        "prix_unitaire_ht": 0.9,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Courgettes",
+        "quantite": 10,
+        "unite": "kg",
+        "prix_unitaire_ht": 2.4,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Herbes aromatiques (basilic, persil)",
+        "quantite": 6,
+        "unite": "botte",
+        "prix_unitaire_ht": 1.5,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux réduit de 5,5 % : produits d'origine agricole non transformés destinés à l'alimentation humaine",
+      "Exploitant soumis à la TVA selon le régime simplifié de l'agriculture (RSA)"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Appliquer par défaut le taux de 5,5 % sur les lignes de produits alimentaires et gérer les unités agricoles (kg, botte, pièce, cageot).",
+    "Gérer les deux flux de la réforme : factures électroniques pour les clients professionnels et e-reporting agrégé pour la vente directe aux particuliers.",
+    "Suivre les recettes encaissées pour surveiller le seuil de 46 000 € (passage au RSA) et la moyenne triennale du micro-BA.",
+    "Éditer un récapitulatif des ventes par client professionnel pour le rapprocher des bulletins d'achat et des attestations annuelles du remboursement forfaitaire.",
+    "Créer rapidement des factures récurrentes pour les livraisons hebdomadaires (restaurants, épiceries, paniers)."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée DGFiP orientée facturation et gestion pour les indépendants et micro-entrepreneurs. Adaptée aux maraîchers en entreprise individuelle qui cherchent un outil simple pour facturer leurs clients professionnels et suivre leurs recettes."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Pertinente pour les exploitations en société (EARL, GAEC, SCEA) dont la comptabilité est suivie par un cabinet."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée DGFiP combinant compte professionnel en ligne et facturation, à destination des indépendants et TPE. Utile pour centraliser au même endroit les encaissements de vente directe et la facturation des clients professionnels."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends mes légumes uniquement sur les marchés et en AMAP, à des particuliers. Suis-je concerné par la réforme de la facturation électronique ?",
+      "reponse": "Oui. Les ventes aux particuliers ne donnent pas lieu à des factures électroniques, mais elles entrent dans le champ du e-reporting : vous transmettrez des données agrégées de transactions (montants par jour et par taux de TVA), à l'échéance applicable à votre entreprise. Aucune donnée nominative sur vos clients particuliers n'est transmise. Vous devrez aussi être en mesure de recevoir les factures électroniques de vos fournisseurs."
+    },
+    {
+      "question": "Je relève du remboursement forfaitaire agricole et je ne facture pas de TVA. Dois-je quand même m'équiper ?",
+      "reponse": "La réforme concerne les entreprises assujetties à la TVA établies en France, y compris lorsqu'elles ne collectent pas de TVA. Le remboursement forfaitaire signifie que vous n'êtes pas redevable, pas que vous êtes hors du champ de la TVA. Prévoyez donc une solution capable de recevoir des factures électroniques, d'émettre des factures électroniques pour vos ventes aux clients professionnels et de transmettre les données de vos ventes aux particuliers, selon le calendrier applicable à votre entreprise."
+    },
+    {
+      "question": "Quel taux de TVA dois-je appliquer sur mes légumes si je suis redevable ?",
+      "reponse": "Les produits d'origine agricole non transformés destinés à l'alimentation humaine, comme les fruits et légumes, relèvent du taux réduit de 5,5 %. Ce taux s'applique que vous vendiez à un restaurant, à une épicerie ou à un particulier. Les produits qui ne sont pas destinés à l'alimentation humaine peuvent relever d'un autre taux : vérifiez ligne par ligne."
+    },
+    {
+      "question": "Comment fonctionne le remboursement forfaitaire sur mes ventes aux professionnels ?",
+      "reponse": "Si vous n'êtes pas redevable de la TVA, l'État compense forfaitairement la TVA qui a grevé vos achats et investissements, pour vos ventes de produits de votre exploitation à des entreprises redevables, vers d'autres États membres ou à l'export. Vos acheteurs vous remettent un bulletin d'achat ou bon de livraison à chaque paiement, puis une attestation annuelle récapitulative. Vous déposez ensuite une déclaration annuelle n° 3520-SD accompagnée de ces attestations. Les taux de la compensation sont fixés par l'article 298 quater du code général des impôts selon la nature des produits."
+    },
+    {
+      "question": "À partir de quand dois-je obligatoirement facturer avec TVA ?",
+      "reponse": "Vous passez de plein droit au régime simplifié de l'agriculture (RSA) lorsque la moyenne de vos recettes sur deux années civiles consécutives dépasse 46 000 €, à compter du 1er janvier suivant. Vous y êtes aussi soumis, quel que soit le montant de vos recettes, si vous utilisez des méthodes commerciales, par exemple la vente en magasin ou sur un marché à emplacement fixe avec du personnel de vente. Vos factures portent alors la TVA, à 5,5 % pour vos légumes, et vous déduisez en contrepartie la TVA sur vos achats."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-10 – Taux réduits : produits destinés à l'alimentation humaine (5,5 %)",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20220629"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-SECT-80-70 – Agriculture : produits non transformés d'origine agricole",
+      "url": "https://bofip.impots.gouv.fr/bofip/13624-PGP.html/identifiant=BOI-TVA-SECT-80-70-20220629"
+    },
+    {
+      "titre": "BOFiP BOI-ANNX-000484 – Taux de TVA applicables aux produits d'origine agricole, de la pêche, de la pisciculture et de l'aviculture",
+      "url": "https://bofip.impots.gouv.fr/bofip/13565-PGP.html/identifiant=BOI-ANNX-000484-20240207"
+    },
+    {
+      "titre": "impots.gouv.fr – Les régimes d'imposition à la TVA (seuil de 46 000 € du régime simplifié agricole, assujettissement en cas de méthodes commerciales)",
+      "url": "https://www.impots.gouv.fr/professionnel/les-regimes-dimposition-la-tva"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-SECT-80-10-20-30 – Agriculture : assujettissement obligatoire au RSA en cas de méthodes commerciales (vente en magasin ou sur un marché à emplacement fixe avec du personnel de vente, procédés publicitaires)",
+      "url": "https://bofip.impots.gouv.fr/bofip/894-PGP.html/identifiant=BOI-TVA-SECT-80-10-20-30-20260701"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-SECT-80-20 – Agriculture : option pour l'imposition à la TVA d'après le régime simplifié de l'agriculture (RSA)",
+      "url": "https://bofip.impots.gouv.fr/bofip/568-PGP.html/identifiant=BOI-TVA-SECT-80-20-20120912"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-SECT-80-60-10-10 – Remboursement forfaitaire agricole : champ d'application (exploitants non redevables, conditions des ventes)",
+      "url": "https://bofip.impots.gouv.fr/bofip/748-PGP.html/identifiant=BOI-TVA-SECT-80-60-10-10-20120912"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-SECT-80-60-10-50 – Remboursement forfaitaire agricole : formalités (bulletins d'achat, attestations annuelles, déclaration 3520-SD)",
+      "url": "https://bofip.impots.gouv.fr/bofip/882-PGP.html/identifiant=BOI-TVA-SECT-80-60-10-50-20120912"
+    },
+    {
+      "titre": "impots.gouv.fr – Comment obtenir un remboursement forfaitaire agricole ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/comment-obtenir-un-remboursement-forfaitaire-agricole"
+    },
+    {
+      "titre": "Légifrance – CGI, section IV Exploitants agricoles (articles 298 bis à 298 quinquies, dont 298 quater sur le remboursement forfaitaire)",
+      "url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006179662/"
+    },
+    {
+      "titre": "BOFiP BOI-BAREME-000044 (version du 19/08/2026) – Seuils des régimes d'imposition BA/BIC/BNC : micro-BA 120 000 €, réel simplifié agricole 391 000 € pour 2026-2028",
+      "url": "https://bofip.impots.gouv.fr/bofip/14069-PGP.html/identifiant=BOI-BAREME-000044-20260819"
+    },
+    {
+      "titre": "economie.gouv.fr – Quels régimes d'imposition pour les bénéfices agricoles ? (micro-BA, réel simplifié, réel normal)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/limpot-sur-les-benefices-ir-et/quels-regimes"
+    },
+    {
+      "titre": "impots.gouv.fr – Fiche réforme : la transmission des données de transactions (e-reporting) pour les opérations avec des particuliers",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiches_reforme/fiche-e-reporting_transactions.pdf"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (champ : entreprises assujetties à la TVA établies en France, obligations d'émission et de réception)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr – Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}
