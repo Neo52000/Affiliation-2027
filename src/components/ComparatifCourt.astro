@@ -27,8 +27,8 @@ const lignes: { label: string; valeur: (o: Outil) => string }[] = [
 ];
 ---
 
-<div class="table-scroll">
-  <table class="w-full border-collapse text-sm">
+<div class="table-scroll rounded-lg border border-border px-4 py-2">
+  <table class="table-interactive w-full border-collapse text-sm">
     <thead>
       <tr class="border-b-2 border-border text-left">
         <th scope="col" class="py-2 pr-3">
@@ -48,7 +48,13 @@ const lignes: { label: string; valeur: (o: Outil) => string }[] = [
             {l.label}
           </th>
           {outils.map((o) => (
-            <td class="py-2 pr-3">{l.valeur(o)}</td>
+            <td class="py-2 pr-3">
+              {l.valeur(o) === 'Test en cours' ? (
+                <span class="pill">Test en cours</span>
+              ) : (
+                l.valeur(o)
+              )}
+            </td>
           ))}
         </tr>
       ))}

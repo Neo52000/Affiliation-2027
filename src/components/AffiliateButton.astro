@@ -22,9 +22,9 @@ const lien = affiliateLink(outil, urlOfficielle);
     rel={lien.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
     data-emplacement={emplacement}
     data-outil={outil}
-    class="inline-block rounded bg-accent px-4 py-2 font-bold text-white no-underline hover:bg-accent-dark"
+    class="btn-affiliate inline-block rounded-md bg-accent px-4 py-2 font-bold text-on-accent no-underline hover:bg-accent-dark"
   >
     {label}
   </a>
-  {lien.sponsored && <span class="text-xs text-ink-soft">lien affilié</span>}
+  {lien.sponsored && <span class="mention-affiliee text-xs text-ink-soft">lien affilié</span>}
 </span>

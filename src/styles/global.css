@@ -1,16 +1,21 @@
 @import 'tailwindcss';
 
 /*
- * Design system — section 10 de la spécification.
- * Esprit : service public modernisé. Une couleur d'accent, fond clair,
- * corps 18 px, largeur de texte 70 caractères max, WCAG 2.1 AA.
+ * Design system v2 — section 10 de la spécification, étendue par le
+ * design system publié (artifact « Affiliation 2027 », tokens v2).
+ * Esprit : service public modernisé. Une couleur d'accent, deux thèmes
+ * (clair/sombre automatique), corps 18 px, largeur de texte 70 caractères,
+ * WCAG 2.1 AA. Le mouvement guide (transform/opacity, 150–450 ms),
+ * il ne décore pas ; prefers-reduced-motion est respecté partout.
  */
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Accent unique — contraste AA sur fond blanc */
+  /* Accent unique — contraste AA sur paper dans les deux thèmes */
   --color-accent: #1d4ed8;
   --color-accent-dark: #1e3a8a;
+  --color-accent-soft: #eff6ff;
+  --color-on-accent: #ffffff;
 
   /* Encres et fonds */
   --color-ink: #1f2328;
@@ -18,6 +23,46 @@
   --color-paper: #ffffff;
   --color-paper-soft: #f6f8fa;
   --color-border: #d0d7de;
+
+  /* Rayons : les angles s'adoucissent avec la taille du conteneur */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Élévation douce — retour d'interaction, jamais structure */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.14);
+
+  /* Courbes de mouvement */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Durées de mouvement (hors @theme : pas d'utilitaires dédiés) */
+:root {
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 450ms;
+}
+
+/* Thème sombre automatique — mêmes tokens, valeurs recalibrées (AA vérifié) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: #60a5fa;
+    --color-accent-dark: #93c5fd;
+    --color-accent-soft: #16233f;
+    --color-on-accent: #0b1220;
+    --color-ink: #e6e9ef;
+    --color-ink-soft: #9aa4b2;
+    --color-paper: #0e1116;
+    --color-paper-soft: #161b22;
+    --color-border: #2b3340;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.65);
+  }
 }
 
 /* Corps de texte 18 px (112,5 %) — lisibilité cible lecteur pressé, non technique */
@@ -33,6 +78,22 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Titres resserrés (v2) */
+h1 {
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  letter-spacing: -0.01em;
+}
+
+/* Titre héros de l'accueil — style « display » du design system */
+.display-title {
+  font-size: clamp(2.125rem, 1.5rem + 2.5vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
 /* Largeur de lecture : 70 caractères maximum */
 .prose-measure {
   max-width: 70ch;
@@ -44,6 +105,7 @@ a {
   color: var(--color-accent);
   text-decoration-line: underline;
   text-underline-offset: 2px;
+  transition: color var(--duration-fast) var(--ease-out);
 }
 
 a:hover {
@@ -77,4 +139,142 @@ a:hover {
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+/* ---------------------------------------------------------------------------
+ * Mouvement — les cinq gestes du système (section Mouvement du design system)
+ * ------------------------------------------------------------------------ */
+
+/* Geste 2 : élévation — bouton d'action */
+.btn-affiliate {
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.btn-affiliate:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-affiliate:active {
+  transform: translateY(0);
+  transition-duration: var(--duration-fast);
+}
+
+/* Geste 5 : ponctuation — la mention « lien affilié » doit être vue */
+.mention-affiliee {
+  animation: pop-in var(--duration-slow) var(--ease-spring) 300ms both;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Geste 3 : soulignement animé — navigation du header uniquement
+   (les liens du corps restent soulignés en permanence) */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Header collant : l'ombre n'apparaît qu'au défilement */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  transition: box-shadow var(--duration-base) var(--ease-out);
+}
+
+.site-header.is-scrolled {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Geste 2 : élévation — cartes de recommandation */
+.card-reco {
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.card-reco:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Geste 1 : micro-retour — survol de ligne des tableaux interactifs */
+.table-interactive tbody tr {
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.table-interactive tbody tr:hover {
+  background: var(--color-accent-soft);
+}
+
+/* Pastille d'état neutre (« Test en cours ») — l'accent reste réservé aux actions */
+.pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--color-ink-soft);
+  background: var(--color-paper-soft);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 2px 0.5rem;
+  white-space: nowrap;
+}
+
+/* Geste 4 : révélation d'entrée — pilotée par IntersectionObserver (Base.astro).
+   L'état initial masqué n'est posé que si le script est actif (.reveal-ready) :
+   sans JavaScript ou avec reduced-motion, le contenu est lisible d'emblée. */
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+/* Garde d'accessibilité du mouvement — obligatoire, non optionnelle */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
