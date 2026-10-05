@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Quiz from '../../components/islands/Quiz.tsx';
+import { SITE } from '../../config';
+import { pageTitle } from '../../lib/seo';
+
+const metiersColl = await getCollection('metiers');
+const outilsColl = await getCollection('outils');
+
+const metiers = metiersColl
+  .map((m) => ({ nom: m.data.nom, slug: m.data.slug }))
+  .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+
+const recosParMetier = Object.fromEntries(
+  metiersColl.map((m) => [m.data.slug, m.data.outils_recommandes.map((o) => o.slug)]),
+);
+
+const outils = outilsColl.map((o) => ({
+  slug: o.data.slug,
+  nom: o.data.nom,
+  comptePro: o.data.fonctionnalites.compte_pro,
+  compta: o.data.fonctionnalites.compta,
+  lienExpertComptable: o.data.fonctionnalites.lien_expert_comptable,
+  cibles: o.data.cible.map((c) => c.toLowerCase()),
+  urlOfficielle: o.data.url_officielle,
+}));
+---
+
+<Base
+  title={pageTitle('Quiz : quel logiciel pour vous ?', SITE.name)}
+  description="5 questions — métier, statut, volume, compte pro, expert-comptable — pour trouver votre logiciel de facturation électronique, avec deux alternatives."
+>
+  <Breadcrumb items={[{ label: 'Outils' }, { label: 'Quiz' }]} />
+  <h1 class="prose-measure mt-4 text-3xl font-bold">
+    Quel logiciel de facturation électronique pour vous ?
+  </h1>
+  <p class="prose-measure mt-3">
+    5 questions, une recommandation fondée uniquement sur des faits vérifiés et sur votre métier.
+  </p>
+
+  <div class="mt-6">
+    <Quiz client:load metiers={metiers} outils={outils} recosParMetier={recosParMetier} />
+  </div>
+
+  <noscript>
+    <p class="mt-6 rounded border border-border bg-paper-soft p-4">
+      Le quiz a besoin de JavaScript. Sans lui, le plus simple est de passer par la page de votre
+      métier : chacune recommande 3 outils adaptés, avec les mêmes critères.
+      <a href="/">Trouver votre métier depuis l'accueil</a>
+    </p>
+  </noscript>
+</Base>

@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import preact from '@astrojs/preact';
 import tailwindcss from '@tailwindcss/vite';
 
 // `site` : domaine définitif non renseigné (TODO_DOMAINE, voir TODO.md).
@@ -12,6 +13,8 @@ export default defineConfig({
     // URLs sans slash final cohérentes entre canonical, liens internes et Netlify.
     format: 'file',
   },
+  // Îlots interactifs réservés aux 3 outils (section 4 de la spécification).
+  integrations: [preact()],
   vite: {
     plugins: [tailwindcss()],
   },
