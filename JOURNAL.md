@@ -27,3 +27,11 @@ Collections Astro `outils` et `tests` actives (metiers en Phase 3, guides en Pha
 Décision : dates d'immatriculation à null dans les 6 fiches outil tant que non confirmées sur la liste officielle ; prix non relevés (sites éditeurs bloqués par le proxy) → plans vides + TODO #13.
 6 fiches outil sourcées (statut PA, cible, URLs tarifs/affiliation) + 6 fiches de test `a_tester` avec protocole en 6 points.
 19 tests Vitest verts (validation Zod de toutes les données + règles métier). Dépendance ajoutée : @types/node (tests Node ESM).
+
+## Phase 3 — Gabarits + 10 pages métier pilotes (2026-10-05)
+
+Gabarits : page métier (ordre imposé section 6, dates lues dans echeances.json, jamais en dur), hub famille (bâtiment), comparatif tiime-vs-qonto (verdicts fondés sur les seuls faits vérifiés), fiches outil, AffiliateButton (bascule URL officielle, lien affilié signalé + bandeau transparence quand actif).
+Contenus : 10 métiers rédigés par agents (recherche restreinte aux domaines officiels), puis VÉRIFIÉS adversarialement (3 affirmations à risque contre-vérifiées par métier) et corrigés — 3 bloquants détectés et corrigés (devis plomberie obligatoire sans seuil, arrêté du 24/01/2017 ; autofacturation VTC ; +1), 0 bloquant résiduel. Interruption par limite de session le 04/10 au soir, reprise par cache le 05/10 (aucun re-travail).
+Garde-fous : check-similarity 10 pages = max 14,7 % (seuil 50 %) ; check-seo 19 pages indexables OK ; 32 tests ; build 20 pages.
+Lighthouse page plombier : 100/100/100/100, LCP 1,2 s, CLS 0 (corrections : soulignement des liens rétabli — préflight Tailwind —, préchargement des 2 woff2 Inter).
+Arrêt pour validation humaine de la qualité des pilotes avant mise à l'échelle (section 13).

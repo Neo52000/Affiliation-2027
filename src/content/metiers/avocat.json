@@ -1,0 +1,151 @@
+{
+  "nom": "Avocat",
+  "slug": "avocat",
+  "famille": "liberal",
+  "statuts_frequents": [
+    "Entreprise individuelle (exercice en nom propre, BNC)",
+    "SELARL, y compris unipersonnelle",
+    "SELAS, y compris unipersonnelle (SELASU)",
+    "SCP d'avocats",
+    "AARPI (association d'avocats à responsabilité professionnelle individuelle)"
+  ],
+  "volume_factures_typique": "De quelques factures à quelques dizaines de documents par mois pour un cabinet individuel, entre factures d'honoraires, demandes de provision en cours de dossier et factures de solde. Le volume dépend du nombre de dossiers actifs et du mode de facturation retenu dans les conventions d'honoraires (forfait par dossier, temps passé, abonnement de conseil).",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "La facture d'honoraires s'adosse à une convention d'honoraires écrite, obligatoire sauf urgence, force majeure, aide juridictionnelle totale ou intervention au titre de l'aide à l'intervention de l'avocat (troisième partie de la loi n° 91-647 du 10 juillet 1991), qui précise le montant ou le mode de détermination des honoraires ainsi que les frais et débours envisagés (article 10 de la loi n° 71-1130 du 31 décembre 1971).",
+    "Les honoraires d'avocat sont soumis à la TVA au taux normal de 20 %, y compris pour les missions d'aide juridictionnelle rétribuées en tout ou partie par l'État (BOFiP, BOI-TVA-LIQ-20-20).",
+    "Les débours payés au nom et pour le compte du client (frais de commissaire de justice, par exemple) sont exclus de la base d'imposition à la TVA à condition d'un mandat préalable, d'une reddition de compte exacte et de justificatifs, à la différence des frais généraux du cabinet refacturés, qui restent taxables (BOFiP, BOI-TVA-BASE-10-20-40-30).",
+    "Le pacte de quota litis est interdit : un honoraire fixé uniquement en fonction du résultat judiciaire est illicite, l'honoraire de résultat n'étant admis qu'en complément de la rémunération des diligences, prévu par convention (article 10 de la loi du 31 décembre 1971).",
+    "En aide juridictionnelle, l'avocat est rétribué par l'État via des fonds versés aux CARPA ; en aide juridictionnelle partielle, un honoraire complémentaire ne peut être facturé au client que sur convention écrite préalable, communiquée au bâtonnier dans les quinze jours de sa signature (loi n° 91-647 du 10 juillet 1991).",
+    "Le droit de plaidoirie, fixé à 13 € par le décret n° 2014-1704 du 30 décembre 2014 et recouvré par la CNBF, est dû pour chaque plaidoirie devant la plupart des juridictions — sauf exceptions, notamment devant le conseil de prud'hommes et en matière de sécurité sociale — et apparaît en pratique sur la facture en plus des honoraires."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« TVA non applicable, article 293 B du CGI » sur chaque facture si le cabinet bénéficie de la franchise en base de TVA ; aucune TVA ne doit alors apparaître, sous peine d'en devenir redevable du seul fait de la facturation (BOFiP, BOI-TVA-DECLA-40-10-20).",
+    "Identification distincte des débours payés au nom et pour le compte du client, justifiés dans leur nature et leur montant exact, pour fonder leur exclusion de la base d'imposition à la TVA (article 267, II-2° du CGI ; BOFiP, BOI-TVA-BASE-10-20-40-30)."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture d'honoraires – procédure devant le tribunal judiciaire, client particulier (exemple illustratif)",
+    "lignes": [
+      {
+        "designation": "Honoraires forfaitaires – procédure devant le tribunal judiciaire, selon convention d'honoraires du 15/09/2026",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 1800,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Honoraires au temps passé – diligences complémentaires (relevé de diligences joint)",
+        "quantite": 2.5,
+        "unite": "heure",
+        "prix_unitaire_ht": 200,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Débours – frais de commissaire de justice avancés au nom et pour le compte du client, hors base de TVA (art. 267, II-2° du CGI) – justificatif joint",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 98.5,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "Honoraires établis conformément à la convention d'honoraires signée avec le client (article 10 de la loi n° 71-1130 du 31 décembre 1971).",
+      "Débours avancés au nom et pour le compte du client, exclus de la base d'imposition à la TVA (article 267, II-2° du CGI) ; justificatifs tenus à disposition.",
+      "TVA sur les honoraires au taux normal de 20 %."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Combiner sur une même facture des lignes d'honoraires soumises à TVA à 20 % et des lignes de débours hors base de TVA, avec justificatifs rattachés.",
+    "Suivre par dossier les provisions demandées, encaissées et imputées sur la facture de solde.",
+    "Facturer au temps passé à partir d'un relevé de diligences, au taux horaire prévu par la convention d'honoraires.",
+    "Gérer une clientèle mixte : factures transmises via plateforme agréée pour les clients professionnels, e-reporting des encaissements des clients particuliers.",
+    "Conserver des libellés de facture sobres et un archivage par dossier compatibles avec le secret professionnel."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Indy cible les indépendants et réunit comptabilité, compte pro et facturation, ce qui correspond à l'avocat exerçant en entreprise individuelle (BNC). La plateforme est agréée par la DGFiP pour la facturation électronique."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Pennylane est conçu pour travailler avec son expert-comptable, configuration courante des cabinets constitués en société (SELARL, SELAS). La plateforme est agréée par la DGFiP et couvre gestion financière et comptabilité."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Qonto associe compte professionnel et facturation, ce qui aide un cabinet à séparer les encaissements d'honoraires de ses autres flux. La plateforme est agréée par la DGFiP et s'adresse aux PME comme aux indépendants."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes clients sont surtout des particuliers : suis-je quand même concerné par la facturation électronique ?",
+      "reponse": "Oui. Comme toute entreprise assujettie à la TVA, votre cabinet doit pouvoir recevoir des factures électroniques via une plateforme agréée. Pour vos clients professionnels établis en France (entreprises clientes en droit des affaires, en droit social ou en conseil, par exemple), vos factures d'honoraires passeront par ce circuit à l'échéance applicable à votre entreprise. Pour vos clients particuliers, vous transmettrez des données de transaction agrégées (e-reporting), pas les factures elles-mêmes."
+    },
+    {
+      "question": "Le secret professionnel est-il compatible avec l'e-reporting de mes encaissements de particuliers ?",
+      "reponse": "Pour les opérations avec des particuliers, l'e-reporting porte sur des montants agrégés par jour et par taux de TVA. Aucune donnée nominative sur vos clients n'est transmise à l'administration dans ce cadre. Pour les factures adressées aux entreprises via plateforme agréée, gardez des libellés sobres, limités aux informations nécessaires."
+    },
+    {
+      "question": "Comment se passe la facturation d'un dossier à l'aide juridictionnelle ?",
+      "reponse": "En aide juridictionnelle totale, vous ne facturez pas d'honoraires au client : vous êtes rétribué par l'État, via des fonds versés aux CARPA, et la convention d'honoraires n'est pas exigée dans ce cas. En aide juridictionnelle partielle, l'honoraire complémentaire facturé au client suppose une convention écrite préalable, communiquée au bâtonnier. Cette rétribution reste soumise à la TVA au taux normal."
+    },
+    {
+      "question": "Je débute et je bénéficie de la franchise en base de TVA : la réforme me concerne-t-elle ?",
+      "reponse": "Oui. L'obligation de pouvoir recevoir des factures électroniques s'applique à toutes les entreprises assujetties, y compris en franchise en base. Vos factures d'honoraires continuent de porter la mention « TVA non applicable, article 293 B du CGI » et ne doivent jamais faire apparaître de TVA, sinon elle devient due. Reportez-vous au calendrier de la réforme pour vos obligations d'émission et d'e-reporting."
+    },
+    {
+      "question": "Comment traiter mes débours et mes provisions avec un logiciel de facturation électronique ?",
+      "reponse": "Les débours payés au nom et pour le compte du client restent exclus de la base de TVA sous conditions : mandat préalable, reddition de compte exacte et justificatifs. Ils doivent apparaître distinctement des honoraires, donc votre logiciel doit accepter sur une même facture des lignes à 20 % et des lignes hors base. Pour les provisions demandées en cours de dossier, vérifiez que l'outil en garde la trace par dossier et les impute sur la facture de solde."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA, taux normal : prestations des avocats, y compris missions d'aide juridictionnelle rétribuées par l'État (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
+    },
+    {
+      "titre": "economie.gouv.fr – Entreprises : ce que vous devez savoir sur la TVA (taux normal de 20 %)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-ce-que-vous-devez-savoir-sur-la-tva"
+    },
+    {
+      "titre": "Légifrance – Article 10 de la loi n° 71-1130 du 31 décembre 1971 (convention d'honoraires écrite, frais et débours, honoraire de résultat, interdiction du pacte de quota litis)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000031008982"
+    },
+    {
+      "titre": "Légifrance – Loi n° 91-647 du 10 juillet 1991, titre V : effets de l'aide juridictionnelle (rétribution de l'avocat, honoraire complémentaire en AJ partielle communiqué au bâtonnier)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000000537611/LEGISCTA000006119380/2025-04-16"
+    },
+    {
+      "titre": "Légifrance – Décret n° 96-887 du 10 octobre 1996 (fonds versés par l'État aux CARPA pour les missions d'aide juridictionnelle)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043601878"
+    },
+    {
+      "titre": "BOFiP – TVA, base d'imposition : débours des professions libérales exclus de la base sous conditions, art. 267, II-2° du CGI (BOI-TVA-BASE-10-20-40-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1476-PGP.html/identifiant=BOI-TVA-BASE-10-20-40-30-20241009"
+    },
+    {
+      "titre": "BOFiP – TVA, conséquences de la franchise en base : mention « TVA non applicable, article 293 B du CGI », TVA facturée à tort due (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+    },
+    {
+      "titre": "Légifrance – Décret n° 2014-1704 du 30 décembre 2014 relatif aux droits de plaidoirie et à la contribution équivalente (montant de 13 €, recouvrement CNBF)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000030004910"
+    },
+    {
+      "titre": "impots.gouv.fr – Fiche « La transmission des données de transactions (e-reporting) » : opérations avec des particuliers, données agrégées par jour et par taux, aucune donnée nominative",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiches_reforme/fiche-e-reporting_transactions.pdf"
+    },
+    {
+      "titre": "impots.gouv.fr – FAQ « Mes clients sont à la fois des entreprises et des particuliers » (articulation facturation électronique B2B / e-reporting B2C)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (champ de la réforme, réception pour tous les assujettis y compris franchise en base)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr – Facturation électronique : publication de la liste des plateformes agréées (Indy, Pennylane et Qonto immatriculées par la DGFiP)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-publication-de-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

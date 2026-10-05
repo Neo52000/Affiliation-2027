@@ -38,9 +38,11 @@ body {
   max-width: 70ch;
 }
 
-/* Liens : soulignés par défaut (repère non chromatique, WCAG 1.4.1) */
+/* Liens : soulignés par défaut (repère non chromatique, WCAG 1.4.1).
+   Le preflight Tailwind retire le soulignement : on le rétablit explicitement. */
 a {
   color: var(--color-accent);
+  text-decoration-line: underline;
   text-underline-offset: 2px;
 }
 

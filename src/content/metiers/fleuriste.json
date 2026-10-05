@@ -1,0 +1,139 @@
+{
+  "nom": "Fleuriste",
+  "slug": "fleuriste",
+  "famille": "commerce",
+  "statuts_frequents": ["Micro-entreprise", "Entreprise individuelle (EI)", "EURL", "SARL", "SASU"],
+  "volume_factures_typique": "L'essentiel des ventes passe en caisse, sous forme de tickets, sans facture. Les factures formelles restent peu nombreuses : de quelques unités à quelques dizaines par mois, surtout pour les clients professionnels (deuil, mariage, abonnements floraux d'entreprise) et les particuliers qui en font la demande.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Les fleurs fraîches ou séchées et les plantes vivantes vendues sans transformation relèvent du taux réduit de TVA de 10 % (article 278 bis du CGI).",
+    "Les compositions florales, les fleurs stabilisées, teintées ou lyophilisées, les fleurs artificielles et la décoration de lieux de cérémonie relèvent du taux normal de 20 %, ce qui impose de distinguer les produits dès la saisie en caisse ou sur facture.",
+    "Un bouquet assemblé reste au taux réduit tant que les éléments non floraux gardent un caractère accessoire ; l'administration admet le taux de 10 % sur le tout lorsque le prix d'achat hors taxe de ces éléments n'excède pas 25 % de celui des végétaux.",
+    "La facture n'est pas obligatoire pour une vente à un particulier, sauf s'il la demande, en cas de vente à distance ou de livraison intracommunautaire exonérée de TVA, mais les encaissements B2C devront être transmis à l'administration via l'e-reporting, sous forme de montants journaliers ventilés par taux de TVA.",
+    "Les prestations pour clients professionnels (deuil avec des pompes funèbres, mariages avec des traiteurs ou lieux de réception, abonnements floraux d'entreprise) sont des factures B2B soumises à la facturation électronique à l'échéance applicable à votre entreprise.",
+    "Les commandes exécutées pour le compte d'un confrère via les réseaux de transmission florale génèrent des flux de facturation distincts des ventes directes, à suivre séparément en comptabilité."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« TVA non applicable, art. 293 B du CGI » pour un fleuriste bénéficiant de la franchise en base de TVA.",
+    "Indication du taux de TVA applicable à chaque ligne et ventilation des montants par taux dès que la facture mêle végétaux non transformés (10 %) et compositions ou prestations au taux normal (20 %)."
+  ],
+  "exemple_facture": {
+    "intitule": "Décoration florale d'un mariage facturée à un organisateur d'événements (client professionnel)",
+    "lignes": [
+      {
+        "designation": "Fleurs coupées fraîches en bottes (roses, pivoines), fournies en l'état",
+        "quantite": 10,
+        "unite": "botte",
+        "prix_unitaire_ht": 18,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Compositions florales – centres de table",
+        "quantite": 12,
+        "unite": "pièce",
+        "prix_unitaire_ht": 45,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Plantes vertes en pot, fournies en l'état (sans mise en place)",
+        "quantite": 4,
+        "unite": "pièce",
+        "prix_unitaire_ht": 35,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Prestation de décoration florale de la salle (mise en place du décor et livraison incluses)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Taux de TVA indiqué ligne par ligne : 10 % pour les végétaux non transformés fournis en l'état, 20 % pour les compositions et la décoration du lieu de cérémonie.",
+      "Récapitulatif des montants HT et de TVA ventilés par taux (10 % et 20 %)."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Gérer deux taux de TVA (10 % et 20 %) dans le catalogue produits et sur une même facture, avec ventilation automatique des montants par taux.",
+    "Émettre ponctuellement des factures B2B conformes (deuil, mariage, entreprises) au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise.",
+    "Transmettre l'e-reporting des ventes aux particuliers (montants journaliers ventilés par taux) sans ressaisie depuis la caisse.",
+    "Suivre séparément les ventes en boutique, les commandes livrées et les flux des réseaux de transmission florale.",
+    "Partager simplement les pièces et écritures avec l'expert-comptable."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée DGFiP pensée pour travailler avec son expert-comptable, ce qui correspond au fonctionnement de nombreuses boutiques qui délèguent leur comptabilité. Son périmètre gestion financière et comptabilité s'adresse aux TPE comme un commerce de fleurs."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP qui associe facturation et comptabilité pour les indépendants, TPE et micro-entrepreneurs. Elle correspond aux fleuristes en entreprise individuelle ou en micro-entreprise qui veulent émettre leurs factures B2B et tenir leur comptabilité au même endroit."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée DGFiP qui combine compte professionnel et facturation, pour les indépendants et les PME. Un fleuriste peut y regrouper le compte de la boutique et l'émission de ses factures aux clients professionnels."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends surtout en boutique à des particuliers : suis-je vraiment concerné par la facturation électronique ?",
+      "reponse": "Oui. La réforme concerne toutes les entreprises assujetties à la TVA, quels que soient leur taille, leur forme juridique et leur régime d'imposition. Vous devez déjà pouvoir recevoir les factures électroniques de vos fournisseurs, par exemple celles de vos grossistes ou horticulteurs. Vous devrez aussi émettre vos factures entre professionnels (deuil, mariage, abonnements floraux d'entreprise) au format électronique, puis transmettre les données de vos ventes aux particuliers via l'e-reporting, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Mes tickets de caisse vont-ils devenir des factures électroniques ?",
+      "reponse": "Non. Pour un client particulier, la facture reste non obligatoire sauf s'il la demande ou en cas de vente à distance. En revanche, vos encaissements B2C devront être déclarés via l'e-reporting, sous forme de montants journaliers ventilés par taux de TVA : 10 % pour les fleurs et plantes non transformées, 20 % pour les compositions et prestations. Aucune donnée personnelle de vos clients n'est transmise."
+    },
+    {
+      "question": "Comment mes deux taux de TVA (fleurs à 10 %, compositions à 20 %) passent-ils dans la facturation électronique ?",
+      "reponse": "Chaque ligne de facture porte son propre taux : 10 % pour les fleurs et plantes non transformées (article 278 bis du CGI), taux normal de 20 % pour les compositions florales, les fleurs stabilisées ou artificielles et la décoration de lieux de cérémonie. Le taux de TVA applicable fait partie des mentions obligatoires de la facture. Votre logiciel doit donc ventiler les montants par taux, sur la facture comme dans l'e-reporting."
+    },
+    {
+      "question": "Je travaille avec des pompes funèbres et des organisateurs de mariage : que change la réforme pour ces factures ?",
+      "reponse": "Ce sont des ventes entre professionnels établis en France : elles devront être émises au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise selon le calendrier de la réforme. Vos clients professionnels les recevront par leur propre plateforme, ce qui supprime l'envoi de PDF par e-mail pour ces flux."
+    },
+    {
+      "question": "Je suis fleuriste en micro-entreprise, en franchise en base de TVA : suis-je exempté ?",
+      "reponse": "Non. La réforme vise toutes les entreprises assujetties à la TVA, quel que soit leur régime d'imposition, ce qui inclut la franchise en base. Vous devez déjà pouvoir recevoir des factures électroniques, et vous transmettrez vos données à l'échéance applicable à votre entreprise, même si vous n'émettez que quelques factures par mois. Vos factures porteront toujours la mention « TVA non applicable, art. 293 B du CGI » ; cette référence reste admise jusqu'au 31 décembre 2027, la TVA étant recodifiée dans le code des impositions sur les biens et services à compter du 1er janvier 2027."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA, taux réduits : produits de la sylviculture, de l'horticulture et de la floriculture (BOI-TVA-LIQ-30-10-35)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13623-PGP.html/identifiant=BOI-TVA-LIQ-30-10-35-20220629"
+    },
+    {
+      "titre": "Légifrance – Article 278 bis du Code général des impôts (taux réduit de 10 %)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000046869153"
+    },
+    {
+      "titre": "economie.gouv.fr – TVA : quels sont les taux de votre quotidien ? (taux normal 20 %, taux réduit 10 %)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "entreprendre.service-public.gouv.fr – Mentions obligatoires sur une facture (fiche F31808)",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "economie.gouv.fr – Mentions obligatoires d'une facture : tout savoir (cas du client particulier)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "economie.gouv.fr – Tout savoir sur la facturation électronique pour les entreprises",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "impots.gouv.fr – Fiche réforme : la transmission des données de transactions (e-reporting)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiches_reforme/fiche-e-reporting_transactions.pdf"
+    },
+    {
+      "titre": "Légifrance – Ordonnance n° 2025-1247 du 17 décembre 2025 portant recodification de la TVA dans le code des impositions sur les biens et services",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053091516"
+    },
+    {
+      "titre": "BOFiP – Rescrit BOI-RES-TVA-000253 : dispositions transitoires liées à la recodification de la TVA dans le CIBS",
+      "url": "https://bofip.impots.gouv.fr/bofip/14901-PGP.html/identifiant=BOI-RES-TVA-000253-20260218"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}
