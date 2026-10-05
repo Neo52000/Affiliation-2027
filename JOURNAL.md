@@ -35,3 +35,17 @@ Contenus : 10 métiers rédigés par agents (recherche restreinte aux domaines o
 Garde-fous : check-similarity 10 pages = max 14,7 % (seuil 50 %) ; check-seo 19 pages indexables OK ; 32 tests ; build 20 pages.
 Lighthouse page plombier : 100/100/100/100, LCP 1,2 s, CLS 0 (corrections : soulignement des liens rétabli — préflight Tailwind —, préchargement des 2 woff2 Inter).
 Arrêt pour validation humaine de la qualité des pilotes avant mise à l'échelle (section 13).
+
+## Phase 4 (partie code) — 2026-10-05
+
+Validation humaine des pilotes reçue (PR #2 fusionnée + go explicite). 15 comparatifs ouverts (toutes les paires des 6 outils), hubs famille pilotés par src/data/hubs.json. Les 90 contenus métier et 9 intros de hub sont produits par workflow (briefs famille sourcés → lots de 3 → vérification adversariale → correction) — en cours.
+Netlify connecté par l'éditeur : Deploy Preview actif sur chaque PR.
+
+## Phase 6 — Outils interactifs (2026-10-06, en parallèle de la génération Phase 4)
+
+Décision : la Phase 6 (pur code) a été construite pendant la génération des contenus Phase 4 ; la Phase 5 (guides) suit. Îlots Preact uniquement sur les 3 pages outils (accueil : zéro script, ~26 ko JS sur pages outils).
+Quiz : fonction pure recommander() — entrées métier/statut/volume/compte pro/expert-comptable, jamais la commission ; 20 cas Vitest ; autocomplétion par datalist ; recommandations alignées sur les trios des pages métier.
+Simulateur d'échéance : situerEcheances() lit echeances.json (aucune date en dur), franchise en base traitée, non-assujetti = message prudent ; calendrier complet statique sous l'îlot (dégradation sans JS).
+Vérificateur de facture : 27 mentions relevées sur sources officielles (agent dédié, 4 nouvelles mentions de la réforme corroborées par 2 sources, 3 non vérifiées tracées dans le fichier) ; traitement 100 % navigateur ; liste statique en noscript.
+Dépendances ajoutées : preact + @astrojs/preact (îlots imposés par la spec), @playwright/test (5 parcours imposés — 6 écrits, verts en local via Chromium préinstallé ; étape CI ajoutée).
+65 tests Vitest + 6 parcours Playwright verts ; build 37 pages.

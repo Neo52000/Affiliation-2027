@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import VerificateurFacture from '../../components/islands/VerificateurFacture.tsx';
+import { SITE } from '../../config';
+import { pageTitle } from '../../lib/seo';
+import { formatDateFr } from '../../lib/dates';
+import mentionsData from '../../data/mentions-factures.json';
+import type { MentionFacture } from '../../lib/facture-check';
+
+const mentions = mentionsData.mentions as MentionFacture[];
+---
+
+<Base
+  title={pageTitle('Vérificateur de facture', SITE.name)}
+  description="Cochez les mentions présentes sur votre facture : le vérificateur liste celles qui manquent, avec la règle et la source officielle. Aucune donnée envoyée."
+>
+  <Breadcrumb items={[{ label: 'Outils' }, { label: 'Vérificateur de facture' }]} />
+  <h1 class="prose-measure mt-4 text-3xl font-bold">Votre facture est-elle conforme ?</h1>
+  <p class="prose-measure mt-3">
+    {mentions.length} mentions contrôlées, chacune adossée à une source officielle. Relevé du{' '}
+    {formatDateFr(mentionsData.date_releve)}.
+  </p>
+
+  <div class="mt-6 max-w-2xl">
+    <VerificateurFacture client:load mentions={mentions} />
+  </div>
+
+  <noscript>
+    <section class="prose-measure mt-8">
+      <p class="rounded border border-border bg-paper-soft p-4">
+        Le vérificateur interactif a besoin de JavaScript. Voici la liste complète des mentions à
+        contrôler manuellement :
+      </p>
+      <ul class="mt-4 list-disc space-y-2 pl-5">
+        {mentions.map((m) => (
+          <li>
+            {m.libelle}
+            {m.condition && <span class="text-sm text-ink-soft"> (si : {m.condition})</span>} —{' '}
+            <a href={m.url_source} rel="noopener">
+              source
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </noscript>
+</Base>

@@ -1,0 +1,215 @@
+{
+  "date_releve": "2026-10-06",
+  "sources_principales": [
+    "https://entreprendre.service-public.fr/vosdroits/F31808",
+    "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir",
+    "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique",
+    "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038414397",
+    "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000050811276"
+  ],
+  "mentions": [
+    {
+      "id": "date-emission",
+      "libelle": "Date d'émission de la facture",
+      "regle": "La facture doit porter la date à laquelle elle est émise, en principe au moment de la livraison du bien ou de la réalisation de la prestation.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "numero-facture",
+      "libelle": "Numéro unique de la facture",
+      "regle": "Chaque facture doit porter un numéro unique basé sur une séquence chronologique et continue, sans rupture.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "date-vente-prestation",
+      "libelle": "Date de la vente ou de la prestation de services",
+      "regle": "La facture indique la date à laquelle est effectuée ou achevée la livraison de biens ou la prestation de services, ou la date de versement de l'acompte.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "identite-vendeur",
+      "libelle": "Identité du vendeur ou du prestataire",
+      "regle": "Nom complet et adresse du vendeur : pour un entrepreneur individuel, nom et prénom précédés ou suivis de la mention « Entrepreneur individuel » ou « EI » et numéro Siren ; pour une société, dénomination sociale, numéro Siren, adresse du siège social, forme juridique et montant du capital social.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "identite-client",
+      "libelle": "Identité de l'acheteur ou du client",
+      "regle": "La facture mentionne le nom (ou la dénomination sociale) et l'adresse du client.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "adresse-facturation",
+      "libelle": "Adresse de facturation, si différente de l'adresse des parties",
+      "regle": "L'article L441-9 du Code de commerce impose de mentionner l'adresse des parties ainsi que leur adresse de facturation lorsqu'elle est différente.",
+      "condition": "si l'adresse de facturation d'une des parties diffère de son adresse",
+      "url_source": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038414397"
+    },
+    {
+      "id": "numero-bon-commande",
+      "libelle": "Numéro du bon de commande",
+      "regle": "La facture doit mentionner le numéro du bon de commande lorsque celui-ci a été préalablement établi par l'acheteur.",
+      "condition": "si un bon de commande a été préalablement établi par l'acheteur",
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "numero-tva-intracommunautaire",
+      "libelle": "Numéro individuel d'identification à la TVA du vendeur et du client",
+      "regle": "Le numéro d'identification à la TVA du vendeur et celui du client professionnel redevable de la TVA doivent figurer sur la facture.",
+      "condition": "sauf pour les factures d'un montant total hors taxes inférieur ou égal à 150 €",
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "designation-produits-services",
+      "libelle": "Désignation précise des produits vendus ou des services rendus",
+      "regle": "Chaque bien livré ou service rendu doit être désigné par sa dénomination précise, avec sa quantité.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "decompte-quantite-prix-unitaire",
+      "libelle": "Décompte détaillé : quantité et prix unitaire hors taxes de chaque ligne",
+      "regle": "La facture détaille, pour chaque produit et chaque prestation, la quantité et le prix unitaire hors taxes.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "taux-tva",
+      "libelle": "Taux de TVA légalement applicable",
+      "regle": "Le taux de TVA applicable à chaque bien ou service doit être indiqué ou, le cas échéant, le bénéfice d'une exonération.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "montant-tva",
+      "libelle": "Montant de la taxe à payer et, par taux, total hors taxe et taxe correspondante",
+      "regle": "L'article 242 nonies A de l'annexe II au CGI impose d'indiquer le montant de la taxe à payer et, par taux d'imposition, le total hors taxe et la taxe correspondante.",
+      "condition": null,
+      "url_source": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000050811276"
+    },
+    {
+      "id": "reductions-prix",
+      "libelle": "Réductions de prix (rabais, remises, ristournes)",
+      "regle": "Toute réduction de prix acquise à la date de la vente ou de la prestation et directement liée à l'opération doit figurer sur la facture.",
+      "condition": "si une réduction de prix est acquise à la date de l'opération",
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "somme-totale-ht-ttc",
+      "libelle": "Somme totale à payer hors taxes (HT) et toutes taxes comprises (TTC)",
+      "regle": "La facture indique le montant total hors taxes et le montant total toutes taxes comprises.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "date-limite-reglement",
+      "libelle": "Date à laquelle le règlement doit intervenir (date d'échéance)",
+      "regle": "La facture mentionne la date à laquelle le règlement doit intervenir, conformément à l'article L441-9 du Code de commerce.",
+      "condition": null,
+      "url_source": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038414397"
+    },
+    {
+      "id": "conditions-escompte",
+      "libelle": "Conditions d'escompte en cas de paiement anticipé",
+      "regle": "La facture précise les conditions d'escompte applicables en cas de paiement à une date antérieure à celle résultant des conditions générales de vente.",
+      "condition": null,
+      "url_source": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038414397"
+    },
+    {
+      "id": "taux-penalites-retard",
+      "libelle": "Taux des pénalités de retard",
+      "regle": "La facture mentionne le taux des pénalités exigibles le jour suivant la date de règlement figurant sur la facture.",
+      "condition": null,
+      "url_source": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038414397"
+    },
+    {
+      "id": "indemnite-recouvrement-40e",
+      "libelle": "Indemnité forfaitaire pour frais de recouvrement de 40 €",
+      "regle": "La facture mentionne le montant de l'indemnité forfaitaire pour frais de recouvrement (40 €) due au créancier en cas de retard de paiement, exigible uniquement auprès d'un client professionnel.",
+      "condition": null,
+      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "id": "siren-client",
+      "libelle": "Numéro SIREN du client",
+      "regle": "Le numéro SIREN du client devient une mention obligatoire de la facture ; il sert notamment à adresser la facture électronique via l'annuaire.",
+      "condition": "nouvelle mention de la réforme de la facturation électronique — selon l'échéance applicable",
+      "url_source": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "id": "adresse-livraison",
+      "libelle": "Adresse de livraison des biens, si différente de l'adresse du client",
+      "regle": "L'adresse de livraison des biens doit être mentionnée lorsqu'elle est différente de l'adresse de facturation du client.",
+      "condition": "si l'adresse de livraison diffère de l'adresse de facturation du client — nouvelle mention de la réforme de la facturation électronique, selon l'échéance applicable",
+      "url_source": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "id": "nature-operation",
+      "libelle": "Nature de l'opération : livraison de biens, prestation de services ou opération mixte",
+      "regle": "La facture doit indiquer la catégorie de l'opération (livraison de biens, prestation de services, ou les deux), information utilisée notamment pour le pré-remplissage des déclarations de TVA.",
+      "condition": "nouvelle mention de la réforme de la facturation électronique — selon l'échéance applicable",
+      "url_source": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "id": "option-tva-debits",
+      "libelle": "« Option pour le paiement de la taxe d'après les débits »",
+      "regle": "Lorsque le prestataire a opté pour le paiement de la TVA d'après les débits, la facture doit porter la mention « Option pour le paiement de la taxe d'après les débits ».",
+      "condition": "si TVA sur les débits — nouvelle mention de la réforme de la facturation électronique, selon l'échéance applicable",
+      "url_source": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "id": "franchise-tva-293b",
+      "libelle": "« TVA non applicable, art. 293 B du CGI »",
+      "regle": "Le bénéficiaire de la franchise en base de TVA ne facture pas la taxe et doit porter sur chaque facture la mention correspondant au fondement de l'exonération (« TVA non applicable, article 293 B du CGI » ou, le cas échéant, « article 293 B bis du CGI »).",
+      "condition": "si franchise en base de TVA",
+      "url_source": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "id": "autoliquidation",
+      "libelle": "« Autoliquidation »",
+      "regle": "Lorsque l'acquéreur ou le preneur est redevable de la TVA (par exemple en sous-traitance du BTP), le fournisseur ne facture pas la taxe et porte la mention « Autoliquidation » sur la facture.",
+      "condition": "si le client est redevable de la TVA (autoliquidation)",
+      "url_source": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000050811276"
+    },
+    {
+      "id": "membre-association-agreee",
+      "libelle": "« Membre d'une association agréée, le règlement par chèque et par carte bancaire est accepté »",
+      "regle": "L'adhérent d'un centre de gestion ou d'une association agréés doit indiquer sur ses factures sa qualité de membre et l'acceptation des règlements par chèque ou carte bancaire ; cette mention figure toujours parmi les mentions particulières listées par l'administration à la date du relevé.",
+      "condition": "si membre d'un centre de gestion ou d'une association agréé(e)",
+      "url_source": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "id": "assurance-pro-artisan",
+      "libelle": "Assurance professionnelle obligatoire de l'artisan (ex. garantie décennale) et coordonnées de l'assureur",
+      "regle": "Les artisans dont l'assurance professionnelle est obligatoire pour l'exercice de leur métier doivent indiquer sur chaque devis et facture l'assurance souscrite au titre de leur activité, les coordonnées de l'assureur ou du garant ainsi que la couverture géographique du contrat ou de la garantie.",
+      "condition": "si artisan soumis à une obligation d'assurance professionnelle (notamment garantie décennale dans le bâtiment)",
+      "url_source": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000038587815"
+    },
+    {
+      "id": "rcs-ville-greffe",
+      "libelle": "Numéro unique d'identification et mention « RCS » suivie de la ville du greffe d'immatriculation",
+      "regle": "Toute personne immatriculée au registre du commerce et des sociétés doit indiquer sur ses factures son numéro unique d'identification et la mention « RCS » suivie du nom de la ville où se trouve le greffe d'immatriculation (article R123-237 du Code de commerce).",
+      "condition": "si vendeur immatriculé au registre du commerce et des sociétés (commerçants, sociétés)",
+      "url_source": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023379456"
+    }
+  ],
+  "non_verifiees": [
+    {
+      "mention": "Numéro au répertoire des métiers (« RM » suivi du département d'immatriculation) pour les artisans",
+      "motif": "Le répertoire des métiers a été absorbé par le Registre national des entreprises (RNE) ; aucune page officielle consultée à la date du relevé n'a permis de confirmer la formulation actuellement exigée sur la facture pour les artisans (RM ou RNE). Non incluse pour ne rien inventer."
+    },
+    {
+      "mention": "« Escompte : néant » (formulation en l'absence d'escompte)",
+      "motif": "L'obligation d'indiquer les conditions d'escompte est vérifiée (article L441-9 du Code de commerce), mais la formulation exacte à porter en l'absence d'escompte n'a pas été retrouvée sur une page officielle consultée. Seule l'obligation générale est retenue (mention conditions-escompte)."
+    },
+    {
+      "mention": "Mention « en état de liquidation » (société en liquidation)",
+      "motif": "L'article R123-237 du Code de commerce évoque cette indication sur les documents commerciaux, mais son application précise aux factures n'a pas pu être confirmée dans le détail via les pages consultées. Hors périmètre du relevé."
+    }
+  ]
+}
