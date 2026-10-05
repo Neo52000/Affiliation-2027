@@ -7,6 +7,10 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Fonction serverless de capture email (double opt-in) — section 12.
+[functions]
+  directory = "netlify/functions"
+
 # En-têtes de sécurité sur tout le site.
 # CSP : style-src 'unsafe-inline' requis (Astro inline les petites feuilles de style) ;
 # script-src 'self' suffira tant que les îlots (Phase 6) chargent des modules externes.
@@ -30,3 +34,9 @@
 # Redirections affiliées /go/{slug} (Phase 7) : générées depuis
 # src/data/affiliation.json — redirection 302, exclues de robots.txt.
 # ---------------------------------------------------------------------------
+
+# --- debut:redirections-go (genere par scripts/generate-redirects.ts) ---
+
+# (aucun lien affilié renseigné — voir TODO.md #6)
+
+# --- fin:redirections-go ---
