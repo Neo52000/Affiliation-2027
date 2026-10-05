@@ -6,6 +6,7 @@ import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import { FAMILLE_LABELS, type Famille } from '../lib/familles';
 import hubs from '../data/hubs.json';
+import registre from '../data/plateformes-agreees.json';
 
 const title = pageTitle('Facturation électronique par métier', SITE.name);
 
@@ -32,7 +33,16 @@ const outilsQuiz = outilsColl.map((o) => ({
   urlOfficielle: o.data.url_officielle,
 }));
 
-// Accès par famille : lien vers le hub quand il est publié (intro + ≥ 1 métier)
+// Chiffres réels, calculés depuis les données du site — jamais inventés
+const stats = [
+  {
+    valeur: metiersColl.length,
+    label: metiersColl.length > 1 ? 'métiers couverts' : 'métier couvert',
+  },
+  { valeur: registre.plateformes.length, label: 'plateformes agréées référencées' },
+  { valeur: outilsColl.length, label: 'logiciels passés au crible' },
+];
+
 const famillesActives = (Object.keys(FAMILLE_LABELS) as Famille[])
   .map((f) => ({
     famille: f,
@@ -45,7 +55,7 @@ const famillesActives = (Object.keys(FAMILLE_LABELS) as Famille[])
 const PREUVES = [
   {
     titre: 'Classement indépendant',
-    texte: 'Les commissions ne pèsent ni sur l’ordre ni sur les notes.',
+    texte: 'Les commissions ne pèsent ni sur l’ordre ni sur les notes. Méthode publique.',
     href: '/methode',
   },
   {
@@ -59,34 +69,84 @@ const PREUVES = [
     href: '/methode',
   },
 ];
+
+const ETAPES = [
+  {
+    n: '1',
+    titre: 'Votre métier',
+    texte: 'Chaque activité a ses règles : TVA, mentions, acomptes.',
+  },
+  { n: '2', titre: 'Votre recommandation', texte: '5 questions, 1 outil adapté + 2 alternatives.' },
+  { n: '3', titre: 'Votre conformité', texte: 'Échéances, check-list et facture vérifiée.' },
+];
 ---
 
 <Base title={title} description={SITE.description}>
-  <div class="prose-measure">
-    <h1 class="display-title font-bold">
-      Facturation électronique : quel logiciel pour votre métier ?
-    </h1>
-    <p class="mt-4">
-      Répondez à 5 questions, obtenez une recommandation fondée sur des faits vérifiés — jamais sur
-      les commissions.
-    </p>
-  </div>
+  <section class="hero pt-4">
+    <div class="max-w-3xl">
+      <p class="badge-ok">Réforme en vigueur — vérifié sur sources officielles</p>
+      <h1 class="display-title mt-4">
+        <span class="text-gradient">Le bon logiciel de facturation électronique</span>
+        <br />
+        pour votre métier
+      </h1>
+      <p class="prose-measure mt-5 text-lg">
+        Plombier, infirmière libérale, développeur freelance… chaque métier facture différemment.
+        Répondez à 5 questions et obtenez une recommandation fondée sur des faits vérifiés — jamais
+        sur les commissions.
+      </p>
+      <div class="mt-6 flex flex-wrap items-center gap-4">
+        <a href="/outils/quiz" class="btn-cta text-lg">
+          Trouver mon logiciel en 1 min
+        </a>
+        <a href="/outils/echeance" class="btn-ghost">
+          Voir mes échéances
+        </a>
+      </div>
+    </div>
+
+    <ul class="mt-10 grid max-w-3xl grid-cols-3 gap-4">
+      {stats.map((s) => (
+        <li class="stat-tile">
+          <p class="stat-valeur text-gradient">{s.valeur}</p>
+          <p class="text-sm text-ink-soft">{s.label}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
 
   <section
     aria-labelledby="quiz-accueil"
-    class="mt-6 max-w-2xl rounded-lg border border-border p-4"
+    class="card-top card-reco mt-12 max-w-2xl rounded-lg border border-border bg-paper p-5"
   >
-    <h2 id="quiz-accueil" class="sr-only">
-      Quiz de recommandation
+    <h2 id="quiz-accueil" class="text-2xl font-bold">
+      Votre recommandation en 5 questions
     </h2>
-    <Quiz client:idle metiers={metiersQuiz} outils={outilsQuiz} recosParMetier={recosParMetier} />
+    <div class="mt-4">
+      <Quiz client:idle metiers={metiersQuiz} outils={outilsQuiz} recosParMetier={recosParMetier} />
+    </div>
   </section>
 
-  <section aria-labelledby="preuves" class="mt-10">
-    <h2 id="preuves" class="sr-only">
-      Nos engagements
+  <section aria-labelledby="etapes" class="mt-12">
+    <h2 id="etapes" class="sr-only">
+      Comment ça marche
     </h2>
-    <ul class="grid gap-4 sm:grid-cols-3">
+    <ol class="grid gap-4 sm:grid-cols-3">
+      {ETAPES.map((e) => (
+        <li class="rounded-md border border-border p-4">
+          <p class="text-gradient text-2xl font-extrabold">{e.n}</p>
+          <p class="mt-1 font-bold">{e.titre}</p>
+          <p class="mt-1 text-sm text-ink-soft">{e.texte}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section aria-labelledby="preuves" class="mt-12">
+    <h2 id="preuves" class="text-2xl font-bold">
+      Pourquoi nous faire confiance
+    </h2>
+    <ul class="mt-4 grid gap-4 sm:grid-cols-3">
       {PREUVES.map((p) => (
         <li class="card-reco rounded-md border border-border p-4">
           <p class="font-bold">{p.titre}</p>
@@ -100,16 +160,16 @@ const PREUVES = [
   </section>
 
   {famillesActives.length > 0 && (
-    <section aria-labelledby="acces-familles" class="mt-10">
+    <section aria-labelledby="acces-familles" class="mt-12">
       <h2 id="acces-familles" class="text-2xl font-bold">
         Trouver votre métier
       </h2>
-      <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+      <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {famillesActives.map((f) => (
-          <li>
+          <li class="card-reco rounded-md border border-border p-3">
             {f.hub ? <a href={`/metiers/${f.famille}`}>{f.label}</a> : <span>{f.label}</span>}{' '}
             <span class="text-sm text-ink-soft">
-              ({f.nb} métier{f.nb > 1 ? 's' : ''})
+              · {f.nb} métier{f.nb > 1 ? 's' : ''}
             </span>
           </li>
         ))}
@@ -117,7 +177,7 @@ const PREUVES = [
     </section>
   )}
 
-  <section aria-labelledby="acces-outils" class="mt-10">
+  <section aria-labelledby="acces-outils" class="mt-12">
     <h2 id="acces-outils" class="text-2xl font-bold">
       Les logiciels passés au crible
     </h2>
@@ -133,7 +193,7 @@ const PREUVES = [
   </section>
 
   {guides.length > 0 && (
-    <section aria-labelledby="acces-guides" class="mt-10">
+    <section aria-labelledby="acces-guides" class="mt-12">
       <h2 id="acces-guides" class="text-2xl font-bold">
         Guides
       </h2>
@@ -146,4 +206,19 @@ const PREUVES = [
       </ul>
     </section>
   )}
+
+  <section class="card-top mt-14 rounded-lg border border-border bg-paper-soft p-6 text-center">
+    <h2 class="text-2xl font-extrabold">Prêt pour la facturation électronique ?</h2>
+    <p class="mx-auto mt-2 max-w-xl text-ink-soft">
+      Deux minutes pour connaître vos échéances et l'outil adapté à votre métier.
+    </p>
+    <div class="mt-4 flex flex-wrap items-center justify-center gap-4">
+      <a href="/outils/quiz" class="btn-cta">
+        Faire le quiz
+      </a>
+      <a href="/outils/verificateur-facture" class="btn-ghost">
+        Vérifier ma facture
+      </a>
+    </div>
+  </section>
 </Base>

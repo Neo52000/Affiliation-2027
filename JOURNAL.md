@@ -62,3 +62,10 @@ JSON-LD : Organization + WebSite sur toutes les pages (Seo.astro), BreadcrumbLis
 Pages : /methode (pondérations publiques + protocole de test), /transparence (financement, règles d'affichage des liens affiliés), /a-propos, /mentions-legales (placeholders TODO_EDITEUR_LEGAL, page noindex tant que non conforme LCEN — TODO #3), /confidentialite (RGPD : seul l'email du formulaire de rappel est collecté, double opt-in), /plateformes-agreees (165 PA, provenance affichée, filtre JS natif léger — décision : « tableau filtrable » de la section 6 l'emporte, dégradation = tableau complet).
 Footer 3 colonnes + navigation header (Quiz, Plateformes agréées, Méthode). Design system v2 appliqué sur main entre-temps (thème sombre, mouvements) conservé tel quel.
 Build 43 pages, garde-fous verts, 74 tests + 6 parcours e2e.
+
+## Design v3 « conversion » (2026-10-05)
+
+Décision (hors spec, demande utilisateur) : le style sobre de la section 10 est remplacé par une identité plus vendeuse — dégradé bleu→violet (titres, CTA, liserés de cartes), hero avec halo, tuiles de chiffres clés réels (jamais inventés : métiers, 165 PA, outils), badges verts « Plateforme agréée » / « Notre recommandation », encadré « essentiel » accentué. AA conservé : paires de contraste recalculées clair/sombre, boutons dégradés en blanc gras (AA large).
+Accueil réécrit orienté conversion : promesse métier, double CTA (quiz / échéances), preuves, bande CTA finale. Header : bouton « Trouver mon logiciel ».
+Correctif WCAG 1.4.1 : le survol des liens renforce le soulignement au lieu de foncer la couleur (axe évalue l'état hover ; 2,35:1 < 3:1).
+Lighthouse : accueil 100/100/100/100 (LCP 0,8 s, CLS 0) ; plombier 100/100/100/100 (CLS 0). 74 tests Vitest + 6 parcours e2e verts ; garde-fous similarité/SEO verts.
