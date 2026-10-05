@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
@@ -16,7 +17,7 @@ export default defineConfig({
   },
   // Îlots interactifs réservés aux 3 outils (section 4 de la spécification).
   // Sitemap segmenté (sitemap-index.xml) — section 9.
-  integrations: [preact(), sitemap()],
+  integrations: [preact(), mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },

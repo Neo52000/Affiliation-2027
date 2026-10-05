@@ -1,9 +1,11 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { ficheTestSchema, metierSchema, outilSchema } from './lib/schemas';
+import { ficheTestSchema, guideSchema, metierSchema, outilSchema } from './lib/schemas';
 
-// La collection guides (Phase 5) sera ajoutée avec ses premiers fichiers ;
-// son schéma est déjà prêt dans src/lib/schemas.ts.
+const guides = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/guides' }),
+  schema: guideSchema,
+});
 
 const outils = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/outils' }),
@@ -20,4 +22,4 @@ const tests = defineCollection({
   schema: ficheTestSchema,
 });
 
-export const collections = { outils, metiers, tests };
+export const collections = { outils, metiers, tests, guides };

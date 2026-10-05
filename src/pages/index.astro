@@ -1,19 +1,64 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import Quiz from '../components/islands/Quiz.tsx';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
-import { FAMILLE_LABELS } from '../lib/familles';
+import { FAMILLE_LABELS, type Famille } from '../lib/familles';
+import hubs from '../data/hubs.json';
 
-// Accueil définitif en Phase 6 (quiz de recommandation au-dessus de la ligne
-// de flottaison, preuves de confiance) ; en attendant : accès direct aux contenus.
 const title = pageTitle('Facturation électronique par métier', SITE.name);
-const metiers = (await getCollection('metiers')).sort((m1, m2) =>
-  m1.data.nom.localeCompare(m2.data.nom, 'fr'),
+
+const metiersColl = await getCollection('metiers');
+const outilsColl = await getCollection('outils');
+const guides = (await getCollection('guides')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title, 'fr'),
 );
-const outils = (await getCollection('outils')).sort((o1, o2) =>
-  o1.data.nom.localeCompare(o2.data.nom, 'fr'),
+
+// Données du quiz (section 7 : quiz sur /outils/quiz ET sur l'accueil)
+const metiersQuiz = metiersColl
+  .map((m) => ({ nom: m.data.nom, slug: m.data.slug }))
+  .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+const recosParMetier = Object.fromEntries(
+  metiersColl.map((m) => [m.data.slug, m.data.outils_recommandes.map((o) => o.slug)]),
 );
+const outilsQuiz = outilsColl.map((o) => ({
+  slug: o.data.slug,
+  nom: o.data.nom,
+  comptePro: o.data.fonctionnalites.compte_pro,
+  compta: o.data.fonctionnalites.compta,
+  lienExpertComptable: o.data.fonctionnalites.lien_expert_comptable,
+  cibles: o.data.cible.map((c) => c.toLowerCase()),
+  urlOfficielle: o.data.url_officielle,
+}));
+
+// Accès par famille : lien vers le hub quand il est publié (intro + ≥ 1 métier)
+const famillesActives = (Object.keys(FAMILLE_LABELS) as Famille[])
+  .map((f) => ({
+    famille: f,
+    label: FAMILLE_LABELS[f],
+    nb: metiersColl.filter((m) => m.data.famille === f).length,
+    hub: f in hubs,
+  }))
+  .filter((f) => f.nb > 0);
+
+const PREUVES = [
+  {
+    titre: 'Classement indépendant',
+    texte: 'Les commissions ne pèsent ni sur l’ordre ni sur les notes.',
+    href: '/methode',
+  },
+  {
+    titre: 'Données datées et sourcées',
+    texte: 'Chaque affirmation réglementaire renvoie à une source officielle.',
+    href: '/transparence',
+  },
+  {
+    titre: 'Tests réels documentés',
+    texte: 'Aucune note avant un test réel : « Test en cours » est assumé.',
+    href: '/methode',
+  },
+];
 ---
 
 <Base title={title} description={SITE.description}>
@@ -22,38 +67,80 @@ const outils = (await getCollection('outils')).sort((o1, o2) =>
       Facturation électronique : quel logiciel pour votre métier ?
     </h1>
     <p class="mt-4">
-      Comparatifs indépendants par métier. Classements jamais influencés par les commissions,
-      données datées et sourcées, tests réels documentés.
+      Répondez à 5 questions, obtenez une recommandation fondée sur des faits vérifiés — jamais sur
+      les commissions.
     </p>
   </div>
 
-  {metiers.length > 0 && (
-    <section aria-labelledby="acces-metiers" class="mt-10">
-      <h2 id="acces-metiers" class="text-2xl font-bold">
-        Votre métier
+  <section
+    aria-labelledby="quiz-accueil"
+    class="mt-6 max-w-2xl rounded-lg border border-border p-4"
+  >
+    <h2 id="quiz-accueil" class="sr-only">
+      Quiz de recommandation
+    </h2>
+    <Quiz client:idle metiers={metiersQuiz} outils={outilsQuiz} recosParMetier={recosParMetier} />
+  </section>
+
+  <section aria-labelledby="preuves" class="mt-10">
+    <h2 id="preuves" class="sr-only">
+      Nos engagements
+    </h2>
+    <ul class="grid gap-4 sm:grid-cols-3">
+      {PREUVES.map((p) => (
+        <li class="card-reco rounded-md border border-border p-4">
+          <p class="font-bold">{p.titre}</p>
+          <p class="mt-1 text-sm text-ink-soft">{p.texte}</p>
+          <p class="mt-2 text-sm">
+            <a href={p.href}>En savoir plus</a>
+          </p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {famillesActives.length > 0 && (
+    <section aria-labelledby="acces-familles" class="mt-10">
+      <h2 id="acces-familles" class="text-2xl font-bold">
+        Trouver votre métier
       </h2>
       <ul class="mt-3 grid gap-2 sm:grid-cols-2">
-        {metiers.map((m) => (
+        {famillesActives.map((f) => (
           <li>
-            <a href={`/facturation-electronique/${m.data.slug}`}>
-              {m.data.nom}{' '}
-              <span class="text-sm text-ink-soft">({FAMILLE_LABELS[m.data.famille]})</span>
-            </a>
+            {f.hub ? <a href={`/metiers/${f.famille}`}>{f.label}</a> : <span>{f.label}</span>}{' '}
+            <span class="text-sm text-ink-soft">
+              ({f.nb} métier{f.nb > 1 ? 's' : ''})
+            </span>
           </li>
         ))}
       </ul>
     </section>
   )}
 
-  {outils.length > 0 && (
-    <section aria-labelledby="acces-outils" class="mt-10">
-      <h2 id="acces-outils" class="text-2xl font-bold">
-        Les logiciels passés au crible
-      </h2>
-      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-        {outils.map((o) => (
+  <section aria-labelledby="acces-outils" class="mt-10">
+    <h2 id="acces-outils" class="text-2xl font-bold">
+      Les logiciels passés au crible
+    </h2>
+    <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+      {outilsColl
+        .sort((a, b) => a.data.nom.localeCompare(b.data.nom, 'fr'))
+        .map((o) => (
           <li>
             <a href={`/logiciels/${o.data.slug}`}>{o.data.nom}</a>
+          </li>
+        ))}
+    </ul>
+  </section>
+
+  {guides.length > 0 && (
+    <section aria-labelledby="acces-guides" class="mt-10">
+      <h2 id="acces-guides" class="text-2xl font-bold">
+        Guides
+      </h2>
+      <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+        {guides.map((g) => (
+          <li>
+            <a href={`/guides/${g.id}`}>{g.data.title}</a>
           </li>
         ))}
       </ul>
