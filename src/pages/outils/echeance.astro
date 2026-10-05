@@ -1,7 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import EcheanceSimulateur from '../../components/islands/EcheanceSimulateur.tsx';
+import RappelEmail from '../../components/islands/RappelEmail.tsx';
 import { SITE } from '../../config';
 import { pageTitle } from '../../lib/seo';
 import { formatDateFr } from '../../lib/dates';
@@ -9,6 +11,9 @@ import echeancesData from '../../data/echeances.json';
 import type { Echeance } from '../../lib/echeance';
 
 const echeances = echeancesData.echeances as Echeance[];
+const metiersRappel = (await getCollection('metiers'))
+  .map((m) => ({ nom: m.data.nom, slug: m.data.slug }))
+  .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
 ---
 
 <Base
@@ -25,6 +30,19 @@ const echeances = echeancesData.echeances as Echeance[];
   <div class="mt-6">
     <EcheanceSimulateur client:load echeances={echeances} />
   </div>
+
+  <section aria-labelledby="rappel" class="prose-measure mt-12 rounded border border-border p-4">
+    <h2 id="rappel" class="text-2xl font-bold">
+      Recevoir un rappel avant mon échéance
+    </h2>
+    <p class="mt-2 text-sm text-ink-soft">
+      Un seul email utile, avant votre échéance. Inscription en double opt-in, désinscription en un
+      clic, aucune donnée revendue.
+    </p>
+    <div class="mt-4">
+      <RappelEmail client:visible metiers={metiersRappel} />
+    </div>
+  </section>
 
   <section aria-labelledby="calendrier-complet" class="prose-measure mt-12">
     <h2 id="calendrier-complet" class="text-2xl font-bold">
