@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import preact from '@astrojs/preact';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // `site` : domaine définitif non renseigné (TODO_DOMAINE, voir TODO.md).
@@ -14,7 +15,8 @@ export default defineConfig({
     format: 'file',
   },
   // Îlots interactifs réservés aux 3 outils (section 4 de la spécification).
-  integrations: [preact()],
+  // Sitemap segmenté (sitemap-index.xml) — section 9.
+  integrations: [preact(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },

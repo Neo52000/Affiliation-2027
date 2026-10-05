@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { SITE } from '../config';
+import { pageTitle } from '../lib/seo';
+import affiliation from '../data/affiliation.json';
+
+const actifs = Object.entries(affiliation.liens).filter(([, v]) => v !== null);
+---
+
+<Base
+  title={pageTitle('Comment le site gagne de l’argent', SITE.name)}
+  description="Transparence : liens affiliés signalés un par un, commissions sans influence sur les classements, méthode de notation publique, pas de publicité."
+>
+  <Breadcrumb items={[{ label: 'Transparence' }]} />
+  <article class="prose-measure mt-4">
+    <h1 class="text-3xl font-bold">Comment ce site gagne de l'argent</h1>
+
+    <p class="mt-4">
+      Ce site est financé par l'affiliation : quand vous ouvrez un compte chez certains éditeurs en
+      passant par nos liens, nous pouvons percevoir une commission. Voici exactement comment cela
+      fonctionne — et ce que cela ne change pas.
+    </p>
+
+    <h2 class="mt-8 text-2xl font-bold">Ce que vous voyez sur le site</h2>
+    <ul class="mt-3 list-disc space-y-2 pl-5">
+      <li>
+        Chaque lien affilié est signalé par la mention « lien affilié » à côté du bouton, et la page
+        qui en contient affiche un bandeau en haut.
+      </li>
+      <li>
+        Les liens affiliés passent par des adresses <code>/go/…</code>, exclues des moteurs de
+        recherche.
+      </li>
+      <li>
+        Quand nous n'avons pas de partenariat avec un éditeur, le bouton pointe directement vers son
+        site officiel, sans mention — c'est le cas aujourd'hui pour
+        {actifs.length === 0 ? ' tous les outils du site' : ' une partie des outils'}.
+      </li>
+    </ul>
+
+    <h2 class="mt-8 text-2xl font-bold">Ce que l'argent ne change pas</h2>
+    <ul class="mt-3 list-disc space-y-2 pl-5">
+      <li>
+        <strong>Ni l'ordre, ni les notes.</strong> La <a href="/methode">méthode de notation</a>
+        est publique ; les commissions n'y figurent pas et n'entrent pas dans le quiz de
+        recommandation.
+      </li>
+      <li>Les montants de commission ne sont jamais affichés ni pris en compte.</li>
+      <li>Aucun contenu sponsorisé, aucune publicité, aucun faux avis.</li>
+    </ul>
+
+    <h2 class="mt-8 text-2xl font-bold">Vos données</h2>
+    <p class="mt-3">
+      Pas de cookie soumis à consentement, pas de traceur publicitaire. Le seul formulaire du site
+      (rappel d'échéance par email) est en double opt-in — détails dans la
+      <a href="/confidentialite">politique de confidentialité</a>.
+    </p>
+  </article>
+</Base>

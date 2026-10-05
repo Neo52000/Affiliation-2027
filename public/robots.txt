@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /go/
+
+# Domaine placeholder — synchronisé avec DOMAINE (TODO.md #2)
+Sitemap: https://todo-domaine.example/sitemap-index.xml

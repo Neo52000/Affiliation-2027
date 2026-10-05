@@ -30,12 +30,23 @@ const FONCTIONNALITES: { cle: keyof typeof d.fonctionnalites; label: string }[] 
 
 const cell = (v: boolean | null) => (v === true ? 'Oui' : v === false ? 'Non' : 'À vérifier');
 const pageTarifs = d.sources.find((s) => s.objet.toLowerCase().includes('tarif'));
+
+// JSON-LD SoftwareApplication, sans AggregateRating ni prix inventés (section 9).
+const appJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: d.nom,
+  url: d.url_officielle,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+};
 ---
 
 <Base
   title={pageTitle(`${d.nom} : avis et conformité`, SITE.name)}
   description={`${d.nom} pour la facturation électronique : statut de plateforme agréée, fonctionnalités vérifiées, pour qui — données datées et sourcées.`}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(appJsonLd)} />
   <Breadcrumb items={[{ label: 'Logiciels' }, { label: d.nom }]} />
 
   <article class="mt-4">

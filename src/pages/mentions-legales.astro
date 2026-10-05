@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { SITE } from '../config';
+import { pageTitle } from '../lib/seo';
+
+// EDITEUR_LEGAL et EMAIL_CONTACT non renseignés (TODO.md #3 et #4) :
+// page construite avec placeholders explicites et maintenue hors index
+// tant qu'elle n'est pas conforme LCEN — bloquant avant communication publique.
+const placeholders = true;
+---
+
+<Base
+  title={pageTitle('Mentions légales', SITE.name)}
+  description="Mentions légales du site : éditeur, directeur de publication, hébergeur et contact."
+  noindex={placeholders}
+>
+  <Breadcrumb items={[{ label: 'Mentions légales' }]} />
+  <article class="prose-measure mt-4">
+    <h1 class="text-3xl font-bold">Mentions légales</h1>
+
+    {placeholders && (
+      <p class="mt-4 rounded-md border border-border bg-paper-soft p-4 text-sm">
+        Page en cours de complétion : les informations d'identification de l'éditeur seront publiées
+        ici avant toute communication publique du site (loi pour la confiance dans l'économie
+        numérique).
+      </p>
+    )}
+
+    <h2 class="mt-8 text-2xl font-bold">Éditeur du site</h2>
+    <ul class="mt-3 list-disc space-y-1 pl-5">
+      <li>Raison sociale : TODO_EDITEUR_LEGAL</li>
+      <li>SIRET : TODO_EDITEUR_LEGAL</li>
+      <li>Siège social : TODO_EDITEUR_LEGAL</li>
+      <li>Directeur de la publication : TODO_EDITEUR_LEGAL</li>
+      <li>Contact : TODO_EMAIL_CONTACT</li>
+    </ul>
+
+    <h2 class="mt-8 text-2xl font-bold">Hébergement</h2>
+    <p class="mt-3">
+      Netlify, Inc. — 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis —
+      <a href="https://www.netlify.com" rel="noopener">
+        www.netlify.com
+      </a>
+    </p>
+
+    <h2 class="mt-8 text-2xl font-bold">Propriété intellectuelle</h2>
+    <p class="mt-3">
+      Les contenus de ce site (textes, tableaux, outils) sont protégés. Les marques citées (éditeurs
+      de logiciels, plateformes) appartiennent à leurs propriétaires respectifs ; leur mention
+      n'implique aucun partenariat au-delà de ce qui est déclaré sur la page
+      <a href="/transparence">transparence</a>.
+    </p>
+  </article>
+</Base>

@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { SITE } from '../config';
+import { pageTitle } from '../lib/seo';
+
+// Identité de l'éditeur : EDITEUR_LEGAL non renseigné (TODO.md #3) —
+// la page reste hors index tant que les placeholders sont présents.
+const placeholders = SITE.name.startsWith('TODO_');
+---
+
+<Base
+  title={pageTitle('À propos', SITE.name)}
+  description="Qui édite ce site, pourquoi il existe et comment il travaille : comparateur indépendant de logiciels de facturation électronique, métier par métier."
+  noindex={placeholders}
+>
+  <Breadcrumb items={[{ label: 'À propos' }]} />
+  <article class="prose-measure mt-4">
+    <h1 class="text-3xl font-bold">À propos de ce site</h1>
+
+    <h2 class="mt-8 text-2xl font-bold">Pourquoi ce site existe</h2>
+    <p class="mt-3">
+      La facturation électronique devient obligatoire pour toutes les entreprises françaises, et les
+      comparatifs existants classent surtout par statut juridique — rarement par métier, alors que
+      c'est le métier qui dicte les besoins : TVA multi-taux d'un plombier, exonération d'un
+      infirmier libéral, autofacturation d'un VTC.
+    </p>
+    <p class="mt-3">
+      Ce site prend l'angle inverse : une page par métier, des spécificités vérifiées sur sources
+      officielles, et des recommandations fondées sur des faits — jamais sur les commissions (
+      <a href="/methode">méthode publique</a>, <a href="/transparence">financement transparent</a>).
+    </p>
+
+    <h2 class="mt-8 text-2xl font-bold">Qui édite ce site</h2>
+    {placeholders ? (
+      <p class="mt-3 rounded-md border border-border bg-paper-soft p-4">
+        L'identité complète de l'éditeur (raison sociale, SIRET, directeur de publication) est en
+        cours de publication et figurera ici et dans les
+        <a href="/mentions-legales">mentions légales</a>.
+      </p>
+    ) : (
+      <p class="mt-3">
+        Édité par {SITE.name}. Contact : {SITE.emailContact}.
+      </p>
+    )}
+
+    <h2 class="mt-8 text-2xl font-bold">Relecture</h2>
+    <p class="mt-3">
+      {SITE.expertRelecteur
+        ? `Les contenus réglementaires sont relus par ${SITE.expertRelecteur}.`
+        : "Un expert-comptable relecteur rejoindra le site ; en attendant, chaque affirmation réglementaire est adossée à une source officielle citée en bas de page, et aucun contenu n'affiche de relecteur fictif."}
+    </p>
+  </article>
+</Base>

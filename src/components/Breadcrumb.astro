@@ -1,4 +1,6 @@
 ---
+import { SITE } from '../config';
+
 interface Crumb {
   label: string;
   href?: string;
@@ -9,8 +11,24 @@ interface Props {
 }
 
 const { items } = Astro.props;
+
+const site = (Astro.site ?? new URL(SITE.url)).toString().replace(/\/+$/, '');
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site}/` },
+    ...items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 2,
+      name: item.label,
+      ...(item.href ? { item: `${site}${item.href}` } : {}),
+    })),
+  ],
+};
 ---
 
+<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 <nav aria-label="Fil d'Ariane" class="text-sm text-ink-soft">
   <ol class="flex flex-wrap items-center gap-1">
     <li>
