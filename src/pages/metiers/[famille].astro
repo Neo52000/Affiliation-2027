@@ -7,18 +7,13 @@ import { pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
 
 export async function getStaticPaths() {
-  // Hubs ouverts progressivement : un hub n'est publié que lorsque son introduction
-  // est rédigée et qu'au moins une page métier existe (Phase 4 : les 10 familles).
-  const INTROS: Partial<Record<string, string[]>> = {
-    batiment: [
-      'Les métiers du bâtiment cumulent plusieurs particularités de facturation : devis préalables, acomptes et situations de travaux, taux de TVA réduits sous conditions dans la rénovation, autoliquidation en sous-traitance.',
-      "La facturation électronique ne change pas ces règles : elle change le canal d'émission et de réception des factures. Le bon logiciel est celui qui gère déjà vos documents de chantier.",
-    ],
-  };
+  // Un hub n'est publié que lorsque son introduction est rédigée (src/data/hubs.json)
+  // ET qu'au moins une page métier de la famille existe.
+  const { default: intros } = await import('../../data/hubs.json');
   const metiers = await getCollection('metiers');
-  return Object.entries(INTROS)
+  return Object.entries(intros as Record<string, string[]>)
     .filter(([f]) => metiers.some((m) => m.data.famille === f))
-    .map(([famille, intro]) => ({ params: { famille }, props: { intro: intro ?? [] } }));
+    .map(([famille, intro]) => ({ params: { famille }, props: { intro } }));
 }
 
 const { intro } = Astro.props;

@@ -9,14 +9,20 @@ import { pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
 
 export async function getStaticPaths() {
-  // Paires ouvertes progressivement ; les 15 paires des 6 outils en Phase 4.
-  const PAIRES_ACTIVES: [string, string][] = [['tiime', 'qonto']];
+  // Toutes les paires des 6 outils principaux (C(6,2) = 15), dans l'ordre de la
+  // spécification — stable pour les URLs (dont le pilote tiime-vs-qonto).
+  const ORDRE = ['tiime', 'qonto', 'pennylane', 'abby', 'indy', 'shine'];
   const outils = await getCollection('outils');
-  return PAIRES_ACTIVES.flatMap(([a, b]) => {
-    const oa = outils.find((o) => o.data.slug === a);
-    const ob = outils.find((o) => o.data.slug === b);
-    return oa && ob ? [{ params: { paire: `${a}-vs-${b}` }, props: { oa, ob } }] : [];
-  });
+  const paths = [];
+  for (let i = 0; i < ORDRE.length; i++) {
+    for (let j = i + 1; j < ORDRE.length; j++) {
+      const oa = outils.find((o) => o.data.slug === ORDRE[i]);
+      const ob = outils.find((o) => o.data.slug === ORDRE[j]);
+      if (oa && ob)
+        paths.push({ params: { paire: `${ORDRE[i]}-vs-${ORDRE[j]}` }, props: { oa, ob } });
+    }
+  }
+  return paths;
 }
 
 const { oa, ob } = Astro.props;
