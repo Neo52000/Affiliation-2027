@@ -67,9 +67,8 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
             Facturation électronique : {label.toLowerCase()}
           </h1>
           <p class="mt-1 text-sm text-ink-soft">
-            {metiers.length} métier{metiers.length > 1 ? 's' : ''} documenté{
-              metiers.length > 1 ? 's' : ''
-            } · obligations communes et spécificités de chacun
+            {metiers.length} métier{metiers.length > 1 ? 's' : ''} documenté
+            {metiers.length > 1 ? 's' : ''} · obligations communes et spécificités de chacun
           </p>
         </div>
       </div>
@@ -129,7 +128,10 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
         </section>
       )}
 
-      <section aria-labelledby="sources-hub" class="prose-measure mt-10 border-t border-border pt-4">
+      <section
+        aria-labelledby="sources-hub"
+        class="prose-measure mt-10 border-t border-border pt-4"
+      >
         <h2 id="sources-hub" class="text-lg font-bold">
           Source
         </h2>
@@ -153,7 +155,9 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
           commissions.
         </p>
         <p class="mt-3">
-          <a href="/outils/quiz" class="btn-cta">Faire le quiz</a>
+          <a href="/outils/quiz" class="btn-cta">
+            Faire le quiz
+          </a>
         </p>
       </div>
 
