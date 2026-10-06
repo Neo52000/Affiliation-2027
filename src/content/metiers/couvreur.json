@@ -1,0 +1,133 @@
+{
+  "nom": "Couvreur",
+  "slug": "couvreur",
+  "famille": "batiment",
+  "statuts_frequents": ["Entreprise individuelle (artisan)", "EURL", "Micro-entrepreneur", "SARL"],
+  "volume_factures_typique": "5 à 25 factures par mois, avec une forte saisonnalité : les chantiers de couverture se concentrent à la belle saison et chaque chantier génère au moins une facture d'acompte puis une facture de solde.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Une même facture de toiture mélange souvent deux taux réduits : 10 % pour la réfection de la couverture d'un logement achevé depuis plus de deux ans, 5,5 % pour l'isolation de la toiture (travaux d'amélioration de la qualité énergétique) et les travaux qui leur sont indissociablement liés. Chaque taux exige ses propres lignes et la certification du client sur le devis ou la facture.",
+    "Les acomptes encaissés avant le début du chantier (échafaudage, approvisionnement en tuiles ou en ardoises) doivent chacun faire l'objet d'une facture ; la TVA sur les prestations de services est exigible dès leur encaissement.",
+    "La météo désorganise les plannings et révèle des surprises en cours de chantier (volige pourrie, chevrons à reprendre, zinguerie à remplacer). Tout travail supplémentaire doit être chiffré et accepté par écrit avant exécution, puis repris dans la facture finale.",
+    "Les réparations d'urgence après tempête relèvent du dépannage : un devis détaillé (nature des travaux, quantités, prix unitaires, main-d'œuvre, déplacement) doit être remis avant toute intervention.",
+    "Les devis de rénovation de toiture comportent les informations sur les déchets déposés (tuiles, ardoises, bois de charpente) : estimation des quantités, modalités d'enlèvement, installations de collecte et coûts associés."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Pour une facture combinant 10 % sur la couverture et 5,5 % sur l'isolation d'un logement de plus de deux ans : mention certifiée par le client, portée sur le devis ou la facture, couvrant les conditions de chaque taux réduit appliqué.",
+    "Coordonnées de l'assureur ou du garant et couverture géographique du contrat d'assurance obligatoire, dont la responsabilité décennale — essentielle pour des travaux de couverture —, sur les devis comme sur les factures.",
+    "Mention « Autoliquidation » et facture émise sans TVA lorsque le couvreur intervient comme sous-traitant d'une entreprise générale ou d'un constructeur.",
+    "Sur les devis : informations relatives à l'enlèvement et à la gestion des déchets de dépose, avec les points de collecte envisagés et l'estimation des coûts correspondants."
+  ],
+  "exemple_facture": {
+    "intitule": "Réfection complète de la couverture avec isolation de la toiture par l'extérieur — maison achevée depuis plus de deux ans (acompte de 30 % déduit)",
+    "lignes": [
+      {
+        "designation": "Dépose de la couverture existante, tri et évacuation des tuiles et liteaux vers une installation de collecte",
+        "quantite": 120,
+        "unite": "m²",
+        "prix_unitaire_ht": 18,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Fourniture et pose d'une isolation de toiture par panneaux rigides (sarking), conforme aux critères de performance en vigueur",
+        "quantite": 120,
+        "unite": "m²",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Fourniture et pose de tuiles terre cuite, écran de sous-toiture et liteaunage compris",
+        "quantite": 120,
+        "unite": "m²",
+        "prix_unitaire_ht": 72,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Le client certifie que le logement est achevé depuis plus de deux ans et que les travaux remplissent les conditions des taux de 10 % (couverture) et de 5,5 % (isolation de la toiture).",
+      "Facture d'acompte n° [référence] de 30 % encaissée à la commande, déduite du présent solde ; TVA correspondante déjà exigible lors de l'encaissement.",
+      "Responsabilité décennale : [assureur], contrat n° [référence], couverture géographique [zone]."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Gérer trois taux de TVA (5,5 %, 10 %, 20 %) ligne à ligne sur un même document, avec la mention de certification du client pour chaque taux réduit.",
+    "Enchaîner devis, facture d'acompte et facture de solde avec déduction de l'acompte, sans ressaisie entre les documents.",
+    "Transformer rapidement un travail supplémentaire découvert en cours de chantier en devis complémentaire accepté, puis en lignes de facture.",
+    "Lisser une trésorerie saisonnière grâce au suivi des encaissements, et préparer le passage des factures de chantier — acomptes et soldes rattachés — à la facturation électronique via une plateforme agréée, au calendrier propre à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée par la DGFiP regroupant comptabilité, compte professionnel et facturation à destination des indépendants. Le couvreur seul y suit factures et encaissements dans un seul outil, utile quand l'activité est saisonnière."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée par la DGFiP qui propose un compte professionnel en ligne et la facturation, pour indépendants, freelances et TPE. Le compte dédié isole les acomptes et soldes de chantier du reste de la trésorerie."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée par la DGFiP centrée sur la facturation et la gestion, pensée pour les indépendants et micro-entrepreneurs. Correspond au couvreur en entreprise individuelle qui facture surtout des particuliers."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Réfection de toiture avec isolation : puis-je appliquer 10 % et 5,5 % sur la même facture ?",
+      "reponse": "Oui, à condition de distinguer les lignes. L'isolation de la toiture relève du taux de 5,5 % réservé aux travaux d'amélioration de la qualité énergétique, ainsi que les travaux qui leur sont indissociablement liés ; la réfection de la couverture elle-même relève du 10 % si le logement est achevé depuis plus de deux ans. Le client certifie les conditions de chaque taux directement sur le devis ou la facture."
+    },
+    {
+      "question": "Puis-je encaisser un acompte avant de monter l'échafaudage, et dois-je l'accompagner d'une facture ?",
+      "reponse": "Oui. Tout acompte versé avant la réalisation de la prestation doit donner lieu à une facture. Pour les prestations de services, la TVA est exigible dès l'encaissement de l'acompte, pas seulement au solde. La facture finale déduit ensuite les acomptes déjà facturés."
+    },
+    {
+      "question": "En déposant les tuiles, je découvre une volige pourrie : comment facturer ce travail imprévu ?",
+      "reponse": "Ne l'ajoutez pas directement à la facture finale. Chiffrez le travail supplémentaire, faites-le accepter par écrit avant de l'exécuter, puis facturez-le sur cette base. Pour une prestation de réparation ou d'entretien chez un particulier, la remise d'un devis détaillé avant la prestation est une obligation réglementaire, pas une simple précaution."
+    },
+    {
+      "question": "Remplacer quelques tuiles après une tempête, est-ce dispensé de devis ?",
+      "reponse": "Non. Le dépannage, la réparation et l'entretien dans le bâtiment imposent un devis détaillé remis avant toute prestation : nature des travaux, décompte en quantité et prix unitaire, main-d'œuvre et frais de déplacement. Vos devis et factures mentionnent aussi votre assurance décennale, les coordonnées de l'assureur et la couverture géographique du contrat."
+    },
+    {
+      "question": "Avec la facturation électronique, mes factures de solde avec acomptes déduits resteront-elles possibles ?",
+      "reponse": "Oui. L'obligation de facturer chaque acompte et la déduction des acomptes sur le solde ne changent pas. Ce qui change, c'est le support : au calendrier propre à votre entreprise, la réception puis l'émission de vos factures passeront par une plateforme agréée. Pour un couvreur, le point à vérifier est double : que l'outil rattache les factures d'acompte et la facture de solde d'un même chantier, et qu'il porte ligne à ligne les taux de 5,5 % et de 10 % avec la certification du client correspondante."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — TVA, taux de 5,5 % : travaux d'amélioration de la qualité énergétique et travaux induits indissociablement liés (BOI-TVA-LIQ-30-20-95)",
+      "url": "https://bofip.impots.gouv.fr/bofip/9417-PGP.html/identifiant=BOI-TVA-LIQ-30-20-95-20260909"
+    },
+    {
+      "titre": "impots.gouv.fr — Quel taux de TVA appliquer pour les travaux réalisés dans les logements ? (10 %, 5,5 % et certification du client)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+    },
+    {
+      "titre": "BOFiP — Obligation de délivrer une facture pour les acomptes (BOI-TVA-DECLA-30-20-10-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+    },
+    {
+      "titre": "BOFiP — TVA exigible à l'encaissement des acomptes pour les prestations de services (BOI-TVA-BASE-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 24 janvier 2017 : devis détaillé avant les prestations de dépannage, réparation et entretien dans le bâtiment",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033935513/"
+    },
+    {
+      "titre": "Légifrance — Décret n° 2020-1817 du 29 décembre 2020 : informations des devis relatives à l'enlèvement et à la gestion des déchets de chantier",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042841880"
+    },
+    {
+      "titre": "Légifrance — Article 22-2 de la loi n° 96-603 : mention de l'assurance professionnelle (dont décennale) sur devis et factures",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044056690/2026-06-12"
+    },
+    {
+      "titre": "BOFiP — Autoliquidation de la TVA dans la sous-traitance de travaux de construction (BOI-TVA-DECLA-10-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique (réception puis émission via plateforme agréée)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

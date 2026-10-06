@@ -1,0 +1,125 @@
+{
+  "nom": "Psychologue",
+  "slug": "psychologue",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Entreprise individuelle en BNC, fréquemment au régime micro-BNC en début d'activité",
+    "Entreprise individuelle en déclaration contrôlée une fois la patientèle installée",
+    "Cumul d'un poste salarié en institution et d'une activité libérale",
+    "Exercice au sein d'un cabinet pluridisciplinaire avec partage de frais"
+  ],
+  "volume_factures_typique": "Quelques notes d'honoraires par jour de consultation, auxquelles s'ajoutent les feuilles de soins des séances réalisées dans le dispositif Mon soutien psy. Des factures B2B ponctuelles pour les interventions en entreprise ou en institution (supervision d'équipes, analyse de pratiques, formation). Peu de factures fournisseurs : loyer, tests psychométriques, supervision personnelle.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Votre exonération de TVA n'est pas automatique : elle est subordonnée à l'autorisation de faire légalement usage du titre de psychologue. Avec le titre, vos soins psychologiques à finalité thérapeutique relèvent de l'article 261, 4, 1° du CGI ; sans cette condition, vos actes sont soumis à la TVA.",
+    "Dans le dispositif Mon soutien psy, le psychologue conventionné facture au tarif unique de 50 € la séance, dépassement d'honoraires interdit, dans la limite de 12 séances par an (une séance d'évaluation puis jusqu'à 11 séances de suivi). Le patient peut vous consulter directement, sans adressage préalable obligatoire.",
+    "Deux circuits coexistent pour ces séances conventionnées : sans tiers payant, le patient vous règle et vous lui remettez la feuille de soins ; avec tiers payant, vous adressez la feuille de soins complétée et signée à son organisme d'assurance maladie. Le tiers payant est obligatoire pour certains publics (Complémentaire santé solidaire, ALD, maternité à partir du sixième mois notamment).",
+    "Vos prestations sans finalité thérapeutique — supervision d'équipes, analyse de pratiques, formation, recrutement, expertises — sont exclues de l'exonération des soins et taxables. Facturées sous franchise en base, elles portent la mention « TVA non applicable, article 293 B du CGI ».",
+    "Ces prestations taxables facturées à des clients professionnels entrent dans le circuit d'émission de factures électroniques, à l'échéance applicable à votre entreprise. Vos séances exonérées en sont dispensées, mais l'obligation de recevoir les factures électroniques de vos fournisseurs vous concerne comme tout professionnel."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur les notes d'honoraires de séances exonérées : la référence à l'exonération, par exemple « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts », réservée aux praticiens autorisés à faire usage du titre de psychologue.",
+    "Sur les prestations taxables (supervision, formation, expertise) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Ne mélangez jamais cette mention avec la référence d'exonération des soins sur une même ligne."
+  ],
+  "exemple_facture": {
+    "intitule": "Note d'honoraires – accompagnement psychologique dans le dispositif Mon soutien psy",
+    "lignes": [
+      {
+        "designation": "Séance d'entretien d'évaluation (dispositif Mon soutien psy, tarif conventionné)",
+        "quantite": 1,
+        "unite": "séance",
+        "prix_unitaire_ht": 50,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Séance de suivi psychologique (dispositif Mon soutien psy, tarif conventionné)",
+        "quantite": 4,
+        "unite": "séance",
+        "prix_unitaire_ht": 50,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA exonérée en application de l'article 261, 4, 1° du code général des impôts (praticien autorisé à faire légalement usage du titre de psychologue).",
+      "Séances réalisées dans le cadre du dispositif Mon soutien psy : tarif de 50 € par séance, dépassement d'honoraires interdit.",
+      "Feuille de soins remise au patient (ou adressée à sa caisse en cas de tiers payant) pour la prise en charge."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Séparer les flux exonérés (séances à finalité thérapeutique) des prestations taxables facturées aux entreprises et institutions.",
+    "Facturer les séances Mon soutien psy au tarif conventionné, avec ou sans tiers payant, sans dépassement.",
+    "Émettre des factures électroniques pour les prestations taxables à des clients professionnels, à l'échéance applicable à votre entreprise.",
+    "Surveiller les recettes taxables au regard de la franchise en base et de ses mentions."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP associant facturation et comptabilité, destinée aux indépendants, freelances et micro-entrepreneurs. Elle couvre les notes d'honoraires du cabinet comme la tenue comptable d'une activité en BNC."
+    },
+    {
+      "slug": "abby",
+      "justification": "Facturation et gestion sur une plateforme agréée DGFiP, ciblant les indépendants et micro-entrepreneurs. Un choix cohérent avec le régime micro-BNC fréquent en début d'exercice libéral."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation sur une plateforme agréée DGFiP, pour indépendants et PME. Pertinent si vous facturez aussi des entreprises ou institutions pour de la supervision ou de la formation."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je ne suis pas autorisé à faire usage du titre de psychologue : mes consultations sont-elles exonérées de TVA ?",
+      "reponse": "Non. Pour les psychologues et psychothérapeutes, l'exonération des soins est subordonnée à l'autorisation de faire légalement usage du titre. Sans cette condition, les actes sont soumis à la TVA, le cas échéant sous le régime de la franchise en base avec la mention de l'article 293 B du CGI."
+    },
+    {
+      "question": "Comment facturer mes séances dans le dispositif Mon soutien psy ?",
+      "reponse": "Le tarif est de 50 € par séance, sans dépassement possible, dans la limite de 12 séances par an (une évaluation puis jusqu'à 11 séances de suivi). Sans tiers payant, le patient vous règle et vous lui remettez la feuille de soins ; avec tiers payant, vous adressez la feuille de soins complétée et signée à son organisme d'assurance maladie."
+    },
+    {
+      "question": "Un patient peut-il venir sans courrier d'adressage dans le cadre conventionné ?",
+      "reponse": "Oui. Le patient peut prendre rendez-vous directement avec un psychologue conventionné, sans adressage préalable obligatoire ; un professionnel de santé peut aussi l'orienter à la suite de son examen clinique. Si le patient relève d'un public à tiers payant obligatoire, vous ne lui faites pas d'avance de frais."
+    },
+    {
+      "question": "Mes supervisions d'équipes et formations en entreprise sont-elles exonérées comme mes séances ?",
+      "reponse": "Non. Ces prestations n'ont pas de finalité thérapeutique : elles sont exclues de l'exonération des soins et taxables. Facturées à des clients assujettis, elles relèveront du circuit d'émission de factures électroniques à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Dois-je émettre des factures électroniques pour mes patients particuliers ?",
+      "reponse": "Non. Vos patients sont des particuliers et la réforme ne vise que les factures entre assujettis ; vos séances exonérées — y compris les séances Mon soutien psy, qui donnent lieu à une feuille de soins et non à une facture électronique — sont en outre dispensées d'émission au format électronique. Seules vos prestations taxables facturées à des entreprises ou institutions (supervision, analyse de pratiques, formation) entreront dans le circuit d'émission, et vous devrez recevoir les factures électroniques de vos fournisseurs (loyer, tests psychométriques) à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP BOI-TVA-CHAMP-30-10-20-10 – exonération des soins conditionnée, pour les psychologues et psychothérapeutes, à l'usage légal du titre ; actes sans finalité thérapeutique taxables",
+      "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+    },
+    {
+      "titre": "ameli.fr – Mon soutien psy : séance à 50 €, 12 séances par an, remboursement et tiers payant obligatoire pour certains publics",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/remboursement-seance-psychologue-mon-soutien-psy"
+    },
+    {
+      "titre": "ameli.fr psychologue – règle de facturation des séances sans tiers payant (feuille de soins remise au patient)",
+      "url": "https://www.ameli.fr/psychologue/exercice-professionnel/facturation/regle-de-facturation-sans-tiers-payant"
+    },
+    {
+      "titre": "ameli.fr psychologue – règle de facturation des séances avec tiers payant (envoi de la feuille de soins à la caisse)",
+      "url": "https://www.ameli.fr/psychologue/exercice-professionnel/facturation/mon-soutien-psy-tiers-payant-psychologue-facturation"
+    },
+    {
+      "titre": "ameli.fr psychologue – foire aux questions Mon soutien psy (accès direct sans adressage, tarif unique, dépassement interdit)",
+      "url": "https://www.ameli.fr/psychologue/exercice-professionnel/psychologue-mon-soutien-psy-faq"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-10 – référence d'exonération sur les notes d'honoraires des opérations exonérées",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-40-10-20 – franchise en base : mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+    },
+    {
+      "titre": "impots.gouv.fr – réforme de la facturation électronique : champ des opérations, dispense d'émission des opérations exonérées, obligation de réception",
+      "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

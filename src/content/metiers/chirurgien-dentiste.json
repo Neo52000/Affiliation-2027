@@ -1,0 +1,127 @@
+{
+  "nom": "Chirurgien-dentiste",
+  "slug": "chirurgien-dentiste",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Entreprise individuelle (praticien libéral conventionné)",
+    "Société d'exercice libéral (SELARL, SELAS)",
+    "Exercice avec société civile de moyens (SCM) pour les frais partagés"
+  ],
+  "volume_factures_typique": "Flux quotidien soutenu : plusieurs notes d'honoraires et feuilles de soins électroniques par jour, plus un volume régulier de factures fournisseurs (prothésiste, consommables, équipement).",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Vos soins dentaires à finalité thérapeutique sont exonérés de TVA en tant que soins dispensés par un membre d'une profession médicale réglementée (article 261, 4, 1° du CGI). La fourniture de prothèses dentaires par les dentistes relève de la même exonération.",
+    "L'exonération des prothèses vise les appareils fabriqués sur mesure pour un patient déterminé. L'administration a précisé que les appareils orthodontiques et les gouttières n'entrent pas dans la catégorie des prothèses dentaires ; les traitements correspondants restent néanmoins exonérés lorsqu'ils constituent des soins à finalité thérapeutique. À l'inverse, la fourniture isolée d'un appareil orthodontique, d'un aligneur ou d'une gouttière, en dehors d'une prise en charge à finalité thérapeutique, est soumise à la TVA au taux normal.",
+    "Avant tout traitement prothétique ou orthodontique, vous remettez un devis écrit normé : description du traitement, matériaux, lieu de fabrication de la prothèse (UE ou hors UE), honoraires, montant remboursé, panier 100 % Santé et alternative thérapeutique. Le patient le signe avant le début des soins ; ce devis ne remplace pas la note d'honoraires.",
+    "Les traitements d'orthodontie et d'orthopédie dento-faciale font l'objet d'une demande d'accord préalable auprès de l'Assurance Maladie, condition de la prise en charge avant facturation.",
+    "En tiers payant, la facturation passe par la feuille de soins électronique : la part obligatoire, et le cas échéant la part complémentaire, sont réglées directement par les organismes. Vos encaissements doivent être rapprochés acte par acte.",
+    "Lorsque vos honoraires comportent un dépassement et atteignent 70 €, une information écrite préalable sur le coût des actes est obligatoire (arrêté du 2 octobre 2008, pris pour l'application de l'article L. 1111-3 du code de la santé publique).",
+    "Vos opérations exonérées sont dispensées d'émission de factures électroniques, mais le cabinet devra recevoir celles de ses fournisseurs — prothésiste en tête — à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Référence à l'exonération (article 261, 4, 1° du CGI ou disposition correspondante de la directive 2006/112/CE) sur les notes d'honoraires portant sur des soins et sur la fourniture de prothèses sur mesure.",
+    "Pour un acte sans finalité thérapeutique soumis à la TVA : taux et montant de TVA sur la ligne concernée, ou mention « TVA non applicable, article 293 B du CGI » si la franchise en base s'applique.",
+    "Cohérence entre la note d'honoraires et le devis signé : le traitement prothétique facturé doit correspondre au devis accepté (matériaux, lieu de fabrication, panier de soins)."
+  ],
+  "exemple_facture": {
+    "intitule": "Note d'honoraires – couronne céramo-métallique sur la dent 26",
+    "lignes": [
+      {
+        "designation": "Soins préparatoires et pose de la couronne (acte à finalité thérapeutique)",
+        "quantite": 1,
+        "unite": "acte",
+        "prix_unitaire_ht": 70,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Couronne céramo-métallique fabriquée sur mesure pour le patient, dent 26",
+        "quantite": 1,
+        "unite": "prothèse",
+        "prix_unitaire_ht": 480,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA non applicable en application de l'article 261, 4, 1° du CGI – soins dentaires et fourniture d'une prothèse dentaire sur mesure",
+      "Traitement conforme au devis écrit signé par le patient avant le début des soins (matériaux et lieu de fabrication indiqués au devis)",
+      "Part Assurance Maladie réglée en tiers payant via feuille de soins électronique"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Relier chaque note d'honoraires au devis normé signé (prothèses, orthodontie) et conserver la trace des accords préalables.",
+    "Rapprocher les règlements du tiers payant (part obligatoire, part complémentaire) des actes facturés.",
+    "Recevoir et traiter un flux régulier de factures fournisseurs au format électronique : prothésiste, consommables, équipement.",
+    "Isoler les éventuels actes sans finalité thérapeutique, soumis à la TVA, du reste de l'activité exonérée."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Pennylane, plateforme agréée, associe gestion financière et comptabilité et est pensée pour travailler avec un expert-comptable. Un cabinet dentaire qui délègue sa comptabilité y partage directement ses pièces."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Qonto, plateforme agréée, réunit compte professionnel et facturation pour PME et indépendants. Le cabinet y suit sur un même espace ses encaissements et la réception des factures de ses fournisseurs."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Tiime, plateforme agréée, propose facturation et comptabilité pour indépendants et TPE. Format adapté à un praticien exerçant seul qui centralise notes d'honoraires et pièces comptables."
+    }
+  ],
+  "faq": [
+    {
+      "question": "La couronne que je facture à mon patient est-elle soumise à la TVA ?",
+      "reponse": "Non. La fourniture de prothèses dentaires par les dentistes est exonérée au titre de l'article 261, 4, 1° du CGI, dès lors que la prothèse est fabriquée sur mesure pour un patient déterminé. Votre note d'honoraires porte la référence à cette exonération, pour l'acte comme pour la prothèse."
+    },
+    {
+      "question": "Mon devis prothétique peut-il tenir lieu de facture ?",
+      "reponse": "Non. Le devis est un document précontractuel normé, signé par le patient avant le début des soins, qui détaille traitement, matériaux, lieu de fabrication et alternatives thérapeutiques. La note d'honoraires est émise après réalisation des soins et obéit à ses propres mentions. Les deux documents coexistent et doivent concorder."
+    },
+    {
+      "question": "Quand envoyer la demande d'accord préalable pour un traitement d'orthodontie ?",
+      "reponse": "Avant de commencer le traitement : la prise en charge par l'Assurance Maladie des traitements d'orthodontie et d'orthopédie dento-faciale est subordonnée à l'accord préalable. La facturation à l'Assurance Maladie intervient ensuite, dans le cadre fixé par la convention."
+    },
+    {
+      "question": "Les actes à visée purement esthétique suivent-ils le même régime que mes soins ?",
+      "reponse": "Non. Seuls les soins à finalité thérapeutique sont exonérés. Un acte sans finalité thérapeutique est exclu de l'exonération et soumis à la TVA ; en franchise en base, il porte la mention « TVA non applicable, article 293 B du CGI », distincte de la mention d'exonération des soins. De la même manière, la fourniture isolée d'un aligneur ou d'une gouttière, hors prise en charge thérapeutique, relève du taux normal."
+    },
+    {
+      "question": "La facturation électronique change-t-elle quelque chose pour mon cabinet, alors que mes soins sont exonérés ?",
+      "reponse": "Oui, du côté des achats. Vos opérations exonérées sont dispensées d'émission au format électronique, mais vous devez être en mesure de recevoir les factures électroniques de vos fournisseurs — prothésiste, consommables, équipement — à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA – Exonérations – Professions médicales et paramédicales, dont fourniture de prothèses dentaires (BOI-TVA-CHAMP-30-10-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+    },
+    {
+      "titre": "BOFiP – Actualité – Précision sur le champ de l'exonération applicable à la fourniture de prothèses dentaires (ACTU-2023-00005)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13795-PGP.html/ACTU-2023-00005"
+    },
+    {
+      "titre": "ameli.fr (espace chirurgien-dentiste) – Devis obligatoire",
+      "url": "https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/facturation-remuneration/tarifs-conventionnels/devis-obligatoire"
+    },
+    {
+      "titre": "ameli.fr (espace chirurgien-dentiste) – Orthodontie : demande d'accord préalable et facturation",
+      "url": "https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/facturation-remuneration/traitement-d-orthodontie-et-d-orthopedie-dentofaciale-demande-d-accord-prealable-et-facturation"
+    },
+    {
+      "titre": "ameli.fr (espace chirurgien-dentiste) – Modalités d'application et de facturation en tiers payant",
+      "url": "https://www.ameli.fr/chirurgien-dentiste/exercice-liberal/facturation-remuneration/pratique-tiers-payant/tiers-payant-mode-emploi"
+    },
+    {
+      "titre": "Légifrance – Arrêté du 2 octobre 2008 relatif au seuil d'information écrite préalable (article L. 1111-3 du code de la santé publique)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000019600052"
+    },
+    {
+      "titre": "BOFiP – TVA – Référence à l'exonération parmi les mentions de facture (BOI-TVA-DECLA-30-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "impots.gouv.fr – Réforme de la facturation électronique : périmètre, dispense d'émission des opérations exonérées, réception",
+      "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

@@ -1,0 +1,120 @@
+{
+  "nom": "Vétérinaire",
+  "slug": "veterinaire",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Entreprise individuelle (exercice libéral)",
+    "Société d'exercice libéral (SELARL, SELAS)",
+    "Société civile professionnelle (SCP)"
+  ],
+  "volume_factures_typique": "Volume élevé : plusieurs dizaines de factures par jour en clinique, entre consultations, délivrance de médicaments, analyses et ventes au comptoir.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Pas d'exonération de soins : vos actes vétérinaires sont soumis à la TVA dans les conditions de droit commun, à la différence des soins à la personne dispensés par les professions de santé humaine.",
+    "Vos actes relèvent du taux normal de 20 %, le taux qui s'applique à toutes les opérations pour lesquelles aucun autre taux n'est prévu.",
+    "Les médicaments vétérinaires, y compris les aliments médicamenteux, sont également au taux normal : la délivrance dans le prolongement direct d'une consultation se facture au même taux que l'acte.",
+    "Votre clientèle est double : les éleveurs et autres clients professionnels, assujettis, dont les factures entreront dans le circuit d'émission électronique à l'échéance applicable à votre entreprise ; les particuliers, que l'obligation d'émission entre assujettis ne vise pas, mais dont les transactions relèvent de la transmission de données (e-reporting) prévue par la réforme — vérifiez sur impots.gouv.fr l'échéance et les modalités applicables à votre entreprise.",
+    "La boutique de la clinique (aliments, accessoires) obéit à des règles de taux propres, distinctes de celles des médicaments : chaque ligne de facture porte son taux, et aucun taux réduit ne doit être présumé sans vérification pour la référence concernée.",
+    "Ne portez jamais la mention d'exonération de l'article 261, 4, 1° du CGI sur vos factures : elle vise les soins à la personne et ne s'applique pas aux soins aux animaux."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Taux de TVA (20 % pour les actes et les médicaments vétérinaires) et montant de la taxe par ligne, avec totaux HT et TTC.",
+    "Identification complète du client professionnel (élevage, société) sur les factures B2B appelées à passer par le circuit d'émission électronique.",
+    "Aucune mention d'exonération de soins : l'exonération de l'article 261, 4, 1° du CGI ne couvre pas l'activité vétérinaire."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture – visite d'élevage bovin et délivrance de médicaments",
+    "lignes": [
+      {
+        "designation": "Visite sanitaire d'élevage : examen du troupeau et compte rendu",
+        "quantite": 1,
+        "unite": "visite",
+        "prix_unitaire_ht": 130,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Antiparasitaire bovin délivré dans le prolongement de la visite",
+        "quantite": 2,
+        "unite": "boîte",
+        "prix_unitaire_ht": 38,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Analyses sur prélèvements réalisés pendant la visite",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux normal de 20 % sur les actes et sur les médicaments délivrés dans le prolongement direct des soins",
+      "Facture adressée à un client assujetti : émission au format électronique à l'échéance applicable à votre entreprise"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Gérer plusieurs taux de TVA sur une même facture lorsque les ventes de la boutique s'ajoutent aux actes et aux médicaments.",
+    "Séparer les flux : factures B2B aux éleveurs destinées au circuit d'émission électronique d'un côté, encaissements des particuliers au comptoir de l'autre — ces derniers pouvant relever de la transmission de données de transactions (e-reporting) via une plateforme.",
+    "Absorber un volume quotidien important de factures et d'encaissements sans ressaisie comptable.",
+    "Recevoir au format électronique les factures des centrales d'achat et des laboratoires, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Qonto, plateforme agréée, combine compte professionnel et facturation pour PME et indépendants. Une clinique qui encaisse quotidiennement et facture des éleveurs y suit les deux flux au même endroit."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Pennylane, plateforme agréée, couvre gestion financière et comptabilité en lien avec un expert-comptable. Pertinent pour une structure vétérinaire dont le volume de pièces et la TVA multi-taux exigent un suivi comptable serré."
+    },
+    {
+      "slug": "shine",
+      "justification": "Shine, plateforme agréée, propose un compte professionnel en ligne avec facturation, pour indépendants, freelances et TPE. Un praticien exerçant seul y gère facturation et encaissements sans multiplier les outils."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je suis docteur vétérinaire : puis-je facturer mes consultations sans TVA, comme un médecin ?",
+      "reponse": "Non. L'exonération des soins à la personne ne s'étend pas aux soins aux animaux : vos actes sont soumis à la TVA dans les conditions de droit commun. Ils relèvent du taux normal de 20 %, applicable à défaut de taux particulier."
+    },
+    {
+      "question": "Quel taux appliquer aux médicaments que je délivre après une consultation ?",
+      "reponse": "Le taux normal. Les médicaments vétérinaires, comme les aliments médicamenteux dont la fonction principale est celle d'un médicament vétérinaire, relèvent du taux de 20 %. La délivrance dans le prolongement direct des soins suit donc le même taux que l'acte lui-même."
+    },
+    {
+      "question": "Mes factures aux éleveurs devront-elles passer par une plateforme ?",
+      "reponse": "Oui. Ce sont des factures entre assujettis : elles entreront dans le circuit d'émission électronique à l'échéance applicable à votre entreprise, via une plateforme. Anticipez ce basculement pour vos clients professionnels, qui représentent souvent une part importante du chiffre d'affaires en activité rurale."
+    },
+    {
+      "question": "Et pour les propriétaires d'animaux de compagnie, dois-je changer ma facturation ?",
+      "reponse": "L'obligation d'émission au format électronique concerne les factures entre assujettis : elle ne vous impose pas d'émettre une facture électronique pour un particulier au comptoir. En revanche, la réforme prévoit aussi la transmission des données de transactions réalisées avec les particuliers (e-reporting), qui passe par une plateforme : vérifiez sur impots.gouv.fr l'échéance et les modalités applicables à votre entreprise. Vous restez par ailleurs tenu de pouvoir recevoir les factures électroniques de vos fournisseurs."
+    },
+    {
+      "question": "Les aliments et accessoires vendus à l'accueil suivent-ils le taux de mes actes ?",
+      "reponse": "Pas nécessairement. Les produits destinés à l'alimentation animale obéissent à des règles de taux spécifiques, distinctes du régime des médicaments vétérinaires. Vérifiez le taux applicable à chaque référence avant de paramétrer votre caisse ; à défaut de règle particulière, c'est le taux normal qui s'applique."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA – Soins aux animaux dispensés par les vétérinaires soumis à la TVA (BOI-TVA-CHAMP-10-10-60-50)",
+      "url": "https://bofip.impots.gouv.fr/bofip/203-PGP.html/identifiant=BOI-TVA-CHAMP-10-10-60-50-20131120"
+    },
+    {
+      "titre": "economie.gouv.fr – TVA : les taux applicables, dont le taux normal de 20 %",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "BOFiP – TVA – Produits imposables au taux normal (BOI-TVA-LIQ-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1438-PGP.html/identifiant=BOI-TVA-LIQ-20-10-20140919"
+    },
+    {
+      "titre": "BOFiP – TVA – Taux réduits – Produits destinés à l'alimentation animale ; médicaments vétérinaires et aliments médicamenteux au taux normal (BOI-TVA-LIQ-30-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/273-PGP.html/identifiant=BOI-TVA-LIQ-30-10-20-20241120"
+    },
+    {
+      "titre": "impots.gouv.fr – Réforme de la facturation électronique : factures entre assujettis, transmission des données de transactions (e-reporting) et obligation de réception",
+      "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

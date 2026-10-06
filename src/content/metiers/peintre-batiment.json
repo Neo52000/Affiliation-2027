@@ -1,0 +1,137 @@
+{
+  "nom": "Peintre en bâtiment",
+  "slug": "peintre-batiment",
+  "famille": "batiment",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle (artisan)", "SASU"],
+  "volume_factures_typique": "10 à 30 factures par mois selon la taille des chantiers. Les chantiers multi-pièces s'étalent sur plusieurs semaines et donnent lieu à un acompte au démarrage puis à une facture de solde, parfois à des facturations intermédiaires.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Sur un chantier type chez un particulier, tout relève du taux de 10 % : préparation des supports, fournitures de peinture mises en œuvre et application, dès lors que le local est affecté à l'habitation et achevé depuis plus de deux ans.",
+    "Le même geste change de taux selon le local : repeindre un séjour relève du 10 %, repeindre une boutique ou des bureaux relève du taux normal de 20 %, quel que soit l'âge du bâtiment.",
+    "Pour un raccord après dégât des eaux, une reprise de plafond ou tout dépannage de peinture, un devis détaillé précède la prestation : nature des travaux, décompte en quantité et prix unitaire (par exemple au m² et par pièce), main-d'œuvre et frais de déplacement.",
+    "Les devis portent les informations déchets du décret n° 2020-1817 : estimation des quantités générées (pots, enduits, bâches), modalités de tri et d'enlèvement, points de collecte retenus et estimation des coûts associés.",
+    "Sur un chantier multi-pièces, un chiffrage ligne par ligne, pièce par pièce et en mètres carrés, du devis jusqu'à la facture, limite les contestations et facilite les facturations intermédiaires.",
+    "Le bénéfice du 10 % repose sur une mention certifiée par le client, portée sur le devis ou la facture ; l'attestation sur formulaire séparé n'est plus exigée."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Certification du client, portée directement sur le devis ou la facture : le local est affecté à l'habitation, achevé depuis plus de deux ans, et les travaux remplissent les conditions du taux de 10 %.",
+    "Sur les devis : estimation de la quantité de déchets générés, modalités de gestion et d'enlèvement, points de collecte (raison sociale, adresse, type d'installation) et estimation des coûts.",
+    "Mention de l'assurance professionnelle obligatoire au titre de l'activité, avec les coordonnées de l'assureur ou du garant et la couverture géographique du contrat.",
+    "Devis détaillé remis avant toute prestation d'entretien ou de réparation dans le bâtiment."
+  ],
+  "exemple_facture": {
+    "intitule": "Mise en peinture séjour, couloir et cage d'escalier — appartement achevé depuis plus de deux ans",
+    "lignes": [
+      {
+        "designation": "Préparation des supports : lessivage, rebouchage, ponçage (séjour et couloir)",
+        "quantite": 88,
+        "unite": "m²",
+        "prix_unitaire_ht": 7.2,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Application de deux couches de peinture acrylique mate, murs du séjour",
+        "quantite": 64,
+        "unite": "m²",
+        "prix_unitaire_ht": 9.8,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Peinture des plafonds, séjour et couloir",
+        "quantite": 29,
+        "unite": "m²",
+        "prix_unitaire_ht": 12.5,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Laque satinée sur boiseries de la cage d'escalier (main courante, plinthes, portes)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 640,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Protection des sols et du mobilier, nettoyage de fin de chantier",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 150,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Le client certifie que le local est affecté à l'habitation et achevé depuis plus de deux ans ; taux de 10 % applicable aux travaux d'amélioration et d'entretien.",
+      "Facture établie conformément au devis n° [référence], remis et accepté avant le début des travaux.",
+      "Assurance professionnelle : [assureur], contrat n° [référence], couverture géographique [zone]."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Construire des devis détaillés pièce par pièce et au mètre carré, puis les convertir en facture sans ressaisie.",
+    "Intégrer les mentions déchets sur chaque devis de chantier.",
+    "Appliquer le bon taux selon l'usage du local : habitation à 10 %, local professionnel à 20 %.",
+    "Suivre plusieurs chantiers en parallèle, avec acompte au démarrage et facture de solde.",
+    "Passer à la réception puis à l'émission de factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée par la DGFiP, dédiée à la facturation et à la gestion des indépendants et micro-entrepreneurs. Correspond au statut très répandu du peintre exerçant seul en micro-entreprise."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée par la DGFiP regroupant comptabilité, compte pro et facturation pour les indépendants. Permet de tenir ses obligations sans service comptable interne."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée par la DGFiP réunissant facturation et comptabilité, pour indépendants, freelances, TPE et micro-entrepreneurs. Convient à une petite entreprise de peinture qui enchaîne les chantiers."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je repeins murs et plafonds d'un appartement ancien : tout passe-t-il à 10 % ?",
+      "reponse": "Oui, si le local est affecté à l'habitation et achevé depuis plus de deux ans. La préparation des supports, les fournitures mises en œuvre et l'application relèvent alors des travaux d'amélioration et d'entretien au taux de 10 %. Le client certifie ces conditions directement sur le devis ou la facture."
+    },
+    {
+      "question": "Un commerçant me demande de repeindre sa boutique : quel taux appliquer ?",
+      "reponse": "Le taux normal de 20 %. Les taux réduits sont réservés aux travaux portant sur des locaux à usage d'habitation achevés depuis plus de deux ans. Un commerce ou des bureaux n'y ouvrent pas droit, même dans un immeuble ancien."
+    },
+    {
+      "question": "Un raccord de peinture après dégât des eaux chez un particulier : le devis est-il obligatoire ?",
+      "reponse": "Oui. Pour les prestations de réparation et d'entretien dans le secteur du bâtiment, l'arrêté du 24 janvier 2017 impose la remise d'un devis détaillé avant toute prestation. Il précise la nature des travaux, le décompte en quantité et prix unitaire, la main-d'œuvre et les frais de déplacement."
+    },
+    {
+      "question": "Que dois-je écrire sur mes devis au sujet des déchets de chantier (pots, enduits, bâches) ?",
+      "reponse": "Les devis de travaux de rénovation indiquent une estimation de la quantité totale de déchets générés, les modalités de gestion et d'enlèvement dont l'effort de tri, les points de collecte retenus — raison sociale, adresse et type d'installation — et une estimation des coûts associés. Cette obligation résulte du décret n° 2020-1817."
+    },
+    {
+      "question": "La mise en peinture d'une façade suit-elle le même taux que l'intérieur ?",
+      "reponse": "Oui pour une maison d'habitation achevée depuis plus de deux ans : il s'agit de travaux d'entretien relevant du taux de 10 %, avec la même mention certifiée par le client sur le devis ou la facture. Pour un local professionnel ou un bâtiment récent, le taux normal de 20 % s'applique."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Impots.gouv.fr — Quel taux de TVA appliquer pour les travaux réalisés dans les logements ? (10 % entretien et amélioration, locaux d'habitation, certification du client)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+    },
+    {
+      "titre": "Economie.gouv.fr — TVA à taux réduit : pour quels travaux ? (taux normal hors habitation ancienne)",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-reduits-travaux"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 24 janvier 2017 : devis détaillé avant toute prestation de dépannage, réparation et entretien dans le bâtiment",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033935513/"
+    },
+    {
+      "titre": "Légifrance — Décret n° 2020-1817 du 29 décembre 2020 : informations des devis relatives à l'enlèvement et à la gestion des déchets de chantier",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042841880"
+    },
+    {
+      "titre": "Légifrance — Mention de l'assurance professionnelle sur devis et factures des artisans",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044056690/2026-06-12"
+    },
+    {
+      "titre": "Economie.gouv.fr (DGCCRF) — Fiche pratique : le devis",
+      "url": "https://www.economie.gouv.fr/dgccrf/Publications/Vie-pratique/Fiches-pratiques/Devis"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

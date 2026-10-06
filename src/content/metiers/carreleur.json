@@ -1,0 +1,144 @@
+{
+  "nom": "Carreleur",
+  "slug": "carreleur",
+  "famille": "batiment",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle (artisan)", "EURL", "SASU"],
+  "volume_factures_typique": "5 à 20 factures par mois, acomptes et situations de travaux compris (ordre de grandeur indicatif, selon la durée des chantiers).",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Sur un même carnet de commandes, la pose de carrelage change de taux selon le local : 10 % dans un logement à usage d'habitation achevé depuis plus de deux ans, 20 % en construction neuve ou dans un local de moins de deux ans. Chaque ligne de facture doit porter le taux correspondant à la situation du chantier.",
+    "Le carrelage fourni et facturé par votre entreprise suit le taux réduit de la prestation : il figure parmi les matières premières admises au taux de 10 % dans un logement ancien. Si le client achète lui-même le carrelage, cet achat reste à 20 % et seule votre pose bénéficie du taux réduit.",
+    "La dépose d'un ancien revêtement en vue de son remplacement relève du même taux réduit que la pose : inutile de l'isoler à 20 % sur la facture.",
+    "En sous-traitance pour une entreprise générale, la facture part sans TVA avec la mention « Autoliquidation » ; c'est le donneur d'ordre qui déclare la taxe.",
+    "Les chantiers de carrelage de plusieurs semaines (logements complets, halls d'immeuble, locaux commerciaux) se facturent par acomptes puis situations d'avancement établies sur les surfaces posées ; en marché privé de travaux, les paiements peuvent être minorés d'une retenue de garantie plafonnée à 5 %.",
+    "Pour tout taux réduit, le client certifie directement sur le devis ou la facture que le logement est achevé depuis plus de deux ans et que les travaux remplissent les conditions ; l'attestation séparée n'est plus exigée."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mention de l'assurance professionnelle souscrite au titre de l'activité de pose de carrelage (responsabilité décennale), coordonnées de l'assureur ou du garant et couverture géographique du contrat, sur les devis et les factures.",
+    "Mention « Autoliquidation » sur les factures de sous-traitance, qui ne font apparaître aucune TVA exigible.",
+    "Mention certifiée par le client, portée sur le devis ou la facture, attestant l'ancienneté du logement et les conditions du taux de 10 % ou de 5,5 %.",
+    "Devis détaillé remis avant toute prestation de dépannage, de réparation ou d'entretien : nature des travaux, décompte en quantité et prix unitaire, main-d'œuvre, frais de déplacement."
+  ],
+  "exemple_facture": {
+    "intitule": "Rénovation du carrelage d'une salle de bain — logement achevé depuis plus de deux ans",
+    "lignes": [
+      {
+        "designation": "Dépose de l'ancien carrelage mural et évacuation des gravats",
+        "quantite": 12,
+        "unite": "m²",
+        "prix_unitaire_ht": 28,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Ragréage et préparation des supports sol et murs",
+        "quantite": 8,
+        "unite": "m²",
+        "prix_unitaire_ht": 22.5,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Fourniture de carrelage grès cérame 30 x 60",
+        "quantite": 22,
+        "unite": "m²",
+        "prix_unitaire_ht": 34,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Pose collée du carrelage sol et murs, joints compris",
+        "quantite": 22,
+        "unite": "m²",
+        "prix_unitaire_ht": 48,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Fourniture et pose de plinthes assorties",
+        "quantite": 9,
+        "unite": "ml",
+        "prix_unitaire_ht": 14,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Le client certifie que le logement est à usage d'habitation, achevé depuis plus de deux ans, et que les travaux remplissent les conditions du taux de 10 % (mention portée sur le devis et rappelée sur la facture).",
+      "Assurance responsabilité décennale : [assureur], contrat n° [référence], couverture géographique : [zone].",
+      "Devis détaillé n° [référence] accepté le [date]."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Gérer plusieurs taux de TVA (10 %, 20 %, parfois 5,5 % en travaux induits) ligne par ligne sur un même devis puis sur la facture.",
+    "Relier acomptes et situations d'avancement à un même chantier, retenue de garantie comprise.",
+    "Basculer en facturation sans TVA avec mention « Autoliquidation » pour les chantiers en sous-traitance.",
+    "Émettre et recevoir les factures via une plateforme agréée à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP orientée indépendants, TPE et micro-entrepreneurs, des statuts fréquents chez les carreleurs à leur compte. La facturation couplée à la comptabilité aide quand les taux de TVA varient d'un chantier à l'autre."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée DGFiP pensée pour travailler avec votre expert-comptable, un appui utile quand sous-traitance en autoliquidation et taux multiples se croisent dans les déclarations. Gestion financière et comptabilité sont réunies au même endroit."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée DGFiP associant compte professionnel et facturation, adaptée aux carreleurs structurés en société. Le suivi des encaissements depuis le compte facilite le pointage des acomptes et des situations d'un chantier."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quel taux de TVA pour refaire le carrelage d'une salle de bain chez un particulier ?",
+      "reponse": "Le taux de 10 % s'applique si le local est à usage d'habitation et achevé depuis plus de deux ans. Votre client certifie ces conditions directement sur le devis ou la facture. Si le logement a moins de deux ans ou s'il s'agit d'une construction neuve, le taux normal de 20 % s'applique."
+    },
+    {
+      "question": "Je repose du carrelage après des travaux d'isolation : puis-je facturer 5,5 % ?",
+      "reponse": "Oui, au titre des travaux induits, si la repose est indissociablement liée à des travaux d'amélioration de la qualité énergétique eux-mêmes à 5,5 %. Elle doit porter sur la même pièce ou sur les éléments du bâti directement affectés, et être facturée dans les trois mois des travaux principaux. À défaut, le taux de 10 % ou de 20 % s'applique selon la situation du local."
+    },
+    {
+      "question": "Le carrelage que je fournis suit-il le même taux que ma pose ?",
+      "reponse": "Oui. Le carrelage figure parmi les matières premières et fournitures admises au taux de 10 % lorsqu'il est fourni et facturé par votre entreprise pour des travaux dans un logement de plus de deux ans. Si le client l'achète lui-même, cet achat reste à 20 % et seule votre prestation de pose bénéficie du taux réduit."
+    },
+    {
+      "question": "Comment facturer un chantier réalisé en sous-traitance d'une entreprise générale ?",
+      "reponse": "Vous émettez la facture sans TVA, avec la mention « Autoliquidation » : la taxe est déclarée par l'entreprise principale preneuse des travaux. Vous reportez le montant hors taxes sur la ligne « autres opérations non imposables » de votre déclaration de chiffre d'affaires. Ce régime ne s'applique jamais aux factures adressées directement au client final."
+    },
+    {
+      "question": "Puis-je facturer un gros chantier de carrelage en plusieurs fois ?",
+      "reponse": "Oui. Un chantier de carrelage de plusieurs semaines (réfection complète d'un logement, pose dans un immeuble ou un local commercial) se facture par acomptes puis par situations d'avancement reprenant les surfaces posées. En marché privé de travaux, les paiements peuvent être diminués d'une retenue de garantie plafonnée à 5 % de leur montant, libérée un an après la réception sauf opposition motivée du maître d'ouvrage. À l'échéance applicable à votre entreprise, les factures adressées à vos clients professionnels transiteront par une plateforme agréée."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Quel taux de TVA appliquer pour les travaux réalisés dans les logements ? — impots.gouv.fr",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+    },
+    {
+      "titre": "BOI-ANNX-000202 — Taux de TVA applicables aux matières premières et fournitures mises en œuvre dans des locaux d'habitation achevés depuis plus de deux ans",
+      "url": "https://bofip.impots.gouv.fr/bofip/1667-PGP.html/identifiant=BOI-ANNX-000202-20140929"
+    },
+    {
+      "titre": "BOI-TVA-LIQ-30-20-95 — Travaux d'amélioration de la qualité énergétique (taux de 5,5 % et travaux induits)",
+      "url": "https://bofip.impots.gouv.fr/bofip/9417-PGP.html/identifiant=BOI-TVA-LIQ-30-20-95-20260909"
+    },
+    {
+      "titre": "BOI-TVA-DECLA-10-10-20 — Autoliquidation de la TVA en sous-traitance de travaux de construction",
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+    },
+    {
+      "titre": "Loi n° 71-584 du 16 juillet 1971, article 1 — Retenue de garantie dans les marchés privés de travaux",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039280616"
+    },
+    {
+      "titre": "Arrêté du 24 janvier 2017 — Devis détaillé avant les prestations de dépannage, réparation et entretien (bâtiment et équipement de la maison)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033935513/"
+    },
+    {
+      "titre": "Article 22-2 de la loi n° 96-603 — Mention de l'assurance professionnelle sur les devis et factures des artisans",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044056690/2026-06-12"
+    },
+    {
+      "titre": "TVA à taux réduit : pour quels travaux ? — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-reduits-travaux"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

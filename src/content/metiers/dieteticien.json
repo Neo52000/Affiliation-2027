@@ -1,0 +1,116 @@
+{
+  "nom": "Diététicien",
+  "slug": "dieteticien",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Micro-entrepreneur",
+    "Entreprise individuelle (profession libérale)",
+    "Société d'exercice libéral (SEL)"
+  ],
+  "volume_factures_typique": "Quelques dizaines de notes d'honoraires par mois pour un cabinet individuel. Le volume augmente avec les forfaits de suivi et les interventions en entreprise.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos consultations à finalité thérapeutique (bilan diététique, éducation et rééducation nutritionnelle sur prescription) sont exonérées de TVA : le diététicien fait partie des professions paramédicales réglementées visées par l'article 261, 4, 1° du CGI.",
+    "Cette exonération repose sur l'usage légal du titre de diététicien, protégé par les articles L. 4371-1 et suivants du code de la santé publique. Sans ce titre, le conseil nutritionnel relève de la TVA.",
+    "Vos prestations sans finalité thérapeutique — ateliers en entreprise, conférences, rédaction de contenus — sortent de l'exonération des soins et sont taxables. Couvertes par la franchise en base, elles portent la mention « TVA non applicable, article 293 B du CGI », qui n'est pas celle des soins exonérés.",
+    "Un forfait de suivi (par exemple quatre séances) se facture en distinguant chaque prestation : les séances à finalité thérapeutique restent exonérées, les prestations annexes suivent leur propre régime. Ne mélangez jamais les deux mentions sur une même ligne.",
+    "Vos notes d'honoraires portant sur des opérations exonérées sont dispensées d'émission au format électronique. Vous devrez en revanche pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise, et vos factures d'ateliers adressées à des clients professionnels entrent dans le circuit d'émission."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Référence à l'exonération sur chaque note d'honoraires de soins : mention renvoyant à l'article 261, 4, 1° du CGI (ou à la disposition correspondante de la directive 2006/112/CE).",
+    "Mention « TVA non applicable, article 293 B du CGI » réservée aux prestations taxables couvertes par la franchise en base — jamais sur les soins exonérés.",
+    "Ventilation ligne à ligne dès qu'un document mêle soins exonérés et prestations taxables, chaque ligne portant son propre régime."
+  ],
+  "exemple_facture": {
+    "intitule": "Note d'honoraires – forfait de suivi diététique sur prescription médicale",
+    "lignes": [
+      {
+        "designation": "Bilan diététique initial : enquête alimentaire et plan personnalisé (finalité thérapeutique)",
+        "quantite": 1,
+        "unite": "consultation",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Forfait de suivi nutritionnel – 4 consultations de rééducation nutritionnelle",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA non applicable en application de l'article 261, 4, 1° du CGI – soins dispensés par un diététicien, profession paramédicale réglementée",
+      "Suivi réalisé sur prescription médicale, dans le cadre d'une prise en charge à finalité thérapeutique"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Distinguer automatiquement les consultations exonérées des prestations taxables (ateliers, conférences) et appliquer la bonne mention sur chaque document.",
+    "Facturer des forfaits multi-séances avec acomptes ou paiements échelonnés, sans perdre le lien entre séances réalisées et montants encaissés.",
+    "Émettre des factures conformes aux entreprises et établissements clients, appelées à passer par le circuit électronique à l'échéance applicable à votre entreprise.",
+    "Recevoir les factures électroniques des fournisseurs via une plateforme, même quand l'activité est presque entièrement exonérée."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Abby est une plateforme agréée orientée facturation et gestion pour les indépendants et micro-entrepreneurs. Ce positionnement correspond au profil dominant des diététiciens libéraux, souvent en micro-entreprise."
+    },
+    {
+      "slug": "indy",
+      "justification": "Indy réunit comptabilité, compte professionnel et facturation pour les indépendants, sur une plateforme agréée. Un diététicien qui gère seul ses obligations les regroupe ainsi au même endroit."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Tiime, plateforme agréée, associe facturation et comptabilité pour les indépendants et TPE. Pour un diététicien qui facture à la fois des consultations exonérées (article 261, 4, 1° du CGI) et des ateliers ou conférences taxables, le suivi séparé de ces deux flux dans un même outil limite les erreurs de mention sur les notes d'honoraires."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes consultations diététiques sont-elles exonérées de TVA ?",
+      "reponse": "Oui, lorsqu'elles ont une finalité thérapeutique et que vous exercez avec le titre de diététicien, profession paramédicale réglementée par le code de la santé publique. L'exonération découle de l'article 261, 4, 1° du CGI. Votre note d'honoraires doit alors porter la référence à cette disposition."
+    },
+    {
+      "question": "Quel régime de TVA pour mes ateliers nutrition en entreprise ?",
+      "reponse": "Ces interventions ne sont pas des soins à la personne : elles sont exclues de l'exonération et soumises à la TVA. Si votre chiffre d'affaires taxable reste sous les seuils de la franchise en base, vous facturez sans TVA avec la mention « TVA non applicable, article 293 B du CGI ». Cette mention est distincte de celle qui vise vos soins exonérés."
+    },
+    {
+      "question": "Comment facturer un forfait de plusieurs consultations de suivi ?",
+      "reponse": "Un forfait composé uniquement de consultations à finalité thérapeutique reste exonéré en totalité, avec la référence à l'article 261, 4, 1° du CGI. S'il inclut des prestations annexes taxables, ventilez : une ligne par prestation, chacune avec son régime. Conservez la trace de la prescription médicale quand elle existe."
+    },
+    {
+      "question": "La réforme de la facturation électronique me concerne-t-elle si presque tout mon chiffre d'affaires est exonéré ?",
+      "reponse": "Oui, partiellement. Vos opérations exonérées sont dispensées d'émission au format électronique, mais vous devez pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise. Vos factures d'ateliers adressées à des clients professionnels entrent, elles, dans le circuit d'émission."
+    },
+    {
+      "question": "Je propose du conseil nutritionnel sans être titulaire du titre de diététicien : puis-je appliquer l'exonération ?",
+      "reponse": "Non. L'exonération vise les membres des professions paramédicales réglementées, et le titre de diététicien est protégé : son usage sans droit est sanctionné pénalement. Sans ce titre, vos prestations de conseil relèvent de la TVA dans les conditions de droit commun."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA – Exonérations – Professions médicales et paramédicales (BOI-TVA-CHAMP-30-10-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+    },
+    {
+      "titre": "Légifrance – Code de la santé publique, article L. 4371-1 (profession de diététicien)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006689537"
+    },
+    {
+      "titre": "Légifrance – Code de la santé publique, articles L. 4371-1 à L. 4371-9 (exercice et protection du titre)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072665/LEGISCTA000006171333/"
+    },
+    {
+      "titre": "BOFiP – TVA – Mentions obligatoires sur les factures, dont la référence à l'exonération (BOI-TVA-DECLA-30-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "BOFiP – TVA – Franchise en base et mention « TVA non applicable, article 293 B du CGI » (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+    },
+    {
+      "titre": "impots.gouv.fr – Réforme de la facturation électronique : dispense d'émission pour les opérations exonérées, obligation de réception",
+      "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

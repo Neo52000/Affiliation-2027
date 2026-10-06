@@ -1,0 +1,129 @@
+{
+  "nom": "Pédicure-podologue",
+  "slug": "pedicure-podologue",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Entreprise individuelle en BNC, régime de la déclaration contrôlée",
+    "Micro-BNC en début d'activité ou en activité réduite",
+    "Société d'exercice libéral (SELARL) pour les cabinets développant l'activité d'orthèses",
+    "SCM entre pédicures-podologues pour mutualiser local et matériel"
+  ],
+  "volume_factures_typique": "Un flux quotidien de factures remises aux patients, mêlant soins de pédicurie, bilans podologiques et délivrance d'orthèses plantaires. S'y ajoutent, ponctuellement, des ventes d'orthèses à des clients professionnels (établissement, structure sportive), taxables et relevant du circuit de facturation entre entreprises. La facturation à l'assurance maladie reste cantonnée aux séances de prévention du pied diabétique. Côté achats, les factures fournisseurs sont régulières : matériaux et semelles brutes, petit matériel, instrumentation stérilisable.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Votre facturation combine trois situations de TVA. Les soins de pédicurie et bilans à finalité thérapeutique sont exonérés (article 261, 4, 1° du CGI). Les orthèses plantaires que vous fabriquez et vendez aux personnes que vous soignez restent exonérées, car elles constituent le prolongement direct de vos soins. Les ventes d'articles d'orthopédie à des personnes auxquelles vous n'avez pas prodigué de soins sont, elles, soumises à la TVA.",
+    "Pour ces ventes taxables, les orthèses plantaires et podo-orthèses inscrites sur la liste des produits et prestations remboursables (LPP) relèvent du taux réduit de 5,5 % applicable aux appareillages pour personnes handicapées. Ne retenez un taux qu'après avoir vérifié l'inscription du produit à la LPP ; la référence LPP portée sur la facture justifie l'application de ce taux.",
+    "Les séances de prévention des lésions du pied chez le patient diabétique (risque podologique de grade 2 ou 3) sont prises en charge et cotées avec la lettre-clé POD. Depuis la loi du 19 mai 2023, vous pouvez grader directement le risque et la prescription n'est plus indispensable à la prise en charge ; si une prescription existe, elle s'impose à vous.",
+    "Lorsque vos honoraires comportent un dépassement et atteignent 70 €, vous devez remettre au patient une information écrite préalable sur le coût des actes (arrêté du 2 octobre 2008, article L. 1111-3 du code de la santé publique). Ce document précède la facture et ne s'y substitue pas.",
+    "Vos soins exonérés sont dispensés d'émission au format électronique. Vos ventes taxables à des clients professionnels (un établissement, une structure sportive) entreraient en revanche dans le circuit d'émission, et vous devrez dans tous les cas recevoir les factures électroniques de vos fournisseurs de matériaux, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur les lignes de soins et d'orthèses délivrées à vos patients soignés : « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts ».",
+    "Sur les lignes taxables facturées sous franchise en base : « TVA non applicable, article 293 B du CGI », mention distincte de la référence d'exonération et non interchangeable avec elle.",
+    "Information écrite préalable sur le coût des actes remise au patient lorsque les honoraires avec dépassement atteignent 70 € (arrêté du 2 octobre 2008 pris pour l'application de l'article L. 1111-3 du code de la santé publique)."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture – soins de pédicurie et orthèses plantaires sur mesure (montants illustratifs)",
+    "lignes": [
+      {
+        "designation": "Soin de pédicurie : traitement d'hyperkératoses et soins unguéaux",
+        "quantite": 1,
+        "unite": "séance",
+        "prix_unitaire_ht": 38,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Examen clinique podologique avec analyse de la marche et prise d'empreintes",
+        "quantite": 1,
+        "unite": "bilan",
+        "prix_unitaire_ht": 45,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Paire d'orthèses plantaires sur mesure, fabriquée et délivrée au patient soigné au cabinet (prolongement direct des soins)",
+        "quantite": 1,
+        "unite": "paire",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA exonérée en application de l'article 261, 4, 1° du code général des impôts : soins et orthèses fournies dans le prolongement direct des soins dispensés au patient.",
+      "Information écrite préalable sur le coût des actes remise au patient le [date] (article L. 1111-3 du code de la santé publique).",
+      "En cas de vente d'orthèses à une personne non soignée au cabinet, la ligne serait taxable (taux réduit de 5,5 % pour les orthèses inscrites à la LPP, référence LPP portée sur la facture)."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Distinguer sur une même facture les lignes exonérées (soins, orthèses du patient soigné) et les lignes taxables (ventes hors soins).",
+    "Appliquer le bon taux et la bonne mention ligne par ligne, dont le 5,5 % des orthèses inscrites à la LPP vendues hors soins.",
+    "Recevoir les factures électroniques des fournisseurs de matériaux et de matériel, à l'échéance applicable à votre entreprise.",
+    "Garder la traçabilité entre information écrite préalable, prescription éventuelle et facture."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Un appui utile quand l'activité mêle soins exonérés et ventes d'orthèses relevant de régimes de TVA différents."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation sur une plateforme agréée DGFiP, pour PME et indépendants. Adapté à un cabinet qui encaisse soins et orthèses et règle des fournisseurs de matériaux depuis un même compte pro."
+    },
+    {
+      "slug": "abby",
+      "justification": "Facturation et gestion sur une plateforme agréée DGFiP, à destination des indépendants et micro-entrepreneurs. Un format simple pour un cabinet individuel, y compris en micro-BNC."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes semelles orthopédiques sont-elles exonérées de TVA comme mes soins ?",
+      "reponse": "Oui, lorsque vous les fabriquez et les vendez aux personnes auxquelles vous prodiguez des soins : l'exonération couvre ces fournitures dans le prolongement direct des soins. En revanche, une vente d'articles d'orthopédie à une personne que vous ne soignez pas est exclue de l'exonération et soumise à la TVA."
+    },
+    {
+      "question": "Quel taux de TVA appliquer quand une vente d'orthèses est taxable ?",
+      "reponse": "Les orthèses plantaires et podo-orthèses inscrites sur la liste des produits et prestations remboursables (LPP) relèvent du taux réduit de 5,5 % prévu pour les appareillages destinés aux personnes en situation de handicap, la référence LPP portée sur la facture justifiant ce taux. Hors inscription à la LPP, ne présumez pas d'un taux : vérifiez le produit concerné avant de facturer."
+    },
+    {
+      "question": "Faut-il une ordonnance pour facturer les séances POD d'un patient diabétique ?",
+      "reponse": "Non, la prescription n'est plus indispensable : depuis la loi du 19 mai 2023, vous pouvez grader vous-même le risque podologique et engager le forfait de prévention pris en charge (grades 2 et 3). Si une prescription a été établie, elle s'impose à vous."
+    },
+    {
+      "question": "À partir de quel montant dois-je remettre une information écrite avant les soins ?",
+      "reponse": "Dès que vos honoraires comportent un dépassement et atteignent 70 €, vous devez remettre au patient une information écrite préalable sur le coût des actes. Ce seuil est fixé par l'arrêté du 2 octobre 2008 pris pour l'application de l'article L. 1111-3 du code de la santé publique."
+    },
+    {
+      "question": "La réforme de la facturation électronique change-t-elle quelque chose pour mon cabinet ?",
+      "reponse": "Vos soins exonérés sont dispensés d'émission au format électronique. Mais vos ventes taxables facturées à des clients professionnels entreraient dans le circuit d'émission, et vous devrez recevoir les factures électroniques de vos fournisseurs de matériaux via une plateforme, à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP BOI-TVA-CHAMP-30-10-20-10 – exonération des soins des pédicures-podologues, extension aux orthèses fournies dans le prolongement direct des soins, exclusion des ventes à des personnes non soignées",
+      "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-50 (version en vigueur du 19/06/2024) – taux réduit de 5,5 % des appareillages pour personnes handicapées inscrits à la LPP, dont orthèses plantaires et podo-orthèses, et justification du taux par la référence LPP sur la facture",
+      "url": "https://bofip.impots.gouv.fr/bofip/1724-PGP.html/identifiant=BOI-TVA-LIQ-30-10-50-20240619"
+    },
+    {
+      "titre": "ameli.fr pédicure-podologue – prévention des complications du pied chez le patient diabétique : grades 2 et 3, séances POD, gradation directe par le podologue",
+      "url": "https://www.ameli.fr/pedicure-podologue/exercice-professionnel/prescription-prise-charge/prise-charge-situation-type-soin/situation-patient-diabete"
+    },
+    {
+      "titre": "Légifrance – arrêté du 2 octobre 2008 fixant à 70 € le seuil de l'information écrite préalable sur le coût des actes (article L. 1111-3 CSP)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000019600052"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-10 – référence d'exonération à porter sur les factures des opérations exonérées",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-40-10-20 – franchise en base et mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+    },
+    {
+      "titre": "impots.gouv.fr – réforme de la facturation électronique : dispense d'émission des opérations exonérées et obligation de réception pour tous",
+      "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}
