@@ -1,0 +1,141 @@
+{
+  "nom": "Consultant SEO",
+  "slug": "consultant-seo",
+  "famille": "numerique",
+  "statuts_frequents": ["Micro-entrepreneur", "EURL", "SASU"],
+  "volume_factures_typique": "Volume souvent observé : quelques factures par mois, entre les abonnements de suivi mensuel et les audits ou missions ponctuelles (estimation éditoriale, non réglementaire)",
+  "clients_types": "B2B",
+  "specificites_facturation": [
+    "Votre activité mêle missions ponctuelles (audit technique, accompagnement de refonte) et abonnements de suivi mensuel. Les deux peuvent figurer sur une même facture, à condition que chaque prestation ait sa ligne, son décompte et sa période.",
+    "Un acompte encaissé à la commande d'un audit donne lieu à une facture d'acompte avec les mentions obligatoires. Si vous êtes redevable de la TVA, la taxe est en principe exigible dès l'encaissement de cet acompte : pour les prestations de services, l'exigibilité intervient à l'encaissement des acomptes et du prix, sauf si vous avez opté auprès de votre service des impôts pour le paiement de la TVA d'après les débits.",
+    "Le référencement se vend sans contrainte de localisation : vos clients peuvent être établis hors de France. Pour un client assujetti établi dans un autre État de l'Union européenne, vous facturez sans TVA, avec la mention « Autoliquidation » et les numéros de TVA intracommunautaire des deux parties.",
+    "Pour un client assujetti établi hors de l'Union européenne, le lieu d'imposition de la prestation est en principe le lieu d'établissement du preneur : la prestation n'est pas située en France et se facture sans TVA française.",
+    "Pour un client établi en France, vos prestations d'audit, d'optimisation et de suivi relèvent du taux normal de 20 % si vous êtes redevable de la TVA, et portent la mention « TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base. Pour un client assujetti établi dans un autre État de l'Union européenne, la règle est différente : la prestation n'est pas située en France et la facture porte la mention « Autoliquidation », y compris si vous êtes en franchise en base. Dans ce cas, demandez un numéro de TVA intracommunautaire à votre service des impôts des entreprises : il est obligatoire sur la facture.",
+    "Vos opérations avec des clients étrangers ne relèvent pas de la facturation électronique entre assujettis établis en France : elles font l'objet d'une transmission de données de transaction à l'administration (e-reporting), à l'échéance applicable à votre entreprise.",
+    "Ces mêmes numéros de TVA intracommunautaire sont repris dans la déclaration relative aux échanges intracommunautaires de services, qui est une obligation distincte de la facture."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« Autoliquidation » sur toute facture sans TVA adressée à un client assujetti établi dans un autre État de l'Union européenne, y compris lorsque vous relevez de la franchise en base.",
+    "Numéro de TVA intracommunautaire du prestataire et du client sur les factures adressées à un preneur assujetti établi dans un autre État membre.",
+    "Décompte détaillé distinguant l'audit ponctuel du suivi mensuel : période couverte et livrables (rapport d'audit, reporting de positions).",
+    "Taux des pénalités de retard, indemnité forfaitaire de recouvrement de 40 € et conditions d'escompte sur les factures entre professionnels."
+  ],
+  "exemple_facture": {
+    "intitule": "Audit SEO ponctuel et premier mois de suivi — client assujetti établi en Belgique",
+    "lignes": [
+      {
+        "designation": "Audit technique et sémantique du site (crawl complet, rapport de recommandations priorisées)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 1900,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Abonnement de suivi SEO — mois 1 (mise en œuvre des optimisations, suivi des positions, reporting mensuel)",
+        "quantite": 1,
+        "unite": "mois",
+        "prix_unitaire_ht": 700,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "Autoliquidation — TVA due par le preneur",
+      "N° de TVA intracommunautaire du prestataire : FR XX XXXXXXXXX ; n° de TVA du client : BE XXXXXXXXXX",
+      "Pénalités de retard : taux prévu aux conditions de règlement ; indemnité forfaitaire pour frais de recouvrement : 40 €",
+      "Escompte pour paiement anticipé : néant"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer des abonnements mensuels de suivi en parallèle de missions ponctuelles",
+    "Émettre des factures intracommunautaires sans TVA avec la mention « Autoliquidation »",
+    "Suivre les acomptes encaissés sur les audits et la TVA correspondante",
+    "Anticiper l'e-reporting des prestations rendues à des clients étrangers, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Elle réunit comptabilité, compte professionnel et facturation pour les indépendants : un périmètre adapté à un consultant seul qui alterne audits ponctuels et abonnements de suivi."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation sur une plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. L'offre vise les PME et les indépendants : pertinente pour relier le suivi bancaire aux encaissements d'abonnements et d'acomptes."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Elle associe facturation et comptabilité, orientée indépendants, freelances et TPE, et permet de tenir à jour la facturation récurrente et son suivi comptable."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends un audit ponctuel puis un abonnement de suivi au même client : une facture ou deux ?",
+      "reponse": "Les deux prestations peuvent figurer sur la même facture, chacune avec sa ligne, sa désignation, son décompte et sa période. Vous pouvez aussi séparer l'audit, souvent réglé avec acompte, du suivi mensuel récurrent : les deux présentations sont régulières dès lors que toutes les mentions obligatoires figurent sur chaque facture."
+    },
+    {
+      "question": "Mon client est une agence établie en Belgique, assujettie à la TVA : comment facturer mon accompagnement SEO ?",
+      "reponse": "Vous émettez la facture sans TVA et portez la mention « Autoliquidation » : la taxe est due par votre client dans son pays. Les numéros de TVA intracommunautaire des deux parties figurent sur la facture. Le vôtre est attribué par votre service des impôts des entreprises lors de l'immatriculation."
+    },
+    {
+      "question": "Mon client est une agence établie en Suisse et je lui vends un audit SEO puis un suivi mensuel : comment facturer ?",
+      "reponse": "Entre professionnels, le lieu d'imposition à la TVA d'une prestation de services est en principe le lieu d'établissement du preneur. Votre audit et votre abonnement de suivi ne sont donc pas situés en France et se facturent sans TVA française, qu'il s'agisse du rapport d'audit ou du reporting de positions mensuel. Conservez la preuve de la qualité d'assujetti de votre client (numéro d'identification local, extrait du registre du commerce) : c'est elle qui justifie l'absence de TVA en cas de contrôle. Vérifiez avec votre client les éventuelles obligations fiscales de son pays. Ces opérations relèvent de l'e-reporting, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Je demande un acompte avant de lancer un audit : quelles conséquences sur ma facturation ?",
+      "reponse": "L'acompte donne lieu à une facture comportant les mentions obligatoires. Si vous êtes redevable de la TVA, la taxe est en principe exigible dès l'encaissement de l'acompte : pour les prestations de services, l'exigibilité intervient à l'encaissement des acomptes et du prix, sauf si vous avez opté auprès de votre service des impôts pour le paiement de la TVA d'après les débits. En franchise en base, la facture d'acompte adressée à un client français porte la mention « TVA non applicable, article 293 B du CGI » ; adressée à un client assujetti établi dans un autre État membre, elle porte la mention « Autoliquidation »."
+    },
+    {
+      "question": "Mes factures vers des clients étrangers passeront-elles par la facturation électronique ?",
+      "reponse": "La facturation électronique vise les opérations entre assujettis établis en France. Vos prestations rendues à des clients étrangers relèvent d'une transmission de données de transaction à l'administration, dite e-reporting, à l'échéance applicable à votre entreprise. Cette transmission passe par une plateforme agréée."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Mention « Autoliquidation » pour les prestations intracommunautaires (BOI-TVA-DECLA-30-20-20-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1531-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-30-20190925"
+    },
+    {
+      "titre": "BOFiP — Lieu des prestations de services (BOI-TVA-CHAMP-20-50)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1485-PGP.html/identifiant=BOI-TVA-CHAMP-20-50-20181107"
+    },
+    {
+      "titre": "Article 259 du Code général des impôts — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000021642728"
+    },
+    {
+      "titre": "Ce qu'il faut savoir sur le numéro de TVA intracommunautaire — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/entreprises/developper-son-entreprise/importer-et-exporter-linternational/ce-quil-faut-savoir-sur-le-numero-de-tva-intracommunautaire"
+    },
+    {
+      "titre": "BOFiP — Fait générateur et exigibilité, prestations de services (encaissement ou option pour les débits) (BOI-TVA-BASE-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "Tout savoir sur la facturation — service-public.fr",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "Mentions obligatoires sur une facture (dont facture d'acompte) — entreprendre.service-public.fr",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "BOFiP — Prestations de services au taux normal de 20 % (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "Franchise en base de TVA — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "Je découvre la facturation électronique (périmètre et e-reporting) — impots.gouv.fr",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Je consulte la liste des plateformes agréées — impots.gouv.fr",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    },
+    {
+      "titre": "Délais de paiement : les règles à connaître — DGCCRF",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

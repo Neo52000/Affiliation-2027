@@ -1,0 +1,139 @@
+{
+  "nom": "Auto-école",
+  "slug": "auto-ecole",
+  "famille": "services",
+  "statuts_frequents": ["SARL", "Entreprise individuelle", "SASU"],
+  "volume_factures_typique": "Élevé : de nombreuses notes et des encaissements échelonnés chaque mois, à suivre élève par élève tout au long des forfaits.",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Chaque élève signe un contrat écrit avant le début de la formation (article L213-2 du code de la route). Pour la catégorie B, un modèle de contrat type s'impose : évaluation préalable du candidat, volume d'heures estimé, prix des prestations, obligations des parties. Vos notes et vos échéanciers en découlent.",
+    "Pas d'exonération « enseignement » : le BOFiP place expressément l'enseignement de la conduite automobile au taux normal de TVA de 20 %. Leçons, forfaits et prestations administratives suivent ce taux, sauf franchise en base.",
+    "Vos prix s'affichent TTC, détaillés prestation par prestation : leçon à l'unité avec sa durée, forfaits avec leur contenu, présentations aux examens. La note remise à l'élève reprend ce détail, y compris la liste des prestations comprises dans un forfait.",
+    "La présentation du candidat aux épreuves pratiques est gratuite. Les frais d'accompagnement à l'épreuve sont encadrés : pour le permis B, ils ne peuvent excéder le prix d'une heure de conduite.",
+    "Permis financé par le CPF : pour le groupe léger (A1, A2, B1, B), la mobilisation du CPF est réservée aux demandeurs d'emploi et aux salariés qui bénéficient par ailleurs du financement d'un tiers (OPCO, région, France Travail) ; les permis du groupe lourd restent mobilisables quelle que soit la situation du titulaire. Dans tous les cas, l'obtention du permis doit concourir au projet professionnel du titulaire, celui-ci ne doit pas faire l'objet d'une interdiction de solliciter un permis, et votre établissement doit être agréé au titre du code de la route et déclaré comme organisme de formation. Vous cumulez alors deux cadres réglementaires.",
+    "Paiements échelonnés : le forfait se règle souvent en plusieurs fois. Suivez, élève par élève, les heures consommées, les heures facturées hors forfait et l'échéancier d'encaissement ; ces encaissements auprès de particuliers relèveront de l'e-reporting, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Note détaillée remise à l'élève dès 25 € TTC, avec, pour un forfait, la liste des prestations qu'il comprend.",
+    "Prix TTC par prestation cohérents avec l'affichage obligatoire des tarifs (arrêté du 19 juin 1987) et avec le contrat d'enseignement signé.",
+    "Mention « TVA non applicable, article 293 B du CGI » si l'établissement relève de la franchise en base ; à défaut, TVA à 20 % sur chaque ligne."
+  ],
+  "exemple_facture": {
+    "intitule": "Note remise à un élève — préparation au permis B (contrat d'enseignement signé après évaluation de départ)",
+    "lignes": [
+      {
+        "designation": "Forfait préparation au code de la route : accès à la salle de code et aux tests pendant 6 mois",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 150,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Leçon de conduite supplémentaire hors forfait, véhicule de catégorie B (1 heure)",
+        "quantite": 4,
+        "unite": "heure",
+        "prix_unitaire_ht": 45,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Frais d'accompagnement à l'épreuve pratique du permis B (au plus le prix d'une heure de conduite)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 45,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Détail des prestations comprises dans le forfait code, repris sur la note",
+      "Prix TTC de chaque prestation identiques à ceux du barème affiché à l'intérieur et à l'extérieur de l'établissement",
+      "Correspondance HT / TTC avec le barème affiché : forfait code 150,00 € HT soit 180,00 € TTC ; leçon de conduite 45,00 € HT soit 54,00 € TTC l'heure ; accompagnement à l'épreuve 45,00 € HT soit 54,00 € TTC",
+      "Pied de note : 375,00 € HT, TVA à 20 % de 75,00 €, soit 450,00 € TTC",
+      "Référence au contrat type d'enseignement de la conduite, catégorie B, conclu après évaluation préalable du candidat"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Suivre chaque élève : heures prévues au contrat, heures consommées, heures facturées en plus, solde du forfait.",
+    "Gérer les encaissements échelonnés et rapprocher chaque paiement de l'échéancier prévu au contrat.",
+    "Émettre des notes détaillées conformes à l'affichage des prix et au contrat type.",
+    "Préparer l'e-reporting des encaissements des élèves particuliers et la réception des factures fournisseurs en électronique, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "shine",
+      "justification": "Compte professionnel en ligne et facturation : utile pour suivre les encaissements échelonnés de nombreux élèves. Plateforme agréée DGFiP, destinée aux indépendants, freelances et TPE."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Facturation et comptabilité pour une auto-école de taille TPE qui émet un grand nombre de notes. Plateforme agréée DGFiP, destinée aux indépendants, TPE et micro-entrepreneurs."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation pour un établissement en société qui gère plusieurs enseignants et des flux d'encaissement réguliers. Plateforme agréée DGFiP, destinée aux PME et aux indépendants."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mon forfait permis B est payé en trois fois : comment établir mes notes ?",
+      "reponse": "Le contrat écrit, obligatoire avant toute formation, fixe le prix des prestations et les modalités de paiement. Remettez une note détaillée dès 25 € TTC, en listant les prestations comprises dans le forfait. Vos encaissements doivent rester cohérents avec l'échéancier prévu au contrat."
+    },
+    {
+      "question": "Une auto-école peut-elle facturer sans TVA comme un établissement d'enseignement ?",
+      "reponse": "Non. Le BOFiP cite expressément les établissements d'enseignement de la conduite automobile parmi les prestations relevant du taux normal de 20 %. Seule la franchise en base permet de facturer sans TVA, avec la mention « TVA non applicable, article 293 B du CGI », et elle tient à votre régime fiscal, pas à la nature de l'enseignement."
+    },
+    {
+      "question": "Un élève mobilise son CPF pour le permis : quelles conditions mon établissement doit-il remplir ?",
+      "reponse": "Cela dépend du permis préparé et de la situation de l'élève. Pour le groupe léger (A1, A2, B1, B), seuls les demandeurs d'emploi et les salariés bénéficiant du financement d'un tiers (OPCO, région, France Travail) peuvent mobiliser leur CPF ; pour les permis du groupe lourd, la mobilisation reste ouverte quelle que soit la situation. Côté établissement, les conditions ne changent pas : être agréé au titre du code de la route et avoir déposé la déclaration d'activité prévue par le code du travail, ce qui vous soumet aussi aux obligations des organismes de formation. Vérifiez la situation de l'élève avant d'établir l'échéancier : un dossier CPF refusé laisse le reste à charge chez l'élève."
+    },
+    {
+      "question": "Que puis-je facturer pour la présentation et l'accompagnement à l'examen ?",
+      "reponse": "La présentation du candidat aux épreuves pratiques est gratuite, pour tous les permis. Les frais d'accompagnement du candidat à l'épreuve pratique sont encadrés : pour le permis B, ils ne peuvent excéder le prix d'une heure de conduite. Votre note doit faire apparaître cette ligne distinctement."
+    },
+    {
+      "question": "Mes élèves sont des particuliers : la facturation électronique me concerne-t-elle quand même ?",
+      "reponse": "Oui, par deux portes. Côté fournisseurs — véhicules, carburant, assurance, éditeur de code en ligne, loyer — vous devrez recevoir leurs factures via une plateforme agréée, à l'échéance applicable à votre entreprise. Côté élèves, vos encaissements auprès de particuliers ne donnent pas lieu à facture électronique mais à une transmission de données à l'administration, l'e-reporting : ce sont les sommes encaissées qui sont transmises, pas le forfait signé. Un forfait réglé en plusieurs fois se transmet donc au rythme des encaissements, et non à la signature du contrat : votre suivi élève par élève doit distinguer ce qui est facturé de ce qui est encaissé."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Prestations imposables au taux normal, dont les établissements d'enseignement de la conduite automobile (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20130619"
+    },
+    {
+      "titre": "Code de la route — Article L213-2 : contrat écrit obligatoire pour l'enseignement de la conduite à titre onéreux — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042656354"
+    },
+    {
+      "titre": "Arrêté du 29 mai 2020 définissant le modèle de contrat type pour l'enseignement de la conduite, catégorie B, modifié par l'arrêté du 11 octobre 2024 (version consolidée) — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000041963999"
+    },
+    {
+      "titre": "Arrêté du 19 juin 1987 relatif à la publicité des prix des prestations d'enseignement de la conduite — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000495195"
+    },
+    {
+      "titre": "Frais d'auto-écoles : quelle est la réglementation ? (affichage, note, présentation gratuite, accompagnement plafonné) — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/particuliers/voyager-et-se-deplacer/frais-dauto-ecoles-quelle-est-la-reglementation"
+    },
+    {
+      "titre": "DGCCRF — Fiche pratique Auto-école — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/auto-ecole"
+    },
+    {
+      "titre": "Décret n° 2017-273 du 2 mars 2017 — conditions d'éligibilité au CPF des préparations au code et au permis de conduire (texte de base, à lire avec les restrictions en vigueur pour le groupe léger) — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000034128700"
+    },
+    {
+      "titre": "Arrêté n° 83-50/A du 3 octobre 1983 — note détaillée obligatoire dès 25 € TTC pour les prestations aux particuliers — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "BOFiP — Franchise en base et mention « TVA non applicable, article 293 B du CGI » (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "Facturation électronique : obligations de réception, d'émission et e-reporting — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

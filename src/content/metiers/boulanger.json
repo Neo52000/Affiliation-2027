@@ -1,0 +1,134 @@
+{
+  "nom": "Boulanger",
+  "slug": "boulanger",
+  "famille": "restauration",
+  "statuts_frequents": ["Entreprise individuelle (artisan boulanger)", "EURL / SARL", "SAS / SASU"],
+  "volume_factures_typique": "Tickets de caisse B2C quotidiens au fournil ; côté factures, de quelques unités à quelques dizaines par mois selon le nombre de restaurants, hôtels et revendeurs livrés régulièrement.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Trois taux de TVA peuvent coexister dans une même journée de vente, et le taux dépend à la fois du produit et de la qualité de l'acheteur. Au comptoir, face au consommateur final : 5,5 % sur le pain, les viennoiseries et les pâtisseries, 10 % sur les sandwichs — réputés vendus en vue d'une consommation immédiate quel que soit leur emballage — et sur les salades vendues avec assaisonnement et couverts, 20 % si une boisson alcoolique est vendue. En revanche, lorsque vous livrez ces mêmes produits préparés à un client professionnel assujetti qui les revendra, le taux applicable est de 5,5 % : le taux de 10 % est réservé à la vente au consommateur final (rescrit BOI-RES-TVA-000205). La ventilation doit être exacte ligne par ligne.",
+    "Les livraisons régulières aux restaurants, hôtels ou revendeurs sont des ventes entre professionnels : ces factures devront être émises au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise.",
+    "Les ventes au comptoir aux particuliers ne donnent pas lieu à facture électronique : leurs données de transactions relèveront de l'e-reporting, selon le même calendrier que la facturation électronique.",
+    "Vos achats (farine, emballages, énergie, matériel) arriveront au format électronique : vous devez pouvoir recevoir ces factures fournisseurs via une plateforme agréée."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Taux de TVA distinct par ligne : 5,5 % sur le pain et les viennoiseries, 5,5 % également sur le snacking livré à un professionnel assujetti qui le revendra, 10 % sur le snacking vendu directement au consommateur final",
+    "Détail de chaque ligne : quantité, dénomination précise du produit (type de pain, grammage), prix unitaire HT",
+    "Date d'émission, identification complète du vendeur et du client professionnel, montants HT et TTC",
+    "Conditions et délais de paiement convenus avec le client livré",
+    "En franchise en base de TVA : mention « TVA non applicable, article 293 B du CGI » et aucune TVA facturée"
+  ],
+  "exemple_facture": {
+    "intitule": "Facture — fourniture hebdomadaire de pain et snacking à un restaurant",
+    "lignes": [
+      {
+        "designation": "Baguette tradition 250 g",
+        "quantite": 420,
+        "unite": "unité",
+        "prix_unitaire_ht": 0.75,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Pain de campagne 1 kg tranché, sous sachet",
+        "quantite": 35,
+        "unite": "unité",
+        "prix_unitaire_ht": 3.4,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Sandwichs baguette jambon-emmental livrés au restaurant pour la revente (livraison entre assujettis)",
+        "quantite": 60,
+        "unite": "unité",
+        "prix_unitaire_ht": 3.1,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "Taux de TVA indiqué ligne par ligne : 5,5 % sur l'ensemble des produits alimentaires livrés à ce client professionnel, qui les revendra lui-même",
+      "Livraison de produits alimentaires préparés entre assujettis à la TVA, en amont de la vente au consommateur final : taux de 5,5 % (rescrit BOI-RES-TVA-000205). Le taux de 10 % s'applique à la vente au consommateur final, réalisée par le restaurant.",
+      "Conditions et délai de paiement convenus avec le restaurant",
+      "Référence des bons de livraison de la semaine"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Ventiler 5,5 % / 10 % / 20 % ligne par ligne selon le produit et selon la qualité de l'acheteur (consommateur final au comptoir ou professionnel assujetti qui revend)",
+    "Émettre des factures B2B récurrentes pour les clients livrés, au format électronique à l'échéance applicable",
+    "Recevoir les factures fournisseurs (farine, énergie, emballages) via une plateforme agréée",
+    "Articuler les encaissements B2C de la caisse avec la transmission e-reporting"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), orientée gestion financière et comptabilité, conçue pour travailler avec votre expert-comptable. Adaptée à une boulangerie (TPE) qui confie ses comptes à un cabinet tout en facturant elle-même ses clients professionnels."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), qui combine compte professionnel et facturation, pour PME et indépendants. Utile pour encaisser les règlements des restaurants livrés et émettre les factures depuis le même outil."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), associant facturation et comptabilité, à destination des indépendants et TPE. Convient à un artisan qui émet des factures régulières aux mêmes clients professionnels."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends surtout des baguettes au comptoir : la facturation électronique me concerne-t-elle vraiment ?",
+      "reponse": "Oui. Même si vos ventes au comptoir aux particuliers relèvent de l'e-reporting et non de la facture électronique, votre fournil reçoit déjà des factures de meunier, de minotier, d'emballage et d'énergie : vous devrez pouvoir les recevoir via une plateforme agréée. Et dès que vous livrez un restaurant, une cantine ou un revendeur, vous émettez des factures entre professionnels, qui devront passer au format électronique à l'échéance applicable à votre entreprise. En pratique, un boulanger qui ne livre personne reste concerné par la réception et par l'e-reporting de ses ventes au comptoir."
+    },
+    {
+      "question": "Quel taux appliquer sur une baguette, et sur un sandwich préparé le matin ?",
+      "reponse": "Le pain, les viennoiseries et les pâtisseries relèvent de 5,5 %, conditionnés ou non. Un sandwich vendu au comptoir à un client qui l'emporte est réputé vendu en vue d'une consommation immédiate : 10 %. Mais si vous livrez ces mêmes sandwichs à un restaurant ou à un revendeur assujetti qui les revendra, le taux retombe à 5,5 %, le taux de 10 % étant réservé à la vente au consommateur final (rescrit BOI-RES-TVA-000205). En cas de doute sur un produit, reportez-vous au tableau du BOFIP (BOI-ANNX-000495)."
+    },
+    {
+      "question": "Je livre du pain tous les matins à trois restaurants : comment facturer ces clients ?",
+      "reponse": "Ce sont des ventes entre professionnels. Chaque facture doit détailler quantité, dénomination et prix unitaire HT par ligne, avec le taux de TVA applicable à chaque ligne — 5,5 % sur les produits alimentaires que le restaurant revendra —, les montants HT et TTC et les conditions de paiement. À l'échéance applicable à votre entreprise, ces factures devront être émises au format électronique via une plateforme agréée."
+    },
+    {
+      "question": "Ma boulangerie est en franchise en base de TVA : qu'est-ce que cela change sur mes factures aux restaurants ?",
+      "reponse": "Vous facturez sans TVA et portez sur chaque facture la mention « TVA non applicable, article 293 B du CGI ». Attention : facturer la TVA à tort vous en rendrait redevable. La franchise ne vous met pas à l'écart de la réforme : vous restez concerné par la réception des factures électroniques et par l'e-reporting."
+    },
+    {
+      "question": "La canette vendue dans la formule sandwich du midi : 5,5 % ou 10 % ?",
+      "reponse": "Une boisson non alcoolique en contenant fermé permettant sa conservation (canette, bouteille) relève de 5,5 %. Servie pour une consommation immédiate, par exemple en gobelet, elle passe à 10 %. Une boisson alcoolique reste à 20 % dans tous les cas."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFIP, annexe BOI-ANNX-000495 : taux des ventes à emporter ou à livrer — produits pour consommation immédiate (10 %) ou conditionnés pour consommation différée (5,5 %)",
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+    },
+    {
+      "titre": "BOFIP, BOI-TVA-LIQ-30-10-10 : le pain, les viennoiseries et les pâtisseries sucrées ne sont pas des produits préparés en vue d'une consommation immédiate et relèvent du taux de 5,5 %",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+    },
+    {
+      "titre": "BOFIP, rescrit BOI-RES-TVA-000205 : les livraisons de produits alimentaires préparés entre assujettis, en amont de la vente au consommateur final, relèvent de 5,5 % ; le taux de 10 % ne vise que la vente au consommateur final",
+      "url": "https://bofip.impots.gouv.fr/bofip/14665-PGP.html/identifiant=BOI-RES-TVA-000205-20251119"
+    },
+    {
+      "titre": "economie.gouv.fr : les taux de TVA du quotidien — les boissons alcooliques restent au taux normal de 20 %",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-quotidien"
+    },
+    {
+      "titre": "economie.gouv.fr : mentions obligatoires à porter sur les factures adressées aux clients professionnels",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "BOFIP : franchise en base — facturation sans TVA, mention de l'article 293 B du CGI, TVA facturée à tort due",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "impots.gouv.fr : je découvre la facturation électronique — obligation de réception puis d'émission pour toutes les entreprises assujetties",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr : clients professionnels et particuliers — facture électronique en B2B, e-reporting pour les ventes aux particuliers",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr : les plateformes agréées — immatriculation par la DGFiP et consultation de la liste officielle",
+      "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

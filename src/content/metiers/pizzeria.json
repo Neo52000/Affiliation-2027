@@ -1,0 +1,141 @@
+{
+  "nom": "Pizzeria",
+  "slug": "pizzeria",
+  "famille": "restauration",
+  "statuts_frequents": ["SARL", "SASU", "Entreprise individuelle", "EURL"],
+  "volume_factures_typique": "Un flux continu de tickets de caisse midi et soir sur trois canaux (salle, comptoir à emporter, livraison), quelques factures émises pour des commandes d'entreprises, et chaque mois des factures fournisseurs et des relevés de commission des plateformes de livraison à traiter.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Trois taux peuvent coexister sur un même ticket selon le canal et le produit : la pizza relève de 10 % qu'elle soit servie en salle, emportée ou livrée chaude, car elle est préparée en vue d'une consommation immédiate ; une boisson non alcoolique vendue en bouteille ou canette fermée avec une commande à emporter relève de 5,5 % ; vins et bières restent à 20 % partout. La caisse doit affecter le bon taux automatiquement.",
+    "L'encaissement des particuliers via un logiciel ou système de caisse impose un équipement sécurisé satisfaisant des conditions d'inaltérabilité, de sécurisation, de conservation et d'archivage des données, justifiées par certificat ou attestation. Les entreprises en franchise en base échappent à cette obligation précise, pas à la réforme de la facturation électronique.",
+    "Les plateformes de livraison ajoutent un flux entrant : leurs commissions sont des factures de prestataires que vous devrez pouvoir recevoir au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise, puis rapprocher de vos encaissements.",
+    "Les ventes aux particuliers, en salle comme en livraison, ne donnent pas lieu à facture électronique : elles alimentent l'e-reporting, sous forme de données agrégées par jour et ventilées par taux de TVA, sans donnée nominative. Les commandes passées par des entreprises (plateaux pour des bureaux) relèvent en revanche de la facture électronique.",
+    "La note remise en salle, obligatoire pour une prestation d'au moins 25 € TTC, reste un document distinct de la facture au sens de la réforme : elle ne remplace pas la facture électronique due à un client professionnel."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Ventilation de la TVA par taux sur toute facture mêlant pizzas livrées chaudes (10 %), boissons en contenants fermés (5,5 %) et boissons alcooliques (20 %) : montant HT et TVA détaillés par taux.",
+    "Lorsqu'une même commande d'entreprise mêle les trois canaux — pizzas livrées chaudes, boissons en contenants fermés, bouteilles de vin — chaque ligne porte son propre taux et la facture récapitule le montant HT et la TVA par taux ; une facture globale au taux moyen ou au taux unique de 10 % ne serait pas conforme, et c'est l'erreur la plus fréquente quand la facture est reconstituée à partir des tickets de caisse.",
+    "Adresse de livraison lorsque les pizzas sont livrées dans les locaux du client, en complément de son adresse de facturation."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture — pizzas livrées chaudes pour un déjeuner d'équipe (client professionnel)",
+    "lignes": [
+      {
+        "designation": "Pizzas Margherita et Regina livrées chaudes (consommation immédiate)",
+        "quantite": 18,
+        "unite": "pizza",
+        "prix_unitaire_ht": 10.2,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Boissons gazeuses en canettes fermées (33 cl)",
+        "quantite": 18,
+        "unite": "canette",
+        "prix_unitaire_ht": 1.5,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Chianti DOCG (bouteille 75 cl)",
+        "quantite": 2,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 13,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Adresse de livraison (locaux du client) indiquée en plus de son adresse de facturation.",
+      "TVA ventilée sur trois taux : 10 % sur les pizzas livrées chaudes, 5,5 % sur les canettes fermées, 20 % sur le vin.",
+      "Conditions et délai de paiement du client professionnel indiqués.",
+      "À l'échéance applicable à votre entreprise, ce type de facture entre professionnels devra être émis au format électronique via une plateforme agréée."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Un logiciel ou système de caisse conforme, justifié par un certificat d'organisme accrédité ou une attestation de l'éditeur, qui applique le bon taux de TVA selon le canal : salle, comptoir à emporter, livraison",
+    "Rapprocher les encaissements issus des plateformes de livraison des relevés de commission reçus",
+    "Émettre des factures électroniques pour les commandes d'entreprises et alimenter l'e-reporting des ventes aux particuliers",
+    "Recevoir et classer les factures fournisseurs (farine, mozzarella, commissions) au format électronique"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée pour indépendants et TPE, couvrant facturation et comptabilité. Une pizzeria indépendante y émet ses factures aux entreprises clientes et suit sa comptabilité courante dans le même outil."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Pertinente quand le cabinet doit rapprocher recettes de caisse, commissions de plateformes et factures fournisseurs."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée réunissant compte professionnel en ligne et facturation, ciblée indépendants et TPE. Pertinente pour une pizzeria qui facture peu d'entreprises : les quelques factures de commandes groupées se font depuis le compte qui reçoit déjà les virements des plateformes de livraison, ce qui évite un deuxième outil pour un volume faible."
+    }
+  ],
+  "faq": [
+    {
+      "question": "La pizza vendue à emporter ou livrée est-elle au même taux que celle servie en salle ?",
+      "reponse": "Oui. Une pizza chaude est un produit préparé en vue d'une consommation immédiate : elle relève de 10 % en salle, au comptoir à emporter comme en livraison. Le taux de 5,5 % ne concerne que les produits conditionnés permettant leur conservation, destinés à une consommation différée. En cas de doute sur un produit précis, reportez-vous au tableau du BOFiP."
+    },
+    {
+      "question": "Mon logiciel de caisse doit-il être certifié ?",
+      "reponse": "Oui si vous êtes assujetti à la TVA et que vous enregistrez les règlements de vos clients particuliers avec un logiciel ou système de caisse. L'équipement doit satisfaire des conditions d'inaltérabilité, de sécurisation, de conservation et d'archivage des données, justifiées par un certificat d'organisme accrédité ou une attestation de l'éditeur. Les entreprises en franchise en base ne sont pas soumises à cette obligation précise."
+    },
+    {
+      "question": "Que deviennent mes tickets de vente aux particuliers avec la réforme ?",
+      "reponse": "Ils ne se transforment pas en factures électroniques. Vos ventes aux particuliers, en salle comme au comptoir et en livraison, relèvent de l'e-reporting : votre outil transmettra des données agrégées par jour et par taux, sans le nom de vos clients. L'enjeu pour vous est la fiabilité de cette ventilation, car un même service peut produire les trois taux : 10 % sur les pizzas, quel que soit le canal, 5,5 % sur les boissons en contenants fermés vendues à emporter ou livrées, 20 % sur les vins et les bières. Une caisse mal paramétrée sur un seul de ces cas fausse la déclaration de toute la journée."
+    },
+    {
+      "question": "Les commissions prélevées par les plateformes de livraison changent-elles quelque chose pour moi ?",
+      "reponse": "Oui, côté réception. Ces commissions sont des factures de prestataires : à l'échéance applicable à votre entreprise, vous devrez pouvoir les recevoir au format électronique via une plateforme agréée, comme toutes vos factures fournisseurs. Pensez à les rapprocher des encaissements reversés pour fiabiliser votre comptabilité."
+    },
+    {
+      "question": "Une entreprise voisine me commande des pizzas chaque semaine : dois-je lui faire une facture électronique ?",
+      "reponse": "C'est une vente entre professionnels : elle devra passer par la facturation électronique via une plateforme agréée, à l'échéance applicable à votre entreprise. D'ici là, émettez une facture classique avec toutes les mentions obligatoires et la TVA ventilée par taux. Les pizzas livrées chaudes restent à 10 %."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Tableau des taux applicables aux ventes à emporter ou à livrer (consommation immédiate ou différée)",
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+    },
+    {
+      "titre": "BOFiP — TVA à 10 % sur les ventes à consommer sur place, hors boissons alcooliques",
+      "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20201014"
+    },
+    {
+      "titre": "economie.gouv.fr — Les taux de TVA du quotidien (boissons alcooliques au taux normal)",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-quotidien"
+    },
+    {
+      "titre": "impots.gouv.fr — Champ d'application de l'obligation de détenir un logiciel de caisse sécurisé",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de"
+    },
+    {
+      "titre": "economie.gouv.fr — Ce qu'il faut savoir sur la certification des logiciels de caisse",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/ce-quil-faut-savoir-sur-la-certification-des-logiciels-de-caisse"
+    },
+    {
+      "titre": "BOFiP — Obligation d'utilisation de logiciels ou systèmes de caisse sécurisés",
+      "url": "https://bofip.impots.gouv.fr/bofip/10691-PGP.html/identifiant=BOI-TVA-DECLA-30-10-30-20210519"
+    },
+    {
+      "titre": "impots.gouv.fr — Fiche : la transmission des données de transactions (e-reporting)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiches_reforme/fiche-e-reporting_transactions.pdf"
+    },
+    {
+      "titre": "impots.gouv.fr — Clients entreprises et particuliers : facturation électronique et e-reporting",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "economie.gouv.fr — Factures : les mentions obligatoires",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "DGCCRF — Cafés et bars : obligations des professionnels (note obligatoire à partir de 25 € TTC)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/cafes-et-bars-quelles-obligations-pour-les-professionnels"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

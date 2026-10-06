@@ -1,0 +1,136 @@
+{
+  "nom": "Esthéticienne",
+  "slug": "estheticienne",
+  "famille": "services",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle", "EURL", "SASU"],
+  "volume_factures_typique": "Un flux quotidien de notes de faible montant remises en institut, complété par quelques factures mensuelles (CSE, bons cadeaux commandés par des entreprises). La quasi-totalité des encaissements provient de particuliers.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Soins et produits coexistent souvent sur la même note : la cure ou l'épilation relève du taux normal de 20 %, et la crème revendue en cabine aussi, aucun taux réduit n'étant prévu pour les produits de beauté. Détaillez chaque ligne pour séparer prestations et ventes.",
+    "L'acompte encaissé à la réservation d'un soin ou d'une cure rend la TVA exigible dès son encaissement. Ne reportez pas la TVA au jour du rendez-vous.",
+    "Une cure payée en une fois mais consommée en plusieurs séances suit la même règle : la TVA est due à l'encaissement du prix, pas séance par séance. Suivez à part le nombre de séances restantes.",
+    "Pour toute prestation d'au moins 25 € TTC réglée par un particulier, remettez une note détaillée dès la fin de la prestation et avant le paiement : date, identité de l'institut, décompte de chaque soin et produit, montants HT et TTC.",
+    "En franchise en base, votre note ne comporte ni taux ni montant de TVA, y compris sur la ligne de produit revendu en cabine : seul le prix à payer apparaît, sous la mention « TVA non applicable, article 293 B du CGI ». Vérifiez le paramétrage de votre logiciel de caisse : beaucoup d'outils d'institut affichent par défaut un décompte HT et TVA sur le ticket de soin et sur les bons cadeaux. Une TVA ainsi portée sur la note serait due du seul fait de sa facturation.",
+    "Vos ventes aux particuliers ne passeront pas par la facture électronique mais par l'e-reporting, une transmission de données à l'administration, à l'échéance applicable à votre entreprise. Un logiciel qui prépare ces données depuis la caisse vous évitera une ressaisie."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Note remise avant le paiement pour toute prestation d'au moins 25 € TTC rendue à un particulier, avec le décompte détaillé de chaque soin et de chaque produit vendu.",
+    "Mention « TVA non applicable, article 293 B du CGI » sur chaque note ou facture si vous relevez de la franchise en base.",
+    "Sur les factures adressées à un professionnel (CSE, entreprise commandant des bons cadeaux) : mentions légales complètes, puis, à l'échéance applicable à votre entreprise, SIREN du client et catégorie de l'opération (prestation, vente ou opération mixte)."
+  ],
+  "exemple_facture": {
+    "intitule": "Note d'institut : solde d'une cure visage après acompte, séance complémentaire et crème emportée",
+    "lignes": [
+      {
+        "designation": "Cure « éclat » : 5 séances de soin du visage (forfait, solde réglé ce jour après acompte de réservation)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 250,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Épilation sourcils, séance du jour",
+        "quantite": 1,
+        "unite": "séance",
+        "prix_unitaire_ht": 15,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Crème hydratante 50 ml (vente de produit)",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 29.17,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Acompte de réservation déjà encaissé, à déduire (TVA collectée lors de son encaissement)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": -50,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Note remise avant le paiement (prestation à un particulier d'au moins 25 € TTC)",
+      "Opération mixte : lignes de soins et ligne de vente de produit distinguées",
+      "Acompte encaissé le [date] : TVA exigible à cet encaissement, solde réglé ce jour"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Encaisser des acomptes de réservation et les rattacher à la bonne cliente et au bon rendez-vous",
+    "Suivre les cures et forfaits : montant encaissé d'avance, séances consommées, séances restantes",
+    "Éditer des notes mêlant soins et ventes de produits, conformes à l'obligation de note dès 25 € TTC",
+    "Préparer l'e-reporting des ventes aux particuliers sans ressaisie, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée DGFiP orientée facturation et gestion pour les indépendants et micro-entrepreneurs, profils fréquents en institut. Elle couvre l'édition des notes et factures au quotidien. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP qui réunit facturation et comptabilité pour les indépendants, freelances, TPE et micro-entrepreneurs. Utile si vous tenez vous-même votre suivi comptable en plus de la caisse. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée DGFiP combinant compte professionnel en ligne et facturation, pensée pour les indépendants et TPE. Un seul outil pour le compte qui reçoit vos encaissements et l'émission de vos documents. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends une cure de dix séances payée en une seule fois : quand la TVA est-elle due ?",
+      "reponse": "Pour une prestation de services, la TVA est exigible à l'encaissement. Elle est donc due lorsque vous encaissez le prix de la cure, même si les séances s'étalent sur plusieurs mois. Suivez les séances restantes à part, pour votre gestion."
+    },
+    {
+      "question": "Dois-je remettre une note pour un simple soin à 30 € réglé en carte bancaire ?",
+      "reponse": "Oui. Pour toute prestation de services d'au moins 25 € TTC rendue à un particulier, une note détaillée doit être remise dès la fin de la prestation et avant le paiement. Elle précise la date, votre identité, le décompte de chaque prestation et produit, et les montants HT et TTC."
+    },
+    {
+      "question": "Je n'encaisse que des particulières en cabine : la facturation électronique me concerne-t-elle vraiment ?",
+      "reponse": "Oui, mais pas au même titre selon les flux. Vous devrez d'abord être en mesure de recevoir les factures électroniques de vos fournisseurs : grossiste en cosmétiques, laboratoire de marque, loueur d'appareils de cabine, prestataire de centrale de réservation. Vos encaissements en cabine, eux, ne donneront pas lieu à une facture électronique mais à un e-reporting, une transmission de données à l'administration. L'émission de factures électroniques ne vous concernera que pour vos clients professionnels, typiquement le CSE qui vous achète des bons cadeaux. Le tout à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Sur une même note, je facture un soin et une crème : quelles précautions ?",
+      "reponse": "Détaillez une ligne par soin et une ligne par produit, chacune avec son prix hors taxes et son taux. Les deux relèvent du taux normal de 20 %, aucun taux réduit n'étant prévu pour les produits de beauté. À l'échéance applicable à votre entreprise, la catégorie de l'opération (prestation, vente ou opération mixte) s'ajoutera aux mentions de vos factures à des professionnels."
+    },
+    {
+      "question": "Un CSE m'achète des bons cadeaux pour ses salariés : qu'est-ce que cela change ?",
+      "reponse": "Vous facturez un professionnel : la facture avec mentions légales est obligatoire. À l'échéance applicable à votre entreprise, cette facture devra être émise via une plateforme agréée et porter le SIREN du client. C'est souvent la première situation qui fait basculer un institut dans la facturation électronique en émission."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – Prestations de services imposables au taux normal de TVA, dont les soins esthétiques (version du 23/09/2020)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20200923"
+    },
+    {
+      "titre": "BOFiP – Produits imposables au taux normal (aucun taux réduit prévu pour les cosmétiques)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1438-PGP.html/identifiant=BOI-TVA-LIQ-20-10-20210813"
+    },
+    {
+      "titre": "BOFiP – Fait générateur et exigibilité de la TVA sur les prestations de services : encaissements et acomptes",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "Légifrance – Arrêté n° 83-50/A du 3 octobre 1983 : note obligatoire dès 25 € TTC pour les prestations aux particuliers",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "economie.gouv.fr – Mentions obligatoires des factures et nouvelles mentions liées à la réforme",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "BOFiP – Franchise en base : mention « TVA non applicable, article 293 B du CGI » et TVA facturée à tort",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "economie.gouv.fr – Tout savoir sur la facturation électronique : réception, émission, e-reporting",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "impots.gouv.fr – Facturation électronique et plateformes agréées (liste officielle)",
+      "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

@@ -1,0 +1,150 @@
+{
+  "nom": "Aide à domicile",
+  "slug": "aide-a-domicile",
+  "famille": "services",
+  "statuts_frequents": [
+    "Micro-entrepreneur",
+    "Entreprise individuelle",
+    "SASU",
+    "Association déclarée de services à la personne"
+  ],
+  "volume_factures_typique": "Volume élevé et très régulier : une facture ou note mensuelle par client particulier suivi, souvent plusieurs dizaines de clients en parallèle, chacune détaillant les heures d'intervention. S'y ajoute, une fois par an, l'édition d'une attestation fiscale pour chaque client.",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Le taux de TVA dépend de la prestation, du public et du régime de votre structure, pas du métier : 5,5 % pour l'assistance aux personnes âgées dépendantes ou handicapées dans les gestes essentiels du quotidien, à condition que votre organisme soit déclaré et, pour ces activités, agréé ou autorisé — le taux réduit ne s'applique qu'à compter de la date de la déclaration, de l'agrément ou de l'autorisation ; 10 % pour l'entretien de la maison et les travaux ménagers rendus par une structure déclarée ; 20 % à défaut, et notamment si votre structure n'est ni déclarée, ni agréée, ni autorisée. Le ménage reste à 10 % même chez une personne dépendante : l'administration a précisé qu'il ne constitue pas un acte essentiel ouvrant droit au 5,5 %. Une même facture mensuelle peut donc ventiler plusieurs taux.",
+    "L'avance immédiate de crédit d'impôt, service optionnel et gratuit de l'Urssaf, change votre circuit d'encaissement : votre client ne règle que le reste à charge après déduction immédiate de son crédit d'impôt de 50 %, l'Urssaf vous versant le complément. L'activation relève du client et reste soumise aux conditions d'éligibilité fixées par l'Urssaf ; une partie de votre clientèle peut donc continuer à régler la totalité de la facture. Prévoyez les deux circuits d'encaissement dans votre suivi de règlements. Vos demandes de paiement doivent reprendre fidèlement le détail facturé.",
+    "Avant le 31 mars de l'année suivant celle du paiement des prestations (article D. 7233-4 du code du travail), vous devez délivrer à chaque client une attestation fiscale annuelle récapitulant les interventions de l'année (intervenants, dates, durées, taux horaire, sommes effectivement acquittées) : sans historique de facturation propre et détaillé, ce document devient impossible à produire.",
+    "Le devis est gratuit et obligatoire dès que la prestation atteint 100 € TTC par mois ; en dessous, il doit être fourni si le client le demande. Pour toute prestation d'au moins 25 € TTC, une note détaillée est remise au client avant paiement.",
+    "Beaucoup d'intervenants exercent en micro-entreprise sous franchise en base : la facture porte alors la mention « TVA non applicable, article 293 B du CGI », sans aucune TVA. La franchise n'exonère pas de la réforme : réception de factures électroniques des fournisseurs et transmission des données de ventes aux particuliers (e-reporting), à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Note détaillée obligatoire dès 25 € TTC pour un particulier : date, identité du prestataire, décompte par prestation, montants HT et TTC, remise avant paiement.",
+    "Ventilation du montant par taux de TVA (5,5 %, 10 %, 20 %) quand plusieurs natures de prestations figurent sur la même facture, le taux de 5,5 % supposant un organisme déclaré et, pour l'assistance aux personnes âgées dépendantes ou handicapées, agréé ou autorisé.",
+    "Mention « TVA non applicable, article 293 B du CGI » pour les structures en franchise en base.",
+    "Document associé obligatoire : attestation fiscale annuelle remise à chaque client avant le 31 mars de l'année suivant celle du paiement des prestations (identification de l'organisme, numéro et date d'enregistrement de la déclaration, récapitulatif des interventions, sommes acquittées)."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture mensuelle — prestations d'aide à domicile chez un particulier (organisme déclaré et autorisé ou agréé pour l'assistance aux personnes âgées dépendantes, assujetti à la TVA)",
+    "lignes": [
+      {
+        "designation": "Assistance à une personne âgée dépendante — aide au lever, à la toilette et aux repas",
+        "quantite": 12,
+        "unite": "heure",
+        "prix_unitaire_ht": 26.5,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Entretien de la maison et travaux ménagers au domicile",
+        "quantite": 8,
+        "unite": "heure",
+        "prix_unitaire_ht": 24,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Ventilation du total par taux de TVA (5,5 % et 10 %).",
+      "Le taux de 5,5 % appliqué à la ligne d'assistance suppose que l'organisme soit agréé ou autorisé pour cette activité ; à défaut, la ligne relève du taux normal de 20 %.",
+      "Avance immédiate : indication du reste à charge réglé par le client après déduction du crédit d'impôt de 50 % versé par l'Urssaf, lorsque le client a activé le service et remplit les conditions d'éligibilité.",
+      "Décompte détaillé des heures par prestation et par intervenant (repris ensuite dans l'attestation fiscale annuelle).",
+      "Pour un intervenant en franchise en base, remplacer toute TVA par la mention « TVA non applicable, article 293 B du CGI »."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Suivre les heures par client et par intervenant pour facturer chaque mois sans ressaisie et alimenter l'attestation fiscale annuelle.",
+    "Gérer un circuit d'encaissement avec reste à charge (avance immédiate Urssaf) et rapprocher les versements Urssaf des factures émises, tout en conservant le circuit classique pour les clients non éligibles.",
+    "Ventiler correctement plusieurs taux de TVA (5,5 %, 10 %, 20 %) ou appliquer la franchise en base selon le statut et le régime de la structure.",
+    "Éditer des devis conformes dès 100 € TTC par mois et des notes détaillées dès 25 € TTC.",
+    "Préparer l'e-reporting des ventes aux particuliers et la réception de factures électroniques, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), dédiée à la facturation et à la gestion, qui cible les indépendants et les micro-entrepreneurs — un statut courant chez les intervenants à domicile, que l'on retrouve dans les statuts fréquents listés plus haut."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), réunissant comptabilité, compte pro et facturation pour les indépendants. Un seul environnement pour facturer les clients particuliers et tenir sa comptabilité d'intervenant à domicile."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), associant facturation et comptabilité, pour les indépendants, freelances, TPE et micro-entrepreneurs. Adaptée à un volume mensuel de petites factures récurrentes adressées à des particuliers."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Comment fonctionne l'avance immédiate de crédit d'impôt pour mes clients ?",
+      "reponse": "C'est un service optionnel et gratuit proposé par l'Urssaf. Votre client l'active lui-même, sous réserve des conditions d'éligibilité fixées par l'Urssaf, puis ne règle que 50 % du montant facturé : son crédit d'impôt est déduit immédiatement, sans attendre l'année suivante, et l'Urssaf vous verse le complément. Le crédit d'impôt mobilisable via ce service est plafonné annuellement par foyer. Les clients qui n'activent pas le service, ou qui n'y sont pas éligibles, continuent de vous régler la totalité de la facture."
+    },
+    {
+      "question": "Quand dois-je remettre l'attestation fiscale annuelle et que doit-elle contenir ?",
+      "reponse": "Avant le 31 mars de l'année suivant celle du paiement des prestations (article D. 7233-4 du code du travail). Elle mentionne notamment l'identification de votre organisme, le numéro et la date d'enregistrement de votre déclaration, le récapitulatif des interventions (intervenant, date, durée), le taux horaire ou forfaitaire et les sommes effectivement acquittées par le client. Sans elle, votre client ne peut pas justifier son avantage fiscal."
+    },
+    {
+      "question": "Quel taux de TVA pour le ménage effectué chez une personne âgée dépendante ?",
+      "reponse": "10 %, si votre structure est déclarée. L'administration fiscale a précisé que l'entretien de la maison n'est pas un acte essentiel de la vie quotidienne : le fait que le bénéficiaire soit dépendant ou handicapé n'ouvre pas droit au taux de 5,5 %, qui reste réservé à l'assistance dans les actes essentiels rendue par un organisme déclaré et, pour ces activités, agréé ou autorisé. Sans déclaration, le taux normal de 20 % s'applique."
+    },
+    {
+      "question": "Dois-je établir un devis avant d'intervenir chez un particulier ?",
+      "reponse": "Oui, dès que la prestation atteint 100 € TTC par mois : le devis est alors obligatoire et gratuit. En dessous de ce montant, vous devez le fournir si le client le demande. Le devis accepté engage ensuite les deux parties sur le contenu et le prix des prestations."
+    },
+    {
+      "question": "Mes clients règlent via l'avance immédiate de l'Urssaf : qu'est-ce que cela change pour mes factures et pour la réforme ?",
+      "reponse": "Rien quant au contenu : votre demande de paiement doit reprendre fidèlement le détail facturé (nature des prestations, heures, taux horaire, ventilation par taux de TVA ou mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base), car ce détail alimente ensuite l'attestation fiscale annuelle de votre client. Ce qui change, c'est l'encaissement : votre client ne vous règle que son reste à charge et l'Urssaf vous verse le complément, ce que votre suivi de règlements doit savoir rapprocher. Côté réforme, vos prestations à des particuliers ne passeront pas par l'émission de factures électroniques mais par la transmission de données de vente (e-reporting), tandis que vous devrez pouvoir recevoir les factures de vos fournisseurs via une plateforme agréée, à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Urssaf — Le service Avance immédiate de crédit d'impôt",
+      "url": "https://www.urssaf.fr/accueil/services/services-particuliers/service-avance-immediate.html"
+    },
+    {
+      "titre": "Article D7233-4 du code du travail — Attestation fiscale annuelle des organismes de services à la personne",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033747494"
+    },
+    {
+      "titre": "service-public.fr (professionnels) — Avantages fiscaux d'une entreprise de services à la personne",
+      "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F31554"
+    },
+    {
+      "titre": "impots.gouv.fr — Bénéficier du crédit d'impôt pour l'emploi d'un salarié à domicile",
+      "url": "https://www.impots.gouv.fr/particulier/questions/comment-beneficier-du-credit-dimpot-pour-lemploi-dun-salarie-domicile"
+    },
+    {
+      "titre": "BOFiP — Taux réduits des services d'aide à la personne : déclaration, agrément ou autorisation (BOI-TVA-LIQ-30-20-80)",
+      "url": "https://bofip.impots.gouv.fr/bofip/780-PGP.html/identifiant=BOI-TVA-LIQ-30-20-80-20190515"
+    },
+    {
+      "titre": "BOFiP — Ventilation des services d'aide à la personne par taux de TVA (BOI-ANNX-000223)",
+      "url": "https://bofip.impots.gouv.fr/bofip/781-PGP.html/identifiant=BOI-ANNX-000223-20190515"
+    },
+    {
+      "titre": "BOFiP — Rescrit : taux de TVA de l'entretien de la maison rendu à des personnes handicapées ou âgées dépendantes (BOI-RES-TVA-000226)",
+      "url": "https://bofip.impots.gouv.fr/bofip/14807-PGP.html/identifiant=BOI-RES-TVA-000226-20251001"
+    },
+    {
+      "titre": "economie.gouv.fr — Devis obligatoire : comment ça marche ?",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "Arrêté n° 83-50/A du 3 octobre 1983 — Note obligatoire pour les prestations de services aux particuliers",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "BOFiP — Franchise en base : mention « TVA non applicable, article 293 B du CGI » (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "economie.gouv.fr — Tout savoir sur la facturation électronique pour les entreprises",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique : liste des plateformes agréées",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "DGCCRF — Services à la personne : quelle réglementation ? (déclaration, agrément, autorisation)",
+      "url": "https://economie.gouv.fr/dgccrf/services-a-personne-quelle-reglementation"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

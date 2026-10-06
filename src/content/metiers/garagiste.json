@@ -1,0 +1,142 @@
+{
+  "nom": "Garagiste",
+  "slug": "garagiste",
+  "famille": "services",
+  "statuts_frequents": ["Entreprise individuelle", "SARL", "SASU", "SAS"],
+  "volume_factures_typique": "Plusieurs factures par jour ouvré, chacune combinant pièces détachées et heures de main-d'œuvre, auxquelles s'ajoutent des factures récurrentes pour flottes, loueurs et dossiers de sinistre réglés par des assureurs.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Pièces détachées et main-d'œuvre relèvent toutes deux du taux normal de 20 % : aucun taux réduit n'existe pour les pièces automobiles. Détaillez néanmoins chaque pièce (référence, origine) et chaque temps de main-d'œuvre sur des lignes séparées.",
+    "Aucun texte général n'impose un devis en réparation automobile. La DGCCRF recommande en revanche de faire signer un ordre de réparation avant toute intervention : nature des travaux, état du véhicule, coût estimatif. Un devis reste conseillé pour les travaux importants et vous engage une fois accepté.",
+    "Pour un particulier, remettez une note dès 25 € TTC avant le paiement, avec le kilométrage au compteur, le décompte de chaque prestation et la dénomination des pièces en précisant leur origine : neuves, d'occasion ou en échange standard. Ces mentions propres au secteur automobile sont prévues par l'arrêté du 27 mars 1987 relatif aux règles de publicité des prix pour les prestations d'entretien ou de réparation des véhicules.",
+    "Affichez vos taux horaires TTC de main-d'œuvre (temps réel passé ou barème de temps du constructeur) et vos prix TTC de forfaits à l'entrée de l'établissement et aux lieux de réception de la clientèle, en application du même arrêté du 27 mars 1987.",
+    "Quand un assureur règle tout ou partie d'une réparation, identifiez toujours votre client sur la facture et distinguez la part réglée par l'assureur de la franchise encaissée auprès du client. Conservez l'ordre de réparation signé en appui du dossier.",
+    "Une facture mêlant vente de pièces et prestation d'atelier est une opération mixte : à l'échéance applicable à votre entreprise, cette catégorie d'opération devient une mention obligatoire, avec le SIREN de vos clients professionnels et l'adresse de livraison si elle diffère de l'adresse de facturation."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur la note remise au particulier : kilométrage du véhicule au compteur, décompte détaillé des prestations et dénomination des pièces avec leur origine (neuves, d'occasion, échange standard), conformément à l'arrêté du 27 mars 1987.",
+    "Sur les factures aux professionnels (flottes, loueurs, sociétés de leasing) : mentions légales complètes, puis, à l'échéance applicable à votre entreprise, SIREN du client, catégorie de l'opération et adresse de livraison si elle diffère de l'adresse de facturation.",
+    "Rappel des conditions de délivrance de la note par un affichage lisible au lieu où s'exécute le paiement."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture d'atelier : remplacement d'embrayage, pièces et main-d'œuvre",
+    "lignes": [
+      {
+        "designation": "Kit d'embrayage complet, pièce neuve (référence constructeur)",
+        "quantite": 1,
+        "unite": "pièce",
+        "prix_unitaire_ht": 320,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Butée hydraulique, pièce neuve",
+        "quantite": 1,
+        "unite": "pièce",
+        "prix_unitaire_ht": 85,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Main-d'œuvre mécanique, barème de temps constructeur",
+        "quantite": 4.5,
+        "unite": "heure",
+        "prix_unitaire_ht": 72,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Forfait traitement des déchets d'atelier (pièces déposées, fluides)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 12,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Kilométrage au compteur relevé à la restitution du véhicule",
+      "Origine de chaque pièce précisée : neuve, d'occasion ou en échange standard",
+      "Référence de l'ordre de réparation signé lors du dépôt du véhicule (document recommandé par la DGCCRF, non obligatoire, mais qui sécurise l'accord du client sur les travaux et leur coût estimatif)",
+      "Opération mixte (pièces + main-d'œuvre) : catégorie à mentionner à l'échéance applicable à votre entreprise",
+      "Forfait de traitement des déchets d'atelier : ce n'est ni une taxe ni une contribution obligatoire. Il ne peut être facturé que s'il figure dans l'affichage de vos prix TTC de prestations forfaitaires et s'il a été porté à la connaissance du client avant l'intervention, sur l'ordre de réparation ou le devis."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer rapidement des réparations combinant pièces référencées et heures de main-d'œuvre",
+    "Suivre les dossiers de sinistre : part assureur, franchise client, encaissements décalés",
+    "Gérer des comptes clients professionnels (flottes, loueurs) avec des factures régulières",
+    "Reprendre les lignes de l'ordre de réparation (pièces référencées, temps au barème constructeur) dans la facture puis en comptabilité, sans double saisie, sur plusieurs dizaines de dossiers par semaine"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec votre expert-comptable. Un choix cohérent pour un garage avec salariés et un volume de factures quotidien. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée DGFiP associant compte professionnel et facturation, ciblée PME et indépendants. Le compte professionnel centralise les règlements décalés des assureurs et des clients en compte. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP réunissant facturation et comptabilité pour les indépendants et TPE. Pertinente pour un petit atelier sans salarié qui veut limiter le nombre d'outils. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+    }
+  ],
+  "faq": [
+    {
+      "question": "L'ordre de réparation est-il obligatoire avant d'intervenir sur un véhicule ?",
+      "reponse": "Aucun texte général n'impose un devis en réparation automobile. La DGCCRF recommande toutefois de faire établir et signer un ordre de réparation au dépôt du véhicule : nature des travaux, état du véhicule, coût estimatif. Pour des travaux importants, un devis est conseillé ; une fois accepté, il vous engage sur l'étendue des travaux, le coût et les délais."
+    },
+    {
+      "question": "Que doit contenir la note remise à un client particulier ?",
+      "reponse": "Dès 25 € TTC, une note détaillée doit être remise avant le paiement. Pour une réparation automobile, l'arrêté du 27 mars 1987 précise notamment la date, votre identification et celle du client, le kilométrage au compteur, le décompte de chaque prestation et la dénomination des pièces avec leur origine : neuves, d'occasion ou en échange standard."
+    },
+    {
+      "question": "Un assureur règle directement la réparation : comment établir la facture ?",
+      "reponse": "La facture identifie dans tous les cas votre client et détaille prestations et pièces. Distinguez la part prise en charge par l'assureur de la franchise que vous encaissez auprès du client, et conservez l'ordre de réparation signé. Les modalités de règlement direct relèvent du dossier de sinistre : faites-les confirmer par écrit par l'assureur."
+    },
+    {
+      "question": "Pièces et main-d'œuvre : un seul taux de TVA ou deux ?",
+      "reponse": "Un seul : le taux normal de 20 % s'applique aux pièces comme à la main-d'œuvre, aucun taux réduit n'étant prévu pour la réparation automobile. Détaillez malgré tout chaque ligne. À l'échéance applicable à votre entreprise, la catégorie de l'opération (livraison de biens, prestation de services ou opération mixte) deviendra une mention obligatoire."
+    },
+    {
+      "question": "Je travaille pour des flottes et des sociétés de leasing : que change la réforme pour moi ?",
+      "reponse": "Ces clients sont des entreprises : vos factures devront être émises via une plateforme agréée, à l'échéance applicable à votre entreprise, et vous devrez d'abord être en mesure d'en recevoir. Le SIREN du client et l'adresse de livraison du véhicule, si elle diffère de l'adresse de facturation, s'ajouteront aux mentions. Vos réparations pour particuliers relèveront de l'e-reporting."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – Prestations de services au taux normal de TVA, dont la main-d'œuvre d'atelier (version du 23/09/2020)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20200923"
+    },
+    {
+      "titre": "BOFiP – Produits au taux normal de TVA, dont les pièces détachées automobiles",
+      "url": "https://bofip.impots.gouv.fr/bofip/1438-PGP.html/identifiant=BOI-TVA-LIQ-20-10-20210813"
+    },
+    {
+      "titre": "Légifrance – Arrêté du 27 mars 1987 relatif aux règles de publicité des prix pour les prestations d'entretien ou de réparation, de contrôle technique, de dépannage ou de remorquage ainsi que de garage des véhicules",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000862823"
+    },
+    {
+      "titre": "DGCCRF – Véhicule automobile : l'ordre de réparation décrit la nature des travaux à effectuer",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques-et-les-faq/vehicule-automobile-lordre-de-reparation-decrit-la-nature"
+    },
+    {
+      "titre": "economie.gouv.fr – Devis obligatoire : secteurs concernés et portée de l'engagement",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "Légifrance – Arrêté du 3 octobre 1983 : note remise aux particuliers dès 25 € TTC",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "economie.gouv.fr – Les mentions obligatoires d'une facture entre professionnels et celles ajoutées par la réforme",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "economie.gouv.fr – La facturation électronique et l'e-reporting pour toutes les entreprises assujetties",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "impots.gouv.fr – Facturation électronique et plateformes agréées (liste officielle)",
+      "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

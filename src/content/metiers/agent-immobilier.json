@@ -1,0 +1,135 @@
+{
+  "nom": "Agent immobilier",
+  "slug": "agent-immobilier",
+  "famille": "services",
+  "statuts_frequents": [
+    "SAS ou SARL (agence titulaire de la carte professionnelle)",
+    "Entreprise individuelle (agent commercial mandataire)",
+    "Micro-entreprise (agent commercial mandataire)"
+  ],
+  "volume_factures_typique": "Faible en transaction (quelques factures d'honoraires par mois, au rythme des ventes), récurrent en gestion locative (une facture par mandat et par période).",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos honoraires ne sont exigibles qu'une fois l'opération effectivement conclue et constatée dans un acte contenant l'engagement des parties. Pour une vente, la facture d'honoraires intervient après la signature de l'acte définitif, jamais avant.",
+    "Aucune facturation sans mandat écrit préalable. Le mandat, numéroté au registre des mandats, fixe votre rémunération et désigne la partie qui la supporte : votre facture doit s'y conformer.",
+    "Vos honoraires d'entremise, de négociation et de gestion relèvent du taux normal de TVA de 20 %, quel que soit le bien concerné (habitation, local commercial, terrain).",
+    "Votre barème s'affiche en prix maximums TTC, dans votre agence et sur votre site internet, avec, pour chaque prestation, l'indication de la partie qui en supporte le paiement ; vos annonces précisent elles aussi à qui incombent les honoraires. Les honoraires facturés ne peuvent excéder ceux convenus au mandat, dans la limite du barème affiché.",
+    "L'agent commercial mandataire facture ses rétrocessions de commission à l'agence : un flux entre professionnels soumis à la facturation électronique, même en micro-entreprise avec la mention « TVA non applicable, article 293 B du CGI ».",
+    "Honoraires facturés à des particuliers (vendeurs, bailleurs) : transmission de données à l'administration (e-reporting). Honoraires facturés à une SCI ou à une entreprise : facture électronique via plateforme agréée, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Honoraires conformes au mandat écrit, qui précise la rémunération et la partie qui en a la charge (loi n° 70-9 du 2 janvier 1970, dite loi Hoguet).",
+    "Pour l'agent commercial mandataire en franchise en base : mention « TVA non applicable, article 293 B du CGI » sur chaque facture de rétrocession.",
+    "Note détaillée remise au client particulier dès 25 € TTC : décompte par prestation, montants HT et TTC.",
+    "À l'échéance applicable à votre entreprise : SIREN du client professionnel (SCI, entreprise), catégorie de l'opération (prestation de services), option éventuelle pour la TVA d'après les débits, adresse de livraison si elle diffère."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture d'honoraires de gestion locative adressée à un propriétaire bailleur (mandat de gestion n° G-2026-114)",
+    "lignes": [
+      {
+        "designation": "Honoraires de gestion courante — appartement T2, loyers encaissés de juillet à septembre",
+        "quantite": 3,
+        "unite": "mois",
+        "prix_unitaire_ht": 65,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Honoraires d'entremise et de négociation — mise en location, part bailleur",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 280,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Réalisation de l'état des lieux d'entrée, part bailleur",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 110,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Référence au mandat de gestion n° G-2026-114 inscrit au registre des mandats",
+      "Chaque prestation facturée est couverte par le mandat visé : si la mise en location et l'état des lieux ne relèvent pas du mandat de gestion n° G-2026-114, portez sur la facture le numéro du mandat de location correspondant, tel qu'inscrit au registre des mandats",
+      "TVA au taux normal de 20 % sur l'ensemble des honoraires d'intermédiation et de gestion",
+      "Note remise au bailleur particulier : décompte par prestation, montants HT et TTC"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Déclencher la facture au bon moment : à la conclusion effective de l'opération pour une transaction, sans aucun acompte sur honoraires.",
+    "Suivre les honoraires mandat par mandat (numéro, montant convenu, partie qui paie) et garantir la cohérence facture-mandat.",
+    "Gérer deux flux distincts à l'échéance applicable à votre entreprise : e-reporting pour les clients particuliers, factures électroniques pour les SCI et entreprises.",
+    "Recevoir et traiter via une plateforme agréée les factures de rétrocession des agents commerciaux mandataires."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation dans un même outil : utile à une agence qui encaisse des honoraires et suit plusieurs mandats en parallèle. Plateforme agréée DGFiP, destinée aux PME et aux indépendants."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Gestion financière et comptabilité pensées pour travailler avec votre expert-comptable, ce qui correspond au fonctionnement d'une agence en société. Plateforme agréée DGFiP, destinée aux TPE, PME et experts-comptables."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Facturation et comptabilité adaptées à l'agent commercial mandataire, indépendant ou micro-entrepreneur, qui facture ses rétrocessions à l'agence. Plateforme agréée DGFiP, destinée aux indépendants et TPE."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Puis-je facturer un acompte sur mes honoraires avant la signature de l'acte authentique ?",
+      "reponse": "Non. Aucune somme ne peut être exigée ni reçue avant que l'opération soit effectivement conclue et constatée dans un acte contenant l'engagement des parties. Pour une vente, vos honoraires se facturent après la signature de l'acte définitif. Percevoir des fonds avant ce stade est pénalement sanctionné."
+    },
+    {
+      "question": "Quel taux de TVA s'applique à mes commissions de vente et à mes honoraires de gestion locative ?",
+      "reponse": "Le taux normal de 20 %. Les prestations des agents immobiliers et des intermédiaires dans les transactions immobilières relèvent du taux normal, quel que soit l'usage du bien. Il n'existe pas de taux réduit propre aux honoraires d'intermédiation."
+    },
+    {
+      "question": "Agent commercial mandataire en micro-entreprise, suis-je concerné par la facturation électronique ?",
+      "reponse": "Oui, et vous êtes au carrefour de deux flux. Vous n'êtes pas titulaire de la carte professionnelle : vous intervenez sous le mandat de l'agence, qui encaisse les honoraires auprès du client et vous reverse votre quote-part. Cette rétrocession est une prestation de services que vous facturez à l'agence, donc une opération entre professionnels : vous devrez recevoir puis émettre ces factures via une plateforme agréée, à l'échéance applicable à votre entreprise. La franchise en base ne vous en dispense pas ; vous conservez la mention « TVA non applicable, article 293 B du CGI ». Veillez à ce que le numéro du mandat inscrit au registre de l'agence figure sur votre facture de rétrocession : c'est lui qui rattache votre commission à l'opération conclue."
+    },
+    {
+      "question": "Mes clients vendeurs et bailleurs sont des particuliers : que change la réforme pour mes factures d'honoraires ?",
+      "reponse": "Ces honoraires ne passent pas par la facture électronique entre entreprises. Ils feront l'objet d'une transmission de données à l'administration, l'e-reporting, à l'échéance applicable à votre entreprise. En revanche, vos honoraires facturés à une SCI ou à une entreprise basculent en facture électronique via plateforme agréée."
+    },
+    {
+      "question": "Mon barème d'honoraires doit-il figurer sur mes factures ?",
+      "reponse": "Non. Le barème relève de l'affichage : prix maximums TTC visibles dans votre agence et publiés sur votre site internet, avec, pour chaque prestation, l'indication de la partie qui en supporte le paiement ; vos annonces précisent elles aussi à qui incombent les honoraires. Sur la facture, vous portez les honoraires réellement convenus au mandat, dans la limite de ce barème, avec les mentions légales habituelles."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "DGCCRF — L'agent immobilier : les règles qui encadrent la profession (carte professionnelle, mandat écrit, rémunération à la conclusion)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques-et-les-faq/lagent-immobilier-les-regles-qui-encadrent-la-profession"
+    },
+    {
+      "titre": "Loi n° 70-9 du 2 janvier 1970 (loi Hoguet) — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000512228"
+    },
+    {
+      "titre": "Arrêté du 10 janvier 2017 relatif à l'information des consommateurs par les professionnels intervenant dans une transaction immobilière, modifié par l'arrêté du 26 janvier 2022 (version consolidée) — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033888549"
+    },
+    {
+      "titre": "BOFiP — Prestations de services imposables au taux normal, dont agents immobiliers et intermédiaires des transactions immobilières (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture entre professionnels et nouvelles mentions de la réforme — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "BOFiP — Franchise en base et mention « TVA non applicable, article 293 B du CGI » (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "Tout savoir sur la facturation électronique pour les entreprises (réception, émission, e-reporting) — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "Arrêté n° 83-50/A du 3 octobre 1983 — note obligatoire pour les prestations de services aux particuliers dès 25 € TTC — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

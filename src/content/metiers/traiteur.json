@@ -1,0 +1,153 @@
+{
+  "nom": "Traiteur",
+  "slug": "traiteur",
+  "famille": "restauration",
+  "statuts_frequents": [
+    "SARL",
+    "EURL",
+    "SASU",
+    "Entreprise individuelle (artisan)",
+    "Micro-entreprise"
+  ],
+  "volume_factures_typique": "Peu de factures isolées, mais des dossiers d'événement qui en génèrent chacun plusieurs : devis détaillé, facture d'acompte à la commande, facture de solde après la réception. Le rythme est très saisonnier : mariages au printemps et en été, réceptions d'entreprise en fin d'année.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Un même événement produit une chaîne de documents : devis détaillé, facture d'acompte à la commande, facture de solde après la réception. Tout acompte encaissé avant la prestation doit donner lieu à une facture d'acompte, et la TVA correspondante est exigible dès l'encaissement, à hauteur du montant encaissé : c'est la règle applicable aux prestations de services, comme une réception servie à table, et elle vaut désormais aussi pour les acomptes portant sur des livraisons de biens (plateaux, buffets livrés).",
+    "Le taux de TVA dépend du format vendu, pas du produit seul : une réception avec service à table relève des ventes à consommer sur place à 10 % ; la livraison de plats conditionnés pour une consommation différée relève de 5,5 % ; les boissons alcooliques servies restent à 20 %. Une facture d'événement ventile donc souvent trois taux.",
+    "Dans une vente à consommer sur place, le matériel nécessaire à la consommation du repas (vaisselle, tables, chaises, nappage, équipements de réchauffage) relève du taux de 10 %, même facturé sur une ligne distincte du prix par convive. Le taux normal ne s'applique que dans deux cas : la livraison de repas sans service, où vous pouvez facturer séparément la nourriture à son taux et la location de matériel au taux normal, à condition de distinguer les deux prix en comptabilité ; et les mises à disposition d'hôtesses, de vestiaire, de voiturier ou de chauffeur, exclues du taux réduit.",
+    "Les clients professionnels (entreprises, agences événementielles, comités sociaux) imposent les mentions entre professionnels : délai de paiement, taux des pénalités de retard et indemnité forfaitaire pour frais de recouvrement de 40 €. Ces factures devront être émises au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise.",
+    "Les mariages et réceptions privées, facturés à des particuliers, ne donnent pas lieu à facture électronique : leurs données de transactions seront transmises à l'administration via l'e-reporting, selon le même calendrier que la facturation électronique.",
+    "Le devis signé engage les deux parties. Précisez si la somme versée à la commande est un acompte (engagement ferme, pas de dédit) ou des arrhes (annulation possible, sommes perdues). Avec un client particulier, à défaut de stipulation contraire du devis, les sommes versées d'avance sont des arrhes au sens de l'article L. 214-1 du code de la consommation. Cette présomption ne s'applique pas aux contrats conclus avec un client professionnel : pour un séminaire ou une réception d'entreprise, indiquez expressément la nature du versement, faute de quoi la qualification se discutera au cas par cas."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Date et lieu de la prestation (réception servie ou livraison du buffet), en plus de la date d'émission de la facture.",
+    "Ventilation de la TVA par taux lorsque l'événement combine service à table (10 %), plateaux livrés pour consommation différée (5,5 %) et boissons alcooliques (20 %), avec le taux applicable ligne par ligne.",
+    "Sur les factures de séminaires, cocktails et réceptions d'entreprise, les mentions entre professionnels s'ajoutent : conditions et délai de paiement, taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € — à porter aussi sur la facture d'acompte, et pas seulement sur la facture de solde.",
+    "Une facture d'acompte pour chaque acompte encaissé avant la réalisation de la prestation."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — cocktail dînatoire d'entreprise, 40 convives, service à table dans les locaux du client",
+    "lignes": [
+      {
+        "designation": "Cocktail dînatoire 40 convives (18 pièces salées et sucrées par personne), service à table compris — vente à consommer sur place",
+        "quantite": 40,
+        "unite": "convive",
+        "prix_unitaire_ht": 28,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Crémant d'Alsace AOC servi pendant la réception (bouteille 75 cl)",
+        "quantite": 12,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 11.5,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Mise à disposition de la vaisselle, de la verrerie et du nappage nécessaires au service",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Acompte encaissé à la commande et facturé séparément (facture d'acompte référencée) ; la présente facture porte sur le solde.",
+      "Date et lieu de la prestation : réception servie dans les locaux du client, indiqués en plus de la date d'émission.",
+      "Client professionnel : délai de paiement, taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € mentionnés.",
+      "TVA ventilée par taux : 10 % sur la prestation servie à table, y compris la mise à disposition du matériel nécessaire à la consommation du repas (vaisselle, verrerie, nappage), qui suit le sort de la vente à consommer sur place même lorsqu'elle est facturée sur une ligne distincte ; 20 % sur les boissons alcooliques."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Enchaîner devis, facture d'acompte et facture de solde sans ressaisie, avec une numérotation continue par dossier événement",
+    "Ventiler plusieurs taux de TVA sur une même facture selon le format de l'événement (service à table, livraison différée, boissons)",
+    "Émettre des factures électroniques conformes pour les clients entreprises, à l'échéance applicable à votre entreprise",
+    "Suivre les encaissements par événement : acompte, solde, relances des clients professionnels"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée associant compte professionnel et facturation, ciblée PME et indépendants. Le suivi des encaissements d'acomptes et de soldes par événement se fait depuis le même outil que l'émission des factures."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Adaptée à un traiteur en société qui délègue sa comptabilité tout en produisant des factures multi-taux."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée orientée indépendants, freelances et TPE, réunissant facturation et comptabilité. Convient à un traiteur seul ou en petite équipe qui veut gérer devis, factures d'acompte et factures de solde dans un outil unique."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Dois-je émettre une facture quand j'encaisse un acompte sur un mariage ou un séminaire ?",
+      "reponse": "Oui. Tout acompte perçu avant la réalisation de l'opération doit donner lieu à une facture d'acompte. La TVA correspondante est exigible dès l'encaissement de l'acompte, à hauteur du montant encaissé, aussi bien pour une réception servie (prestation de services) que pour des plateaux ou buffets livrés (livraison de biens). La facture de solde vient ensuite clore le dossier."
+    },
+    {
+      "question": "Je livre des buffets froids et j'assure aussi des réceptions avec service : quel taux de TVA appliquer ?",
+      "reponse": "Les deux situations ne relèvent pas du même taux. La réception avec service sur place est une vente à consommer sur place, taxée à 10 %. La livraison de plats conditionnés permettant leur conservation, pour une consommation différée, relève de 5,5 %. Les boissons alcooliques restent à 20 % dans tous les cas ; en cas de doute sur un produit, reportez-vous au tableau du BOFiP."
+    },
+    {
+      "question": "Mon client annule l'événement après avoir versé une somme à la commande : acompte ou arrhes ?",
+      "reponse": "Tout dépend de ce que prévoit votre devis. L'acompte traduit un engagement ferme des deux parties : le client qui se rétracte peut devoir des dommages-intérêts. Les arrhes autorisent le dédit : le client les perd, et vous devriez le double si vous annuliez. Avec un client particulier, à défaut de précision écrite, les sommes versées d'avance sont présumées être des arrhes (article L. 214-1 du code de la consommation). Cette présomption ne joue pas avec un client professionnel : indiquez donc clairement la nature du versement sur le devis, quel que soit le client."
+    },
+    {
+      "question": "Mes clients sont des entreprises pour les séminaires et des particuliers pour les mariages : quelles obligations avec la réforme ?",
+      "reponse": "Vous êtes concerné par les deux volets, et la frontière passe à l'intérieur de vos dossiers. Un séminaire facturé à une entreprise relève de la facture électronique : devis, facture d'acompte et facture de solde devront tous transiter par une plateforme agréée, à l'échéance applicable à votre entreprise, et porter la ventilation par taux de votre prestation. Un mariage facturé à des particuliers n'y est pas soumis : ses données de transactions seront transmises à l'administration via l'e-reporting. En pratique, votre outil doit savoir distinguer les deux circuits sur une même numérotation de dossiers, et vous devrez dans tous les cas pouvoir recevoir au format électronique les factures de vos fournisseurs et de vos loueurs de matériel."
+    },
+    {
+      "question": "Le devis est-il obligatoire pour une prestation traiteur ?",
+      "reponse": "La réglementation impose un devis écrit dans certains secteurs limitativement listés, et l'activité de traiteur n'y figure pas expressément. L'information préalable du client sur les prix reste en revanche obligatoire, et le devis signé engage les deux parties. Pour un événement avec acompte, le devis écrit reste le document de référence en cas de litige."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Exigibilité de la TVA sur les acomptes : extension aux livraisons de biens de la règle d'exigibilité à l'encaissement",
+      "url": "https://bofip.impots.gouv.fr/bofip/13758-PGP.html/ACTU-2022-00148"
+    },
+    {
+      "titre": "BOFiP — Règles relatives à l'établissement des factures, opérations donnant lieu à facturation (factures d'acompte)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+    },
+    {
+      "titre": "BOFiP — Ventes à consommer sur place à 10 % (hors boissons alcooliques) et services de traiteur : prestation servie et mise à disposition du matériel nécessaire à la consommation du repas (BOI-TVA-LIQ-30-20-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20201014"
+    },
+    {
+      "titre": "BOFiP — Tableau des taux applicables aux ventes à emporter ou à livrer (consommation immédiate ou différée)",
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+    },
+    {
+      "titre": "economie.gouv.fr — Les taux de TVA du quotidien (boissons alcooliques au taux normal)",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-quotidien"
+    },
+    {
+      "titre": "economie.gouv.fr — Factures : les mentions obligatoires",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "DGCCRF — Délais de paiement : pénalités de retard et indemnité forfaitaire de recouvrement de 40 €",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "DGCCRF — Acompte, arrhes, avoir (présomption d'arrhes de l'article L. 214-1 du code de la consommation, dans les contrats entre professionnel et consommateur)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/acompte-arrhes-avoir"
+    },
+    {
+      "titre": "economie.gouv.fr — Devis obligatoire : comment ça marche ?",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "DGCCRF — Le devis (information précontractuelle et mentions)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/devis"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Clients entreprises et particuliers : facturation électronique et e-reporting",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}
