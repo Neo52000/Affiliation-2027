@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
 import ExempleFacture from '../../components/ExempleFacture.astro';
 import ComparatifCourt from '../../components/ComparatifCourt.astro';
+import Picto from '../../components/Picto.astro';
 import { FAMILLE_LABELS } from '../../lib/familles';
 import { formatDateFr } from '../../lib/dates';
 import { metierDescription, metierTitle } from '../../lib/seo';
@@ -52,6 +53,17 @@ if (!reception || !emissionTpe) throw new Error('echeances.json : échéances cl
 const avecAffiliation = hasAffiliate(recommandes.map((r) => r.outil.data.slug));
 const familleLabel = FAMILLE_LABELS[d.famille];
 
+// Sommaire de la colonne d'appui : les ancres existent déjà dans l'article.
+const SOMMAIRE = [
+  { id: 'essentiel', label: 'L’essentiel en 3 lignes' },
+  { id: 'specificites', label: 'Spécificités du métier' },
+  { id: 'exemple', label: 'Exemple de facture' },
+  { id: 'outils', label: '3 outils adaptés' },
+  { id: 'checklist', label: 'Mise en conformité' },
+  { id: 'faq', label: 'Questions fréquentes' },
+  { id: 'sources', label: 'Sources officielles' },
+];
+
 // JSON-LD FAQPage (section 9) — questions réellement affichées sur la page.
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -75,193 +87,238 @@ const faqJsonLd = {
 
   <Breadcrumb items={[{ label: familleLabel, href: `/metiers/${d.famille}` }, { label: d.nom }]} />
 
-  <article class="mt-4">
-    <h1 class="prose-measure text-3xl font-bold">
-      Facturation électronique pour {d.nom.toLowerCase()} : obligations et logiciels adaptés
-    </h1>
-    <p class="mt-2 text-sm text-ink-soft">
-      Mis à jour le {formatDateFr(d.date_maj)}
-      {SITE.expertRelecteur && ` · Relu par ${SITE.expertRelecteur}`}
-    </p>
-
-    <section aria-labelledby="essentiel" class="encadre-essentiel prose-measure mt-6 p-4">
-      <h2 id="essentiel" class="text-lg font-bold">
-        L'essentiel en 3 lignes
-      </h2>
-      <ol class="mt-2 list-decimal space-y-1 pl-5">
-        <li>
-          <strong>Ce qui change :</strong> toutes les entreprises assujetties à la TVA doivent
-          pouvoir recevoir des factures électroniques depuis le {formatDateFr(reception.date)}.
-        </li>
-        <li>
-          <strong>Quand :</strong> l'émission devient obligatoire pour les TPE, PME et
-          micro-entreprises le {formatDateFr(emissionTpe.date)} (
-          {emissionTpe.complement?.toLowerCase()}).
-        </li>
-        <li>
-          <strong>Quoi faire :</strong> choisir une plateforme agréée adaptée à votre activité de{' '}
-          {d.nom.toLowerCase()}, puis paramétrer vos mentions obligatoires.
-        </li>
-      </ol>
-    </section>
-
-    <section aria-labelledby="specificites" class="prose-measure mt-8">
-      <h2 id="specificites" class="text-2xl font-bold">
-        Les spécificités de facturation du métier
-      </h2>
-      <ul class="mt-3 list-disc space-y-2 pl-5">
-        {d.specificites_facturation.map((s) => (
-          <li>{s}</li>
-        ))}
-      </ul>
-      {d.mentions_obligatoires_specifiques.length > 0 && (
-        <>
-          <h3 class="mt-4 text-lg font-bold">Mentions propres à votre activité</h3>
-          <ul class="mt-2 list-disc space-y-1 pl-5">
-            {d.mentions_obligatoires_specifiques.map((m) => (
-              <li>{m}</li>
-            ))}
-          </ul>
-        </>
-      )}
-    </section>
-
-    <section aria-labelledby="exemple" class="mt-8">
-      <h2 id="exemple" class="text-2xl font-bold">
-        Exemple de facture conforme
-      </h2>
-      <div class="mt-3">
-        <ExempleFacture
-          intitule={d.exemple_facture.intitule}
-          lignes={d.exemple_facture.lignes}
-          mentions={d.exemple_facture.mentions_specifiques}
-        />
+  <div class="layout-article mt-4">
+    <article>
+      <div class="flex items-start gap-4">
+        <span class="picto-carre hidden sm:inline-flex">
+          <Picto nom={d.famille} taille={26} />
+        </span>
+        <div>
+          <h1 class="prose-measure text-3xl font-bold">
+            Facturation électronique pour {d.nom.toLowerCase()} : obligations et logiciels adaptés
+          </h1>
+          <p class="mt-2 text-sm text-ink-soft">
+            Mis à jour le {formatDateFr(d.date_maj)}
+            {SITE.expertRelecteur && ` · Relu par ${SITE.expertRelecteur}`}
+          </p>
+        </div>
       </div>
-    </section>
 
-    <section aria-labelledby="outils" class="mt-8">
-      <h2 id="outils" class="text-2xl font-bold">
-        3 outils adaptés au métier
-      </h2>
-      <p class="prose-measure mt-2 text-sm text-ink-soft">
-        Sélection fondée sur la cible et le périmètre vérifiés de chaque outil, jamais sur les
-        commissions. Les notes n'apparaîtront qu'après nos tests réels.
-      </p>
-      <ol class="mt-4 space-y-4">
-        {recommandes.map(({ outil, justification }, i) => (
-          <li
-            class:list={[
-              'card-reco reveal rounded-lg border border-border p-4',
-              i === 0 && 'card-top',
-            ]}
-          >
-            {i === 0 && <p class="badge-ok mb-2">Notre recommandation</p>}
-            <p class="font-bold">
-              {i + 1}. <a href={`/logiciels/${outil.data.slug}`}>{outil.data.nom}</a>
-              <span class="pill ml-2 align-middle font-normal">Test en cours</span>
-            </p>
-            <p class="prose-measure mt-1">{justification}</p>
-            <div class="mt-3">
-              <AffiliateButton
-                outil={outil.data.slug}
-                urlOfficielle={outil.data.url_officielle}
-                label={`Découvrir ${outil.data.nom}`}
-                emplacement={`metier-${d.slug}-reco-${i + 1}`}
-              />
-            </div>
-          </li>
-        ))}
-      </ol>
-      <h3 class="mt-6 text-lg font-bold">Comparatif rapide</h3>
-      <div class="mt-2">
-        <ComparatifCourt outils={recommandes.map((r) => r.outil.data)} />
-      </div>
-    </section>
-
-    <section aria-labelledby="checklist" class="prose-measure mt-8">
-      <h2 id="checklist" class="text-2xl font-bold">
-        Mise en conformité en 5 étapes
-      </h2>
-      <ol class="mt-3 list-decimal space-y-2 pl-5">
-        <li>
-          Identifiez votre situation : statut ({d.statuts_frequents.join(', ')}), régime de TVA et
-          échéance applicable.
-        </li>
-        <li>
-          Choisissez une plateforme agréée qui couvre vos besoins :{' '}
-          {d.besoins_prioritaires.slice(0, 3).join(' ; ')}.
-        </li>
-        <li>
-          Paramétrez vos mentions obligatoires, y compris celles propres à votre activité
-          (ci-dessus).
-        </li>
-        <li>Testez l'émission d'une facture et la réception d'une facture fournisseur.</li>
-        <li>Prévenez votre expert-comptable et organisez l'archivage de vos factures.</li>
-      </ol>
-    </section>
-
-    <section aria-labelledby="faq" class="prose-measure mt-8">
-      <h2 id="faq" class="text-2xl font-bold">
-        Questions fréquentes
-      </h2>
-      <div class="mt-3 space-y-3">
-        {d.faq.map((f) => (
-          <details class="rounded-md border border-border p-3">
-            <summary class="cursor-pointer font-bold">{f.question}</summary>
-            <p class="mt-2">{f.reponse}</p>
-          </details>
-        ))}
-      </div>
-    </section>
-
-    <section aria-labelledby="sources" class="prose-measure mt-8">
-      <h2 id="sources" class="text-2xl font-bold">
-        Sources officielles
-      </h2>
-      <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
-        {d.sources.map((s) => (
+      <section aria-labelledby="essentiel" class="encadre-essentiel prose-measure mt-6 p-4">
+        <h2 id="essentiel" class="text-lg font-bold">
+          L'essentiel en 3 lignes
+        </h2>
+        <ol class="mt-2 list-decimal space-y-1 pl-5">
           <li>
-            <a href={s.url} rel="noopener">
-              {s.titre}
+            <strong>Ce qui change :</strong> toutes les entreprises assujetties à la TVA doivent
+            pouvoir recevoir des factures électroniques depuis le {formatDateFr(reception.date)}.
+          </li>
+          <li>
+            <strong>Quand :</strong> l'émission devient obligatoire pour les TPE, PME et
+            micro-entreprises le {formatDateFr(emissionTpe.date)} (
+            {emissionTpe.complement?.toLowerCase()}).
+          </li>
+          <li>
+            <strong>Quoi faire :</strong> choisir une plateforme agréée adaptée à votre activité de{' '}
+            {d.nom.toLowerCase()}, puis paramétrer vos mentions obligatoires.
+          </li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="specificites" class="prose-measure mt-8">
+        <h2 id="specificites" class="titre-section text-2xl font-bold">
+          Les spécificités de facturation du métier
+        </h2>
+        <ul class="mt-3 list-disc space-y-2 pl-5">
+          {d.specificites_facturation.map((s) => (
+            <li>{s}</li>
+          ))}
+        </ul>
+        {d.mentions_obligatoires_specifiques.length > 0 && (
+          <>
+            <h3 class="mt-4 text-lg font-bold">Mentions propres à votre activité</h3>
+            <ul class="mt-2 list-disc space-y-1 pl-5">
+              {d.mentions_obligatoires_specifiques.map((m) => (
+                <li>{m}</li>
+              ))}
+            </ul>
+          </>
+        )}
+      </section>
+
+      <section aria-labelledby="exemple" class="mt-8">
+        <h2 id="exemple" class="titre-section text-2xl font-bold">
+          Exemple de facture conforme
+        </h2>
+        <div class="mt-3">
+          <ExempleFacture
+            intitule={d.exemple_facture.intitule}
+            lignes={d.exemple_facture.lignes}
+            mentions={d.exemple_facture.mentions_specifiques}
+          />
+        </div>
+      </section>
+
+      <section aria-labelledby="outils" class="mt-8">
+        <h2 id="outils" class="titre-section text-2xl font-bold">
+          3 outils adaptés au métier
+        </h2>
+        <p class="prose-measure mt-2 text-sm text-ink-soft">
+          Sélection fondée sur la cible et le périmètre vérifiés de chaque outil, jamais sur les
+          commissions. Les notes n'apparaîtront qu'après nos tests réels.
+        </p>
+        <ol class="mt-4 space-y-4">
+          {recommandes.map(({ outil, justification }, i) => (
+            <li
+              class:list={[
+                'card-reco reveal rounded-lg border border-border p-4',
+                i === 0 && 'card-top',
+              ]}
+            >
+              {i === 0 && <p class="badge-ok mb-2">Notre recommandation</p>}
+              <p class="font-bold">
+                {i + 1}. <a href={`/logiciels/${outil.data.slug}`}>{outil.data.nom}</a>
+                <span class="pill ml-2 align-middle font-normal">Test en cours</span>
+              </p>
+              <p class="prose-measure mt-1">{justification}</p>
+              <div class="mt-3">
+                <AffiliateButton
+                  outil={outil.data.slug}
+                  urlOfficielle={outil.data.url_officielle}
+                  label={`Découvrir ${outil.data.nom}`}
+                  emplacement={`metier-${d.slug}-reco-${i + 1}`}
+                />
+              </div>
+            </li>
+          ))}
+        </ol>
+        <h3 class="mt-6 text-lg font-bold">Comparatif rapide</h3>
+        <div class="mt-2">
+          <ComparatifCourt outils={recommandes.map((r) => r.outil.data)} />
+        </div>
+      </section>
+
+      <section aria-labelledby="checklist" class="prose-measure mt-8">
+        <h2 id="checklist" class="titre-section text-2xl font-bold">
+          Mise en conformité en 5 étapes
+        </h2>
+        <ol class="mt-3 list-decimal space-y-2 pl-5">
+          <li>
+            Identifiez votre situation : statut ({d.statuts_frequents.join(', ')}), régime de TVA et
+            échéance applicable.
+          </li>
+          <li>
+            Choisissez une plateforme agréée qui couvre vos besoins :{' '}
+            {d.besoins_prioritaires.slice(0, 3).join(' ; ')}.
+          </li>
+          <li>
+            Paramétrez vos mentions obligatoires, y compris celles propres à votre activité
+            (ci-dessus).
+          </li>
+          <li>Testez l'émission d'une facture et la réception d'une facture fournisseur.</li>
+          <li>Prévenez votre expert-comptable et organisez l'archivage de vos factures.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="faq" class="prose-measure mt-8">
+        <h2 id="faq" class="titre-section text-2xl font-bold">
+          Questions fréquentes
+        </h2>
+        <div class="mt-3 space-y-3">
+          {d.faq.map((f) => (
+            <details class="rounded-md border border-border p-3">
+              <summary class="cursor-pointer font-bold">{f.question}</summary>
+              <p class="mt-2">{f.reponse}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="sources" class="prose-measure mt-8">
+        <h2 id="sources" class="titre-section text-2xl font-bold">
+          Sources officielles
+        </h2>
+        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
+          {d.sources.map((s) => (
+            <li>
+              <a href={s.url} rel="noopener">
+                {s.titre}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href={reception.sources[0]} rel="noopener">
+              Calendrier de la réforme (impots.gouv.fr)
             </a>
           </li>
-        ))}
-        <li>
-          <a href={reception.sources[0]} rel="noopener">
-            Calendrier de la réforme (impots.gouv.fr)
+        </ul>
+        <p class="mt-3 text-sm text-ink-soft">
+          Données relevées le {formatDateFr(echeances.date_releve)}. Information générale : ne
+          remplace pas l'avis de votre expert-comptable.
+        </p>
+      </section>
+
+      {voisins.length > 0 && (
+        <nav aria-label="Métiers voisins" class="prose-measure mt-8 border-t border-border pt-4">
+          <h2 class="text-lg font-bold">Autres métiers</h2>
+          <ul class="mt-2 flex flex-wrap gap-3">
+            {voisins.map((v) => (
+              <li>
+                <a href={`/facturation-electronique/${v.data.slug}`}>{v.data.nom}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      {guidesUtiles.length > 0 && (
+        <nav aria-label="Guides utiles" class="prose-measure mt-6">
+          <h2 class="text-lg font-bold">Pour aller plus loin</h2>
+          <ul class="mt-2 flex flex-wrap gap-3">
+            {guidesUtiles.map((g) => (
+              <li>
+                <a href={`/guides/${g.id}`}>{g.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+    </article>
+
+    <aside class="colonne-appui" aria-label="Repères et accès rapides">
+      <nav class="carte-appui" aria-labelledby="sommaire-titre">
+        <p id="sommaire-titre" class="carte-appui-titre">
+          Sur cette page
+        </p>
+        <div class="sommaire">
+          {SOMMAIRE.map((e) => (
+            <a href={`#${e.id}`}>{e.label}</a>
+          ))}
+        </div>
+      </nav>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Votre échéance</p>
+        <p class="mt-2 text-sm">
+          Réception obligatoire depuis le <strong>{formatDateFr(reception.date)}</strong>, émission
+          pour les TPE et PME le <strong>{formatDateFr(emissionTpe.date)}</strong>.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/outils/echeance">Simuler ma situation</a>
+        </p>
+      </div>
+
+      <div class="carte-appui card-top">
+        <p class="carte-appui-titre">Pas encore équipé ?</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Cinq questions pour l'outil adapté à votre activité de {d.nom.toLowerCase()}.
+        </p>
+        <p class="mt-3">
+          <a href="/outils/quiz" class="btn-cta text-sm">
+            Trouver mon logiciel
           </a>
-        </li>
-      </ul>
-      <p class="mt-3 text-sm text-ink-soft">
-        Données relevées le {formatDateFr(echeances.date_releve)}. Information générale : ne
-        remplace pas l'avis de votre expert-comptable.
-      </p>
-    </section>
-
-    {voisins.length > 0 && (
-      <nav aria-label="Métiers voisins" class="prose-measure mt-8 border-t border-border pt-4">
-        <h2 class="text-lg font-bold">Autres métiers</h2>
-        <ul class="mt-2 flex flex-wrap gap-3">
-          {voisins.map((v) => (
-            <li>
-              <a href={`/facturation-electronique/${v.data.slug}`}>{v.data.nom}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    )}
-
-    {guidesUtiles.length > 0 && (
-      <nav aria-label="Guides utiles" class="prose-measure mt-6">
-        <h2 class="text-lg font-bold">Pour aller plus loin</h2>
-        <ul class="mt-2 flex flex-wrap gap-3">
-          {guidesUtiles.map((g) => (
-            <li>
-              <a href={`/guides/${g.id}`}>{g.data.title}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    )}
-  </article>
+        </p>
+      </div>
+    </aside>
+  </div>
 </Base>

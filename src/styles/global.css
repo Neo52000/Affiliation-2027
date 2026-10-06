@@ -445,3 +445,187 @@ a:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Mise en page des pages longues : colonne de lecture + colonne d'appui
+   La colonne d'appui n'apparaît qu'à partir de lg ; en dessous, le contenu
+   reste en une seule colonne et l'appui passe sous l'article.
+   --------------------------------------------------------------------------- */
+.layout-article {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .layout-article {
+    grid-template-columns: minmax(0, 1fr) 17.5rem;
+    align-items: start;
+  }
+}
+
+.colonne-appui {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .colonne-appui {
+    position: sticky;
+    top: 5rem;
+  }
+}
+
+/* Carte de la colonne d'appui */
+.carte-appui {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-paper);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.carte-appui-titre {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+/* Sommaire de page */
+.sommaire {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.9375rem;
+}
+
+.sommaire a {
+  display: block;
+  padding: 0.3rem 0 0.3rem 0.75rem;
+  border-left: 2px solid var(--color-border);
+  color: var(--color-ink);
+  text-decoration-line: none;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.sommaire a:hover {
+  border-left-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration-line: underline;
+}
+
+/* ---------------------------------------------------------------------------
+   Indicateur de statut d'une fonctionnalité (icône + texte, jamais la couleur
+   seule : le libellé porte l'information — WCAG 1.4.1)
+   --------------------------------------------------------------------------- */
+.statut {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.statut svg {
+  flex-shrink: 0;
+}
+
+.statut-oui {
+  color: var(--color-ok);
+}
+
+.statut-non,
+.statut-inconnu {
+  color: var(--color-ink-soft);
+  font-weight: 400;
+}
+
+/* ---------------------------------------------------------------------------
+   Titre de section avec filet d'accent
+   --------------------------------------------------------------------------- */
+.titre-section {
+  position: relative;
+  padding-top: 0.85rem;
+}
+
+.titre-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--gradient-accent);
+}
+
+/* ---------------------------------------------------------------------------
+   Tableaux de chiffres : les colonnes numériques ne se coupent jamais
+   --------------------------------------------------------------------------- */
+.table-chiffres td.nombre,
+.table-chiffres th.nombre {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.table-chiffres .designation {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+   Comparatif : les deux outils face à face
+   --------------------------------------------------------------------------- */
+.duel {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.duel-carte {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-paper);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.duel-monogramme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  background: var(--gradient-accent);
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.duel-contre {
+  align-self: center;
+  font-weight: 800;
+  color: var(--color-ink-soft);
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+}
+
+/* ---------------------------------------------------------------------------
+   En-tête : sur très petit écran, le bouton d'appel garde une seule ligne
+   --------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .site-header .btn-cta {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+}

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
+import Statut from '../../components/Statut.astro';
 import { formatDateFr } from '../../lib/dates';
 import { pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
@@ -28,7 +29,6 @@ const FONCTIONNALITES: { cle: keyof typeof d.fonctionnalites; label: string }[] 
   { cle: 'lien_expert_comptable', label: 'Accès expert-comptable' },
 ];
 
-const cell = (v: boolean | null) => (v === true ? 'Oui' : v === false ? 'Non' : 'À vérifier');
 const pageTarifs = d.sources.find((s) => s.objet.toLowerCase().includes('tarif'));
 
 // JSON-LD SoftwareApplication, sans AggregateRating ni prix inventés (section 9).
@@ -49,116 +49,141 @@ const appJsonLd = {
   <script type="application/ld+json" is:inline set:html={JSON.stringify(appJsonLd)} />
   <Breadcrumb items={[{ label: 'Logiciels' }, { label: d.nom }]} />
 
-  <article class="mt-4">
-    <h1 class="prose-measure text-3xl font-bold">{d.nom} : facturation électronique</h1>
-    <p class="mt-2 text-sm text-ink-soft">
-      Mis à jour le {formatDateFr(d.date_maj)} · Note : <strong>Test en cours</strong>
-    </p>
-
-    <section class="encadre-essentiel prose-measure mt-6 p-4">
-      {d.est_plateforme_agreee.valeur && (
-        <p class="badge-ok mb-2">Plateforme agréée — registre DGFiP</p>
-      )}
-      <p>
-        {d.est_plateforme_agreee.valeur ? (
-          <>
-            <strong>{d.nom} est une plateforme agréée</strong> (présence au{' '}
-            <a href={d.est_plateforme_agreee.source} rel="noopener">
-              registre DGFiP
-            </a>
-            ) : émission, réception et e-reporting sans plateforme intermédiaire.
-          </>
-        ) : (
-          <>{d.nom} n'est pas lui-même une plateforme agréée.</>
-        )}
-      </p>
-      <p class="mt-2">Cible revendiquée par l'éditeur : {d.cible.join(', ')}.</p>
-    </section>
-
-    <section aria-labelledby="fonctionnalites" class="mt-8">
-      <h2 id="fonctionnalites" class="text-2xl font-bold">
-        Fonctionnalités
-      </h2>
-      <div class="table-scroll mt-3 max-w-xl">
-        <table class="w-full border-collapse text-sm">
-          <tbody>
-            {FONCTIONNALITES.map((f) => (
-              <tr class="border-b border-border">
-                <th scope="row" class="py-2 pr-3 text-left font-normal">
-                  {f.label}
-                </th>
-                <td class="py-2">{cell(d.fonctionnalites[f.cle])}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+  <div class="layout-article mt-4">
+    <article>
+      <div class="flex items-center gap-4">
+        <span class="duel-monogramme">{d.nom.slice(0, 1)}</span>
+        <h1 class="prose-measure text-3xl font-bold">{d.nom} : facturation électronique</h1>
       </div>
-      <p class="mt-2 text-xs text-ink-soft">
-        « À vérifier » : donnée en cours de relevé sur le site officiel de l'éditeur.
+      <p class="mt-2 text-sm text-ink-soft">
+        Mis à jour le {formatDateFr(d.date_maj)} · Note : <strong>Test en cours</strong>
       </p>
-    </section>
 
-    <section aria-labelledby="tarifs" class="prose-measure mt-8">
-      <h2 id="tarifs" class="text-2xl font-bold">
-        Tarifs
-      </h2>
-      {d.plans.length === 0 ? (
-        <p class="mt-3">
-          Les prix sont en cours de relevé, avec date et source pour chaque donnée.
-          {pageTarifs && (
+      <section class="encadre-essentiel prose-measure mt-6 p-4">
+        {d.est_plateforme_agreee.valeur && (
+          <p class="badge-ok mb-2">Plateforme agréée — registre DGFiP</p>
+        )}
+        <p>
+          {d.est_plateforme_agreee.valeur ? (
             <>
-              {' '}
-              En attendant, consultez la{' '}
-              <a href={pageTarifs.url} rel="noopener">
-                page tarifs officielle
+              Émission, réception et e-reporting sans plateforme intermédiaire, d'après le{' '}
+              <a href={d.est_plateforme_agreee.source} rel="noopener">
+                registre DGFiP
               </a>
               .
             </>
+          ) : (
+            <>{d.nom} n'est pas lui-même une plateforme agréée.</>
           )}
         </p>
-      ) : null}
-    </section>
+        <p class="mt-2">Cible revendiquée par l'éditeur : {d.cible.join(', ')}.</p>
+      </section>
 
-    <section aria-labelledby="pour-qui" class="prose-measure mt-8">
-      <h2 id="pour-qui" class="text-2xl font-bold">
-        Pour qui — et pour qui pas
-      </h2>
-      <ul class="mt-3 list-disc space-y-1 pl-5">
-        {d.points_forts.map((p) => (
-          <li>{p}</li>
-        ))}
-      </ul>
-      <h3 class="mt-4 text-lg font-bold">Pour qui cet outil n'est pas adapté</h3>
-      <p class="mt-2">
-        L'éditeur cible {d.cible.join(', ')} : si votre profil est éloigné de cette cible, comparez
-        d'abord avec les outils pensés pour lui. Cette section sera détaillée après notre test réel
-        documenté.
-      </p>
-    </section>
+      <section aria-labelledby="fonctionnalites" class="mt-8">
+        <h2 id="fonctionnalites" class="titre-section text-2xl font-bold">
+          Fonctionnalités
+        </h2>
+        <div class="table-scroll mt-3 max-w-xl">
+          <table class="w-full border-collapse text-sm">
+            <tbody>
+              {FONCTIONNALITES.map((f) => (
+                <tr class="border-b border-border">
+                  <th scope="row" class="py-2 pr-3 text-left font-normal">
+                    {f.label}
+                  </th>
+                  <td class="py-2">
+                    <Statut valeur={d.fonctionnalites[f.cle]} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-2 text-xs text-ink-soft">
+          « À vérifier » : donnée en cours de relevé sur le site officiel de l'éditeur.
+        </p>
+      </section>
 
-    <div class="mt-8">
-      <AffiliateButton
-        outil={d.slug}
-        urlOfficielle={d.url_officielle}
-        label={`Découvrir ${d.nom}`}
-        emplacement={`fiche-${d.slug}`}
-      />
-    </div>
+      <section aria-labelledby="tarifs" class="prose-measure mt-8">
+        <h2 id="tarifs" class="titre-section text-2xl font-bold">
+          Tarifs
+        </h2>
+        {d.plans.length === 0 ? (
+          <p class="mt-3">
+            Les prix sont en cours de relevé, avec date et source pour chaque donnée.
+            {pageTarifs && (
+              <>
+                {' '}
+                En attendant, consultez la{' '}
+                <a href={pageTarifs.url} rel="noopener">
+                  page tarifs officielle
+                </a>
+                .
+              </>
+            )}
+          </p>
+        ) : null}
+      </section>
 
-    <section aria-labelledby="sources-outil" class="prose-measure mt-8">
-      <h2 id="sources-outil" class="text-2xl font-bold">
-        Sources
-      </h2>
-      <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
-        {d.sources.map((s) => (
-          <li>
-            <a href={s.url} rel="noopener">
-              {s.objet}
-            </a>{' '}
-            — relevé le {formatDateFr(s.date_releve)}
-          </li>
-        ))}
-      </ul>
-    </section>
-  </article>
+      <section aria-labelledby="pour-qui" class="prose-measure mt-8">
+        <h2 id="pour-qui" class="titre-section text-2xl font-bold">
+          Pour qui — et pour qui pas
+        </h2>
+        <ul class="mt-3 list-disc space-y-1 pl-5">
+          {d.points_forts.map((p) => (
+            <li>{p}</li>
+          ))}
+        </ul>
+        <h3 class="mt-4 text-lg font-bold">Pour qui cet outil n'est pas adapté</h3>
+        <p class="mt-2">
+          L'éditeur cible {d.cible.join(', ')} : si votre profil est éloigné de cette cible,
+          comparez d'abord avec les outils pensés pour lui. Cette section sera détaillée après notre
+          test réel documenté.
+        </p>
+      </section>
+
+      <section aria-labelledby="sources-outil" class="prose-measure mt-8">
+        <h2 id="sources-outil" class="titre-section text-2xl font-bold">
+          Sources
+        </h2>
+        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
+          {d.sources.map((s) => (
+            <li>
+              <a href={s.url} rel="noopener">
+                {s.objet}
+              </a>{' '}
+              — relevé le {formatDateFr(s.date_releve)}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </article>
+
+    <aside class="colonne-appui" aria-label="Accès rapides">
+      <div class="carte-appui card-top">
+        <p class="carte-appui-titre">Site de l'éditeur</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Vérifiez les tarifs et le périmètre à la source avant de vous engager.
+        </p>
+        <div class="mt-3">
+          <AffiliateButton
+            outil={d.slug}
+            urlOfficielle={d.url_officielle}
+            label={`Découvrir ${d.nom}`}
+            emplacement={`fiche-${d.slug}`}
+          />
+        </div>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Hésitation ?</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Cinq questions pour savoir si cet outil correspond à votre métier.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/outils/quiz">Faire le quiz</a>
+        </p>
+      </div>
+    </aside>
+  </div>
 </Base>
