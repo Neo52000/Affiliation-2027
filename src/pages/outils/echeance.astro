@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import EcheanceSimulateur from '../../components/islands/EcheanceSimulateur.tsx';
+import Picto from '../../components/Picto.astro';
 import RappelEmail from '../../components/islands/RappelEmail.tsx';
 import { SITE } from '../../config';
 import { pageTitle } from '../../lib/seo';
@@ -21,7 +22,12 @@ const metiersRappel = (await getCollection('metiers'))
   description="Quand recevoir et émettre vos factures électroniques ? Taille d'entreprise et situation TVA : dates applicables et check-list de mise en conformité."
 >
   <Breadcrumb items={[{ label: 'Outils' }, { label: 'Simulateur d’échéance' }]} />
-  <h1 class="prose-measure mt-4 text-3xl font-bold">Vos échéances de facturation électronique</h1>
+  <div class="mt-4 flex items-center gap-4">
+    <span class="picto-carre">
+      <Picto nom="calendrier" taille={26} />
+    </span>
+    <h1 class="prose-measure text-3xl font-bold">Vos échéances de facturation électronique</h1>
+  </div>
   <p class="prose-measure mt-3">
     Indiquez votre situation : le simulateur affiche les dates qui s'appliquent à votre entreprise
     et votre check-list de mise en conformité.

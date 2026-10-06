@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Quiz from '../../components/islands/Quiz.tsx';
+import Picto from '../../components/Picto.astro';
 import { SITE } from '../../config';
 import { pageTitle } from '../../lib/seo';
 
@@ -33,9 +34,14 @@ const outils = outilsColl.map((o) => ({
   description="5 questions — métier, statut, volume, compte pro, expert-comptable — pour trouver votre logiciel de facturation électronique, avec deux alternatives."
 >
   <Breadcrumb items={[{ label: 'Outils' }, { label: 'Quiz' }]} />
-  <h1 class="prose-measure mt-4 text-3xl font-bold">
-    Quel logiciel de facturation électronique pour vous ?
-  </h1>
+  <div class="mt-4 flex items-center gap-4">
+    <span class="picto-carre">
+      <Picto nom="cible" taille={26} />
+    </span>
+    <h1 class="prose-measure text-3xl font-bold">
+      Quel logiciel de facturation électronique pour vous ?
+    </h1>
+  </div>
   <p class="prose-measure mt-3">
     5 questions, une recommandation fondée uniquement sur des faits vérifiés et sur votre métier.
   </p>

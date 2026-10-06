@@ -213,6 +213,24 @@ h2 {
   white-space: nowrap;
 }
 
+/* Pictogramme posé sur un carré d'accent doux */
+.picto-carre {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.picto-carre-sm {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
 /* Carte mise en avant : liseré supérieur en dégradé */
 .card-top {
   position: relative;
