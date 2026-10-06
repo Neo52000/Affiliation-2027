@@ -1,0 +1,132 @@
+{
+  "nom": "Créateur de bijoux",
+  "slug": "createur-bijoux",
+  "famille": "artisanat",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle", "SASU"],
+  "volume_factures_typique": "Un flux régulier de petites commandes en ligne et de ventes sur les marchés de créateurs, complété par quelques factures mensuelles aux boutiques et concept-stores en dépôt-vente.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Lorsque vous êtes redevable de la TVA, vos bijoux se facturent au taux normal de 20 %, même créés à la pièce. La liste des œuvres d'art ouvrant droit au taux réduit est limitative (II de l'article 98 A de l'annexe III au CGI) et ne comporte aucune catégorie couvrant la bijouterie ; les articles de bijouterie, d'orfèvrerie et de joaillerie sont en outre expressément exclus de la seule catégorie voisine, celle des émaux sur cuivre.",
+    "Si vous travaillez l'or, l'argent ou le platine, vous relevez de la garantie des métaux précieux : déclaration d'existence, tenue d'un livre de police, poinçon de maître et poinçon de garantie sur les ouvrages. Ces obligations s'ajoutent à la facturation, elles ne la remplacent pas.",
+    "Vente en ligne : les commandes des particuliers ne donnent pas lieu à facture électronique mais au e-reporting quotidien agrégé, sans donnée personnelle sur l'acheteur. Les commandes d'une boutique ou d'une entreprise passent, elles, par la facture électronique à l'échéance applicable à votre entreprise.",
+    "En dépôt-vente chez des concept-stores, formalisez le circuit dans le contrat : vente ferme (vous facturez la boutique) ou dépôt avec commission (la boutique vous facture sa commission). Ces factures croisées entre professionnels basculeront dans la facturation électronique à l'échéance applicable.",
+    "En franchise en base, chaque facture, y compris un relevé mensuel adressé à une boutique, porte la mention « TVA non applicable, article 293 B du CGI » et n'affiche aucune TVA."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mentions communes : date d'émission, numéro unique, identités du créateur et du client, date de la vente, détail et décompte en quantité et prix de chaque bijou, montants hors taxe et toutes taxes comprises.",
+    "« TVA non applicable, article 293 B du CGI » en cas de franchise en base.",
+    "Pour les ouvrages en or, argent ou platine, la facture ne dispense pas des obligations de la garantie des métaux précieux (déclaration d'existence, livre de police, poinçons) : une désignation précise de chaque pièce sur vos factures facilite la cohérence avec le livre de police."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture d'une créatrice de bijoux à un concept-store : réassort en vente ferme",
+    "lignes": [
+      {
+        "designation": "Collier chaîne fine argent 925, pendentif martelé main, modèle « Lune »",
+        "quantite": 5,
+        "unite": "pièce",
+        "prix_unitaire_ht": 42,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Boucles d'oreilles créoles en laiton doré, modèle « Solstice »",
+        "quantite": 8,
+        "unite": "paire",
+        "prix_unitaire_ht": 24,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Bague ajustable argent 925, pierre de lune sertie",
+        "quantite": 4,
+        "unite": "pièce",
+        "prix_unitaire_ht": 36,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux normal de 20 % : la liste des œuvres d'art ouvrant droit au taux réduit est limitative et ne couvre pas la bijouterie.",
+      "Ouvrages en argent soumis à la garantie des métaux précieux : poinçon de maître de l'atelier et poinçon de garantie apposés selon les règles applicables à ces ouvrages.",
+      "Facture entre professionnels : émission au format électronique via une plateforme agréée à l'échéance applicable à votre entreprise."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer les boutiques et concept-stores en dépôt-vente et suivre les relevés de ventes de chaque point de vente.",
+    "Transmettre le e-reporting des ventes en ligne et sur les marchés de créateurs, sous forme de totaux quotidiens.",
+    "Recevoir les factures électroniques des fournisseurs de métaux, pierres, apprêts et emballages.",
+    "Conserver une désignation précise des pièces vendues pour articuler facturation et livre de police."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, qui réunit compte professionnel en ligne et facturation. Utile quand les encaissements arrivent par plusieurs canaux — boutique en ligne, marchés de créateurs, virements des concept-stores — et doivent être rapprochés des relevés de dépôt-vente."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, centrée sur la facturation et la gestion des indépendants et micro-entrepreneurs. Convient à un atelier seul qui émet peu de factures professionnelles mais doit faire remonter en totaux quotidiens ses ventes en ligne et de marché."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée par la DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Pertinente si votre activité se structure et que vous êtes accompagné."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes bijoux sont des pièces uniques faites main : puis-je appliquer le taux réduit des œuvres d'art ?",
+      "reponse": "Non. La liste des œuvres d'art du II de l'article 98 A de l'annexe III au CGI est limitative et aucune de ses catégories ne couvre la bijouterie ; les articles de bijouterie, d'orfèvrerie et de joaillerie sont par ailleurs expressément exclus de la catégorie des émaux sur cuivre. Le fait main et le caractère unique n'y changent rien. Si vous êtes redevable de la TVA, vos ventes relèvent du taux normal de 20 %."
+    },
+    {
+      "question": "Quelles obligations particulières si je crée en argent ou en or ?",
+      "reponse": "La garantie des métaux précieux impose une déclaration d'existence, la tenue d'un livre de police, l'apposition d'un poinçon de maître et un poinçon de garantie sur les ouvrages. Ces règles existent indépendamment de la réforme de la facturation. Rapprochez-vous du bureau de garantie compétent pour vos cas concrets (seuils, modalités d'apposition)."
+    },
+    {
+      "question": "Mes ventes en ligne à des particuliers passeront-elles par la facture électronique ?",
+      "reponse": "Non. Comme vos ventes sur les marchés de créateurs, elles relèvent du e-reporting : des données de transaction agrégées quotidiennes, transmises sans donnée personnelle sur le client. La facture électronique concerne vos clients professionnels, comme les boutiques en dépôt-vente ou les commandes d'entreprises."
+    },
+    {
+      "question": "Comment gérer la facturation d'un dépôt-vente avec commission ?",
+      "reponse": "Le contrat de dépôt fixe le circuit : la boutique encaisse les ventes, vous reverse le produit et vous facture sa commission, ou vous achète fermement les pièces que vous lui facturez. Ces factures échangées entre professionnels passeront par la facturation électronique à l'échéance applicable à votre entreprise. Un suivi par point de vente évite les écarts entre relevés et factures."
+    },
+    {
+      "question": "Comment articuler mes factures avec le livre de police ?",
+      "reponse": "Le livre de police est tenu au titre de la garantie des métaux précieux, indépendamment de vos obligations de facturation : il décrit les ouvrages, leurs entrées et sorties, leur titre et leur poids, ainsi que l'identité des personnes qui vous ont vendu ou confié des pièces. Désignez chaque bijou sur vos factures avec la même précision que dans ce registre (modèle, métal, titre, numéro de pièce) : les rapprochements entre un relevé de dépôt-vente, une facture et le registre s'en trouvent facilités en cas de contrôle. Pour les modalités propres à votre atelier, rapprochez-vous du bureau de garantie compétent."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "TVA : quels sont les taux de votre quotidien ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "Article 98 A de l'annexe III au Code général des impôts : liste limitative des œuvres d'art (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006298775"
+    },
+    {
+      "titre": "Dossier Métaux précieux : or, argent ou platine (service-public.fr professionnels)",
+      "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F31199"
+    },
+    {
+      "titre": "Garantie des métaux précieux : obligations des professionnels (service-public.fr professionnels)",
+      "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F22215"
+    },
+    {
+      "titre": "Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "Fiche 2 : mon entreprise sera-t-elle obligée de facturer électroniquement ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiche-2_mon-entreprise-sera-t-elle-obligee-de-facturer-electroniquement.pdf"
+    },
+    {
+      "titre": "Facturation électronique : publication de la liste des plateformes agréées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-publication-de-la-liste-des-plateformes-agreees"
+    },
+    {
+      "titre": "En tant que micro-entrepreneur, puis-je être redevable de la TVA ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "Mentions obligatoires sur une facture (entreprendre.service-public.fr)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

@@ -98,3 +98,12 @@ Colonne d'appui collante (≥ lg) sur les pages métier et les fiches outil : so
 Composant Statut : icône + libellé (jamais la couleur seule, WCAG 1.4.1) pour les fonctionnalités, sur les fiches outil et les tableaux comparatifs. Comparatif : les deux outils face à face (monogramme, cible, badge d'agrément) et verdicts en grille à deux colonnes.
 Détails : titres de section soulignés d'un filet dégradé, colonnes numériques de l'exemple de facture insécables et alignées à droite, doublons retirés sur la fiche outil, bouton d'en-tête tenant sur une ligne sous 480 px.
 Garde-fous : 70 pages, similarité maximale 16,6 % (le sommaire répété ajoute 0,4 point, seuil 50 %), check-seo 67 pages conformes, 77 tests + 6 parcours e2e verts, Lighthouse 100/100/100/100 et CLS 0 sur les trois gabarits retouchés, rendu vérifié en thème clair et sombre.
+
+## Phase 4 (vague 2) — 61 métiers publiés (2026-10-06)
+
+33 nouveaux contenus métier importés après vérification adversariale et correction : artisanat, commerce, professions libérales, numérique, transport, services, plus le lot restauration-lot2 (crêperie, bar-brasserie, chef à domicile) rédigé par le second workflow. 61 pages métier sur 100.
+Schéma assoupli sur trois cas que les rédacteurs ont traités correctement et que le schéma refusait : montant négatif pour une ligne d'acompte déduit, montant null pour un émolument au tarif réglementé non reproduit, taux de TVA null en franchise en base ou pour un débours. Le composant ExempleFacture rend ces cas sans mentir : « — » en colonne TVA avec sa légende, pas de total TTC quand la TVA est hors champ, aucun total quand un montant manque.
+Décision : ne jamais écrire « TVA 0 % » en franchise en base — un taux affiché, fût-il nul, rendrait l'entreprise redevable de la taxe (mention relevée par le correcteur sur la fiche chef à domicile).
+Incident d'outillage : le rédacteur du lot agriculture-lot3 a inventé sa propre structure, ma consigne décrivant le fichier de sortie sans énumérer les champs. Relancé sur un workflow dédié où le schéma est imposé par l'outil de réponse, pas par la consigne.
+TODO #18 ouvert : un vérificateur n'a pas retrouvé Indy sur la liste officielle des plateformes agréées, alors que les cinq autres outils y figurent — à revérifier à la source avant toute exploitation commerciale.
+Garde-fous : 103 pages construites, 1830 paires comparées, similarité maximale 20,7 % (seuil 50 %), check-seo 100 pages indexables conformes, 77 tests + 6 parcours e2e verts.

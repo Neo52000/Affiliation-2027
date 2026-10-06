@@ -1,0 +1,150 @@
+{
+  "nom": "Viticulteur",
+  "slug": "viticulteur",
+  "famille": "agriculture",
+  "statuts_frequents": [
+    "Entreprise individuelle (exploitant viticole)",
+    "EARL",
+    "SCEA",
+    "GAEC",
+    "SAS"
+  ],
+  "volume_factures_typique": "Deux rythmes opposés cohabitent. Quelques factures de gros montant par an pour le vrac cédé au négoce et pour les expéditions à l'export, et un flux quotidien de petits encaissements au caveau, sur les salons et en vente à distance aux particuliers.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Le vin est une boisson alcoolique : il relève du taux normal de 20 %, en vente au caveau comme en vrac au négoce ou en expédition vers un caviste. Le taux des produits alimentaires ne lui est jamais applicable.",
+    "Les boissons sans alcool du domaine suivent un régime distinct : le jus de raisin embouteillé et les moûts, dès lors qu'ils ne dépassent pas 1,2 % vol., relèvent du taux réduit de 5,5 %. Une facture de caveau mélange donc couramment deux taux.",
+    "Les droits d'accise sur les alcools sont une fiscalité séparée de la TVA. En qualité d'entrepositaire agréé, vous déposez une déclaration récapitulative mensuelle (DRM) auprès de votre service des douanes, au plus tard le 10 du mois suivant, délai reporté au jour ouvrable suivant lorsque le 10 tombe un samedi, un dimanche ou un jour férié.",
+    "La DRM se dépose et les droits se paient par le service en ligne CIEL de la douane. Si vous êtes affilié à une interprofession disposant d'un portail économique, vous y saisissez vos données et le portail génère un brouillon de DRM dans CIEL ; il vous revient de valider cette déclaration dans CIEL, faute de quoi elle n'est pas déposée.",
+    "La capsule représentative de droits n'est plus obligatoire depuis le 1er juin 2019 sur les bouteilles et autres contenants de trois litres ou moins pour lesquels les droits ont été acquittés, mais l'obligation de faire circuler le vin sous un document d'accompagnement demeure. Les opérateurs qui renoncent à la capsule utilisent un document simplifié d'accompagnement ou un document commercial équivalent ; en suspension de droits, la circulation se fait sous document administratif électronique.",
+    "Le document d'accompagnement et la facture répondent à deux logiques différentes : le premier couvre le transport de la marchandise et la fiscalité indirecte, la seconde couvre l'opération commerciale et la TVA. Depuis le décret n° 2025-590 du 27 juin 2025, votre facture peut toutefois tenir lieu de document simplifié d'accompagnement pour la circulation en droits acquittés entre professionnels sur le territoire national, à condition de porter l'identification de l'expéditeur, du destinataire et du transporteur, la nature et la quantité du produit, la date et le numéro de référence permettant d'identifier le mouvement dans votre comptabilité matières. L'inverse n'est pas vrai : un document d'accompagnement ne vaut jamais facture.",
+    "Pour une expédition hors de l'Union européenne, la livraison est exonérée de TVA sous réserve de pouvoir justifier la sortie du territoire. La facture doit porter la mention de la disposition légale justifiant l'exonération, l'article 262 du code général des impôts.",
+    "Les ventes au caveau et sur les salons sont faites à des particuliers : elles ne donnent pas lieu à des factures électroniques mais à une transmission des données de transaction, à l'échéance applicable à votre entreprise. Les ventes au négoce, aux cavistes et aux restaurateurs relèvent, elles, de la facture électronique."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Taux normal de 20 % sur chaque ligne de vin, quel que soit le circuit de vente ; taux de 5,5 % sur les lignes de jus de raisin ou de moût ne dépassant pas 1,2 % vol.",
+    "Vente expédiée hors de l'Union européenne : mention de la disposition légale justifiant l'exonération, article 262 du code général des impôts, et conservation des justificatifs de sortie du territoire.",
+    "Circulation en droits acquittés entre professionnels sur le territoire national : lorsque la facture tient lieu de document simplifié d'accompagnement, elle porte l'identification de l'expéditeur, du destinataire et du transporteur, la nature et la quantité du produit, la date et le numéro de référence du mouvement dans la comptabilité matières ; à défaut, reporter sur la facture la référence du document d'accompagnement établi séparément.",
+    "Numéro individuel d'identification à la TVA du vendeur, sauf facture d'un montant total hors taxes inférieur ou égal à 150 €, date d'échéance du règlement et taux des pénalités de retard.",
+    "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel, adresse de livraison des biens si elle diffère de celle du client, nature des opérations facturées et, le cas échéant, mention « Option pour le paiement de la taxe d'après les débits »."
+  ],
+  "exemple_facture": {
+    "intitule": "Vente à un caviste : vin conditionné, vin en vrac et jus de raisin du domaine (exploitant redevable de la TVA)",
+    "lignes": [
+      {
+        "designation": "Vin AOP rouge, millésime 2024, bouteilles 75 cl",
+        "quantite": 600,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 7.2,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Vin AOP blanc en vrac, cuve n° 7, 12,5 % vol.",
+        "quantite": 24,
+        "unite": "hectolitre",
+        "prix_unitaire_ht": 310,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Jus de raisin pasteurisé du domaine, bouteilles 1 L",
+        "quantite": 120,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 2.4,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA à 20 % : boissons alcooliques (vin conditionné et vin en vrac)",
+      "TVA à 5,5 % : jus de raisin, boisson sans alcool conditionnée destinée à l'alimentation humaine",
+      "Facture valant document simplifié d'accompagnement pour la circulation en droits acquittés : expéditeur, destinataire, transporteur, nature et quantité des produits, date et numéro de référence du mouvement en comptabilité matières",
+      "Bases et montants de TVA ventilés par taux",
+      "Facture distincte de la déclaration récapitulative mensuelle déposée auprès du service des douanes"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer côte à côte des lignes à 20 % (vins) et à 5,5 % (jus de raisin, moûts) et ventiler les totaux par taux sans intervention manuelle.",
+    "Gérer deux canaux dans un même outil : factures aux cavistes, restaurateurs et négociants d'un côté, encaissements quotidiens du caveau et des salons de l'autre.",
+    "Produire des factures d'export portant la mention d'exonération et conserver les justificatifs de sortie du territoire attachés à l'opération.",
+    "Faire porter à la facture, lorsqu'elle tient lieu de document simplifié d'accompagnement, l'identification de l'expéditeur, du destinataire et du transporteur ainsi que le numéro de référence du mouvement en comptabilité matières, ou à défaut y reporter la référence du document d'accompagnement établi séparément.",
+    "Exporter un récapitulatif des sorties par produit et par période, utilisable pour préparer la déclaration récapitulative mensuelle déposée auprès des douanes."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée DGFiP réunissant compte professionnel et facturation, pour les indépendants et les PME. Adaptée à un domaine qui encaisse à la fois des virements de négoce et des paiements de caveau."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée DGFiP combinant compte professionnel en ligne et facturation, destinée aux indépendants, freelances et TPE. Utile à un petit domaine en vente directe qui veut centraliser encaissements et factures au même endroit."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée de gestion financière et de comptabilité, conçue pour travailler avec son expert-comptable. Pertinente pour un domaine dont le cabinet suit les stocks de produits soumis à accise et doit rapprocher les sorties déclarées en DRM des ventes facturées sur la période."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends au caveau à des particuliers. Dois-je émettre une facture électronique pour chaque bouteille vendue ?",
+      "reponse": "Non. Les ventes à des particuliers ne passent pas par la facture électronique mais par la transmission des données de transaction, sous forme agrégée, à l'échéance applicable à votre entreprise. Aucune donnée nominative sur vos clients particuliers n'est transmise. En revanche, vos ventes aux cavistes, restaurateurs et négociants relèveront bien de la facture électronique."
+    },
+    {
+      "question": "La déclaration récapitulative mensuelle remplace-t-elle mes factures ?",
+      "reponse": "Non, ce sont deux obligations distinctes. La DRM est une déclaration fiscale déposée auprès de votre service des douanes, au plus tard le 10 du mois suivant, délai reporté au jour ouvrable suivant lorsque le 10 tombe un samedi, un dimanche ou un jour férié, qui récapitule les entrées et sorties de produits alcooliques et liquide les droits d'accise dus. Elle se dépose en ligne par le service CIEL. Si vous êtes affilié à une interprofession disposant d'un portail économique, le portail génère un brouillon de DRM dans CIEL que vous devez valider vous-même. La facture, elle, documente l'opération commerciale et la TVA."
+    },
+    {
+      "question": "Je n'appose plus de capsules sur mes bouteilles. Qu'est-ce que cela change pour mes documents ?",
+      "reponse": "La capsule représentative de droits n'est plus obligatoire depuis le 1er juin 2019 sur les bouteilles et autres contenants de trois litres ou moins pour lesquels les droits ont été acquittés, mais l'obligation de faire circuler le vin sous un document d'accompagnement demeure. Depuis le décret n° 2025-590 du 27 juin 2025, votre facture peut elle-même tenir lieu de document simplifié d'accompagnement pour la circulation en droits acquittés entre professionnels sur le territoire national, dès lors qu'elle porte l'identification de l'expéditeur, du destinataire et du transporteur, la nature et la quantité du produit, la date et le numéro de référence du mouvement dans votre comptabilité matières. Les mouvements en suspension de droits restent couverts par un document administratif électronique. Dans tous les cas, un document d'accompagnement ne dispense pas d'établir la facture."
+    },
+    {
+      "question": "J'expédie quelques palettes vers un importateur hors Union européenne. Quelle TVA dois-je appliquer ?",
+      "reponse": "La livraison de biens expédiés hors de l'Union européenne est exonérée de TVA, à condition de pouvoir justifier la sortie du territoire. Votre facture ne porte alors pas de TVA mais doit mentionner la disposition légale qui fonde l'exonération, l'article 262 du code général des impôts. Conservez les justificatifs douaniers rattachés à l'opération, car ils vous seront demandés en cas de contrôle."
+    },
+    {
+      "question": "Mon jus de raisin est-il à 20 % comme mes vins ?",
+      "reponse": "Non. Le taux de 20 % vise les boissons alcooliques. Les moûts de raisin et le jus de raisin qui ne comprennent pas de traces d'alcool supérieures à 1,2 % vol. sont des boissons sans alcool destinées à l'alimentation humaine et relèvent du taux réduit de 5,5 % lorsqu'ils sont vendus dans un conditionnement permettant leur conservation. Une même facture de domaine comporte donc fréquemment deux taux, à ventiler ligne par ligne."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – Boissons alcooliques soumises au taux normal de TVA de 20 %",
+      "url": "https://bofip.impots.gouv.fr/bofip/11606-PGP.html/ACTU-2020-00195-8"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-10 – Taux réduit de 5,5 % : produits destinés à l'alimentation humaine, boissons sans alcool conditionnées, moûts et jus de raisin n'excédant pas 1,2 % vol.",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+    },
+    {
+      "titre": "douane.gouv.fr – Démarche : déposer une déclaration récapitulative mensuelle (DRM), dépôt au plus tard le 10 du mois suivant",
+      "url": "https://www.douane.gouv.fr/demarche/deposer-une-declaration-recapitulative-mensuelle-drm"
+    },
+    {
+      "titre": "douane.gouv.fr – Service en ligne CIEL : foire aux questions (dépôt et paiement en ligne, brouillon de DRM généré par le portail économique d'une interprofession et validé par l'opérateur)",
+      "url": "https://www.douane.gouv.fr/fiche/service-en-ligne-ciel-foire-aux-questions"
+    },
+    {
+      "titre": "douane.gouv.fr – Simplification administrative pour les professionnels du vin (fin de l'obligation de capsule représentative de droits au 1er juin 2019 pour les contenants de trois litres ou moins en droits acquittés, maintien du document d'accompagnement)",
+      "url": "https://www.douane.gouv.fr/actualites/simplification-administrative-pour-les-professionnels-du-vin"
+    },
+    {
+      "titre": "Légifrance – Décret n° 2025-590 du 27 juin 2025 portant simplification des obligations relatives à la circulation des alcools, des boissons alcooliques et des produits du tabac en droits acquittés",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051808641"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-CHAMP-30-30-10-20 – Exonération des livraisons de biens expédiés ou transportés hors de l'Union européenne",
+      "url": "https://bofip.impots.gouv.fr/bofip/1545-PGP.html/identifiant=BOI-TVA-CHAMP-30-30-10-20-20260211"
+    },
+    {
+      "titre": "entreprendre.service-public.fr – Mentions obligatoires sur une facture, dont la mention de la disposition justifiant une exonération et les nouvelles mentions liées à la facturation électronique",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "impots.gouv.fr – Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (champ d'application et obligations d'émission et de réception)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

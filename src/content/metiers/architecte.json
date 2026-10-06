@@ -1,0 +1,154 @@
+{
+  "nom": "Architecte",
+  "slug": "architecte",
+  "famille": "liberal",
+  "statuts_frequents": [
+    "Entreprise individuelle en BNC, inscrit à l'Ordre des architectes",
+    "Société d'architecture (SARL, SAS, SELARL)",
+    "Exercice individuel au régime micro-BNC en début d'activité"
+  ],
+  "volume_factures_typique": "Modéré et irrégulier : de quelques factures à quelques dizaines par mois, calées sur l'avancement des missions (acomptes par phase, situations) plutôt que sur un rythme mensuel uniforme.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos honoraires se facturent par phases de mission (esquisse, avant-projet, projet, suivi de chantier), généralement sous forme d'acomptes appelés à chaque étape. La TVA est exigible à l'encaissement de chaque acompte, pas à la fin de la mission.",
+    "Les honoraires d'architecte relèvent du taux normal de 20 %. Une étude facturée isolément reste au taux normal ; en revanche, une maîtrise d'œuvre qui se rapporte à des travaux eux-mêmes éligibles peut suivre leur taux réduit, et lorsque vous assurez ensuite la maîtrise d'œuvre ou l'exécution de ces travaux, la doctrine admet une facture rectificative appliquant ce taux à l'ensemble de la prestation, études antérieures comprises. Ni l'application systématique du taux réduit ni son exclusion systématique ne sont correctes : le lien avec les travaux et l'éligibilité du chantier se vérifient dossier par dossier, attestation du client à l'appui.",
+    "Votre assurance professionnelle est obligatoire au titre de la loi du 3 janvier 1977 sur l'architecture, et l'attestation est jointe au contrat conclu avec le maître d'ouvrage. Pour les missions portant sur des travaux de bâtiment, l'attestation d'assurance est en outre annexée à vos devis et à vos factures.",
+    "Pour un projet portant sur un immeuble situé en France, votre prestation de conception ou de coordination est imposable en France même si le client est établi à l'étranger : la règle du lieu de l'immeuble prime sur les règles générales entre assujettis.",
+    "Pour un particulier qui fait construire ou rénover, une note détaillée (date, identité, décompte de chaque prestation, montants HT et TTC) est remise avant paiement dès que la prestation atteint 25 € TTC — en pratique dès la première étude."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Attestation d'assurance annexée aux devis et aux factures pour les missions portant sur des travaux de bâtiment : l'attestation, conforme au modèle à mentions minimales, indique l'assureur et ses coordonnées, le numéro de contrat, les activités couvertes et la couverture géographique.",
+    "Taux de TVA justifié ligne à ligne : taux normal sur les honoraires, taux particulier uniquement si la maîtrise d'œuvre suit des travaux éligibles, avec motif à l'appui.",
+    "Taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € sur les factures adressées aux maîtres d'ouvrage professionnels.",
+    "Mention « TVA non applicable, article 293 B du CGI » si vous débutez sous le régime de la franchise en base."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture d'acompte — mission complète de maîtrise d'œuvre, maison individuelle, appel d'acompte à l'engagement de la phase avant-projet (client particulier)",
+    "lignes": [
+      {
+        "designation": "Phase esquisse (ESQ) — solde à la validation du parti architectural",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 1800,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Phase avant-projet sommaire (APS) — acompte de 50 % à l'engagement de la phase",
+        "quantite": 0.5,
+        "unite": "forfait de phase",
+        "prix_unitaire_ht": 3200,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Reprographie des jeux de plans refacturée au réel (frais accessoires taxables au taux de la prestation)",
+        "quantite": 3,
+        "unite": "jeu de plans",
+        "prix_unitaire_ht": 42,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Attestation d'assurance annexée au devis et à la facture : assureur et ses coordonnées, numéro de contrat, activités couvertes et couverture géographique",
+      "TVA exigible à l'encaissement de chaque acompte",
+      "Note détaillée remise avant paiement (client particulier)",
+      "Acompte imputé sur le montant total de la phase, solde à la validation"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Émettre des factures d'acompte par phase de mission et suivre le solde restant de chaque phase.",
+    "Annexer l'attestation d'assurance aux devis et aux factures des missions portant sur des travaux de bâtiment, et la tenir à jour.",
+    "Appliquer le bon taux de TVA ligne à ligne lorsqu'une maîtrise d'œuvre accompagne des travaux éligibles au taux réduit, et savoir émettre une facture rectificative le cas échéant.",
+    "Préparer, à l'échéance applicable à votre entreprise, la facturation électronique vers les promoteurs et entreprises, et la transmission de données pour les chantiers de particuliers."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation réunis, pour PME et indépendants, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Un cadre adapté à une agence qui encaisse des acomptes échelonnés sur plusieurs mois."
+    },
+    {
+      "slug": "shine",
+      "justification": "Compte professionnel en ligne et facturation, ciblés indépendants, freelances et TPE. Un format qui correspond à l'architecte exerçant seul ou en petite structure. Vérifiez sur la liste publiée par la DGFiP si l'éditeur est immatriculé comme plateforme de dématérialisation partenaire, ou par quelle plateforme il transmet vos factures."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Outil de gestion financière et de comptabilité, pensé pour travailler avec son expert-comptable, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Utile quand l'agence confie ses comptes à un cabinet et veut partager les mêmes données."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes honoraires de maîtrise d'œuvre sur la rénovation d'un logement peuvent-ils suivre le taux réduit des travaux ?",
+      "reponse": "Pas par principe. Une étude facturée isolément reste au taux normal de 20 %. Seule une maîtrise d'œuvre liée à des travaux eux-mêmes éligibles au taux réduit peut, sous conditions, suivre leur taux. Vérifiez le lien avec les travaux et l'éligibilité du chantier avant de déroger au taux normal. Si vous enchaînez sur la maîtrise d'œuvre ou l'exécution de travaux éligibles, une facture rectificative permet d'appliquer le taux réduit à l'ensemble de votre prestation, y compris aux frais d'études déjà facturés."
+    },
+    {
+      "question": "J'appelle un acompte à chaque phase (ESQ, APS, PRO) : quand la TVA est-elle due ?",
+      "reponse": "À l'encaissement de chaque acompte. Pour les prestations de services, toutes les sommes encaissées au titre de l'opération — avances, acomptes, soldes — déclenchent l'exigibilité de la TVA correspondante. Chaque appel d'acompte doit donc porter son propre décompte de taxe."
+    },
+    {
+      "question": "Dois-je faire figurer mon assurance sur mes factures ?",
+      "reponse": "Votre assurance est obligatoire au titre de la loi de 1977 sur l'architecture et l'attestation est jointe au contrat conclu avec le maître d'ouvrage. Pour les missions portant sur des travaux de bâtiment, cette attestation est en outre annexée à vos devis et à vos factures : établie selon un modèle à mentions minimales, elle indique l'assureur et ses coordonnées, le numéro de contrat, les activités couvertes et la couverture géographique. Prévoyez donc ce document en pièce jointe systématique de vos devis et de vos factures, et non une simple ligne de texte."
+    },
+    {
+      "question": "Un promoteur établi en Espagne me confie un immeuble à Bordeaux : dois-je facturer en autoliquidation intra-UE ?",
+      "reponse": "Non, pas selon la règle générale. Les prestations des architectes qui se rattachent à un immeuble déterminé sont imposables en France lorsque l'immeuble y est situé : la règle du lieu de l'immeuble prime. Comme vous êtes établi en France, c'est vous qui êtes redevable de la taxe : la facture porte la TVA française au taux normal de 20 %, sans mention d'autoliquidation. L'autoliquidation par le preneur suppose un prestataire non établi en France ; vérifiez seulement que votre client dispose bien d'un numéro de TVA valide pour ses propres déclarations."
+    },
+    {
+      "question": "Un particulier me commande une étude de faisabilité : simple reçu ou document détaillé ?",
+      "reponse": "Une note détaillée est obligatoire avant le paiement dès que la prestation atteint 25 € TTC. Elle comporte la date, votre identité, le décompte de chaque prestation et les montants HT et TTC. À l'échéance applicable à votre entreprise, ces opérations avec des particuliers donneront aussi lieu à une transmission de données à l'administration."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Prestations de services imposables au taux normal, dont architectes (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "BOFiP — Travaux sur locaux d'habitation achevés depuis plus de deux ans, opérations concernées (BOI-TVA-LIQ-30-20-90-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1666-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-20-20201223"
+    },
+    {
+      "titre": "BOFiP — Travaux sur locaux d'habitation achevés depuis plus de deux ans, modalités d'application et facture rectificative (BOI-TVA-LIQ-30-20-90-40)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20160302"
+    },
+    {
+      "titre": "Légifrance — Article 16 de la loi n° 77-2 du 3 janvier 1977 sur l'architecture (assurance obligatoire)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006847418"
+    },
+    {
+      "titre": "Légifrance — Article L. 243-2 du code des assurances (attestation d'assurance annexée aux devis et aux factures)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031010272"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 5 janvier 2016 fixant le modèle d'attestation d'assurance (mentions minimales)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000031824672"
+    },
+    {
+      "titre": "BOFiP — Lieu des prestations se rattachant à un immeuble, dont prestations d'architectes (BOI-TVA-CHAMP-20-50-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1490-PGP.html/identifiant=BOI-TVA-CHAMP-20-50-30-20201204"
+    },
+    {
+      "titre": "BOFiP — Exigibilité de la TVA à l'encaissement des acomptes (BOI-TVA-BASE-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "Légifrance — Note détaillée obligatoire dès 25 € TTC pour les prestations aux particuliers",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "economie.gouv.fr — Mentions obligatoires d'une facture",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — Délais de paiement, pénalités et indemnité forfaitaire de 40 €",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "economie.gouv.fr — Franchise en base de TVA",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

@@ -1,0 +1,143 @@
+{
+  "nom": "Bijoutier",
+  "slug": "bijoutier",
+  "famille": "commerce",
+  "statuts_frequents": [
+    "Entreprise individuelle",
+    "SARL",
+    "SASU",
+    "Micro-entrepreneur (atelier de création)"
+  ],
+  "volume_factures_typique": "L'essentiel des ventes se fait au comptoir, à des particuliers, enregistré en caisse. Les factures restent ponctuelles : pièces de valeur sur demande du client, réparations, commandes d'entreprises — quelques dizaines par an.",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Bijoux neufs, gravure, façon et réparations relèvent du taux normal de 20 % : aucun taux réduit n'existe en bijouterie.",
+    "Un bijou racheté à un particulier puis revendu bascule en TVA sur la marge : la facture de revente ne montre aucune TVA, n'ouvre aucun droit à déduction et porte la mention du régime particulier applicable aux biens d'occasion.",
+    "Le rachat d'or impose trois réflexes simultanés : inscription au livre de police, paiement du particulier par chèque barré à son nom ou par virement sur un compte ouvert à son nom (les espèces sont interdites), et qualification de l'objet racheté — métal précieux ou bijou — car elle commande la taxe forfaitaire sur les objets précieux : due à 11 % sur les métaux précieux quel que soit le montant, due à 6 % sur les bijoux seulement au-delà de 5 000 euros de prix de cession, CRDS de 0,5 % en sus dans les deux cas. Lorsqu'elle est due, vous la déclarez via le formulaire 2091-SD.",
+    "Le titre légal du métal (or 750 millièmes, argent 925 millièmes, platine 950 millièmes, par exemple) accompagne l'article : poinçon de garantie sur la pièce, titre repris sur l'étiquette et les documents remis au client, tableau des poinçons affiché en magasin.",
+    "Les ventes au comptoir aux particuliers ne passent pas en facture électronique : leurs données sont transmises en e-reporting, à l'échéance applicable à votre entreprise, tandis que vos achats (métaux, pierres, écrins) arriveront en factures électroniques à recevoir via votre plateforme."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Indication du titre légal du métal précieux (or, argent, platine, en millièmes) sur les étiquettes et les documents de vente remis au client.",
+    "Affichage en magasin du tableau des poinçons de garantie et distinction claire, en vitrine comme sur les étiquettes, entre métaux précieux et articles plaqués ou dorés.",
+    "Mention « Régime particulier - Biens d'occasion » et absence totale de TVA apparente sur les factures de bijoux d'occasion revendus sous le régime de la marge.",
+    "Pour tout achat de métaux précieux à un consommateur : contrat écrit comportant la désignation précise des objets achetés, leur poids, leur pureté en millième et le prix de vente toutes taxes comprises. Ce contrat est distinct du livre de police et de la facture ; son absence est sanctionnée par une contravention de cinquième classe."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture d'alliances en or 750 millièmes avec gravure, remise à des clients particuliers qui l'ont demandée",
+    "lignes": [
+      {
+        "designation": "Alliance or jaune 750 millièmes, poinçon de garantie apposé, largeur 3 mm, taille 52",
+        "quantite": 1,
+        "unite": "pièce",
+        "prix_unitaire_ht": 490,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Alliance or jaune 750 millièmes, poinçon de garantie apposé, largeur 4 mm, taille 62",
+        "quantite": 1,
+        "unite": "pièce",
+        "prix_unitaire_ht": 560,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Gravure intérieure (prénoms et date), prestation de façon",
+        "quantite": 2,
+        "unite": "prestation",
+        "prix_unitaire_ht": 25,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Titre de l'or indiqué : 750 millièmes, attesté par le poinçon de garantie apposé sur chaque alliance.",
+      "TVA au taux normal de 20 % sur les bijoux neufs comme sur la prestation de gravure.",
+      "Facture remise à la demande des clients particuliers ; la vente est par ailleurs enregistrée en caisse."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Distinguer sur chaque document le neuf (TVA à 20 %) et l'occasion (TVA sur la marge, sans TVA apparente).",
+    "Tenir le livre de police des rachats d'or, établir le contrat écrit d'achat de métaux précieux et régler les particuliers par chèque barré ou virement, jamais en espèces.",
+    "Qualifier chaque rachat — métal précieux ou bijou — pour savoir si la taxe forfaitaire sur les objets précieux est due, puis la déclarer le cas échéant (formulaire 2091-SD), au rythme de la déclaration de TVA.",
+    "Faire figurer le titre des métaux précieux sur les étiquettes et documents de vente, en cohérence avec les poinçons.",
+    "Transmettre les données des ventes au comptoir (e-reporting), à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Opérateur de gestion financière et de comptabilité, conçu pour collaborer avec votre expert-comptable. Un appui utile quand neuf à 20 %, marge sur l'occasion et taxe forfaitaire coexistent dans la même comptabilité. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+    },
+    {
+      "slug": "indy",
+      "justification": "Opérateur destiné aux indépendants. Permet de réunir comptabilité, compte professionnel et facturation dans un seul outil, ce qui convient à un bijoutier installé en nom propre. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+    },
+    {
+      "slug": "abby",
+      "justification": "Opérateur de facturation et de gestion, ciblé indépendants et micro-entrepreneurs. Convient à un atelier-boutique qui facture ponctuellement réparations et commandes. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Un client me vend sa vieille chaîne en or : quelles obligations immédiates ?",
+      "reponse": "Vous inscrivez l'achat au registre des objets mobiliers (livre de police) : identité et pièce d'identité du vendeur, description de l'objet, prix d'achat et mode de règlement. Vous établissez également un contrat écrit d'achat comportant la désignation précise des objets, leur poids, leur pureté en millième et le prix de vente toutes taxes comprises. Le paiement se fait obligatoirement par chèque barré établi au nom du consommateur vendeur, ou par virement sur un compte bancaire ouvert au nom de ce même consommateur : les espèces sont interdites pour l'achat de métaux, quel que soit le montant. La cession peut par ailleurs déclencher la taxe forfaitaire sur les objets précieux, selon la qualification de l'objet."
+    },
+    {
+      "question": "Qui déclare la taxe forfaitaire quand je rachète de l'or à un particulier ?",
+      "reponse": "La taxe est due au titre de la cession réalisée par le particulier. Pour les métaux précieux, elle s'élève à 11 % du prix de cession, quel que soit le montant, plus la CRDS de 0,5 %. Pour les bijoux, objets d'art, de collection ou d'antiquité, les cessions dont le prix n'excède pas 5 000 euros sont exonérées ; au-delà de 5 000 euros, la taxe est de 6 % du prix de cession, plus la CRDS de 0,5 %. Lorsqu'un professionnel assujetti à la TVA établi en France intervient à la transaction, c'est lui qui la déclare et la verse, via le formulaire 2091-SD déposé au rythme de sa déclaration de TVA. La qualification de l'objet — métal précieux ou bijou — commande donc à la fois le taux et l'application du seuil : vérifiez-la avant de déclarer."
+    },
+    {
+      "question": "Puis-je revendre un bijou racheté à un particulier avec une TVA classique à 20 % ?",
+      "reponse": "Non, pas par défaut. La revente d'un bijou d'occasion acquis auprès d'un non-redevable relève du régime de la marge : la TVA se calcule sur votre seule marge et ne doit pas apparaître sur la facture, qui porte la mention du régime particulier. Seuls vos bijoux neufs se facturent avec une TVA apparente à 20 %."
+    },
+    {
+      "question": "Quels titres puis-je vendre comme or, argent ou platine, et que dois-je afficher ?",
+      "reponse": "Seuls les titres légaux peuvent être commercialisés sous ces appellations : par exemple 999, 916, 750, 585 ou 375 millièmes pour l'or, 999, 925 ou 800 pour l'argent, 999, 950, 900 ou 850 pour le platine. Le poinçon de garantie atteste le titre de la pièce. En magasin, le tableau des poinçons doit rester visible et les articles plaqués ou dorés doivent être clairement distingués."
+    },
+    {
+      "question": "La réforme de la facturation électronique concerne-t-elle mes ventes au comptoir ?",
+      "reponse": "Vos ventes aux particuliers ne donneront pas lieu à facture électronique : leurs données de transaction seront transmises à l'administration en e-reporting, à l'échéance applicable à votre entreprise. En parallèle, vous devrez recevoir les factures de vos fournisseurs au format électronique via une plateforme agréée. Vérifiez que votre caisse et votre logiciel savent faire les deux."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Taux normal de TVA de 20 % (BOI-TVA-LIQ-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1438-PGP.html/identifiant=BOI-TVA-LIQ-20-10-20140919"
+    },
+    {
+      "titre": "BOFiP — TVA sur la marge des biens d'occasion vendus par des assujettis-revendeurs (BOI-TVA-SECT-90-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13268-PGP.html/identifiant=BOI-TVA-SECT-90-20-20-20250514"
+    },
+    {
+      "titre": "BOFiP — Mentions à porter sur les factures, dont la mention du régime particulier (BOI-TVA-DECLA-30-20-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20131018"
+    },
+    {
+      "titre": "Légifrance — Garantie des matières d'or, d'argent et de platine (titres légaux, poinçons, affichage)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069574/LEGISCTA000006146832/"
+    },
+    {
+      "titre": "BOFiP — Taxe forfaitaire sur les objets précieux : champ, taux et seuil d'exonération (BOI-RPPM-PVBMC-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/4151-PGP.html/identifiant=BOI-RPPM-PVBMC-20-10-20181231"
+    },
+    {
+      "titre": "impots.gouv.fr — Formulaire 2091-SD, taxe forfaitaire sur les cessions ou exportations de métaux précieux",
+      "url": "https://www.impots.gouv.fr/formulaire/2091-sd/taxe-forfaitaire-sur-les-cessions-ou-exportations-de-metaux-precieux"
+    },
+    {
+      "titre": "service-public.fr — Achat de métaux précieux auprès de particuliers : quelles sont les règles ? (contrat écrit, moyens de paiement)",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F33177"
+    },
+    {
+      "titre": "Légifrance — Code pénal, articles R321-1 à R321-8 : registre des revendeurs d'objets mobiliers (livre de police)",
+      "url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006181789"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique (facture électronique et e-reporting)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique et plateformes agréées : liste officielle des immatriculations (définitives et sous réserve)",
+      "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

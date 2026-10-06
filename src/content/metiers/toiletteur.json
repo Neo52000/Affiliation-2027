@@ -1,0 +1,146 @@
+{
+  "nom": "Toiletteur",
+  "slug": "toiletteur",
+  "famille": "artisanat",
+  "statuts_frequents": ["micro-entrepreneur", "entreprise individuelle", "SASU"],
+  "volume_factures_typique": "Volume élevé de petites transactions : plusieurs passages en caisse par jour, presque tous réglés au comptant par des particuliers, auxquels s'ajoutent les échéances mensuelles des formules d'abonnement.",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Votre quotidien est fait de tickets et de notes B2C : la note est due avant paiement dès 25 € TTC de prestation, seuil que dépassent la plupart des toilettages complets ; en dessous, elle n'est remise que si le client la demande.",
+    "Bain, tonte, coupe et épilation, comme vos ventes de produits (shampooings, accessoires), relèvent du taux normal de TVA de 20 %, applicable à la plupart des ventes de biens et des prestations de services : le toilettage ne figure dans aucune des catégories de prestations admises aux taux réduits.",
+    "Vos formules d'abonnement suivent la règle des prestations de services : la TVA devient exigible à l'encaissement de chaque mensualité, à due concurrence du montant perçu.",
+    "Si vous enregistrez les règlements de vos clients particuliers avec un logiciel ou un système de caisse et que vous êtes redevable de la TVA, celui-ci doit satisfaire aux conditions d'inaltérabilité, de sécurisation, de conservation et d'archivage des données.",
+    "Vos prestations aux particuliers relèveront du e-reporting, sous forme de données agrégées quotidiennes ; seules vos factures à des professionnels (pension canine, refuge, éleveur) passeront au format électronique, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Note remise au client particulier avant paiement pour toute prestation de services d'un montant égal ou supérieur à 25 € TTC, ou sur demande en dessous",
+    "Désignation ligne à ligne de chaque prestation réalisée (bain, tonte, coupe, démêlage, épilation) et de chaque produit vendu, en quantité et en prix",
+    "Pour une échéance d'abonnement : période couverte et prestations incluses, afin que la note corresponde à une prestation identifiable",
+    "Si vous êtes redevable de la TVA et enregistrez les règlements de vos clients particuliers sur un logiciel ou système de caisse : conformité justifiée par un certificat d'organisme accrédité ou une attestation individuelle de l'éditeur, à tenir à disposition de l'administration",
+    "« TVA non applicable, article 293 B du CGI » si le salon bénéficie de la franchise en base"
+  ],
+  "exemple_facture": {
+    "intitule": "Note — toilettage complet d'un chien de taille moyenne, avec vente d'un produit d'entretien",
+    "lignes": [
+      {
+        "designation": "Toilettage complet : bain, séchage, tonte et finitions aux ciseaux (chien de taille moyenne)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 52,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Supplément démêlage, pelage feutré",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 15,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Shampooing d'entretien vendu en boutique",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 14.9,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Note remise au client avant paiement : la part prestation de services (toilettage et supplément démêlage) atteint à elle seule 25 € TTC, seuil à partir duquel la note est obligatoire. La vente du shampooing est portée sur le même document pour la commodité du client.",
+      "Détail et décompte de chaque prestation et produit, montants hors taxe et toutes taxes comprises.",
+      "Identité du salon et du client, date de la prestation et numéro de la note."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Encaisser vite et éditer des notes B2C en série, plusieurs fois par jour",
+    "Gérer des abonnements avec échéances mensuelles et suivi des encaissements",
+    "Transmettre les données de transaction de vos ventes aux particuliers (e-reporting) via une plateforme agréée, à l'échéance applicable à votre entreprise",
+    "Réunir caisse, facturation et suivi d'activité dans un outil simple pour un salon individuel"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Facturation et gestion conçues pour les indépendants et micro-entrepreneurs, profil dominant du toilettage : émission des notes au fil de la journée et suivi de gestion d'un salon individuel. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+    },
+    {
+      "slug": "shine",
+      "justification": "Compte professionnel en ligne et facturation combinés, pour indépendants, freelances et TPE. Utile quand les encaissements quotidiens au comptant et la facturation doivent se suivre au même endroit. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Facturation et comptabilité réunies, pour les indépendants, micro-entrepreneurs et TPE. Adapté à un salon qui facture chaque jour et veut garder une comptabilité à jour sans double saisie. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mon ticket mêle un toilettage et un produit vendu en boutique : que dois-je remettre ?",
+      "reponse": "Les deux relèvent du taux normal de 20 %, mais pas de la même obligation documentaire. La note est due avant paiement dès que la part prestation de services atteint 25 € TTC, ce qui est le cas de la plupart des toilettages complets, et sur simple demande en dessous de ce seuil. La vente du produit n'est pas soumise à ce seuil, mais rien ne vous empêche de la porter sur le même document : détaillez alors chaque prestation et chaque produit en quantité et en prix, avec les montants hors taxe et toutes taxes comprises."
+    },
+    {
+      "question": "Existe-t-il un taux de TVA réduit pour les prestations sur les animaux de compagnie ?",
+      "reponse": "Non. Le toilettage est une prestation de services qui relève du taux normal de 20 %, applicable à la plupart des ventes de biens et des prestations de services. Il ne figure dans aucune des catégories de prestations admises aux taux réduits. Vos ventes de produits en boutique suivent le même taux."
+    },
+    {
+      "question": "Comment la TVA s'applique-t-elle à mes abonnements mensuels de toilettage ?",
+      "reponse": "Pour une prestation de services, la TVA est exigible lors de l'encaissement des acomptes, du prix ou de la rémunération. Chaque mensualité encaissée rend donc la TVA exigible à hauteur du montant perçu. Une option pour le paiement d'après les débits reste possible."
+    },
+    {
+      "question": "Ma caisse doit-elle être certifiée ?",
+      "reponse": "Si vous êtes redevable de la TVA et que vous enregistrez les règlements de vos clients particuliers au moyen d'un logiciel ou d'un système de caisse, celui-ci doit garantir l'inaltérabilité, la sécurisation, la conservation et l'archivage des données en vue du contrôle de l'administration. Les entreprises en franchise en base ne sont pas soumises à cette obligation. Vous justifiez de cette conformité par un certificat délivré par un organisme accrédité ou par une attestation individuelle de votre éditeur."
+    },
+    {
+      "question": "Mes toilettages pour des particuliers passeront-ils par la facture électronique ?",
+      "reponse": "Non. Les ventes aux particuliers feront l'objet d'un e-reporting : une transmission de données de transaction agrégées quotidiennes à l'administration, sans donnée personnelle sur le client. La facture électronique s'appliquera en revanche si vous facturez des professionnels, comme une pension canine ou un refuge, à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Taux normal de TVA de 20 % sur la plupart des biens et prestations (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "Remise d'une note au client particulier : prestations de services dès 25 € TTC (service-public.fr)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-BASE-20-20 — Prestations de services : exigibilité de la TVA à l'encaissement des acomptes, du prix ou de la rémunération",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "Champ d'application de l'obligation de détenir un logiciel de caisse sécurisé (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de"
+    },
+    {
+      "titre": "Ce qu'il faut savoir sur la certification des logiciels de caisse (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/ce-quil-faut-savoir-sur-la-certification-des-logiciels-de-caisse"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-10-30 — Obligation d'utilisation de logiciels ou systèmes de caisse sécurisés",
+      "url": "https://bofip.impots.gouv.fr/bofip/10691-PGP.html/identifiant=BOI-TVA-DECLA-30-10-30-20251001"
+    },
+    {
+      "titre": "BOFiP ACTU-2026-00073 — Rétablissement de la justification de conformité par attestation individuelle de l'éditeur, à côté du certificat d'organisme accrédité",
+      "url": "https://bofip.impots.gouv.fr/bofip/15035-PGP.html/ACTU-2026-00073"
+    },
+    {
+      "titre": "Ventes aux particuliers : e-reporting de données agrégées quotidiennes (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "Réforme de la facturation électronique : toutes les entreprises assujetties à la TVA sont concernées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiche-2_mon-entreprise-sera-t-elle-obligee-de-facturer-electroniquement.pdf"
+    },
+    {
+      "titre": "Liste des plateformes agréées (DGFiP, impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    },
+    {
+      "titre": "Franchise en base : mention « TVA non applicable, article 293 B du CGI » (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "Mentions obligatoires des factures : détail, décompte, montants HT et TTC (entreprendre.service-public.fr)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

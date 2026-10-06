@@ -1,0 +1,147 @@
+{
+  "nom": "Opticien",
+  "slug": "opticien",
+  "famille": "commerce",
+  "statuts_frequents": ["SARL", "SAS ou SASU", "EURL", "Entreprise individuelle"],
+  "volume_factures_typique": "Quelques dizaines à quelques centaines d'équipements vendus par mois. Chaque vente d'optique correctrice est précédée d'un devis normalisé et suivie d'une note détaillée nominative. Les factures à des clients professionnels restent rares (lunettes de protection pour une entreprise, par exemple).",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Avant toute vente d'optique correctrice, vous remettez un devis normalisé conforme au modèle réglementaire : rien ne peut y être ajouté ni retranché, et il présente une offre 100 % Santé (classe A) sans reste à charge.",
+    "Avant le paiement, une note détaillée reprend les éléments d'information du devis et permet d'identifier et de tracer chaque produit délivré.",
+    "Verres correcteurs, montures et lentilles de contact relèvent du taux normal de TVA de 20 % : le BOFiP les exclut expressément du taux réduit de 5,5 % réservé aux appareillages pour personnes handicapées inscrits sur la LPP.",
+    "La pratique du tiers payant suppose d'avoir été enregistré au fichier national des professionnels de santé et d'avoir obtenu un identifiant de facturation, puis d'avoir adhéré à la convention de dispense d'avance des frais ; cette adhésion s'obtient par magasin et par région. La facturation ventile alors la part du régime obligatoire, celle de la complémentaire et le reste à charge du client.",
+    "Vos ventes en magasin à des particuliers ne deviendront pas des factures électroniques : leurs données seront transmises à l'administration par e-reporting, à l'échéance applicable à votre entreprise. Vous devrez en revanche recevoir les factures de vos fournisseurs (verriers, fabricants de montures) au format électronique."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Devis normalisé conforme au modèle réglementaire : description détaillée de l'équipement avec monture et verres chiffrés séparément, classe de l'équipement (A ou B) et informations sur la prise en charge par l'Assurance Maladie et, si elle est connue, par la complémentaire.",
+    "Note détaillée remise avant le paiement : reprise des informations du devis, identification et traçabilité des produits délivrés.",
+    "Sur toute facture, comme pour tout commerce : identité du vendeur et du client, et pour chaque ligne la dénomination précise, la quantité, le prix unitaire hors taxes et le taux de TVA applicable."
+  ],
+  "exemple_facture": {
+    "intitule": "Vente d'un équipement optique de classe B à un particulier (prix libres, tiers payant possible)",
+    "lignes": [
+      {
+        "designation": "Monture optique acétate, réf. fabricant MO-2184",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 120.83,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Verre unifocal aminci indice 1,6, traitement antireflet, œil droit",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 70.83,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Verre unifocal aminci indice 1,6, traitement antireflet, œil gauche",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 70.83,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Étui rigide et lingettes microfibre",
+        "quantite": 1,
+        "unite": "lot",
+        "prix_unitaire_ht": 10,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Référence du devis normalisé accepté par le client et classe de l'équipement (ici classe B, à prix libres).",
+      "En cas de tiers payant : ventilation du règlement entre la part de l'Assurance Maladie, la part de la complémentaire et le reste à charge du client.",
+      "TVA à 20 % sur toutes les lignes : l'équipement d'optique correctrice est exclu du taux réduit de 5,5 % des appareillages pour personnes handicapées."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Enchaîner devis normalisé, note détaillée et facture sans ressaisie, avec la ventilation Assurance Maladie / complémentaire / client.",
+    "Transmettre les données de vos ventes aux particuliers (e-reporting) depuis la caisse ou le logiciel métier, via une plateforme agréée, à l'échéance applicable à votre entreprise.",
+    "Recevoir au format électronique les factures de vos verriers et fabricants de montures.",
+    "Suivre des règlements éclatés entre le client, l'Assurance Maladie et les complémentaires."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Orientée gestion financière et comptabilité, elle est pensée pour travailler avec votre expert-comptable. Un appui utile quand la ventilation liée au tiers payant alourdit la comptabilité du magasin."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle réunit facturation et comptabilité pour les TPE et peut couvrir vos rares factures à des clients professionnels ainsi que la réception de celles de vos fournisseurs."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle associe compte professionnel et facturation, pour PME et indépendants. Pertinente si vous souhaitez regrouper encaissements du magasin et factures fournisseurs au même endroit."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quel taux de TVA s'applique aux verres correcteurs, aux montures et aux lentilles ?",
+      "reponse": "Le taux normal de 20 %. Le BOFiP précise que les lunettes (verres et montures) et les lentilles de contact ne figurent pas parmi les appareillages pour personnes handicapées éligibles au taux réduit de 5,5 %. N'appliquez donc jamais de taux réduit sur ces lignes de facture."
+    },
+    {
+      "question": "Le devis normalisé est-il obligatoire même pour un simple renouvellement de lunettes ?",
+      "reponse": "Oui. Tout professionnel délivrant des produits d'optique correctrice doit remettre un devis conforme au modèle réglementaire, y compris en cas de renouvellement et que l'équipement soit remboursable ou non. Ce devis comporte une offre 100 % Santé sans reste à charge."
+    },
+    {
+      "question": "Dois-je être conventionné pour pratiquer le tiers payant sur les équipements optiques ?",
+      "reponse": "Oui, et en plusieurs étapes. Vous devez d'abord avoir été enregistré au fichier national des professionnels de santé et avoir obtenu un identifiant de facturation, puis adhérer à la convention de dispense d'avance des frais. Cette adhésion s'obtient par magasin et par région : si vous exploitez plusieurs points de vente, une adhésion unique ne suffit pas. Sans elle, vous ne pouvez pas dispenser votre client de l'avance des frais."
+    },
+    {
+      "question": "Comment ma facture doit-elle présenter un équipement pris en charge en tiers payant ?",
+      "reponse": "La note remise avant le paiement puis la facture reprennent le détail de l'équipement, avec monture et verres chiffrés séparément, et la classe retenue (A ou B). Le règlement y est ventilé entre la part prise en charge par l'Assurance Maladie, la part de la complémentaire et le reste à charge que vous encaissez auprès du client. Cette ventilation suppose que votre magasin ait adhéré à la convention de dispense d'avance des frais, adhésion à obtenir par magasin et par région. Les règles communes de la fiche détaillent par ailleurs le sort de vos ventes en magasin aux particuliers."
+    },
+    {
+      "question": "Que doit contenir la note remise au client au moment du paiement ?",
+      "reponse": "Une note détaillée, remise avant le paiement. Elle reprend les éléments d'information du devis normalisé et comporte les informations permettant d'identifier les produits délivrés et d'en assurer la traçabilité."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-50 — Appareillages et équipements spéciaux pour personnes handicapées (exclusion des lunettes et lentilles du taux réduit)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1724-PGP.html/identifiant=BOI-TVA-LIQ-30-10-50-20240619"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-20-10 — Taux normal de 20 % applicable par défaut",
+      "url": "https://bofip.impots.gouv.fr/bofip/1438-PGP.html/identifiant=BOI-TVA-LIQ-20-10-20140919"
+    },
+    {
+      "titre": "DGCCRF — Lunettes et lentilles correctrices : quelle est la réglementation applicable ?",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/lunettes-et-lentilles-correctrices-quelle-est-la-reglementation-applicable"
+    },
+    {
+      "titre": "Arrêté du 28 avril 2017 relatif à l'information de l'assuré (devis normalisé optique-lunetterie)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000034566766"
+    },
+    {
+      "titre": "DGCCRF — Nouveaux modèles de devis devant être remis lors de la vente d'aides auditives et de produits d'optique correctrice",
+      "url": "https://www.economie.gouv.fr/dgccrf/nouveaux-modeles-de-devis-devant-etre-remis-lors-de-la-vente-daides-auditives-et-de-produits-doptique-correctrice"
+    },
+    {
+      "titre": "Ameli — Lunettes et lentilles : quelle prise en charge ? (classes A et B, 100 % Santé)",
+      "url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/lunettes-lentilles"
+    },
+    {
+      "titre": "Ameli — Démarches pour s'installer et facturer (enregistrement au fichier national des professionnels de santé, identifiant de facturation)",
+      "url": "https://www.ameli.fr/professionnel-de-la-lpplatm/exercice-professionnel/vie-professionnelle/installation"
+    },
+    {
+      "titre": "Ameli — Le tiers payant mode d'emploi (adhésion à la convention de dispense d'avance des frais, par magasin et par région)",
+      "url": "https://www.ameli.fr/professionnel-de-la-lpplatm/exercice-professionnel/facturation/pratique-tiers-payant/tiers-payant-mode-emploi"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique (e-reporting des ventes aux particuliers)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique : liste des plateformes agréées (plateformes de dématérialisation partenaires immatriculées)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "economie.gouv.fr — Mentions obligatoires d'une facture",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

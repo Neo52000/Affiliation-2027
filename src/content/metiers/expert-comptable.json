@@ -1,0 +1,139 @@
+{
+  "nom": "Expert-comptable",
+  "slug": "expert-comptable",
+  "famille": "liberal",
+  "statuts_frequents": [
+    "Exercice individuel en BNC, inscrit au tableau de l'Ordre",
+    "Société d'exercice libéral (SELARL, SELAS)",
+    "Société d'expertise comptable (SARL, SAS) inscrite à l'Ordre"
+  ],
+  "volume_factures_typique": "Récurrent et soutenu : les honoraires sont le plus souvent mensualisés par dossier client. Un cabinet individuel émet quelques dizaines de factures par mois ; un cabinet structuré en émet plusieurs centaines.",
+  "clients_types": "B2B",
+  "specificites_facturation": [
+    "Chaque mission repose sur un contrat écrit, le plus souvent une lettre de mission, imposé par le code de déontologie de la profession. Vos factures d'honoraires s'y réfèrent : nature de la mission, périodicité de facturation et modalités de révision y sont déjà cadrées.",
+    "Vos honoraires de tenue, de révision ou de social relèvent du taux normal de TVA de 20 %, comme les autres prestations intellectuelles d'experts, sauf disposition particulière.",
+    "Pour des honoraires mensualisés, la TVA devient exigible à l'encaissement de chaque mensualité ou acompte, sauf option pour les débits. Ce paramètre conditionne vos déclarations et doit être réglé dans votre outil de facturation.",
+    "Les frais de greffe ou d'annonces légales avancés au nom et pour le compte du client sont des débours : avec mandat, reddition de comptes exacte et comptes de passage, ils sont repris hors base de TVA, sur une ligne distincte. Une refacturation ordinaire de frais reste en revanche taxable au taux de la prestation principale.",
+    "Votre clientèle est presque entièrement composée d'assujettis établis en France : à l'échéance applicable à votre entreprise, la quasi-totalité de vos factures sortantes basculera en facturation électronique via une plateforme agréée, y compris si le cabinet est en franchise en base."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Taux des pénalités de retard et indemnité forfaitaire de 40 € pour frais de recouvrement, sur chaque facture d'honoraires adressée à un client professionnel, l'indemnité étant due dès le premier jour de retard.",
+    "Numéro de TVA intracommunautaire du cabinet et du client professionnel à partir de 150 € HT (facture d'un montant égal ou supérieur à ce seuil).",
+    "Mention « Autoliquidation » pour une mission facturée hors TVA à un client assujetti établi dans un autre État membre de l'UE, la taxe étant due par le preneur.",
+    "Mention « TVA non applicable, article 293 B du CGI » si le cabinet relève de la franchise en base (installation récente, faible activité).",
+    "Ligne distincte pour les débours, repris pour leur montant exact et hors base de TVA, justificatifs conservés."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture mensuelle d'honoraires — mission de tenue comptable et social (référence : lettre de mission du 12 janvier), client SARL",
+    "lignes": [
+      {
+        "designation": "Honoraires de tenue comptable — mensualité prévue par la lettre de mission",
+        "quantite": 1,
+        "unite": "forfait mensuel",
+        "prix_unitaire_ht": 380,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Établissement des bulletins de paie et déclarations sociales du mois",
+        "quantite": 2,
+        "unite": "bulletin",
+        "prix_unitaire_ht": 25,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Débours — frais de greffe pour le dépôt des comptes annuels, réglés au nom et pour le compte du client : somme exclue de la base d'imposition à la TVA, reprise pour son montant exact (ni HT ni TVA)",
+        "quantite": 1,
+        "unite": "dossier",
+        "prix_unitaire_ht": 45.8,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "Facture émise en application de la lettre de mission du 12 janvier (contrat écrit prévu par le code de déontologie de la profession)",
+      "Pénalités de retard au taux prévu aux conditions de règlement et indemnité forfaitaire de recouvrement de 40 €",
+      "Ligne de débours présentée hors base d'imposition : elle n'entre ni dans le total HT taxable ni dans le calcul de la TVA, et elle est reprise pour son montant exact, justificatifs tenus à disposition",
+      "TVA acquittée sur les encaissements"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Automatiser la facturation récurrente des honoraires mensualisés adossés aux lettres de mission.",
+    "Isoler les débours (greffe, annonces légales) hors base de TVA, avec justificatifs rattachés dossier par dossier.",
+    "Suivre les encaissements pour caler l'exigibilité de la TVA, ou gérer proprement l'option pour les débits.",
+    "Recevoir puis émettre des factures électroniques pour une clientèle presque entièrement assujettie, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Outil de gestion financière et de comptabilité, pensé pour le travail avec et par les experts-comptables, et figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Il couvre les dossiers TPE et PME qui composent la clientèle type d'un cabinet."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Outil associant facturation et comptabilité, ciblé sur les indépendants et TPE. Un format adapté à un cabinet individuel qui démarre et facture des honoraires récurrents. Vérifiez sur la liste publiée par la DGFiP si l'éditeur est immatriculé comme plateforme de dématérialisation partenaire, ou par quelle plateforme il transmet vos factures."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation réunis, pour PME et indépendants, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Le rapprochement entre factures émises et encaissements aide à suivre des honoraires mensualisés."
+    }
+  ],
+  "faq": [
+    {
+      "question": "La lettre de mission peut-elle tenir lieu de facture pour mes honoraires ?",
+      "reponse": "Non. Le contrat écrit, généralement une lettre de mission, est une obligation déontologique qui définit la mission et les droits et obligations des parties. La facture reste due pour chaque prestation à un client professionnel, avec le détail de chaque prestation, les montants HT et TTC et le taux de TVA. Les deux documents se complètent, ils ne se remplacent pas."
+    },
+    {
+      "question": "Mes honoraires sont prélevés chaque mois : quand la TVA est-elle due ?",
+      "reponse": "Pour les prestations de services, la TVA est exigible à l'encaissement : chaque mensualité ou acompte encaissé déclenche la taxe correspondante. Vous pouvez opter pour les débits, ce qui avance l'exigibilité à l'inscription au compte client. Vérifiez que votre outil de facturation applique le bon régime."
+    },
+    {
+      "question": "Les frais de greffe et d'annonces légales que j'avance pour mes clients passent-ils avec TVA ?",
+      "reponse": "Pas s'il s'agit de vrais débours : sommes engagées au nom et pour le compte du client, avec mandat, reddition de comptes exacte et inscription en comptes de passage. Elles sortent alors de la base d'imposition et figurent hors base sur la facture, sans montant HT taxable ni taux de TVA. Une simple refacturation de frais sans ces conditions reste taxable au taux de vos honoraires."
+    },
+    {
+      "question": "Mon cabinet facture une mission de consolidation à une société belge assujettie : quelle TVA appliquer ?",
+      "reponse": "La prestation est facturée hors TVA française avec la mention « Autoliquidation » : la taxe est due par le preneur dans son État membre. À l'échéance applicable à votre entreprise, cette opération donnera lieu à une transmission de données à l'administration, car elle sort du circuit de facturation électronique domestique."
+    },
+    {
+      "question": "Comment facturer la régularisation annuelle qui s'ajoute à mes honoraires mensualisés (travaux de bilan, liasse fiscale) ?",
+      "reponse": "Par une facture distincte, qui se réfère à la lettre de mission et détaille les travaux couverts : établissement des comptes annuels, liasse fiscale, annexe. Elle porte le taux normal de 20 %, les mentions dues à un client professionnel (pénalités de retard et indemnité forfaitaire de recouvrement de 40 €) et, comme les mensualités, elle déclenche la TVA à l'encaissement, sauf option pour les débits. Si la lettre de mission prévoit une révision du forfait, indiquez la période de régularisation sur la facture pour que le client rapproche les deux documents."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Légifrance — Article 151 du décret n° 2012-432 (contrat écrit / lettre de mission de l'expert-comptable)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000046882378"
+    },
+    {
+      "titre": "BOFiP — Prestations de services imposables au taux normal (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "BOFiP — Fait générateur et exigibilité de la TVA, prestations de services (BOI-TVA-BASE-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "BOFiP — Débours exclus de la base d'imposition (BOI-TVA-BASE-10-10-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/488-PGP.html/identifiant=BOI-TVA-BASE-10-10-30-20220511"
+    },
+    {
+      "titre": "economie.gouv.fr — Mentions obligatoires d'une facture entre professionnels",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — Délais de paiement, pénalités de retard et indemnité de 40 €",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "economie.gouv.fr — Franchise en base de TVA et mention de l'article 293 B du CGI",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "impots.gouv.fr — Prestations entre assujettis (autoliquidation intra-UE)",
+      "url": "https://www.impots.gouv.fr/professionnel/prestations-entre-assujettis"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

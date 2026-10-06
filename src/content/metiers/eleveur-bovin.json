@@ -1,0 +1,140 @@
+{
+  "nom": "Éleveur bovin",
+  "slug": "eleveur-bovin",
+  "famille": "agriculture",
+  "statuts_frequents": ["Entreprise individuelle (exploitant agricole)", "EARL", "GAEC", "SCEA"],
+  "volume_factures_typique": "Quelques dizaines de documents par an pour les lots vendus à un marchand de bestiaux, à une coopérative ou à un abattoir, souvent par apports groupés. S'y ajoute, pour les exploitations en vente directe, un flux régulier de commandes de colis de viande à des particuliers après abattage à façon.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Un taux particulier de 2,10 % s'applique aux ventes d'animaux vivants de boucherie et de charcuterie réalisées par un redevable de la TVA au profit de personnes non assujetties à cette taxe. Il ne concerne ni les acquisitions intracommunautaires imposables, ni les importations d'animaux vivants. La doctrine assimile à ces personnes non assujetties les exploitants agricoles placés sous le régime du remboursement forfaitaire agricole.",
+    "Les factures portant sur des ventes d'animaux susceptibles de bénéficier du taux de 2,10 % doivent mentionner expressément la qualité des acheteurs. Sans cette mention, le taux n'est pas justifié.",
+    "Les animaux de boucherie et de charcuterie, vivants ou morts, dont la destination normale est la consommation humaine ou la production agricole relèvent du taux de 5,5 %. C'est ce taux qui s'applique à vos apports à une coopérative, à un marchand de bestiaux ou à un abattoir assujettis, et non le taux de 2,10 %.",
+    "Les colis et caissettes de viande vendus en direct après abattage à façon sont des produits destinés à l'alimentation humaine : ils relèvent du taux de 5,5 %. Le même animal peut donc être facturé à 2,10 % s'il est cédé vivant à un particulier, ou à 5,5 % une fois transformé en colis.",
+    "Les animaux dont un exploitant agricole redevable de la TVA ou un marchand de bestiaux a la propriété ou la garde doivent avoir fait l'objet des mesures d'identification. Cette exigence est intégrée aux obligations comptables propres à la détention et à la vente d'animaux vivants de boucherie et de charcuterie.",
+    "Les bovins sont identifiés par deux boucles auriculaires agréées et identiques, posées à la naissance et au plus tard à l'âge de vingt jours. Le détenteur notifie sous sept jours la naissance après pose des marques auriculaires, ainsi que l'entrée, la sortie ou la mort d'un animal ; le double des notifications est conservé dans le registre d'élevage.",
+    "Chaque animal circule accompagné de son passeport lors de chaque mouvement. Ce document sanitaire ne vaut pas facture : prévoyez de reporter le numéro national d'identification de l'animal sur la ligne de facture correspondante, afin de relier la vente au mouvement déclaré.",
+    "Les apports à la coopérative ou à l'abattoir relèvent de la facture électronique entre entreprises, tandis que la vente directe de colis à des particuliers relève de la transmission des données de transaction, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Vente d'animaux vivants de boucherie ou de charcuterie au taux de 2,10 % : mention expresse de la qualité de l'acheteur, personne non assujettie à la TVA ou exploitant agricole placé sous le régime du remboursement forfaitaire agricole.",
+    "Numéro national d'identification de chaque animal reporté sur la ligne de facture correspondante, pour relier la vente au mouvement notifié et au passeport remis avec l'animal.",
+    "Exploitant redevable : taux de 5,5 % sur les lignes de viandes et d'animaux de boucherie dont la destination normale est la consommation humaine ou la production agricole.",
+    "Numéro individuel d'identification à la TVA du vendeur, sauf facture d'un montant total hors taxes inférieur ou égal à 150 €, date d'échéance du règlement et taux des pénalités de retard.",
+    "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel, adresse de livraison des biens si elle diffère de celle du client, nature des opérations facturées et, le cas échéant, mention « Option pour le paiement de la taxe d'après les débits »."
+  ],
+  "exemple_facture": {
+    "intitule": "Vente directe à un particulier : colis de viande issus d'un abattage à façon et un veau cédé vivant (exploitant redevable de la TVA)",
+    "lignes": [
+      {
+        "designation": "Colis de viande bovine 10 kg (steaks, rôtis, bourguignon), génisse n° FR 12 34 56 78 90",
+        "quantite": 8,
+        "unite": "colis",
+        "prix_unitaire_ht": 135,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Caissette de viande hachée surgelée 5 kg, même carcasse",
+        "quantite": 4,
+        "unite": "caissette",
+        "prix_unitaire_ht": 62,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Veau de boucherie vendu vivant, n° FR 09 87 65 43 21",
+        "quantite": 1,
+        "unite": "animal",
+        "prix_unitaire_ht": 780,
+        "tva_pct": 2.1
+      }
+    ],
+    "mentions_specifiques": [
+      "Acheteur : personne non assujettie à la TVA (qualité mentionnée expressément au titre du taux de 2,10 % sur l'animal vivant de boucherie)",
+      "TVA à 5,5 % sur les viandes, produits destinés à l'alimentation humaine",
+      "Numéros nationaux d'identification des animaux reportés sur chaque ligne concernée",
+      "Passeport remis avec l'animal vivant ; ce document ne tient pas lieu de facture",
+      "Bases et montants de TVA ventilés par taux"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Gérer sur une même facture des lignes à 5,5 % et à 2,10 % et imposer la mention de la qualité de l'acheteur dès qu'une ligne porte un animal vivant de boucherie.",
+    "Rattacher chaque ligne de facture au numéro national d'identification de l'animal, pour relier la vente au registre d'élevage et aux notifications de mouvement.",
+    "Facturer des lots d'animaux au poids vif ou au poids carcasse, avec des prix au kilo et des pesées différentes par animal.",
+    "Gérer les deux flux de la réforme : facture électronique vers la coopérative, le marchand de bestiaux ou l'abattoir, données de transaction pour la vente directe aux particuliers.",
+    "Suivre les commandes de colis de viande d'un abattage à l'autre, avec acomptes à la réservation et solde au retrait."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée DGFiP réunissant comptabilité, compte professionnel et facturation pour les indépendants. Adaptée à un éleveur en entreprise individuelle qui veut tenir sa comptabilité et facturer ses ventes directes dans un même outil."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée associant facturation et comptabilité pour les indépendants et les TPE. Utile pour rattacher chaque pièce au numéro national d'identification de l'animal et retrouver, lors d'un contrôle, le lien entre une ligne de facture et une notification de mouvement."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée de gestion financière et de comptabilité, conçue pour travailler avec son expert-comptable. Pertinente pour un élevage dont le cabinet suit les variations d'inventaire du troupeau et la ventilation entre apports en coopérative et ventes directes de colis."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends une vache de réforme à un voisin qui n'est pas assujetti à la TVA. Quel taux dois-je appliquer ?",
+      "reponse": "Les ventes d'animaux vivants de boucherie et de charcuterie réalisées par un redevable de la TVA au profit de personnes non assujetties relèvent d'un taux particulier de 2,10 %, prévu par l'article 281 sexies du code général des impôts. La facture doit mentionner expressément la qualité de l'acheteur, faute de quoi l'application de ce taux n'est pas justifiée. Ce taux ne s'applique ni aux acquisitions intracommunautaires imposables, ni aux importations d'animaux vivants."
+    },
+    {
+      "question": "Le même taux de 2,10 % s'applique-t-il quand je livre mes broutards à un marchand de bestiaux ?",
+      "reponse": "Non. Le taux de 2,10 % vise les ventes à des personnes non assujetties à la TVA, et la doctrine y assimile les exploitants agricoles placés sous le régime du remboursement forfaitaire agricole. Un marchand de bestiaux, une coopérative ou un abattoir assujettis n'entrent pas dans ce cas. Les animaux de boucherie et de charcuterie, vivants ou morts, dont la destination normale est la consommation humaine ou la production agricole relèvent alors du taux de 5,5 %."
+    },
+    {
+      "question": "Mes colis de viande vendus à la ferme sont-ils au même taux que l'animal vivant ?",
+      "reponse": "Non. Les viandes vendues en colis ou en caissettes après abattage à façon sont des produits destinés à l'alimentation humaine et relèvent du taux de 5,5 %. L'animal vivant cédé à un particulier non assujetti relève, lui, du taux particulier de 2,10 %. Un même animal peut donc être facturé à deux taux différents selon qu'il est vendu sur pied ou en colis, ce qui impose de vérifier chaque ligne."
+    },
+    {
+      "question": "Dois-je faire figurer les numéros d'identification de mes animaux sur mes factures ?",
+      "reponse": "Les mentions obligatoires de la facture ne l'imposent pas, mais le report du numéro national est une précaution utile. Les animaux dont un exploitant redevable de la TVA ou un marchand de bestiaux a la propriété ou la garde doivent avoir fait l'objet des mesures d'identification, obligation rattachée aux règles comptables propres à la détention et à la vente d'animaux vivants de boucherie. Reporter le numéro national sur la ligne de facture permet de relier directement la vente au registre d'élevage et aux notifications de mouvement."
+    },
+    {
+      "question": "Le passeport bovin remis avec l'animal peut-il remplacer la facture ?",
+      "reponse": "Non. Le passeport est un document d'identification sanitaire : tout détenteur doit en être en possession et l'animal doit en être accompagné lors de chaque mouvement. Il ne contient aucune des mentions obligatoires d'une facture et ne vaut pas pièce comptable. Par ailleurs, vous devez notifier sous sept jours l'entrée, la sortie ou la mort d'un animal, et conserver le double de ces notifications dans votre registre d'élevage."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Légifrance – Article 281 sexies du code général des impôts : taux de 2,10 % sur les ventes d'animaux vivants de boucherie et de charcuterie à des personnes non assujetties",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006309516"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-SECT-80-30-20-20 – Agriculture : cas particuliers (champ du taux de 2,10 %, assimilation des exploitants au remboursement forfaitaire agricole, mention expresse de la qualité des acheteurs sur la facture, exclusion des acquisitions intracommunautaires et des importations)",
+      "url": "https://bofip.impots.gouv.fr/bofip/214-PGP.html/identifiant=BOI-TVA-SECT-80-30-20-20-20220119"
+    },
+    {
+      "titre": "BOFiP BOI-ANNX-000484 – Tableau des taux de TVA applicables aux produits d'origine agricole : animaux de boucherie et de charcuterie, morts ou vivants, destinés à la consommation humaine ou à la production agricole",
+      "url": "https://bofip.impots.gouv.fr/bofip/13565-PGP.html/identifiant=BOI-ANNX-000484-20240207"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-10 – Taux réduit de 5,5 % : produits destinés à l'alimentation humaine",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+    },
+    {
+      "titre": "BOFiP 232-PGP – Agriculture : obligations spécifiques à la détention et à la vente des animaux vivants de boucherie et de charcuterie (identification des animaux détenus, obligations comptables)",
+      "url": "https://bofip.impots.gouv.fr/bofip/232-PGP"
+    },
+    {
+      "titre": "agriculture.gouv.fr – Identification et traçabilité des animaux de rente (deux boucles auriculaires posées à la naissance et au plus tard à vingt jours, notification sous sept jours, passeport, registre d'élevage)",
+      "url": "https://agriculture.gouv.fr/identification-et-tracabilite-des-animaux-de-rente"
+    },
+    {
+      "titre": "entreprendre.service-public.fr – Mentions obligatoires sur une facture et nouvelles mentions liées à la facturation électronique",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "impots.gouv.fr – Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (champ d'application, obligations d'émission et de réception)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

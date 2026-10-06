@@ -1,0 +1,156 @@
+{
+  "nom": "Crêperie",
+  "slug": "creperie",
+  "famille": "restauration",
+  "statuts_frequents": [
+    "SARL",
+    "EURL",
+    "SAS / SASU",
+    "Entreprise individuelle (EI)",
+    "Micro-entreprise (crêperie ambulante, stand de marché ou de festival)"
+  ],
+  "volume_factures_typique": "L'essentiel du service se solde par des notes et des tickets remis à des particuliers. Les factures au sens strict restent peu nombreuses : privatisation de salle, repas de groupe réservé par une entreprise, livraison de galettes conditionnées à un commerce. Leur rythme suit la saison, avec une concentration sur les mois d'ouverture et un creux en arrière-saison.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Une même addition peut mêler trois taux : la galette et la crêpe servies en salle relèvent du taux réduit de 10 % applicable aux ventes à consommer sur place, la bolée de cidre relève du taux normal de 20 % comme boisson alcoolique, et un pot de caramel au beurre salé à tartiner, emporté par le client, relève de 5,5 % au titre des pâtes à tartiner. Attention à la nuance : les caramels vendus en bonbons (sachets, boîtes) sont des produits de confiserie, exclus du taux réduit par l'article 278-0 bis du CGI, et restent à 20 %.",
+    "Le cidre et le poiré figurent dans le troisième groupe de l'article L3321-1 du code de la santé publique, celui des boissons fermentées non distillées : ce sont des boissons alcooliques. Or les boissons alcooliques sont expressément exclues du taux réduit applicable aux ventes à consommer sur place par le m de l'article 279 du CGI : la bolée servie en salle comme la bouteille vendue à emporter restent à 20 %.",
+    "Lorsque la carte propose un menu à prix unique comprenant une bolée, le prix forfaitaire doit être ventilé pour isoler la part correspondant à la boisson alcoolique. Si ce prix n'est pas identifiable, l'administration admet une méthode de ventilation économiquement rationnelle, que l'exploitant doit pouvoir justifier ; une méthode forfaitaire unique est admise pour l'ensemble des menus lorsque la proportion est voisine de l'un à l'autre.",
+    "Les crêpes et galettes vendues chaudes au comptoir ou sur un stand restent à 10 % : ce sont des produits préparés en vue d'une consommation immédiate. Seuls les produits conditionnés permettant leur conservation, comme la farine de sarrasin, la pâte à crêpes sous vide ou les confitures, relèvent de 5,5 %.",
+    "L'activité est saisonnière, l'obligation de pouvoir recevoir les factures électroniques ne l'est pas : elle vise toutes les entreprises assujetties à la TVA et prend effet à l'échéance applicable à votre entreprise, sans se suspendre pendant une fermeture d'arrière-saison. Les factures de vos fournisseurs continueront d'arriver pendant la fermeture : chacun les émet depuis sa propre plateforme agréée, qui les achemine vers celle que vous aurez déclarée dans l'annuaire. Vous n'avez pas à ouvrir d'accès à vos fournisseurs, mais vous devez consulter votre plateforme même à l'arrêt.",
+    "Les encaissements de salle et de comptoir sont des ventes à des particuliers : elles ne donnent pas lieu à facture électronique mais à une transmission des données de transactions à l'administration, selon le même calendrier que la facturation électronique."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Ventilation des montants HT et de la TVA par taux dès qu'une même facture comporte du service en salle (10 %), du cidre (20 %) et des produits d'épicerie conditionnés (5,5 %, ou 20 % pour les confiseries).",
+    "Dénomination de ligne assez précise pour distinguer le service en salle de l'emporté (« galette servie en salle », « pot de caramel à tartiner 100 g emporté »), puisque le taux dépend de cette distinction.",
+    "Indication de la méthode de ventilation retenue lorsqu'un menu à prix unique comprend une bolée dont le prix n'est pas identifié séparément.",
+    "SIREN ou SIRET du client professionnel, nécessaire à l'adressage de la facture électronique par une plateforme agréée.",
+    "« TVA non applicable, article 293 B du CGI » pour une crêperie relevant de la franchise en base, dont la facture ne doit faire apparaître aucun taux."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture – soirée galettes-cidre, salle privatisée pour un groupe de 18 personnes (client professionnel)",
+    "lignes": [
+      {
+        "designation": "Formule galette complète + crêpe sucrée, servie en salle",
+        "quantite": 18,
+        "unite": "couvert",
+        "prix_unitaire_ht": 16.5,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Bolée de cidre brut 25 cl, servie en salle",
+        "quantite": 24,
+        "unite": "bolée",
+        "prix_unitaire_ht": 3.6,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Jus de pomme artisanal servi au verre, consommation immédiate",
+        "quantite": 12,
+        "unite": "verre",
+        "prix_unitaire_ht": 2.5,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Pot de caramel au beurre salé à tartiner 100 g, fermé, emporté par les convives",
+        "quantite": 18,
+        "unite": "pot",
+        "prix_unitaire_ht": 4.2,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "Ventilation des montants HT et de la TVA par taux (10 %, 20 % et 5,5 %)",
+      "Désignation distinguant le service en salle des pots emportés, à l'origine de la différence de taux",
+      "Les caramels vendus en bonbons relèveraient du taux normal de 20 % en tant que confiserie, à la différence de la pâte à tartiner facturée ici",
+      "SIREN ou SIRET du client professionnel, requis pour la transmission par la plateforme agréée",
+      "Référence et date de la réservation privatisée, conditions et délais de paiement",
+      "Exemple illustratif : les quantités et les prix sont fictifs, seuls les taux de TVA proviennent des textes cités en sources"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Appliquer trois taux sur un même document et ventiler les montants sans ressaisie entre la caisse et la facture.",
+    "Justifier la ventilation d'un menu à prix unique comprenant une bolée de cidre, et conserver la méthode retenue.",
+    "Continuer à recevoir et à traiter les factures des fournisseurs (cidrerie, minoterie, crémerie) pendant les périodes de fermeture saisonnière.",
+    "Transformer une réservation de groupe en facture électronique conforme, avec le SIREN du client collecté à la réservation.",
+    "Isoler les ventes d'épicerie à emporter, au taux de 5,5 %, des recettes de service en salle."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée par la DGFiP qui réunit facturation et comptabilité pour les indépendants, les TPE et les micro-entrepreneurs, profil courant des crêperies de quartier ou ambulantes. Ce périmètre unique évite de séparer l'émission des factures de groupe du suivi comptable de la saison."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée par la DGFiP orientée gestion financière et comptabilité, pensée pour travailler avec son expert-comptable, interlocuteur habituel sur la répartition des recettes par taux. Utile quand la crêperie fait valider par un cabinet le partage entre service en salle, cidre et ventes d'épicerie."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée par la DGFiP associant un compte professionnel en ligne et la facturation, destinée aux indépendants, freelances et TPE. Encaissements et factures restent au même endroit, y compris pendant les mois de faible activité."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Une bolée de cidre servie avec la galette suit-elle le taux de la galette ?",
+      "reponse": "Non. Le cidre figure dans le troisième groupe de l'article L3321-1 du code de la santé publique, celui des boissons fermentées non distillées : c'est une boisson alcoolique. Or le m de l'article 279 du CGI exclut expressément les boissons alcooliques du taux réduit applicable aux ventes à consommer sur place : la galette reste à 10 %, la bolée est à 20 %, sur la même note comme sur la même facture. Le raisonnement vaut pour le poiré et pour une bouteille de cidre vendue à emporter."
+    },
+    {
+      "question": "Mon menu galette + crêpe + bolée est affiché à un prix unique : comment déclarer la TVA ?",
+      "reponse": "Vous devez isoler dans ce prix la part qui correspond au cidre, soumise au taux normal. Lorsque le prix de la boisson alcoolique n'est pas identifiable dans le forfait, l'administration admet une méthode de ventilation économiquement rationnelle, par exemple le rapport entre les prix pratiqués à la carte, et vous devez pouvoir la justifier. Une méthode forfaitaire unique est admise pour tous les menus contenant une boisson alcoolique lorsque la proportion est voisine de l'un à l'autre."
+    },
+    {
+      "question": "Crêpes vendues au comptoir et pots de caramel vendus en boutique : est-ce le même taux ?",
+      "reponse": "Non. Une crêpe chaude vendue au comptoir est un produit préparé en vue d'une consommation immédiate : elle reste à 10 %, même emportée. Un pot de caramel à tartiner, un sachet de farine de sarrasin ou une pâte à crêpes sous vide sont des produits alimentaires conditionnés et relèvent de 5,5 %. Une exception à retenir : les produits de confiserie, et notamment les caramels vendus en bonbons, sont exclus du taux réduit par l'article 278-0 bis du CGI et restent à 20 %, même emballés et même vendus en boutique. Le taux se porte donc ligne par ligne, et non sur l'ensemble du ticket."
+    },
+    {
+      "question": "Ma crêperie ferme plusieurs mois hors saison : suis-je dispensé de la facturation électronique pendant cette période ?",
+      "reponse": "Non. L'obligation vise les entreprises assujetties à la TVA, et rien ne la suspend pendant une fermeture saisonnière. Vous devez pouvoir recevoir les factures électroniques de vos fournisseurs par une plateforme agréée, puis en émettre, à l'échéance applicable à votre entreprise. Pensez à consulter votre plateforme même à l'arrêt, les abonnements et les loyers continuant de courir."
+    },
+    {
+      "question": "Je livre des galettes sous vide à une épicerie fine : quelle facture dois-je établir ?",
+      "reponse": "C'est une vente entre professionnels : la facture devra être émise au format électronique par une plateforme agréée, à l'échéance applicable à votre entreprise, et vous aurez besoin du SIREN ou du SIRET de l'épicerie. Des galettes conditionnées sous vide, qui permettent la conservation et visent une consommation différée, relèvent de 5,5 %, contrairement aux galettes servies chaudes. Vérifiez le conditionnement exact dans le tableau récapitulatif du BOFiP avant de retenir ce taux."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA : ventes à consommer sur place (taux réduit de 10 % du m de l'article 279 du CGI, exclusion des boissons alcooliques)",
+      "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20201014"
+    },
+    {
+      "titre": "BOFiP – TVA : ventes à consommer sur place, ventilation du prix d'un menu comprenant des boissons alcooliques (version du 7 août 2024)",
+      "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20240807"
+    },
+    {
+      "titre": "BOFiP – TVA : produits destinés à l'alimentation humaine (article 278-0 bis du CGI) : confiseries, dont les caramels, exclues du taux réduit ; pâtes à tartiner, confitures, gelées et marmelades à 5,5 %",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+    },
+    {
+      "titre": "BOFiP – Annexe : tableau récapitulatif des taux de TVA pour les ventes à emporter ou à livrer de produits alimentaires (10 % / 5,5 %)",
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+    },
+    {
+      "titre": "Légifrance – Code de la santé publique, article L3321-1 : classification des boissons (cidre, poiré dans le troisième groupe, boissons fermentées non distillées)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031643382/"
+    },
+    {
+      "titre": "economie.gouv.fr – TVA : les taux du quotidien (taux normal de 20 % sur les boissons alcoolisées)",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-quotidien"
+    },
+    {
+      "titre": "economie.gouv.fr – Factures : les mentions obligatoires",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "BOFiP – TVA : franchise en base, mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (réception puis émission, plateformes agréées)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr – Mes clients sont à la fois des entreprises et des particuliers : facturation électronique et e-reporting",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

@@ -1,0 +1,125 @@
+{
+  "nom": "Épicerie fine",
+  "slug": "epicerie-fine",
+  "famille": "commerce",
+  "statuts_frequents": [
+    "SASU",
+    "SARL",
+    "Entreprise individuelle",
+    "Micro-entrepreneur (vente en ligne d'appoint)"
+  ],
+  "volume_factures_typique": "Encaissements quotidiens en caisse toute l'année ; factures B2B concentrées sur la fin d'année, parfois plusieurs dizaines en quelques semaines pour les coffrets d'entreprise.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Votre assortiment vit en multi-taux permanent : l'alimentation humaine relève de 5,5 %, mais les exceptions au taux normal sont fréquentes en épicerie fine (confiseries, certains chocolats, caviar, margarines et graisses végétales à 20 %).",
+    "Les vins et autres boissons alcooliques de vos rayons restent à 20 % dans tous les cas et, lorsqu'une bouteille non accessoire entre dans un coffret vendu à prix unique, elles entraînent le taux normal sur l'intégralité du prix du coffret.",
+    "Coffrets et paniers garnis vendus à un prix unique : commencez par qualifier l'opération. Un coffret assemblé et vendu comme un tout constitue en principe une opération unique au sens des règles sur les offres composites : il reçoit un traitement fiscal unique, et la ventilation de son prix entre les produits qui le composent est exclue. Le taux est alors déterminé par les éléments non accessoires du coffret : si tous relèvent de taux réduits, c'est le plus élevé d'entre eux qui s'applique à l'intégralité du prix ; si l'un d'eux relève du taux normal, comme une bouteille de vin ou des confiseries non accessoires, c'est 20 % sur l'intégralité du prix. L'administration retient ainsi qu'un panier de fruits à offrir, composé majoritairement de produits à 5,5 % et de quelques confiseries accessoires, est taxé à 5,5 % pour la totalité de son prix. Si vous voulez appliquer à chaque produit son taux propre, vendez-les comme des opérations distinctes, chacune avec son prix : la ventilation est alors non seulement possible mais obligatoire.",
+    "Les paniers cadeaux commandés par des entreprises déclenchent l'obligation de facture entre professionnels : dénomination précise de chaque produit, quantité, prix unitaire hors taxes et taux par ligne.",
+    "Les ventes en boutique à des particuliers ne basculeront pas en facture électronique : elles alimenteront l'e-reporting, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Pour un coffret vendu à un prix unique : une seule ligne, au taux déterminé par ses éléments non accessoires, sans ventilation du prix entre les produits. Pour des produits vendus séparément à des prix distincts : une ligne par produit, avec le taux propre à chacun et sa base hors taxes.",
+    "Dénomination précise du contenu dans le libellé de la ligne (« terrine de canard 180 g, sablés 200 g, miel 250 g, vin rouge AOC 75 cl »), et non un simple intitulé « panier gourmand ».",
+    "En franchise en base de TVA : aucune TVA facturée et mention « TVA non applicable - article 293 B du CGI » sur chaque facture."
+  ],
+  "exemple_facture": {
+    "intitule": "Commande de fin d'année : 20 coffrets « Terroir » et quelques produits à l'unité pour une entreprise locale",
+    "lignes": [
+      {
+        "designation": "Coffret « Terroir » (terrine de canard 180 g, sablés 200 g, miel 250 g, bonbons gélifiés 250 g, vin rouge AOC 75 cl)",
+        "quantite": 20,
+        "unite": "coffret",
+        "prix_unitaire_ht": 32.5,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Miel de châtaignier 250 g vendu à l'unité, hors coffret",
+        "quantite": 12,
+        "unite": "pot",
+        "prix_unitaire_ht": 6.5,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "Le coffret est vendu comme un tout à un prix unique : il constitue une opération unique, dont le prix n'est pas ventilé entre les produits qui le composent.",
+      "La bouteille de vin est un élément non accessoire relevant du taux normal : l'intégralité du prix du coffret est soumise à 20 %. Les mêmes produits vendus séparément, chacun à son prix, relèveraient chacun de leur propre taux.",
+      "Facture à émettre au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Déterminer le taux applicable à chaque coffret vendu à prix unique d'après ses éléments non accessoires, et distinguer dans le catalogue les coffrets des produits vendus séparément.",
+    "Absorber le pic de facturation B2B de fin d'année (devis, séries de factures) sans ressaisie.",
+    "Tenir à jour le taux applicable article par article dans le catalogue (confiseries, chocolats, caviar, alcools)."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, qui réunit facturation et comptabilité pour les indépendants, micro-entrepreneurs et TPE. Adaptée à une boutique dont la facturation B2B se concentre sur quelques semaines par an. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+    },
+    {
+      "slug": "indy",
+      "justification": "Outil de comptabilité, de compte professionnel et de facturation pour les indépendants. Utile quand une seule personne tient à la fois la boutique et sa gestion. Sa présence sur la liste des plateformes agréées n'a pas pu être confirmée sur un site officiel : vérifiez son statut au regard de la facturation électronique sur la liste publiée par la DGFiP, https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, associant compte professionnel et facturation, pour PME et indépendants. Pertinente quand les commandes d'entreprises se développent et multiplient encaissements et factures. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quel taux de TVA pour un panier garni vendu à prix unique ?",
+      "reponse": "Un panier garni vendu à un prix unique est en principe une opération unique : son prix n'est pas ventilé entre les produits qui le composent, et un seul taux s'applique à l'intégralité. Ce taux dépend des éléments non accessoires du panier. Si tous relèvent de taux réduits, c'est le plus élevé d'entre eux qui s'applique à tout le prix. Si le panier contient un élément non accessoire au taux normal, une bouteille de vin par exemple, c'est 20 % sur tout le prix. À l'inverse, l'administration admet qu'un panier composé majoritairement de produits à 5,5 % avec quelques confiseries accessoires est taxé à 5,5 % pour l'intégralité de son prix. Pour appliquer à chaque produit son propre taux, vendez-les comme des opérations distinctes avec un prix par produit."
+    },
+    {
+      "question": "Mes chocolats et confiseries sont-ils à 5,5 % comme le reste de l'alimentaire ?",
+      "reponse": "Pas tous. Les confiseries et certains chocolats figurent parmi les exceptions expressément soumises au taux normal de 20 %, comme le caviar et les margarines. Vérifiez chaque référence au BOFiP avant de paramétrer votre catalogue."
+    },
+    {
+      "question": "Une entreprise me commande 50 coffrets avec une bouteille de vin : que doit porter la facture ?",
+      "reponse": "La vente étant conclue entre professionnels, la facture est obligatoire. Les 50 coffrets vendus à un prix unique constituent chacun une opération unique : la bouteille de vin étant un élément non accessoire au taux normal, l'intégralité du prix du coffret est soumise à 20 %, sans ventilation entre les produits. À l'échéance applicable à votre entreprise, cette facture devra être émise au format électronique via une plateforme agréée."
+    },
+    {
+      "question": "Je suis en franchise en base de TVA : mes coffrets d'entreprise portent-ils de la TVA ?",
+      "reponse": "Non. Vous ne facturez pas de TVA et portez sur chaque facture la mention « TVA non applicable - article 293 B du CGI ». La facture elle-même reste obligatoire dès lors que le client est un professionnel."
+    },
+    {
+      "question": "Pendant le pic de décembre, comment distinguer mes ventes en boutique et mes commandes d'entreprises ?",
+      "reponse": "Vos ventes en boutique à des particuliers ne donnent pas lieu à facture : leurs données de transactions sont transmises par e-reporting, à l'échéance applicable à votre entreprise, avec une ventilation de vos recettes par taux. Vos commandes de coffrets passées par des entreprises sont, elles, des ventes entre professionnels : facture obligatoire, puis facture électronique via une plateforme agréée à l'échéance applicable à votre entreprise. Prévoyez un libellé de référence par coffret dans votre catalogue pour que ces deux flux ne se mélangent pas en décembre."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Taux réduit de 5,5 % sur l'alimentation humaine et exceptions au taux normal (confiseries, certains chocolats, caviar, margarines, boissons alcooliques)",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
+    },
+    {
+      "titre": "BOFiP — Taux normal de 20 % applicable par défaut",
+      "url": "https://bofip.impots.gouv.fr/bofip/1438-PGP.html/identifiant=BOI-TVA-LIQ-20-10-20140919"
+    },
+    {
+      "titre": "Article 278-0 du code général des impôts (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042853334"
+    },
+    {
+      "titre": "BOFiP — Offres composites : traitement fiscal (BOI-TVA-CHAMP-60-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13877-PGP.html/identifiant=BOI-TVA-CHAMP-60-30-20250514"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "Franchise en base de TVA (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "Je découvre la facturation électronique (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Je consulte la liste des plateformes agréées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

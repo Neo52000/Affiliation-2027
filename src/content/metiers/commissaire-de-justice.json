@@ -1,0 +1,157 @@
+{
+  "nom": "Commissaire de justice",
+  "slug": "commissaire-de-justice",
+  "famille": "liberal",
+  "statuts_frequents": [
+    "Officier public et ministériel en entreprise individuelle (profession libérale)",
+    "Société d'exercice libéral (SELARL, SELAS)",
+    "Société civile professionnelle (SCP)"
+  ],
+  "volume_factures_typique": "Élevé : chaque dossier génère plusieurs actes, frais et débours à facturer, avec de nombreux dossiers menés en parallèle au sein de l'étude.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Votre facturation combine deux régimes. Les actes de votre monopole relèvent d'émoluments fixés par le tarif réglementé du code de commerce. Certaines prestations, comme le recouvrement amiable sur mandat, relèvent d'honoraires libres. La facture doit distinguer ces lignes.",
+    "Émoluments tarifés et honoraires libres sont soumis à la TVA au taux normal de 20 %. Le statut d'officier public et ministériel n'emporte aucune exonération.",
+    "Les montants des émoluments et de l'indemnité de frais de déplacement ne se recopient pas de mémoire : ils sont fixés par arrêté (code de commerce, art. A444-10 et suivants) et révisés périodiquement. Reportez-vous au tarif réglementé en vigueur à la date de l'acte pour chiffrer la ligne.",
+    "Les sommes avancées au nom et pour le compte de votre mandant (débours) sortent de la base de TVA à des conditions strictes : mandat préalable, reddition de comptes exacte et inscription en comptes de passage. Une refacturation de frais qui ne remplit pas ces conditions reste taxable au taux de la prestation.",
+    "En recouvrement amiable, vos honoraires et frais sont à la charge exclusive du créancier qui vous mandate, hors exceptions prévues par la loi. Ils ne s'ajoutent pas à la dette du débiteur.",
+    "La taxe forfaitaire qui frappait les actes des huissiers de justice a été supprimée, de même que la formalité d'enregistrement de ces actes. Vos modèles de facture d'actes n'ont plus à la faire apparaître."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Détail de chaque acte ou prestation, ligne par ligne, en distinguant émolument tarifé et honoraire libre, avec prix unitaire HT et taux de TVA de 20 %.",
+    "Identification séparée des débours avancés au nom et pour le compte du mandant, exclus de la base d'imposition à la TVA."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture d'étude — dossier de recouvrement : signification d'une ordonnance portant injonction de payer",
+    "lignes": [
+      {
+        "designation": "Émolument tarifé — signification de l'ordonnance portant injonction de payer (montant fixé par le tarif réglementé en vigueur, tables 3-1 à 3-3 de l'annexe 4-7 du code de commerce)",
+        "quantite": 1,
+        "unite": "acte",
+        "prix_unitaire_ht": null,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Indemnité de frais de déplacement (art. A444-48 du code de commerce : vingt fois la valeur de l'article 6 B de l'annexe IV au CGI pour un véhicule de 7 CV et plus au-delà de 20 000 km, ou 8,80 € pour une signification effectuée exclusivement par voie électronique)",
+        "quantite": 1,
+        "unite": "acte",
+        "prix_unitaire_ht": null,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Honoraires de recouvrement amiable (mandat du créancier)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 90,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Débours — frais avancés au nom et pour le compte du créancier (consultations, affranchissements) — hors base d'imposition à la TVA, non soumis",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 14.6,
+        "tva_pct": null
+      }
+    ],
+    "mentions_specifiques": [
+      "Les montants d'émoluments ne sont pas reproduits ici : ils sont fixés par arrêté et révisés périodiquement. Reportez-vous au tarif réglementé en vigueur (code de commerce, art. A444-10 et suivants) pour le montant applicable à la date de l'acte.",
+      "Débours exclus de la base d'imposition à la TVA : sommes avancées au nom et pour le compte du mandant, justifiées par une reddition de comptes exacte.",
+      "Honoraires et frais de recouvrement amiable à la charge exclusive du créancier mandant.",
+      "Émoluments fixés par le tarif réglementé des commissaires de justice (code de commerce).",
+      "Client professionnel : pénalités de retard au taux indiqué aux conditions et indemnité forfaitaire de 40 € pour frais de recouvrement, dues dès le premier jour de retard."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer en volume des actes au tarif réglementé, dossier par dossier, sans ressaisie.",
+    "Isoler automatiquement les débours de la base de TVA et documenter la reddition de comptes.",
+    "Suivre les encaissements par dossier et les sommes à reverser aux créanciers.",
+    "Pouvoir recevoir, puis émettre, des factures électroniques via une plateforme agréée à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution orientée gestion financière et comptabilité, pensée pour travailler avec votre expert-comptable. Adaptée à une étude dont le volume d'actes génère beaucoup d'écritures."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Offre associant compte professionnel et facturation, pour PME et indépendants. Utile pour suivre les flux d'une étude employant plusieurs collaborateurs."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution combinant facturation et comptabilité pour indépendants et TPE. Convient à un commissaire de justice installé récemment en structure individuelle."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes émoluments tarifés sont-ils soumis à la TVA ?",
+      "reponse": "Oui. Les prestations des officiers publics et ministériels, dont les commissaires de justice, relèvent du taux normal de TVA de 20 %, sauf disposition particulière. Le fait que l'émolument soit fixé par un tarif réglementé ne crée aucune exonération. Chaque ligne de votre facture porte donc le taux de 20 %."
+    },
+    {
+      "question": "Comment facturer les sommes que j'avance pour le compte du créancier ?",
+      "reponse": "Ces sommes peuvent être traitées en débours, hors base de TVA, à trois conditions : agir en vertu d'un mandat, rendre compte exactement à votre mandant et inscrire ces montants en comptes de passage. À défaut, la refacturation reste taxable au taux de la prestation principale. Présentez les débours sur des lignes distinctes de vos émoluments, sans taux de TVA : ils ne sont pas taxés à 0 %, ils sont exclus de la base d'imposition."
+    },
+    {
+      "question": "Puis-je mettre mes frais de recouvrement amiable à la charge du débiteur ?",
+      "reponse": "Non. En recouvrement amiable, les honoraires et frais sont à la charge exclusive du créancier qui vous mandate, et le mandat doit les préciser. La loi ne prévoit que deux tempéraments : les frais concernant un acte dont l'accomplissement est prescrit par la loi, et le cas où le créancier, justifiant du caractère nécessaire de ses démarches, obtient du juge de l'exécution que tout ou partie des frais soit laissé à la charge d'un débiteur de mauvaise foi. Hors décision du juge, ces frais ne peuvent pas être réclamés au débiteur."
+    },
+    {
+      "question": "La taxe forfaitaire sur les actes s'applique-t-elle encore ?",
+      "reponse": "Non. La taxe sur les actes des huissiers de justice a été supprimée, ainsi que la formalité d'enregistrement de ces actes. Vérifiez que vos modèles de facture et vos paramétrages anciens ne l'ajoutent plus aux actes facturés."
+    },
+    {
+      "question": "Les significations facturées à des particuliers passent-elles par la facturation électronique ?",
+      "reponse": "Pas sous forme de facture électronique : l'émission concerne vos opérations avec des clients assujettis établis en France. Vos opérations avec des particuliers donneront lieu à une transmission de données à l'administration. Votre étude, assujettie à la TVA, devra en revanche pouvoir recevoir des factures électroniques de ses fournisseurs à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — TVA, taux normal applicable aux prestations des professions libérales et officiers publics (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "BOFiP — TVA, base d'imposition : débours exclus sous conditions (BOI-TVA-BASE-10-10-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/488-PGP.html/identifiant=BOI-TVA-BASE-10-10-30-20220511"
+    },
+    {
+      "titre": "DGCCRF — Recouvrement amiable de créances : les règles à connaître",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/recouvrement-amiable-de-creances-les-regles-connaitre"
+    },
+    {
+      "titre": "Légifrance — Code des procédures civiles d'exécution, art. L111-8 (frais de recouvrement amiable à la charge du créancier)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028747701"
+    },
+    {
+      "titre": "Service-public.fr — Tarifs du commissaire de justice (émoluments réglementés)",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/F32973"
+    },
+    {
+      "titre": "Légifrance — Code de commerce, tarifs réglementés applicables aux actes (art. A444-10 et suivants)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000005634379/LEGISCTA000032127742/"
+    },
+    {
+      "titre": "Légifrance — Code de commerce, art. A444-48 et A444-49 : frais de déplacement des commissaires de justice",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000005634379/LEGISCTA000032127864/"
+    },
+    {
+      "titre": "Légifrance — Décret n° 2021-6 relatif à la suppression de la taxe sur les actes des huissiers de justice et de la formalité d'enregistrement",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042866101"
+    },
+    {
+      "titre": "economie.gouv.fr — Factures : les mentions obligatoires",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "DGCCRF — Délais de paiement : les règles à connaître (pénalités, indemnité de 40 €)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Je consulte la liste des plateformes agréées",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

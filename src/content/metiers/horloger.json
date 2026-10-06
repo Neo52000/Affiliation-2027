@@ -1,0 +1,134 @@
+{
+  "nom": "Horloger-réparateur",
+  "slug": "horloger",
+  "famille": "artisanat",
+  "statuts_frequents": ["micro-entrepreneur", "entreprise individuelle (artisan)", "EURL"],
+  "volume_factures_typique": "Volume moyen et régulier : plusieurs dizaines d'interventions par mois, surtout des notes réglées au comptant par des particuliers, quelques factures à des bijouteries ou à des SAV de marques.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos factures mêlent vente de pièces et main-d'œuvre : chaque pièce remplacée (ressort de barillet, verre, joint, couronne) et chaque opération de révision doivent être détaillées et décomptées en quantité et en prix.",
+    "Le coût réel d'une réparation n'apparaît souvent qu'après ouverture du mouvement : pour toute prestation dont le prix ne peut pas être déterminé à l'avance, un devis suffisamment détaillé est dû au consommateur qui le demande, à faire accepter avant d'intervenir.",
+    "Pour une montre de valeur confiée, reportez son identification (marque, modèle, numéro de série) dans le détail de la prestation : le devis puis la facture tracent l'objet reçu et restitué.",
+    "Un changement de pile reste souvent sous 25 € TTC : la note n'est alors due que si le client la demande ; au-delà de ce montant, elle est obligatoire et remise avant le paiement.",
+    "Si vous rachetez des montres d'occasion à des particuliers pour les revendre, la TVA se calcule selon le régime de la marge : la base imposable est la différence entre le prix de vente toutes taxes comprises et le prix d'achat, ramenée hors taxe. Concrètement, une montre achetée 600 € et revendue 900 € dégage une marge de 300 € TTC, soit 250 € de base et 50 € de TVA. Vous ne déduisez aucune TVA sur l'achat."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Identification de la montre confiée dans le détail de la prestation (marque, modèle, numéro de série) : le devis puis la facture tracent l'objet reçu et restitué",
+    "Référence au devis accepté par le client lorsque le prix n'a pu être déterminé avant ouverture du mouvement",
+    "Détail et décompte, en quantité et en prix, de chaque pièce remplacée et de la main-d'œuvre de réparation",
+    "Pour une revente sous le régime de la marge : facture ne faisant pas apparaître la TVA, celle-ci n'étant pas déductible par l'acquéreur",
+    "« TVA non applicable, article 293 B du CGI » si l'atelier bénéficie de la franchise en base"
+  ],
+  "exemple_facture": {
+    "intitule": "Note — révision complète d'une montre automatique de collection confiée à l'atelier",
+    "lignes": [
+      {
+        "designation": "Révision complète du mouvement automatique : démontage, nettoyage, lubrification, réglage de la marche (montre identifiée : marque, modèle, n° de série 58743)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 290,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Ressort de barillet, pièce de rechange",
+        "quantite": 1,
+        "unite": "pièce",
+        "prix_unitaire_ht": 45,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Joint de couronne et contrôle d'étanchéité",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 38,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Intervention conforme au devis n° D-2026-112 accepté par le client avant ouverture du mouvement.",
+      "Montre confiée identifiée sur le devis et la note : marque, modèle, numéro de série.",
+      "Note remise au client avant paiement (prestation d'un montant supérieur à 25 € TTC)."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Émettre des devis systématiques et conserver la trace de leur acceptation avant chaque réparation",
+    "Facturer pièces détachées et main-d'œuvre ligne par ligne, avec quantités et prix",
+    "Rattacher chaque facture à la montre confiée (marque, modèle, numéro de série)",
+    "Recevoir les factures électroniques des fournisseurs de pièces et de fournitures, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Comptabilité, compte professionnel et facturation réunis pour les indépendants : l'horloger installé seul y tient devis, factures et comptes dans un outil unique. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+    },
+    {
+      "slug": "abby",
+      "justification": "Facturation et gestion destinées aux indépendants et micro-entrepreneurs. Adapté à un atelier en franchise en base qui enchaîne devis et notes au fil des réparations. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation réunis dans un même espace, pour PME et indépendants. Pertinent si l'atelier encaisse aussi des bijouteries ou des SAV de marques et veut centraliser flux bancaires et factures. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Dois-je établir un devis avant de réparer une montre ancienne ?",
+      "reponse": "Le prix d'une réparation horlogère dépend de l'état du mouvement, que vous ne connaissez qu'après ouverture. Pour toute prestation dont le prix ne peut pas être déterminé à l'avance, vous devez fournir un devis suffisamment détaillé au consommateur qui le demande. Faites accepter ce devis avant d'engager la réparation."
+    },
+    {
+      "question": "Comment présenter les pièces remplacées sur ma facture ?",
+      "reponse": "Toute facture doit comporter le détail et le décompte, en quantité et en prix, de chaque produit et de chaque prestation. Distinguez donc la main-d'œuvre (révision, réglage) de chaque pièce remplacée : ressort, verre, joint, couronne. Ce détail documente aussi l'intervention réalisée sur la montre confiée."
+    },
+    {
+      "question": "Je rachète des montres d'occasion à des particuliers pour les revendre : quelle TVA appliquer ?",
+      "reponse": "Les biens d'occasion acquis auprès de personnes non redevables de la TVA relèvent de plein droit du régime de la marge. La base imposable est la différence entre le prix de vente toutes taxes comprises et le prix d'achat, ramenée hors taxe — et non la différence brute. Vous ne déduisez aucune TVA sur l'achat. Une option pour le régime général reste possible, livraison par livraison."
+    },
+    {
+      "question": "Un simple changement de pile impose-t-il de remettre une note ?",
+      "reponse": "La note est obligatoire pour toute prestation de services d'un montant égal ou supérieur à 25 € TTC, en cas de vente à distance, ou dès que le client la demande. Un changement de pile seul passe souvent sous ce seuil : la note n'est alors due que sur demande. Mais dès que vous y ajoutez un joint, un contrôle d'étanchéité ou un nettoyage de boîtier, le total franchit généralement le seuil et la note devient obligatoire, à remettre avant le paiement. Dans le doute, éditez-la systématiquement : elle vous sert aussi de trace de l'intervention sur la montre confiée."
+    },
+    {
+      "question": "Mes clients sont surtout des particuliers : que change la réforme pour mon atelier ?",
+      "reponse": "Vos réparations et ventes aux particuliers ne donnent pas lieu à facture électronique : elles relèveront du e-reporting, sous forme de données agrégées quotidiennes, sans donnée personnelle sur le client. Vous devrez en revanche pouvoir recevoir les factures électroniques de vos fournisseurs de pièces, à l'échéance applicable à votre entreprise. Vos factures aux bijouteries et aux SAV de marques passeront par ce format."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "TVA : les taux applicables aux biens et prestations du quotidien (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "Facture : détail et décompte des produits et prestations, mentions obligatoires (entreprendre.service-public.fr)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Note au client particulier : obligation dès 25 € TTC pour une prestation de services (service-public.fr)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "Devis obligatoire pour les prestations dont le prix ne peut être déterminé à l'avance (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-SECT-90-20-20 — Biens d'occasion livrés par des assujettis-revendeurs : base d'imposition du régime de la marge et facturation sans TVA apparente",
+      "url": "https://bofip.impots.gouv.fr/bofip/13268-PGP.html/identifiant=BOI-TVA-SECT-90-20-20-20250514"
+    },
+    {
+      "titre": "Réforme de la facturation électronique : entreprises concernées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiche-2_mon-entreprise-sera-t-elle-obligee-de-facturer-electroniquement.pdf"
+    },
+    {
+      "titre": "Clients entreprises et particuliers : facture électronique et e-reporting (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "Liste des plateformes agréées (DGFiP, impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    },
+    {
+      "titre": "Franchise en base de TVA : mention « TVA non applicable, article 293 B du CGI » (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}
