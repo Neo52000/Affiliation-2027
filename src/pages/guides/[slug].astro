@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import Picto from '../../components/Picto.astro';
 import { SITE } from '../../config';
 import { formatDateFr } from '../../lib/dates';
 
@@ -12,7 +13,17 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const d = entry.data;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+
+// Sommaire construit depuis les titres réels du guide : jamais une liste figée
+// qui mentirait sur le contenu. Seuls les h2 structurent la navigation.
+const sommaire = headings.filter((h) => h.depth === 2);
+
+// Les autres guides, pour ne pas laisser la page sans suite.
+const autresGuides = (await getCollection('guides'))
+  .filter((g) => g.id !== entry.id)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'fr'))
+  .slice(0, 4);
 
 const site = (Astro.site ?? new URL(SITE.url)).toString().replace(/\/+$/, '');
 // JSON-LD Article sur les guides (section 9).
@@ -33,42 +44,119 @@ const articleJsonLd = {
   <script type="application/ld+json" is:inline set:html={JSON.stringify(articleJsonLd)} />
   <Breadcrumb items={[{ label: 'Guides' }, { label: d.title }]} />
 
-  <article class="prose-measure mt-4">
-    <h1 class="text-3xl font-bold">{d.title}</h1>
-    <p class="mt-2 text-sm text-ink-soft">
-      Mis à jour le {formatDateFr(d.date_maj)}
-      {SITE.expertRelecteur ? ` · Relu par ${SITE.expertRelecteur}` : ''}
-    </p>
+  <div class="layout-article mt-4">
+    <article>
+      <div class="flex items-start gap-4">
+        <span class="picto-carre shrink-0">
+          <Picto nom="document-source" />
+        </span>
+        <div>
+          <h1 class="prose-measure text-3xl font-bold">{d.title}</h1>
+          <p class="mt-2 text-sm text-ink-soft">
+            Mis à jour le {formatDateFr(d.date_maj)}
+            {SITE.expertRelecteur ? ` · Relu par ${SITE.expertRelecteur}` : ''} · {d.sources.length}
+            {d.sources.length > 1 ? ' sources officielles' : ' source officielle'}
+          </p>
+        </div>
+      </div>
 
-    <div class="guide-corps mt-6">
-      <Content />
-    </div>
+      <p class="encadre-essentiel prose-measure mt-6 p-4">{d.description}</p>
 
-    <section aria-labelledby="sources-guide" class="mt-10">
-      <h2 id="sources-guide" class="text-2xl font-bold">
-        Sources officielles
-      </h2>
-      <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
-        {d.sources.map((s) => (
-          <li>
-            <a href={s.url} rel="noopener">
-              {s.titre}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
+      {sommaire.length > 2 && (
+        <nav aria-labelledby="sommaire-mobile" class="carte-appui mt-6 lg:hidden">
+          <p id="sommaire-mobile" class="carte-appui-titre">Dans ce guide</p>
+          <div class="sommaire">
+            {sommaire.map((h) => (
+              <a href={`#${h.slug}`}>{h.text}</a>
+            ))}
+          </div>
+        </nav>
+      )}
 
-    <p class="mt-8 rounded-md border border-border bg-paper-soft p-4 text-sm">
-      Information générale : ce guide ne remplace pas l'avis de votre expert-comptable.
-    </p>
-  </article>
+      <div class="guide-corps prose-measure mt-6">
+        <Content />
+      </div>
+
+      <section aria-labelledby="sources-guide" class="prose-measure mt-10">
+        <h2 id="sources-guide" class="titre-section text-2xl font-bold">
+          Sources officielles
+        </h2>
+        <ul class="liste-aeree mt-3 list-disc pl-5 text-sm">
+          {d.sources.map((s) => (
+            <li>
+              <a href={s.url} rel="noopener">
+                {s.titre}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <p class="prose-measure mt-8 rounded-md border border-border bg-paper-soft p-4 text-sm">
+        Information générale : ce guide ne remplace pas l'avis de votre expert-comptable.
+      </p>
+
+      {autresGuides.length > 0 && (
+        <section aria-labelledby="autres-guides" class="mt-10">
+          <h2 id="autres-guides" class="titre-section text-2xl font-bold">
+            À lire ensuite
+          </h2>
+          <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+            {autresGuides.map((g) => (
+              <li class="card-reco rounded-md border border-border p-3">
+                <p class="font-bold">
+                  <a href={`/guides/${g.id}`}>{g.data.title}</a>
+                </p>
+                <p class="mt-1 text-sm text-ink-soft">{g.data.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </article>
+
+    <aside class="colonne-appui" aria-label="Sommaire et accès rapides">
+      {sommaire.length > 2 && (
+        <nav class="carte-appui" aria-labelledby="sommaire-guide">
+          <p id="sommaire-guide" class="carte-appui-titre">Dans ce guide</p>
+          <div class="sommaire">
+            {sommaire.map((h) => (
+              <a href={`#${h.slug}`}>{h.text}</a>
+            ))}
+          </div>
+        </nav>
+      )}
+
+      <div class="carte-appui card-top">
+        <p class="carte-appui-titre">Passer à l'action</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Cinq questions pour l'outil adapté à votre métier, deux pour vos échéances.
+        </p>
+        <p class="mt-3">
+          <a href="/outils/quiz" class="btn-cta">Faire le quiz</a>
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/outils/echeance">Simuler mon échéance</a>
+        </p>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Vérifier une facture</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Les mentions obligatoires manquantes, chacune avec sa source officielle.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/outils/verificateur-facture">Ouvrir le vérificateur</a>
+        </p>
+      </div>
+    </aside>
+  </div>
 </Base>
 
 <style>
   /* Typographie des corps de guide (MDX) */
   .guide-corps :global(h2) {
-    margin-top: 2rem;
+    margin-top: 2.25rem;
     font-size: 1.5rem;
     font-weight: 700;
   }
@@ -90,9 +178,17 @@ const articleJsonLd = {
     list-style: decimal;
   }
   .guide-corps :global(li) {
-    margin-top: 0.375rem;
+    margin-top: 0.5rem;
+    line-height: 1.55;
   }
+  .guide-corps :global(li::marker) {
+    color: var(--color-accent);
+  }
+  /* Un tableau markdown dépasse la largeur de lecture : il défile seul plutôt
+     que de pousser toute la page sous 400 px. */
   .guide-corps :global(table) {
+    display: block;
+    overflow-x: auto;
     margin-top: 0.75rem;
     width: 100%;
     border-collapse: collapse;
@@ -103,5 +199,14 @@ const articleJsonLd = {
     border-bottom: 1px solid var(--color-border);
     padding: 0.5rem 0.75rem 0.5rem 0;
     text-align: left;
+  }
+  .guide-corps :global(th) {
+    font-weight: 700;
+  }
+  .guide-corps :global(blockquote) {
+    margin-top: 1rem;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1rem;
+    color: var(--color-ink-soft);
   }
 </style>

@@ -10,10 +10,10 @@ const nav: { label: string; href: string }[] = [
 
 <header class="site-header border-b border-border bg-paper">
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
-    <a href="/" class="font-bold text-ink no-underline hover:text-accent">
+    <a href="/" class="min-w-0 truncate font-bold text-ink no-underline hover:text-accent">
       {SITE.name}
     </a>
-    <nav aria-label="Navigation principale" class="flex items-center gap-6">
+    <nav aria-label="Navigation principale" class="flex shrink-0 items-center gap-6">
       <ul class="hidden items-center gap-6 sm:flex">
         {nav.map((item) => (
           <li>

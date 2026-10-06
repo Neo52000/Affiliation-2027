@@ -1,0 +1,141 @@
+{
+  "nom": "Taxi",
+  "slug": "taxi",
+  "famille": "transport",
+  "statuts_frequents": [
+    "Entreprise individuelle (artisan taxi)",
+    "Micro-entreprise",
+    "EURL",
+    "SASU"
+  ],
+  "volume_factures_typique": "Faible en facturation classique : quelques dizaines de notes et de factures par mois, auxquelles s'ajoute la télétransmission des courses conventionnées à l'Assurance Maladie.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos courses relèvent du taux réduit de TVA de 10 % applicable au transport de voyageurs, y compris le transport assis de malades réalisé par un taxi conventionné : le conventionnement n'emporte aucune exonération, réservée aux ambulances spécialement aménagées.",
+    "Le prix de la course n'est pas libre : il combine prise en charge, prix du kilomètre et tarif horaire, dans la limite de maxima revalorisés chaque année par arrêté, avec des majorations encadrées (nuit, retour à vide).",
+    "Dès 25 € TTC, une note doit être remise au client avant le paiement ; la réglementation propre aux taxis y ajoute des mentions dédiées, imprimées sur la note : date de rédaction, heures de début et de fin de la course, nom ou dénomination sociale du prestataire, numéro d'immatriculation du véhicule, adresse à laquelle peut être adressée une réclamation, montant de la course minimum et prix total de la course hors suppléments. Le détail de chaque supplément appliqué et la somme totale à payer sont portés sur la note avant sa remise au client, et vous en conservez le double.",
+    "Les courses conventionnées sont facturées à l'Assurance Maladie selon les modalités fixées par votre convention locale, par télétransmission, avec indication du nombre de kilomètres parcourus en charge et une facturette signée par l'assuré ; reportez-vous aux modalités de facturation publiées par l'Assurance Maladie pour la norme d'échange en vigueur.",
+    "Vos courses aux particuliers ne passeront pas par la facturation électronique entre entreprises : leurs données seront transmises via le e-reporting, tandis que vos clients professionnels en compte basculeront dans le circuit des plateformes agréées, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Identité et adresse du chauffeur ou de la société et du client professionnel, numéros SIREN/SIRET et de TVA, date et numéro de facture, détail des courses (date, trajet, référence de la note correspondante), taux et montant de la TVA à 10 %.",
+    "Sur la note remise en fin de course (article 9 de l'arrêté du 6 novembre 2015) doivent être imprimés : la date de rédaction de la note, les heures de début et de fin de la course, le nom ou la dénomination sociale du prestataire, le numéro d'immatriculation du véhicule, l'adresse à laquelle peut être adressée une réclamation, le montant de la course minimum et le prix total de la course hors suppléments. Le détail de chaque supplément appliqué et la somme totale à payer sont portés sur la note avant sa remise au client, et vous en conservez le double.",
+    "En franchise en base de TVA : « TVA non applicable, article 293 B du CGI », sans faire apparaître de taxe sur la note ou la facture."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture mensuelle de courses en compte pour une entreprise cliente",
+    "lignes": [
+      {
+        "designation": "Course Lyon Part-Dieu → aéroport Saint-Exupéry du 12/09 (prise en charge, kilomètres et attente au compteur)",
+        "quantite": 1,
+        "unite": "course",
+        "prix_unitaire_ht": 52.73,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Courses urbaines en compte du mois de septembre (détail joint)",
+        "quantite": 6,
+        "unite": "course",
+        "prix_unitaire_ht": 15.45,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Courses de nuit au tarif majoré applicable (compteur)",
+        "quantite": 2,
+        "unite": "course",
+        "prix_unitaire_ht": 21.82,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA à 10 % sur l'ensemble des courses : transport de voyageurs (BOI-TVA-LIQ-30-20-60).",
+      "Numéro d'immatriculation du véhicule rappelé sur la facture, comme sur les notes remises en fin de course.",
+      "Doubles des notes correspondantes conservés et classés par date."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Éditer en mobilité des notes conformes dès la fin de course, avec les mentions propres aux taxis.",
+    "Suivre les comptes clients entreprises et regrouper leurs courses dans une facture mensuelle.",
+    "Distinguer les courses conventionnées télétransmises à l'Assurance Maladie des courses facturées en direct.",
+    "Préparer la réception puis l'émission de factures via une plateforme agréée, et le e-reporting des courses aux particuliers, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), orientée indépendants, freelances et micro-entrepreneurs, profils fréquents chez les artisans taxis. Elle réunit facturation et comptabilité, ce qui permet de suivre au même endroit notes émises et courses en compte."
+    },
+    {
+      "slug": "abby",
+      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), pensée pour les indépendants et micro-entrepreneurs. Son volet facturation et gestion aide à tenir à jour les factures mensuelles des entreprises clientes à côté de l'activité au compteur."
+    },
+    {
+      "slug": "indy",
+      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), combinant comptabilité, compte pro et facturation pour les indépendants. Ce regroupement convient à un chauffeur seul qui veut limiter le nombre d'outils à gérer."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quel taux de TVA dois-je appliquer sur mes courses ?",
+      "reponse": "Le transport de voyageurs relève du taux réduit de 10 %, quel que soit le mode de transport : toutes vos courses sont concernées. Si vous êtes en franchise en base, vous facturez sans TVA et portez la mention « TVA non applicable, article 293 B du CGI » sur chaque note ou facture."
+    },
+    {
+      "question": "Je suis conventionné avec l'Assurance Maladie : mes transports assis de malades sont-ils exonérés de TVA ?",
+      "reponse": "Non. L'exonération prévue à l'article 261 du CGI vise le transport de malades en véhicules spécialement aménagés, comme les ambulances. Un taxi conventionné réalise du transport assis dans un véhicule non aménagé : la TVA à 10 % du transport de voyageurs s'applique. La facturation à l'Assurance Maladie passe par la télétransmission prévue par votre convention, avec les kilomètres parcourus en charge et une facturette signée par l'assuré."
+    },
+    {
+      "question": "Quand dois-je remettre une note à mon client ?",
+      "reponse": "Dès que la course atteint 25 € TTC, la note doit être remise avant le paiement ; en dessous, elle n'est due que si le client la demande. L'article 9 de l'arrêté du 6 novembre 2015 impose d'y imprimer la date de rédaction de la note, les heures de début et de fin de la course, le nom ou la dénomination sociale du prestataire, le numéro d'immatriculation du véhicule, l'adresse à laquelle peut être adressée une réclamation, le montant de la course minimum et le prix total de la course hors suppléments. Le détail de chaque supplément appliqué et la somme totale à payer sont portés sur la note avant sa remise. Vous conservez le double, classé par date."
+    },
+    {
+      "question": "Puis-je fixer librement le prix de mes courses ?",
+      "reponse": "Non. Le tarif d'une course de taxi est réglementé : prise en charge, prix du kilomètre et tarif horaire sont plafonnés par des maxima revalorisés chaque année par arrêté, avec des majorations encadrées pour la nuit ou le retour à vide. Votre outil de facturation doit donc reprendre le montant du compteur, pas un prix libre."
+    },
+    {
+      "question": "Mes courses de particuliers sont-elles concernées par la facturation électronique ?",
+      "reponse": "Vos courses réglées au compteur par des particuliers ne circuleront pas sous forme de facture électronique entre entreprises : seules leurs données de transaction seront transmises à l'administration par e-reporting, à partir des notes que vous éditez déjà. Vos clients professionnels en compte relèvent en revanche du circuit des factures électroniques : la facture mensuelle qui regroupe leurs courses devra être émise, et leurs éventuelles factures reçues acceptées, via une plateforme agréée, à l'échéance applicable à votre entreprise. Les courses conventionnées télétransmises à l'Assurance Maladie suivent leur propre circuit de facturation et ne se substituent pas à cette obligation."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Mentions obligatoires d'une facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "BOFiP — TVA, taux réduit de 10 % sur les transports de voyageurs (BOI-TVA-LIQ-30-20-60)",
+      "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+    },
+    {
+      "titre": "BOFiP — Exonération du transport de malades en véhicules spécialement aménagés (BOI-TVA-CHAMP-30-10-20-40)",
+      "url": "https://bofip.impots.gouv.fr/bofip/709-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-40-20120912"
+    },
+    {
+      "titre": "Légifrance — Note obligatoire pour les prestations de services de 25 € TTC et plus",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000032459194"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 6 novembre 2015 relatif à l'information du consommateur sur les tarifs des courses de taxi, article 9 (mentions de la note)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000031449301"
+    },
+    {
+      "titre": "Légifrance — Décret n° 2015-1252 du 7 octobre 2015 relatif aux tarifs des courses de taxi",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031285847"
+    },
+    {
+      "titre": "ameli.fr — Taxi conventionné : facturation, mode d'emploi",
+      "url": "https://www.ameli.fr/taxi-conventionne/exercice-professionnel/facturation/modalites-facturation"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Liste des plateformes de dématérialisation partenaires immatriculées sous réserve",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "BOFiP — Franchise en base : mention « TVA non applicable, article 293 B du CGI » (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

@@ -132,3 +132,17 @@ Garde-fous : 103 pages, similarité maximale 20,7 % (seuil 50 %), check-seo 100 
 L'assembleur proposait aussi de réécrire 21 fiches déjà publiées. Vérification faite, 15 différences ne portaient que sur la mise en forme et 6 sur des reformulations équivalentes — aucune correction de fond. Écrasées, elles auraient produit du bruit de revue sans bénéfice pour le lecteur : les fiches publiées sont restées intactes.
 Reste 12 métiers pour atteindre 100 : les 9 du transport, dont les rédactions et les rapports de vérification existent mais dont les trois agents correcteurs ont échoué avant d'écrire, et les 3 de l'agriculture-lot3, dont le contenu corrigé est hors schéma.
 Garde-fous : 130 pages construites, 3 828 paires comparées, similarité maximale 20,7 % (seuil 50 %), check-seo 127 pages indexables conformes, 77 tests + 6 parcours e2e verts.
+
+## Phase 4 terminée — 100 métiers, et correction d'un défaut d'affichage mobile généralisé (2026-10-06)
+
+Les 12 derniers contenus sont publiés : 9 pour le transport, dont les correcteurs avaient échoué avant d'écrire, et 3 pour l'agriculture, dont le contenu vérifié était hors schéma. **100 métiers sur 100, dix familles complètes.** Le contrat de sortie donné aux agents énumérait cette fois chaque champ et chaque type ; une seule divergence est restée, sur `mentions_obligatoires_specifiques` que j'avais décrit comme une liste d'objets alors que le schéma attend des chaînes. Les 30 URLs portées par ces objets étaient déjà toutes présentes dans `sources[]` — vérifié avant d'aplatir, donc rien de perdu.
+
+Défaut d'affichage trouvé en vérifiant le nouveau hub : **toutes les pages débordaient horizontalement sur un téléphone de 360 px**, jusqu'à 170 px sur la page métier. Trois causes distinctes, toutes mesurées dans le navigateur :
+- `.layout-article` laissait sa piste de grille en `auto`, qui se dimensionne sur le min-content du contenu : un tableau de 474 px poussait toute la page au lieu de défiler dans son `.table-scroll`. `minmax(0, 1fr)` autorise la piste à descendre sous le min-content.
+- `.duel` était en `1fr auto 1fr` à toutes les largeurs. `1fr` vaut `minmax(auto, 1fr)`, dont le minimum est le min-content : les deux fiches de comparatif poussaient la page. Elles s'empilent désormais sous 640 px.
+- `.badge-ok` portait `white-space: nowrap`, utile pour « Plateforme agréée », ruineux pour une phrase de cinquante caractères ; le nom de marque, élément flex, ne descendait pas sous son min-content et poussait la navigation hors de l'en-tête.
+Vérification après correction : aucun débordement sur 20 pages à 320, 360, 390 et 414 px, le tableau défile dans son conteneur, l'en-tête tient.
+
+Hub de famille retravaillé : une liste de dix liens identiques ne donne au lecteur aucun critère de choix. Chaque métier devient une carte portant son besoin prioritaire, borné à deux lignes à l'affichage sans tronquer la donnée, et son type de clientèle. La phrase « d'autres métiers seront ajoutés » ne s'affiche plus que si la famille est incomplète. Les neuf autres familles sont accessibles depuis chaque hub.
+Gabarit de guide aligné sur le système avant l'arrivée des contenus : sommaire construit depuis les titres réels du guide, colonne d'appui, tableaux markdown qui défilent seuls.
+Garde-fous : 142 pages, 4 950 paires comparées, similarité maximale 20,7 % (seuil 50 %), check-seo 139 pages indexables, 77 tests + 6 parcours e2e verts, Lighthouse 100/100/100/100 et CLS 0 sur accueil, métier, hub et comparatif.

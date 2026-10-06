@@ -1,0 +1,132 @@
+{
+  "nom": "Chauffeur-livreur",
+  "slug": "chauffeur-livreur",
+  "famille": "transport",
+  "statuts_frequents": ["Micro-entreprise", "Entreprise individuelle", "SASU", "EURL"],
+  "volume_factures_typique": "Concentré : le plus souvent une facture récapitulative mensuelle par donneur d'ordre, avec de nombreuses lignes (tournées, points de livraison, retours) mais peu de destinataires.",
+  "clients_types": "B2B",
+  "specificites_facturation": [
+    "Vos tournées et courses portent sur des biens : la TVA s'applique au taux normal de 20 %, sans taux réduit, même pour de petits colis livrés en véhicule utilitaire léger.",
+    "En sous-traitance de messagerie, le donneur d'ordre établit fréquemment la facture à la place du livreur : cette autofacturation exige un mandat de facturation, l'apposition de la mention « Autofacturation » sur chaque document, et une acceptation par le livreur, qui reste redevable de la TVA facturée en son nom.",
+    "La facturation repose sur le relevé d'activité transmis par le donneur d'ordre (tournées, points, retours) ; la facture ou l'autofacture doit détailler les prestations réellement effectuées, comme l'imposent les mentions obligatoires de toute facture.",
+    "En cas d'impayé, le transporteur dispose d'une action directe en paiement contre l'expéditeur et le destinataire, garants du prix du transport ; toute clause contraire est réputée non écrite, et la jurisprudence l'ouvre aussi au transporteur substitué.",
+    "Beaucoup de chauffeurs-livreurs démarrent en micro-entreprise : en franchise en base, la facture est émise sans TVA avec la mention « TVA non applicable, article 293 B du CGI », mais l'activité reste soumise à la facturation électronique, en réception comme en émission, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Même lorsque la facture est établie par le donneur d'ordre, le document porte les mentions de droit commun ainsi que les éléments propres à la sous-traitance de tournées : référence du contrat de sous-traitance, période couverte, nombre de tournées, de points de livraison supplémentaires et de reprises, et renvoi au relevé d'activité ayant servi de base au décompte.",
+    "« Autofacturation » sur toute facture établie par le donneur d'ordre au nom et pour le compte du livreur.",
+    "« TVA non applicable, article 293 B du CGI » en franchise en base, sans aucune ligne de taxe."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture mensuelle de sous-traitance de tournées de messagerie",
+    "lignes": [
+      {
+        "designation": "Tournée quotidienne de livraison secteur nord en véhicule utilitaire léger, mois de septembre",
+        "quantite": 21,
+        "unite": "tournée",
+        "prix_unitaire_ht": 118,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Points de livraison supplémentaires au-delà du volume contractuel de la tournée",
+        "quantite": 54,
+        "unite": "point",
+        "prix_unitaire_ht": 1.85,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Reprises de colis (retours clients) collectées en tournée",
+        "quantite": 12,
+        "unite": "colis",
+        "prix_unitaire_ht": 2.4,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux normal de 20 % — transport de biens (BOI-TVA-LIQ-20-20).",
+      "Référence du contrat de sous-traitance et du relevé d'activité mensuel du donneur d'ordre.",
+      "Si le document est établi par le donneur d'ordre au nom du livreur, la mention « Autofacturation » doit y figurer."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Contrôler les relevés de tournées et les autofactures du donneur d'ordre avant de les accepter.",
+    "Facturer un petit nombre de clients avec de nombreuses lignes : tournées, points supplémentaires, retours.",
+    "Gérer la franchise en base avec la mention de l'article 293 B, puis, le cas échéant, le passage à la TVA sans changer d'outil.",
+    "Recevoir puis émettre les factures via une plateforme agréée à l'échéance applicable à votre entreprise, y compris en micro-entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), réunissant comptabilité, compte pro et facturation pour les indépendants, statut fréquent chez les livreurs sous-traitants. Un seul outil pour rapprocher les virements des donneurs d'ordre et les pièces comptables."
+    },
+    {
+      "slug": "shine",
+      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), combinant compte professionnel en ligne et facturation, utilisable par un indépendant ou une TPE. Utile pour vérifier que chaque facture mensuelle de tournées correspond bien à un règlement reçu."
+    },
+    {
+      "slug": "abby",
+      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), dédiée à la facturation et à la gestion des indépendants et micro-entrepreneurs. Elle convient à un livreur en franchise en base qui doit produire des factures conformes sans TVA."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mon donneur d'ordre de messagerie établit mes factures à ma place : est-ce autorisé ?",
+      "reponse": "Oui, c'est l'autofacturation : vous donnez mandat à votre client d'émettre les factures en votre nom et pour votre compte. Chaque document doit porter la mention « Autofacturation » et faire l'objet d'une acceptation de votre part. Vous restez responsable de la TVA facturée en votre nom : conservez le mandat écrit et vérifiez chaque autofacture."
+    },
+    {
+      "question": "Puis-je appliquer un taux réduit de TVA sur mes livraisons de colis ?",
+      "reponse": "Non. Vous transportez des biens, et le transport de biens relève du taux normal de 20 %. Le taux réduit de 10 % est réservé au transport de voyageurs, ce qui ne correspond pas à une activité de livraison."
+    },
+    {
+      "question": "Le donneur d'ordre ne me paie pas : quels recours me donne le code de commerce ?",
+      "reponse": "L'article L. 132-8 du code de commerce vous ouvre une action directe en paiement contre l'expéditeur et le destinataire des marchandises, tous deux garants du prix du transport. Toute clause contraire est réputée non écrite. La jurisprudence reconnaît ce recours au transporteur substitué, situation courante en sous-traitance de messagerie."
+    },
+    {
+      "question": "Dois-je être inscrit au registre des transporteurs pour livrer avec une camionnette ?",
+      "reponse": "Oui. Le transport routier de marchandises pour le compte d'autrui est une profession réglementée, y compris en véhicule utilitaire léger : elle suppose l'inscription au registre des transporteurs et la justification d'une capacité professionnelle. Si vous n'utilisez que des véhicules dont le poids total autorisé en charge n'excède pas 2,5 tonnes, ou n'excède pas 3,5 tonnes et sont employés exclusivement pour des transports sur le territoire national, l'attestation de capacité professionnelle en transport routier léger suffit ; au-delà, c'est l'attestation de capacité en transport de marchandises qui est exigée. L'inscription s'effectue par téléprocédure auprès de la DREAL. Vérifiez votre situation avant de facturer vos premières tournées."
+    },
+    {
+      "question": "Je suis micro-entrepreneur sans TVA : la facturation électronique me concerne-t-elle ?",
+      "reponse": "Oui. La franchise en base ne vous fait pas sortir du champ : vous restez assujetti même si vous ne collectez pas la TVA. Le point sensible pour un livreur sous-traitant est l'articulation avec l'autofacturation : si votre donneur d'ordre établit vos factures en votre nom, c'est lui qui devra les déposer sur une plateforme agréée pour votre compte, en vertu du mandat de facturation — ce qui ne vous décharge ni de l'acceptation de chaque document, ni de la responsabilité de son contenu. Vous devrez par ailleurs pouvoir recevoir, puis émettre, vos factures via une plateforme agréée à l'échéance applicable à votre entreprise. Vos factures continuent de porter la mention « TVA non applicable, article 293 B du CGI », sans ligne de taxe."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Les mentions à porter sur une facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "BOFiP — Taux normal de TVA applicable au transport de biens (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
+    },
+    {
+      "titre": "BOFiP — Délivrance de factures : autofacturation et mandat de facturation (BOI-TVA-DECLA-30-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "Légifrance — Article L132-8 du code de commerce (action directe du voiturier)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006220236"
+    },
+    {
+      "titre": "BOFiP — Franchise en base et mention de l'article 293 B du CGI (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Liste des plateformes de dématérialisation partenaires immatriculées sous réserve",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "Légifrance — Code des transports, capacité professionnelle du transporteur routier (articles R3211-36 à R3211-42)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000023086525/LEGISCTA000033450033/"
+    },
+    {
+      "titre": "Légifrance — Code des transports, conditions d'accès à la profession (articles R3211-19 à R3211-47)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000023086525/LEGISCTA000033449989/"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

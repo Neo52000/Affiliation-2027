@@ -117,6 +117,13 @@ h2 {
 }
 
 /* Titre héros de l'accueil — style « display » (v3 : plus grand, extra-bold) */
+/* Les titres portent des mots longs (« électronique », « facturation ») qui,
+   en corps d'affichage, dépassent un écran de 360 px : ils se coupent plutôt
+   que de pousser la page. */
+:where(h1, h2, h3, .display-title) {
+  overflow-wrap: break-word;
+}
+
 .display-title {
   font-size: clamp(2.25rem, 1.4rem + 3.4vw, 3.4rem);
   line-height: 1.06;
@@ -212,7 +219,10 @@ h2 {
   border: 1px solid color-mix(in srgb, var(--color-ok) 35%, transparent);
   border-radius: 999px;
   padding: 2px 0.6rem;
-  white-space: nowrap;
+  /* Pas de nowrap : un badge court tient de lui-même sur une ligne, tandis
+     qu'un badge long sortait de l'écran sur un téléphone de 360 px. */
+  max-width: 100%;
+  text-wrap: balance;
 }
 
 /* Pictogramme posé sur un carré d'accent doux */
@@ -458,6 +468,11 @@ a:hover {
    --------------------------------------------------------------------------- */
 .layout-article {
   display: grid;
+  /* Une piste implicite vaut `auto` : elle se dimensionne sur le min-content de
+     son contenu, si bien qu'un tableau large poussait toute la page hors écran
+     au lieu de défiler dans son .table-scroll. minmax(0, 1fr) autorise la piste
+     à descendre sous le min-content : le débordement redevient local. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
 }
 
@@ -588,9 +603,19 @@ a:hover {
    --------------------------------------------------------------------------- */
 .duel {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  /* Sous 640 px, deux fiches côte à côte tombent à 140 px de large : on les
+     empile. Au-dessus, minmax(0, 1fr) et non 1fr — `1fr` vaut minmax(auto, 1fr),
+     dont le minimum est le min-content : les cartes poussaient la page hors
+     écran au lieu de se partager la largeur. */
+  grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
   gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .duel {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
 }
 
 .duel-carte {
@@ -755,6 +780,49 @@ a:hover {
 
 /* Listes aérées : l'espace entre deux puces doit dépasser l'interligne
    intérieur d'une puce, sans quoi les items se collent visuellement. */
+/* ---------------------------------------------------------------------------
+   Carte de métier sur un hub de famille : le lecteur choisit sur un fait, pas
+   sur une liste de dix liens identiques.
+   --------------------------------------------------------------------------- */
+.carte-metier {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-paper);
+  padding: 0.85rem 1rem;
+}
+
+/* Pastille de famille, pour repartir vers un autre hub. */
+.puce-famille {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  min-height: 2.5rem;
+  font-size: 0.9375rem;
+  color: var(--color-ink);
+  text-decoration-line: none;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.puce-famille:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Accroche bornée à deux lignes. Le texte entier reste dans le DOM : on coupe
+   à l'affichage, jamais la donnée. */
+.ligne-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
 .liste-aeree > li {
   line-height: 1.55;
 }

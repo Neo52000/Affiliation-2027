@@ -1,0 +1,121 @@
+{
+  "nom": "Transport de personnes à mobilité réduite (TPMR)",
+  "slug": "tpmr",
+  "famille": "transport",
+  "statuts_frequents": ["SASU", "SARL", "entreprise individuelle", "micro-entrepreneur"],
+  "volume_factures_typique": "Facturation surtout mensuelle et récurrente : quelques dizaines de factures par mois, établies par bénéficiaire, par établissement ou par convention avec une collectivité.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Le transport de personnes à mobilité réduite est du transport de voyageurs : vos courses sont soumises à la TVA au taux réduit de 10 %, y compris lorsque le véhicule est équipé d'une rampe ou de fixations pour fauteuil roulant. L'aménagement du véhicule ne change pas le taux applicable.",
+    "Un véhicule TPMR n'est pas une ambulance : l'exonération de TVA de l'article 261 du CGI est réservée aux transports de malades ou de blessés en véhicules spécialement aménagés, réalisés par des transporteurs sanitaires. N'émettez jamais de facture en exonération pour une course TPMR.",
+    "Le transport scolaire adapté des élèves en situation de handicap est organisé par une collectivité et attribué par marché public. Votre client est alors une entité publique : ces factures se déposent sur Chorus Pro, pas sur votre plateforme agréée. Vérifiez dans le dossier de consultation quelle collectivité est l'autorité organisatrice, elle varie selon les territoires.",
+    "Beaucoup de structures TPMR démarrent en franchise en base : vous facturez alors sans TVA avec la mention « TVA non applicable, article 293 B du CGI ». Vous restez pourtant assujetti, donc concerné par la facturation électronique, en réception comme en émission, à l'échéance applicable à votre entreprise.",
+    "Les trajets réglés par les familles ne passent pas par le circuit inter-entreprises, mais les données de ces transactions seront transmises à l'administration via le e-reporting."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Taux réduit de TVA de 10 % sur chaque ligne de prestation de transport de personnes, y compris en véhicule aménagé.",
+    "Mention « TVA non applicable, article 293 B du CGI » pour les structures en franchise en base, sans aucune ligne de taxe.",
+    "Aucune mention d'exonération fondée sur l'article 261 du CGI : elle est réservée aux transporteurs sanitaires utilisant des véhicules spécialement aménagés (ambulances)."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture mensuelle de transports adaptés — trajets domicile / accueil de jour, facturée à la famille",
+    "lignes": [
+      {
+        "designation": "Trajets aller-retour domicile / accueil de jour « Les Tilleuls », véhicule TPMR avec rampe, transport en fauteuil roulant — mois de septembre",
+        "quantite": 9,
+        "unite": "aller-retour",
+        "prix_unitaire_ht": 34,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Trajets ponctuels domicile / cabinet de kinésithérapie, sur réservation de la famille",
+        "quantite": 2,
+        "unite": "aller-retour",
+        "prix_unitaire_ht": 29,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux réduit de 10 % — transport de voyageurs, dont transport de personnes à mobilité réduite (BOI-TVA-LIQ-30-20-60).",
+      "Transport non sanitaire : l'exonération de l'article 261 du CGI, propre aux transports sanitaires en véhicules spécialement aménagés, ne s'applique pas.",
+      "Client particulier : facture remise à la famille, hors circuit inter-entreprises ; les données de la transaction relèvent du e-reporting à l'échéance applicable à votre entreprise. Référence de la convention de transport adapté conclue avec la famille."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Éditer chaque mois des factures récurrentes par bénéficiaire ou par établissement, au taux de 10 %.",
+    "Déposer sur Chorus Pro les factures des marchés passés avec les collectivités (transport scolaire adapté, services de mobilité).",
+    "Facturer correctement en franchise en base (mention 293 B) tout en se préparant à la facturation électronique.",
+    "Transmettre en e-reporting les données des courses réglées par les familles."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Outil dédié à la facturation et à la gestion des indépendants et micro-entrepreneurs. Il correspond aux conducteurs TPMR en franchise en base qui facturent familles et établissements. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+    },
+    {
+      "slug": "indy",
+      "justification": "Outil qui regroupe comptabilité, compte professionnel et facturation pour les indépendants. Un choix cohérent si vous gérez seul votre activité de transport adapté. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Outil associant facturation et comptabilité, ciblé indépendants, micro-entrepreneurs et TPE. Ce périmètre couvre les petites structures de transport adapté. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mon véhicule a une rampe et des fixations pour fauteuil roulant : suis-je exonéré de TVA comme une ambulance ?",
+      "reponse": "Non. L'exonération de l'article 261 du CGI vise le transport de malades ou de blessés en véhicules spécialement aménagés, effectué par des transporteurs sanitaires visés au code de la santé publique. Un véhicule TPMR aménagé ne remplit pas ces conditions : vos courses restent du transport de voyageurs, facturé avec TVA au taux réduit de 10 %."
+    },
+    {
+      "question": "Je viens de remporter un lot de transport scolaire adapté auprès d'une collectivité : comment envoyer mes factures ?",
+      "reponse": "Le transport scolaire adapté est attribué par marché public par la collectivité organisatrice. Votre client est une entité publique : vous déposez vos factures sur Chorus Pro, le portail obligatoire pour les fournisseurs de la sphère publique. Ce circuit est distinct de celui des plateformes agréées, qui concerne vos clients professionnels privés."
+    },
+    {
+      "question": "Je facture à la fois des familles, un EHPAD et un marché de transport adapté : combien de circuits de facturation dois-je gérer ?",
+      "reponse": "Trois, et il vaut mieux les séparer dès maintenant. Le marché public part sur Chorus Pro. L'EHPAD et les établissements médico-sociaux privés sont des clients professionnels : leurs factures passeront par une plateforme agréée, en réception puis en émission, à l'échéance applicable à votre entreprise. Les familles restent hors de ce circuit, mais les données de ces transactions devront être transmises via le e-reporting. Prévoyez des séries de numérotation distinctes par type de client : c'est ce qui vous évitera de chercher une facture dans le mauvais flux."
+    },
+    {
+      "question": "Un EHPAD me demande d'appliquer l'autoliquidation sur mes factures : est-ce justifié ?",
+      "reponse": "Non. Dans votre activité, l'autoliquidation concerne le cas où le preneur est un assujetti établi dans un autre État membre de l'UE : la facture part alors sans TVA française avec la mention « Autoliquidation ». Un établissement situé en France se facture normalement, avec la TVA au taux de 10 % propre au transport de personnes, sauf si vous êtes en franchise en base. Si votre client invoque un autre fondement, demandez-lui de vous l'indiquer par écrit et faites-le valider par votre expert-comptable avant d'émettre la facture."
+    },
+    {
+      "question": "Une famille me demande une facture mensuelle récapitulant tous les trajets du mois : est-ce que je peux regrouper ?",
+      "reponse": "Oui, rien ne vous l'interdit dès lors que chaque trajet est détaillé sur la facture (date, trajet, nombre d'aller-retour, prix unitaire, taux de TVA de 10 %). La facture récapitulative mensuelle est la pratique courante en transport adapté et elle vous évite d'éditer une note par course. Ces prestations facturées à des particuliers ne transitent pas par le circuit inter-entreprises : leurs données seront transmises à l'administration via le e-reporting, à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — TVA, taux réduit : transports de voyageurs (BOI-TVA-LIQ-30-20-60)",
+      "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+    },
+    {
+      "titre": "BOFiP — Exonération des transports sanitaires en véhicules spécialement aménagés (BOI-TVA-CHAMP-30-10-20-40)",
+      "url": "https://bofip.impots.gouv.fr/bofip/709-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-40-20120912"
+    },
+    {
+      "titre": "Commande publique : la facturation électronique via Chorus Pro (CEDEF, economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/cedef/fiches-pratiques/commande-publique-la-facturation-electronique"
+    },
+    {
+      "titre": "BOFiP — Franchise en base, mention « TVA non applicable, article 293 B du CGI » (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "BOFiP — Autoliquidation, prestations intracommunautaires (BOI-TVA-DECLA-30-20-20-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1531-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-30-20190925"
+    },
+    {
+      "titre": "Je découvre la facturation électronique — impots.gouv.fr",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Facturation électronique — Liste des plateformes de dématérialisation partenaires immatriculées sous réserve (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

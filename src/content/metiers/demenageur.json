@@ -1,0 +1,142 @@
+{
+  "nom": "Déménageur",
+  "slug": "demenageur",
+  "famille": "transport",
+  "statuts_frequents": ["SARL", "SAS / SASU", "Micro-entrepreneur (petits volumes)"],
+  "volume_factures_typique": "Quelques dizaines de dossiers par mois, avec une forte pointe estivale. Chaque dossier enchaîne devis, versement d'avance, document de suivi du mobilier puis facture de solde.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Avant tout engagement, vous devez remettre gratuitement un devis, accompagné des conditions générales du contrat de déménagement. Son contenu est encadré par l'arrêté du 27 avril 2010 : volume du mobilier, lieux de chargement et de livraison, période d'exécution, définition exacte de la prestation, montants HT et TTC présentés comme définitifs.",
+    "Si le montant de la facture diffère du devis accepté, la facture doit justifier l'écart de façon précise et explicite. Une prestation modifiée appelle un avenant ou un nouveau devis, pas une simple surfacturation.",
+    "Un document de suivi (lettre de voiture de déménagement) accompagne le mobilier et recueille la décharge et les réserves du client à la livraison ; un exemplaire lui est remis. C'est la pièce qui sécurise votre facture de solde en cas de litige.",
+    "Pour un client particulier, l'article L. 214-1 du code de la consommation qualifie d'arrhes les sommes versées d'avance, sauf stipulation contraire du contrat : le client peut se désister en les perdant. Un acompte, lui, engage fermement les deux parties. Pour un client professionnel, la qualification dépend de ce que prévoit votre contrat. Dans tous les cas, précisez la nature du versement sur le devis et rappelez-la sur la facture de solde.",
+    "Le déménagement est un transport de biens : TVA au taux normal de 20 %, sans aucun taux réduit. En franchise en base, facturez sans TVA avec la mention « TVA non applicable, article 293 B du CGI ».",
+    "La déclaration de valeur remplie par le client au moment du devis et la responsabilité présumée du déménageur en cas de perte ou de casse pèsent directement sur la facture de solde et sur le traitement des réserves.",
+    "Vos prestations sont taxées à 20 % : elles entrent pleinement dans le champ de la facturation électronique. Vos factures à des clients professionnels (entreprises, administrations) devront être émises et reçues via une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale, à l'échéance applicable à votre entreprise. Vos déménagements facturés à des particuliers relèvent, eux, du e-reporting : les données de la transaction sont transmises à l'administration, mais la facture reste émise selon vos modalités habituelles."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur le devis (arrêté du 27 avril 2010) : références de l'entreprise, nom et adresse du client, période ou date d'exécution, lieux de chargement et de livraison, volume du mobilier, définition exacte de la prestation, modalités de paiement, montants HT et TTC avec indication de leur caractère définitif.",
+    "Sur la facture : justification précise et explicite de tout écart avec le devis accepté.",
+    "Sur le document de suivi accompagnant le mobilier : identification de l'entreprise (nom, adresse, numéro SIREN ou numéro d'identification intracommunautaire), nom et adresse du client, volume du mobilier, lieux de chargement et de livraison, et emplacement permettant au client de porter décharge et réserves à la livraison.",
+    "Mentions communes de facturation : identité des parties, SIREN/SIRET, numéro et date de facture, détail des prestations, taux et montant de la TVA."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — déménagement d'un logement de 35 m³, chargement à Lyon, livraison à Nantes (devis accepté n° D-AAAA-0415)",
+    "lignes": [
+      {
+        "designation": "Forfait déménagement conforme au devis accepté n° D-AAAA-0415 — 35 m³, formule avec démontage, chargement, transport et remontage",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 2400,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Fourniture de cartons et matériel d'emballage",
+        "quantite": 40,
+        "unite": "carton",
+        "prix_unitaire_ht": 2.5,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Location d'un monte-meubles pour livraison au 4e étage sans ascenseur (prévue au devis)",
+        "quantite": 1,
+        "unite": "demi-journée",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Déduction de l'avance versée à l'acceptation du devis n° D-AAAA-0415 (arrhes, selon devis)",
+        "quantite": 1,
+        "unite": "versement",
+        "prix_unitaire_ht": -800,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Les quantités et les prix de cet exemple sont illustratifs et n'ont pas valeur de tarif de référence.",
+      "Montant conforme au devis accepté : tout écart devrait être justifié de façon précise et explicite sur la facture (arrêté du 27 avril 2010).",
+      "L'avance versée à l'acceptation du devis est déduite ligne à ligne ci-dessus ; sa nature (arrhes ou acompte) est celle indiquée au devis. Le net à payer correspond au solde après cette déduction.",
+      "Document de suivi joint au dossier ; l'exemplaire portant décharge et réserves éventuelles a été remis au client en fin d'opération.",
+      "Déclaration de valeur signée par le client au moment du devis, référencée sur la facture.",
+      "TVA à 20 % sur l'ensemble des lignes, déduction comprise : le déménagement est un transport de biens, sans taux réduit."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Transformer un devis conforme à l'arrêté du 27 avril 2010 en facture de solde sans ressaisie ni écart injustifié.",
+    "Gérer les versements d'avance (arrhes ou acomptes) puis les factures de solde sur des dossiers étalés dans le temps, avec une déduction visible sur la facture finale.",
+    "Suivre chaque dossier de bout en bout : devis, document de suivi, réserves à la livraison, facture, encaissement.",
+    "Absorber la pointe estivale sans retard de facturation ni perte de pièces justificatives.",
+    "Pouvoir émettre vos factures professionnelles au format électronique et déclarer vos opérations avec les particuliers, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel assorti d'une fonction de facturation, orienté PME et indépendants ; adapté au suivi des avances encaissées puis des factures de solde, dossier par dossier. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Outil de gestion financière et de comptabilité pensé pour collaborer avec un expert-comptable, pertinent pour une société de déménagement dont l'activité saisonnière exige un pilotage comptable suivi. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+    },
+    {
+      "slug": "abby",
+      "justification": "Outil de facturation et de gestion destiné aux indépendants et micro-entrepreneurs, qui convient au déménageur exerçant seul avec un utilitaire et facturant de petits volumes. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Dois-je remettre un devis avant chaque déménagement, et ma facture peut-elle s'en écarter ?",
+      "reponse": "L'arrêté du 27 avril 2010 impose la remise gratuite d'un devis avant la conclusion du contrat, accompagné des conditions générales. Il doit notamment préciser le volume, les lieux de chargement et de livraison, la définition exacte de la prestation et les montants HT et TTC, présentés comme définitifs. Le prix du devis étant définitif, une facture qui s'en écarte doit en donner une justification précise et explicite ; pour une prestation réellement modifiée (volume supérieur, accès imprévu), formalisez un avenant ou un nouveau devis avant de facturer."
+    },
+    {
+      "question": "La somme versée à la réservation : arrhes ou acompte ?",
+      "reponse": "Pour un client particulier et sans précision dans vos documents, l'article L. 214-1 du code de la consommation la qualifie d'arrhes : le client peut se désister en les perdant. Un acompte, lui, engage fermement les deux parties. Pour un client professionnel, la qualification dépend de ce que prévoit votre contrat. Indiquez clairement la nature du versement sur le devis, rappelez-la sur la facture de solde et faites-y apparaître la déduction."
+    },
+    {
+      "question": "À quoi sert le document de suivi du mobilier dans ma facturation ?",
+      "reponse": "Il accompagne le mobilier pendant toute l'opération et recueille la décharge et les réserves du client à la livraison ; un exemplaire lui est remis. C'est la pièce qui sécurise votre facture de solde en cas de litige, car elle établit ce qui a été livré et dans quel état."
+    },
+    {
+      "question": "Un meuble est cassé pendant le transport : quel impact sur ma facture ?",
+      "reponse": "Votre responsabilité est présumée en cas de perte, de casse ou de retard : le client n'a pas à la prouver. L'indemnisation s'apprécie au regard de la déclaration de valeur remplie au moment du devis, et toute clause qui limiterait abusivement le droit à réparation est considérée comme abusive. Les réserves notées à la livraison doivent par ailleurs être confirmées par le client dans le délai prévu par les règles du transport (article L. 133-3 du code de commerce) pour que sa réclamation reste recevable : vérifiez ce point avant de renoncer à votre solde ou d'accorder un geste commercial."
+    },
+    {
+      "question": "Je déménage surtout des particuliers : suis-je concerné par la facturation électronique ?",
+      "reponse": "Oui, à deux titres. Vos prestations sont taxées à 20 %, donc pleinement dans le champ : vos factures à des clients professionnels devront être émises et reçues via une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale, à l'échéance applicable à votre entreprise. Vos déménagements facturés à des particuliers relèvent du e-reporting : la facture reste émise selon vos modalités habituelles, mais les données de la transaction sont transmises à l'administration. Un déménageur à clientèle mixte doit donc organiser les deux flux."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Légifrance — Arrêté du 27 avril 2010 relatif à la publicité des prix des prestations de déménagement",
+      "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000022192197"
+    },
+    {
+      "titre": "DGCCRF — Fiche pratique Déménagement (devis, documents de suivi, déclaration de valeur, responsabilité)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/demenagement"
+    },
+    {
+      "titre": "DGCCRF — Fiche pratique Acompte, arrhes, avoir (article L. 214-1 du code de la consommation)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/acompte-arrhes-avoir"
+    },
+    {
+      "titre": "BOFiP — Taux normal de TVA de 20 % pour le transport de biens",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
+    },
+    {
+      "titre": "BOFiP — Taux réduit de 10 % limité au transport de voyageurs",
+      "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+    },
+    {
+      "titre": "BOFiP — Franchise en base : mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "impots.gouv.fr — La facturation électronique entre assujettis",
+      "url": "https://www.impots.gouv.fr/professionnel/facturation-electronique"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

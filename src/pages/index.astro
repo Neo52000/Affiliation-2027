@@ -99,7 +99,7 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
 
 <Base title={title} description={SITE.description}>
   <section class="hero pt-4">
-    <div class="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+    <div class="grid grid-cols-[minmax(0,1fr)] items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto]">
       <div class="max-w-3xl">
         <p class="badge-ok">Réforme en vigueur — vérifié sur sources officielles</p>
         <h1 class="display-title mt-4">

@@ -1,0 +1,186 @@
+{
+  "nom": "Fromager fermier",
+  "slug": "fromager-fermier",
+  "famille": "agriculture",
+  "statuts_frequents": ["Exploitation individuelle", "GAEC", "EARL"],
+  "volume_factures_typique": "Un flux quotidien de ventes au détail non nominatives à la ferme et sur les marchés, sans facture nominative, et un nombre réduit de factures professionnelles par mois vers les crémiers, les restaurateurs et les maisons d'affinage, souvent sous forme de livraisons récurrentes.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Un taux unique, des circuits multiples. Les fromages sont des produits destinés à l'alimentation humaine : ils relèvent du taux réduit de 5,5 %. Le circuit ne change pas le taux. Vendre une tomme sur le marché, au magasin de producteurs ou à une crémerie n'entraîne aucune variation. Si vous n'êtes pas redevable de la TVA, aucune taxe n'apparaît sur vos documents de vente, et le remboursement forfaitaire agricole n'est pas une exonération mais une compensation versée par l'administration.",
+    "La dénomination « fermier » est encadrée. Elle est réservée au fromage fabriqué selon des techniques traditionnelles par un producteur agricole ne traitant que le lait de sa propre exploitation, sur l'exploitation. Lorsqu'un système d'identification du produit est en place, l'affinage peut être réalisé hors de l'exploitation. Dans ce cas, la mention « fabriqué à la ferme puis affiné par l'établissement », suivie du nom de l'affineur, figure immédiatement après la dénomination « fromage fermier ».",
+    "Lait cru : l'indication du traitement thermique. Pour les fromages autres que les pâtes pressées cuites, les fromages de lactosérum, les fromages fondus et les spécialités fromagères fondues, l'étiquetage porte de façon visible et lisible l'indication des traitements thermiques subis par le lait ou la crème, avec la mention « lait cru » lorsque le lait n'a pas été chauffé. Pour les pâtes pressées cuites, la mention « au lait cru » est facultative et réservée aux fromages fabriqués exclusivement à partir de lait cru.",
+    "Remise directe, agrément, dérogation. La remise directe au consommateur final n'est pas soumise à l'obligation d'agrément sanitaire. Dès que vous livrez d'autres commerces de détail — crémerie, épicerie, restaurant —, vous relevez soit de l'agrément sanitaire, soit d'une dérogation à l'agrément, déclarée à la direction départementale chargée de la protection des populations du département de votre atelier. La déclaration indique la nature et la quantité des produits livrés ainsi que la liste des établissements destinataires réguliers, et se renouvelle en cas de modification significative.",
+    "Le numéro d'agrément n'est pas une mention de facture. Les produits issus d'un atelier agréé portent une marque d'identification de forme ovale contenant le numéro d'agrément de l'établissement. Cette estampille vit sur l'emballage et sur l'étiquette. Sur la facture, c'est le SIREN qui identifie l'entreprise, et le numéro individuel d'identification à la TVA qui est exigé, sauf pour les factures dont le total hors taxes n'excède pas 150 €.",
+    "Sur les marchés : affichage des prix et qualification de votre activité. Le prix est annoncé en euros toutes taxes comprises, sans que le client ait à le demander, et vos fromages vendus au poids font l'objet d'une information sur le prix au kilogramme : pensez-y pour les pièces coupées à la demande, dont le prix à la pièce ne suffit pas. La déclaration préalable d'activité ambulante prévue par l'article L123-29 du code de commerce vise les activités commerciales et artisanales. La commercialisation par un exploitant agricole des seuls produits de son exploitation constitue le prolongement de l'acte de production et relève de l'activité agricole au sens de l'article L311-1 du code rural et de la pêche maritime. Si vous revendez en outre des produits que vous n'avez pas fabriqués, beurre, crème ou fromages d'un voisin, cette part de votre étal change de qualification : faites confirmer votre situation par votre chambre d'agriculture avant la saison des marchés.",
+    "Un seul taux, deux canaux de remontée. Vos ventes de marché et de ferme s'adressent à des particuliers : elles ne donnent pas lieu à facture électronique mais à une transmission des données de transaction, sans aucune donnée nominative de client. Comme vos produits relèvent tous du taux de 5,5 %, cette remontée ne comporte pour vous qu'un seul taux, contrairement à un producteur qui vendrait aussi des plants ou des boissons. Vos livraisons à des crémiers, des restaurateurs et des affineurs établis en France basculent, à l'échéance applicable à votre entreprise, sur la facture électronique émise par une plateforme agréée. Vous êtes concerné même si vous facturez sans TVA."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Numéro individuel d'identification à la TVA du vendeur, exigé sauf pour les factures dont le total hors taxes n'excède pas 150 €.",
+    "Pour chaque produit : la quantité, la dénomination précise reprenant celle portée sur l'étiquette, le prix unitaire hors taxes et le taux de TVA applicable.",
+    "Toute réduction de prix acquise à la date de la vente et directement liée à l'opération, portée sur une ligne distincte.",
+    "Date à laquelle le règlement doit intervenir, taux des pénalités de retard et montant de l'indemnité forfaitaire pour frais de recouvrement, fixée à 40 €, due de plein droit en cas de retard de paiement.",
+    "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel, adresse de livraison lorsqu'elle diffère de celle du client, nature des opérations facturées et, le cas échéant, mention « Option pour le paiement de la taxe d'après les débits »."
+  ],
+  "exemple_facture": {
+    "intitule": "Livraison mensuelle à une maison d'affinage, client professionnel établi en France : fromages fabriqués à la ferme et affinés par le destinataire, avec remise de fin de saison",
+    "lignes": [
+      {
+        "designation": "Tomme fermière au lait cru de chèvre, fabriquée à la ferme, affinage confié à l'acheteur — fabrication F-26-09",
+        "quantite": 42,
+        "unite": "pièce",
+        "prix_unitaire_ht": 10.5,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Crottins fermiers au lait cru, sortie de hâloir — fabrication F-26-11",
+        "quantite": 180,
+        "unite": "pièce",
+        "prix_unitaire_ht": 1.95,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Bûches cendrées fermières au lait cru, 180 g — fabrication F-26-12",
+        "quantite": 60,
+        "unite": "pièce",
+        "prix_unitaire_ht": 3.4,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Remise de fin de saison, acquise à la date de la vente — 3 % sur le total hors taxes de 996,00 €",
+        "quantite": 1,
+        "unite": "remise forfaitaire",
+        "prix_unitaire_ht": -29.88,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "Exemple illustratif. Les références de fabrication, les quantités et les prix sont fictifs. Le taux de TVA est celui des sources citées.",
+      "Numéro chronologique de la facture, date d'émission, identification du GAEC et de la maison d'affinage, numéro SIREN du producteur.",
+      "Numéro individuel d'identification à la TVA du vendeur, exigé dès lors que le total hors taxes dépasse 150 €.",
+      "Pour chaque produit : quantité, dénomination précise, prix unitaire hors taxes et taux de TVA applicable.",
+      "Toute réduction de prix acquise à la date de la vente, portée sur une ligne distincte ; la base hors taxes à retenir est le montant net après remise, soit 966,12 €, et c'est sur ce net que la TVA à 5,5 % est calculée puis reprise au récapitulatif par taux.",
+      "Date à laquelle le règlement doit intervenir, et taux des pénalités applicables en cas de retard.",
+      "Montant de l'indemnité forfaitaire pour frais de recouvrement, fixée à 40 €, due de plein droit en cas de retard de paiement.",
+      "À l'échéance applicable à votre entreprise, ajoutez le numéro SIREN du client professionnel, l'adresse de livraison lorsqu'elle diffère de celle du client — le cas est fréquent quand les caves d'affinage ne sont pas à l'adresse du siège —, la nature des opérations facturées et, le cas échéant, la mention « Option pour le paiement de la taxe d'après les débits ».",
+      "Point de vigilance : la dénomination portée sur la ligne de facture gagne à reprendre celle de l'étiquette. Si l'affinage est réalisé par l'acheteur, c'est sur l'étiquetage du produit fini que doit apparaître la mention « fabriqué à la ferme puis affiné par l'établissement », suivie du nom de l'affineur."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Remonter les ventes de ferme et de marché par la transmission des données de transaction, sans aucune donnée nominative de client, et sur un seul taux.",
+    "Émettre par plateforme agréée les factures des crémiers, des restaurateurs et des maisons d'affinage établis en France, à l'échéance applicable à votre entreprise.",
+    "Faire correspondre le libellé de chaque ligne de facture à la dénomination portée sur l'étiquette, mention du lait cru et de l'affinage comprises.",
+    "Porter les réductions de prix acquises à la date de la vente sur une ligne distincte et calculer la TVA sur le net après remise.",
+    "Suivre la qualification sanitaire de l'atelier — remise directe, agrément ou dérogation — en fonction des établissements livrés, et tenir à jour la liste des destinataires réguliers."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée DGFiP de facturation et de gestion destinée aux indépendants et aux micro-entrepreneurs, cohérente avec une fromagerie fermière tenue par une ou deux personnes. Elle couvre l'émission des pièces de vente sans module comptable séparé."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée DGFiP associant compte professionnel en ligne et facturation, utile quand les recettes de marché et les virements des crémiers alimentent le même compte. Elle vise les indépendants, les freelances et les TPE."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable, ce qui aide lorsque l'atelier de transformation et le troupeau sont suivis dans les mêmes comptes. Elle s'adresse aux TPE, aux PME et aux cabinets d'expertise comptable."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Puis-je garder la dénomination « fromage fermier » si l'affinage est confié à un affineur ?",
+      "reponse": "Oui, sous conditions. La dénomination est réservée au fromage fabriqué selon des techniques traditionnelles par un producteur agricole ne traitant que le lait de sa propre exploitation, sur l'exploitation. L'affinage peut être réalisé hors de l'exploitation lorsqu'un système d'identification du produit est en place. La mention « fabriqué à la ferme puis affiné par l'établissement », suivie du nom de l'affineur, doit alors figurer immédiatement après la dénomination."
+    },
+    {
+      "question": "Dois-je indiquer que mes fromages sont au lait cru ?",
+      "reponse": "Pour les fromages autres que les pâtes pressées cuites, les fromages de lactosérum, les fromages fondus et les spécialités fromagères fondues, l'étiquetage doit porter de façon visible et lisible l'indication des traitements thermiques subis par le lait, avec la mention « lait cru » quand le lait n'a pas été chauffé. Pour les pâtes pressées cuites, la mention « au lait cru » est facultative et suppose une fabrication exclusivement à partir de lait cru. L'indication figure dans le même champ visuel que la dénomination de vente ou dans la liste des ingrédients."
+    },
+    {
+      "question": "Le taux de TVA change-t-il entre le marché, la vente à la ferme et la livraison d'une crémerie ?",
+      "reponse": "Non. Les fromages relèvent du taux réduit de 5,5 % des produits destinés à l'alimentation humaine, quel que soit le circuit de vente. Si vous n'êtes pas redevable, aucune TVA ne figure sur vos documents : le remboursement forfaitaire agricole est une compensation versée par l'administration, pas une exonération à mentionner comme telle."
+    },
+    {
+      "question": "Je consens une remise de fin de saison à ma maison d'affinage. Comment la faire figurer sur la facture ?",
+      "reponse": "Toute réduction de prix acquise à la date de la vente et directement liée à l'opération figure sur la facture. Portez-la sur une ligne distincte, en valeur, plutôt que de minorer les prix unitaires : vos tarifs restent lisibles d'une livraison à l'autre et l'affineur rapproche sa commande de votre facture sans recalcul. La base hors taxes à retenir est le montant net après remise, et c'est sur ce net que la TVA à 5,5 % est calculée, puis reprise au récapitulatif par taux."
+    },
+    {
+      "question": "Faut-il un agrément sanitaire pour livrer une crémerie, alors que je n'en ai pas besoin pour ma vente à la ferme ?",
+      "reponse": "La remise directe au consommateur final n'est pas soumise à l'obligation d'agrément. Dès que vous fournissez d'autres commerces de détail, vous devez disposer soit de l'agrément sanitaire, soit d'une dérogation à l'agrément, déclarée à la direction départementale chargée de la protection des populations dont dépend votre atelier, dans les limites de quantité et de distance fixées par la réglementation. La déclaration liste la nature et les quantités livrées ainsi que les établissements destinataires réguliers."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Les fromages, produits destinés à l'alimentation humaine, relèvent du taux réduit de 5,5 %.",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
+    },
+    {
+      "titre": "Dénomination « fromage fermier » réservée au fromage fabriqué selon des techniques traditionnelles par un producteur agricole ne traitant que le lait de sa propre exploitation, sur l'exploitation ; affinage possible hors exploitation sous système d'identification du produit ; indication des traitements thermiques du lait et mention « lait cru ».",
+      "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006056036"
+    },
+    {
+      "titre": "Mention « fabriqué à la ferme puis affiné par l'établissement », suivie du nom de l'affineur, immédiatement après la dénomination « fromage fermier » lorsque l'affinage est réalisé hors de l'exploitation.",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000028194079"
+    },
+    {
+      "titre": "Étiquetage : indication visible et lisible des traitements thermiques subis par le lait ou la crème ; mention « au lait cru » facultative pour les pâtes pressées cuites.",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028202726"
+    },
+    {
+      "titre": "La remise directe au consommateur final n'est pas soumise à l'obligation d'agrément sanitaire ; flexibilité sanitaire applicable aux circuits courts.",
+      "url": "https://agriculture.gouv.fr/circuits-courts-exigences-sanitaires-et-flexibilite-pour-les-petites-entreprises"
+    },
+    {
+      "titre": "Dérogation à l'agrément sanitaire : déclaration à la direction départementale chargée de la protection des populations, indiquant la nature et la quantité des produits livrés et la liste des établissements destinataires réguliers.",
+      "url": "https://www.mesdemarches.agriculture.gouv.fr/demarches/entreprise-agroalimentaire-et/demarrer-une-activite/article/deroger-a-l-agrement-sanitaire-257"
+    },
+    {
+      "titre": "Les produits issus d'un établissement agréé portent une marque d'identification de forme ovale comportant le numéro d'agrément.",
+      "url": "https://agriculture.gouv.fr/agrement-sanitaire-des-etablissements-au-titre-du-reglement-ce-ndeg8532004"
+    },
+    {
+      "titre": "Information sur les prix obligatoire quelle que soit la forme de vente, y compris en plein air ; prix exprimés en euros toutes taxes comprises ; information sur le prix à l'unité de mesure.",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/linformation-sur-les-prix"
+    },
+    {
+      "titre": "Obligations des vendeurs sur les marchés de plein air, dont l'affichage des prix et l'étiquetage.",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/ventes-et-marches-de-plein-air-quelles-sont-les-obligations-des"
+    },
+    {
+      "titre": "L'exercice d'une activité commerciale ou artisanale ambulante hors de la commune du domicile ou du principal établissement suppose une déclaration préalable donnant lieu à la délivrance d'une carte.",
+      "url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000019289825"
+    },
+    {
+      "titre": "Sont réputées agricoles les activités exercées par un exploitant agricole qui sont dans le prolongement de l'acte de production, dont la commercialisation des produits de son exploitation (code rural et de la pêche maritime, art. L311-1).",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006582131"
+    },
+    {
+      "titre": "Mentions obligatoires de la facture, dont le numéro de TVA du vendeur sauf facture d'un total hors taxes inférieur ou égal à 150 €, et mentions supplémentaires applicables à l'échéance de la réforme.",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Mentions obligatoires entre professionnels, dont les réductions de prix acquises à la date de la vente.",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "Pénalités de retard et indemnité forfaitaire pour frais de recouvrement de 40 €, dont la mention et le montant doivent figurer sur les factures entre professionnels.",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "Les opérations avec des particuliers relèvent de la transmission des données de transaction ; celles avec des clients professionnels établis en France relèvent de la facture électronique.",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "Les entreprises qui n'émettent pas de facture ou qui facturent sans TVA restent dans le champ de la réforme.",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/je-nemets-pas-de-facture-ou-je-facture-sans-tva-suis-je-concerne-par-la"
+    },
+    {
+      "titre": "Aucune donnée nominative n'est transmise lors de la transmission des données de transaction : le chiffre d'affaires de la journée remonte, ventilé par taux de TVA le cas échéant.",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "L'exploitant non redevable de la TVA ne facture aucune taxe et peut relever du remboursement forfaitaire agricole.",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/comment-obtenir-un-remboursement-forfaitaire-agricole"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}
