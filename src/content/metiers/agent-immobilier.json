@@ -64,15 +64,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation dans un même outil : utile à une agence qui encaisse des honoraires et suit plusieurs mandats en parallèle. Plateforme agréée DGFiP, destinée aux PME et aux indépendants."
+      "justification": "Compte professionnel et facturation dans un même outil : utile à une agence qui encaisse des honoraires et suit plusieurs mandats en parallèle."
     },
     {
       "slug": "pennylane",
-      "justification": "Gestion financière et comptabilité pensées pour travailler avec votre expert-comptable, ce qui correspond au fonctionnement d'une agence en société. Plateforme agréée DGFiP, destinée aux TPE, PME et experts-comptables."
+      "justification": "Gestion financière et comptabilité pensées pour travailler avec votre expert-comptable, ce qui correspond au fonctionnement d'une agence en société."
     },
     {
       "slug": "tiime",
-      "justification": "Facturation et comptabilité adaptées à l'agent commercial mandataire, indépendant ou micro-entrepreneur, qui facture ses rétrocessions à l'agence. Plateforme agréée DGFiP, destinée aux indépendants et TPE."
+      "justification": "Facturation et comptabilité adaptées à l'agent commercial mandataire, indépendant ou micro-entrepreneur, qui facture ses rétrocessions à l'agence."
     }
   ],
   "faq": [

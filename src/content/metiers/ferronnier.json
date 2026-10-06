@@ -58,15 +58,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation réunis dans un même espace, pour les indépendants comme pour les PME : le rapprochement entre acomptes encaissés et factures émises se fait au même endroit. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+      "justification": "Compte professionnel et facturation réunis dans un même espace, pour les indépendants comme pour les PME : le rapprochement entre acomptes encaissés et factures émises se fait au même endroit."
     },
     {
       "slug": "pennylane",
-      "justification": "Gestion financière et comptabilité pensées pour travailler avec son expert-comptable. Adapté à une ferronnerie en société qui délègue sa comptabilité tout en suivant ses chantiers. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+      "justification": "Gestion financière et comptabilité pensées pour travailler avec son expert-comptable. Adapté à une ferronnerie en société qui délègue sa comptabilité tout en suivant ses chantiers."
     },
     {
       "slug": "tiime",
-      "justification": "Facturation et comptabilité associées, pour les indépendants, les TPE et les micro-entrepreneurs. Convient au ferronnier installé seul qui veut tenir ses dossiers de chantier sans outil séparé. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+      "justification": "Facturation et comptabilité associées, pour les indépendants, les TPE et les micro-entrepreneurs. Convient au ferronnier installé seul qui veut tenir ses dossiers de chantier sans outil séparé."
     }
   ],
   "faq": [

@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Facturation et gestion conçues pour les indépendants et micro-entrepreneurs, profil dominant du toilettage : émission des notes au fil de la journée et suivi de gestion d'un salon individuel. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+      "justification": "Facturation et gestion conçues pour les indépendants et micro-entrepreneurs, profil dominant du toilettage : émission des notes au fil de la journée et suivi de gestion d'un salon individuel."
     },
     {
       "slug": "shine",
-      "justification": "Compte professionnel en ligne et facturation combinés, pour indépendants, freelances et TPE. Utile quand les encaissements quotidiens au comptant et la facturation doivent se suivre au même endroit. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+      "justification": "Compte professionnel en ligne et facturation combinés, pour indépendants, freelances et TPE. Utile quand les encaissements quotidiens au comptant et la facturation doivent se suivre au même endroit."
     },
     {
       "slug": "tiime",
-      "justification": "Facturation et comptabilité réunies, pour les indépendants, micro-entrepreneurs et TPE. Adapté à un salon qui facture chaque jour et veut garder une comptabilité à jour sans double saisie. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+      "justification": "Facturation et comptabilité réunies, pour les indépendants, micro-entrepreneurs et TPE. Adapté à un salon qui facture chaque jour et veut garder une comptabilité à jour sans double saisie."
     }
   ],
   "faq": [

@@ -77,15 +77,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par la DGFiP qui réunit facturation et comptabilité pour les indépendants, les TPE et les micro-entrepreneurs, profil courant des crêperies de quartier ou ambulantes. Ce périmètre unique évite de séparer l'émission des factures de groupe du suivi comptable de la saison."
+      "justification": "Son périmètre unique évite de séparer l'émission des factures de groupe du suivi comptable de la saison."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée par la DGFiP orientée gestion financière et comptabilité, pensée pour travailler avec son expert-comptable, interlocuteur habituel sur la répartition des recettes par taux. Utile quand la crêperie fait valider par un cabinet le partage entre service en salle, cidre et ventes d'épicerie."
+      "justification": "Utile quand la crêperie fait valider par un cabinet le partage entre service en salle, cidre et ventes d'épicerie."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée par la DGFiP associant un compte professionnel en ligne et la facturation, destinée aux indépendants, freelances et TPE. Encaissements et factures restent au même endroit, y compris pendant les mois de faible activité."
+      "justification": "Encaissements et factures restent au même endroit, y compris pendant les mois de faible activité."
     }
   ],
   "faq": [

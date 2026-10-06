@@ -65,15 +65,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Plateforme agréée DGFiP réunissant comptabilité, compte professionnel et facturation pour les indépendants. Adaptée à un éleveur en entreprise individuelle qui veut tenir sa comptabilité et facturer ses ventes directes dans un même outil."
+      "justification": "Adaptée à un éleveur en entreprise individuelle qui veut tenir sa comptabilité et facturer ses ventes directes dans un même outil."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée associant facturation et comptabilité pour les indépendants et les TPE. Utile pour rattacher chaque pièce au numéro national d'identification de l'animal et retrouver, lors d'un contrôle, le lien entre une ligne de facture et une notification de mouvement."
+      "justification": "Utile pour rattacher chaque pièce au numéro national d'identification de l'animal et retrouver, lors d'un contrôle, le lien entre une ligne de facture et une notification de mouvement."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée de gestion financière et de comptabilité, conçue pour travailler avec son expert-comptable. Pertinente pour un élevage dont le cabinet suit les variations d'inventaire du troupeau et la ventilation entre apports en coopérative et ventes directes de colis."
+      "justification": "Pertinente pour un élevage dont le cabinet suit les variations d'inventaire du troupeau et la ventilation entre apports en coopérative et ventes directes de colis."
     }
   ],
   "faq": [

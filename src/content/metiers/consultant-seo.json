@@ -54,15 +54,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Elle réunit comptabilité, compte professionnel et facturation pour les indépendants : un périmètre adapté à un consultant seul qui alterne audits ponctuels et abonnements de suivi."
+      "justification": "Indy réunit comptabilité, compte professionnel et facturation pour les indépendants : un périmètre adapté à un consultant seul qui alterne audits ponctuels et abonnements de suivi."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation sur une plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. L'offre vise les PME et les indépendants : pertinente pour relier le suivi bancaire aux encaissements d'abonnements et d'acomptes."
+      "justification": "L'offre vise les PME et les indépendants : pertinente pour relier le suivi bancaire aux encaissements d'abonnements et d'acomptes."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Elle associe facturation et comptabilité, orientée indépendants, freelances et TPE, et permet de tenir à jour la facturation récurrente et son suivi comptable."
+      "justification": "Tiime associe facturation et comptabilité, orientée indépendants, freelances et TPE, et permet de tenir à jour la facturation récurrente et son suivi comptable."
     }
   ],
   "faq": [

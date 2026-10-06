@@ -66,15 +66,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Plateforme agréée DGFiP qui regroupe comptabilité, compte pro et facturation pour les indépendants. Un seul outil pour suivre vos encaissements d'acomptes et votre comptabilité. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+      "justification": "Un seul outil pour suivre vos encaissements d'acomptes et votre comptabilité."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme agréée DGFiP de facturation et de gestion, ciblée indépendants et micro-entrepreneurs. Adaptée si vous démarrez en franchise en base avec un volume de factures réduit. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+      "justification": "Adaptée si vous démarrez en franchise en base avec un volume de factures réduit."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP associant compte professionnel et facturation, pour PME et indépendants. Les acomptes de mariage et les règlements d'entreprises transitent alors par un compte dédié relié à vos factures. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+      "justification": "Les acomptes de mariage et les règlements d'entreprises transitent alors par un compte dédié relié à vos factures."
     }
   ],
   "faq": [

@@ -67,15 +67,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec votre expert-comptable. Un choix cohérent pour un garage avec salariés et un volume de factures quotidien. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+      "justification": "Un choix cohérent pour un garage avec salariés et un volume de factures quotidien."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP associant compte professionnel et facturation, ciblée PME et indépendants. Le compte professionnel centralise les règlements décalés des assureurs et des clients en compte. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+      "justification": "Le compte professionnel centralise les règlements décalés des assureurs et des clients en compte."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP réunissant facturation et comptabilité pour les indépendants et TPE. Pertinente pour un petit atelier sans salarié qui veut limiter le nombre d'outils. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+      "justification": "Pertinente pour un petit atelier sans salarié qui veut limiter le nombre d'outils."
     }
   ],
   "faq": [

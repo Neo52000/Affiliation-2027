@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Comptabilité, compte professionnel et facturation réunis pour les indépendants : l'horloger installé seul y tient devis, factures et comptes dans un outil unique. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+      "justification": "Comptabilité, compte professionnel et facturation réunis pour les indépendants : l'horloger installé seul y tient devis, factures et comptes dans un outil unique."
     },
     {
       "slug": "abby",
-      "justification": "Facturation et gestion destinées aux indépendants et micro-entrepreneurs. Adapté à un atelier en franchise en base qui enchaîne devis et notes au fil des réparations. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+      "justification": "Facturation et gestion destinées aux indépendants et micro-entrepreneurs. Adapté à un atelier en franchise en base qui enchaîne devis et notes au fil des réparations."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation réunis dans un même espace, pour PME et indépendants. Pertinent si l'atelier encaisse aussi des bijouteries ou des SAV de marques et veut centraliser flux bancaires et factures. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+      "justification": "Compte professionnel et facturation réunis dans un même espace, pour PME et indépendants. Pertinent si l'atelier encaisse aussi des bijouteries ou des SAV de marques et veut centraliser flux bancaires et factures."
     }
   ],
   "faq": [

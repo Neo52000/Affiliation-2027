@@ -64,15 +64,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Outil de gestion financière et de comptabilité, pensé pour le travail avec et par les experts-comptables, et figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Il couvre les dossiers TPE et PME qui composent la clientèle type d'un cabinet."
+      "justification": "Pennylane couvre les dossiers TPE et PME qui composent la clientèle type d'un cabinet."
     },
     {
       "slug": "tiime",
-      "justification": "Outil associant facturation et comptabilité, ciblé sur les indépendants et TPE. Un format adapté à un cabinet individuel qui démarre et facture des honoraires récurrents. Vérifiez sur la liste publiée par la DGFiP si l'éditeur est immatriculé comme plateforme de dématérialisation partenaire, ou par quelle plateforme il transmet vos factures."
+      "justification": "Outil associant facturation et comptabilité, ciblé sur les indépendants et TPE. Un format adapté à un cabinet individuel qui démarre et facture des honoraires récurrents."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation réunis, pour PME et indépendants, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Le rapprochement entre factures émises et encaissements aide à suivre des honoraires mensualisés."
+      "justification": "Le rapprochement entre factures émises et encaissements aide à suivre des honoraires mensualisés."
     }
   ],
   "faq": [

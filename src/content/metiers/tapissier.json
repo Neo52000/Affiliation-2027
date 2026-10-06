@@ -73,15 +73,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), dédiée à la facturation et à la gestion, orientée indépendants et micro-entrepreneurs. Adaptée à un atelier en nom propre qui enchaîne devis, factures d'acompte et factures de solde."
+      "justification": "Adaptée à un atelier en nom propre qui enchaîne devis, factures d'acompte et factures de solde."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), réunissant comptabilité, compte professionnel et facturation pour les indépendants. Permet de suivre sur un même service les encaissements d'acomptes et de soldes."
+      "justification": "Permet de suivre sur un même service les encaissements d'acomptes et de soldes."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), qui associe facturation et comptabilité, pour les indépendants, TPE et micro-entrepreneurs. Un choix possible pour un tapissier en micro-entreprise qui facture façon et fournitures."
+      "justification": "Un choix possible pour un tapissier en micro-entreprise qui facture façon et fournitures."
     }
   ],
   "faq": [

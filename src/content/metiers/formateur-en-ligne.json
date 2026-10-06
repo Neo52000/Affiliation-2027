@@ -65,15 +65,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Cet appui compte quand la TVA mêle exonération formation, ventes UE et autoliquidation."
+      "justification": "L'appui d'un expert-comptable compte quand la TVA mêle exonération formation, ventes UE et autoliquidation."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), orientée indépendants et micro-entrepreneurs, réunissant facturation et gestion. Un cadre adapté au créateur qui démarre en franchise en base avec des ventes unitaires."
+      "justification": "Un cadre adapté au créateur qui démarre en franchise en base avec des ventes unitaires."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), pour indépendants, qui combine comptabilité, compte pro et facturation. Utile pour centraliser les encaissements issus des plateformes et vos factures B2B."
+      "justification": "Utile pour centraliser les encaissements issus des plateformes et vos factures B2B."
     }
   ],
   "faq": [

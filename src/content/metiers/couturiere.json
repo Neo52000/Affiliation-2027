@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Plateforme agréée par la DGFiP qui regroupe comptabilité, compte professionnel et facturation pour les indépendants. Un seul outil pour un atelier géré en solo."
+      "justification": "Un seul outil pour un atelier géré en solo."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, qui réunit facturation et comptabilité pour les indépendants, freelances, TPE et micro-entrepreneurs. Adaptée à l'édition en série de petites notes avec mention de franchise en base pré-remplie."
+      "justification": "Adaptée à l'édition en série de petites notes avec mention de franchise en base pré-remplie."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, qui associe compte professionnel en ligne et facturation. Les encaissements du jour et les notes émises se suivent au même endroit, ce qui facilite la remontée des totaux quotidiens au titre du e-reporting."
+      "justification": "Les encaissements du jour et les notes émises se suivent au même endroit, ce qui facilite la remontée des totaux quotidiens au titre du e-reporting."
     }
   ],
   "faq": [

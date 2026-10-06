@@ -71,15 +71,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), conçue pour les indépendants et micro-entrepreneurs, qui réunit facturation et gestion. Ce périmètre correspond à un volume soutenu de petites factures et de notes."
+      "justification": "Son périmètre correspond à un volume soutenu de petites factures et de notes."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), combinant compte pro en ligne et facturation, pour indépendants, freelances et TPE. Encaisser et facturer les interventions depuis un même service évite de multiplier les outils."
+      "justification": "Encaisser et facturer les interventions depuis un même service évite de multiplier les outils."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), associant compte professionnel et facturation, avec une cible qui couvre les PME. Pertinent si vos contrats de maintenance B2B se développent."
+      "justification": "Pertinent si vos contrats de maintenance B2B se développent."
     }
   ],
   "faq": [

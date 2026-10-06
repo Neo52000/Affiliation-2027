@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), dédiée à la facturation et à la gestion, qui cible les indépendants et les micro-entrepreneurs — un statut courant chez les intervenants à domicile, que l'on retrouve dans les statuts fréquents listés plus haut."
+      "justification": "Outil dédié à la facturation et à la gestion, qui cible les indépendants et les micro-entrepreneurs — un statut courant chez les intervenants à domicile, que l'on retrouve dans les statuts fréquents listés plus haut."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), réunissant comptabilité, compte pro et facturation pour les indépendants. Un seul environnement pour facturer les clients particuliers et tenir sa comptabilité d'intervenant à domicile."
+      "justification": "Un seul environnement pour facturer les clients particuliers et tenir sa comptabilité d'intervenant à domicile."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), associant facturation et comptabilité, pour les indépendants, freelances, TPE et micro-entrepreneurs. Adaptée à un volume mensuel de petites factures récurrentes adressées à des particuliers."
+      "justification": "Adaptée à un volume mensuel de petites factures récurrentes adressées à des particuliers."
     }
   ],
   "faq": [

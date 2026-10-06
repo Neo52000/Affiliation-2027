@@ -1,11 +1,34 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import Picto, { type NomPicto } from '../components/Picto.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import affiliation from '../data/affiliation.json';
 
 const actifs = Object.entries(affiliation.liens).filter(([, v]) => v !== null);
+
+// Ce que l'argent ne change pas : l'engagement central du site, énoncé en trois
+// points vérifiables plutôt qu'en déclaration d'intention.
+const GARANTIES: { titre: string; texte: string; picto: NomPicto }[] = [
+  {
+    titre: 'Ni l’ordre, ni les notes',
+    texte:
+      'La méthode de notation est publique. Les commissions n’y figurent pas et n’entrent pas dans le quiz de recommandation.',
+    picto: 'medaille',
+  },
+  {
+    titre: 'Aucun montant affiché',
+    texte:
+      'Les montants de commission ne sont jamais affichés ni pris en compte dans un classement.',
+    picto: 'bouclier',
+  },
+  {
+    titre: 'Aucun contenu acheté',
+    texte: 'Aucun contenu sponsorisé, aucune publicité, aucun faux avis, aucun échange de lien.',
+    picto: 'loupe',
+  },
+];
 ---
 
 <Base
@@ -13,48 +36,104 @@ const actifs = Object.entries(affiliation.liens).filter(([, v]) => v !== null);
   description="Transparence : liens affiliés signalés un par un, commissions sans influence sur les classements, méthode de notation publique, pas de publicité."
 >
   <Breadcrumb items={[{ label: 'Transparence' }]} />
-  <article class="prose-measure mt-4">
-    <h1 class="text-3xl font-bold">Comment ce site gagne de l'argent</h1>
 
-    <p class="mt-4">
-      Ce site est financé par l'affiliation : quand vous ouvrez un compte chez certains éditeurs en
-      passant par nos liens, nous pouvons percevoir une commission. Voici exactement comment cela
-      fonctionne — et ce que cela ne change pas.
-    </p>
+  <div class="layout-article mt-4">
+    <div>
+      <div class="flex items-center gap-4">
+        <span class="picto-carre shrink-0">
+          <Picto nom="bouclier" taille={26} />
+        </span>
+        <h1 class="prose-measure text-3xl font-bold">Comment ce site gagne de l'argent</h1>
+      </div>
 
-    <h2 class="mt-8 text-2xl font-bold">Ce que vous voyez sur le site</h2>
-    <ul class="mt-3 list-disc space-y-2 pl-5">
-      <li>
-        Chaque lien affilié est signalé par la mention « lien affilié » à côté du bouton, et la page
-        qui en contient affiche un bandeau en haut.
-      </li>
-      <li>
-        Les liens affiliés passent par des adresses <code>/go/…</code>, exclues des moteurs de
-        recherche.
-      </li>
-      <li>
-        Quand nous n'avons pas de partenariat avec un éditeur, le bouton pointe directement vers son
-        site officiel, sans mention — c'est le cas aujourd'hui pour
-        {actifs.length === 0 ? ' tous les outils du site' : ' une partie des outils'}.
-      </li>
-    </ul>
+      <p class="encadre-essentiel prose-measure mt-6 p-4">
+        Ce site est financé par l'affiliation : quand vous ouvrez un compte chez certains éditeurs
+        en passant par nos liens, nous pouvons percevoir une commission. Voici exactement comment
+        cela fonctionne — et ce que cela ne change pas.
+      </p>
 
-    <h2 class="mt-8 text-2xl font-bold">Ce que l'argent ne change pas</h2>
-    <ul class="mt-3 list-disc space-y-2 pl-5">
-      <li>
-        <strong>Ni l'ordre, ni les notes.</strong> La <a href="/methode">méthode de notation</a>
-        est publique ; les commissions n'y figurent pas et n'entrent pas dans le quiz de
-        recommandation.
-      </li>
-      <li>Les montants de commission ne sont jamais affichés ni pris en compte.</li>
-      <li>Aucun contenu sponsorisé, aucune publicité, aucun faux avis.</li>
-    </ul>
+      <section aria-labelledby="ce-que-vous-voyez" class="prose-measure mt-10">
+        <h2 id="ce-que-vous-voyez" class="titre-section text-2xl font-bold">
+          Ce que vous voyez sur le site
+        </h2>
+        <ul class="liste-aeree mt-4 list-disc pl-5">
+          <li>
+            Chaque lien affilié est signalé par la mention « lien affilié » à côté du bouton, et la
+            page qui en contient affiche un bandeau en haut.
+          </li>
+          <li>
+            Les liens affiliés passent par des adresses <code>/go/…</code>, exclues des moteurs de
+            recherche.
+          </li>
+          <li>
+            Quand nous n'avons pas de partenariat avec un éditeur, le bouton pointe directement vers
+            son site officiel, sans mention — c'est le cas aujourd'hui pour
+            {actifs.length === 0 ? ' tous les outils du site' : ' une partie des outils'}.
+          </li>
+        </ul>
+      </section>
 
-    <h2 class="mt-8 text-2xl font-bold">Vos données</h2>
-    <p class="mt-3">
-      Pas de cookie soumis à consentement, pas de traceur publicitaire. Le seul formulaire du site
-      (rappel d'échéance par email) est en double opt-in — détails dans la
-      <a href="/confidentialite">politique de confidentialité</a>.
-    </p>
-  </article>
+      <section aria-labelledby="ce-que-ca-ne-change-pas" class="mt-10">
+        <h2 id="ce-que-ca-ne-change-pas" class="titre-section text-2xl font-bold">
+          Ce que l'argent ne change pas
+        </h2>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-3">
+          {GARANTIES.map((g) => (
+            <li class="card-reco rounded-md border border-border p-4">
+              <span class="picto-carre">
+                <Picto nom={g.picto} />
+              </span>
+              <p class="mt-3 font-bold">{g.titre}</p>
+              <p class="mt-1 text-sm text-ink-soft">{g.texte}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="prose-measure mt-4 text-sm">
+          La <a href="/methode">méthode de notation</a> détaille la pondération de chaque critère,
+          et aucune ligne n'y porte sur une commission.
+        </p>
+      </section>
+
+      <section aria-labelledby="vos-donnees" class="prose-measure mt-10">
+        <h2 id="vos-donnees" class="titre-section text-2xl font-bold">
+          Vos données
+        </h2>
+        <p class="mt-3">
+          Pas de cookie soumis à consentement, pas de traceur publicitaire. Le seul formulaire du
+          site (rappel d'échéance par email) est en double opt-in — détails dans la
+          <a href="/confidentialite">politique de confidentialité</a>.
+        </p>
+      </section>
+    </div>
+
+    <aside class="colonne-appui" aria-label="Pour aller plus loin">
+      <div class="carte-appui card-top">
+        <p class="carte-appui-titre">Vérifier par vous-même</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          La méthode est publique, critère par critère, avec le poids de chacun.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/methode">Lire la méthode de notation</a>
+        </p>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Qui écrit ce site</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Qui nous sommes, ce que nous testons, et ce que nous ne publions pas.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/a-propos">À propos</a>
+        </p>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Vos données</p>
+        <p class="mt-2 text-sm text-ink-soft">Aucun cookie soumis à consentement sur ce site.</p>
+        <p class="mt-3 text-sm">
+          <a href="/confidentialite">Politique de confidentialité</a>
+        </p>
+      </div>
+    </aside>
+  </div>
 </Base>

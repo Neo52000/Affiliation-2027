@@ -73,15 +73,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée par la DGFiP réunissant un compte professionnel et la facturation, pour les PME et les indépendants, ce qui correspond à un bar-brasserie constitué en société. Les encaissements et les factures des soirées d'entreprise restent dans le même environnement."
+      "justification": "Les encaissements et les factures des soirées d'entreprise restent dans le même environnement."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée par la DGFiP, orientée gestion financière et comptabilité. L'intérêt pour un bar-brasserie tient au flux entrant : les factures du brasseur, du caviste et du grossiste arrivent chaque semaine et se rapprochent au même endroit que les quelques factures émises pour les soirées d'entreprise, sans circuit parallèle pour les achats de boissons."
+      "justification": "L'intérêt pour un bar-brasserie tient au flux entrant : les factures du brasseur, du caviste et du grossiste arrivent chaque semaine et se rapprochent au même endroit que les quelques factures émises pour les soirées d'entreprise, sans circuit parallèle pour les achats de boissons."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par la DGFiP associant facturation et comptabilité, orientée TPE et indépendants. Elle convient à un établissement exploité en nom propre ou en petite société, qui émet peu de factures professionnelles mais doit en conserver la ventilation entre 20 % et 10 % au même endroit que sa comptabilité, sans ajouter un outil distinct à la caisse déjà en place."
+      "justification": "Tiime convient à un établissement exploité en nom propre ou en petite société, qui émet peu de factures professionnelles mais doit en conserver la ventilation entre 20 % et 10 % au même endroit que sa comptabilité, sans ajouter un outil distinct à la caisse déjà en place."
     }
   ],
   "faq": [

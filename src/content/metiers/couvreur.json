@@ -58,15 +58,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Plateforme agréée par la DGFiP regroupant comptabilité, compte professionnel et facturation à destination des indépendants. Le couvreur seul y suit factures et encaissements dans un seul outil, utile quand l'activité est saisonnière."
+      "justification": "Le couvreur seul y suit factures et encaissements dans un seul outil, utile quand l'activité est saisonnière."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée par la DGFiP qui propose un compte professionnel en ligne et la facturation, pour indépendants, freelances et TPE. Le compte dédié isole les acomptes et soldes de chantier du reste de la trésorerie."
+      "justification": "Le compte dédié isole les acomptes et soldes de chantier du reste de la trésorerie."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme agréée par la DGFiP centrée sur la facturation et la gestion, pensée pour les indépendants et micro-entrepreneurs. Correspond au couvreur en entreprise individuelle qui facture surtout des particuliers."
+      "justification": "Correspond au couvreur en entreprise individuelle qui facture surtout des particuliers."
     }
   ],
   "faq": [

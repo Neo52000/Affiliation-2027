@@ -73,15 +73,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP orientée indépendants, TPE et micro-entrepreneurs, des statuts fréquents chez les carreleurs à leur compte. La facturation couplée à la comptabilité aide quand les taux de TVA varient d'un chantier à l'autre."
+      "justification": "La facturation couplée à la comptabilité aide quand les taux de TVA varient d'un chantier à l'autre."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP pensée pour travailler avec votre expert-comptable, un appui utile quand sous-traitance en autoliquidation et taux multiples se croisent dans les déclarations. Gestion financière et comptabilité sont réunies au même endroit."
+      "justification": "Gestion financière et comptabilité sont réunies au même endroit."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP associant compte professionnel et facturation, adaptée aux carreleurs structurés en société. Le suivi des encaissements depuis le compte facilite le pointage des acomptes et des situations d'un chantier."
+      "justification": "Le suivi des encaissements depuis le compte facilite le pointage des acomptes et des situations d'un chantier."
     }
   ],
   "faq": [

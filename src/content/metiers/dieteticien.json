@@ -53,15 +53,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Abby est une plateforme agréée orientée facturation et gestion pour les indépendants et micro-entrepreneurs. Ce positionnement correspond au profil dominant des diététiciens libéraux, souvent en micro-entreprise."
+      "justification": "Son positionnement correspond au profil dominant des diététiciens libéraux, souvent en micro-entreprise."
     },
     {
       "slug": "indy",
-      "justification": "Indy réunit comptabilité, compte professionnel et facturation pour les indépendants, sur une plateforme agréée. Un diététicien qui gère seul ses obligations les regroupe ainsi au même endroit."
+      "justification": "Un diététicien qui gère seul ses obligations les regroupe ainsi au même endroit."
     },
     {
       "slug": "tiime",
-      "justification": "Tiime, plateforme agréée, associe facturation et comptabilité pour les indépendants et TPE. Pour un diététicien qui facture à la fois des consultations exonérées (article 261, 4, 1° du CGI) et des ateliers ou conférences taxables, le suivi séparé de ces deux flux dans un même outil limite les erreurs de mention sur les notes d'honoraires."
+      "justification": "Pour un diététicien qui facture à la fois des consultations exonérées (article 261, 4, 1° du CGI) et des ateliers ou conférences taxables, le suivi séparé de ces deux flux dans un même outil limite les erreurs de mention sur les notes d'honoraires."
     }
   ],
   "faq": [

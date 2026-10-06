@@ -1,7 +1,18 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import Picto from '../components/Picto.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
+import { FAMILLE_LABELS, type Famille } from '../lib/familles';
+import hubs from '../data/hubs.json';
+
+// Une page d'erreur qui ne propose que « retour à l'accueil » est un cul-de-sac.
+// Les familles réellement publiées sont listées : le lecteur repart de là.
+const metiers = await getCollection('metiers');
+const familles = (Object.keys(FAMILLE_LABELS) as Famille[])
+  .filter((f) => f in hubs && metiers.some((m) => m.data.famille === f))
+  .map((f) => ({ famille: f, label: FAMILLE_LABELS[f] }));
 ---
 
 <Base
@@ -10,10 +21,68 @@ import { pageTitle } from '../lib/seo';
   noindex
 >
   <div class="prose-measure">
-    <h1 class="text-3xl font-bold">Page introuvable</h1>
-    <p class="mt-4">
-      Cette page n'existe pas ou a été déplacée.
-      <a href="/">Retourner à l'accueil</a>
+    <p class="text-sm font-bold tracking-wide text-ink-soft">ERREUR 404</p>
+    <h1 class="display-title mt-2">Cette page n'existe pas</h1>
+    <p class="mt-4 text-lg">
+      Elle a peut-être été déplacée, ou l'adresse comporte une erreur. Voici par où repartir.
     </p>
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <a href="/outils/quiz" class="btn-cta">
+        Trouver mon logiciel
+      </a>
+      <a href="/" class="btn-ghost">
+        Retourner à l'accueil
+      </a>
+    </div>
   </div>
+
+  {familles.length > 0 && (
+    <section aria-labelledby="familles-404" class="mt-12">
+      <h2 id="familles-404" class="titre-section text-2xl font-bold">
+        Les métiers documentés
+      </h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {familles.map((f) => (
+          <li>
+            <a href={`/metiers/${f.famille}`} class="puce-famille">
+              <Picto nom={f.famille} taille={18} />
+              {f.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section aria-labelledby="outils-404" class="mt-10">
+    <h2 id="outils-404" class="titre-section text-2xl font-bold">
+      Les outils du site
+    </h2>
+    <ul class="mt-4 grid gap-3 sm:grid-cols-3">
+      <li class="card-reco rounded-md border border-border p-4">
+        <p class="font-bold">
+          <a href="/outils/quiz">Quiz</a>
+        </p>
+        <p class="mt-1 text-sm text-ink-soft">
+          Cinq questions, un outil adapté à votre métier et deux alternatives.
+        </p>
+      </li>
+      <li class="card-reco rounded-md border border-border p-4">
+        <p class="font-bold">
+          <a href="/outils/echeance">Simulateur d'échéance</a>
+        </p>
+        <p class="mt-1 text-sm text-ink-soft">
+          Ce qui s'applique à votre entreprise, et à quelle date.
+        </p>
+      </li>
+      <li class="card-reco rounded-md border border-border p-4">
+        <p class="font-bold">
+          <a href="/outils/verificateur-facture">Vérificateur de facture</a>
+        </p>
+        <p class="mt-1 text-sm text-ink-soft">
+          Les mentions obligatoires manquantes, chacune avec sa source.
+        </p>
+      </li>
+    </ul>
+  </section>
 </Base>

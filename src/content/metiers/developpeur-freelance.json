@@ -60,15 +60,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP qui cible notamment les freelances et micro-entrepreneurs. Son périmètre facturation et comptabilité couvre la facture mensuelle de régie comme le suivi de l'activité en micro ou au réel."
+      "justification": "Son périmètre facturation et comptabilité couvre la facture mensuelle de régie comme le suivi de l'activité en micro ou au réel."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée DGFiP destinée aux indépendants, réunissant comptabilité, compte pro et facturation. Ce périmètre convient à un développeur qui veut gérer dans un même outil ses factures et sa comptabilité, en micro-entreprise comme au réel."
+      "justification": "Son périmètre convient à un développeur qui veut gérer dans un même outil ses factures et sa comptabilité, en micro-entreprise comme au réel."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme dont le module de facturation, Shine Facture, est immatriculé comme plateforme agréée auprès de la DGFiP. Shine combine compte professionnel en ligne et facturation, avec les freelances dans sa cible. Pertinent pour émettre ses factures et suivre leurs encaissements depuis le même espace."
+      "justification": "Shine combine compte professionnel en ligne et facturation, avec les freelances dans sa cible. Pertinent pour émettre ses factures et suivre leurs encaissements depuis le même espace."
     }
   ],
   "faq": [

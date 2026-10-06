@@ -57,15 +57,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle réunit compte professionnel et facturation pour PME et indépendants, un choix cohérent quand les encaissements proviennent de plusieurs canaux de vente."
+      "justification": "Qonto réunit compte professionnel et facturation pour PME et indépendants, un choix cohérent quand les encaissements proviennent de plusieurs canaux de vente."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle regroupe comptabilité, compte pro et facturation à destination des indépendants, et convient à l'e-commerçant qui pilote seul sa boutique et sa comptabilité."
+      "justification": "Indy regroupe comptabilité, compte pro et facturation à destination des indépendants, et convient à l'e-commerçant qui pilote seul sa boutique et sa comptabilité."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle associe compte professionnel en ligne et facturation pour indépendants, freelances et TPE, et convient à une boutique en ligne en phase de structuration."
+      "justification": "Shine associe compte professionnel en ligne et facturation pour indépendants, freelances et TPE, et convient à une boutique en ligne en phase de structuration."
     }
   ],
   "faq": [

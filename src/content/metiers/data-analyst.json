@@ -60,15 +60,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Outil de gestion financière et de comptabilité pensé pour travailler avec son expert-comptable, adapté au data analyst en société qui facture des missions longues et suit sa trésorerie avec son cabinet."
+      "justification": "Outil de gestion financière et de comptabilité pensé pour travailler avec son expert-comptable, adapté au data analyst en société qui facture des missions longues et suit sa trésorerie avec son cabinet."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation sur une plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. L'offre vise les PME et indépendants : le rapprochement entre factures mensuelles au TJM et encaissements se suit au même endroit."
+      "justification": "L'offre vise les PME et indépendants : le rapprochement entre factures mensuelles au TJM et encaissements se suit au même endroit."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Elle réunit comptabilité, compte professionnel et facturation pour les indépendants : elle convient à un analyst en entreprise individuelle qui gère seul un petit nombre de factures mensuelles."
+      "justification": "Indy réunit comptabilité, compte professionnel et facturation pour les indépendants : elle convient à un analyst en entreprise individuelle qui gère seul un petit nombre de factures mensuelles."
     }
   ],
   "faq": [

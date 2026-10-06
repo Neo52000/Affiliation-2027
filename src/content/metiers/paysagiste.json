@@ -83,15 +83,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP orientée facturation et gestion pour indépendants, TPE et micro-entrepreneurs, des profils répandus dans l'entretien de jardins. Son positionnement convient à un flux régulier de petites factures de particuliers."
+      "justification": "Son positionnement convient à un flux régulier de petites factures de particuliers."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée DGFiP réunissant comptabilité, compte professionnel et facturation à destination des indépendants. Utile pour tenir à jour une activité qui mêle contrats récurrents et chantiers ponctuels."
+      "justification": "Utile pour tenir à jour une activité qui mêle contrats récurrents et chantiers ponctuels."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée DGFiP proposant compte professionnel en ligne et facturation pour indépendants, freelances et TPE. Le suivi des encaissements aide à surveiller les échéances des contrats d'entretien."
+      "justification": "Le suivi des encaissements aide à surveiller les échéances des contrats d'entretien."
     }
   ],
   "faq": [

@@ -64,15 +64,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP pensée pour travailler avec son expert-comptable, ce qui correspond au fonctionnement de nombreuses boutiques qui délèguent leur comptabilité. Son périmètre gestion financière et comptabilité s'adresse aux TPE comme un commerce de fleurs."
+      "justification": "Son périmètre gestion financière et comptabilité s'adresse aux TPE comme un commerce de fleurs."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP qui associe facturation et comptabilité pour les indépendants, TPE et micro-entrepreneurs. Elle correspond aux fleuristes en entreprise individuelle ou en micro-entreprise qui veulent émettre leurs factures B2B et tenir leur comptabilité au même endroit."
+      "justification": "Tiime correspond aux fleuristes en entreprise individuelle ou en micro-entreprise qui veulent émettre leurs factures B2B et tenir leur comptabilité au même endroit."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP qui combine compte professionnel et facturation, pour les indépendants et les PME. Un fleuriste peut y regrouper le compte de la boutique et l'émission de ses factures aux clients professionnels."
+      "justification": "Un fleuriste peut y regrouper le compte de la boutique et l'émission de ses factures aux clients professionnels."
     }
   ],
   "faq": [

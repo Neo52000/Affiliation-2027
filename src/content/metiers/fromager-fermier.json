@@ -75,15 +75,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée DGFiP de facturation et de gestion destinée aux indépendants et aux micro-entrepreneurs, cohérente avec une fromagerie fermière tenue par une ou deux personnes. Elle couvre l'émission des pièces de vente sans module comptable séparé."
+      "justification": "Abby couvre l'émission des pièces de vente sans module comptable séparé."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée DGFiP associant compte professionnel en ligne et facturation, utile quand les recettes de marché et les virements des crémiers alimentent le même compte. Elle vise les indépendants, les freelances et les TPE."
+      "justification": "Shine vise les indépendants, les freelances et les TPE."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable, ce qui aide lorsque l'atelier de transformation et le troupeau sont suivis dans les mêmes comptes. Elle s'adresse aux TPE, aux PME et aux cabinets d'expertise comptable."
+      "justification": "Pennylane s'adresse aux TPE, aux PME et aux cabinets d'expertise comptable."
     }
   ],
   "faq": [

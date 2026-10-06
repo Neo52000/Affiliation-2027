@@ -62,15 +62,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Un appui utile quand l'activité mêle soins exonérés et ventes d'orthèses relevant de régimes de TVA différents."
+      "justification": "Un appui utile quand l'activité mêle soins exonérés et ventes d'orthèses relevant de régimes de TVA différents."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation sur une plateforme agréée DGFiP, pour PME et indépendants. Adapté à un cabinet qui encaisse soins et orthèses et règle des fournisseurs de matériaux depuis un même compte pro."
+      "justification": "Adapté à un cabinet qui encaisse soins et orthèses et règle des fournisseurs de matériaux depuis un même compte pro."
     },
     {
       "slug": "abby",
-      "justification": "Facturation et gestion sur une plateforme agréée DGFiP, à destination des indépendants et micro-entrepreneurs. Un format simple pour un cabinet individuel, y compris en micro-BNC."
+      "justification": "Un format simple pour un cabinet individuel, y compris en micro-BNC."
     }
   ],
   "faq": [

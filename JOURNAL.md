@@ -147,3 +147,20 @@ Défaut d'affichage trouvé en vérifiant le nouveau hub : **toutes les pages d�
 Hub de famille retravaillé : une liste de dix liens identiques ne donne au lecteur aucun critère de choix. Chaque métier devient une carte portant son besoin prioritaire, borné à deux lignes à l'affichage sans tronquer la donnée, et son type de clientèle. La phrase « d'autres métiers seront ajoutés » ne s'affiche plus que si la famille est incomplète. Les neuf autres familles sont accessibles depuis chaque hub.
 Gabarit de guide aligné sur le système avant l'arrivée des contenus : sommaire construit depuis les titres réels du guide, colonne d'appui, tableaux markdown qui défilent seuls.
 Garde-fous : 142 pages, 4 950 paires comparées, similarité maximale 20,7 % (seuil 50 %), check-seo 139 pages indexables, 77 tests + 6 parcours e2e verts, Lighthouse 100/100/100/100 et CLS 0 sur accueil, métier, hub et comparatif.
+
+## Cohérence : le statut de plateforme agréée vient de la donnée, plus du texte (2026-10-06)
+
+Défaut relevé en finalisant le transport : les correcteurs de ces lots avaient retiré l'affirmation « plateforme agréée DGFiP » des justifications d'outils, la jugeant non établie, pendant que 88 autres métiers continuaient de l'affirmer. En comptant, le constat était plus large — **les 300 justifications portaient toutes une affirmation réglementaire, en 225 formulations distinctes**, alors que cette donnée est canonique et sourcée dans `src/content/outils/*.json`. C'est une affirmation réglementaire recopiée à la main trois cents fois : elle ne pouvait que dériver.
+Composant `StatutPlateforme` : le statut est rendu une fois par carte depuis la donnée, avec son lien vers le registre DGFiP et la mention explicite que la date d'immatriculation reste à relever (TODO #9). Les 305 phrases réglementaires sont retirées des justifications, qui ne gardent que leur travail propre — pourquoi cet outil pour ce métier.
+Retirer une phrase laisse parfois un pronom orphelin : 48 justifications commençaient alors par « Elle convient à… », dont l'antécédent était « la plateforme » de la phrase supprimée. Elles nomment désormais l'outil, ce qui se lit mieux que le pronom d'origine ; 16 démonstratifs deviennent des possessifs, et 8 phrases qui fusionnaient statut et argument métier ont été réécrites une par une, en reprenant le périmètre réel de l'outil dans `src/content/outils`, sans rien affirmer de plus.
+Contrôle après coup : 0 justification affirmant encore un statut, 0 pronom sans antécédent, 0 anomalie de forme sur 300.
+Effet de bord utile : si le statut d'Indy n'est pas confirmé à la source (TODO #18), un seul champ corrige les 100 pages.
+Garde-fous : 142 pages, similarité maximale 21,2 % (seuil 50 %), check-seo 139 pages indexables, 77 tests + 6 parcours e2e verts.
+
+## Pages de confiance et page d'erreur alignées sur le système (2026-10-06)
+
+Les pages « transparence », « à propos » et 404 portaient encore la mise en page d'avant le système : un article en pleine largeur, des titres sans repère, aucune suite proposée.
+Transparence, qui porte l'engagement central du site, énonce désormais « ce que l'argent ne change pas » en trois cartes vérifiables plutôt qu'en liste de déclarations, et renvoie à la méthode, à la page À propos et à la politique de confidentialité depuis une colonne d'appui.
+La page 404 était un cul-de-sac : un seul lien, vers l'accueil. Elle propose maintenant le quiz, les dix familles de métiers réellement publiées et les trois outils du site — 15 liens internes construits depuis le contenu, jamais une liste figée qui survivrait à la suppression d'une famille.
+Lighthouse 100/100/100 sur les trois pages ; le score SEO de 66 sur « à propos » et 404 vient de leur `noindex`, voulu — la page À propos reste hors index tant que l'identité de l'éditeur est un placeholder (TODO #3), et une page d'erreur n'a pas à être indexée.
+Contrôle de non-régression : aucun débordement horizontal sur 15 pages à 320, 360, 414 et 768 px.

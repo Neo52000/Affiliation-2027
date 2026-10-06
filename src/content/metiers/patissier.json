@@ -69,15 +69,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), de facturation et de gestion, pensée pour les indépendants et micro-entrepreneurs. Adaptée à un pâtissier qui facture des commandes ponctuelles liées à des événements."
+      "justification": "Adaptée à un pâtissier qui facture des commandes ponctuelles liées à des événements."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), réunissant facturation et comptabilité pour indépendants, freelances et TPE. Permet d'émettre les factures de vos commandes et de tenir vos comptes au même endroit."
+      "justification": "Permet d'émettre les factures de vos commandes et de tenir vos comptes au même endroit."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), de gestion financière et de comptabilité, conçue pour collaborer avec un expert-comptable. Pertinente pour un laboratoire de pâtisserie structuré en TPE et suivi par un cabinet."
+      "justification": "Pertinente pour un laboratoire de pâtisserie structuré en TPE et suivi par un cabinet."
     }
   ],
   "faq": [

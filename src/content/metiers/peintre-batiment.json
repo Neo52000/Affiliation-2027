@@ -74,15 +74,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée par la DGFiP, dédiée à la facturation et à la gestion des indépendants et micro-entrepreneurs. Correspond au statut très répandu du peintre exerçant seul en micro-entreprise."
+      "justification": "Correspond au statut très répandu du peintre exerçant seul en micro-entreprise."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée par la DGFiP regroupant comptabilité, compte pro et facturation pour les indépendants. Permet de tenir ses obligations sans service comptable interne."
+      "justification": "Permet de tenir ses obligations sans service comptable interne."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par la DGFiP réunissant facturation et comptabilité, pour indépendants, freelances, TPE et micro-entrepreneurs. Convient à une petite entreprise de peinture qui enchaîne les chantiers."
+      "justification": "Convient à une petite entreprise de peinture qui enchaîne les chantiers."
     }
   ],
   "faq": [

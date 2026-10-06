@@ -63,15 +63,15 @@
   "outils_recommandes": [
     {
       "slug": "shine",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, associant compte professionnel en ligne et facturation. Elle couvre le besoin d'un artisan-commerçant qui encaisse au comptoir et émet quelques factures régulières à des restaurants. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+      "justification": "Shine couvre le besoin d'un artisan-commerçant qui encaisse au comptoir et émet quelques factures régulières à des restaurants."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, dédiée à la gestion financière et à la comptabilité, conçue pour travailler avec votre expert-comptable. Utile quand la comptabilité multi-taux de la boucherie est déjà suivie en cabinet. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+      "justification": "Utile quand la comptabilité multi-taux de la boucherie est déjà suivie en cabinet."
     },
     {
       "slug": "abby",
-      "justification": "Outil de facturation et de gestion pour les indépendants. Il permet d'éditer les factures hebdomadaires au kilo de vos clients restaurateurs sans ressaisie. Sa présence sur la liste des plateformes agréées n'a pas pu être confirmée sur un site officiel : vérifiez son statut au regard de la facturation électronique sur la liste publiée par la DGFiP, https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+      "justification": "Outil de facturation et de gestion pour les indépendants. Il permet d'éditer les factures hebdomadaires au kilo de vos clients restaurateurs sans ressaisie."
     }
   ],
   "faq": [

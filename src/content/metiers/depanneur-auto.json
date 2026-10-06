@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "shine",
-      "justification": "Compte professionnel en ligne avec facturation, ciblé indépendants, freelances et TPE. Ce périmètre correspond au dépanneur indépendant qui souhaite regrouper ses encaissements et ses factures. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+      "justification": "Compte professionnel en ligne avec facturation, ciblé indépendants, freelances et TPE. Ce périmètre correspond au dépanneur indépendant qui souhaite regrouper ses encaissements et ses factures."
     },
     {
       "slug": "indy",
-      "justification": "Outil réunissant comptabilité, compte professionnel et facturation pour les indépendants. Adapté si vous exercez en entreprise individuelle et gérez seul votre administratif. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+      "justification": "Outil réunissant comptabilité, compte professionnel et facturation pour les indépendants. Adapté si vous exercez en entreprise individuelle et gérez seul votre administratif."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel associé à un module de facturation, ciblé PME et indépendants. Pertinent quand votre activité grandit et que les dossiers d'assisteurs se multiplient. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+      "justification": "Compte professionnel associé à un module de facturation, ciblé PME et indépendants. Pertinent quand votre activité grandit et que les dossiers d'assisteurs se multiplient."
     }
   ],
   "faq": [

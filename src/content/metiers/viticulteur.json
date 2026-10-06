@@ -71,15 +71,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP réunissant compte professionnel et facturation, pour les indépendants et les PME. Adaptée à un domaine qui encaisse à la fois des virements de négoce et des paiements de caveau."
+      "justification": "Adaptée à un domaine qui encaisse à la fois des virements de négoce et des paiements de caveau."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée DGFiP combinant compte professionnel en ligne et facturation, destinée aux indépendants, freelances et TPE. Utile à un petit domaine en vente directe qui veut centraliser encaissements et factures au même endroit."
+      "justification": "Utile à un petit domaine en vente directe qui veut centraliser encaissements et factures au même endroit."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée de gestion financière et de comptabilité, conçue pour travailler avec son expert-comptable. Pertinente pour un domaine dont le cabinet suit les stocks de produits soumis à accise et doit rapprocher les sorties déclarées en DRM des ventes facturées sur la période."
+      "justification": "Pertinente pour un domaine dont le cabinet suit les stocks de produits soumis à accise et doit rapprocher les sorties déclarées en DRM des ventes facturées sur la période."
     }
   ],
   "faq": [

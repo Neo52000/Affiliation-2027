@@ -57,15 +57,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par la DGFiP qui réunit facturation et comptabilité dans un même outil. Sa cible — indépendants, TPE et micro-entrepreneurs — correspond au profil courant de l'électricien artisan."
+      "justification": "Sa cible — indépendants, TPE et micro-entrepreneurs — correspond au profil courant de l'électricien artisan."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme agréée par la DGFiP orientée facturation et gestion, pensée pour les indépendants et micro-entrepreneurs. Adaptée à l'électricien en franchise en base qui émet un grand nombre de petites factures de dépannage."
+      "justification": "Adaptée à l'électricien en franchise en base qui émet un grand nombre de petites factures de dépannage."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée par la DGFiP qui associe compte professionnel et facturation, pour les PME comme pour les indépendants. Pertinente quand l'activité se structure et que les encaissements de chantiers se multiplient."
+      "justification": "Pertinente quand l'activité se structure et que les encaissements de chantiers se multiplient."
     }
   ],
   "faq": [

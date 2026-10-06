@@ -86,15 +86,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée DGFiP de facturation et de gestion conçue pour les indépendants et les micro-entrepreneurs. Elle convient à un apiculteur qui édite peu de factures professionnelles à côté d'une majorité de ventes au détail."
+      "justification": "Abby convient à un apiculteur qui édite peu de factures professionnelles à côté d'une majorité de ventes au détail."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée par la DGFiP qui tient la comptabilité, le compte professionnel et la facturation dans un même outil. Utile à un apiculteur au micro-BA, dont la moyenne triennale se construit à partir d'encaissements de marché et non de factures, et qui n'édite de documents que pour ses épiceries et ses conditionneurs."
+      "justification": "Utile à un apiculteur au micro-BA, dont la moyenne triennale se construit à partir d'encaissements de marché et non de factures, et qui n'édite de documents que pour ses épiceries et ses conditionneurs."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée par la DGFiP adossée à un compte professionnel en ligne. Adaptée à un rucher dont l'essentiel des recettes arrive par encaissements sur les marchés et à la miellerie, avec quelques factures de réassort à éditer en fin d'année."
+      "justification": "Adaptée à un rucher dont l'essentiel des recettes arrive par encaissements sur les marchés et à la miellerie, avec quelques factures de réassort à éditer en fin d'année."
     }
   ],
   "faq": [

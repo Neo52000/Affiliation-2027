@@ -72,15 +72,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), orientée indépendants et freelances. Facturation et comptabilité sont réunies au même endroit, ce qui s'accorde avec un rythme d'acomptes et de soldes par projet."
+      "justification": "Facturation et comptabilité sont réunies au même endroit, ce qui s'accorde avec un rythme d'acomptes et de soldes par projet."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), destinée aux indépendants, qui combine comptabilité, compte pro et facturation. Cette combinaison limite les ressaisies entre encaissements et factures."
+      "justification": "Réunir compte professionnel, comptabilité et facturation limite les ressaisies entre encaissements et factures."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), associant compte professionnel et facturation, pour indépendants et PME. Un choix cohérent si vous voulez rapprocher vos encaissements d'acomptes de vos factures depuis le compte pro."
+      "justification": "Un choix cohérent si vous voulez rapprocher vos encaissements d'acomptes de vos factures depuis le compte pro."
     }
   ],
   "faq": [

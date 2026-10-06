@@ -65,15 +65,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée DGFiP orientée facturation et gestion pour les indépendants et micro-entrepreneurs. Adaptée aux maraîchers en entreprise individuelle qui cherchent un outil simple pour facturer leurs clients professionnels et suivre leurs recettes."
+      "justification": "Adaptée aux maraîchers en entreprise individuelle qui cherchent un outil simple pour facturer leurs clients professionnels et suivre leurs recettes."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Pertinente pour les exploitations en société (EARL, GAEC, SCEA) dont la comptabilité est suivie par un cabinet."
+      "justification": "Pertinente pour les exploitations en société (EARL, GAEC, SCEA) dont la comptabilité est suivie par un cabinet."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée DGFiP combinant compte professionnel en ligne et facturation, à destination des indépendants et TPE. Utile pour centraliser au même endroit les encaissements de vente directe et la facturation des clients professionnels."
+      "justification": "Utile pour centraliser au même endroit les encaissements de vente directe et la facturation des clients professionnels."
     }
   ],
   "faq": [

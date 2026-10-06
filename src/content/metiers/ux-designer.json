@@ -55,15 +55,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée par l'administration fiscale qui réunit compte professionnel et facturation. Son périmètre couvre aussi bien l'indépendant que la société, ce qui correspond aux statuts listés plus haut pour ce métier."
+      "justification": "Son périmètre couvre aussi bien l'indépendant que la société, ce qui correspond aux statuts listés plus haut pour ce métier."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée de gestion financière et de comptabilité, conçue pour travailler avec son expert-comptable. Un choix cohérent pour un designer en SASU ou EURL dont la comptabilité est suivie par un cabinet."
+      "justification": "Un choix cohérent pour un designer en SASU ou EURL dont la comptabilité est suivie par un cabinet."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée associant compte pro en ligne et facturation, à destination des indépendants, freelances et TPE. Elle couvre le binôme encaissement-facturation d'un designer en mission."
+      "justification": "Shine couvre le binôme encaissement-facturation d'un designer en mission."
     }
   ],
   "faq": [

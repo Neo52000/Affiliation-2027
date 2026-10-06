@@ -64,15 +64,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Opérateur de gestion financière et de comptabilité, conçu pour collaborer avec votre expert-comptable. Un appui utile quand neuf à 20 %, marge sur l'occasion et taxe forfaitaire coexistent dans la même comptabilité. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+      "justification": "Opérateur de gestion financière et de comptabilité, conçu pour collaborer avec votre expert-comptable. Un appui utile quand neuf à 20 %, marge sur l'occasion et taxe forfaitaire coexistent dans la même comptabilité."
     },
     {
       "slug": "indy",
-      "justification": "Opérateur destiné aux indépendants. Permet de réunir comptabilité, compte professionnel et facturation dans un seul outil, ce qui convient à un bijoutier installé en nom propre. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+      "justification": "Opérateur destiné aux indépendants. Permet de réunir comptabilité, compte professionnel et facturation dans un seul outil, ce qui convient à un bijoutier installé en nom propre."
     },
     {
       "slug": "abby",
-      "justification": "Opérateur de facturation et de gestion, ciblé indépendants et micro-entrepreneurs. Convient à un atelier-boutique qui facture ponctuellement réparations et commandes. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+      "justification": "Opérateur de facturation et de gestion, ciblé indépendants et micro-entrepreneurs. Convient à un atelier-boutique qui facture ponctuellement réparations et commandes."
     }
   ],
   "faq": [

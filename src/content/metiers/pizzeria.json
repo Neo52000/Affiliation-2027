@@ -58,15 +58,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée pour indépendants et TPE, couvrant facturation et comptabilité. Une pizzeria indépendante y émet ses factures aux entreprises clientes et suit sa comptabilité courante dans le même outil."
+      "justification": "Une pizzeria indépendante y émet ses factures aux entreprises clientes et suit sa comptabilité courante dans le même outil."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Pertinente quand le cabinet doit rapprocher recettes de caisse, commissions de plateformes et factures fournisseurs."
+      "justification": "Pertinente quand le cabinet doit rapprocher recettes de caisse, commissions de plateformes et factures fournisseurs."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée réunissant compte professionnel en ligne et facturation, ciblée indépendants et TPE. Pertinente pour une pizzeria qui facture peu d'entreprises : les quelques factures de commandes groupées se font depuis le compte qui reçoit déjà les virements des plateformes de livraison, ce qui évite un deuxième outil pour un volume faible."
+      "justification": "Pertinente pour une pizzeria qui facture peu d'entreprises : les quelques factures de commandes groupées se font depuis le compte qui reçoit déjà les virements des plateformes de livraison, ce qui évite un deuxième outil pour un volume faible."
     }
   ],
   "faq": [

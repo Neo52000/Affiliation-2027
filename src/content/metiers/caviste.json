@@ -56,15 +56,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, qui réunit compte professionnel et facturation. Ce couple répond au quotidien d'un caviste qui encaisse en boutique et facture des restaurants et des bars. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+      "justification": "Réunir le compte professionnel et la facturation répond au quotidien d'un caviste qui encaisse en boutique et facture des restaurants et des bars."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, dédiée à la gestion financière et à la comptabilité, pensée pour travailler avec votre expert-comptable. Pertinente quand le suivi de la cave et des achats passe déjà par un cabinet. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+      "justification": "Pertinente quand le suivi de la cave et des achats passe déjà par un cabinet."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, combinant facturation et comptabilité, orientée indépendants et TPE. Convient à une cave tenue en effectif réduit avec quelques factures B2B par mois. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+      "justification": "Convient à une cave tenue en effectif réduit avec quelques factures B2B par mois."
     }
   ],
   "faq": [

@@ -69,15 +69,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par l'administration fiscale pour la facturation électronique, qui réunit facturation et comptabilité. Elle s'adresse aux indépendants, freelances et micro-entrepreneurs, périmètre qui couvre les statuts listés plus haut pour ce métier."
+      "justification": "Tiime s'adresse aux indépendants, freelances et micro-entrepreneurs, périmètre qui couvre les statuts listés plus haut pour ce métier."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée combinant comptabilité, compte pro et facturation, pensée pour les indépendants. Ce périmètre couvre le suivi d'une activité BNC du devis à la déclaration."
+      "justification": "Son périmètre couvre le suivi d'une activité BNC du devis à la déclaration."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme agréée orientée facturation et gestion pour les indépendants et micro-entrepreneurs. Elle correspond au graphiste en micro-BNC qui veut centraliser factures d'acompte, factures de solde et suivi des encaissements."
+      "justification": "Abby correspond au graphiste en micro-BNC qui veut centraliser factures d'acompte, factures de solde et suivi des encaissements."
     }
   ],
   "faq": [

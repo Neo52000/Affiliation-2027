@@ -68,15 +68,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée par la DGFiP réunissant compte professionnel et facturation, pour PME et indépendants. Pratique pour suivre l'encaissement des acomptes à la commande, systématiques dans le sur-mesure."
+      "justification": "Pratique pour suivre l'encaissement des acomptes à la commande, systématiques dans le sur-mesure."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée par la DGFiP : compte pro en ligne et facturation, à destination des indépendants, freelances et TPE. Adaptée à un atelier artisanal sans service administratif dédié."
+      "justification": "Adaptée à un atelier artisanal sans service administratif dédié."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée par la DGFiP, conçue pour travailler avec votre expert-comptable. Utile quand les achats de bois et de quincaillerie et la ventilation des taux appellent un suivi comptable rigoureux."
+      "justification": "Utile quand les achats de bois et de quincaillerie et la ventilation des taux appellent un suivi comptable rigoureux."
     }
   ],
   "faq": [

@@ -86,15 +86,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par la DGFiP réunissant facturation et comptabilité. Adaptée à une exploitation dont toute la facturation se concentre sur six à huit semaines de récolte, avec des séries de factures décadaires à produire à partir de bons de livraison, puis un volume quasi nul le reste de l'année."
+      "justification": "Adaptée à une exploitation dont toute la facturation se concentre sur six à huit semaines de récolte, avec des séries de factures décadaires à produire à partir de bons de livraison, puis un volume quasi nul le reste de l'année."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée par la DGFiP, orientée gestion financière et comptabilité partagée avec un cabinet. Pertinente lorsque le solde de campagne suppose de rapprocher acomptes d'apport, compléments de prix et autofactures reçues de la coopérative, travail généralement repris par l'expert-comptable à la clôture."
+      "justification": "Pertinente lorsque le solde de campagne suppose de rapprocher acomptes d'apport, compléments de prix et autofactures reçues de la coopérative, travail généralement repris par l'expert-comptable à la clôture."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée par la DGFiP adossée à un compte professionnel en ligne, avec facturation intégrée. Adaptée à une exploitation qui encaisse au verger pendant les semaines de cueillette et facture ses grossistes depuis le même outil, sans ressaisie entre la caisse et les documents professionnels."
+      "justification": "Adaptée à une exploitation qui encaisse au verger pendant les semaines de cueillette et facture ses grossistes depuis le même outil, sans ressaisie entre la caisse et les documents professionnels."
     }
   ],
   "faq": [

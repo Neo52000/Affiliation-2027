@@ -57,15 +57,15 @@
   "outils_recommandes": [
     {
       "slug": "shine",
-      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, qui réunit compte professionnel en ligne et facturation. Utile quand les encaissements arrivent par plusieurs canaux — boutique en ligne, marchés de créateurs, virements des concept-stores — et doivent être rapprochés des relevés de dépôt-vente."
+      "justification": "Utile quand les encaissements arrivent par plusieurs canaux — boutique en ligne, marchés de créateurs, virements des concept-stores — et doivent être rapprochés des relevés de dépôt-vente."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, centrée sur la facturation et la gestion des indépendants et micro-entrepreneurs. Convient à un atelier seul qui émet peu de factures professionnelles mais doit faire remonter en totaux quotidiens ses ventes en ligne et de marché."
+      "justification": "Convient à un atelier seul qui émet peu de factures professionnelles mais doit faire remonter en totaux quotidiens ses ventes en ligne et de marché."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée par la DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Pertinente si votre activité se structure et que vous êtes accompagné."
+      "justification": "Pertinente si votre activité se structure et que vous êtes accompagné."
     }
   ],
   "faq": [

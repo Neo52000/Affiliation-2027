@@ -60,15 +60,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée conçue pour les indépendants et micro-entrepreneurs, statuts fréquents chez les chauffeurs VTC. Son périmètre facturation et gestion couvre l'émission au quotidien des notes et factures de courses."
+      "justification": "Son périmètre facturation et gestion couvre l'émission au quotidien des notes et factures de courses."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée qui associe facturation et comptabilité pour les indépendants, freelances, TPE et micro-entrepreneurs. Ce double périmètre aide à suivre au même endroit les courses facturées en direct et les documents reçus des plateformes."
+      "justification": "Couvrir à la fois la facturation et la comptabilité aide à suivre au même endroit les courses facturées en direct et les documents reçus des plateformes."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée destinée aux indépendants, réunissant comptabilité, compte pro et facturation. Ce périmètre convient à un chauffeur seul qui veut encaisser, facturer et préparer ses déclarations sans multiplier les outils."
+      "justification": "Son périmètre convient à un chauffeur seul qui veut encaisser, facturer et préparer ses déclarations sans multiplier les outils."
     }
   ],
   "faq": [

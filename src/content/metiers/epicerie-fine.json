@@ -54,15 +54,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, qui réunit facturation et comptabilité pour les indépendants, micro-entrepreneurs et TPE. Adaptée à une boutique dont la facturation B2B se concentre sur quelques semaines par an. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+      "justification": "Adaptée à une boutique dont la facturation B2B se concentre sur quelques semaines par an."
     },
     {
       "slug": "indy",
-      "justification": "Outil de comptabilité, de compte professionnel et de facturation pour les indépendants. Utile quand une seule personne tient à la fois la boutique et sa gestion. Sa présence sur la liste des plateformes agréées n'a pas pu être confirmée sur un site officiel : vérifiez son statut au regard de la facturation électronique sur la liste publiée par la DGFiP, https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+      "justification": "Outil de comptabilité, de compte professionnel et de facturation pour les indépendants. Utile quand une seule personne tient à la fois la boutique et sa gestion."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, associant compte professionnel et facturation, pour PME et indépendants. Pertinente quand les commandes d'entreprises se développent et multiplient encaissements et factures. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+      "justification": "Pertinente quand les commandes d'entreprises se développent et multiplient encaissements et factures."
     }
   ],
   "faq": [
