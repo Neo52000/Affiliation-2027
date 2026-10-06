@@ -42,6 +42,9 @@ jobs:
       - name: SEO (titles/descriptions uniques et bornés)
         run: pnpm check:seo
 
+      - name: Liens internes (toute cible existe)
+        run: pnpm check:liens
+
       - name: Installer Chromium (Playwright)
         run: npx playwright install --with-deps chromium
 
