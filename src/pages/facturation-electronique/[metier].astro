@@ -51,6 +51,18 @@ const emissionTpe = echeances.echeances.find((e) => e.id === 'emission-pme-tpe-m
 if (!reception || !emissionTpe) throw new Error('echeances.json : échéances clés manquantes');
 
 const avecAffiliation = hasAffiliate(recommandes.map((r) => r.outil.data.slug));
+
+// Comparaisons deux à deux des outils recommandés : les 15 pages /comparatif/
+// existaient sans qu'aucun lien du site n'y mène.
+const ORDRE_COMPARATIFS = ['tiime', 'qonto', 'pennylane', 'abby', 'indy', 'shine'];
+const paires = recommandes.flatMap((a, i) =>
+  recommandes.slice(i + 1).map((b) => {
+    const [x, y] = [a.outil.data, b.outil.data].sort(
+      (p, q) => ORDRE_COMPARATIFS.indexOf(p.slug) - ORDRE_COMPARATIFS.indexOf(q.slug),
+    );
+    return { url: `/comparatif/${x!.slug}-vs-${y!.slug}`, label: `${x!.nom} ou ${y!.nom}` };
+  }),
+);
 const familleLabel = FAMILLE_LABELS[d.famille];
 
 // Sommaire de la colonne d'appui : les ancres existent déjà dans l'article.
@@ -129,7 +141,7 @@ const faqJsonLd = {
         <h2 id="specificites" class="titre-section text-2xl font-bold">
           Les spécificités de facturation du métier
         </h2>
-        <ul class="mt-3 list-disc space-y-2 pl-5">
+        <ul class="liste-aeree mt-3 list-disc pl-5">
           {d.specificites_facturation.map((s) => (
             <li>{s}</li>
           ))}
@@ -137,7 +149,7 @@ const faqJsonLd = {
         {d.mentions_obligatoires_specifiques.length > 0 && (
           <>
             <h3 class="mt-4 text-lg font-bold">Mentions propres à votre activité</h3>
-            <ul class="mt-2 list-disc space-y-1 pl-5">
+            <ul class="liste-aeree mt-2 list-disc pl-5">
               {d.mentions_obligatoires_specifiques.map((m) => (
                 <li>{m}</li>
               ))}
@@ -196,7 +208,25 @@ const faqJsonLd = {
         <div class="mt-2">
           <ComparatifCourt outils={recommandes.map((r) => r.outil.data)} />
         </div>
+        {paires.length > 0 && (
+          <nav aria-label="Comparaisons deux à deux" class="mt-4">
+            <h3 class="text-lg font-bold">Les comparer deux à deux</h3>
+            <ul class="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+              {paires.map((c) => (
+                <li>
+                  <a href={c.url}>{c.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </section>
+
+      <p class="mt-6 lg:hidden">
+        <a href="/outils/quiz" class="btn-cta">
+          Trouver l'outil adapté à mon métier
+        </a>
+      </p>
 
       <section aria-labelledby="checklist" class="prose-measure mt-8">
         <h2 id="checklist" class="titre-section text-2xl font-bold">
