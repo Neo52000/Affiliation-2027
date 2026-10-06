@@ -156,3 +156,11 @@ Retirer une phrase laisse parfois un pronom orphelin : 48 justifications commen�
 Contrôle après coup : 0 justification affirmant encore un statut, 0 pronom sans antécédent, 0 anomalie de forme sur 300.
 Effet de bord utile : si le statut d'Indy n'est pas confirmé à la source (TODO #18), un seul champ corrige les 100 pages.
 Garde-fous : 142 pages, similarité maximale 21,2 % (seuil 50 %), check-seo 139 pages indexables, 77 tests + 6 parcours e2e verts.
+
+## Pages de confiance et page d'erreur alignées sur le système (2026-10-06)
+
+Les pages « transparence », « à propos » et 404 portaient encore la mise en page d'avant le système : un article en pleine largeur, des titres sans repère, aucune suite proposée.
+Transparence, qui porte l'engagement central du site, énonce désormais « ce que l'argent ne change pas » en trois cartes vérifiables plutôt qu'en liste de déclarations, et renvoie à la méthode, à la page À propos et à la politique de confidentialité depuis une colonne d'appui.
+La page 404 était un cul-de-sac : un seul lien, vers l'accueil. Elle propose maintenant le quiz, les dix familles de métiers réellement publiées et les trois outils du site — 15 liens internes construits depuis le contenu, jamais une liste figée qui survivrait à la suppression d'une famille.
+Lighthouse 100/100/100 sur les trois pages ; le score SEO de 66 sur « à propos » et 404 vient de leur `noindex`, voulu — la page À propos reste hors index tant que l'identité de l'éditeur est un placeholder (TODO #3), et une page d'erreur n'a pas à être indexée.
+Contrôle de non-régression : aucun débordement horizontal sur 15 pages à 320, 360, 414 et 768 px.
