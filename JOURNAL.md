@@ -164,3 +164,9 @@ Transparence, qui porte l'engagement central du site, énonce désormais « ce q
 La page 404 était un cul-de-sac : un seul lien, vers l'accueil. Elle propose maintenant le quiz, les dix familles de métiers réellement publiées et les trois outils du site — 15 liens internes construits depuis le contenu, jamais une liste figée qui survivrait à la suppression d'une famille.
 Lighthouse 100/100/100 sur les trois pages ; le score SEO de 66 sur « à propos » et 404 vient de leur `noindex`, voulu — la page À propos reste hors index tant que l'identité de l'éditeur est un placeholder (TODO #3), et une page d'erreur n'a pas à être indexée.
 Contrôle de non-régression : aucun débordement horizontal sur 15 pages à 320, 360, 414 et 768 px.
+
+## Troisième garde-fou : les liens internes (2026-10-06)
+
+Les 15 pages de comparatif ont vécu plusieurs phases sans qu'aucun lien du site n'y mène, et rien ne l'a signalé — il a fallu un `grep` manuel pendant une revue. Un lien cassé se signalerait encore moins : rien ne contrôlait que les cibles internes existent.
+`check-liens` compare chaque `href` interne du site rendu à l'ensemble des pages réellement construites et des fichiers réellement servis, en tenant compte des redirections affiliées `/go/…` servies par l'hébergeur. Résultat sur le site actuel : **4 667 liens analysés, aucune cible manquante.**
+Le garde-fou a été éprouvé plutôt que supposé : un lien volontairement cassé (`/outils/quizz`) dans le build le fait échouer avec le code 1, en nommant la page d'origine. Branché dans `pnpm verify` et dans la CI, après `check:seo`.

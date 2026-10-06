@@ -25,7 +25,8 @@
     "test:e2e": "playwright test",
     "check:similarity": "node --experimental-strip-types scripts/check-similarity.ts",
     "check:seo": "node --experimental-strip-types scripts/check-seo.ts",
-    "verify": "pnpm check && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm check:similarity && pnpm check:seo"
+    "check:liens": "node --experimental-strip-types scripts/check-liens.ts",
+    "verify": "pnpm check && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm check:similarity && pnpm check:seo && pnpm check:liens"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.2",
