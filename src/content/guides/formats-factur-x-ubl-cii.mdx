@@ -1,0 +1,143 @@
+---
+title: 'Factur-X, UBL, CII : les formats expliqués simplement'
+description: "Factur-X, UBL et CII : à quoi servent les trois formats du socle, ce qu'ils changent pour votre TPE et pourquoi votre plateforme s'en charge."
+date_maj: '2026-10-06'
+sources:
+  - titre: 'Je découvre la facturation électronique — impots.gouv.fr'
+    url: 'https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique'
+  - titre: 'Spécifications externes et normes pour la facturation électronique — impots.gouv.fr'
+    url: 'https://www.impots.gouv.fr/specifications-externes-b2b'
+  - titre: 'Norme AFNOR XP Z12-012 (mai 2025) — Formats et profils des messages factures (socle minimal)'
+    url: 'https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/specification_externes_b2b/afnor/norme-afnor-factures.pdf'
+  - titre: 'Facturation électronique et plateformes agréées — impots.gouv.fr'
+    url: 'https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees'
+  - titre: 'Publication de la liste des plateformes agréées — impots.gouv.fr'
+    url: 'https://www.impots.gouv.fr/actualite/facturation-electronique-publication-de-la-liste-des-plateformes-agreees'
+  - titre: 'Tout savoir sur la facturation électronique pour les entreprises — economie.gouv.fr'
+    url: 'https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises'
+  - titre: "Qu'est-ce que l'annuaire de la facturation électronique ? — economie.gouv.fr"
+    url: 'https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/quest-ce-que-lannuaire-de-la-facturation-electronique'
+  - titre: 'Arrêté du 27 juillet 2026 relatif à la généralisation de la facturation électronique — Légifrance'
+    url: 'https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054499535'
+  - titre: 'Article 41 septies D du CGI, annexe IV — données de facture (version en vigueur depuis le 29 juillet 2026) — Légifrance'
+    url: 'https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069576/LEGISCTA000046386156/'
+  - titre: 'FAQ — Je découvre la facturation électronique (DGFiP)'
+    url: 'https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/faq---fe_je-decouvre-la-facturation-electronique.pdf'
+  - titre: 'Guide pratique de démarrage au 1er septembre 2026 (DGFiP)'
+    url: 'https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/guide_pratique_facturation_electronique.pdf'
+---
+
+Factur-X, UBL et CII sont les trois formats de facture retenus pour la réforme française de la facturation électronique. Vous n'avez ni à les produire ni à les choisir vous-même : c'est votre plateforme agréée qui s'en occupe. Ce guide explique en langage courant ce que contient chacun d'eux, et les quelques points qui vous reviennent réellement.
+
+## Pourquoi on parle de « formats »
+
+Une facture électronique n'est pas une facture papier numérisée, ni un PDF ordinaire envoyé par courriel. C'est une facture qui comporte un socle de données sous forme structurée, c'est-à-dire exploitables directement par un logiciel, sans ressaisie ([impots.gouv.fr](https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique)).
+
+Pour que le logiciel de votre client comprenne sans ambiguïté ce que le vôtre a écrit, il faut une grammaire commune. C'est ce qu'on appelle un format. L'administration en a retenu trois, qui forment le socle minimum applicable à la réforme ([spécifications externes et normes](https://www.impots.gouv.fr/specifications-externes-b2b)).
+
+Ces formats ne sont pas une invention française. Le codage des informations doit respecter la norme européenne EN 16931, visée par la décision d'exécution (UE) 2017/1870 du 16 octobre 2017 ([arrêté du 27 juillet 2026](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054499535)).
+
+## Factur-X : un PDF lisible qui transporte ses données
+
+Factur-X est un format dit hybride, ou mixte. Il réunit deux éléments dans un seul fichier ([norme AFNOR XP Z12-012](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/specification_externes_b2b/afnor/norme-afnor-factures.pdf)) :
+
+- un PDF conforme à la norme PDF/A-3 (ISO 19005-3), qui constitue la représentation lisible de la facture ;
+- un fichier de données structurées attaché, nommé factur-x.xml, écrit en syntaxe UN/CEFACT CII.
+
+Concrètement, vous ouvrez le fichier et vous voyez une facture normale, avec votre mise en page. Le logiciel de votre client, lui, lit la pièce jointe XML et alimente sa comptabilité. Un seul document, deux lectures.
+
+Conséquence pratique : avec Factur-X, la facture reste consultable à l'œil, sans outil particulier.
+
+## UBL et CII : deux façons d'écrire la même facture en XML
+
+UBL et CII sont des formats entièrement structurés. Pas d'image, pas de mise en page : uniquement des données, dans des fichiers XML ([spécifications externes](https://www.impots.gouv.fr/specifications-externes-b2b)).
+
+- **UBL** (Universal Business Language) suit la syntaxe XML normalisée ISO/IEC 19845 et le standard OASIS UBL 2.1.
+- **CII** (Cross Industry Invoice) suit le modèle de données UN/CEFACT SCRDM CII. La version UN/CEFACT CII D22B a été retenue pour la réforme.
+
+Ouvert dans un éditeur de texte, un fichier UBL ou CII ressemble à une suite de balises. Ce n'est pas fait pour être lu par une personne, mais par une machine. Votre plateforme ou votre logiciel se charge de vous l'afficher sous une forme lisible.
+
+« UBL ou CII, lequel choisir ? » n'est pas une question que vous aurez à trancher. Les deux sont admis au même titre.
+
+## Le tableau de comparaison
+
+| Critère                         | Factur-X            | UBL                           | CII                 |
+| ------------------------------- | ------------------- | ----------------------------- | ------------------- |
+| Nature                          | Hybride : PDF + XML | Structuré : XML               | Structuré : XML     |
+| Représentation lisible intégrée | Oui, le PDF/A-3     | Non                           | Non                 |
+| Syntaxe des données             | UN/CEFACT CII       | OASIS UBL 2.1 (ISO/IEC 19845) | UN/CEFACT SCRDM CII |
+| Fait partie du socle            | Oui                 | Oui                           | Oui                 |
+| Référentiel sémantique          | EN 16931            | EN 16931                      | EN 16931            |
+
+Sources : [spécifications externes et normes](https://www.impots.gouv.fr/specifications-externes-b2b) et [norme AFNOR XP Z12-012](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/specification_externes_b2b/afnor/norme-afnor-factures.pdf).
+
+## Le format ne dit pas tout : regardez le profil
+
+Voici la seule subtilité technique qui mérite votre attention. Chacun des trois formats du socle décline deux profils de données : le profil EN16931 et le profil EXTENDED-CTC-FR, ce dernier ajoutant des données complémentaires pour couvrir les besoins des entreprises ([norme AFNOR XP Z12-012](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/specification_externes_b2b/afnor/norme-afnor-factures.pdf)).
+
+Factur-X comporte en outre ses propres profils : MINIMUM, BASIC WL, BASIC et EXTENDED. Le profil MINIMUM ne peut pas être utilisé dans le cadre de la réforme, car il ne contient pas assez de données sous forme structurée (même source).
+
+Autrement dit : si un prestataire indique « compatible Factur-X », la question utile est « avec quel profil ? ». Un fichier Factur-X en profil MINIMUM ne répond pas à l'obligation.
+
+Ces profils sont décrits dans la version de mai 2025 de la norme ; la page d'index des [spécifications externes et normes](https://www.impots.gouv.fr/specifications-externes-b2b) porte toujours la version en vigueur.
+
+## Ce que ça change concrètement : presque rien pour vous
+
+Vous n'avez pas à produire du XML, ni à arbitrer entre UBL et CII dans votre travail quotidien. Deux règles expliquent pourquoi.
+
+1. Les plateformes agréées ont l'obligation de transmettre les factures électroniques dans l'un des trois formats du socle ([impots.gouv.fr](https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)).
+2. Dans son rôle d'intermédiaire, la plateforme agréée peut convertir la facture établie par le fournisseur dans un format qui convient au client (même source).
+
+Vous émettez depuis votre outil habituel, la plateforme traduit. Si votre client travaille en UBL et vous en Factur-X, la conversion se fait sans vous.
+
+## Et le PDF que vous envoyez aujourd'hui par courriel ?
+
+Il ne vaudra plus facture électronique au sens de la réforme. Une facture papier numérisée ou un PDF ordinaire ne répond pas à l'obligation, faute de données structurées ([impots.gouv.fr](https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique)).
+
+L'acheminement devra passer par une plateforme agréée ([impots.gouv.fr](https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)). En revanche, le document que votre client recevra pourra rester visuellement proche de ce qu'il connaît si le format retenu est Factur-X.
+
+## Les quatre points qui vous reviennent vraiment
+
+### 1. Choisir une plateforme agréée
+
+Le choix est libre et relève d'une décision d'entreprise. Vous pouvez en retenir une ou plusieurs ([economie.gouv.fr](https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises)). La liste des plateformes agréées est publiée par la DGFiP ([impots.gouv.fr](https://www.impots.gouv.fr/actualite/facturation-electronique-publication-de-la-liste-des-plateformes-agreees)).
+
+Une plateforme agréée est une entreprise privée immatriculée par l'administration. Ses missions couvrent l'émission, la transmission et la réception des factures entre fournisseur et client, l'extraction des données de facturation, de transaction et de paiement et leur transmission à l'administration, la gestion du cycle de vie des factures émises et reçues, ainsi que la mise à jour de l'annuaire pour le compte de ses clients ([impots.gouv.fr](https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)). L'administration a par ailleurs créé deux marqueurs distincts : l'un identifie les plateformes agréées immatriculées par la DGFiP, l'autre les solutions dites compatibles, raccordées à une ou plusieurs plateformes agréées (même source).
+
+### 2. Vérifier votre inscription dans l'annuaire
+
+L'annuaire de la facturation électronique recense les entreprises et entités publiques concernées. Pour chacune, il indique la plateforme agréée qui gère ses données et ses adresses de facturation électronique. Il est consultable gratuitement, sans compte ni mot de passe ([economie.gouv.fr](https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/quest-ce-que-lannuaire-de-la-facturation-electronique)).
+
+### 3. Préparer les quatre nouvelles mentions
+
+Les mentions obligatoires prévues par le Code de commerce et le Code général des impôts restent identiques. Quatre mentions s'y ajoutent ([FAQ DGFiP](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/faq---fe_je-decouvre-la-facturation-electronique.pdf)) :
+
+- le numéro SIREN du client ;
+- la catégorie de l'opération : livraison de biens, prestation de services, ou les deux ;
+- l'option de paiement de la TVA sur les débits, le cas échéant ;
+- l'adresse de livraison des biens, si elle diffère de l'adresse de facturation, le cas échéant.
+
+Les données de facture à transmettre sont listées à l'[article 41 septies D du CGI, annexe IV](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069576/LEGISCTA000046386156/), dans sa rédaction en vigueur depuis le 29 juillet 2026. En pratique, votre premier chantier est de tenir à jour le SIREN de vos clients dans votre fichier.
+
+### 4. Retenir deux dates
+
+- **1er septembre 2026** : toutes les entreprises assujetties à la TVA doivent être en mesure de recevoir des factures électroniques via une plateforme agréée. Les grandes entreprises et les entreprises de taille intermédiaire doivent en outre émettre les leurs.
+- **1er septembre 2027** : les PME, TPE et microentreprises doivent émettre à leur tour.
+
+Sources : [impots.gouv.fr](https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique) et [economie.gouv.fr](https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises).
+
+## Les questions à poser à votre prestataire
+
+- Êtes-vous une plateforme agréée, ou une solution raccordée à une plateforme agréée ?
+- Quels formats du socle gérez-vous, en émission et en réception ?
+- Quel profil Factur-X appliquez-vous ?
+- Comment la version lisible de la facture m'est-elle présentée à la réception ?
+- Comment récupérer mes factures et mes données si je change de prestataire ?
+
+Ces cinq questions couvrent l'essentiel. Le reste relève de la technique que vous n'avez pas à maîtriser.
+
+## Ce qu'il faut retenir
+
+- Factur-X est un PDF lisible auquel sont attachées les données ; UBL et CII sont des fichiers XML destinés aux machines. Les trois appartiennent au socle et sont admis.
+- Vous n'avez ni format à choisir ni XML à produire : la plateforme agréée transmet dans l'un des trois formats et convertit si nécessaire.
+- Votre travail est ailleurs : choisir une plateforme agréée d'ici le 1er septembre 2026, mettre à jour les SIREN de vos clients et prévoir les nouvelles mentions.
