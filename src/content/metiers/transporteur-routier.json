@@ -1,0 +1,144 @@
+{
+  "nom": "Transporteur routier",
+  "slug": "transporteur-routier",
+  "famille": "transport",
+  "statuts_frequents": [
+    "SARL / EURL",
+    "SAS / SASU",
+    "Entreprise individuelle (artisan transporteur)"
+  ],
+  "volume_factures_typique": "Élevé : de plusieurs dizaines à plusieurs centaines de factures par mois selon la flotte, souvent regroupées en facturation récapitulative par donneur d'ordre.",
+  "clients_types": "B2B",
+  "specificites_facturation": [
+    "Le fret routier est taxé au taux normal de TVA de 20 % : aucun taux réduit n'existe pour le transport de marchandises, à la différence du transport de personnes.",
+    "Chaque envoi donne lieu à une lettre de voiture établie avant l'exécution du transport, sur papier ou en version électronique, de forme libre mais au contenu minimal imposé ; elle accompagne la marchandise et sert de référence à la facture sans jamais la remplacer.",
+    "Le prix convenu est révisé de plein droit pour refléter la variation du coût du carburant entre la date du contrat et la date du transport : l'article L. 3222-1 du code des transports vise le cas où le contrat identifie lui-même les charges de carburant retenues pour établir le prix, l'article L. 3222-2 celui où, à défaut de stipulation contractuelle, la révision s'opère par référence au prix publié par le Comité national routier et à la variation de ses indices. Dans les deux cas, la facture doit faire apparaître les charges de carburant supportées pour l'opération.",
+    "Pour un donneur d'ordre assujetti établi dans un autre État membre de l'UE, la facture part sans TVA française et porte la mention « Autoliquidation », sans aucune ligne de taxe ; la règle suit la qualité du preneur et non le trajet, un transport intégralement réalisé en France pour un donneur d'ordre assujetti d'un autre État membre relevant donc aussi de l'autoliquidation.",
+    "Les véhicules routiers de marchandises dont le poids total autorisé en charge est égal ou supérieur à 7,5 tonnes ouvrent droit à un remboursement partiel d'accise sur le gazole (ex-TICPE), prévu par l'article 265 septies du code des douanes et l'article L. 312-53 du code des impositions sur les biens et services. La demande se dépose auprès de l'administration fiscale selon la périodicité et le canal décrits sur impots.gouv.fr, ce qui suppose une comptabilité carburant par véhicule rigoureuse."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Les mentions communes à toute facture restent dues : coordonnées des deux parties, SIREN/SIRET, numéro individuel de TVA, numérotation et date, détail des opérations de transport avec référence de la lettre de voiture, taux et montant de la taxe.",
+    "Charges de carburant (produits énergétiques de propulsion) supportées pour l'opération de transport, à faire apparaître sur la facture en application des articles L. 3222-1 et L. 3222-2 du code des transports, que ces charges soient identifiées par le contrat ou déterminées par référence aux indices du Comité national routier.",
+    "« Autoliquidation » sur les factures émises à un preneur assujetti d'un autre État membre, la TVA étant due par ce dernier."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de transport de lots avec révision gazole pour un donneur d'ordre industriel",
+    "lignes": [
+      {
+        "designation": "Transport lot complet Lyon → Lille, semi-remorque bâchée (réf. lettre de voiture LV-2609-118)",
+        "quantite": 1,
+        "unite": "trajet",
+        "prix_unitaire_ht": 980,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Transport lot partiel Lyon → Reims, 8 palettes (réf. lettre de voiture LV-2609-121)",
+        "quantite": 1,
+        "unite": "trajet",
+        "prix_unitaire_ht": 460,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Révision du prix au titre de la variation du coût du gazole, à défaut de stipulation contractuelle identifiant les charges de carburant (article L. 3222-2 du code des transports, indices du Comité national routier)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 43.2,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Charges de carburant supportées pour les opérations facturées : 356,00 € (articles L. 3222-1 et L. 3222-2 du code des transports).",
+      "TVA au taux normal de 20 % — transport de marchandises (BOI-TVA-LIQ-20-20).",
+      "Référence de la lettre de voiture rappelée sur chaque ligne de prestation."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Rattacher chaque facture aux lettres de voiture et aux ordres de transport correspondants.",
+    "Calculer, tracer et faire apparaître la révision carburant et les charges de gazole sur chaque facture.",
+    "Faire transiter une facturation entièrement B2B par les plateformes agréées, en émission comme en réception, à l'échéance applicable à votre entreprise.",
+    "Documenter les consommations de gazole des véhicules de 7,5 tonnes et plus pour la demande de remboursement partiel d'accise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), orientée gestion financière et comptabilité, pensée pour travailler avec son expert-comptable, interlocuteur habituel des sociétés de transport pour la TVA et le remboursement d'accise. Elle cible les TPE et PME, format courant du secteur."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), associant compte professionnel et facturation, adaptée aux PME qui encaissent de nombreux règlements B2B. Le suivi conjoint des factures et des paiements aide à surveiller les règlements des donneurs d'ordre."
+    },
+    {
+      "slug": "shine",
+      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), réunissant compte pro en ligne et facturation, adaptée à un artisan transporteur ou une TPE qui démarre. Elle permet d'émettre les factures de fret sans multiplier les outils."
+    }
+  ],
+  "faq": [
+    {
+      "question": "La lettre de voiture peut-elle tenir lieu de facture ?",
+      "reponse": "Non. La lettre de voiture est un document de transport, établi avant l'exécution et présent à bord du véhicule, avec un contenu minimal imposé. La facture reste un document fiscal distinct, avec ses propres mentions obligatoires. En pratique, vous référencez la lettre de voiture sur la ligne de facture correspondante."
+    },
+    {
+      "question": "Comment répercuter la hausse du gazole à mes clients ?",
+      "reponse": "Le code des transports prévoit une révision de plein droit du prix convenu, en fonction de la variation du coût du carburant entre la date du contrat et celle du transport. Lorsque le contrat identifie lui-même les charges de carburant retenues pour établir le prix, la révision joue sur cette base (article L. 3222-1) ; à défaut de stipulation contractuelle, elle s'opère par référence au prix publié par le Comité national routier et à la variation de ses indices (article L. 3222-2). Dans les deux cas, la facture doit faire apparaître les charges de carburant supportées pour l'opération."
+    },
+    {
+      "question": "Quel taux de TVA s'applique à mes prestations de fret ?",
+      "reponse": "Le transport de biens relève du taux normal de 20 %, sans exception de taux réduit : cela vaut pour le lot complet comme pour le lot partiel, et la révision carburant comme les prestations annexes suivent le régime de la prestation principale. Le taux de 10 % concerne uniquement le transport de voyageurs. Un devis ou une facture de fret à 10 % serait donc erroné."
+    },
+    {
+      "question": "Je transporte pour un client assujetti établi en Allemagne : comment facturer ?",
+      "reponse": "La prestation est facturée hors TVA française avec la mention « Autoliquidation » : la taxe est due par le preneur dans son État membre, et aucune ligne de TVA ne doit apparaître. Les deux numéros de TVA intracommunautaires figurent sur la facture. Deux points propres au transport : la règle suit la qualité du preneur, pas l'itinéraire, de sorte qu'un trajet entièrement réalisé en France pour un donneur d'ordre assujetti allemand part également en autoliquidation ; et la révision carburant comme les charges de gazole restent dues et se facturent dans le même régime que la prestation principale, donc sans TVA française."
+    },
+    {
+      "question": "Le remboursement partiel d'accise sur le gazole change-t-il quelque chose à mes factures ?",
+      "reponse": "Pas sur les factures adressées à vos clients. Le remboursement concerne les véhicules routiers à moteur destinés au transport de marchandises dont le poids total autorisé en charge (PTAC) est égal ou supérieur à 7,5 tonnes ; la demande se dépose auprès de l'administration fiscale selon les modalités et la périodicité publiées sur impots.gouv.fr. Il suppose en revanche de conserver les justificatifs de consommation de gazole par véhicule."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Mentions devant figurer sur toute facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "BOFiP — Transport de biens au taux normal de TVA (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 9 novembre 1999 relatif aux documents de transport (lettre de voiture)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000005628727"
+    },
+    {
+      "titre": "Légifrance — Article L3222-1 du code des transports (charges de carburant identifiées au contrat : révision de plein droit et mention sur la facture)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000046194417"
+    },
+    {
+      "titre": "Légifrance — Article L3222-2 du code des transports (à défaut de stipulation : indices du Comité national routier et charges de carburant sur la facture)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023083799"
+    },
+    {
+      "titre": "BOFiP — Mention « Autoliquidation » pour les prestations intracommunautaires (BOI-TVA-DECLA-30-20-20-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1531-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-30-20190925"
+    },
+    {
+      "titre": "impots.gouv.fr — Accise sur les produits pétroliers (ex-TICPE) : remboursements des taxis et transporteurs",
+      "url": "https://www.impots.gouv.fr/accise-sur-les-produits-petroliers-ex-ticpe-remboursements-des-taxis-et-transporteurs"
+    },
+    {
+      "titre": "Légifrance — Article 265 septies du code des douanes (gazole des véhicules de PTAC égal ou supérieur à 7,5 t)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042910663"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Liste des plateformes de dématérialisation partenaires immatriculées sous réserve",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "BOFiP — Taux réduit de 10 % limité au transport de voyageurs (BOI-TVA-LIQ-30-20-60)",
+      "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

@@ -1,0 +1,135 @@
+{
+  "nom": "Coursier à vélo",
+  "slug": "coursier-velo",
+  "famille": "transport",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle (EI)", "SASU"],
+  "volume_factures_typique": "Majoritairement B2B (plateformes et commerçants), avec quelques prestations ponctuelles à des particuliers. Faible en nombre, dense en lignes : souvent une facture ou un relevé mensuel par plateforme, plus quelques factures directes à des commerçants locaux. Chaque facture agrège des dizaines de courses.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos courses relèvent du transport de biens : aucun taux réduit ne s'applique, à la différence du transport de voyageurs que pratiquent d'autres métiers de la famille.",
+    "Le relevé de courses envoyé par la plateforme n'est pas une facture. Soit vous émettez vous-même une facture conforme à partir de ce relevé, soit la facture est établie en votre nom dans le cadre d'un mandat de facturation écrit, conclu avant toute émission.",
+    "Deux configurations à ne pas confondre. Si la plateforme est votre client et qu'elle établit la facture à votre place, il s'agit d'une auto-facturation : la facture porte la mention « Autofacturation ». Si la facture est établie par un tiers mandaté qui n'est pas le client de la prestation, il s'agit d'une facturation par un tiers et cette mention ne s'applique pas. Dans les deux cas, un mandat de facturation écrit et conclu avant la première émission est nécessaire, et vous restez responsable du contenu des factures émises en votre nom.",
+    "En micro-entreprise, la franchise en base est fréquente : vous facturez sans TVA et portez sur chaque facture la mention « TVA non applicable, article 293 B du CGI », sans faire apparaître de taxe.",
+    "Les opérateurs de plateforme ont des obligations déclaratives sur les revenus de leurs utilisateurs auprès de l'administration fiscale. Vos factures et vos déclarations doivent rester cohérentes avec ces données transmises.",
+    "Même en franchise en base, vous restez assujetti à la TVA : vous êtes concerné par la facturation électronique, en réception comme en émission, à l'échéance applicable à votre entreprise. Les échanges passent par une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale. Vos éventuelles ventes à des particuliers relèvent du e-reporting."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base, sans aucune ligne de taxe.",
+    "« Autofacturation » lorsque la facture est établie par votre client en votre nom et pour votre compte, en vertu d'un mandat de facturation écrit. Lorsque la facture est établie par un tiers mandaté qui n'est pas le client de la prestation, il s'agit d'une facturation par un tiers et cette mention ne figure pas."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture mensuelle de courses à vélo adressée à une plateforme de livraison (coursier ayant opté pour la TVA)",
+    "lignes": [
+      {
+        "designation": "Courses de livraison de repas et colis réalisées via la plateforme — relevé du 1er au 30 septembre (184 courses, détail en annexe)",
+        "quantite": 184,
+        "unite": "course",
+        "prix_unitaire_ht": 4.2,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Majoration courses effectuées en conditions météorologiques dégradées (selon relevé plateforme)",
+        "quantite": 23,
+        "unite": "course",
+        "prix_unitaire_ht": 1.1,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Forfait créneaux de week-end assurés (4 créneaux selon planning validé)",
+        "quantite": 4,
+        "unite": "forfait",
+        "prix_unitaire_ht": 15,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Les quantités et les prix de cet exemple sont illustratifs et n'ont pas valeur de tarif de référence.",
+      "Taux de 20 % : la livraison à vélo est un transport de biens, sans taux réduit.",
+      "Relevé de courses de la plateforme joint en annexe : il justifie les quantités mais ne remplace pas la facture.",
+      "Variante franchise en base : aucune TVA ne doit apparaître ; porter « TVA non applicable, article 293 B du CGI » et n'afficher ni colonne de taxe ni total TTC.",
+      "Variante auto-facturation : si la plateforme est votre client et émet cette facture à votre place sous mandat de facturation, elle porte la mention « Autofacturation »."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Rapprocher chaque relevé de courses des plateformes avec la facture émise ou auto-facturée correspondante.",
+    "Suivre le chiffre d'affaires encaissé pour les déclarations de micro-entrepreneur à l'Urssaf.",
+    "Tenir une numérotation continue et sans doublon entre les factures que vous émettez et celles émises en votre nom.",
+    "Facturer depuis un téléphone, entre deux courses, avec des mentions toujours conformes.",
+    "Être prêt à recevoir, puis émettre, des factures électroniques via une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Outil de facturation et de gestion destiné aux indépendants et micro-entrepreneurs, profil qui correspond au statut dominant chez les coursiers à vélo. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+    },
+    {
+      "slug": "indy",
+      "justification": "Outil réunissant comptabilité, compte professionnel et facturation pour les indépendants, utile quand vous voulez un seul endroit pour facturer les plateformes et suivre vos encaissements. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+    },
+    {
+      "slug": "shine",
+      "justification": "Compte professionnel en ligne avec facturation intégrée, adapté à une activité pilotée depuis un mobile, en tournée. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+    }
+  ],
+  "faq": [
+    {
+      "question": "La plateforme m'envoie un relevé de courses : est-ce une facture ?",
+      "reponse": "Non. Le relevé récapitule vos courses, mais seule une facture comportant les mentions obligatoires (identité des parties, SIREN, numéro et date, détail des prestations, TVA) a valeur de facture. Certaines plateformes établissent la facture en votre nom via un mandat de facturation conclu par écrit avant toute émission. Vous restez responsable du contenu de ces factures."
+    },
+    {
+      "question": "Je facture des courses à une plateforme et des livraisons à un commerçant : les règles de TVA sont-elles les mêmes ?",
+      "reponse": "Oui, dans les deux cas vous transportez des biens, donc le taux normal de 20 % si vous facturez la TVA. Ce qui change, c'est l'émetteur de la facture : la plateforme peut l'établir en votre nom sous mandat de facturation, alors que la facture au commerçant est émise par vous, avec vos propres numérotation et mentions. Veillez à une numérotation continue entre les deux flux."
+    },
+    {
+      "question": "Comment numéroter mes factures quand la plateforme en émet une partie à ma place ?",
+      "reponse": "La numérotation doit rester chronologique, continue et sans doublon pour l'ensemble des factures émises en votre nom, qu'elles sortent de votre outil ou de celui de la plateforme. Convenez dans le mandat de facturation d'une série dédiée (un préfixe distinct, par exemple) pour les factures établies pour votre compte, et récupérez systématiquement un exemplaire de chacune : en cas de contrôle, c'est vous qui devez présenter la séquence complète."
+    },
+    {
+      "question": "Les plateformes transmettent-elles mes revenus à l'administration fiscale ?",
+      "reponse": "Oui. Les opérateurs de plateforme de mise en relation ont des obligations déclaratives sur les revenus réalisés par leurs utilisateurs et vous adressent un récapitulatif de vos opérations. Vérifiez que vos factures et vos déclarations de chiffre d'affaires restent cohérentes avec ces montants."
+    },
+    {
+      "question": "Je livre aussi des commerçants et parfois des particuliers en direct : facture ou note ?",
+      "reponse": "Pour un client professionnel, la facture est obligatoire avec toutes les mentions communes. Pour un particulier, une note doit être remise avant le paiement dès que la prestation atteint 25 € TTC ; en dessous, elle est facultative mais due si le client la demande."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Mentions obligatoires d'une facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "BOFiP — Taux normal de TVA applicable au transport de biens",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
+    },
+    {
+      "titre": "BOFiP — Taux réduit de 10 % réservé aux transports de voyageurs",
+      "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+    },
+    {
+      "titre": "BOFiP — Franchise en base : mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "BOFiP — Délivrance des factures : mandat de facturation, facturation par un tiers et mention « Autofacturation »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "impots.gouv.fr — Franchise en base, micro-entrepreneur : suis-je concerné par la réforme de la facturation électronique ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/franchise-en-base-micro-entrepreneur-ou-auto-entrepreneur-suis-je-concerne"
+    },
+    {
+      "titre": "impots.gouv.fr — Économie collaborative et plateformes numériques (obligations déclaratives)",
+      "url": "https://www.impots.gouv.fr/economie-collaborative-et-plateformes-numeriques"
+    },
+    {
+      "titre": "BOFiP — Obligations des opérateurs de plateforme de mise en relation par voie électronique",
+      "url": "https://bofip.impots.gouv.fr/bofip/11791-PGP.html/identifiant=BOI-BIC-DECLA-30-70-40-20-20200221"
+    },
+    {
+      "titre": "Légifrance — Arrêté n° 83-50/A du 3 octobre 1983, article 1 (note obligatoire dès 25 € TTC)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000032459194"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

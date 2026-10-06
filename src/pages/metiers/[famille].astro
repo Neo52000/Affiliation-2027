@@ -22,7 +22,27 @@ export async function getStaticPaths() {
 const { intro } = Astro.props;
 const famille = Astro.params.famille as Famille;
 const label = FAMILLE_LABELS[famille];
-const metiers = (await getCollection('metiers')).filter((m) => m.data.famille === famille);
+const tous = await getCollection('metiers');
+const metiers = tous
+  .filter((m) => m.data.famille === famille)
+  .sort((a, b) => a.data.nom.localeCompare(b.data.nom, 'fr'));
+
+// La spécification vise 10 métiers par famille : la phrase d'attente ne
+// s'affiche que tant que la famille est incomplète, jamais par habitude.
+const CIBLE_PAR_FAMILLE = 10;
+const familleComplete = metiers.length >= CIBLE_PAR_FAMILLE;
+
+const LIBELLE_CLIENTS: Record<string, string> = {
+  B2B: 'Clients professionnels',
+  B2C: 'Clients particuliers',
+  mixte: 'Pros et particuliers',
+};
+
+// Les autres familles, pour qu'un lecteur arrivé sur le mauvais hub reparte
+// d'ici plutôt que de la page d'accueil.
+const autresFamilles = (Object.keys(FAMILLE_LABELS) as Famille[])
+  .filter((f) => f !== famille && tous.some((m) => m.data.famille === f))
+  .map((f) => ({ famille: f, label: FAMILLE_LABELS[f] }));
 
 // L'introduction du hub décrit la réforme : elle renvoie à la source officielle,
 // comme les pages métier (règle : toute affirmation réglementaire est sourcée).
@@ -36,51 +56,130 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
 >
   <Breadcrumb items={[{ label: 'Métiers' }, { label }]} />
 
-  <div class="mt-4 flex items-center gap-4">
-    <span class="picto-carre">
-      <Picto nom={famille} taille={26} />
-    </span>
-    <h1 class="prose-measure text-3xl font-bold">
-      Facturation électronique : {label.toLowerCase()}
-    </h1>
-  </div>
+  <div class="layout-article mt-4">
+    <div>
+      <div class="flex items-center gap-4">
+        <span class="picto-carre shrink-0">
+          <Picto nom={famille} taille={26} />
+        </span>
+        <div>
+          <h1 class="prose-measure text-3xl font-bold">
+            Facturation électronique : {label.toLowerCase()}
+          </h1>
+          <p class="mt-1 text-sm text-ink-soft">
+            {metiers.length} métier{metiers.length > 1 ? 's' : ''} documenté
+            {metiers.length > 1 ? 's' : ''} · obligations communes et spécificités de chacun
+          </p>
+        </div>
+      </div>
 
-  <section class="prose-measure mt-4 space-y-3">
-    {intro.map((p) => (
-      <p>{p}</p>
-    ))}
-  </section>
+      <section class="prose-measure mt-6 space-y-3">
+        {intro.map((p) => (
+          <p>{p}</p>
+        ))}
+      </section>
 
-  <section aria-labelledby="liste-metiers" class="mt-8">
-    <h2 id="liste-metiers" class="text-2xl font-bold">
-      Guides par métier
-    </h2>
-    <ul class="mt-3 list-disc space-y-2 pl-5">
-      {metiers.map((m) => (
-        <li>
-          <a href={`/facturation-electronique/${m.data.slug}`}>
-            Facturation électronique pour {m.data.nom.toLowerCase()}
+      <section aria-labelledby="liste-metiers" class="mt-8">
+        <h2 id="liste-metiers" class="titre-section text-2xl font-bold">
+          Choisir votre métier
+        </h2>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+          {metiers.map((m) => (
+            <li class="carte-metier card-reco">
+              <p class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                <a
+                  href={`/facturation-electronique/${m.data.slug}`}
+                  class="text-base font-bold no-underline"
+                >
+                  {m.data.nom}
+                </a>
+                <span class="text-xs text-ink-soft">
+                  {LIBELLE_CLIENTS[m.data.clients_types] ?? m.data.clients_types}
+                </span>
+              </p>
+              {m.data.besoins_prioritaires[0] && (
+                <p class="ligne-2 mt-2 text-sm text-ink-soft">{m.data.besoins_prioritaires[0]}</p>
+              )}
+            </li>
+          ))}
+        </ul>
+        {!familleComplete && (
+          <p class="prose-measure mt-4 text-sm text-ink-soft">
+            D'autres métiers de cette famille seront ajoutés progressivement.
+          </p>
+        )}
+      </section>
+
+      {autresFamilles.length > 0 && (
+        <section aria-labelledby="autres-familles" class="mt-10">
+          <h2 id="autres-familles" class="titre-section text-2xl font-bold">
+            Votre métier n'est pas dans cette famille ?
+          </h2>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {autresFamilles.map((f) => (
+              <li>
+                <a href={`/metiers/${f.famille}`} class="puce-famille">
+                  <Picto nom={f.famille} taille={18} />
+                  {f.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section
+        aria-labelledby="sources-hub"
+        class="prose-measure mt-10 border-t border-border pt-4"
+      >
+        <h2 id="sources-hub" class="text-lg font-bold">
+          Source
+        </h2>
+        <p class="mt-2 text-sm">
+          <a href={reception.sources[0]} rel="noopener">
+            Calendrier officiel de la réforme (impots.gouv.fr)
           </a>
-        </li>
-      ))}
-    </ul>
-    <p class="prose-measure mt-4 text-sm text-ink-soft">
-      D'autres métiers de cette famille seront ajoutés progressivement.
-    </p>
-  </section>
+        </p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Données relevées le {formatDateFr(echeances.date_releve)}. Information générale : ne
+          remplace pas l'avis de votre expert-comptable.
+        </p>
+      </section>
+    </div>
 
-  <section aria-labelledby="sources-hub" class="prose-measure mt-8 border-t border-border pt-4">
-    <h2 id="sources-hub" class="text-lg font-bold">
-      Source
-    </h2>
-    <p class="mt-2 text-sm">
-      <a href={reception.sources[0]} rel="noopener">
-        Calendrier officiel de la réforme (impots.gouv.fr)
-      </a>
-    </p>
-    <p class="mt-2 text-sm text-ink-soft">
-      Données relevées le {formatDateFr(echeances.date_releve)}. Information générale : ne remplace
-      pas l'avis de votre expert-comptable.
-    </p>
-  </section>
+    <aside class="colonne-appui" aria-label="Accès rapides">
+      <div class="carte-appui card-top">
+        <p class="carte-appui-titre">Trouver votre outil</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Cinq questions, une recommandation fondée sur des faits vérifiés — jamais sur les
+          commissions.
+        </p>
+        <p class="mt-3">
+          <a href="/outils/quiz" class="btn-cta">
+            Faire le quiz
+          </a>
+        </p>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Votre échéance</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Deux questions pour savoir ce qui s'applique à vous, et quand.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/outils/echeance">Simuler mon échéance</a>
+        </p>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Notre méthode</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Comment les outils sont classés, et pourquoi aucune note n'est encore publiée.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/methode">Lire la méthode</a>
+        </p>
+      </div>
+    </aside>
+  </div>
 </Base>

@@ -1,0 +1,175 @@
+{
+  "nom": "Conchyliculteur",
+  "slug": "conchyliculteur",
+  "famille": "agriculture",
+  "statuts_frequents": ["Exploitation individuelle", "EARL", "GAEC", "SCEA"],
+  "volume_factures_typique": "Deux flux de volumes très différents : un petit nombre de factures professionnelles par semaine vers les mareyeurs, les poissonneries et les restaurateurs, et un flux nourri de ventes au détail non nominatives à la cabane et sur les marchés. Le volume se concentre sur les semaines qui précèdent les fêtes.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Deux flux de vente, deux dispositifs distincts. Les bourriches vendues à la cabane, sur un marché ou lors d'une dégustation partent vers des particuliers. Ces opérations relèvent de la transmission des données de transaction, dite e-reporting : vous transmettez les données de vos ventes, sans identité de client. Les palettes livrées à un mareyeur, à une poissonnerie ou à un restaurant établi en France relèvent de la facture électronique, émise et reçue par une plateforme agréée. À l'échéance applicable à votre entreprise, un PDF envoyé par courriel ne suffit plus pour ce second flux.",
+    "Le taux dépend de l'état du coquillage et de la qualité de l'acheteur. Les coquillages vivants destinés à être consommés en l'état relèvent du taux réduit de 5,5 %, y compris lorsqu'ils passent par un bassin de purification. Un plateau de fruits de mer contenant des coquillages déjà ouverts, vendu à emporter au consommateur final, relève du taux de 10 % au titre des ventes à emporter de produits alimentaires préparés en vue d'une consommation immédiate. Cette majoration ne vaut que pour la vente finale : lorsque vous livrez ces mêmes plateaux à un écailler, à une poissonnerie ou à un restaurateur assujetti qui les revendra, la livraison reste au taux de 5,5 %. Une même journée peut donc produire deux taux selon la qualité de l'acheteur : vérifiez ligne par ligne avant d'éditer.",
+    "Naissain, juvéniles, demi-élevage : un taux unique depuis 2023. Le naissain et les juvéniles cédés à un autre exploitant ne sont pas destinés à être consommés en l'état, mais ils sont normalement destinés à être utilisés dans la production agricole. Depuis le 1er janvier 2023, cette catégorie relève du taux réduit de 5,5 % au titre du 3° du A de l'article 278-0 bis du code général des impôts, et non plus du taux de 10 %. Les produits de demi-élevage et les coquillages adultes destinés à la consommation relèvent du même taux de 5,5 %. Une cession entre parcs et une vente de consommation portent donc aujourd'hui le même taux. Si vous travaillez encore sur une documentation antérieure à 2023, elle vous conduira à facturer 10 % à tort : confrontez l'espèce et le stade au tableau annexe du BOFiP dans sa version en vigueur.",
+    "Numéro d'agrément du centre d'expédition et marque d'identification. Les coquillages vivants ne parviennent à la vente au détail qu'après passage par un centre d'expédition agréé, et les conditionnements portent une marque d'identification. Cette marque est de forme ovale et contient le numéro d'agrément de l'établissement. Elle n'est pas une mention obligatoire de facture. En pratique, reporter le numéro d'agrément et les références de lots sur vos lignes de facture rend le rapprochement immédiat le jour d'un contrôle.",
+    "Le document d'enregistrement n'est pas une facture. Les transferts de coquillages vivants sont accompagnés d'un document d'enregistrement dédié, depuis la zone de production jusqu'au centre d'expédition. Il porte notamment le nom de la zone et son classement sanitaire, A, B, C ou non classée, ce classement étant fixé par arrêté préfectoral selon la qualité microbiologique. Ce document accompagne la marchandise. La facture accompagne la créance. Les deux pièces coexistent et aucune ne remplace l'autre.",
+    "Concession de cultures marines et identité de l'exploitation. L'exploitation de cultures marines sur le domaine public maritime suppose une concession délivrée par le préfet. Cette concession identifie vos parcs et conditionne votre activité, mais elle ne figure pas parmi les mentions obligatoires de la facture. Sur vos documents commerciaux, c'est le SIREN qui identifie l'entreprise, pas le numéro de concession.",
+    "Délai de paiement court sur une marchandise périssable. Les coquillages sont des denrées alimentaires périssables. Le délai de paiement convenu ne peut dépasser trente jours après la date de livraison, ou trente jours après la fin de la décade en cas de facturation périodique. La date d'échéance et le taux des pénalités de retard figurent sur la facture. Ce point pèse lourd sur les volumes expédiés avant les fêtes."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Numéro individuel d'identification à la TVA de l'exploitation, exigé dès lors que le total hors taxes de la facture dépasse 150 €.",
+    "Pour chaque bien livré : la quantité, la dénomination précise, le prix unitaire hors taxes et le taux de TVA applicable à la ligne.",
+    "Date d'échéance du règlement, qui ne peut dépasser trente jours après la date de livraison pour ces denrées alimentaires périssables, ou trente jours après la fin de la décade en cas de facturation périodique, et taux des pénalités de retard.",
+    "Mention et montant de l'indemnité forfaitaire pour frais de recouvrement, fixée à 40 €, due de plein droit en cas de retard de paiement.",
+    "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel, adresse de livraison des biens lorsqu'elle diffère de l'adresse de facturation, nature des opérations facturées et, le cas échéant, mention « Option pour le paiement de la taxe d'après les débits »."
+  ],
+  "exemple_facture": {
+    "intitule": "Expédition d'une semaine à une poissonnerie-écaillerie établie en France, client professionnel, émise par un centre d'expédition agréé",
+    "lignes": [
+      {
+        "designation": "Huîtres creuses n° 3 — lot HC-26-114 — zone de production classée B, purification effectuée",
+        "quantite": 120,
+        "unite": "bourriche de 2 douzaines",
+        "prix_unitaire_ht": 9.2,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Moules de bouchot — lot MB-26-207",
+        "quantite": 180,
+        "unite": "kg",
+        "prix_unitaire_ht": 2.4,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Palourdes — lot PJ-26-052",
+        "quantite": 25,
+        "unite": "kg",
+        "prix_unitaire_ht": 7.8,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "Exemple illustratif. Les quantités, les références de lots et les prix sont fictifs, de même que le classement sanitaire cité. Les taux de TVA sont ceux des sources citées.",
+      "Numéro de la facture, date d'émission, raison sociale et adresse de l'expéditeur et du destinataire, numéro SIREN du centre d'expédition.",
+      "Numéro individuel d'identification à la TVA de l'exploitation, le total hors taxes dépassant 150 €.",
+      "Pour chaque ligne : quantité, dénomination précise, prix unitaire hors taxes et taux de TVA applicable.",
+      "Date d'échéance du règlement, fixée à trente jours après la date de livraison, et taux des pénalités de retard.",
+      "Mention de l'indemnité forfaitaire pour frais de recouvrement de 40 €.",
+      "Numéro d'agrément du centre d'expédition et références de lots, reportés par choix de l'exploitant pour relier la facture aux documents sanitaires.",
+      "À l'échéance applicable à votre entreprise, ajoutez le numéro SIREN du client professionnel, l'adresse de livraison des biens lorsqu'elle diffère de l'adresse de facturation — fréquent quand la poissonnerie fait livrer un dépôt ou un pavillon de marée —, la nature des opérations facturées et, le cas échéant, la mention « Option pour le paiement de la taxe d'après les débits ».",
+      "Point de vigilance : cette facture ne porte qu'un seul taux parce qu'elle ne contient que des coquillages vivants livrés à un professionnel. Une facture d'étal mêlant bourriches vivantes et plateaux ouverts vendus au consommateur final porterait deux taux et imposerait un récapitulatif de TVA par taux, chaque ligne portant le sien."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Séparer dans un même outil les ventes au détail, qui relèvent de la transmission des données de transaction, et les livraisons professionnelles, qui relèvent de la facture électronique.",
+    "Appliquer le taux ligne par ligne selon l'état du coquillage et la qualité de l'acheteur, et produire un récapitulatif de TVA par taux dès qu'une pièce en mêle plusieurs.",
+    "Relier chaque ligne de facture aux références de lots et au numéro d'agrément du centre d'expédition, pour rapprocher la pièce commerciale des documents sanitaires.",
+    "Tenir le délai de paiement de trente jours propre aux denrées périssables et suivre les échéances pendant les pics d'expédition.",
+    "Émettre et recevoir les factures professionnelles par une plateforme agréée à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée DGFiP qui réunit le compte professionnel et la facturation, utile quand les encaissements de l'étal et les virements des mareyeurs arrivent sur le même compte. Son positionnement vise les PME et les indépendants."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP qui relie la facturation et la comptabilité, adaptée à une exploitation qui émet des factures professionnelles par séries pendant la saison. Elle s'adresse aux indépendants, aux freelances, aux TPE et aux micro-entrepreneurs."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée DGFiP qui regroupe comptabilité, compte professionnel et facturation pour un exploitant qui travaille seul. Le périmètre couvre l'ensemble sans passer par plusieurs abonnements."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends en bourriches à la cabane et en palettes à des mareyeurs. Dois-je émettre une facture électronique dans les deux cas ?",
+      "reponse": "Non. Vos ventes aux particuliers, à la cabane comme sur les marchés, relèvent de la transmission des données de transaction, l'e-reporting. Vos ventes aux mareyeurs, poissonniers et restaurateurs établis en France relèvent de la facture électronique, émise par une plateforme agréée. Les deux obligations s'appliquent à l'échéance applicable à votre entreprise, et vous êtes concerné même si vous facturez sans TVA."
+    },
+    {
+      "question": "Quel taux appliquer à un plateau de fruits de mer vendu à emporter avec les huîtres déjà ouvertes ?",
+      "reponse": "Les coquillages vivants destinés à être consommés en l'état relèvent du taux de 5,5 %, même après passage en bassin de purification. Un plateau de fruits de mer contenant des coquillages déjà ouverts, vendu à emporter au consommateur final, relève du taux de 10 %, au titre des ventes à emporter de produits alimentaires préparés en vue d'une consommation immédiate. Cette majoration ne vaut que pour la vente finale : si vous livrez les mêmes plateaux à un écailler, à une poissonnerie ou à un restaurateur assujetti qui les revendra, la livraison reste au taux de 5,5 %. Si vous vendez les deux le même jour, les montants doivent être ventilés par taux."
+    },
+    {
+      "question": "Je cède du naissain à un collègue ostréiculteur. Quel taux dois-je appliquer ?",
+      "reponse": "Le taux réduit de 5,5 %, comme pour les huîtres de consommation. Le naissain et les juvéniles destinés à l'élevage sont des produits non transformés normalement destinés à être utilisés dans la production agricole : depuis le 1er janvier 2023, ils relèvent du 3° du A de l'article 278-0 bis du code général des impôts, au taux de 5,5 %. Auparavant, ils relevaient du taux de 10 %, et c'est ce chiffre qui circule encore dans des documents non mis à jour. Les produits de demi-élevage et les coquillages adultes relèvent du même taux de 5,5 %, de sorte qu'une cession entre parcs ne porte qu'un seul taux."
+    },
+    {
+      "question": "Ma facture peut-elle remplacer le document d'enregistrement qui accompagne les lots ?",
+      "reponse": "Non. Les transferts de coquillages vivants sont accompagnés d'un document d'enregistrement dédié, de la zone de production jusqu'au centre d'expédition. Il indique notamment le nom de la zone et son classement sanitaire, A, B, C ou non classée. La facture est une pièce commerciale et fiscale, elle ne porte pas cette information réglementée. Reporter le numéro d'agrément de votre centre d'expédition et les références de lots sur la facture reste utile, mais c'est un choix d'organisation, pas une substitution."
+    },
+    {
+      "question": "Dans quel délai un mareyeur doit-il régler mes expéditions ?",
+      "reponse": "Les coquillages entrent dans les produits alimentaires périssables. Le délai convenu ne peut pas dépasser trente jours après la date de livraison, ou trente jours après la fin de la décade lorsque vous facturez de façon périodique. Faites figurer la date d'échéance et le taux des pénalités de retard sur chaque facture, ainsi que l'indemnité forfaitaire pour frais de recouvrement de 40 €."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Les coquillages destinés à être consommés en l'état par l'homme relèvent du taux réduit de 5,5 % des produits destinés à l'alimentation humaine ; un passage en bassin de purification ne modifie pas ce taux.",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
+    },
+    {
+      "titre": "Les produits d'origine agricole, de la pêche et de la pisciculture non transformés normalement destinés à être utilisés dans la production agricole relèvent du taux réduit de 5,5 % depuis le 1er janvier 2023 (CGI, art. 278-0 bis, A, 3°) ; les naissains et juvéniles y figurent.",
+      "url": "https://bofip.impots.gouv.fr/bofip/13565-PGP.html/identifiant=BOI-ANNX-000484-20250813"
+    },
+    {
+      "titre": "Tableau des taux de TVA applicables aux produits d'origine agricole, de la pêche, de la pisciculture et de l'aviculture n'ayant subi aucune transformation, à confronter espèce par espèce et stade par stade.",
+      "url": "https://bofip.impots.gouv.fr/bofip/13565-PGP.html/identifiant=BOI-ANNX-000484-20250813"
+    },
+    {
+      "titre": "La vente à emporter au consommateur final d'un plateau de fruits de mer contenant des coquillages déjà ouverts relève du taux de 10 %.",
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+    },
+    {
+      "titre": "Les livraisons successives de produits alimentaires préparés entre assujettis, en amont de la vente à emporter au consommateur final, restent soumises au taux réduit de 5,5 %.",
+      "url": "https://bofip.impots.gouv.fr/bofip/14665-PGP.html/identifiant=BOI-RES-TVA-000205-20251119"
+    },
+    {
+      "titre": "Les produits issus d'un établissement agréé portent une marque d'identification de forme ovale comportant le numéro d'agrément de l'établissement.",
+      "url": "https://agriculture.gouv.fr/agrement-sanitaire-des-etablissements-au-titre-du-reglement-ce-ndeg8532004"
+    },
+    {
+      "titre": "Les zones de production de coquillages sont classées A, B ou C selon leur qualité microbiologique, par arrêté préfectoral ; les transferts sont accompagnés d'un document d'enregistrement portant le nom et le classement de la zone.",
+      "url": "https://agriculture.gouv.fr/production-de-coquillages-et-surveillance-sanitaire-assuree-par-letat"
+    },
+    {
+      "titre": "Conditions sanitaires de transfert et de traçabilité des coquillages vivants, dont le document d'enregistrement accompagnant les lots.",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000048038978"
+    },
+    {
+      "titre": "L'exploitation de cultures marines sur le domaine public maritime est subordonnée à une concession délivrée par le préfet.",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006071367/LEGISCTA000029978297/"
+    },
+    {
+      "titre": "Pour les produits alimentaires périssables, le délai de paiement convenu ne peut dépasser trente jours après la date de livraison, ou trente jours après la fin de la décade en cas de facturation périodique.",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038411642"
+    },
+    {
+      "titre": "Mentions obligatoires de la facture, dont le numéro individuel d'identification à la TVA du vendeur, la date d'échéance du règlement et le taux des pénalités de retard ; mentions supplémentaires applicables à l'échéance de la réforme.",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Pour chaque bien livré ou service rendu, la facture indique la quantité, la dénomination précise, le prix unitaire hors taxes et le taux de TVA applicable.",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000022147026/2010-09-01"
+    },
+    {
+      "titre": "Indemnité forfaitaire pour frais de recouvrement de 40 €, dont la mention et le montant doivent figurer sur les factures.",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "Les opérations avec des clients particuliers relèvent de la transmission des données de transaction ; les opérations avec des clients professionnels établis en France relèvent de la facture électronique émise par une plateforme agréée.",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "Les entreprises qui n'émettent pas de facture ou qui facturent sans TVA restent concernées par la réforme, au minimum au titre de la transmission des données.",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/je-nemets-pas-de-facture-ou-je-facture-sans-tva-suis-je-concerne-par-la"
+    },
+    {
+      "titre": "La facture électronique doit transiter par une plateforme agréée ; un PDF simple envoyé par courriel ne suffit pas.",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "L'exploitant non redevable de la TVA ne facture aucune taxe et peut relever du remboursement forfaitaire agricole.",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/comment-obtenir-un-remboursement-forfaitaire-agricole"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

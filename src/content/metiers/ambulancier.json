@@ -1,0 +1,126 @@
+{
+  "nom": "Ambulancier",
+  "slug": "ambulancier",
+  "famille": "transport",
+  "statuts_frequents": ["SARL", "SAS / SASU", "Entreprise individuelle"],
+  "volume_factures_typique": "Volume soutenu et quotidien : chaque transport sur prescription donne lieu à une facturation, en grande partie télétransmise à l'Assurance Maladie, avec un reste à charge éventuel facturé au patient.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Les transports de malades ou de blessés en véhicules spécialement aménagés (ambulances), réalisés par des transporteurs sanitaires visés au code de la santé publique, sont exonérés de TVA en application de l'article 261, 4-3° du CGI. Aucune taxe ne doit apparaître sur ces factures.",
+    "Les courses en VSL ne remplissent pas la condition d'aménagement spécial : elles restent imposées au taux réduit de 10 % applicable au transport de voyageurs. Une même entreprise ventile donc des courses exonérées et des courses taxées.",
+    "L'activité exige un agrément délivré par le directeur général de l'ARS et une autorisation de mise en service pour chaque véhicule (code de la santé publique, articles R. 6312-1 et suivants). Sans agrément, pas de transport sanitaire facturable.",
+    "La facturation à l'Assurance Maladie passe par le téléservice de facturation mis à disposition des transporteurs sanitaires, auquel s'ajoute la transmission dématérialisée des pièces justificatives (prescription médicale et signature du patient). Vérifiez les modalités exactes et les prérequis techniques sur votre espace ameli pro.",
+    "Le tiers payant règle la part Assurance Maladie directement au transporteur. Le reste à charge du patient (dont la franchise médicale, selon sa situation) fait l'objet d'une facturation distincte.",
+    "Votre entreprise est assujettie : vous devrez être en mesure de recevoir vos factures fournisseurs au format électronique, à l'échéance applicable à votre entreprise. L'obligation d'émettre des factures électroniques ne porte en revanche pas sur les opérations exonérées de TVA en application des articles 261 à 261 E du CGI : vos transports en ambulance en sont exclus, tandis que vos courses en VSL, taxées à 10 %, y entrent. Les échanges concernés passent par une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mentions communes : identité et adresse des parties, SIREN/SIRET, numéro et date de facture, détail de la prestation (trajet, date, véhicule), taux et montant de TVA quand elle est due.",
+    "Pour un transport en ambulance exonéré : « Exonération de TVA — article 261, 4-3° du CGI (transport de malades ou de blessés en véhicule spécialement aménagé, par un transporteur sanitaire agréé) », sans aucune ligne de TVA.",
+    "Pour une course en VSL : TVA au taux réduit de 10 %, taux et montant affichés.",
+    "Pour la part facturée à un particulier : note obligatoire avant paiement dès 25 € TTC de prestation."
+  ],
+  "exemple_facture": {
+    "intitule": "Transport sanitaire en ambulance sur prescription médicale — domicile vers centre hospitalier (facture exonérée de TVA)",
+    "lignes": [
+      {
+        "designation": "Prise en charge en ambulance sur prescription médicale — équipage de deux personnes, véhicule spécialement aménagé (forfait de prise en charge)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": null,
+        "tva_pct": null
+      },
+      {
+        "designation": "Trajet domicile vers centre hospitalier, kilométrage au-delà de la zone forfaitaire",
+        "quantite": 18,
+        "unite": "km",
+        "prix_unitaire_ht": null,
+        "tva_pct": null
+      }
+    ],
+    "mentions_specifiques": [
+      "Les montants ne sont volontairement pas reproduits dans cet exemple, qui illustre la seule structure de la facture : les tarifs du transport sanitaire conventionné sont fixés par la convention nationale et révisables. Reportez-vous aux tarifs en vigueur publiés par l'Assurance Maladie.",
+      "« Exonération de TVA — article 261, 4-3° du CGI » : transport de malades en véhicule spécialement aménagé par un transporteur sanitaire agréé. Aucune ligne de taxe ne figure sur la facture.",
+      "Opération exonérée : la facture n'affiche ni colonne de TVA ni total TTC, et ses montants s'intitulent « Prix » et « Total », sans mention HT.",
+      "Transport réalisé sur prescription médicale ; pièces justificatives (prescription, signature du patient) transmises à l'Assurance Maladie sous forme dématérialisée.",
+      "Part Assurance Maladie réglée en tiers payant sur la base des tarifs conventionnels ; le solde éventuel est facturé au patient.",
+      "Attention : une course identique en VSL serait facturée avec TVA à 10 %, jamais en exonération."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Ventiler sans erreur les courses exonérées (ambulance, article 261, 4-3° du CGI) et les courses taxées à 10 % (VSL).",
+    "Rapprocher les règlements en tiers payant de l'Assurance Maladie des transports télétransmis, et relancer les restes à charge patients.",
+    "Faire dialoguer le téléservice de facturation de l'Assurance Maladie avec la facturation et la comptabilité de l'entreprise.",
+    "Distinguer, dans votre facturation professionnelle, les transports exonérés (hors champ de l'obligation d'émission électronique) des courses en VSL taxées à 10 % qui y entrent, et être prêt à recevoir toutes vos factures fournisseurs au format électronique, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Outil de gestion financière et de comptabilité conçu pour travailler avec un expert-comptable, utile à une société de transport sanitaire qui doit ventiler opérations exonérées et courses taxées à 10 %. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel assorti d'une fonction de facturation, orienté PME et indépendants ; utile pour suivre les virements du tiers payant et les encaissements patients au même endroit. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Outil de facturation et de comptabilité pour TPE, qui convient à une petite entreprise d'ambulances souhaitant centraliser factures patients et pièces comptables. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes transports en ambulance sont-ils soumis à la TVA ?",
+      "reponse": "Non. Le transport de malades ou de blessés en véhicule spécialement aménagé, effectué par un transporteur sanitaire visé au code de la santé publique, est exonéré de TVA au titre de l'article 261, 4-3° du CGI. Aucune taxe ne doit apparaître sur ces factures, et la mention portée doit viser cette disposition précise, et non l'article 261 dans son ensemble."
+    },
+    {
+      "question": "Pourquoi mes courses en VSL sont-elles taxées alors que mes ambulances ne le sont pas ?",
+      "reponse": "Le BOFiP précise que les véhicules sanitaires légers ne remplissent pas la condition d'aménagement spécial exigée pour l'exonération. Ils restent donc imposés au taux réduit de 10 % propre au transport de voyageurs. Votre facturation doit distinguer clairement les deux régimes."
+    },
+    {
+      "question": "Comment se passe la facturation d'un transport pris en charge par l'Assurance Maladie ?",
+      "reponse": "Elle s'appuie sur votre conventionnement et les tarifs conventionnels. Vous télétransmettez la facture par le téléservice de facturation mis à disposition des transporteurs sanitaires, et vous transmettez sous forme dématérialisée les pièces justificatives : prescription médicale et signature du patient. La part prise en charge vous est réglée en tiers payant, le reste à charge est facturé au patient. Vérifiez les modalités en vigueur sur votre espace ameli pro."
+    },
+    {
+      "question": "Exonéré de TVA, suis-je quand même concerné par la facturation électronique ?",
+      "reponse": "En partie, et c'est une spécificité de votre métier. Vous êtes un assujetti établi en France : vous devrez être en mesure de recevoir vos factures au format électronique, à l'échéance applicable à votre entreprise. En revanche, l'obligation d'émettre des factures électroniques ne porte pas sur les opérations exonérées de TVA en application des articles 261 à 261 E du CGI : vos transports en ambulance, exonérés au titre de l'article 261, 4-3°, en sont exclus, y compris lorsqu'ils sont facturés à un établissement de santé. Vos courses en VSL, elles, sont taxées à 10 % et entrent dans le champ de l'émission, via une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale. Une entreprise qui exploite les deux doit donc distinguer ses flux."
+    },
+    {
+      "question": "Puis-je facturer un transport sanitaire sans agrément de l'ARS ?",
+      "reponse": "Non. L'agrément est délivré par le directeur général de l'agence régionale de santé et chaque véhicule doit disposer d'une autorisation de mise en service (code de la santé publique, articles R. 6312-1 et suivants). Le conventionnement avec l'Assurance Maladie, nécessaire au tiers payant, s'ajoute à cet agrément."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Exonération des transports sanitaires en véhicules spécialement aménagés (article 261, 4-3° du CGI) et cas des VSL",
+      "url": "https://bofip.impots.gouv.fr/bofip/709-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-40-20120912"
+    },
+    {
+      "titre": "BOFiP — Taux réduit de 10 % applicable aux transports de voyageurs",
+      "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+    },
+    {
+      "titre": "ameli.fr — Transporteur sanitaire : facturation, mode d'emploi (téléservice de facturation, pièces justificatives)",
+      "url": "https://www.ameli.fr/transporteur-sanitaire/exercice-professionnel/facturation/modalites-facturation"
+    },
+    {
+      "titre": "ameli.fr — Le remboursement des frais de transport (taux, franchise médicale)",
+      "url": "https://www.ameli.fr/transporteur-sanitaire/exercice-professionnel/facturation/taux-remboursement/taux-remboursement"
+    },
+    {
+      "titre": "Légifrance — Code de la santé publique, agrément des transports sanitaires (articles R. 6312-1 à R. 6312-28-1)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072665/LEGISCTA000006190909/"
+    },
+    {
+      "titre": "impots.gouv.fr — Je facture sans TVA : suis-je concerné par la réforme de la facturation électronique ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/je-nemets-pas-de-facture-ou-je-facture-sans-tva-suis-je-concerne-par-la"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "Légifrance — Arrêté n° 83-50/A du 3 octobre 1983, article 1 (note obligatoire dès 25 € TTC)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000032459194"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

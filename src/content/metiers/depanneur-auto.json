@@ -1,0 +1,130 @@
+{
+  "nom": "Dépanneur-remorqueur auto",
+  "slug": "depanneur-auto",
+  "famille": "transport",
+  "statuts_frequents": ["entreprise individuelle", "SASU", "SARL"],
+  "volume_factures_typique": "Volume élevé et irrégulier : les interventions se facturent à l'unité, souvent pour de petits montants, et s'accumulent vite entre particuliers dépannés sur place et dossiers ouverts par les plateformes d'assistance. Les pics de demande (intempéries, départs en vacances) font varier fortement le nombre de factures d'un mois à l'autre.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Remorquer ou dépanner un véhicule, c'est transporter un bien, pas une personne : vos prestations relèvent du taux normal de TVA de 20 %, sans aucun taux réduit, même quand le client est un particulier.",
+    "Sur autoroute et route express, vous ne fixez pas vos prix : l'intervention est réservée aux entreprises agréées et le dépannage comme le remorquage des véhicules légers y sont encadrés par un forfait fixé par arrêté, revalorisé chaque année et majoré pour les interventions de nuit, le week-end et les jours fériés. Vérifiez le montant en vigueur sur service-public.fr avant d'établir votre facture : il change au 1er janvier.",
+    "Cet encadrement ne vise que les véhicules légers. Au-delà du poids total autorisé en charge fixé par l'arrêté, votre tarification reste libre, y compris sur autoroute : indiquez-le clairement sur votre devis pour éviter toute contestation.",
+    "Un particulier dépanné doit recevoir une note avant de payer dès que la prestation atteint 25 € TTC ; en dessous, remettez-la s'il la demande.",
+    "Vos factures aux plateformes d'assistance, assureurs et garages sont des factures entre assujettis : à l'échéance applicable à votre entreprise, elles passeront par une plateforme agréée, en réception puis en émission.",
+    "Les dépannages réglés directement par les automobilistes particuliers restent hors du circuit inter-entreprises, mais les données de ces encaissements seront transmises à l'administration via le e-reporting."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Taux normal de TVA de 20 % sur l'ensemble des prestations : dépannage sur place, remorquage, gardiennage.",
+    "Remise d'une note avant paiement pour toute prestation d'au moins 25 € TTC réalisée pour un particulier.",
+    "Mention « TVA non applicable, article 293 B du CGI » en cas de franchise en base, sans faire apparaître la moindre ligne de taxe.",
+    "Sur autoroute et route express, le forfait réglementé ne vise que les véhicules légers : au-delà du poids total autorisé en charge fixé par l'arrêté, précisez sur le devis et sur la facture que votre tarification est libre."
+  ],
+  "exemple_facture": {
+    "intitule": "Intervention de dépannage-remorquage sur réseau secondaire — facture à une plateforme d'assistance",
+    "lignes": [
+      {
+        "designation": "Forfait dépannage sur place, RD 619 (diagnostic et tentative de redémarrage), dossier assistance n° ASS-2026-4812",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 85,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Remorquage du véhicule immatriculé jusqu'au garage désigné par l'assisteur",
+        "quantite": 28,
+        "unite": "km",
+        "prix_unitaire_ht": 2.6,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Gardiennage du véhicule sur parc clos avant restitution",
+        "quantite": 2,
+        "unite": "jour",
+        "prix_unitaire_ht": 14,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux normal de 20 % : le remorquage de véhicules est un transport de biens (BOI-TVA-LIQ-20-20).",
+      "Référence du dossier d'assistance et immatriculation du véhicule pris en charge.",
+      "Intervention hors autoroute : tarification contractuelle (le forfait réglementé ne s'applique qu'aux véhicules légers dépannés sur autoroute ou route express)."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer vite et en volume des interventions unitaires, avec des références de dossier d'assistance.",
+    "Appliquer sans erreur le forfait TTC réglementé en vigueur sur autoroute et sa majoration de nuit, de week-end et de jours fériés.",
+    "Remettre une note conforme aux particuliers et préparer le e-reporting de ces encaissements.",
+    "Faire transiter les factures aux assisteurs et assureurs par une plateforme agréée à l'échéance applicable."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "shine",
+      "justification": "Compte professionnel en ligne avec facturation, ciblé indépendants, freelances et TPE. Ce périmètre correspond au dépanneur indépendant qui souhaite regrouper ses encaissements et ses factures. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+    },
+    {
+      "slug": "indy",
+      "justification": "Outil réunissant comptabilité, compte professionnel et facturation pour les indépendants. Adapté si vous exercez en entreprise individuelle et gérez seul votre administratif. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel associé à un module de facturation, ciblé PME et indépendants. Pertinent quand votre activité grandit et que les dossiers d'assisteurs se multiplient. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Puis-je appliquer mes propres tarifs pour un remorquage sur autoroute ?",
+      "reponse": "Non. Sur autoroutes et routes express, l'intervention est réservée aux dépanneurs agréés et le prix des véhicules légers y est encadré par un forfait fixé par arrêté, revalorisé chaque année et majoré pour les interventions de nuit, le week-end et les jours fériés. Consultez le montant applicable sur service-public.fr avant chaque intervention. Au-delà du poids total autorisé en charge fixé par l'arrêté, cet encadrement ne s'applique pas : vos prix restent libres, y compris sur autoroute. Hors autoroute et route express, vos prix restent libres également."
+    },
+    {
+      "question": "Le client est un particulier en panne : puis-je facturer à 10 % comme un taxi ?",
+      "reponse": "Non. Le taux réduit de 10 % est réservé au transport de voyageurs. Vous transportez un véhicule, donc un bien : la prestation relève du taux normal de 20 %, que le client soit un particulier, un garage ou un assureur."
+    },
+    {
+      "question": "Je dépanne de nuit au bord de la route et j'encaisse sur place : comment remettre une note conforme ?",
+      "reponse": "La note doit être remise avant le paiement dès que la prestation atteint 25 € TTC, en dessous si le client la demande. Sur intervention, une note éditée depuis votre téléphone ou votre tablette, numérotée dans la même série que vos factures, vaut remise immédiate : vous conservez le double et vous évitez la double saisie au retour. Ces encaissements auprès de particuliers ne passeront pas par le circuit inter-entreprises, mais leurs données devront être transmises via le e-reporting, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Je travaille surtout pour des plateformes d'assistance : qu'est-ce que la réforme change pour moi ?",
+      "reponse": "Vos factures aux assisteurs sont des factures entre professionnels assujettis. À l'échéance applicable à votre entreprise, vous devrez pouvoir les recevoir, puis les émettre, via une plateforme agréée. Vérifiez dès maintenant que vos factures sont complètes : dans un format structuré, un taux erroné ou une mention manquante se repère immédiatement."
+    },
+    {
+      "question": "Je suis en franchise en base : comment facturer un forfait autoroute fixé TTC ?",
+      "reponse": "Les forfaits réglementés s'entendent toutes taxes comprises. En franchise en base, vous facturez sans TVA et portez la mention « TVA non applicable, article 293 B du CGI », sans afficher de ligne de taxe. Vous restez néanmoins concerné par la facturation électronique, en réception comme en émission, à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — TVA, taux normal : prestations de services dont transport de biens (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
+    },
+    {
+      "titre": "Tarifs du dépannage et du remorquage sur autoroute et route express (service-public.fr)",
+      "url": "https://www.service-public.fr/particuliers/actualites/A15073"
+    },
+    {
+      "titre": "Véhicules : que faire en cas de panne sur autoroute ? (DGCCRF, economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/vehicules-que-faire-en-cas-de-panne-sur-autoroute"
+    },
+    {
+      "titre": "Obligation de remise d'une note au client pour les prestations de services (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000032459194"
+    },
+    {
+      "titre": "BOFiP — Franchise en base, mention « TVA non applicable, article 293 B du CGI » (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "Je découvre la facturation électronique — impots.gouv.fr",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Facturation électronique — Liste des plateformes de dématérialisation partenaires immatriculées sous réserve (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

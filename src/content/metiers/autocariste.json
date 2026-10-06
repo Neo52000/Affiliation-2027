@@ -1,0 +1,118 @@
+{
+  "nom": "Autocariste",
+  "slug": "autocariste",
+  "famille": "transport",
+  "statuts_frequents": ["SARL", "SAS / SASU", "entreprise individuelle"],
+  "volume_factures_typique": "Quelques dizaines de factures par mois : échéanciers de marchés scolaires ou de lignes régulières, services occasionnels, locations d'autocar avec conducteur.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos prestations d'autocar — circuits scolaires, services occasionnels, excursions, navettes — sont du transport de voyageurs dès lors que le véhicule est mis à disposition avec conducteur. Elles relèvent du taux réduit de TVA de 10 %, quel que soit le donneur d'ordre. Attention à la limite : une mise à disposition de véhicule sans conducteur n'est pas un transport de voyageurs mais une location, soumise au taux normal de 20 %.",
+    "Vos marchés de transport scolaire ou de lignes régulières sont conclus avec des collectivités. Ces factures à la sphère publique se déposent sur Chorus Pro, déjà obligatoire pour tous les fournisseurs d'entités publiques. Ne les confondez pas avec le circuit de la réforme, qui vise vos clients professionnels privés.",
+    "Pour un circuit transfrontalier en autocar, seule la partie du trajet réalisée en France est soumise à la TVA française. La facture doit ventiler le parcours entre la France et l'étranger.",
+    "Vos clients professionnels établis en France (agences de voyages, entreprises, associations assujetties) basculent dans la facturation électronique : à l'échéance applicable à votre entreprise, ces factures transiteront par une plateforme agréée, en réception puis en émission.",
+    "Si une agence ou un voyagiste établi dans un autre État membre de l'UE affrète votre autocar, la facture part sans TVA française et porte la mention « Autoliquidation »."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Taux de TVA de 10 % indiqué ligne par ligne pour chaque prestation de transport de voyageurs, avec le montant de taxe correspondant.",
+    "Mention « Autoliquidation », sans aucune ligne de TVA française, pour une prestation facturée à un preneur assujetti établi dans un autre État membre de l'UE.",
+    "Pour un transport international de voyageurs, ventilation du parcours : seule la partie réalisée en France supporte la TVA française.",
+    "Identité et adresse des parties, numéro SIREN, numéro individuel de TVA, date et numéro de facture, détail des prestations, taux et montant de la TVA."
+  ],
+  "exemple_facture": {
+    "intitule": "Sortie scolaire à la journée pour un collège public — marché de transport occasionnel passé par la collectivité",
+    "lignes": [
+      {
+        "designation": "Mise à disposition d'un autocar 59 places avec conducteur — aller-retour Chaumont / Reims, journée complète (forfait marché)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 890,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Kilomètres supplémentaires hors itinéraire du forfait (détour par le musée, demande de l'établissement)",
+        "quantite": 46,
+        "unite": "km",
+        "prix_unitaire_ht": 1.85,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux réduit de 10 % — transport de voyageurs (BOI-TVA-LIQ-30-20-60).",
+      "Référence du marché public et numéro d'engagement communiqués par la collectivité.",
+      "Facture déposée sur le portail Chorus Pro (client : entité publique)."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Déposer les factures des marchés publics sur Chorus Pro tout en préparant le passage des clients privés sur une plateforme agréée.",
+    "Établir devis et factures au taux de 10 % avec des forfaits et des suppléments kilométriques.",
+    "Suivre les échéanciers de facturation des marchés scolaires sur l'année.",
+    "Gérer les cas particuliers : affrètement par un preneur UE (autoliquidation), circuits transfrontaliers (ventilation du parcours), mise à disposition sans conducteur (taux normal)."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Solution orientée gestion financière et comptabilité, pensée pour que vous travailliez avec votre expert-comptable. Sa cible TPE et PME correspond aux sociétés d'autocars qui emploient des conducteurs et sont suivies en cabinet. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel associé à un module de facturation, avec une cible PME et indépendants. Utile pour encaisser vos marchés et suivre la trésorerie de votre flotte. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Outil combinant facturation et comptabilité pour indépendants et TPE. Il convient si vous exploitez seul votre autocar ou au sein d'une petite structure familiale. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+    }
+  ],
+  "faq": [
+    {
+      "question": "J'enchaîne transport scolaire en semaine et excursions le week-end : les deux activités sont-elles bien à 10 % de TVA ?",
+      "reponse": "Oui. Le transport de voyageurs relève du taux réduit de 10 %, quel que soit le mode de transport et quel que soit le client, collectivité ou particulier. Vos circuits scolaires et vos excursions sont donc facturés au même taux. Indiquez le taux et le montant de TVA sur chaque ligne. La limite à connaître : si vous louez un véhicule sans conducteur, ce n'est plus du transport de voyageurs mais une location, au taux normal de 20 %."
+    },
+    {
+      "question": "Je facture une collectivité pour un marché de transport scolaire : Chorus Pro ou plateforme agréée ?",
+      "reponse": "Chorus Pro. La facturation électronique vers les entités publiques passe par ce portail, déjà obligatoire pour tous les fournisseurs de la sphère publique. Le circuit des plateformes agréées concerne vos clients professionnels privés, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Comment facturer un voyage scolaire vers Barcelone avec mon autocar ?",
+      "reponse": "Pour un transport routier international de voyageurs, seule la partie du trajet effectuée en France est soumise à la TVA française. Votre facture doit donc ventiler le parcours entre la France et l'étranger, au prorata des distances parcourues. Contrairement aux transports aériens et maritimes de voyageurs, le transport routier ne bénéficie pas d'exonération générale au titre du caractère international du trajet : ne facturez pas un circuit en autocar hors taxe au seul motif qu'il franchit une frontière. Faites valider la ventilation de vos circuits récurrents par votre expert-comptable."
+    },
+    {
+      "question": "Une agence de voyages allemande affrète mon autocar pour un circuit : quelle TVA appliquer ?",
+      "reponse": "Votre preneur est un assujetti établi dans un autre État membre de l'UE : vous facturez sans TVA française et portez la mention « Autoliquidation » sur la facture. C'est le client qui autoliquide la taxe dans son pays. N'affichez aucune ligne de TVA, pas même « TVA 0 % »."
+    },
+    {
+      "question": "Je vends des excursions à la journée à des particuliers et le même autocar part le lendemain pour une agence de voyages : dois-je gérer deux circuits de facturation ?",
+      "reponse": "Oui, et c'est le point de vigilance de votre activité mixte. La course vendue à l'agence de voyages est une facture entre professionnels : elle passera par une plateforme agréée, en réception puis en émission, à l'échéance applicable à votre entreprise. L'excursion vendue aux particuliers reste hors de ce circuit, mais les données de la transaction devront être transmises à l'administration via le e-reporting. Séparez dès maintenant vos séries de numéros de facture selon le type de client : le rapprochement sera immédiat le jour où les deux flux cohabiteront."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Mentions obligatoires d'une facture — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "BOFiP — TVA, taux réduit : transports de voyageurs (BOI-TVA-LIQ-30-20-60)",
+      "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+    },
+    {
+      "titre": "BOFiP — Transports internationaux de voyageurs (BOI-TVA-CHAMP-20-60-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/2270-PGP.html/identifiant=BOI-TVA-CHAMP-20-60-10-20240724"
+    },
+    {
+      "titre": "BOFiP — Autoliquidation, prestations intracommunautaires (BOI-TVA-DECLA-30-20-20-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1531-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-30-20190925"
+    },
+    {
+      "titre": "Commande publique : la facturation électronique via Chorus Pro (CEDEF, economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/cedef/fiches-pratiques/commande-publique-la-facturation-electronique"
+    },
+    {
+      "titre": "Je découvre la facturation électronique — impots.gouv.fr",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Facturation électronique — Liste des plateformes de dématérialisation partenaires immatriculées sous réserve (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}
