@@ -75,3 +75,11 @@ Lighthouse : accueil 100/100/100/100 (LCP 0,8 s, CLS 0) ; plombier 100/100/100/1
 Demande utilisateur : « cela manque d'images ». Choix : SVG inline uniquement (zéro requête, net en Retina, couleurs par variables CSS donc thème sombre automatique) — aucune photo stock ni visuel inventé ; les captures réelles des outils viendront des tests documentés et les logos éditeurs attendent les kits presse (TODO #17).
 Livré : illustration du hero (facture → plateforme agréée → destinataire), 10 pictogrammes de familles de métiers (accueil + hubs), pictos étapes/preuves/outils, favicon aligné sur l'identité dégradé, image Open Graph 1200×630 générée par capture Chromium (og.png) + balises og:image/twitter:card.
 Lighthouse accueil et plombier : 100/100/100/100, CLS 0, LCP 1,4 s. 74 tests + 6 e2e verts, garde-fous OK.
+
+## Phase 4 (hubs) — 10 familles publiées (2026-10-06)
+
+Les 10 introductions de hub famille (produites par les agents « brief famille » du workflow Phase 4, sur recherche sourcée mutualisée) sont importées : 9 nouvelles pages famille s'ouvrent, chacune listant ses métiers publiés. L'intro bâtiment provisoire est remplacée par la version complète.
+Gabarit de hub : pictogramme de famille en tête, et renvoi à la source officielle du calendrier + date de relevé en pied — l'intro décrit la réforme, elle doit donc être sourcée comme les pages métier. Aucune date réglementaire en dur (formulation « à l'échéance applicable à votre entreprise »).
+Nouveau helper testé familleTitle() : variantes successives sous la limite de 60 caractères, réduction d'un libellé composé à sa tête (« Restauration et métiers de bouche » → « Restauration ») ; le H1 et le fil d'Ariane gardent le libellé complet.
+Build 52 pages, check-seo 49 pages indexables OK, similarité OK, 77 tests Vitest + 6 parcours e2e verts.
+État des contenus métier : 18 vérifiés et prêts, 60 rédigés en attente de vérification adversariale, 12 à rédiger — le workflow reprend sur son cache après chaque interruption de limite de session.
