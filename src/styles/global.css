@@ -11,11 +11,16 @@
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Accent unique — contraste AA sur paper dans les deux thèmes */
-  --color-accent: #1d4ed8;
-  --color-accent-dark: #1e3a8a;
-  --color-accent-soft: #eff6ff;
+  /* Accent : paire bleu → violet (identité « v3 conversion »), AA sur paper */
+  --color-accent: #2563eb;
+  --color-accent-2: #7c3aed;
+  --color-accent-dark: #1e40af;
+  --color-accent-soft: #eff4ff;
   --color-on-accent: #ffffff;
+
+  /* État positif (badges conformité) — AA sur son fond doux */
+  --color-ok: #047857;
+  --color-ok-soft: #ecfdf3;
 
   /* Encres et fonds */
   --color-ink: #1f2328;
@@ -40,20 +45,33 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Durées de mouvement (hors @theme : pas d'utilitaires dédiés) */
+/* Durées de mouvement + dégradés (hors @theme : pas d'utilitaires dédiés) */
 :root {
   --duration-fast: 150ms;
   --duration-base: 250ms;
   --duration-slow: 450ms;
+
+  /* Dégradé d'action : texte blanc gras = AA large sur toute la plage */
+  --gradient-accent: linear-gradient(100deg, var(--color-accent) 0%, var(--color-accent-2) 100%);
+  /* Dégradé de titre : chaque extrémité reste AA sur paper */
+  --gradient-text-from: #1d4ed8;
+  --gradient-text-to: #6d28d9;
+  /* Halo du hero : décoratif, très faible opacité */
+  --hero-glow:
+    radial-gradient(42rem 22rem at 18% 0%, rgba(37, 99, 235, 0.14), transparent 60%),
+    radial-gradient(36rem 20rem at 85% 10%, rgba(124, 58, 237, 0.12), transparent 60%);
 }
 
 /* Thème sombre automatique — mêmes tokens, valeurs recalibrées (AA vérifié) */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-accent: #60a5fa;
+    --color-accent-2: #a78bfa;
     --color-accent-dark: #93c5fd;
     --color-accent-soft: #16233f;
     --color-on-accent: #0b1220;
+    --color-ok: #34d399;
+    --color-ok-soft: #0b2e22;
     --color-ink: #e6e9ef;
     --color-ink-soft: #9aa4b2;
     --color-paper: #0e1116;
@@ -62,6 +80,15 @@
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
     --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.55);
     --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.65);
+
+    /* Les boutons gardent le dégradé saturé (texte blanc gras = AA large) ;
+       les titres passent sur des extrémités claires, AA sur fond sombre */
+    --gradient-accent: linear-gradient(100deg, #2563eb 0%, #7c3aed 100%);
+    --gradient-text-from: #60a5fa;
+    --gradient-text-to: #a78bfa;
+    --hero-glow:
+      radial-gradient(42rem 22rem at 18% 0%, rgba(96, 165, 250, 0.16), transparent 60%),
+      radial-gradient(36rem 20rem at 85% 10%, rgba(167, 139, 250, 0.14), transparent 60%);
   }
 }
 
@@ -87,11 +114,126 @@ h2 {
   letter-spacing: -0.01em;
 }
 
-/* Titre héros de l'accueil — style « display » du design system */
+/* Titre héros de l'accueil — style « display » (v3 : plus grand, extra-bold) */
 .display-title {
-  font-size: clamp(2.125rem, 1.5rem + 2.5vw, 2.75rem);
+  font-size: clamp(2.25rem, 1.4rem + 3.4vw, 3.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+
+/* Texte en dégradé (titres uniquement) — extrémités AA sur paper, avec repli */
+.text-gradient {
+  color: var(--gradient-text-from);
+  background: linear-gradient(100deg, var(--gradient-text-from), var(--gradient-text-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero : halo décoratif en fond, sans incidence sur la mise en page */
+.hero {
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -3rem -1rem 0;
+  background: var(--hero-glow);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Bouton d'action principal (CTA) : dégradé, élévation, texte gras blanc */
+.btn-cta {
+  display: inline-block;
+  background: var(--gradient-accent);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1.25rem;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    filter var(--duration-fast) var(--ease-out);
+}
+
+.btn-cta:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  filter: saturate(1.15);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+/* Bouton secondaire discret */
+.btn-ghost {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1.25rem;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+/* Tuile de chiffre clé */
+.stat-tile .stat-valeur {
+  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
+}
+
+/* Badge d'état positif (conformité, plateforme agréée) */
+.badge-ok {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  color: var(--color-ok);
+  background: var(--color-ok-soft);
+  border: 1px solid color-mix(in srgb, var(--color-ok) 35%, transparent);
+  border-radius: 999px;
+  padding: 2px 0.6rem;
+  white-space: nowrap;
+}
+
+/* Carte mise en avant : liseré supérieur en dégradé */
+.card-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+}
+
+/* Encadré « essentiel » des pages métier */
+.encadre-essentiel {
+  background: var(--color-accent-soft);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
 }
 
 /* Largeur de lecture : 70 caractères maximum */
@@ -108,8 +250,11 @@ a {
   transition: color var(--duration-fast) var(--ease-out);
 }
 
+/* Au survol : soulignement renforcé plutôt que changement de couleur —
+   une bascule de teinte sombre n'atteint pas 3:1 face au texte environnant
+   (WCAG 1.4.1, axe link-in-text-block évalue aussi l'état hover). */
 a:hover {
-  color: var(--color-accent-dark);
+  text-decoration-thickness: 2px;
 }
 
 /* Focus visible au clavier sur tous les éléments interactifs */
@@ -233,6 +378,10 @@ a:hover {
 /* Geste 1 : micro-retour — survol de ligne des tableaux interactifs */
 .table-interactive tbody tr {
   transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.table-interactive tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--color-paper-soft) 60%, transparent);
 }
 
 .table-interactive tbody tr:hover {

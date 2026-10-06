@@ -55,7 +55,10 @@ const appJsonLd = {
       Mis à jour le {formatDateFr(d.date_maj)} · Note : <strong>Test en cours</strong>
     </p>
 
-    <section class="prose-measure mt-6 rounded-md border border-border bg-paper-soft p-4">
+    <section class="encadre-essentiel prose-measure mt-6 p-4">
+      {d.est_plateforme_agreee.valeur && (
+        <p class="badge-ok mb-2">Plateforme agréée — registre DGFiP</p>
+      )}
       <p>
         {d.est_plateforme_agreee.valeur ? (
           <>

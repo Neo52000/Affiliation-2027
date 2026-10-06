@@ -1,8 +1,10 @@
 ---
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-700.css';
+import '@fontsource/inter/latin-800.css';
 import inter400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import inter700 from '@fontsource/inter/files/inter-latin-700-normal.woff2?url';
+import inter800 from '@fontsource/inter/files/inter-latin-800-normal.woff2?url';
 import '../styles/global.css';
 import Seo from '../components/Seo.astro';
 import Header from '../components/Header.astro';
@@ -26,6 +28,7 @@ const { title, description, updatedAt, noindex } = Astro.props;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preload" as="font" type="font/woff2" href={inter400} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={inter700} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={inter800} crossorigin />
     <Seo title={title} description={description} updatedAt={updatedAt} noindex={noindex} />
   </head>
   <body>

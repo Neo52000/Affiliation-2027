@@ -84,10 +84,7 @@ const faqJsonLd = {
       {SITE.expertRelecteur && ` · Relu par ${SITE.expertRelecteur}`}
     </p>
 
-    <section
-      aria-labelledby="essentiel"
-      class="prose-measure mt-6 rounded-md border border-border bg-paper-soft p-4"
-    >
+    <section aria-labelledby="essentiel" class="encadre-essentiel prose-measure mt-6 p-4">
       <h2 id="essentiel" class="text-lg font-bold">
         L'essentiel en 3 lignes
       </h2>
@@ -152,7 +149,13 @@ const faqJsonLd = {
       </p>
       <ol class="mt-4 space-y-4">
         {recommandes.map(({ outil, justification }, i) => (
-          <li class="card-reco reveal rounded-lg border border-border p-4">
+          <li
+            class:list={[
+              'card-reco reveal rounded-lg border border-border p-4',
+              i === 0 && 'card-top',
+            ]}
+          >
+            {i === 0 && <p class="badge-ok mb-2">Notre recommandation</p>}
             <p class="font-bold">
               {i + 1}. <a href={`/logiciels/${outil.data.slug}`}>{outil.data.nom}</a>
               <span class="pill ml-2 align-middle font-normal">Test en cours</span>

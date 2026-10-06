@@ -3,7 +3,6 @@ import { SITE } from '../config';
 // La navigation s'enrichit au fil des phases (guides en Phase 5)
 // pour ne jamais pointer vers une page qui n'existe pas encore.
 const nav: { label: string; href: string }[] = [
-  { label: 'Quiz', href: '/outils/quiz' },
   { label: 'Plateformes agréées', href: '/plateformes-agreees' },
   { label: 'Méthode', href: '/methode' },
 ];
@@ -14,19 +13,20 @@ const nav: { label: string; href: string }[] = [
     <a href="/" class="font-bold text-ink no-underline hover:text-accent">
       {SITE.name}
     </a>
-    {nav.length > 0 && (
-      <nav aria-label="Navigation principale">
-        <ul class="flex gap-6">
-          {nav.map((item) => (
-            <li>
-              <a href={item.href} class="nav-link text-ink-soft no-underline hover:text-accent">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    )}
+    <nav aria-label="Navigation principale" class="flex items-center gap-6">
+      <ul class="hidden items-center gap-6 sm:flex">
+        {nav.map((item) => (
+          <li>
+            <a href={item.href} class="nav-link text-ink-soft no-underline hover:text-accent">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href="/outils/quiz" class="btn-cta text-sm">
+        Trouver mon logiciel
+      </a>
+    </nav>
   </div>
 </header>
 
