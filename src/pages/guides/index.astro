@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Picto from '../../components/Picto.astro';
+import { SITE } from '../../config';
+import { pageTitle } from '../../lib/seo';
+import { formatDateFr } from '../../lib/dates';
+
+const guides = (await getCollection('guides')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title, 'fr'),
+);
+
+// Le nombre de sources est le meilleur signal de sérieux de chaque guide, et il
+// vient de la donnée : il ne peut pas se désynchroniser du contenu.
+const total = guides.reduce((n, g) => n + g.data.sources.length, 0);
+---
+
+<Base
+  title={pageTitle('Guides de la facturation électronique', SITE.name)}
+  description="Calendrier, plateformes agréées, mentions obligatoires, formats, sanctions : les guides de la facturation électronique, sourcés officiellement."
+>
+  <Breadcrumb items={[{ label: 'Guides' }]} />
+
+  <div class="layout-article mt-4">
+    <div>
+      <div class="flex items-center gap-4">
+        <span class="picto-carre shrink-0">
+          <Picto nom="document-source" taille={26} />
+        </span>
+        <div>
+          <h1 class="prose-measure text-3xl font-bold">Guides de la facturation électronique</h1>
+          <p class="mt-1 text-sm text-ink-soft">
+            {guides.length} guide{guides.length > 1 ? 's' : ''} · {total} sources officielles
+          </p>
+        </div>
+      </div>
+
+      <p class="encadre-essentiel prose-measure mt-6 p-4">
+        Les règles communes à tous les métiers : qui est concerné et quand, ce qu'est une plateforme
+        agréée, les mentions à porter sur une facture, les formats, les sanctions. Chaque
+        affirmation réglementaire renvoie à sa source officielle.
+      </p>
+
+      <section aria-labelledby="liste-guides" class="mt-10">
+        <h2 id="liste-guides" class="titre-section text-2xl font-bold">
+          Tous les guides
+        </h2>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+          {guides.map((g) => (
+            <li class="carte-metier card-reco">
+              <p class="font-bold">
+                <a href={`/guides/${g.id}`} class="no-underline">
+                  {g.data.title}
+                </a>
+              </p>
+              <p class="mt-2 text-sm text-ink-soft">{g.data.description}</p>
+              <p class="mt-2 text-xs text-ink-soft">
+                {g.data.sources.length} sources · mis à jour le {formatDateFr(g.data.date_maj)}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+
+    <aside class="colonne-appui" aria-label="Accès rapides">
+      <div class="carte-appui card-top">
+        <p class="carte-appui-titre">Et pour votre métier ?</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Les guides donnent les règles communes. Votre page métier donne vos taux, vos mentions et
+          votre exemple de facture.
+        </p>
+        <p class="mt-3">
+          <a href="/outils/quiz" class="btn-cta">
+            Faire le quiz
+          </a>
+        </p>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Votre échéance</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Deux questions pour savoir ce qui s'applique à vous, et quand.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/outils/echeance">Simuler mon échéance</a>
+        </p>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Nos sources</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Comment les données sont relevées, datées et vérifiées.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/methode">Lire la méthode</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+</Base>

@@ -1,8 +1,9 @@
 ---
 import { SITE } from '../config';
-// La navigation s'enrichit au fil des phases (guides en Phase 5)
-// pour ne jamais pointer vers une page qui n'existe pas encore.
+// La navigation ne pointe que vers des pages qui existent : les guides y
+// sont entrés quand la collection a été publiée.
 const nav: { label: string; href: string }[] = [
+  { label: 'Guides', href: '/guides' },
   { label: 'Plateformes agréées', href: '/plateformes-agreees' },
   { label: 'Méthode', href: '/methode' },
 ];
