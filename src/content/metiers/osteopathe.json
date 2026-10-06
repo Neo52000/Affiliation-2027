@@ -1,0 +1,125 @@
+{
+  "nom": "Ostéopathe",
+  "slug": "osteopathe",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Micro-entrepreneur (micro-BNC), fréquent en début d'activité",
+    "Entreprise individuelle (BNC, déclaration contrôlée)",
+    "SELARL, plus rare, pour les cabinets pluripraticiens"
+  ],
+  "volume_factures_typique": "Régulier et unitaire : une note d'honoraires par consultation, encaissée immédiatement auprès du patient. Pas de flux de feuilles de soins : le volume de documents suit directement le nombre de patients reçus.",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Votre exonération de TVA est conditionnelle : elle suppose que vous soyez autorisé à faire légalement usage du titre d'ostéopathe (diplôme d'un établissement agréé, enregistrement auprès de l'ARS). Sans cette condition, vos actes sont soumis à la TVA (BOFiP).",
+    "Sans conventionnement, votre facturation ne passe par aucune feuille de soins : vous remettez une note d'honoraires directement au patient, qui s'en sert notamment auprès de sa complémentaire santé.",
+    "La note est obligatoire dès que la prestation atteint 25 €, et doit être remise avant le paiement ; en dessous, elle est remise si le patient la demande (arrêté du 3 octobre 1983, DGCCRF).",
+    "Vos prestations sans finalité thérapeutique individuelle, par exemple des ateliers de prévention ou de sensibilisation facturés à une entreprise, sont exclues de l'exonération et taxables ; facturées sous franchise en base, elles portent la mention de l'article 293 B du CGI.",
+    "Vos consultations exonérées sont dispensées d'émission de factures électroniques, mais vous devrez pouvoir recevoir celles de vos fournisseurs (table de pratique, consommables, loyer du cabinet) à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur les notes d'honoraires de consultations exonérées : référence à l'exonération, par exemple « Exonération de TVA, article 261, 4, 1° du CGI », réservée aux praticiens faisant un usage légal du titre.",
+    "Sur les prestations taxables facturées sous franchise en base : « TVA non applicable, article 293 B du CGI ».",
+    "Sur la note remise au patient (obligatoire dès 25 € de prestation, avant le paiement — arrêté du 3 octobre 1983) : date de rédaction, identification du praticien, nom du patient, date et nature de l'acte, montant total."
+  ],
+  "exemple_facture": {
+    "intitule": "Note d'honoraires remise à un patient à l'issue de consultations d'ostéopathie",
+    "lignes": [
+      {
+        "designation": "Consultation d'ostéopathie — anamnèse, tests d'exclusion et traitement manuel (adulte)",
+        "quantite": 1,
+        "unite": "consultation",
+        "prix_unitaire_ht": 60,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Consultation de suivi — réévaluation et ajustement du traitement manuel",
+        "quantite": 1,
+        "unite": "consultation",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "Exonération de TVA : article 261, 4, 1° du CGI — praticien autorisé à faire légalement usage du titre d'ostéopathe.",
+      "Note remise au patient avant le paiement (prestation de 25 € ou plus, arrêté du 3 octobre 1983), portant date de rédaction, identification du praticien, nom du patient, date et nature de l'acte et montant total.",
+      "Montants nets, sans TVA ; honoraires illustratifs, librement fixés."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Éditer rapidement des notes d'honoraires B2C conformes entre deux consultations : référence d'exonération, remise avant paiement.",
+    "Séparer les consultations exonérées des prestations taxables (interventions en entreprise) et appliquer la bonne mention à chacune.",
+    "Encaisser et suivre des paiements directs, consultation par consultation, sans circuit de tiers payant.",
+    "Pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée DGFiP de facturation et de gestion, ciblant les indépendants et micro-entrepreneurs. Ce positionnement correspond aux notes d'honoraires B2C répétées d'un cabinet d'ostéopathie, y compris en micro-BNC."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée DGFiP combinant compte pro en ligne et facturation, pour les indépendants, freelances et TPE. Utile quand les encaissements se font consultation par consultation, directement auprès des patients."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée DGFiP destinée aux indépendants, avec comptabilité, compte pro et facturation. Elle couvre la tenue du BNC et l'émission des notes d'honoraires dans un même outil."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mon diplôme d'ostéopathie suffit-il pour facturer sans TVA ?",
+      "reponse": "L'exonération suppose l'usage légal du titre d'ostéopathe : un diplôme délivré par un établissement de formation agréé par le ministère chargé de la santé et l'enregistrement auprès de l'ARS (décret n° 2007-435, article 75 de la loi du 4 mars 2002). Sans cette condition, le BOFiP soumet vos actes à la TVA. Vérifiez votre situation avant de porter la mention d'exonération."
+    },
+    {
+      "question": "Dois-je remettre une note d'honoraires à chaque patient ?",
+      "reponse": "Oui dès que la prestation atteint 25 €, et avant le paiement (arrêté du 3 octobre 1983, fiche DGCCRF sur l'information sur les prix). En dessous de ce montant, la note est remise si le patient la demande. Elle comporte la date de rédaction, votre identification, le nom du patient, la date et la nature de l'acte et le montant total, ainsi que la référence à l'exonération de TVA lorsque vous y avez droit."
+    },
+    {
+      "question": "Je ne suis pas conventionné avec l'Assurance Maladie : la réforme me concerne-t-elle quand même ?",
+      "reponse": "Oui, au moins pour la réception. Vos consultations exonérées sont dispensées d'émission de factures électroniques (impots.gouv.fr), et vos patients particuliers ne relèvent pas de la facturation entre entreprises. Vous devrez en revanche pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Mes interventions en entreprise sont-elles exonérées comme mes consultations au cabinet ?",
+      "reponse": "Non si elles n'ont pas de finalité thérapeutique individuelle : ateliers de prévention ou de sensibilisation sont exclus de l'exonération et taxables (BOFiP). Facturées à une entreprise assujettie, elles entrent dans le circuit d'émission des factures électroniques à l'échéance applicable à votre entreprise. Sous franchise en base, portez la mention de l'article 293 B du CGI."
+    },
+    {
+      "question": "Un patient me demande une facture pour sa mutuelle : que doit-elle comporter ?",
+      "reponse": "Votre note d'honoraires sert de justificatif auprès de la complémentaire. Elle reprend les mentions attendues d'une facture à un particulier : identification du praticien, date, nature de l'acte, montant (entreprendre.service-public.fr). Ajoutez la référence à l'exonération de TVA de l'article 261, 4, 1° du CGI si vous faites un usage légal du titre."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Exonération des ostéopathes subordonnée à l'usage légal du titre (BOI-TVA-CHAMP-30-10-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+    },
+    {
+      "titre": "Légifrance — Décret n° 2007-435 du 25 mars 2007 relatif aux actes et aux conditions d'exercice de l'ostéopathie (usage du titre, enregistrement ARS)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000462001"
+    },
+    {
+      "titre": "Légifrance — Article 75 de la loi n° 2002-303 du 4 mars 2002 (encadrement du titre d'ostéopathe)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000031549014"
+    },
+    {
+      "titre": "DGCCRF (economie.gouv.fr) — L'information sur les prix : note obligatoire dès 25 € pour une prestation de services à un particulier et mentions qu'elle comporte (arrêté du 3 octobre 1983)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/linformation-sur-les-prix"
+    },
+    {
+      "titre": "entreprendre.service-public.fr — Mentions obligatoires sur une facture",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "BOFiP — Mention de la franchise en base, article 293 B du CGI (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+    },
+    {
+      "titre": "BOFiP — Référence d'exonération exigée sur les notes d'honoraires (BOI-TVA-DECLA-30-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "impots.gouv.fr — Réforme de la facturation électronique : dispense d'émission des opérations exonérées, réception obligatoire",
+      "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

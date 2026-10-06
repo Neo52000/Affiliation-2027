@@ -1,0 +1,130 @@
+{
+  "nom": "Sage-femme",
+  "slug": "sage-femme",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Entreprise individuelle (BNC, déclaration contrôlée)",
+    "Collaboratrice libérale au sein d'un cabinet",
+    "Exercice en cabinet de groupe via une SCM",
+    "SELARL pour les structures de plusieurs sages-femmes"
+  ],
+  "volume_factures_typique": "Variable selon l'activité : la majorité des actes NGAP part en feuilles de soins télétransmises, souvent en tiers payant pour la maternité. Les notes d'honoraires remises aux patientes restent ponctuelles, au rythme des suivis de grossesse, des séances de préparation et des visites à domicile.",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Profession médicale, vos soins à finalité thérapeutique et de prévention (suivi de grossesse, accouchement, suivi postnatal, suivi gynécologique de prévention) sont exonérés de TVA au titre de l'article 261, 4, 1° du CGI. Vos notes d'honoraires portent la référence à cette exonération.",
+    "Exercice conventionné : vos actes cliniques sont cotés selon la NGAP, qui reste en vigueur pour les sages-femmes, et facturés via des feuilles de soins le plus souvent télétransmises (ameli.fr). Ce circuit conventionnel ne se confond pas avec la facturation électronique entre entreprises.",
+    "Les séances de préparation à la naissance et à la parentalité sont prises en charge à 100 % par l'Assurance Maladie dès la déclaration de grossesse, dans la limite de sept séances (ameli.fr) : la part caisse transite par la feuille de soins, pas par une facture à la patiente.",
+    "En cas de dépassement, une information écrite préalable sur le coût des actes est due dès que les honoraires atteignent 70 € (arrêté du 2 octobre 2008, article L. 1111-3 du code de la santé publique). Ce document précède l'acte et ne remplace pas la note d'honoraires.",
+    "Vos opérations exonérées sont dispensées d'émission de factures électroniques ; vous devrez en revanche pouvoir recevoir celles de vos fournisseurs (matériel d'examen, monitorage, consommables, local) à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur les notes d'honoraires : référence à l'exonération des soins, par exemple « Exonération de TVA, article 261, 4, 1° du CGI ».",
+    "Information écrite préalable sur le coût des actes dès 70 € d'honoraires avec dépassement (arrêté du 2 octobre 2008), à conserver avec votre facturation.",
+    "Le cas échéant, sur une activité taxable marginale sous franchise en base : « TVA non applicable, article 293 B du CGI »."
+  ],
+  "exemple_facture": {
+    "intitule": "Note d'honoraires — surveillance à domicile de la mère et du nouveau-né après la sortie de maternité",
+    "lignes": [
+      {
+        "designation": "Visite de surveillance à domicile de la mère et du nouveau-né (acte coté selon la NGAP)",
+        "quantite": 1,
+        "unite": "visite",
+        "prix_unitaire_ht": 40,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Indemnité forfaitaire de déplacement à domicile",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 4,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "Exonération de TVA : article 261, 4, 1° du CGI — soins dispensés par un membre d'une profession médicale.",
+      "Acte relevant de la NGAP et donnant lieu à feuille de soins pour la prise en charge par l'Assurance Maladie.",
+      "Montants nets de TVA, donnés à titre illustratif : reportez-vous aux tarifs conventionnels en vigueur (ameli.fr)."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Articuler la télétransmission des feuilles de soins et la tenue de vos notes d'honoraires exonérées.",
+    "Produire et archiver l'information écrite préalable dès 70 € en cas de dépassement d'honoraires.",
+    "Suivre séparément les virements des caisses (tiers payant maternité) et les règlements directs des patientes.",
+    "Être prête à recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP qui associe facturation et comptabilité pour les indépendants et TPE. Ce socle permet de suivre ensemble notes d'honoraires exonérées et achats du cabinet."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée DGFiP offrant compte professionnel et facturation, pour les indépendants comme les PME. Un compte dédié aide à distinguer les virements des caisses en tiers payant des règlements directs des patientes."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée DGFiP orientée facturation et gestion pour les indépendants et micro-entrepreneurs. Elle s'adresse notamment à un début d'activité libérale, par exemple en collaboration."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes consultations de grossesse et mes accouchements sont-ils exonérés de TVA ?",
+      "reponse": "Oui. La sage-femme appartient aux professions médicales dont les soins dispensés aux personnes, à finalité thérapeutique, sont exonérés par l'article 261, 4, 1° du CGI (BOFiP). Vos notes d'honoraires portent la référence à cette exonération et ne font apparaître aucune TVA."
+    },
+    {
+      "question": "La réforme de la facturation électronique remplace-t-elle la télétransmission de mes feuilles de soins ?",
+      "reponse": "Non. La feuille de soins reste le canal de facturation de vos actes NGAP auprès de l'Assurance Maladie (ameli.fr). La facturation électronique vise les factures entre entreprises assujetties : vos opérations exonérées en sont dispensées à l'émission. Seule la réception des factures de vos fournisseurs s'imposera à vous, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Comment sont facturées les séances de préparation à la naissance et à la parentalité ?",
+      "reponse": "Elles relèvent de la NGAP et sont prises en charge à 100 % par l'Assurance Maladie dès la déclaration de grossesse, dans la limite de sept séances (ameli.fr). En tiers payant, la part caisse transite par la feuille de soins. Ces séances, soins dispensés par une profession médicale, restent exonérées de TVA."
+    },
+    {
+      "question": "Je facture parfois un dépassement d'honoraires : quelles sont mes obligations ?",
+      "reponse": "Dès que vos honoraires comportant un dépassement atteignent 70 €, vous devez remettre à la patiente une information écrite préalable sur le coût des actes (arrêté du 2 octobre 2008, pris pour l'article L. 1111-3 du code de la santé publique). Ce document est remis avant les actes. Il s'ajoute à la note d'honoraires, il ne la remplace pas."
+    },
+    {
+      "question": "Être conventionnée change-t-il mes obligations face à la facturation électronique ?",
+      "reponse": "Le conventionnement régit vos tarifs et la télétransmission (convention nationale des sages-femmes libérales et ses avenants, ameli.fr), pas vos obligations fiscales de facturation. Vous suivez le droit commun de la réforme : dispense d'émission pour vos soins exonérés, obligation de pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Exonération des soins des professions médicales, dont les sages-femmes (BOI-TVA-CHAMP-30-10-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+    },
+    {
+      "titre": "ameli.fr — La NGAP, nomenclature applicable aux actes cliniques des sages-femmes",
+      "url": "https://www.ameli.fr/sage-femme/exercice-liberal/facturation-remuneration/nomenclatures-codage/ngap"
+    },
+    {
+      "titre": "ameli.fr — Tarifs conventionnels des sages-femmes libérales",
+      "url": "https://www.ameli.fr/sage-femme/exercice-liberal/facturation-remuneration/tarifs-conventionnels/tarifs"
+    },
+    {
+      "titre": "ameli.fr — Convention nationale des sages-femmes libérales et ses avenants",
+      "url": "https://www.ameli.fr/sage-femme/textes-reference/convention/avenants"
+    },
+    {
+      "titre": "ameli.fr — Préparation à la naissance et à la parentalité : sept séances prises en charge à 100 %",
+      "url": "https://www.ameli.fr/assure/sante/themes/grossesse/preparation-parentalite"
+    },
+    {
+      "titre": "ameli.fr — Maternité : déclaration, prise en charge et feuille de soins (sage-femme)",
+      "url": "https://www.ameli.fr/sage-femme/exercice-liberal/presciption-prise-charge/situation-type-soin/grossesse-et-maternite/maternite"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 2 octobre 2008 : seuil de 70 € pour l'information écrite préalable sur le coût des actes (article L. 1111-3 CSP)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000019600052"
+    },
+    {
+      "titre": "BOFiP — Mention d'exonération à porter sur la note d'honoraires (BOI-TVA-DECLA-30-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "impots.gouv.fr — Réforme de la facturation électronique : opérations exonérées dispensées d'émission, réception pour tous",
+      "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

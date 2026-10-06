@@ -1,0 +1,154 @@
+{
+  "nom": "Paysagiste",
+  "slug": "paysagiste",
+  "famille": "batiment",
+  "statuts_frequents": [
+    "Entreprise individuelle affiliée à la MSA",
+    "EURL",
+    "SARL",
+    "Micro-entrepreneur (réservé à certaines activités non agricoles, à vérifier au cas par cas)"
+  ],
+  "volume_factures_typique": "20 à 60 factures par mois en saison, portées par les contrats d'entretien récurrents et les petites interventions chez les particuliers (ordre de grandeur indicatif).",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Le réflexe « bâtiment » ne s'applique pas : l'aménagement et l'entretien des jardins et espaces verts relèvent du taux normal de 20 %, même autour d'un logement ancien.",
+    "Une exception étroite existe pour les arbres : l'abattage, le tronçonnage, le débardage, l'élagage et l'enlèvement d'arbres d'un jardin attenant à un logement achevé depuis plus de deux ans relèvent du taux de 10 % lorsqu'ils sont nécessaires pour permettre l'accès au logement ou sa remise en état.",
+    "Les végétaux d'ornement vendus en l'état (plantes vivantes, arbres et arbustes, gazon en rouleau) relèvent du taux de 10 % : une même facture mêle donc souvent des lignes de fourniture à 10 % et des lignes de prestation à 20 %, à ventiler distinctement.",
+    "Les contrats d'entretien annuels se facturent par échéances mensuelles ou trimestrielles : chaque échéance donne lieu à une facture, d'où un volume récurrent à automatiser.",
+    "Si l'entreprise est déclarée au titre des services à la personne (condition d'activité exclusive, sauf dérogation), les petits travaux de jardinage facturés aux particuliers restent soumis au taux normal de TVA de 20 % — ils sont exclus des taux réduits des services à la personne depuis le 1er juillet 2013 — mais ouvrent droit pour le client au crédit d'impôt de 50 % ; une attestation fiscale annuelle est remise à chaque client avant le 31 mars.",
+    "Particularité de gestion : les travaux de création, de restauration et d'entretien des parcs et jardins sont des travaux agricoles au sens du code rural, avec affiliation à la MSA ; l'outil de facturation doit s'articuler avec ce régime social."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Pour les prestations relevant des services à la personne : remise à chaque client, avant le 31 mars, d'une attestation fiscale annuelle conditionnant son avantage fiscal.",
+    "Mention certifiée du client sur le devis ou la facture lorsque, par exception, des travaux d'abattage ou d'élagage liés à un logement de plus de deux ans sont facturés au taux de 10 %.",
+    "Si l'activité comporte des ouvrages soumis à une assurance professionnelle obligatoire (maçonnerie paysagère, par exemple) : mention de l'assurance, coordonnées de l'assureur ou du garant et couverture géographique du contrat."
+  ],
+  "exemple_facture": {
+    "intitule": "Remise en état d'un jardin avec fourniture de végétaux — client particulier",
+    "lignes": [
+      {
+        "designation": "Tonte de remise en état et débroussaillage du terrain",
+        "quantite": 450,
+        "unite": "m²",
+        "prix_unitaire_ht": 0.35,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Taille de la haie périphérique et évacuation des déchets verts",
+        "quantite": 35,
+        "unite": "ml",
+        "prix_unitaire_ht": 6.5,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Fourniture d'arbustes d'ornement en conteneur, livrés en l'état",
+        "quantite": 12,
+        "unite": "unité",
+        "prix_unitaire_ht": 18,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Plantation des arbustes et paillage du massif",
+        "quantite": 12,
+        "unite": "unité",
+        "prix_unitaire_ht": 15,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Fourniture de gazon en rouleau, livré en l'état",
+        "quantite": 60,
+        "unite": "m²",
+        "prix_unitaire_ht": 7,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Préparation du sol et pose du gazon en rouleau",
+        "quantite": 60,
+        "unite": "m²",
+        "prix_unitaire_ht": 4.5,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Les végétaux vendus en l'état (produits de l'horticulture d'ornement non transformés) sont facturés sur des lignes distinctes des prestations, chacune à son taux de TVA.",
+      "Devis n° [référence] accepté le [date]."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Automatiser la facturation récurrente des contrats d'entretien : échéances périodiques, reconduction et révision annuelle.",
+    "Ventiler sans erreur, sur une même facture, la fourniture de végétaux à 10 % et les prestations à 20 %.",
+    "Suivre les encaissements d'un grand nombre de petites factures de particuliers et relancer les retards.",
+    "Être prêt à recevoir puis à émettre les factures via une plateforme agréée, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP orientée facturation et gestion pour indépendants, TPE et micro-entrepreneurs, des profils répandus dans l'entretien de jardins. Son positionnement convient à un flux régulier de petites factures de particuliers."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée DGFiP réunissant comptabilité, compte professionnel et facturation à destination des indépendants. Utile pour tenir à jour une activité qui mêle contrats récurrents et chantiers ponctuels."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée DGFiP proposant compte professionnel en ligne et facturation pour indépendants, freelances et TPE. Le suivi des encaissements aide à surveiller les échéances des contrats d'entretien."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Puis-je facturer l'entretien d'un jardin à 10 % comme un artisan du bâtiment ?",
+      "reponse": "Non. L'aménagement et l'entretien des espaces verts sont exclus du taux réduit applicable aux travaux dans les logements : le taux normal de 20 % s'applique, même si le jardin entoure une maison achevée depuis plus de deux ans. Ne transposez pas à vos prestations de jardin le régime des travaux sur le logement lui-même."
+    },
+    {
+      "question": "L'abattage ou l'élagage d'un arbre peut-il relever du taux de 10 % ?",
+      "reponse": "Oui, par exception étroite. L'abattage, le tronçonnage, le débardage, l'élagage et l'enlèvement d'arbres situés dans un jardin attenant à un logement achevé depuis plus de deux ans relèvent du taux de 10 % lorsqu'ils sont nécessaires pour permettre l'accès au logement ou sa remise en état. Hors de ce cadre, ces prestations restent au taux de 20 %. Faites certifier les conditions par le client sur le devis ou la facture."
+    },
+    {
+      "question": "Quel taux appliquer aux végétaux que je fournis ?",
+      "reponse": "Les produits de l'horticulture et de la floriculture d'ornement n'ayant subi aucune transformation relèvent du taux de 10 % : plantes vivantes, arbres et arbustes d'ornement, gazon en rouleau notamment. Les fleurs ou plantes traitées (colorées, stabilisées) et les végétaux artificiels restent à 20 %. Facturez la fourniture de végétaux sur des lignes distinctes de vos prestations, chacune à son taux."
+    },
+    {
+      "question": "Mes clients particuliers peuvent-ils obtenir un crédit d'impôt sur mes prestations de jardinage ?",
+      "reponse": "Oui, pour les petits travaux de jardinage, si votre entreprise est déclarée au titre des services à la personne et respecte la condition d'activité exclusive, sauf dérogation. Ces prestations restent facturées au taux normal de TVA de 20 % (le jardinage est exclu des taux réduits des services à la personne depuis le 1er juillet 2013), mais elles ouvrent droit pour le client au crédit d'impôt de 50 %, dans la limite d'un plafond annuel spécifique de 5 000 € de dépenses par foyer pour le jardinage. Vous remettez à chaque client une attestation fiscale annuelle avant le 31 mars."
+    },
+    {
+      "question": "Comment organiser la facturation d'un contrat d'entretien annuel ?",
+      "reponse": "Découpez le contrat en échéances mensuelles ou trimestrielles et émettez une facture par échéance, au taux de 20 % pour les prestations d'entretien. Ce volume récurrent justifie un outil qui automatise l'émission, la reconduction et le suivi des encaissements. À l'échéance applicable à votre entreprise, les factures adressées à vos clients professionnels, syndics ou entreprises, passeront par une plateforme agréée."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOI-ANNX-000208 — Taux de TVA applicables aux travaux extérieurs et assimilés (cours, terrasses, espaces verts)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1735-PGP.html/identifiant=BOI-ANNX-000208-20120912"
+    },
+    {
+      "titre": "BOI-TVA-LIQ-30-20-90-30 — Opérations particulières : travaux exclus ou admis au taux réduit dans les logements",
+      "url": "https://bofip.impots.gouv.fr/bofip/1733-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-30-20240731"
+    },
+    {
+      "titre": "BOI-TVA-LIQ-30-10-35 — Produits de la sylviculture, de l'horticulture et de la floriculture (taux de 10 %)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13623-PGP.html/identifiant=BOI-TVA-LIQ-30-10-35-20220629"
+    },
+    {
+      "titre": "Article 278 bis du code général des impôts — Taux réduit sur les produits d'origine agricole non transformés",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000046869153"
+    },
+    {
+      "titre": "BOI-TVA-LIQ-30-20-80 — Services d'aide à la personne : prestations relevant des taux réduits (les petits travaux de jardinage en sont exclus et relèvent du taux normal depuis le 1er juillet 2013)",
+      "url": "https://bofip.impots.gouv.fr/bofip/780-PGP.html/identifiant=BOI-TVA-LIQ-30-20-80-20230510"
+    },
+    {
+      "titre": "Quels avantages fiscaux pour une entreprise de services à la personne ? — service-public.fr",
+      "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F31554"
+    },
+    {
+      "titre": "Plafonds de crédit d'impôt des services à la personne (avance immédiate) — urssaf.fr",
+      "url": "https://urssaf.fr/portail/home/employeur-du-secteur-des-service/mandataire/foire-aux-questions/plafonds-de-credit-dimpot.html"
+    },
+    {
+      "titre": "Code rural et de la pêche maritime, articles L722-1 et suivants — Champ d'application du régime agricole",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006071367/LEGISCTA000006152340/"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

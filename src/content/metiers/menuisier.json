@@ -1,0 +1,135 @@
+{
+  "nom": "Menuisier",
+  "slug": "menuisier",
+  "famille": "batiment",
+  "statuts_frequents": ["Entreprise individuelle (artisan)", "EURL", "SASU", "Micro-entrepreneur"],
+  "volume_factures_typique": "5 à 20 factures par mois : des chantiers moins nombreux que dans d'autres corps d'état, mais à montant unitaire élevé, presque toujours découpés en facture d'acompte à la commande puis facture de solde à la pose.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Le taux de TVA dépend de la menuiserie posée, dans un logement achevé depuis plus de deux ans : 5,5 % pour l'isolation thermique des parois vitrées (fenêtres, portes-fenêtres, fenêtres de toit), les volets isolants et les portes d'entrée donnant sur l'extérieur, sous conditions de performance ; 10 % pour les autres menuiseries ; 20 % dès que l'une des conditions manque.",
+    "La part correspondant à la fourniture d'équipements mobiliers (meuble livré non fixé) est exclue du taux de 10 %, même dans un logement ancien : une même facture de menuisier ventile donc souvent trois taux, ligne par ligne.",
+    "Le sur-mesure se paie avec acompte à la commande : chaque versement donne lieu à une facture d'acompte, et pour les livraisons de biens la TVA est exigible dès l'encaissement de l'acompte.",
+    "Une vente départ atelier, sans pose, est une livraison de bien au taux normal de 20 % : les taux réduits sont réservés aux prestations de travaux dans les logements anciens.",
+    "Quand le client achète lui-même ses menuiseries, ces fournitures restent à 20 % chez son vendeur ; seule votre main-d'œuvre de pose bénéficie du taux réduit applicable.",
+    "L'application d'un taux réduit repose sur une mention certifiée par le client, inscrite sur le devis ou la facture : ancienneté du logement supérieure à deux ans et conditions du taux remplies."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Certification du client inscrite sur le devis ou la facture : le logement est achevé depuis plus de deux ans et les conditions du 5,5 % (menuiseries isolantes) ou du 10 % sont réunies.",
+    "Ventilation de la TVA par ligne lorsque plusieurs taux coexistent sur la même facture (5,5 %, 10 %, 20 %), chaque ligne portant le taux qui lui est propre.",
+    "Facture d'acompte pour tout versement encaissé avant la livraison ou la pose.",
+    "Mention de l'assurance professionnelle obligatoire (responsabilité décennale pour les travaux de pose), coordonnées de l'assureur ou du garant et couverture géographique du contrat."
+  ],
+  "exemple_facture": {
+    "intitule": "Fourniture et pose de menuiseries sur mesure — appartement achevé depuis plus de deux ans (facture de solde après acompte)",
+    "lignes": [
+      {
+        "designation": "Fenêtres bois sur mesure, double vitrage, conformes aux critères de performance du taux réduit (fourniture et pose)",
+        "quantite": 3,
+        "unite": "unité",
+        "prix_unitaire_ht": 980,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Dépose des anciennes menuiseries et reprise des appuis (travaux induits)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 420,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Bloc-porte intérieur chêne, fourni et posé",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 460,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Bibliothèque en chêne massif, livrée non fixée (équipement mobilier)",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 1250,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Le client certifie que le logement est achevé depuis plus de deux ans et que les conditions d'application des taux de 5,5 % et de 10 % sont remplies.",
+      "TVA ventilée par ligne : 5,5 % (parois vitrées isolantes et travaux induits), 10 % (travaux d'aménagement), 20 % (fourniture de mobilier).",
+      "Acompte encaissé à la commande, facture d'acompte n° [référence], déduit du présent solde.",
+      "Assurance responsabilité décennale : [assureur], contrat n° [référence], couverture géographique [zone]."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Émettre des factures d'acompte conformes, avec TVA exigible dès l'encaissement pour les livraisons de biens, et suivre acomptes et soldes chantier par chantier.",
+    "Ventiler plusieurs taux de TVA sur une même facture, ligne par ligne (5,5 %, 10 %, 20 %).",
+    "Transformer un devis signé en facture d'acompte puis en facture de solde sans ressaisie.",
+    "Distinguer dans l'outil les ventes départ atelier (20 %) des prestations de fourniture et pose à taux réduit.",
+    "Recevoir puis émettre les factures via une plateforme agréée, à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée par la DGFiP réunissant compte professionnel et facturation, pour PME et indépendants. Pratique pour suivre l'encaissement des acomptes à la commande, systématiques dans le sur-mesure."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée par la DGFiP : compte pro en ligne et facturation, à destination des indépendants, freelances et TPE. Adaptée à un atelier artisanal sans service administratif dédié."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée par la DGFiP, conçue pour travailler avec votre expert-comptable. Utile quand les achats de bois et de quincaillerie et la ventilation des taux appellent un suivi comptable rigoureux."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes fenêtres sur mesure posées en rénovation relèvent-elles du 5,5 % ou du 10 % ?",
+      "reponse": "L'isolation thermique des parois vitrées — fenêtres, portes-fenêtres, fenêtres de toit — relève du taux de 5,5 % dans un logement achevé depuis plus de deux ans, si les menuiseries respectent les critères de performance fixés par l'administration. À défaut, c'est le taux de 10 % des travaux d'amélioration qui s'applique. Le client certifie les conditions directement sur le devis ou la facture."
+    },
+    {
+      "question": "Le client a acheté ses menuiseries lui-même et ne me demande que la pose : quel taux ?",
+      "reponse": "Les fournitures achetées directement par le client restent soumises au taux normal de 20 % auprès de son vendeur. Dans ce cas, seule votre prestation de pose bénéficie du taux réduit applicable aux travaux dans un logement de plus de deux ans."
+    },
+    {
+      "question": "Dois-je émettre une facture pour l'acompte encaissé à la commande d'un ouvrage sur mesure ?",
+      "reponse": "Oui. Tout versement d'acompte donne lieu à une facture d'acompte. Pour les livraisons de biens, la TVA est en outre exigible dès l'encaissement de l'acompte, en application de la loi de finances pour 2022. La facture de solde déduit ensuite les acomptes déjà facturés."
+    },
+    {
+      "question": "Je vends un escalier départ atelier, sans pose : puis-je facturer à 10 % ?",
+      "reponse": "Non. Les taux réduits sont réservés aux travaux réalisés dans des locaux d'habitation achevés depuis plus de deux ans, c'est-à-dire aux prestations incluant la mise en œuvre. Une vente sans pose est une livraison de bien soumise au taux normal de 20 %."
+    },
+    {
+      "question": "Un meuble que je fabrique et que je livre sans le fixer peut-il suivre le taux réduit du chantier ?",
+      "reponse": "Non. La part correspondant à la fourniture d'équipements mobiliers est exclue du taux de 10 %, même dans un logement de plus de deux ans. Ventilez la facture : la ligne mobilier à 20 %, les travaux éligibles à leur taux réduit."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — BOI-TVA-LIQ-30-20-95 : taux de 5,5 % pour l'isolation des parois vitrées, volets isolants et portes d'entrée",
+      "url": "https://bofip.impots.gouv.fr/bofip/9417-PGP.html/identifiant=BOI-TVA-LIQ-30-20-95-20260909"
+    },
+    {
+      "titre": "Impots.gouv.fr — Quel taux de TVA appliquer pour les travaux réalisés dans les logements ? (taux réduits, matériaux achetés par le client, équipements mobiliers exclus)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+    },
+    {
+      "titre": "BOFiP — BOI-TVA-LIQ-30-20-90-20 : opérations relevant des taux réduits (travaux sur locaux d'habitation de plus de deux ans)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1666-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-20-20260909"
+    },
+    {
+      "titre": "BOFiP — Actualité : exigibilité de la TVA sur les acomptes perçus dans le cadre de livraisons de biens (LF 2022, art. 30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13758-PGP.html/ACTU-2022-00148"
+    },
+    {
+      "titre": "BOFiP — BOI-TVA-DECLA-30-20-10-10 : délivrance d'une facture pour les acomptes",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+    },
+    {
+      "titre": "Economie.gouv.fr — TVA à taux réduit : pour quels travaux ? (taux normal pour le neuf et les locaux de moins de deux ans)",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-reduits-travaux"
+    },
+    {
+      "titre": "Légifrance — Mention de l'assurance professionnelle sur devis et factures des artisans",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044056690/2026-06-12"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

@@ -1,0 +1,132 @@
+{
+  "nom": "Électricien",
+  "slug": "electricien",
+  "famille": "batiment",
+  "statuts_frequents": ["Entreprise individuelle (artisan)", "Micro-entrepreneur", "SASU", "SARL"],
+  "volume_factures_typique": "15 à 50 factures par mois : nombreuses petites factures de dépannage et de mise aux normes, complétées par quelques chantiers de rénovation ou de sous-traitance à montants plus élevés.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Plusieurs taux de TVA coexistent selon le chantier : 10 % pour la rénovation électrique d'un logement achevé depuis plus de deux ans, 20 % pour le neuf ou les locaux récents, 5,5 % possible sur certains équipements liés à l'amélioration de la qualité énergétique (chauffage performant, ventilation). Le taux réduit exige une mention certifiée par le client sur le devis ou la facture.",
+    "Le dépannage électrique impose un devis détaillé remis avant toute prestation : nature des travaux, décompte en quantité et prix unitaire, main-d'œuvre et frais de déplacement. Ce devis structure ensuite la facture ligne à ligne.",
+    "En sous-traitance pour une entreprise générale ou un constructeur, la facture est émise sans TVA avec la mention « Autoliquidation » ; c'est l'entreprise principale qui déclare la taxe. Ce régime ne s'applique jamais aux factures adressées au client final.",
+    "Pour une installation neuve ou une rénovation totale avec mise hors tension, l'attestation de conformité visée par un organisme agréé (Consuel) est établie sous la responsabilité de l'installateur ; elle est ensuite remise au distributeur par le souscripteur de l'abonnement — en pratique souvent par l'intermédiaire de l'installateur — au plus tard à la demande de mise en service (installation neuve) ou avant la remise sous tension (rénovation totale). Elle s'archive avec le dossier de facturation du chantier.",
+    "Beaucoup d'électriciens débutent en micro-entreprise sous franchise en base de TVA : leurs factures portent la mention « TVA non applicable, article 293 B du CGI » et ne doivent faire apparaître aucune TVA."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mention certifiée par le client, portée directement sur le devis ou la facture, attestant que le logement est achevé depuis plus de deux ans et que les travaux d'électricité remplissent les conditions du taux de 10 % (ou de 5,5 % pour les équipements éligibles à l'amélioration énergétique).",
+    "« Autoliquidation » sur toute facture de sous-traitance adressée à l'entreprise principale d'un chantier de construction ; la facture est alors émise sans TVA.",
+    "Références de l'assurance professionnelle obligatoire, dont la responsabilité décennale : coordonnées de l'assureur ou du garant et couverture géographique du contrat, sur les devis et les factures.",
+    "« TVA non applicable, article 293 B du CGI » pour l'électricien en franchise en base ; aucune TVA ne doit alors figurer sur la facture."
+  ],
+  "exemple_facture": {
+    "intitule": "Rénovation de l'installation électrique — maison individuelle achevée depuis plus de deux ans",
+    "lignes": [
+      {
+        "designation": "Remplacement du tableau électrique : fourniture et pose, disjoncteurs divisionnaires et interrupteurs différentiels compris",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 980,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Création de points lumineux avec interrupteurs, saignées et rebouchage compris",
+        "quantite": 6,
+        "unite": "unité",
+        "prix_unitaire_ht": 85,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Main-d'œuvre : mise en sécurité de la liaison équipotentielle de la salle de bains",
+        "quantite": 3,
+        "unite": "heure",
+        "prix_unitaire_ht": 48,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Le client certifie que le logement est achevé depuis plus de deux ans et que les travaux remplissent les conditions d'application du taux de 10 %.",
+      "Assurance responsabilité civile professionnelle et décennale : [assureur], contrat n° [référence], couverture France métropolitaine."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer vite, y compris en mobilité, les interventions de dépannage : transformer le devis détaillé obligatoire en facture sans ressaisie.",
+    "Gérer plusieurs taux de TVA sur un même document et porter la mention de certification du client exigée pour les taux réduits.",
+    "Émettre des factures de sous-traitance sans TVA avec la mention « Autoliquidation », distinctes des factures aux particuliers.",
+    "Être prêt à recevoir puis à émettre des factures via une plateforme agréée à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée par la DGFiP qui réunit facturation et comptabilité dans un même outil. Sa cible — indépendants, TPE et micro-entrepreneurs — correspond au profil courant de l'électricien artisan."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée par la DGFiP orientée facturation et gestion, pensée pour les indépendants et micro-entrepreneurs. Adaptée à l'électricien en franchise en base qui émet un grand nombre de petites factures de dépannage."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée par la DGFiP qui associe compte professionnel et facturation, pour les PME comme pour les indépendants. Pertinente quand l'activité se structure et que les encaissements de chantiers se multiplient."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je remplace un tableau électrique chez un particulier : 10 % ou 20 % ?",
+      "reponse": "Le taux de 10 % s'applique si le logement est à usage d'habitation et achevé depuis plus de deux ans. Le client doit certifier ces conditions directement sur le devis ou la facture ; l'attestation séparée n'est plus exigée. Si l'une des deux conditions manque, la facture reste au taux normal de 20 %."
+    },
+    {
+      "question": "Je tire les réseaux électriques d'un pavillon neuf pour un constructeur : comment établir ma facture ?",
+      "reponse": "En sous-traitance de travaux de construction, vous facturez l'entreprise principale sans TVA, avec la mention « Autoliquidation » ; c'est elle qui déclare la taxe. N'écrivez ni « TVA 0 % » ni « exonération ». Si vous facturez directement le maître d'ouvrage d'une construction neuve, le taux normal de 20 % s'applique."
+    },
+    {
+      "question": "L'attestation Consuel doit-elle figurer sur ma facture ?",
+      "reponse": "Non, ce n'est pas une mention de facture. Pour une installation neuve ou une rénovation totale avec mise hors tension, l'attestation de conformité est établie sous votre responsabilité, visée par un organisme agréé puis remise au distributeur par le souscripteur de l'abonnement — en pratique souvent par votre intermédiaire — au plus tard à la demande de mise en service pour une installation neuve, ou avant la remise sous tension après une rénovation totale avec mise hors tension. Conservez-la dans le dossier du chantier, avec le devis et la facture."
+    },
+    {
+      "question": "Micro-entrepreneur en franchise de TVA : que dois-je écrire sur mes factures de dépannage ?",
+      "reponse": "Vos factures portent la mention « TVA non applicable, article 293 B du CGI » et ne doivent faire apparaître aucune TVA ; une TVA facturée à tort serait due au Trésor. Le devis détaillé avant toute prestation de dépannage reste obligatoire, franchise ou non. La mention de votre assurance décennale et de sa couverture géographique reste exigée aussi."
+    },
+    {
+      "question": "Avec la facturation électronique, la certification du client pour le taux réduit disparaît-elle ?",
+      "reponse": "Non. La règle de fond ne change pas : la mention certifiée par le client reste portée sur le devis ou la facture. À l'échéance applicable à votre entreprise, vous devrez d'abord pouvoir recevoir vos factures via une plateforme agréée, puis les émettre en format structuré. Vérifiez que votre outil sait porter cette mention sur la facture électronique."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "impots.gouv.fr — Quel taux de TVA appliquer pour les travaux réalisés dans les logements ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+    },
+    {
+      "titre": "BOFiP — TVA, taux de 5,5 % sur les travaux d'amélioration de la qualité énergétique (BOI-TVA-LIQ-30-20-95)",
+      "url": "https://bofip.impots.gouv.fr/bofip/9417-PGP.html/identifiant=BOI-TVA-LIQ-30-20-95-20260909"
+    },
+    {
+      "titre": "BOFiP — Autoliquidation de la TVA en sous-traitance de travaux de construction (BOI-TVA-DECLA-10-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+    },
+    {
+      "titre": "Légifrance — Décret n° 72-1120 relatif au contrôle et à l'attestation de conformité des installations électriques intérieures",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000696656"
+    },
+    {
+      "titre": "impots.gouv.fr — En tant que micro-entrepreneur, puis-je être redevable de la TVA ? (mention article 293 B du CGI)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 24 janvier 2017 : devis détaillé avant les prestations de dépannage, réparation et entretien dans le bâtiment",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033935513/"
+    },
+    {
+      "titre": "Légifrance — Article 22-2 de la loi n° 96-603 : mention de l'assurance professionnelle (dont décennale) sur devis et factures",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044056690/2026-06-12"
+    },
+    {
+      "titre": "economie.gouv.fr — TVA : les taux réduits pour les travaux (taux normal de 20 % pour le neuf)",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-reduits-travaux"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique (réception puis émission via plateforme agréée)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

@@ -1,0 +1,123 @@
+{
+  "nom": "Kinésithérapeute",
+  "slug": "kinesitherapeute",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Entreprise individuelle (BNC, déclaration contrôlée)",
+    "Micro-entrepreneur (micro-BNC)",
+    "SELARL ou SELAS pour les cabinets structurés",
+    "Exercice en cabinet de groupe avec une SCM pour les frais partagés"
+  ],
+  "volume_factures_typique": "Soutenu : de nombreuses séances chaque semaine, réglées pour l'essentiel via des feuilles de soins télétransmises. S'y ajoutent les notes d'honoraires remises aux patients et, le cas échéant, une facture mensuelle de redevance par assistant ou collaborateur.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos séances de rééducation, soins à finalité thérapeutique d'une profession paramédicale réglementée, sont exonérées de TVA en application de l'article 261, 4, 1° du CGI. Chaque note d'honoraires porte la référence à cette exonération.",
+    "En tiers payant, la part Assurance Maladie est réglée sur la base de la feuille de soins, électronique (SESAM-Vitale) ou papier, adressée à la caisse. Ce circuit conventionnel est distinct de la facturation électronique entre entreprises.",
+    "La redevance de collaboration que vous facturez à votre assistant rémunère la mise à disposition du cabinet, du plateau technique et de la patientèle. Le BOFiP la soumet à la TVA : taux normal de 20 %, ou mention « TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base.",
+    "Les flux d'un remplacement suivent un autre régime : les honoraires que vous rétrocédez à votre remplaçant sont exonérés de TVA, car ils rémunèrent des soins dispensés aux patients. La somme que vous conservez en contrepartie de la mise à disposition de vos installations est en revanche en principe imposable ; l'administration admet de ne pas la soumettre à la TVA lorsque le remplacement a un caractère occasionnel (rescrit BOI-RES-000056). Ne confondez pas cette redevance de remplacement et la redevance de collaboration, toujours imposable.",
+    "Vos actes sans prescription ni finalité thérapeutique (massages de confort, prestations de bien-être) sont exclus de l'exonération et taxables.",
+    "Vos opérations exonérées sont dispensées d'émission de factures électroniques, mais vous devrez pouvoir recevoir celles de vos fournisseurs (matériel de rééducation, électrothérapie, consommables, loyer) à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur les notes d'honoraires de soins : référence à l'exonération, par exemple « Exonération de TVA, article 261, 4, 1° du CGI » (ou référence équivalente à la directive 2006/112/CE).",
+    "Sur les redevances de collaboration facturées sous franchise en base : « TVA non applicable, article 293 B du CGI ».",
+    "Sur les redevances de collaboration taxées : taux (20 %) et montant de la TVA."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture mensuelle de redevance de collaboration adressée à votre assistant kinésithérapeute",
+    "lignes": [
+      {
+        "designation": "Redevance de collaboration — mise à disposition du cabinet de kinésithérapie, du plateau technique de rééducation et de la patientèle (mois écoulé)",
+        "quantite": 1,
+        "unite": "forfait mensuel",
+        "prix_unitaire_ht": 1200,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Quote-part des consommables de rééducation (électrodes, bandes, crème de massage)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 90,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux normal de 20 % : la redevance de collaboration est imposable (BOFiP), contrairement à vos notes d'honoraires de soins.",
+      "Si vous relevez de la franchise en base, remplacez la TVA par la mention « TVA non applicable, article 293 B du CGI ».",
+      "Montants illustratifs : la redevance est librement convenue au contrat de collaboration."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Distinguer trois flux dans votre gestion : feuilles de soins télétransmises, notes d'honoraires exonérées et redevances de collaboration taxables.",
+    "Facturer chaque mois les redevances de vos assistants avec le bon régime de TVA et la mention correspondante.",
+    "Être en mesure de recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise.",
+    "Suivre les règlements du tiers payant séparément des honoraires encaissés directement."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée DGFiP conçue pour les indépendants, réunissant comptabilité, compte pro et facturation. Ce périmètre couvre la tenue d'un BNC de cabinet et l'émission des factures de redevance de collaboration."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée DGFiP pensée pour travailler avec votre expert-comptable. Un cabinet avec assistants, où coexistent honoraires exonérés et redevances soumises à TVA, peut ainsi partager ses données avec le professionnel qui établit ses déclarations."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP associant facturation et comptabilité pour les indépendants et TPE. Elle répond au cas d'un exercice individuel qui centralise notes d'honoraires et pièces d'achat avant l'obligation de réception."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes séances remboursées par l'Assurance Maladie devront-elles être émises au format électronique ?",
+      "reponse": "Non pour l'émission. Vos soins à finalité thérapeutique sont exonérés de TVA (article 261, 4, 1° du CGI) et les opérations exonérées sont dispensées d'émission de factures électroniques (impots.gouv.fr). La facturation à l'Assurance Maladie continue de passer par la feuille de soins. Vous devrez en revanche pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "La redevance que me verse mon assistant est-elle soumise à la TVA ?",
+      "reponse": "Oui. Le BOFiP la qualifie de contrepartie d'une mise à disposition de locaux professionnels aménagés et de patientèle, imposable à la TVA. Au taux normal de 20 % si vous êtes redevable (economie.gouv.fr). Si vous relevez de la franchise en base, la facture porte « TVA non applicable, article 293 B du CGI »."
+    },
+    {
+      "question": "Les honoraires rétrocédés à mon remplaçant pendant mes congés suivent-ils le même régime que la redevance d'assistant ?",
+      "reponse": "Non. Les honoraires que vous rétrocédez à votre remplaçant sont exonérés de TVA, car ils rémunèrent des soins dispensés aux patients (rescrit BOI-RES-000056). La somme que vous conservez en contrepartie de la mise à disposition de vos installations est, elle, en principe imposable : l'administration admet seulement de ne pas la soumettre à la TVA lorsque le remplacement a un caractère occasionnel. La redevance de collaboration de votre assistant reste imposable dans tous les cas. Distinguez les deux contrats dans votre facturation et vos libellés."
+    },
+    {
+      "question": "En tiers payant, dois-je adresser une facture électronique à la caisse ?",
+      "reponse": "Non. Le tiers payant repose sur la feuille de soins, électronique via SESAM-Vitale ou papier, adressée à la caisse du patient (ameli.fr). Ce circuit conventionnel n'est pas celui de la facturation électronique entre entreprises. Vos soins exonérés sont d'ailleurs dispensés d'émission au format électronique."
+    },
+    {
+      "question": "Mes massages de confort sans prescription sont-ils exonérés comme mes séances de rééducation ?",
+      "reponse": "Non. L'exonération vise les soins à finalité thérapeutique (BOFiP). Les prestations de confort ou de bien-être en sont exclues et sont taxables. Facturées sous franchise en base, elles portent la mention de l'article 293 B du CGI, distincte de la mention d'exonération de vos soins."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Exonération des soins dispensés par les professions paramédicales réglementées, dont les masseurs-kinésithérapeutes ; régime des contrats de collaboration et de remplacement (BOI-TVA-CHAMP-30-10-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+    },
+    {
+      "titre": "BOFiP — Rescrit : TVA applicable aux rétrocessions d'honoraires entre deux professionnels de santé dans le cadre d'un contrat de remplacement (BOI-RES-000056)",
+      "url": "https://bofip.impots.gouv.fr/bofip/12016-PGP.html/identifiant=BOI-RES-000056-20200617"
+    },
+    {
+      "titre": "BOFiP — Référence d'exonération à porter sur les factures et notes d'honoraires (BOI-TVA-DECLA-30-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "BOFiP — Franchise en base et mention « TVA non applicable, article 293 B du CGI » (BOI-TVA-DECLA-40-10-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+    },
+    {
+      "titre": "economie.gouv.fr — TVA : quels sont les taux de votre quotidien ? (taux normal de 20 %)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "ameli.fr — Tiers payant du masseur-kinésithérapeute : conditions et modalités d'application",
+      "url": "https://www.ameli.fr/masseur-kinesitherapeute/exercice-liberal/facturation-remuneration/pratique-tiers-payant/tiers-payant-mode-emploi"
+    },
+    {
+      "titre": "impots.gouv.fr — Réforme de la facturation électronique : dispense d'émission pour les opérations exonérées, obligation de réception",
+      "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

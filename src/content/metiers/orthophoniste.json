@@ -1,0 +1,125 @@
+{
+  "nom": "Orthophoniste",
+  "slug": "orthophoniste",
+  "famille": "sante",
+  "statuts_frequents": [
+    "Entreprise individuelle en BNC (praticien conventionné avec l'assurance maladie)",
+    "Société civile de moyens (SCM) pour partager les frais d'un cabinet de groupe",
+    "Collaboration libérale ou remplacement en début de carrière",
+    "Cumul d'un exercice libéral et d'un salariat partiel (établissement de santé ou médico-social)"
+  ],
+  "volume_factures_typique": "Beaucoup d'actes, mais peu de factures au sens de la réforme : l'essentiel des encaissements passe par les feuilles de soins électroniques SESAM-Vitale et le tiers payant. Les notes d'honoraires remises aux patients se comptent en dizaines par semaine. Les factures fournisseurs restent limitées : loyer, matériel de rééducation, tests étalonnés, logiciel de télétransmission.",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Vos séances de rééducation et vos bilans sont des soins à finalité thérapeutique dispensés par une profession paramédicale réglementée : ils sont exonérés de TVA en application de l'article 261, 4, 1° du CGI. Vous n'avez donc aucune TVA à porter sur vos notes d'honoraires de soins.",
+    "Le remboursement de vos actes est subordonné à une prescription écrite du médecin (généraliste, ORL, neurologue, psychiatre, pédiatre) ou du chirurgien-dentiste. Le lien entre la prescription, le bilan et les séances facturées doit rester traçable dans votre dossier ; depuis le 23 février 2026, l'avenant 21 à la convention nationale supprime la demande d'accord préalable, y compris pour le bilan de renouvellement et les prolongations de séances.",
+    "En cabinet de ville, l'assurance maladie prend en charge 60 % des séances sur prescription ; le télésoin suit la même prise en charge. Votre encaissement se partage donc entre la part patiente et la part caisse, avec rapprochement via le retour NOEMIE.",
+    "La télétransmission des feuilles de soins électroniques avec votre carte CPS relève du circuit SESAM-Vitale, qui est distinct du circuit de facturation électronique entre entreprises créé par la réforme. Une FSE adressée à la caisse n'est pas une facture électronique au sens de la réforme.",
+    "Vos soins exonérés sont dispensés d'émission de factures électroniques. En revanche, vous devrez être en mesure de recevoir les factures électroniques de vos fournisseurs via une plateforme, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur toute note d'honoraires de soins : la référence à l'exonération, par exemple « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts ».",
+    "Sur les recettes taxables éventuelles (par exemple une formation facturée hors soins) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Cette mention ne remplace jamais la référence à l'exonération des soins, et inversement."
+  ],
+  "exemple_facture": {
+    "intitule": "Note d'honoraires – bilan orthophonique et rééducation du langage oral (montants illustratifs)",
+    "lignes": [
+      {
+        "designation": "Bilan orthophonique initial avec compte rendu écrit, sur prescription médicale",
+        "quantite": 1,
+        "unite": "bilan",
+        "prix_unitaire_ht": 75,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Séance individuelle de rééducation du langage oral",
+        "quantite": 10,
+        "unite": "séance",
+        "prix_unitaire_ht": 34,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA exonérée en application de l'article 261, 4, 1° du code général des impôts (soins dispensés par un orthophoniste).",
+      "Actes réalisés sur prescription médicale du [date], conservée au dossier du patient.",
+      "Feuille de soins transmise à l'assurance maladie par télétransmission SESAM-Vitale."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Recevoir les factures électroniques de vos fournisseurs via une plateforme, à l'échéance applicable à votre entreprise.",
+    "Éditer des notes d'honoraires sans TVA portant la référence à l'article 261, 4, 1° du CGI.",
+    "Suivre des encaissements partagés entre part patiente et part caisse (tiers payant, retour NOEMIE).",
+    "Tenir une comptabilité BNC simple, sans gestion de TVA au quotidien."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée DGFiP qui réunit comptabilité, compte pro et facturation pour les indépendants. Ce périmètre correspond à un exercice libéral en BNC où la facturation côté patients reste simple."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP associant facturation et comptabilité, conçue pour les indépendants et les TPE. Elle couvre l'édition des notes d'honoraires et la tenue comptable d'un cabinet individuel."
+    },
+    {
+      "slug": "shine",
+      "justification": "Compte professionnel en ligne avec facturation, sur une plateforme agréée DGFiP ciblant les indépendants et freelances. Un compte dédié aide à distinguer les virements des caisses des règlements directs des patients."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes séances sont exonérées de TVA : suis-je quand même concerné par la facturation électronique ?",
+      "reponse": "Oui, partiellement. Vos bilans et séances, exonérés au titre de l'article 261 du CGI, sont dispensés d'émission de factures électroniques — et vos FSE SESAM-Vitale ne sont de toute façon pas des factures au sens de la réforme. En revanche, vous devrez pouvoir recevoir via une plateforme les factures électroniques de vos fournisseurs (tests étalonnés, matériel de rééducation, logiciel de télétransmission, loyer), à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Mes feuilles de soins électroniques SESAM-Vitale comptent-elles comme factures électroniques ?",
+      "reponse": "Non. La FSE télétransmise à la caisse avec votre carte CPS sert au remboursement des soins ; elle relève d'un circuit propre à l'assurance maladie. La réforme vise les factures échangées entre entreprises assujetties, ce qui est un autre flux."
+    },
+    {
+      "question": "Dois-je rattacher la prescription médicale à ma facturation ?",
+      "reponse": "Oui : le remboursement de vos actes suppose une prescription écrite du médecin ou du chirurgien-dentiste indiquant l'intervention orthophonique. Conservez le lien entre prescription, bilan et séances facturées dans le dossier du patient. Depuis le 23 février 2026 (avenant 21 à la convention nationale), la demande d'accord préalable n'est plus exigée, ni après le bilan de renouvellement ni pour les prolongations de séances."
+    },
+    {
+      "question": "Quelle mention dois-je porter sur mes notes d'honoraires de rééducation ?",
+      "reponse": "Portez la référence au texte fondant l'exonération, adaptée à votre exercice, par exemple : « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts – soins dispensés par un orthophoniste ». Cette mention couvre vos bilans comme vos séances de rééducation ; la feuille de soins SESAM-Vitale remise ou télétransmise ne tient pas lieu de note d'honoraires et ne dispense pas de cette mention."
+    },
+    {
+      "question": "Je facture une formation à des étudiants ou une supervision à une consœur : quelle TVA ?",
+      "reponse": "Ces recettes ne se rattachent pas aux soins dispensés à vos patients : elles sont exclues de l'exonération des soins et taxables. Si vous relevez de la franchise en base, portez la mention « TVA non applicable, article 293 B du CGI » sur ces lignes. Facturées à un professionnel assujetti, elles entreront dans le circuit d'émission électronique à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP BOI-TVA-CHAMP-30-10-20-10 – exonération des soins dispensés par les professions paramédicales réglementées, dont les orthophonistes",
+      "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-10 – référence à la disposition d'exonération sur les factures et notes d'honoraires",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-40-10-20 – mention « TVA non applicable, article 293 B du CGI » sous la franchise en base",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+    },
+    {
+      "titre": "impots.gouv.fr – réforme de la facturation électronique : dispense d'émission pour les opérations exonérées (article 261 du CGI) et obligation générale de réception",
+      "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    },
+    {
+      "titre": "ameli.fr – rééducation des troubles du langage oral : prescription médicale et prise en charge à 60 % des séances en cabinet de ville",
+      "url": "https://www.ameli.fr/assure/sante/themes/trouble-expression-langage-oral-enfant/traitement"
+    },
+    {
+      "titre": "ameli.fr orthophoniste – avenant 21 à la convention nationale : suppression de la demande d'accord préalable au 23 février 2026",
+      "url": "https://www.ameli.fr/orthophoniste/actualites/convention-nationale-entree-en-vigueur-des-mesures-de-l-avenant-21-le-23-fevrier-2026"
+    },
+    {
+      "titre": "ameli.fr orthophoniste – la télétransmission des feuilles de soins (CPS, FSE, circuit SESAM-Vitale)",
+      "url": "https://www.ameli.fr/orthophoniste/exercice-liberal/facturation-remuneration/teletransmission-retour-noemie/teletransmission"
+    },
+    {
+      "titre": "ameli.fr orthophoniste – le retour NOEMIE (suivi des paiements des caisses)",
+      "url": "https://www.ameli.fr/orthophoniste/exercice-liberal/facturation-remuneration/teletransmission-et-retour-noemie/retour-noemie"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}
