@@ -116,3 +116,12 @@ Page méthode : la pondération des critères devient une jauge par ligne, le po
 Page des plateformes agréées : correction d'un vrai défaut, deux espaces manquants collaient le texte aux liens de provenance (« republiée surdata.gouv.fr ») ; statuts en badges plutôt qu'en texte répété 149 fois ; en-tête de tableau collant au défilement.
 Correctif de test : le garde-fou d'hydratation e2e exigeait que tous les îlots d'une page soient hydratés, ce qui contredit l'intérêt d'un îlot client:visible. Il cible désormais le seul îlot contenant le contrôle manipulé — le test cassait parce que la page avait grandi, pas parce qu'elle était cassée.
 Lighthouse 100/100/100/100 et CLS 0 sur les trois pages retouchées ; 77 tests + 6 parcours e2e verts ; similarité et SEO inchangés.
+
+## Design v6 — revue critique contradictoire et correctifs mesurés (2026-10-06)
+
+Trois constats d'un panel de revue ont été vérifiés avant d'être corrigés, et deux autres rejetés faute de preuve.
+Pages comparatives orphelines : `grep -rl 'href="/comparatif/'` sur le build ne renvoyait aucune page métier. Les 15 comparatifs n'étaient atteignables que depuis l'accueil. Chaque page métier expose désormais les paires de ses trois outils recommandés, dans un ordre d'outil stable pour ne jamais produire d'URL inexistante — 3 liens par page, 61 pages, cibles vérifiées en HTTP 200.
+Bordures sous le seuil : `--color-border` #d0d7de donne 1,45:1 sur blanc, 1,49:1 en thème sombre, là où WCAG 1.4.11 impose 3:1 pour la limite d'un composant d'interface — ce que Lighthouse ne contrôle pas. Nouveau jeton `--color-border-strong` à 4,55:1 (clair) et 5,07:1 (sombre), appliqué aux champs, aux pastilles de choix et au bouton secondaire, mesuré dans le navigateur.
+Ligne de lecture trop longue : `prose-measure` à 70ch rendait 86 caractères par ligne, l'unité ch valant l'avance du glyphe « 0 », nettement plus large qu'un caractère moyen en Inter. Ramenée à 54ch, soit 71 caractères mesurés, dans la plage de confort 45-75.
+Détails : ancres décalées de 5,5 rem sous l'en-tête collant, listes à puces aérées et puces accentuées, tuiles de chiffres de l'accueil lisibles sous 400 px, et un appel au quiz au milieu de la page métier — sur mobile la colonne d'appui tombe à 7 969 px du haut d'une page qui en fait 8 697, le lecteur n'y arrive jamais.
+Garde-fous : 103 pages, similarité maximale 20,7 % (seuil 50 %), check-seo 100 pages indexables, 77 tests + 6 parcours e2e verts, Lighthouse 100/100/100/100 et CLS 0.
