@@ -1,0 +1,186 @@
+{
+  "nom": "Horticulteur-pépiniériste",
+  "slug": "horticulteur",
+  "famille": "agriculture",
+  "statuts_frequents": [
+    "Entreprise individuelle (exploitant horticole)",
+    "EARL",
+    "SCEA",
+    "SARL",
+    "SAS"
+  ],
+  "volume_factures_typique": "Deux circuits qui ne se ressemblent pas. D'un côté, des centaines de tickets au détail concentrés sur les quelques semaines de pointe du printemps et de la Toussaint. De l'autre, un petit nombre de commandes importantes : fleurissement des communes, jardineries, paysagistes, grossistes et revendeurs. Les catalogues comptent souvent plusieurs centaines ou milliers de références, déclinées par variété, par conditionnement et par taille, chacune avec son taux de TVA.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Les fleurs coupées, les plantes vivantes et les plants d'arbres et d'arbustes d'ornement vendus en l'état relèvent du taux réduit de 10 % : ce sont des produits non transformés de l'horticulture et de la floriculture d'ornement.",
+    "Les semences et les plants destinés à la production agricole relèvent du taux réduit de 5,5 % : plants potagers, plants d'arbres et d'arbustes fruitiers, plants de vigne, semences de légumes et d'espèces aromatiques, plants de pomme de terre. Vos productions d'ornement suivent un régime distinct et restent à 10 % : fleurs coupées, plantes vivantes, plants d'arbres et d'arbustes d'ornement, bulbes, oignons et tubercules à fleurs, gazon en plaque et semences de gazon destinées aux terrains de sport et à l'aménagement d'espaces verts. Le légume récolté et vendu pour être mangé est lui aussi à 5,5 %. Sur une même commande, c'est la destination normale du produit qui commande le taux : un même godet n'a pas le même taux selon qu'il est vendu comme plant potager ou comme plante d'ornement, et la ligne de facture doit permettre de le justifier.",
+    "Les poteries, les tuteurs, les voiles d'hivernage et l'outillage revendus au comptoir ne sont pas des produits horticoles : ils suivent le taux normal de 20 %. Le taux réduit de 10 % des matières fertilisantes et des supports de culture suppose un usage agricole, et que le produit soit mentionné à l'annexe I du règlement (CE) n° 889/2008, ou d'origine organique agricole et autorisé à la vente. Les produits relevant des articles L. 255-3 à L. 255-6 du code rural et de la pêche maritime, dispensés d'autorisation de mise sur le marché, sont regardés comme autorisés à la vente et bénéficient également du taux de 10 %. Un terreau ou un engrais qui ne remplit aucune de ces conditions reste au taux normal.",
+    "Une composition florale assemblée avec contenant, mousse et accessoires n'est plus un produit non transformé de l'horticulture d'ornement. Ne reprenez pas d'office le taux des fleurs vendues à la tige : faites vérifier le régime applicable avant de facturer ce type d'article.",
+    "Lorsque vous ajoutez la plantation, la mise en place d'un paillage ou l'entretien d'un massif à la fourniture des végétaux, vous facturez une prestation de services. Son taux ne se déduit pas de celui des plants livrés : séparez les lignes, chacune portant le taux qui lui est propre.",
+    "Les factures adressées à une commune, à un département, à un hôpital ou à un établissement public se déposent sur Chorus Pro, obligatoire pour les fournisseurs de la sphère publique quelle que soit leur taille. Chorus Pro reste la plateforme de référence du secteur public : un marché de fleurissement ne suit pas le même circuit qu'une vente à une jardinerie.",
+    "Une facture déposée sur Chorus Pro doit permettre d'identifier précisément l'entité publique destinataire. Recueillez à la commande les références que l'acheteur vous demande d'y porter : un acheteur public qui constate que la demande de paiement est incomplète ou erronée peut suspendre une fois le délai de paiement, un nouveau délai courant à compter de la réception des éléments manquants.",
+    "Les ventes au comptoir de la pépinière à des jardiniers amateurs n'entrent pas dans la facturation électronique entre entreprises. Elles donnent lieu à la transmission des données de transaction : le chiffre d'affaires du jour est transmis à l'administration, réparti entre vos lignes à 5,5 %, vos lignes à 10 % et vos lignes à 20 %.",
+    "Le passeport phytosanitaire accompagne les végétaux destinés à la plantation qui circulent dans l'Union. Il est délivré par l'opérateur professionnel lui-même, après autorisation de la DRAAF, et suppose un enregistrement et une déclaration annuelle d'activité. Il n'est pas requis pour la fourniture directe à un utilisateur final non professionnel, sauf vente à distance. Ce n'est pas une mention de facture : c'est une étiquette apposée sur l'unité commerciale."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Les mentions de droit commun s'appliquent : date d'échéance du règlement, taux des pénalités de retard et numéro individuel d'identification à la TVA du vendeur, ce dernier n'étant pas exigé lorsque le total hors taxes de la facture n'excède pas 150 €.",
+    "Un taux par ligne : 10 % sur les produits non transformés de l'horticulture et de la floriculture d'ornement (fleurs coupées, plantes vivantes, plants d'arbres et d'arbustes d'ornement, bulbes et tubercules à fleurs, gazon en plaque et semences de gazon d'aménagement) ; 5,5 % sur les semences et les plants destinés à la production agricole ainsi que sur les légumes vendus pour l'alimentation ; 20 % sur les contenants, les accessoires et les supports de culture qui ne remplissent pas les conditions du taux réduit des matières fertilisantes ; bases et totaux de TVA présentés par taux.",
+    "Facture destinée à un acheteur public : dépôt sur Chorus Pro et report des références d'identification demandées par l'entité publique, à recueillir dès la commande pour éviter une demande de paiement incomplète.",
+    "Facturation au titre d'un marché public : délai global de paiement de trente jours pour l'État, les collectivités territoriales et leurs établissements publics, porté à cinquante jours pour les établissements publics de santé ; mention du point de départ retenu (réception de la facture ou exécution des prestations), intérêts moratoires et indemnité forfaitaire pour frais de recouvrement de 40 € en cas de dépassement.",
+    "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel (jardinerie, paysagiste, collectivité), adresse de livraison du site ou du chantier lorsqu'elle diffère de l'adresse du client, nature des opérations facturées et, s'il y a lieu, mention « Option pour le paiement de la taxe d'après les débits »."
+  ],
+  "exemple_facture": {
+    "intitule": "Marché de fleurissement d'une commune : plants annuels, arbustes d'ornement et fournitures de plantation (pépiniériste redevable de la TVA)",
+    "lignes": [
+      {
+        "designation": "Géranium zonal rouge, godet de 10,5 cm",
+        "quantite": 480,
+        "unite": "godet",
+        "prix_unitaire_ht": 1.15,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Œillet d'Inde nain, barquette de 6 plants",
+        "quantite": 120,
+        "unite": "barquette",
+        "prix_unitaire_ht": 2.4,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Charme commun en racines nues, hauteur 100/125 cm",
+        "quantite": 60,
+        "unite": "sujet",
+        "prix_unitaire_ht": 6.9,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Terreau horticole conventionnel, sac de 70 L (hors matières fertilisantes éligibles au taux réduit)",
+        "quantite": 40,
+        "unite": "sac",
+        "prix_unitaire_ht": 9.8,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Bac en terre cuite émaillée, diamètre 40 cm",
+        "quantite": 12,
+        "unite": "pièce",
+        "prix_unitaire_ht": 24,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA à 10 % : produits non transformés de l'horticulture et de la floriculture d'ornement — plants annuels d'ornement et plants d'arbustes vendus en l'état",
+      "TVA à 20 % : contenants et support de culture ne remplissant pas les conditions du taux réduit des matières fertilisantes",
+      "Totaux de TVA présentés par taux, chaque ligne portant le sien",
+      "Facture déposée sur Chorus Pro, avec les références d'identification communiquées par la commune",
+      "Passeports phytosanitaires apposés sur les lots de végétaux destinés à la plantation, documents distincts de la présente facture",
+      "Délai global de paiement de trente jours applicable aux collectivités territoriales et à leurs établissements publics"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Mémoriser un taux de TVA par référence de catalogue, pour que 5,5 %, 10 % et 20 % se répartissent automatiquement sur une commande de plusieurs dizaines de lignes.",
+    "Déposer les factures des collectivités sur Chorus Pro en reprenant les références d'identification de l'acheteur public collectées à la commande.",
+    "Transformer un devis de fleurissement en commande puis en facture, et suivre les livraisons échelonnées sur une saison au titre d'un même marché.",
+    "Suivre les délais de paiement des acheteurs publics et déclencher intérêts moratoires et indemnité de recouvrement en cas de dépassement.",
+    "Rapprocher les lots livrés et les passeports phytosanitaires émis, pour tenir la traçabilité exigée des opérateurs professionnels enregistrés."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée DGFiP qui associe un compte professionnel et la facturation, pour les PME et les indépendants. Elle correspond à une pépinière qui gère en parallèle des encaissements au détail et des commandes professionnelles et publiques."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée par la DGFiP, orientée gestion financière et comptabilité partagée avec un cabinet. Pertinente pour une exploitation horticole en société dont le catalogue compte plusieurs centaines de références à deux taux et dont les marchés de fleurissement se soldent sur plusieurs livraisons échelonnées, avec un expert-comptable qui suit la campagne."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée DGFiP réunissant facturation et comptabilité pour les TPE et les indépendants. Adaptée à une structure qui veut éditer ses commandes et conserver ses pièces au même endroit."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Tous mes godets sont-ils au même taux de TVA ?",
+      "reponse": "Non, et c'est la distinction la plus coûteuse à manquer dans un catalogue de pépinière. Les produits non transformés de l'horticulture et de la floriculture d'ornement — fleurs coupées, plantes vivantes, plants d'arbres et d'arbustes d'ornement, bulbes et tubercules à fleurs, gazon en plaque — relèvent du taux réduit de 10 %. Les semences et les plants destinés à la production agricole, eux, relèvent de 5,5 % depuis le 1er janvier 2023 : plants potagers, plants fruitiers, plants de vigne, semences de légumes et d'espèces aromatiques. Un plant de tomate et un géranium zonal, vendus côte à côte sur le même banc, ne portent donc pas le même taux. Les poteries, l'outillage et les supports de culture courants relèvent du taux normal de 20 %. Le taux réduit de 10 % des matières fertilisantes et des supports de culture suppose un usage agricole, et que le produit soit mentionné à l'annexe I du règlement (CE) n° 889/2008, ou d'origine organique agricole et autorisé à la vente ; les produits relevant des articles L. 255-3 à L. 255-6 du code rural et de la pêche maritime, dispensés d'autorisation de mise sur le marché, sont regardés comme autorisés à la vente et bénéficient eux aussi de 10 %."
+    },
+    {
+      "question": "La mairie me demande de déposer ma facture sur Chorus Pro. Est-ce la même chose que la facturation électronique entre entreprises ?",
+      "reponse": "Non, ce sont deux circuits distincts. Chorus Pro est la plateforme par laquelle transitent les factures destinées à l'État, aux collectivités et aux établissements publics ; son usage est obligatoire pour les fournisseurs de la sphère publique quelle que soit la taille de l'entreprise, et elle reste la plateforme de référence du secteur public. Vos ventes à des jardineries, des paysagistes ou des grossistes relèveront, elles, du dispositif applicable entre entreprises, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Le passeport phytosanitaire doit-il figurer sur ma facture ?",
+      "reponse": "Non : le passeport phytosanitaire est une étiquette apposée sur l'unité commerciale, pas une mention de facture. Il est obligatoire pour la circulation dans l'Union des végétaux destinés à la plantation, et il n'est pas requis pour la fourniture directe à un utilisateur final non professionnel, sauf en cas de vente à distance. Vous ne pouvez le délivrer qu'après autorisation de la DRAAF, et vous devez réaliser la déclaration annuelle d'activité attachée à cet enregistrement."
+    },
+    {
+      "question": "Je facture la plantation et l'entretien d'un massif en plus des végétaux. Puis-je appliquer un taux unique à toute la facture ?",
+      "reponse": "Non. La fourniture des végétaux et la prestation de plantation ou d'entretien sont deux opérations de nature différente, et le taux de la seconde ne se déduit pas de celui de la première. Détaillez les lignes et faites confirmer le taux applicable à vos prestations avant d'éditer la facture. Les bases et les montants de TVA doivent ensuite être présentés par taux."
+    },
+    {
+      "question": "Dans quel délai une collectivité doit-elle payer ma commande de fleurissement ?",
+      "reponse": "Le délai global de paiement est de trente jours pour l'État et ses établissements publics, pour les collectivités territoriales et leurs établissements publics, décompté à partir de la réception de la facture ou de l'exécution des prestations selon ce qui intervient le plus tard. Il est porté à cinquante jours pour les établissements publics de santé et les établissements du service de santé des armées : si votre commande de fleurissement est passée par un centre hospitalier, c'est ce délai qui s'applique. Si l'acheteur constate que votre demande de paiement est incomplète ou erronée, il peut suspendre ce délai une seule fois, un nouveau délai courant à réception des éléments manquants. Passé le délai, des intérêts moratoires et une indemnité forfaitaire pour frais de recouvrement de 40 € sont dus."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-35 – Taux réduit de 10 % : produits non transformés de l'horticulture et de la floriculture d'ornement",
+      "url": "https://bofip.impots.gouv.fr/bofip/13623-PGP.html/identifiant=BOI-TVA-LIQ-30-10-35-20220629"
+    },
+    {
+      "titre": "BOFiP BOI-ANNX-000484 – Taux de TVA applicables aux produits d'origine agricole, de la pêche, de la pisciculture et de l'aviculture (version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13565-PGP.html/identifiant=BOI-ANNX-000484-20241120"
+    },
+    {
+      "titre": "BOFiP ACTU-2023-00101 – Simplification du régime des taux applicables aux denrées alimentaires et aux intrants de la production alimentaire et de la production agricole (loi n° 2022-1726 du 30 décembre 2022, art. 61)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13994-PGP.html/ACTU-2023-00101"
+    },
+    {
+      "titre": "BOFiP ACTU-2024-00205 – Taux réduits applicables aux matières fertilisantes et supports de culture dispensés d'autorisation de mise sur le marché",
+      "url": "https://bofip.impots.gouv.fr/bofip/14440-PGP.html/ACTU-2024-00205"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-10 – Taux réduit de 5,5 % : produits destinés à l'alimentation humaine",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-30 – Produits à usage agricole : conditions du taux réduit pour les matières fertilisantes et supports de culture",
+      "url": "https://bofip.impots.gouv.fr/bofip/944-PGP.html/identifiant=BOI-TVA-LIQ-30-10-30-20250813"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-20 – Le taux normal de la TVA",
+      "url": "https://bofip.impots.gouv.fr/bofip/1376-PGP.html/identifiant=BOI-TVA-LIQ-20-20140919"
+    },
+    {
+      "titre": "entreprendre.service-public.fr – Mentions obligatoires sur une facture, dont les mentions nouvelles liées à la facturation électronique",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "impots.gouv.fr – Chorus Pro reste la plateforme de référence pour la facturation électronique du secteur public",
+      "url": "https://www.impots.gouv.fr/actualite/chorus-pro-restera-la-plateforme-de-reference-pour-la-facturation-electronique-du-secteur"
+    },
+    {
+      "titre": "economie.gouv.fr – Je souhaite déposer ma facture sur Chorus Pro (obligation pour les fournisseurs de la sphère publique)",
+      "url": "https://www.economie.gouv.fr/espace-fournisseurs/le-ministere-votre-ecoute/je-souhaite-deposer-ma-facture-sur-chorus-pro"
+    },
+    {
+      "titre": "economie.gouv.fr (DAJ) – Fiche technique : les délais de paiement dans les contrats de la commande publique (délai de trente jours, suspension, intérêts moratoires, indemnité forfaitaire de 40 €)",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/daj/media-document/FT56_Les_delais_de_paiement.pdf"
+    },
+    {
+      "titre": "agriculture.gouv.fr – Questions/réponses sur le règlement en santé des végétaux : passeport phytosanitaire, opérateurs professionnels, exceptions",
+      "url": "https://agriculture.gouv.fr/questions-reponses-tout-savoir-sur-le-nouveau-reglement-en-sante-des-vegetaux"
+    },
+    {
+      "titre": "mesdemarches.agriculture.gouv.fr – Réaliser sa déclaration annuelle d'activité pour les végétaux concernés par le passeport phytosanitaire",
+      "url": "https://www.mesdemarches.agriculture.gouv.fr/demarches/exploitation-agricole/obtenir-un-droit-une-autorisation/article/realiser-sa-declaration-annuelle-d-711?id_rubrique=11"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (champ d'application et transmission des données de transaction)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr – Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

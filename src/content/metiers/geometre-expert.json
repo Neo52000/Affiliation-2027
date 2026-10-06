@@ -1,0 +1,150 @@
+{
+  "nom": "Géomètre-expert",
+  "slug": "geometre-expert",
+  "famille": "liberal",
+  "statuts_frequents": [
+    "Entreprise individuelle (profession libérale réglementée, inscription à l'Ordre)",
+    "Société d'exercice libéral (SELARL)",
+    "Société de géomètres-experts inscrite au tableau de l'Ordre"
+  ],
+  "volume_factures_typique": "Modéré : quelques dizaines de factures par mois, souvent en plusieurs temps par dossier (provision au démarrage, solde à la remise du procès-verbal ou des plans).",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "La fixation des limites des biens fonciers relève des géomètres-experts inscrits à l'Ordre. Un dossier de bornage se facture en plusieurs postes détaillés : recherches foncières, opérations de terrain, pose de bornes, procès-verbal et plan.",
+    "Un bornage amiable se fait à frais communs entre propriétaires voisins. Vous répartissez donc souvent une même opération en quotes-parts, avec une facture ou une note par payeur, sauf accord différent des parties.",
+    "Vos études et travaux topographiques sont taxés au taux normal de TVA de 20 %, comme les autres prestations d'experts de la famille libérale.",
+    "Pour les acheteurs publics (communes, intercommunalités, État), la facture se dépose en ligne sur le portail public de facturation Chorus Pro. Le délai de paiement de la commande publique est de 30 jours pour l'État et les collectivités ; un retard déclenche de plein droit intérêts moratoires et indemnité forfaitaire pour frais de recouvrement.",
+    "Vos dossiers se facturent souvent en deux temps : une provision à l'ouverture, puis le solde à la remise du procès-verbal de bornage et des plans. Chaque facture doit reprendre le décompte des postes concernés et, sur le solde, rappeler le montant de la provision déjà réglée."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Décompte détaillé de chaque poste du dossier foncier (recherches, terrain, bornes fournies, procès-verbal, plans) avec prix unitaires HT et taux de TVA de 20 %.",
+    "Pour un acheteur public : références attendues par l'acheteur (numéro de marché ou d'engagement) afin que le dépôt sur le portail public aboutisse."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture — bornage amiable de deux parcelles contiguës (coût total du dossier, à répartir entre les deux propriétaires)",
+    "lignes": [
+      {
+        "designation": "Recherches foncières et analyse des titres de propriété",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 380,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Opérations de bornage contradictoire sur le terrain",
+        "quantite": 1,
+        "unite": "intervention",
+        "prix_unitaire_ht": 520,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Bornes fournies et implantées",
+        "quantite": 4,
+        "unite": "borne",
+        "prix_unitaire_ht": 35,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Rédaction du procès-verbal de bornage et du plan annexé",
+        "quantite": 1,
+        "unite": "document",
+        "prix_unitaire_ht": 310,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Bornage amiable réalisé à frais communs entre les deux propriétaires (article 646 du code civil) : le coût total ci-dessus, soit 1 350 € HT, est réparti par moitié, soit 675 € HT par propriétaire, sauf accord contraire des parties.",
+      "Client particulier : la note détaillée est remise avant le paiement, la prestation dépassant 25 € TTC.",
+      "TVA au taux normal de 20 % sur l'ensemble des prestations d'études et de travaux topographiques."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Transformer un devis en facture de provision, puis en facture de solde à la remise du procès-verbal et des plans.",
+    "Répartir un même dossier de bornage entre plusieurs payeurs (voisins, indivision) sans double saisie.",
+    "Déposer les factures des marchés publics sur le portail public et suivre le délai de paiement de 30 jours.",
+    "Préparer la réception, puis l'émission, de factures électroniques à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Offre réunissant compte professionnel et facturation, pour PME et indépendants. Adaptée à un cabinet qui encaisse des quotes-parts de particuliers et des règlements d'acheteurs publics."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution de gestion financière et de comptabilité, conçue pour travailler avec votre expert-comptable. Pertinente pour un cabinet structuré en société avec des dossiers facturés en plusieurs temps."
+    },
+    {
+      "slug": "shine",
+      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Compte professionnel en ligne avec facturation, destiné aux indépendants, freelances et TPE. Convient à un géomètre-expert exerçant seul ou en petite équipe."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quel taux de TVA appliquer à un bornage ou à un plan topographique ?",
+      "reponse": "Le taux normal de 20 %. Les prestations des géomètres figurent parmi les prestations d'experts de la famille libérale soumises à ce taux, sauf disposition particulière. N'appliquez pas aux documents fonciers un taux réduit lié aux travaux sur logements : il concerne les travaux, pas vos études."
+    },
+    {
+      "question": "Comment facturer un bornage amiable demandé par deux voisins ?",
+      "reponse": "Le code civil prévoit que le bornage se fait à frais communs. En pratique, vous établissez une facture ou une note par propriétaire, chacune portant sa quote-part, sauf si les parties ont convenu d'une autre répartition. Indiquez la clé de répartition sur chaque document, et vérifiez que le total facturé à l'ensemble des payeurs correspond bien au coût du dossier, et non à son multiple."
+    },
+    {
+      "question": "Comment transmettre mes factures à une commune ou à un autre acheteur public ?",
+      "reponse": "Les factures destinées à la sphère publique se déposent sur le portail public de facturation Chorus Pro, qui reste la plateforme de référence du secteur public avec la réforme. À l'échéance applicable à votre entreprise, vous pourrez aussi passer par une plateforme agréée pour ces envois. Le délai de paiement est de 30 jours pour l'État et les collectivités, avec intérêts moratoires automatiques en cas de retard."
+    },
+    {
+      "question": "Mon client me demande le plan de bornage sous forme numérique et conteste le solde : que doit porter ma facture ?",
+      "reponse": "Détaillez chaque poste du dossier séparément — recherches foncières, opérations de terrain, bornes fournies et implantées, rédaction du procès-verbal, plan annexé — avec quantité, prix unitaire HT et taux de TVA de 20 %. Un dossier facturé en un seul forfait global est difficile à défendre en cas de contestation, et ne permet pas de justifier la quote-part réclamée à chaque propriétaire. Rappelez sur la facture de solde les montants déjà réglés au titre de la provision de démarrage."
+    },
+    {
+      "question": "Je travaille surtout pour des collectivités et des particuliers : la réforme me concerne-t-elle ?",
+      "reponse": "Oui. Assujetti à la TVA en France, vous devrez pouvoir recevoir des factures électroniques, puis en émettre pour vos clients professionnels établis en France, à l'échéance applicable à votre entreprise. Vos opérations avec des particuliers donneront lieu à une transmission de données à l'administration. Vos factures aux acheteurs publics, elles, restent des factures électroniques : à l'échéance applicable à votre entreprise, vous pourrez les transmettre soit par une plateforme agréée, soit directement via Chorus Pro, qui demeure la plateforme de référence du secteur public (certains cas, comme les factures de travaux et les mémoires de frais de justice, restant propres à Chorus Pro)."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Légifrance — Loi n° 46-942 du 7 mai 1946, exercice de la profession de géomètre-expert (Titre Ier)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000000874428/LEGISCTA000006112876/"
+    },
+    {
+      "titre": "Légifrance — Code civil, articles 640 à 648 (article 646 : bornage à frais communs)",
+      "url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006136252/2020-11-04"
+    },
+    {
+      "titre": "BOFiP — TVA, taux normal applicable aux prestations des experts et professions libérales (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "economie.gouv.fr — Chorus Pro, plateforme de référence pour la facturation électronique du secteur public",
+      "url": "https://www.economie.gouv.fr/actualites/chorus-pro-restera-la-plateforme-de-reference-pour-la-facturation-electronique-du"
+    },
+    {
+      "titre": "impots.gouv.fr — Chorus Pro restera la plateforme de référence pour la facturation électronique du secteur public (choix plateforme agréée ou Chorus Pro, cas réservés)",
+      "url": "https://www.impots.gouv.fr/actualite/chorus-pro-restera-la-plateforme-de-reference-pour-la-facturation-electronique-du-secteur"
+    },
+    {
+      "titre": "DAJ (economie.gouv.fr) — Les délais de paiement applicables aux contrats de la commande publique",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/daj/media-document/FT56_Les_delais_de_paiement.pdf"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 3 octobre 1983 : note détaillée obligatoire dès 25 € TTC pour les prestations aux particuliers",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "economie.gouv.fr — Factures : les mentions obligatoires",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "DGCCRF — Délais de paiement entre professionnels (pénalités, indemnité de 40 €)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Je consulte la liste des plateformes agréées",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

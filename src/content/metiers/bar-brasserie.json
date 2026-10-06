@@ -1,0 +1,156 @@
+{
+  "nom": "Bar-brasserie",
+  "slug": "bar-brasserie",
+  "famille": "restauration",
+  "statuts_frequents": ["SARL", "SAS / SASU", "EURL", "Entreprise individuelle (EI)"],
+  "volume_factures_typique": "Le comptoir et la salle génèrent un volume élevé de tickets et de notes remis à des particuliers, pour un nombre restreint de factures émises à des professionnels : pots d'entreprise, réunions, privatisations partielles, conventions avec un club ou une association. En sens inverse, l'établissement reçoit un flux soutenu de factures fournisseurs (brasseur, caviste, grossiste alimentaire).",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Deux taux cohabitent en permanence au comptoir : un demi de bière ou un verre de vin relèvent du taux normal de 20 % en tant que boissons alcooliques, tandis qu'un café, un soft servi au verre ou un plat du jour consommés sur place relèvent du taux réduit de 10 % propre aux ventes à consommer sur place.",
+    "Servir des boissons alcooliques suppose de détenir la licence correspondante et d'afficher une enseigne indiquant le type de licence. Les déclarations se font auprès de la mairie, et à Paris auprès de la préfecture de police : les services des douanes ne gèrent plus les déclarations de profession relatives aux débits de boissons.",
+    "Toute réduction de prix sur des boissons alcooliques pendant une période restreinte oblige à proposer, dans des conditions équivalentes et avec la même annonce, une réduction sur des boissons non alcooliques. Une opération de ce type déplace donc simultanément des recettes à 20 % et des recettes à 10 %.",
+    "L'affichage des prix est double : à l'extérieur, la liste des boissons et denrées les plus courantes avec le volume servi et le prix toutes taxes et service compris ; à l'intérieur, le prix et le volume servi de la totalité des consommations, sur un document exposé à la vue du public et directement lisible.",
+    "Faire figurer le volume servi dans la désignation de chaque boisson facturée n'est pas une mention obligatoire de la facture, mais cela aligne le document sur la carte affichée, où le volume est exigé, et évite les contestations sur une facture de soirée d'entreprise.",
+    "La remise d'une note est obligatoire dès que le prix atteint 25 € TTC, et sur demande du client en dessous de ce montant. Ce document relève de la relation avec un consommateur et ne se confond pas avec la facture électronique, qui vise les clients professionnels.",
+    "Les factures des fournisseurs de boissons arriveront par une plateforme agréée : la capacité à les recevoir constitue la première étape de la réforme, avant l'obligation d'émettre, à l'échéance applicable à votre entreprise.",
+    "Les consommations payées au comptoir par des particuliers ne donnent lieu à aucune facture électronique : elles relèvent de la transmission à l'administration des données de transactions, suivant le même calendrier."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Ventilation des montants HT et de la TVA par taux dès qu'une facture mêle boissons alcooliques (20 %) et restauration ou boissons sans alcool servies sur place (10 %).",
+    "Dénomination précise de chaque consommation, assez explicite pour justifier le taux retenu (boisson alcoolique à 20 %, boisson sans alcool ou denrée servie sur place à 10 %).",
+    "Note remise au consommateur à partir de 25 € TTC, et sur simple demande en deçà, distincte de la facture adressée à un client professionnel.",
+    "SIREN ou SIRET du client professionnel pour l'adressage de la facture électronique par une plateforme agréée.",
+    "« TVA non applicable, article 293 B du CGI » si l'établissement relève de la franchise en base, auquel cas aucun taux ne doit figurer sur la facture."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture – pot de départ organisé dans la brasserie par une entreprise (40 personnes)",
+    "lignes": [
+      {
+        "designation": "Planche apéritive salée, servie sur place",
+        "quantite": 6,
+        "unite": "planche",
+        "prix_unitaire_ht": 34,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Demi de bière pression 25 cl, servi au comptoir",
+        "quantite": 48,
+        "unite": "demi",
+        "prix_unitaire_ht": 3.2,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Crémant 75 cl, servi sur place",
+        "quantite": 6,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 19,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Limonade et jus de fruits servis au verre, consommation immédiate",
+        "quantite": 30,
+        "unite": "verre",
+        "prix_unitaire_ht": 2.4,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Ventilation des montants HT et de la TVA par taux : 20 % pour la bière et le crémant, 10 % pour les planches et les boissons sans alcool servies au verre",
+      "Dénomination précise de chaque consommation, assez explicite pour justifier le taux retenu",
+      "Volume servi repris dans la désignation des boissons, en cohérence avec la carte affichée : utile à la lecture du document, sans constituer une mention obligatoire de la facture",
+      "SIREN ou SIRET de l'entreprise organisatrice, collecté lors de la réservation",
+      "Date de la soirée, conditions et délais de paiement",
+      "Document illustratif : les volumes et les montants sont fictifs ; seuls les taux appliqués sont issus des textes cités"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Séparer dès la caisse les lignes à 20 % des lignes à 10 %, plutôt que de reconstituer la ventilation en fin de mois.",
+    "Recevoir et rapprocher les factures des fournisseurs de boissons, nombreuses et récurrentes, depuis une plateforme agréée.",
+    "Établir une facture électronique pour une entreprise qui réserve une partie de la salle, sans repasser par une note manuscrite.",
+    "Suivre l'effet des opérations à prix réduit sur la répartition des recettes entre les deux taux.",
+    "Maintenir la cohérence entre la carte affichée (volumes, prix TTC service compris) et les lignes facturées."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée par la DGFiP réunissant un compte professionnel et la facturation, pour les PME et les indépendants, ce qui correspond à un bar-brasserie constitué en société. Les encaissements et les factures des soirées d'entreprise restent dans le même environnement."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée par la DGFiP, orientée gestion financière et comptabilité. L'intérêt pour un bar-brasserie tient au flux entrant : les factures du brasseur, du caviste et du grossiste arrivent chaque semaine et se rapprochent au même endroit que les quelques factures émises pour les soirées d'entreprise, sans circuit parallèle pour les achats de boissons."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée par la DGFiP associant facturation et comptabilité, orientée TPE et indépendants. Elle convient à un établissement exploité en nom propre ou en petite société, qui émet peu de factures professionnelles mais doit en conserver la ventilation entre 20 % et 10 % au même endroit que sa comptabilité, sans ajouter un outil distinct à la caisse déjà en place."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Un même ticket mêle des bières et des cafés : dois-je vraiment distinguer les taux ?",
+      "reponse": "Oui. Les ventes à consommer sur place relèvent du taux réduit de 10 %, à l'exclusion des boissons alcooliques qui restent au taux normal de 20 %. Un demi et un café consommés à la même table ne suivent donc pas le même taux. Cette ventilation doit apparaître sur vos documents et se retrouve dans les données que vous transmettrez à l'administration."
+    },
+    {
+      "question": "J'organise des périodes de prix réduits sur les boissons : quelles obligations et quel effet sur la TVA ?",
+      "reponse": "Si vous proposez des boissons alcooliques à prix réduit pendant une période restreinte, vous devez proposer des boissons non alcooliques à prix réduit dans des conditions équivalentes, et annoncer cette réduction dans les mêmes conditions. Sur le plan fiscal, rien ne change : l'alcool reste à 20 %, les boissons sans alcool servies pour une consommation immédiate à 10 %. Seule la répartition de vos recettes entre les deux taux se déplace."
+    },
+    {
+      "question": "Je reprends un fonds avec une licence : la licence a-t-elle un lien avec la facturation électronique ?",
+      "reponse": "Non, ce sont deux sujets distincts. La licence autorise la vente de boissons alcooliques et vous devez afficher une enseigne indiquant son type ; les déclarations correspondantes se font auprès de la mairie, ou de la préfecture de police à Paris, les services des douanes ne les gérant plus. La facturation électronique découle de votre assujettissement à la TVA et s'applique à l'échéance applicable à votre entreprise, quelle que soit la licence détenue."
+    },
+    {
+      "question": "Une entreprise organise un pot dans ma salle et demande une facture : que dois-je prévoir ?",
+      "reponse": "Votre client est une entreprise : la facture devra être émise au format électronique par une plateforme agréée, à l'échéance applicable à votre entreprise. Demandez son SIREN ou son SIRET au moment de la réservation, et non le soir même. La facture doit détailler les consommations, ventiler les montants entre 20 % et 10 %, et porter les conditions et délais de paiement."
+    },
+    {
+      "question": "La note que je remets au client remplace-t-elle la facture électronique ?",
+      "reponse": "Non. La note est obligatoire dès 25 € TTC pour une prestation rendue à un consommateur, et sur simple demande en dessous de ce montant : c'est un document de la relation avec un particulier. Les ventes aux particuliers ne donnent pas lieu à facture électronique mais à une transmission de données de transactions. La facture électronique ne concerne que vos clients professionnels."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – TVA : ventes à consommer sur place (taux réduit de 10 %, exclusion des boissons alcooliques)",
+      "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20201014"
+    },
+    {
+      "titre": "economie.gouv.fr – TVA : les taux du quotidien (taux normal de 20 % sur les boissons alcoolisées)",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-quotidien"
+    },
+    {
+      "titre": "DGCCRF (economie.gouv.fr) – Cafés et bars : quelles obligations pour les professionnels ? (affichage extérieur et intérieur, note dès 25 € TTC)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/cafes-et-bars-quelles-obligations-pour-les-professionnels"
+    },
+    {
+      "titre": "economie.gouv.fr – Professionnels : vos obligations en matière d'affichage des prix",
+      "url": "https://www.economie.gouv.fr/entreprises/obligations-affichage-prix"
+    },
+    {
+      "titre": "entreprendre.service-public.fr – Réglementation dans un bar ou un restaurant (licence obligatoire, enseigne indiquant le type de licence)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F22387"
+    },
+    {
+      "titre": "douane.gouv.fr – La douane ne gère plus les déclarations de profession relatives aux débits de boissons (démarches auprès des mairies, préfecture de police à Paris)",
+      "url": "https://www.douane.gouv.fr/actualites/la-douane-ne-gere-plus-les-declarations-de-profession-relatives-aux-debits-de-boissons"
+    },
+    {
+      "titre": "Légifrance – Code de la santé publique, article L3323-1 (réduction de prix sur les boissons alcooliques : boissons non alcooliques à prix réduit dans des conditions équivalentes)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000020896932"
+    },
+    {
+      "titre": "economie.gouv.fr – Factures : les mentions obligatoires",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "BOFiP – TVA : franchise en base, mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (réception puis émission, plateformes agréées)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr – Clients entreprises et particuliers : facturation électronique et e-reporting",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

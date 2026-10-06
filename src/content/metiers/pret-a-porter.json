@@ -1,0 +1,143 @@
+{
+  "nom": "Prêt-à-porter",
+  "slug": "pret-a-porter",
+  "famille": "commerce",
+  "statuts_frequents": ["SARL", "SAS", "Entreprise individuelle", "EURL"],
+  "volume_factures_typique": "Des dizaines de tickets de caisse par jour côté particuliers, surtout en période de soldes. Les factures sont rares : quelques-unes par trimestre, pour des dotations vestimentaires d'entreprises, des CSE ou des associations.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Chaque vêtement mis en vente porte une étiquette de composition rédigée en français, fixée sur le produit et lisible, indiquant le pourcentage de chaque fibre textile. Les contrôles de la DGCCRF portent sur les étiquettes, les allégations commerciales, mais aussi sur vos factures d'achat et vos documents de traçabilité : conservez-les pour pouvoir justifier la composition annoncée.",
+    "Vêtements et accessoires relèvent du taux normal de 20 % : la boutique ne gère qu'un seul taux, mais chaque remise acquise à la date de la vente (solde, démarque) doit figurer sur la facture.",
+    "Pendant les soldes, le prix de référence barré est le prix le plus bas pratiqué au cours des 30 jours précédant l'annonce de réduction. Les articles soldés doivent avoir été proposés à la vente et payés depuis au moins un mois à la date de début de la période de soldes, et se distinguer clairement des articles non soldés. Conservez une preuve du prix de référence (note, bordereau, ticket de caisse) en cas de contrôle.",
+    "Retour sans défaut : rien n'oblige à rembourser, l'échange ou l'avoir reste un geste commercial. Mais toute politique annoncée en vitrine ou sur le ticket engage la boutique. La reprise devient obligatoire en cas de défaut de conformité ou de vice caché.",
+    "Un avoir émis à un client professionnel prend la forme d'une note visant la facture initiale (numéro et date) et indiquant le montant hors taxes ainsi que la TVA correspondante.",
+    "Le ticket de caisse se remet à la demande du client, l'impression systématique ayant pris fin. Certaines opérations restent soumises à un justificatif imprimé, comme les prestations de services dont le prix est supérieur ou égal à 25 euros TVA comprise, pour lesquelles la délivrance d'une note reste obligatoire avant paiement. La vente reste enregistrée en caisse : ses données seront transmises à l'administration en e-reporting, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Toute remise, tout rabais ou toute ristourne acquis à la date de la vente (démarque de soldes comprise) doit apparaître sur la facture, ligne par ligne.",
+    "Une note d'avoir doit porter la référence explicite de la facture initiale (numéro et date), les noms et adresses des parties, le montant hors taxes de la réduction et la TVA correspondante.",
+    "Étiquette de composition en français fixée sur chaque vêtement, indiquant le pourcentage de chaque fibre textile, cohérente avec vos factures d'achat et vos documents de traçabilité.",
+    "En franchise en base de TVA : mention « TVA non applicable - article 293 B du CGI » sur chaque facture."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de dotation vestimentaire à un restaurant voisin — chemises, pantalons et retouches",
+    "lignes": [
+      {
+        "designation": "Chemise coton blanc, coupe droite, réf. CH-204 (tailles S à XL)",
+        "quantite": 8,
+        "unite": "pièce",
+        "prix_unitaire_ht": 39,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Pantalon toile marine, réf. PA-118 (tailles assorties)",
+        "quantite": 8,
+        "unite": "pièce",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Retouche ourlet sur pantalon (prestation atelier)",
+        "quantite": 8,
+        "unite": "pièce",
+        "prix_unitaire_ht": 8,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux normal de 20 % sur l'ensemble des lignes, vêtements comme retouches.",
+      "En cas de retour accepté, un avoir sera émis par note visant la présente facture (numéro et date), avec le montant hors taxes et la TVA correspondante.",
+      "Aucune remise acquise à la date de la vente sur cette commande ; toute remise future figurerait ligne par ligne."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Appliquer les démarques de soldes avec un prix de référence conforme — le prix le plus bas des 30 jours précédant l'annonce — et en conserver la preuve.",
+    "Émettre des avoirs conformes lors des retours de clients professionnels : référence à la facture d'origine, montant hors taxes et TVA correspondante.",
+    "Remettre le ticket à la demande du client tout en conservant la trace de chaque vente pour l'e-reporting, à l'échéance applicable à votre entreprise.",
+    "Facturer au format électronique les ventes aux clients professionnels (dotations vestimentaires, CSE), à l'échéance applicable à votre entreprise.",
+    "Conserver factures fournisseurs et documents de traçabilité pour justifier la composition des vêtements en cas de contrôle."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Opérateur réunissant compte professionnel et facturation, pour PME et indépendants. Adapté à une boutique qui gère des encaissements quotidiens et quelques factures à des clients professionnels. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+    },
+    {
+      "slug": "shine",
+      "justification": "Opérateur de compte professionnel en ligne et de facturation, pour indépendants, freelances et TPE. Un format léger pour une boutique indépendante. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Opérateur associant facturation et comptabilité, ciblé indépendants et TPE. Utile pour relier les ventes de la boutique à la tenue comptable. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Pendant les soldes, quel prix de référence puis-je barrer sur mes étiquettes et mes tickets ?",
+      "reponse": "Le prix de référence est le prix le plus bas que vous avez pratiqué au cours des 30 jours précédant l'annonce de réduction. Les articles soldés doivent par ailleurs avoir été proposés à la vente et payés depuis au moins un mois à la date de début de la période de soldes : un article resté en réserve et jamais mis en rayon ne remplit pas la condition, et le réapprovisionnement spécifique pour les soldes est exclu. La distinction entre articles soldés et non soldés doit rester claire pour le client, et vous devez pouvoir justifier le prix de référence en cas de contrôle."
+    },
+    {
+      "question": "Une cliente rapporte une robe sans défaut : suis-je obligé de la rembourser ?",
+      "reponse": "Non. Hors défaut de conformité ou vice caché, ni le remboursement ni l'échange ne sont dus : c'est un geste commercial. Attention toutefois : si votre vitrine ou vos tickets annoncent une politique d'échange ou de remboursement, vous êtes tenu de l'appliquer. En cas de défaut de conformité, la réparation, le remplacement ou, à défaut, le remboursement s'imposent."
+    },
+    {
+      "question": "Un restaurant me retourne des pantalons de sa dotation, tailles non conformes et étiquettes conservées : comment établir l'avoir ?",
+      "reponse": "Émettez une note d'avoir qui fait référence explicite à la facture de dotation, avec son numéro et sa date, et qui reprend les lignes retournées (références, tailles, quantités). Elle doit mentionner les noms et adresses des parties, le montant hors taxes de la réduction et la TVA correspondante, au taux normal de 20 % comme sur la facture d'origine. Si la dotation a donné lieu à plusieurs factures, l'avoir peut viser l'ensemble en précisant la période d'émission. Les retouches déjà réalisées sur les articles repris se traitent ligne par ligne, selon ce que vous acceptez de reprendre."
+    },
+    {
+      "question": "Une cliente me demande la composition exacte d'un vêtement : que dois-je pouvoir lui montrer ?",
+      "reponse": "L'étiquette de composition, rédigée en français et fixée sur le produit, indique le pourcentage de chaque fibre textile. En cas de contrôle, la DGCCRF vérifie la cohérence entre cette étiquette, vos allégations commerciales et vos documents d'achat : conservez les factures fournisseurs et les documents de traçabilité correspondants."
+    },
+    {
+      "question": "Je fournis des tenues à un restaurant de ma rue : ma facture doit-elle être électronique ?",
+      "reponse": "La vente entre professionnels impose déjà une facture avec toutes les mentions obligatoires, remises comprises. À l'échéance applicable à votre entreprise, cette facture devra être émise au format électronique et transiter par une plateforme agréée. Vos ventes en caisse aux particuliers, elles, resteront en e-reporting."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Taux normal de TVA de 20 %, applicable notamment aux vêtements (BOI-TVA-LIQ-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1438-PGP.html/identifiant=BOI-TVA-LIQ-20-10-20140919"
+    },
+    {
+      "titre": "economie.gouv.fr — Commerçants : quelle réglementation durant les soldes ?",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-un-commerce/commercants-quelle-reglementation-durant-les-soldes"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — Annonces de réduction de prix : ce que vous devez savoir",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/annonces-de-reduction-de-prix-ce-que-vous-devez-savoir"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — L'étiquetage des vêtements (composition, contrôles)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/etiquetage-des-vetements"
+    },
+    {
+      "titre": "BOFiP — Factures rectificatives et notes d'avoir : mesures de simplification (BOI-TVA-DECLA-30-20-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/142-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-20-20220119"
+    },
+    {
+      "titre": "economie.gouv.fr — Ticket de caisse : professionnels, quelles sont vos obligations ?",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-un-commerce/ticket-de-caisse-professionnels-quelles-sont-vos-obligations"
+    },
+    {
+      "titre": "economie.gouv.fr — Soldes : consommateurs, quels sont vos droits ? (échange et remboursement)",
+      "url": "https://www.economie.gouv.fr/particuliers/mes-droits-conso/bien-consommer/soldes-consommateurs-quels-sont-vos-droits"
+    },
+    {
+      "titre": "economie.gouv.fr — Mentions obligatoires d'une facture (dont réductions de prix)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "economie.gouv.fr — Franchise en base de TVA",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique (facture électronique et e-reporting)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique et plateformes agréées : liste officielle des immatriculations (définitives et sous réserve)",
+      "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

@@ -1,0 +1,197 @@
+{
+  "nom": "Apiculteur",
+  "slug": "apiculteur",
+  "famille": "agriculture",
+  "statuts_frequents": [
+    "Entreprise individuelle (exploitant apicole)",
+    "Exploitant individuel au régime micro-BA",
+    "EARL",
+    "GAEC",
+    "SCEA"
+  ],
+  "volume_factures_typique": "Beaucoup d'encaissements, peu de factures. L'essentiel des ventes se fait au détail, en pots de quelques euros, sur les marchés, à la miellerie et dans les salons. À côté, une poignée de documents de montants plus élevés : épiceries fines, magasins de producteurs, grossistes et conditionneurs qui achètent le miel en vrac au fût. L'activité suit les miellées : extraction et conditionnement pendant la saison, ventes concentrées sur la fin de l'année.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Le miel, le pollen et la gelée royale vendus pour être consommés relèvent du taux réduit de 5,5 % applicable aux produits destinés à l'alimentation humaine, qu'ils soient conditionnés en pot ou livrés en vrac au fût.",
+    "L'hydromel est une boisson alcoolique : il relève du taux normal de 20 %, y compris vendu à la miellerie en même temps que vos pots. Une facture d'épicerie mélange donc couramment deux taux sur un même document.",
+    "Les bougies, savons et cosmétiques fabriqués à partir de votre cire ne sont pas des denrées destinées à l'alimentation humaine : ils ne peuvent pas suivre le taux de 5,5 % de vos miels et relèvent du taux normal de 20 %. La cire elle-même suit la destination que vous lui connaissez au moment de la vente : vendue brute ou gaufrée à un autre apiculteur pour un usage apicole, elle est un intrant de la production agricole et relève de 5,5 % ; vendue à un fabricant de bougies ou de cosmétiques, elle relève de 20 %. Faites préciser l'usage par l'acheteur et conservez cette indication : c'est elle qui justifie le taux porté sur la ligne.",
+    "Une mise à disposition de ruches pour la pollinisation d'un verger ou d'une parcelle porte-graines est une prestation de services, pas une livraison de denrée : le taux réduit réservé aux produits destinés à l'alimentation humaine ne s'y applique pas de plein droit. Vérifiez le régime applicable avant de facturer ce type d'intervention.",
+    "Les ventes au détail sur les marchés, à la miellerie ou en salon s'adressent à des particuliers. Elles ne donnent pas lieu à une facture électronique mais à la transmission à l'administration des données de transaction, c'est-à-dire du chiffre d'affaires réalisé par jour, ventilé par taux de TVA, à l'échéance applicable à votre entreprise.",
+    "Vos ventes à une épicerie, à un magasin de producteurs ou à un conditionneur sont des opérations entre professionnels établis en France : elles relèvent de la facture électronique, avec le numéro SIREN du client parmi les mentions qui deviendront obligatoires à l'échéance applicable à votre entreprise.",
+    "Le régime micro-BA détermine le bénéfice imposable à partir de la moyenne des recettes encaissées sur trois années civiles, diminuée d'un abattement forfaitaire représentatif des charges. Tenir le détail des encaissements par année civile, ventes de marché comprises, conditionne donc directement votre déclaration de résultat.",
+    "Si vous n'êtes pas redevable de la TVA, aucun montant de taxe ne doit apparaître sur vos documents. Le remboursement forfaitaire agricole est une compensation versée par l'administration, pas une exonération : il ne se mentionne pas comme telle sur la facture.",
+    "L'étiquette du pot et la facture ne portent pas les mêmes informations. Depuis le 14 juin 2026, l'étiquette indique le ou les pays dans lesquels le miel a été récolté. Lorsque le miel provient de plusieurs pays, ceux-ci figurent dans le champ visuel principal, par ordre pondéral décroissant, avec le pourcentage que chacun représente ; une marge d'erreur de 5 % est admise pour chaque part, calculée à partir de vos documents de traçabilité. Pour les emballages de moins de 30 grammes, les noms de pays peuvent être remplacés par le code à deux lettres de la norme ISO 3166-1. Les miels étiquetés avant le 14 juin 2026 restent commercialisables jusqu'à épuisement des stocks. Rien de tout cela n'a à figurer sur la facture ; en revanche, reporter le numéro de lot sur la ligne de facture facilite le rapprochement avec les pots livrés en cas de retrait."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mentions de droit commun : numéro individuel d'identification à la TVA du vendeur, sauf lorsque le total hors taxes de la facture n'excède pas 150 €, date d'échéance du règlement et taux des pénalités de retard.",
+    "Apiculteur redevable : 5,5 % sur les lignes de miel, de pollen et de gelée royale destinés à la consommation, ainsi que sur la cire vendue à un autre apiculteur pour un usage apicole ; 20 % sur les lignes d'hydromel et sur les articles issus de la cire qui ne sont pas des denrées alimentaires ; bases et montants de TVA présentés par taux.",
+    "Apiculteur non redevable relevant du remboursement forfaitaire agricole : aucun montant de TVA sur la facture, et aucune présentation de ce régime comme une exonération.",
+    "Désignation précise de chaque miel vendu (origine florale, contenance du pot, numéro de lot) : la facture n'a pas à reprendre l'étiquetage réglementaire du pot, mais le numéro de lot rend le rapprochement possible en cas de retrait.",
+    "À l'échéance applicable à votre entreprise, quatre mentions s'ajoutent : le numéro SIREN de l'épicerie ou du conditionneur, l'adresse de livraison des pots si elle diffère de celle du client, la nature des opérations facturées et, le cas échéant, la mention « Option pour le paiement de la taxe d'après les débits »."
+  ],
+  "exemple_facture": {
+    "intitule": "Réassort de fin d'année pour une épicerie fine : miels de la saison, pain d'épices, hydromel et bougies (apiculteur redevable de la TVA)",
+    "lignes": [
+      {
+        "designation": "Miel de châtaignier, pot de 500 g, lot MC-04",
+        "quantite": 120,
+        "unite": "pot",
+        "prix_unitaire_ht": 6.8,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Miel de montagne toutes fleurs, pot de 250 g, lot MF-11",
+        "quantite": 90,
+        "unite": "pot",
+        "prix_unitaire_ht": 4.2,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Pain d'épices au miel de la miellerie, pièce de 300 g",
+        "quantite": 40,
+        "unite": "pièce",
+        "prix_unitaire_ht": 5.5,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Hydromel sec du rucher, bouteille de 75 cl",
+        "quantite": 36,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 9.5,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Bougie moulée en cire d'abeille, 120 g",
+        "quantite": 24,
+        "unite": "pièce",
+        "prix_unitaire_ht": 7,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA à 5,5 % : miels, pain d'épices et produits de la ruche destinés à l'alimentation humaine",
+      "TVA à 20 % : hydromel, boisson alcoolique, et bougie en cire, produit non alimentaire",
+      "Bases et montants de TVA ventilés par taux ; chaque ligne porte le taux qui lui est propre",
+      "Numéro de lot indiqué pour chaque miel, en regard des lots livrés",
+      "Date d'échéance du règlement et taux des pénalités de retard"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Éditer une facture à deux taux (5,5 % et 20 %) sans ressaisie, avec un taux mémorisé par référence de produit.",
+    "Séparer les encaissements de marché et de miellerie par taux de TVA, pour pouvoir transmettre un chiffre d'affaires journalier ventilé.",
+    "Suivre les recettes encaissées par année civile, afin d'alimenter la moyenne triennale du micro-BA.",
+    "Gérer un catalogue de pots décliné par origine florale, par contenance et par numéro de lot, sans créer une référence nouvelle à chaque extraction.",
+    "Recevoir et classer les factures des fournisseurs de la miellerie (pots, étiquettes, cire gaufrée, cadres, matériel d'extraction), qui arriveront au format électronique."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée DGFiP de facturation et de gestion conçue pour les indépendants et les micro-entrepreneurs. Elle convient à un apiculteur qui édite peu de factures professionnelles à côté d'une majorité de ventes au détail."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée par la DGFiP qui tient la comptabilité, le compte professionnel et la facturation dans un même outil. Utile à un apiculteur au micro-BA, dont la moyenne triennale se construit à partir d'encaissements de marché et non de factures, et qui n'édite de documents que pour ses épiceries et ses conditionneurs."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée par la DGFiP adossée à un compte professionnel en ligne. Adaptée à un rucher dont l'essentiel des recettes arrive par encaissements sur les marchés et à la miellerie, avec quelques factures de réassort à éditer en fin d'année."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends la majeure partie de ma production sur les marchés. Dois-je établir une facture électronique pour chaque pot vendu ?",
+      "reponse": "Non. Les ventes à des particuliers ne relèvent pas de la facture électronique entre entreprises mais de la transmission des données de transaction. Vous transmettrez le chiffre d'affaires réalisé par jour, ventilé par taux de TVA si vous en appliquez plusieurs, à l'échéance applicable à votre entreprise. Aucune donnée nominative sur vos acheteurs n'est transmise."
+    },
+    {
+      "question": "Mon hydromel est-il au même taux que mes pots de miel ?",
+      "reponse": "Non. Le miel est un produit destiné à l'alimentation humaine et relève du taux réduit de 5,5 %. L'hydromel est une boisson alcoolique : il relève du taux normal de 20 %, quel que soit le circuit de vente, y compris à la miellerie. Sur une facture d'épicerie qui comporte les deux, les bases et les montants de TVA doivent être présentés taux par taux."
+    },
+    {
+      "question": "Je suis au micro-BA. Ce régime me dispense-t-il de la réforme de la facturation ?",
+      "reponse": "Non. Le micro-BA est un régime d'imposition du bénéfice agricole : il détermine votre résultat à partir d'une moyenne triennale de recettes diminuée d'un abattement, et il est sans effet sur vos obligations de facturation. Il a même une conséquence pratique inverse : comme vos recettes sont majoritairement encaissées au détail, sur les marchés et à la miellerie, et non facturées, votre suivi d'encaissements par année civile sert deux obligations distinctes, la moyenne triennale du micro-BA et la transmission du chiffre d'affaires journalier ventilé par taux. Vous devrez par ailleurs, au minimum, être en mesure de recevoir les factures électroniques de vos fournisseurs de miellerie, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Mon numéro d'apiculteur (NAPI) doit-il figurer sur mes factures ?",
+      "reponse": "Le NAPI est un identifiant à usage sanitaire, attribué de façon permanente après votre première déclaration de ruches ; il ne fait pas partie des mentions obligatoires de facturation, qui sont celles de droit commun. Il reste par ailleurs obligatoire de déclarer chaque année vos colonies, dès la première, pendant la période de déclaration qui court du 1er septembre au 31 décembre. Rien ne vous interdit de faire figurer votre NAPI sur vos documents commerciaux si vos acheteurs le demandent."
+    },
+    {
+      "question": "Ma miellerie est-elle concernée par la déclaration des établissements manipulant des denrées d'origine animale ?",
+      "reponse": "Tout exploitant d'un établissement qui prépare, manipule, entrepose, expose ou met en vente des denrées animales ou d'origine animale doit déclarer cet établissement et ses activités avant le début de l'activité, y compris lorsqu'il ne livre qu'au consommateur final. Interrogez votre DDPP pour confirmer que votre local d'extraction et de conditionnement entre dans ce champ et pour connaître la forme attendue de la déclaration. Cette formalité est distincte de la déclaration annuelle de ruches, qui poursuit un autre objectif."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-10 – Taux réduit de 5,5 % : produits destinés à l'alimentation humaine",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+    },
+    {
+      "titre": "BOFiP – Taux de TVA applicable aux boissons alcooliques (taux normal)",
+      "url": "https://bofip.impots.gouv.fr/bofip/11606-PGP.html/ACTU-2020-00195-8"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-20 – Le taux normal de la TVA",
+      "url": "https://bofip.impots.gouv.fr/bofip/1376-PGP.html/identifiant=BOI-TVA-LIQ-20-20140919"
+    },
+    {
+      "titre": "impots.gouv.fr – Plusieurs taux de TVA (taux normal de 20 %, taux réduits de 10 % et 5,5 %)",
+      "url": "https://www.impots.gouv.fr/particulier/plusieurs-taux-de-tva"
+    },
+    {
+      "titre": "BOFiP BOI-ANNX-000484 – Taux de TVA applicables aux produits d'origine agricole, de la pêche, de la pisciculture et de l'aviculture (version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13565-PGP.html/identifiant=BOI-ANNX-000484-20241120"
+    },
+    {
+      "titre": "BOFiP ACTU-2023-00101 – Simplification du régime des taux applicables aux denrées alimentaires et aux intrants de la production alimentaire et de la production agricole (loi n° 2022-1726 du 30 décembre 2022, art. 61)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13994-PGP.html/ACTU-2023-00101"
+    },
+    {
+      "titre": "BOFiP BOI-BA-BASE-15-10 – Régime des micro-exploitations : détermination du résultat à partir de la moyenne triennale des recettes, diminuée d'un abattement",
+      "url": "https://bofip.impots.gouv.fr/bofip/10605-PGP.html/identifiant=BOI-BA-BASE-15-10-20160907"
+    },
+    {
+      "titre": "BOFiP BOI-BA-REG – Bénéfices agricoles : régimes d'imposition",
+      "url": "https://bofip.impots.gouv.fr/bofip/2729-PGP.html/identifiant=BOI-BA-REG-20260819"
+    },
+    {
+      "titre": "impots.gouv.fr – Comment obtenir un remboursement forfaitaire agricole ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/comment-obtenir-un-remboursement-forfaitaire-agricole"
+    },
+    {
+      "titre": "entreprendre.service-public.fr – Mentions obligatoires sur une facture, dont les mentions nouvelles liées à la facturation électronique",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (champ d'application, e-reporting du chiffre d'affaires journalier ventilé par taux)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr – Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "mesdemarches.agriculture.gouv.fr – Déclarer des ruches : obligation annuelle dès la première colonie, période du 1er septembre au 31 décembre, attribution du numéro d'apiculteur NAPI",
+      "url": "https://www.mesdemarches.agriculture.gouv.fr/demarches/exploitation-agricole/obtenir-un-droit-une-autorisation/article/declarer-des-ruches-294"
+    },
+    {
+      "titre": "Décret n° 2026-312 du 24 avril 2026 relatif aux confitures, gelées et marmelades de fruits, à la crème de marrons, au miel, aux jus de fruits et aux laits de conserve (transposition de la directive « petit-déjeuner », entrée en vigueur le 14 juin 2026)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053957438"
+    },
+    {
+      "titre": "DGCCRF (economie.gouv.fr) – Réglementation sur les produits du petit-déjeuner : FAQ pour les professionnels (origine du miel, pays de récolte par ordre pondéral décroissant et pourcentages)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/reglementation-sur-les-produits-du-petit-dejeuner-une-faq-pour-informer-les-professionnels"
+    },
+    {
+      "titre": "mesdemarches.agriculture.gouv.fr – Déclarer la manipulation de denrées alimentaires d'origine animale (déclaration préalable de l'établissement)",
+      "url": "https://mesdemarches.agriculture.gouv.fr/demarches/association-ou-organisation-de/assurer-une-activite-de-76/article/declarer-la-manipulation-de?id_rubrique=76"
+    },
+    {
+      "titre": "service-public.fr – Déclaration en ligne de manipulation de denrées alimentaires d'origine animale",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/R44572"
+    },
+    {
+      "titre": "DGCCRF (economie.gouv.fr) – Ventes sur la voie publique : autorisations nécessaires (occupation du domaine public sur les marchés)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/ventes-sur-la-voie-publique-autorisations-necessaires"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

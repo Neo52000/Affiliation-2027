@@ -1,0 +1,151 @@
+{
+  "nom": "Notaire",
+  "slug": "notaire",
+  "famille": "liberal",
+  "statuts_frequents": [
+    "Notaire individuel titulaire d'office (exercice libéral)",
+    "Société civile professionnelle (SCP) de notaires",
+    "SELARL ou SELAS titulaire d'un office notarial"
+  ],
+  "volume_factures_typique": "Élevé : chaque dossier donne lieu à un état de frais détaillé. Un office traite couramment plusieurs dizaines à plusieurs centaines de dossiers facturés par mois, avec de nombreuses lignes par dossier.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Votre rémunération combine des émoluments réglementés, fixés par arrêté dans le cadre du code de commerce, et des honoraires libres pour les prestations non tarifées (consultation, négociation immobilière). L'état de frais doit refléter cette dualité ligne à ligne.",
+    "Un acte tarifé n'est pas un acte exonéré : émoluments et honoraires des notaires relèvent du taux normal de TVA de 20 %, sauf disposition particulière.",
+    "L'état de frais sépare la rémunération de l'office, les débours engagés pour le dossier (cadastre, publicité foncière, urbanisme) et les droits et taxes versés au Trésor, pour que le client identifie la part d'impôt dans le total ; la colonne spéciale faisant ressortir les droits payés au Trésor pour chaque débours est expressément imposée par l'article 865 du CGI aux états de frais des notaires commis.",
+    "Les sommes avancées au nom et pour le compte du client — débours et droits collectés pour l'État — restent hors base de TVA lorsqu'elles s'appuient sur un mandat, une reddition de comptes exacte et des comptes de passage. Elles ne se confondent jamais avec vos émoluments taxables.",
+    "Une remise sur émoluments n'est possible que dans les conditions prévues par la réglementation tarifaire, pour certaines prestations et au-delà de seuils fixés par les textes ; elle ne se négocie pas librement. Les honoraires libres, eux, relèvent de la convention avec le client.",
+    "Votre clientèle est majoritairement composée de particuliers : à l'échéance applicable à votre entreprise, l'essentiel de l'activité relèvera de la transmission de données à l'administration, tandis que les clients professionnels assujettis établis en France recevront des factures électroniques via plateforme agréée."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Présentation séparée, sur l'état de frais, de la rémunération de l'office, des débours et des droits et taxes versés au Trésor, afin que le client identifie la part d'impôt dans le total. Lorsque vous êtes commis dans un cadre judiciaire, l'article 865 du CGI impose en outre que l'état de frais fasse ressortir, dans une colonne spéciale et pour chaque débours, le montant des droits de toute nature payés au Trésor.",
+    "Distinction explicite entre émoluments tarifés et honoraires libres, ces derniers portant les mentions de droit commun : détail de la prestation, montants HT et TTC, taux de TVA.",
+    "Taux des pénalités de retard et indemnité forfaitaire de 40 € pour frais de recouvrement sur les factures adressées aux clients professionnels.",
+    "Débours et droits collectés repris pour leur montant exact, hors base de TVA, avec reddition de comptes."
+  ],
+  "exemple_facture": {
+    "intitule": "État de frais et honoraires — consultation sur la détention de l'immobilier d'entreprise et formalités préalables (client professionnel, hors acte de vente)",
+    "lignes": [
+      {
+        "designation": "Honoraires libres — consultation juridique sur la structuration de la détention immobilière (prestation non tarifée, convention d'honoraires)",
+        "quantite": 2,
+        "unite": "heure",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Honoraires libres — constitution et suivi du dossier de formalités préalables (prestation non tarifée, convention d'honoraires)",
+        "quantite": 1,
+        "unite": "dossier",
+        "prix_unitaire_ht": 150,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Débours — frais de publicité foncière et documents d'urbanisme avancés au nom et pour le compte du client (hors base de TVA)",
+        "quantite": 1,
+        "unite": "dossier",
+        "prix_unitaire_ht": 96.5,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "Droits et taxes versés au Trésor présentés distinctement des débours et de la rémunération de l'office sur l'état de frais",
+      "Exemple limité à des prestations non tarifées : aucun montant d'émolument réglementé n'y est chiffré, les émoluments étant calculés selon le tarif réglementé en vigueur (tableau annexé à l'arrêté fixant les tarifs des notaires)",
+      "Débours repris pour leur montant exact, reddition de comptes jointe au dossier",
+      "Pénalités de retard et indemnité forfaitaire de recouvrement de 40 € (client professionnel)"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Séparer automatiquement, sur chaque état de frais, émoluments tarifés, honoraires libres, débours et droits versés au Trésor.",
+    "Gérer un flux mixte à l'échéance applicable à votre entreprise : factures électroniques pour les clients assujettis, transmission de données pour la clientèle de particuliers.",
+    "Rapprocher les sommes collectées pour le Trésor et les débours de leurs justificatifs, dossier par dossier.",
+    "Facturer les honoraires libres (consultations, négociation) avec les mentions de droit commun, sans les mélanger aux émoluments."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation réunis, orientés PME et indépendants, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Le périmètre utile se limite aux honoraires libres de l'office et à ses dépenses propres ; les fonds reçus pour le compte des clients restent gérés dans le cadre de la comptabilité notariale et des circuits prévus pour le maniement de fonds."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Outil de gestion financière et de comptabilité, conçu pour travailler avec son expert-comptable, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Adapté à un office dont les comptes sont suivis en cabinet."
+    },
+    {
+      "slug": "indy",
+      "justification": "Comptabilité, compte professionnel et facturation pour les indépendants au régime BNC, utilisable pour la facturation des prestations non tarifées d'un notaire exerçant à titre individuel, en complément du logiciel métier de l'office. Vérifiez sur la liste publiée par la DGFiP si l'éditeur est immatriculé comme plateforme de dématérialisation partenaire, ou par quelle plateforme il transmet vos factures."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes émoluments sont fixés par arrêté : sont-ils pour autant exonérés de TVA ?",
+      "reponse": "Non. Le caractère réglementé du tarif ne crée aucune exonération : les émoluments comme les honoraires des notaires relèvent du taux normal de 20 %, sauf disposition particulière. L'état de frais doit donc faire apparaître la TVA sur votre rémunération, tarifée ou libre."
+    },
+    {
+      "question": "Comment présenter sur un même état de frais émoluments, honoraires libres, débours et droits versés au Trésor ?",
+      "reponse": "Chaque catégorie se présente séparément. Les émoluments suivent le tarif réglementé, les honoraires libres portent les mentions de droit commun, et les droits et taxes versés au Trésor apparaissent sur des lignes distinctes de celles des débours et de votre rémunération. Cette présentation permet au client d'identifier la part d'impôt dans le total du dossier. Lorsque vous êtes commis dans un cadre judiciaire, l'article 865 du CGI impose en outre une colonne spéciale faisant ressortir, pour chaque débours, le montant des droits de toute nature payés au Trésor."
+    },
+    {
+      "question": "Les droits de mutation et les débours que je collecte entrent-ils dans la base de ma TVA ?",
+      "reponse": "Non, à condition de respecter le régime des débours : sommes engagées au nom et pour le compte du client, mandat, reddition de comptes exacte et comptes de passage. Elles sortent alors de la base d'imposition. En dehors de ces conditions, une refacturation de frais resterait taxable au taux de votre prestation."
+    },
+    {
+      "question": "Mon office travaille surtout avec des particuliers : la facturation électronique me concerne-t-elle vraiment ?",
+      "reponse": "Oui. Concrètement, un même dossier peut mêler les deux circuits : la facture d'honoraires adressée à une société cliente passera par une plateforme, tandis que l'état de frais remis à un acquéreur particulier relèvera de la transmission de données. Prévoyez que votre logiciel métier distingue les deux flux dès la saisie du dossier. En tant qu'assujetti établi en France, vous devrez par ailleurs pouvoir recevoir des factures électroniques de vos fournisseurs, puis en émettre pour vos clients professionnels assujettis, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Puis-je consentir une remise sur mes émoluments pour un client fidèle ?",
+      "reponse": "Seulement dans le cadre prévu par la réglementation tarifaire : la remise est encadrée, réservée à certaines prestations et à des tranches définies par les textes. Elle se matérialise sur l'état de frais, pas par une négociation libre. Vos honoraires pour prestations non tarifées restent en revanche librement convenus avec le client."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Prestations de services imposables au taux normal, dont notaires (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 28 février 2020 fixant les tarifs réglementés des notaires",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000041663457"
+    },
+    {
+      "titre": "Légifrance — Code de commerce, fixation des tarifs réglementés (articles R444-1 à R444-21)",
+      "url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000032122788"
+    },
+    {
+      "titre": "Légifrance — Article 865 du CGI (états de frais des notaires commis, droits payés au Trésor en colonne spéciale)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023480602"
+    },
+    {
+      "titre": "economie.gouv.fr — Achat immobilier : composition des frais de notaire (émoluments, débours, droits et taxes)",
+      "url": "https://www.economie.gouv.fr/particuliers/gerer-mon-argent/investir-dans-limmobilier/achat-dun-bien-immobilier-quels-frais-de-notaire-devez-vous-payer"
+    },
+    {
+      "titre": "BOFiP — Recettes des notaires : états de frais et droits payés au Trésor (BOI-BNC-BASE)",
+      "url": "https://bofip.impots.gouv.fr/bofip/4603-PGP"
+    },
+    {
+      "titre": "BOFiP — Débours exclus de la base d'imposition à la TVA (BOI-TVA-BASE-10-10-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/488-PGP.html/identifiant=BOI-TVA-BASE-10-10-30-20220511"
+    },
+    {
+      "titre": "BOFiP — Base d'imposition, opérations réalisées par les membres de certaines professions libérales, dont les notaires (BOI-TVA-BASE-10-20-40-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1476-PGP.html/identifiant=BOI-TVA-BASE-10-20-40-30-20241009"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — Tarifs des notaires et des huissiers",
+      "url": "https://economie.gouv.fr/dgccrf/tarifs-des-notaires-et-des-huissiers-etes-vous-bien-informes"
+    },
+    {
+      "titre": "economie.gouv.fr — Mentions obligatoires d'une facture",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — Délais de paiement, pénalités et indemnité forfaitaire de 40 €",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

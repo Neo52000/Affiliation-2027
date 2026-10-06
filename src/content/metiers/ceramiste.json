@@ -1,0 +1,136 @@
+{
+  "nom": "Céramiste",
+  "slug": "ceramiste",
+  "famille": "artisanat",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle", "EURL"],
+  "volume_factures_typique": "Quelques factures par mois côté professionnel (restaurants, boutiques en dépôt-vente, décorateurs) et de nombreuses ventes directes aux particuliers, concentrées sur les marchés de potiers et les salons.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Lorsque vous êtes redevable de la TVA, la vaisselle et les pièces utilitaires produites en série dans votre atelier (bols, tasses, plats) relèvent du taux normal de 20 %, comme la plupart des ventes de biens.",
+    "Le taux réduit de 5,5 % applicable aux livraisons d'œuvres d'art est réservé, pour la céramique, aux exemplaires uniques entièrement exécutés de la main de l'artiste et signés par lui. Une série de tasses tournées à l'identique n'y ouvre pas droit, même décorée et signée.",
+    "Vos ventes au stand, sur les marchés de potiers et les salons, sont des ventes aux particuliers : elles ne donnent pas lieu à facture électronique mais à un e-reporting, sous forme de données agrégées quotidiennes transmises à l'administration.",
+    "En dépôt-vente, le circuit de facturation dépend du contrat signé avec la boutique : vente ferme ou dépôt avec commission. Dans les deux cas, les factures échangées entre votre atelier et la boutique sont des factures entre professionnels, concernées par la facturation électronique à l'échéance applicable à votre entreprise.",
+    "Si vous bénéficiez de la franchise en base, vous facturez sans TVA et portez sur chaque facture et chaque note la mention « TVA non applicable, article 293 B du CGI », y compris sur un relevé de dépôt-vente."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mentions communes à toute facture : date d'émission, numéro unique, identité du céramiste et du client, date de la vente, détail et décompte en quantité et prix de chaque pièce, montants hors taxe et toutes taxes comprises.",
+    "« TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base.",
+    "Le taux de TVA légalement applicable figure sur la facture : si une pièce unique signée relève du 5,5 % et le reste de la commande du 20 %, chaque ligne porte son propre taux, et vous devez pouvoir justifier que la pièce répond à la définition fiscale de l'œuvre d'art."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture d'un céramiste à un restaurant : service de table en grès sur commande",
+    "lignes": [
+      {
+        "designation": "Assiette plate en grès émaillé, tournage main, diamètre 26 cm",
+        "quantite": 24,
+        "unite": "pièce",
+        "prix_unitaire_ht": 38,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Bol à soupe en grès émaillé assorti",
+        "quantite": 12,
+        "unite": "pièce",
+        "prix_unitaire_ht": 22,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Plat de service ovale, pièce de présentation",
+        "quantite": 2,
+        "unite": "pièce",
+        "prix_unitaire_ht": 95,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA au taux normal de 20 % : vaisselle produite en série, qui ne répond pas à la définition fiscale de l'œuvre d'art.",
+      "Facture adressée à un professionnel : à l'échéance applicable à votre entreprise, elle devra être émise au format électronique via une plateforme agréée."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Émettre des factures aux clients professionnels (restaurants, boutiques, hôtels) et les faire transiter par une plateforme agréée à l'échéance applicable à votre entreprise.",
+    "Transmettre le e-reporting des ventes aux particuliers réalisées sur les marchés et salons, sous forme de totaux quotidiens.",
+    "Suivre les dépôts-ventes : pièces confiées, pièces vendues, relevés et factures échangés avec chaque boutique.",
+    "Recevoir les factures électroniques des fournisseurs de terre, d'émaux et de matériel de cuisson.",
+    "Distinguer dans l'outil les lignes au taux normal de 20 % et les éventuelles pièces uniques à 5,5 %."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, qui réunit facturation et comptabilité pour les indépendants, freelances, TPE et micro-entrepreneurs. Permet de tenir dans un même outil les factures aux restaurants et boutiques et les lignes de vente au taux normal ou, le cas échéant, au taux réduit des pièces uniques."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, orientée indépendants et micro-entrepreneurs. Devis, factures et suivi des encaissements au même endroit : utile à un atelier seul qui doit à la fois facturer les boutiques et faire remonter en totaux quotidiens ses ventes de marché."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée par la DGFiP qui associe compte professionnel et facturation, pour les PME et les indépendants. Utile si vous souhaitez regrouper encaissements et émission de factures au même endroit."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Puis-je facturer mes pièces en céramique au taux réduit des œuvres d'art ?",
+      "reponse": "Uniquement pour les exemplaires uniques entièrement exécutés de votre main et signés, au sens de l'article 98 A de l'annexe III au CGI. Les livraisons d'œuvres d'art relèvent du taux réduit de 5,5 % : ce taux concerne la TVA sur les œuvres d'art et n'a aucun rapport avec le calendrier de la facturation électronique, qui s'applique à l'échéance propre à votre entreprise. Votre vaisselle tournée en série reste au taux normal de 20 %. Au moindre doute, appliquez 20 %."
+    },
+    {
+      "question": "Comment mes ventes sur un marché de potiers seront-elles déclarées avec la réforme ?",
+      "reponse": "Les ventes aux particuliers ne passent pas par la facture électronique. Elles font l'objet d'un e-reporting : une transmission de données agrégées quotidiennes à l'administration, sans donnée personnelle sur vos clients. Votre plateforme agréée s'en chargera à partir de vos encaissements du jour."
+    },
+    {
+      "question": "En dépôt-vente, qui facture quoi entre mon atelier et la boutique ?",
+      "reponse": "Tout dépend du contrat. En vente ferme, vous facturez la boutique, qui revend ensuite vos pièces. En dépôt avec commission, la boutique encaisse les ventes et vous facture sa commission, selon ce que prévoit le contrat. Ces flux entre professionnels relèveront de la facturation électronique à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Comment justifier le taux de 5,5 % appliqué à une pièce unique ?",
+      "reponse": "Le taux réduit n'est admis que pour les exemplaires uniques de céramique entièrement exécutés de votre main et signés par vous, au sens du II de l'article 98 A de l'annexe III au CGI. Conservez ce qui le démontre : photographie de la pièce signée, numérotation, fiche de cuisson, absence de série identique au catalogue. Sur une même facture, chaque ligne porte son propre taux : la pièce unique à 5,5 %, les bols et assiettes de série à 20 %. En cas de doute sur le caractère unique, appliquez 20 %."
+    },
+    {
+      "question": "Dois-je remettre une note pour un cours de modelage ou un atelier d'initiation ?",
+      "reponse": "Oui pour un client particulier, dès que la prestation atteint 25 € TTC, en cas de vente à distance, ou dès que le client la demande. Le cours de modelage est une prestation de services, distincte de la vente de vos pièces, et suit cette règle de la note."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "TVA : quels sont les taux de votre quotidien ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-SECT-90-40 : dispositions particulières applicables aux œuvres d'art, objets de collection ou d'antiquité",
+      "url": "https://bofip.impots.gouv.fr/bofip/1285-PGP.html/identifiant=BOI-TVA-SECT-90-40-20250514"
+    },
+    {
+      "titre": "Article 98 A de l'annexe III au Code général des impôts (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006298775"
+    },
+    {
+      "titre": "En tant que micro-entrepreneur, puis-je être redevable de la TVA ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "Mentions obligatoires sur une facture (entreprendre.service-public.fr)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "Fiche 2 : mon entreprise sera-t-elle obligée de facturer électroniquement ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiche-2_mon-entreprise-sera-t-elle-obligee-de-facturer-electroniquement.pdf"
+    },
+    {
+      "titre": "Facturation électronique : publication de la liste des plateformes agréées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-publication-de-la-liste-des-plateformes-agreees"
+    },
+    {
+      "titre": "Note : obligation de délivrance au client particulier (service-public.fr)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-40-30 : franchise en base accordée aux auteurs d'œuvres de l'esprit et aux artistes",
+      "url": "https://bofip.impots.gouv.fr/bofip/148-PGP.html/identifiant=BOI-TVA-DECLA-40-30-20260701"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

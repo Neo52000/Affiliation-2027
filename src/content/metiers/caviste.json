@@ -1,0 +1,143 @@
+{
+  "nom": "Caviste",
+  "slug": "caviste",
+  "famille": "commerce",
+  "statuts_frequents": ["EURL", "SARL", "SASU", "Entreprise individuelle"],
+  "volume_factures_typique": "Tickets de caisse quotidiens aux particuliers ; quelques factures par mois aux restaurants, bars et entreprises (coffrets), avec des pics en fin d'année.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Tous vos alcools relèvent du taux normal de TVA de 20 % : vins, crémants, spiritueux, bières au-delà de 0,5 % vol. et autres boissons au-delà de 1,2 % vol. Le taux réduit alimentaire ne s'applique jamais, y compris en vente à emporter ou en coffret.",
+    "Si vous achetez vos bouteilles en droits d'accise acquittés, elles circulent sous couvert d'un document d'accompagnement. La capsule représentative de droits (CRD) n'est plus obligatoire pour les vins en bouteille ou récipients de trois litres au plus : à défaut de CRD, la circulation est justifiée par un document simplifié d'accompagnement (DSA ou DSAC), ou par un document commercial comportant les mentions simplifiées admises depuis le décret du 27 juin 2025. Si vous détenez un statut d'entrepositaire agréé, une partie de vos stocks peut au contraire circuler en suspension de droits : vérifiez votre situation auprès de votre service des douanes. Ces documents ne remplacent pas la facture et ne modifient pas ses mentions.",
+    "Dès qu'un restaurant, un bar ou un hôtel vous achète du vin, la facture est obligatoire. Chaque ligne porte la dénomination précise (appellation, millésime le cas échéant, contenance), la quantité, le prix unitaire hors taxes et le taux de TVA.",
+    "Un coffret vendu à un prix unique constitue en principe une opération unique au sens des règles sur les offres composites : il reçoit un traitement fiscal unique et la ventilation de son prix entre les produits qui le composent est exclue. Dès qu'il contient une bouteille non accessoire, l'intégralité du prix du coffret relève du taux normal de 20 %.",
+    "Vos ventes au comptoir à des particuliers ne passeront pas par la facture électronique. Leurs données de transactions seront transmises à l'administration via l'e-reporting, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Dénomination précise de chaque référence vendue : appellation ou dénomination de vente, millésime le cas échéant, contenance (par exemple « AOC Chinon 2022, 75 cl »).",
+    "Taux de TVA de 20 % indiqué ligne par ligne sur toutes les boissons alcooliques, sans exception en vente à emporter ou à livrer.",
+    "Identité complète du vendeur et du client professionnel, avec quantité et prix unitaire hors taxes pour chaque ligne."
+  ],
+  "exemple_facture": {
+    "intitule": "Réassort mensuel de la cave d'un restaurant (client professionnel CHR)",
+    "lignes": [
+      {
+        "designation": "Vin rouge AOC Côtes-du-Rhône 2023, 75 cl — carton de 6 bouteilles",
+        "quantite": 4,
+        "unite": "carton",
+        "prix_unitaire_ht": 54,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Vin blanc AOC Chablis 2024, 75 cl",
+        "quantite": 12,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 14.5,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Crémant de Bourgogne brut, 75 cl",
+        "quantite": 6,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 9.8,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Toutes les lignes sont au taux normal de 20 % : aucune boisson alcoolique ne relève d'un taux réduit.",
+      "Bouteilles livrées en droits d'accise acquittés ; l'accise ne fait pas l'objet d'une ligne de taxe distincte sur la facture.",
+      "Facture à émettre au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer rapidement les clients CHR récurrents à partir d'un catalogue de références précises (appellation, millésime, contenance).",
+    "Articuler la caisse (ventes aux particuliers, e-reporting) et la facturation électronique B2B sur une même plateforme agréée.",
+    "Suivre les paiements à échéance des restaurants et bars et relancer sans délai."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, qui réunit compte professionnel et facturation. Ce couple répond au quotidien d'un caviste qui encaisse en boutique et facture des restaurants et des bars. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, dédiée à la gestion financière et à la comptabilité, pensée pour travailler avec votre expert-comptable. Pertinente quand le suivi de la cave et des achats passe déjà par un cabinet. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, combinant facturation et comptabilité, orientée indépendants et TPE. Convient à une cave tenue en effectif réduit avec quelques factures B2B par mois. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+    }
+  ],
+  "faq": [
+    {
+      "question": "La capsule CRD est-elle encore obligatoire sur mes bouteilles ?",
+      "reponse": "Non pour les vins. Un arrêté du 12 juin 2018 a supprimé l'obligation d'apposer une capsule représentative de droits sur les vins présentés en bouteille ou en récipients de trois litres au plus. L'obligation de circuler sous couvert d'un document d'accompagnement demeure : à défaut de CRD, un document simplifié d'accompagnement (DSA ou DSAC) justifie la circulation, et le décret du 27 juin 2025 admet un document commercial comportant des mentions simplifiées. Cela ne modifie pas les mentions de vos factures."
+    },
+    {
+      "question": "Puis-je appliquer 5,5 % sur un coffret associant vin et terrine ?",
+      "reponse": "Non, et pas davantage 5,5 % sur une partie du prix. Un coffret vendu à un prix unique constitue en principe une opération unique au sens des règles sur les offres composites : il reçoit un traitement fiscal unique et la ventilation de sa base d'imposition entre les produits qui le composent est exclue. Le vin étant un élément non accessoire relevant du taux normal, l'ensemble du coffret est soumis à 20 %. Si vous voulez appliquer à la terrine son taux propre de 5,5 %, vendez les deux produits comme des opérations distinctes, chacune avec son prix, et non comme un coffret à prix unique."
+    },
+    {
+      "question": "Qui collecte désormais les droits d'accise sur les alcools ?",
+      "reponse": "Depuis le 1er janvier 2024, le recouvrement de l'accise sur les alcools est assuré par la DGFiP. La déclaration des mises à la consommation reste déposée dans l'applicatif douanier CIEL, et la gestion comme le contrôle de l'accise demeurent de la compétence de la douane ; le paiement est déclenché depuis cette déclaration, à partir d'un compte bancaire enregistré sur votre espace professionnel impots.gouv.fr. En pratique, un caviste achète le plus souvent ses bouteilles en droits déjà acquittés auprès de ses fournisseurs."
+    },
+    {
+      "question": "Mes réassorts aux restaurants sont-ils concernés par la facturation électronique ?",
+      "reponse": "Oui. Vos ventes à des clients professionnels devront être émises au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise. Vos ventes au comptoir à des particuliers relèveront, elles, de l'e-reporting."
+    },
+    {
+      "question": "Je vends de l'alcool à emporter après 22 h lors de soirées dégustation : ai-je une obligation particulière ?",
+      "reponse": "Oui. La vente de boissons alcooliques à emporter entre 22 h et 8 h est subordonnée au suivi d'une formation spécifique prévue par le code de la santé publique. Cette obligation relève de la police des débits de boissons, indépendamment de vos règles de facturation."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Mentions obligatoires d'une facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "BOFiP — Taux réduits, produits destinés à l'alimentation humaine (exclusion des boissons alcooliques, taux normal)",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
+    },
+    {
+      "titre": "BOFiP — Offres composites : traitement fiscal unique, exclusion de la ventilation de la base (BOI-TVA-CHAMP-60-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13877-PGP.html/identifiant=BOI-TVA-CHAMP-60-30-20250514"
+    },
+    {
+      "titre": "Article 278-0 du code général des impôts (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042853334"
+    },
+    {
+      "titre": "Accise sur les tabacs et les alcools (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/accise-sur-les-tabacs-et-les-alcools"
+    },
+    {
+      "titre": "Transfert à la DGFiP du recouvrement de l'accise sur les tabacs et les alcools depuis le 1er janvier 2024 (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/actualite/transfert-la-dgfip-du-recouvrement-de-laccise-sur-les-tabacs-et-les-alcools-depuis-le-1er"
+    },
+    {
+      "titre": "Arrêté du 12 juin 2018 — suppression de l'obligation de capsule représentative de droits pour les vins (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037078750"
+    },
+    {
+      "titre": "Décret n° 2025-590 du 27 juin 2025 — simplification de la circulation des alcools en droits acquittés (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051808641"
+    },
+    {
+      "titre": "Décret n° 2011-869 du 22 juillet 2011 — formation pour la vente de boissons alcooliques à emporter entre 22 h et 8 h (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000024389362"
+    },
+    {
+      "titre": "Article L3331-4 du code de la santé publique (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000020895404"
+    },
+    {
+      "titre": "Je découvre la facturation électronique (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Je consulte la liste des plateformes agréées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

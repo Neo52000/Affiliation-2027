@@ -1,0 +1,144 @@
+{
+  "nom": "E-commerçant",
+  "slug": "e-commercant",
+  "famille": "commerce",
+  "statuts_frequents": ["Micro-entrepreneur", "SASU", "EURL", "SAS"],
+  "volume_factures_typique": "De quelques dizaines à plusieurs milliers de commandes par mois selon la boutique. Les factures sont générées automatiquement par le site ou l'outil de facturation, avec des pics lors des opérations commerciales et des fêtes de fin d'année.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "La facture est obligatoire dès que votre client est un professionnel. Lorsque l'acheteur est un particulier, elle devient obligatoire pour vos ventes à distance intracommunautaires de biens au sens de l'article 258 A du CGI, c'est-à-dire les commandes expédiées vers un autre État membre de l'Union européenne. Pour une commande expédiée en France à un particulier, aucune obligation de facturation ne s'impose : vous devez établir la facture si le client la demande. Beaucoup de boutiques choisissent malgré tout de la générer pour toutes les commandes, afin de ne pas avoir à distinguer les flux et de disposer d'une piste d'audit homogène : c'est un choix de gestion, pas une obligation générale.",
+    "Au-delà de 10 000 € de ventes à distance intracommunautaires et de certains services transfrontières, apprécié sur l'année civile en cours et la précédente, la TVA est due dans le pays de votre client : le guichet unique OSS permet de la déclarer et de la payer depuis la France, sans immatriculation dans chaque État membre. Ce seuil de 10 000 € hors taxes ne vaut que si votre entreprise est établie dans un seul État membre. Il est unique et cumulé pour toute l'Union européenne : on additionne l'ensemble de vos ventes à distance intracommunautaires de biens et de vos prestations de services électroniques, de télécommunication et de radiodiffusion transfrontières, et non pays par pays.",
+    "La réforme sépare vos flux : factures électroniques via plateforme agréée pour vos clients professionnels établis en France ; e-reporting pour vos ventes aux particuliers et pour vos opérations internationales (exportations, livraisons intracommunautaires), à l'échéance applicable à votre entreprise.",
+    "En franchise en base de TVA, situation fréquente au lancement d'une boutique, aucune TVA n'apparaît sur vos documents et chaque facture porte la mention « TVA non applicable - article 293 B du CGI ».",
+    "Les données d'e-reporting sont transmises par l'entreprise qui réalise l'opération, en pratique le vendeur : vos ventes sur votre site et via des places de marché doivent rester réconciliées avec vos factures et vos relevés de paiement, canal par canal."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Adresse de livraison et adresse de facturation lorsqu'elles diffèrent, toutes deux reprises sur la facture.",
+    "Numéro de commande du site, qui relie la facture au flux de paiement et, le cas échéant, au relevé de la place de marché.",
+    "Pour une vente à distance intracommunautaire à un particulier, taux et montant de TVA de l'État membre de destination dès lors que le seuil de 10 000 € est franchi ou que vous avez opté pour le guichet unique OSS."
+  ],
+  "exemple_facture": {
+    "intitule": "Commande en ligne d'un client professionnel établi en France, facture générée automatiquement par la boutique",
+    "lignes": [
+      {
+        "designation": "Coques de smartphone personnalisées au logo du client, réf. CQ-114",
+        "quantite": 50,
+        "unite": "unité",
+        "prix_unitaire_ht": 6.8,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Câbles USB-C tressés 2 m, réf. CB-209",
+        "quantite": 30,
+        "unite": "unité",
+        "prix_unitaire_ht": 4.2,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Frais d'expédition en point relais, commande n° WEB-48217",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 12.9,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Numéro de commande du site et référence du bon de commande du client professionnel.",
+      "Adresse de livraison distincte de l'adresse de facturation, reprise sur la facture.",
+      "À l'échéance applicable à votre entreprise, cette facture à un professionnel établi en France transitera par une plateforme agréée."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Générer automatiquement une facture conforme pour vos clients professionnels et pour vos ventes à distance intracommunautaires, où elle est obligatoire, et savoir produire sans délai une facture à un particulier servi en France qui la demande.",
+    "Surveiller le seuil unique de 10 000 €, cumulé pour toute l'Union européenne, et, une fois inscrit, déclarer la TVA étrangère via le guichet OSS.",
+    "Préparer le double flux de la réforme : factures électroniques pour les professionnels français, e-reporting pour les particuliers et l'international, à l'échéance applicable à votre entreprise.",
+    "Rapprocher les paiements (prestataires de paiement, places de marché) des factures émises, canal par canal."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle réunit compte professionnel et facturation pour PME et indépendants, un choix cohérent quand les encaissements proviennent de plusieurs canaux de vente."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle regroupe comptabilité, compte pro et facturation à destination des indépendants, et convient à l'e-commerçant qui pilote seul sa boutique et sa comptabilité."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle associe compte professionnel en ligne et facturation pour indépendants, freelances et TPE, et convient à une boutique en ligne en phase de structuration."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Dois-je émettre une facture pour chaque particulier qui commande sur mon site ?",
+      "reponse": "Pas dans tous les cas. Pour une commande expédiée en France à un particulier, la facture n'est pas obligatoire : vous devez l'établir dès que le client la demande. Elle le devient lorsque la commande part vers un particulier d'un autre État membre de l'Union européenne, car il s'agit alors d'une vente à distance intracommunautaire au sens de l'article 258 A du CGI. Les ventes à distance de biens importés relevant du IV de l'article 258 du CGI n'emportent pas d'obligation de facturation. En pratique, beaucoup de boutiques émettent une facture pour toutes les commandes afin de ne pas avoir à trier les flux : c'est un choix d'organisation, pas une obligation."
+    },
+    {
+      "question": "Mes ventes vers des particuliers d'autres pays de l'Union européenne ont dépassé 10 000 € au total : que dois-je faire ?",
+      "reponse": "Au-delà de ce seuil, apprécié sur l'année civile en cours et la précédente, la TVA est due dans le pays de consommation. Ce seuil de 10 000 € hors taxes ne vaut que si votre entreprise est établie dans un seul État membre, et il est unique et cumulé pour toute l'Union européenne : on additionne l'ensemble de vos ventes à distance intracommunautaires de biens et de vos prestations de services électroniques, de télécommunication et de radiodiffusion transfrontières, et non pays par pays. Inscrivez-vous au guichet unique de TVA (régime OSS) sur impots.gouv.fr : vous déclarez et payez la TVA des autres États membres via une seule déclaration, sans vous immatriculer dans chaque pays."
+    },
+    {
+      "question": "Facture électronique ou e-reporting : comment mes ventes se répartissent-elles ?",
+      "reponse": "Vos ventes à des professionnels établis en France relèveront de la facture électronique via une plateforme agréée. Vos ventes aux particuliers et vos opérations internationales (exportations, livraisons intracommunautaires) relèveront de l'e-reporting, c'est-à-dire d'une transmission de données à l'administration, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Je vends sur mon site et sur des places de marché : qu'est-ce que cela change pour mes obligations ?",
+      "reponse": "Les données d'e-reporting sont transmises par l'entreprise qui réalise l'opération, en général le fournisseur. Vérifiez donc que votre outil consolide les ventes de tous vos canaux et rapprochez les relevés de chaque place de marché de vos factures avant transmission. Le fonctionnement précis de chaque place de marché dépend de ses conditions : examinez qui facture quoi, canal par canal."
+    },
+    {
+      "question": "Ma boutique est en franchise en base : qu'est-ce qui change quand je commence à expédier dans l'Union européenne ?",
+      "reponse": "En France, vous continuez à facturer sans TVA, avec la mention « TVA non applicable - article 293 B du CGI ». Dès que vous expédiez vers des particuliers d'autres États membres, deux règles propres à la vente à distance entrent en jeu : la facture devient obligatoire pour ces ventes à distance intracommunautaires, et le seuil de 10 000 €, apprécié sur l'année civile en cours et la précédente, détermine l'État où la TVA est due. L'articulation entre la franchise en base française et ce seuil européen mérite un point avec votre expert-comptable avant d'ouvrir ce canal."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-10-10 — Obligation de facturation : ventes à distance intracommunautaires (article 258 A du CGI), absence d'obligation pour une livraison interne à la France à un non-assujetti",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-10 — Personnes tenues d'établir une facture",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "impots.gouv.fr — Guichet unique de TVA : suis-je concerné ? (ventes à distance intracommunautaires, seuil unique et cumulé de 10 000 €)",
+      "url": "https://www.impots.gouv.fr/professionnel/suis-je-concerne-0"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-CHAMP-20-20-30 — Règles applicables aux ventes à distance de biens dans le cadre du commerce électronique",
+      "url": "https://bofip.impots.gouv.fr/bofip/13159-PGP.html/identifiant=BOI-TVA-CHAMP-20-20-30-20240724"
+    },
+    {
+      "titre": "impots.gouv.fr — Je m'inscris au service du guichet unique de TVA (OSS)",
+      "url": "https://www.impots.gouv.fr/portail/professionnel/je-minscris-au-service-du-guichet-unique-de-tva"
+    },
+    {
+      "titre": "impots.gouv.fr — Fiche « La transmission des données de transactions (e-reporting) » : ventes aux particuliers et opérations internationales",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiches_reforme/fiche-e-reporting_transactions.pdf"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique : liste des plateformes agréées (plateformes de dématérialisation partenaires immatriculées)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "service-public.fr — Tout savoir sur la facturation (règles générales d'émission des factures)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "economie.gouv.fr — Mentions obligatoires d'une facture",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "economie.gouv.fr — Franchise en base de TVA (mention « TVA non applicable - article 293 B du CGI »)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

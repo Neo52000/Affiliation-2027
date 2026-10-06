@@ -1,0 +1,160 @@
+{
+  "nom": "Tapissier d'ameublement",
+  "slug": "tapissier",
+  "famille": "artisanat",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle", "EURL"],
+  "volume_factures_typique": "Quelques réfections de sièges par mois, facturées en deux temps (acompte à la prise en charge, solde à la livraison), auxquelles s'ajoutent des notes pour les particuliers et quelques factures à des décorateurs ou établissements.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Votre facturation sépare la façon (dégarnissage, garnissage, couverture) des fournitures (sangles, ressorts, crin, passepoil) : le décompte détaillé en quantité et prix de chaque poste est une mention obligatoire de la facture.",
+    "Quand le client fournit son tissu, il en reste propriétaire : vous ne facturez que votre travail et vos fournitures complémentaires. La réfection d'un siège qui appartient déjà à votre client est une prestation de services, quelle que soit la valeur de vos fournitures. Le régime du travail à façon vise le cas distinct où votre client vous confie des matières pour obtenir un objet nouveau : l'opération y reste une prestation de services dès lors que les conditions posées par le BOFiP sont réunies, notamment que la valeur des matières qu'il fournit, majorée du coût de la façon, excède celle des produits que vous fournissez vous-même.",
+    "La réfection du siège d'un client est une prestation de services : la TVA est exigible à chaque encaissement, acompte à la prise en charge puis solde à la livraison. La revente d'un siège chiné puis regarni est au contraire une vente de bien.",
+    "Le coût d'une réfection dépend de l'état de la carcasse et du garnissage : le prix n'est pas déterminable à l'avance, vous devez donc fournir un devis suffisamment détaillé au consommateur qui le demande.",
+    "Vos réfections relèvent par défaut du taux normal de 20 %, qu'il s'agisse de la façon (dégarnissage, garnissage, couverture) ou des fournitures que vous posez : il n'existe pas de taux réduit propre à la réfection de sièges. En franchise en base, la mention « TVA non applicable, article 293 B du CGI » figure sur le devis remis avant dégarnissage, sur la facture d'acompte établie à la prise en charge du siège et sur la facture de solde, et la TVA payée sur vos achats de crin, de sangles et de toiles n'est pas récupérable : chiffrez-la dans le prix de la réfection.",
+    "Pour un particulier, remettez une note dès 25 € TTC de prestation ou à sa demande ; vos clients professionnels (hôtels, restaurants, décorateurs) devront recevoir des factures électroniques à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mention « TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base, y compris lorsque seul le travail de garnissage est facturé.",
+    "Note obligatoire pour toute réfection d'un montant égal ou supérieur à 25 € TTC réalisée pour un particulier, ou dès qu'il la demande.",
+    "Décompte distinguant la façon (dégarnissage, garnissage, couverture) des fournitures (sangles, crin, toile forte, passepoil), en quantité et en prix, avec montants hors taxe et toutes taxes comprises."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — réfection complète d'un fauteuil Voltaire, tissu fourni par le client",
+    "lignes": [
+      {
+        "designation": "Dégarnissage complet du fauteuil Voltaire et remise en état de la carcasse",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 160,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Garnissage traditionnel : sanglage, ressorts, crin, toiles",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 420,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Couverture avec le tissu fourni par le client (4 m), passepoil et finitions cloutées",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 220,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Fournitures complémentaires : sangles, ressorts, crin végétal, toile forte",
+        "quantite": 1,
+        "unite": "lot",
+        "prix_unitaire_ht": 95,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Acompte de 30 % facturé à la prise en charge du fauteuil (facture d'acompte n° ... du ...) — à déduire",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": -268.5,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Tissu appartenant au client : il n'est pas facturé ; seules la façon et les fournitures complémentaires le sont.",
+      "Total HT de la réfection : 895 €. Acompte de 30 % (268,50 € HT) encaissé à la prise en charge du fauteuil : s'agissant d'une prestation de services, la TVA correspondante était exigible dès cet encaissement ; il est déduit sur cette facture de solde, qui renvoie au numéro et à la date de la facture d'acompte.",
+      "En franchise en base : facture sans TVA, avec la mention « TVA non applicable, article 293 B du CGI ».",
+      "Montants et métrage donnés à titre d'illustration pour montrer la structure de la facture ; seuls les taux de TVA indiqués sont normatifs."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Établir des devis détaillés séparant façon, fournitures et tissu du client avant chaque réfection",
+    "Facturer un acompte à la prise en charge puis un solde à la livraison, avec TVA exigible à chaque encaissement",
+    "Émettre des factures électroniques aux décorateurs, hôtels et restaurants à l'échéance applicable à votre entreprise",
+    "Transmettre en e-reporting les réfections réglées par des particuliers"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), dédiée à la facturation et à la gestion, orientée indépendants et micro-entrepreneurs. Adaptée à un atelier en nom propre qui enchaîne devis, factures d'acompte et factures de solde."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), réunissant comptabilité, compte professionnel et facturation pour les indépendants. Permet de suivre sur un même service les encaissements d'acomptes et de soldes."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), qui associe facturation et comptabilité, pour les indépendants, TPE et micro-entrepreneurs. Un choix possible pour un tapissier en micro-entreprise qui facture façon et fournitures."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mon client fournit son tissu d'éditeur pour la réfection de ses fauteuils : comment facturer ?",
+      "reponse": "Le tissu reste la propriété du client : vous ne le facturez pas. Vous facturez la façon (dégarnissage, garnissage, couverture) et vos fournitures complémentaires (sangles, crin, passepoil). L'opération est une prestation de services, au taux normal de 20 %, sauf si vous relevez de la franchise en base."
+    },
+    {
+      "question": "J'encaisse un acompte à la prise en charge du siège et le solde à la livraison : quand la TVA est-elle due ?",
+      "reponse": "Pour une prestation de services, la TVA est exigible à l'encaissement : une part à l'acompte, le reste au solde. En franchise en base, aucune TVA n'est due et chaque facture porte la mention « TVA non applicable, article 293 B du CGI »."
+    },
+    {
+      "question": "Je chine des fauteuils, je les regarnis et je les revends : est-ce traité comme mes réfections ?",
+      "reponse": "Non. La revente d'un fauteuil que vous avez acheté puis regarni est une vente de bien, pas une prestation. Elle relève par défaut du taux normal de 20 %, et un acompte encaissé sur cette vente rend la TVA exigible dès son encaissement. Vendue à un particulier, elle relèvera du e-reporting ; à un professionnel assujetti, de la facture électronique à l'échéance applicable."
+    },
+    {
+      "question": "Dois-je remettre un devis avant de dégarnir un fauteuil ?",
+      "reponse": "Le prix d'une réfection dépend de l'état de la carcasse et du garnissage, souvent révélé au dégarnissage : il n'est pas déterminable à l'avance. Vous devez donc fournir un devis suffisamment détaillé au consommateur qui le demande. Détaillez-y la façon, les fournitures et le métrage de tissu nécessaire."
+    },
+    {
+      "question": "Un hôtel me confie la réfection des fauteuils de son salon : cette facture devra-t-elle être électronique ?",
+      "reponse": "Oui. L'hôtel est un client assujetti : à l'échéance applicable à votre entreprise, cette facture devra être émise au format électronique via une plateforme agréée. Vous devrez aussi pouvoir recevoir, au même format, les factures de vos fournisseurs de tissus, mousses et crin."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOI-TVA-CHAMP-10-10-50-40 — Opérations de façon (BOFiP)",
+      "url": "https://bofip.impots.gouv.fr/bofip/128-PGP.html/identifiant=BOI-TVA-CHAMP-10-10-50-40-20190925"
+    },
+    {
+      "titre": "BOI-TVA-BASE-20-20 — Fait générateur et exigibilité : prestations de services (BOFiP)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "Exigibilité de la TVA sur les acomptes perçus dans le cadre de livraisons de biens (BOFiP, actualité)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13758-PGP.html/ACTU-2022-00148"
+    },
+    {
+      "titre": "TVA : quels sont les taux de votre quotidien ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "Devis obligatoire : comment ça marche ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture (entreprendre.service-public.fr)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Remise d'une note au client particulier (service-public.fr)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "En tant que micro-entrepreneur, puis-je être redevable de la TVA ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "Fiche 2 — Mon entreprise sera-t-elle obligée de facturer électroniquement ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiche-2_mon-entreprise-sera-t-elle-obligee-de-facturer-electroniquement.pdf"
+    },
+    {
+      "titre": "Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "Entreprises : pouvez-vous bénéficier de la franchise de TVA ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "Je consulte la liste des plateformes agréées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

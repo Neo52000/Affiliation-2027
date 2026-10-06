@@ -1,0 +1,159 @@
+{
+  "nom": "Ébéniste",
+  "slug": "ebeniste",
+  "famille": "artisanat",
+  "statuts_frequents": ["Entreprise individuelle", "Micro-entrepreneur", "EURL", "SARL"],
+  "volume_factures_typique": "Peu de documents, mais à fort enjeu : quelques commandes sur mesure par mois, chacune avec devis, facture d'acompte et facture de solde, complétées par des notes de restauration remises aux particuliers.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Chaque commande sur mesure suit un cycle devis, acompte, solde. Le prix d'un meuble sur mesure n'est pas déterminable à l'avance : vous devez fournir un devis suffisamment détaillé (essence de bois, dimensions, finitions) au consommateur qui le demande.",
+    "L'encaissement d'un acompte à la commande rend la TVA exigible, que l'opération soit la vente d'un meuble neuf (livraison de bien) ou la restauration du meuble appartenant au client (prestation de services).",
+    "Création et restauration de meubles relèvent par défaut du taux normal de 20 %. Le taux réduit de 10 % est réservé aux travaux portant sur des locaux à usage d'habitation achevés depuis plus de deux ans et exclut la fourniture d'équipements mobiliers : il ne s'applique pas au travail d'atelier sur un meuble.",
+    "Clientèle mixte : vos ventes aux particuliers relèveront du e-reporting (données agrégées quotidiennes), vos factures aux architectes, agenceurs et commerçants de la facture électronique, à l'échéance applicable à votre entreprise.",
+    "Si votre atelier relève de la franchise en base, la mention « TVA non applicable, article 293 B du CGI » figure sur le devis de la commande sur mesure, sur la facture d'acompte et sur la facture de solde. Vous ne récupérez pas non plus la TVA payée sur vos achats de bois, de quincaillerie et de produits de finition : intégrez-la au prix de revient que vous chiffrez sur le devis.",
+    "Précisez sur le devis et le bon de commande si la somme versée est un acompte (engagement ferme des deux parties) ou des arrhes (dédit possible) : à défaut de précision, les sommes versées d'avance sont des arrhes."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mention « TVA non applicable, article 293 B du CGI » sur chaque facture, y compris les factures d'acompte, si l'atelier relève de la franchise en base.",
+    "Note obligatoire pour toute restauration facturée à un particulier d'un montant égal ou supérieur à 25 € TTC, ou dès que le client la demande.",
+    "Décompte détaillé de la commande : chaque poste (fabrication, quincaillerie, livraison) en quantité et prix unitaire, avec montants hors taxe et toutes taxes comprises.",
+    "Date d'émission de la facture et date de livraison du meuble : la date de la vente ou de la prestation doit figurer sur la facture."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — bibliothèque en chêne massif sur mesure (acompte encaissé à la commande)",
+    "lignes": [
+      {
+        "designation": "Conception et fabrication d'une bibliothèque en chêne massif sur mesure (H 240 × L 180 cm), finition huilée",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 3400,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Quincaillerie laiton : charnières invisibles et poignées",
+        "quantite": 1,
+        "unite": "lot",
+        "prix_unitaire_ht": 140,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Livraison et mise en place au domicile du client",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Acompte de 30 % facturé à la commande (facture d'acompte n° ... du ...) — à déduire",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": -1116,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Total HT de la commande : 3 720 €. Acompte de 30 % (1 116 € HT) déjà facturé et encaissé à la commande : la TVA correspondante était exigible dès cet encaissement, et le montant est déduit sur cette facture de solde, qui renvoie au numéro et à la date de la facture d'acompte.",
+      "En franchise en base, la facture ne comporte aucune TVA et porte la mention « TVA non applicable, article 293 B du CGI ».",
+      "La date de livraison du meuble figure sur la facture, distincte de la date d'émission le cas échéant.",
+      "Bibliothèque livrée et posée sans incorporation au bâti : l'opération est une livraison de bien, au taux normal de 20 %. La pose d'un agencement incorporé à un local d'habitation achevé depuis plus de deux ans obéit à d'autres conditions, à vérifier sur bofip.impots.gouv.fr avant de retenir un autre taux.",
+      "Montants donnés à titre d'illustration pour montrer la structure de la facture ; seuls les taux de TVA indiqués sont normatifs."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Enchaîner devis, facture d'acompte et facture de solde sur une même commande sur mesure, sans ressaisie",
+    "Suivre la TVA exigible à chaque encaissement d'acompte, sur les ventes de meubles neufs comme sur les restaurations",
+    "Recevoir les factures électroniques des fournisseurs de bois, quincaillerie et produits de finition à l'échéance applicable",
+    "Distinguer les ventes aux particuliers (e-reporting) des factures aux professionnels (facture électronique)"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), orientée gestion financière et comptabilité, conçue pour travailler avec un expert-comptable. Pertinente si votre atelier confie ses comptes à un cabinet et traite de nombreuses factures fournisseurs de bois et de quincaillerie."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), associant compte professionnel et facturation, destinée aux PME et aux indépendants. Utile pour suivre au même endroit les acomptes encaissés à la commande et les factures de solde."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), combinant facturation et comptabilité, destinée aux indépendants, freelances, TPE et micro-entrepreneurs. Adaptée à un ébéniste travaillant seul, y compris en franchise en base."
+    }
+  ],
+  "faq": [
+    {
+      "question": "J'encaisse 30 % à la commande d'un meuble sur mesure : quand la TVA devient-elle exigible ?",
+      "reponse": "Dès l'encaissement de l'acompte. Cette règle vaut pour la vente d'un meuble neuf (livraison de bien) comme pour la restauration du meuble d'un client (prestation de services). Si vous êtes en franchise en base, vous ne facturez pas de TVA mais portez la mention « TVA non applicable, article 293 B du CGI »."
+    },
+    {
+      "question": "Je restaure une commode ancienne et je fabrique des meubles neufs : les deux activités sont-elles au même taux de TVA ?",
+      "reponse": "Oui. La fabrication comme la restauration en atelier relèvent par défaut du taux normal de 20 %. Le taux réduit de 10 % vise les travaux d'amélioration, de transformation, d'aménagement et d'entretien portant sur des locaux à usage d'habitation achevés depuis plus de deux ans, et il exclut la fourniture d'équipements mobiliers : un meuble fabriqué ou restauré en atelier reste au taux normal. Si vous posez un agencement incorporé au bâti chez un particulier, vérifiez les conditions applicables sur bofip.impots.gouv.fr avant de retenir un autre taux."
+    },
+    {
+      "question": "Je livre un buffet à un particulier et une banque d'accueil à un commerçant : quelles obligations pour chaque facture ?",
+      "reponse": "La vente au particulier ne donne pas lieu à facture électronique : elle alimentera le e-reporting, sous forme de données agrégées quotidiennes, sans donnée personnelle sur le client. La vente au commerçant assujetti devra passer par la facture électronique à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "La somme versée à la commande d'un meuble : acompte ou arrhes ?",
+      "reponse": "À défaut de précision, les sommes versées d'avance sont des arrhes : chaque partie peut se dédire, le client en perdant les arrhes, vous en remboursant le double. L'acompte, lui, engage fermement les deux parties. Précisez la nature du versement sur le devis et le bon de commande du meuble."
+    },
+    {
+      "question": "Mon atelier est en franchise en base : devrai-je quand même recevoir au format électronique les factures de ma scierie ?",
+      "reponse": "Oui. La réforme concerne toutes les entreprises assujetties à la TVA établies en France, y compris celles en franchise en base. À l'échéance applicable à votre entreprise, vous devrez pouvoir recevoir les factures électroniques de vos fournisseurs de bois, de quincaillerie et de finitions."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "TVA : quels sont les taux de votre quotidien ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "BOI-TVA-LIQ-30-20-90 — Travaux (autres que de construction ou de reconstruction) portant sur des locaux à usage d'habitation achevés depuis plus de deux ans (BOFiP)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1617-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-20251022"
+    },
+    {
+      "titre": "Exigibilité de la TVA sur les acomptes perçus dans le cadre de livraisons de biens (BOFiP, actualité)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13758-PGP.html/ACTU-2022-00148"
+    },
+    {
+      "titre": "BOI-TVA-BASE-20-20 — Fait générateur et exigibilité : prestations de services (BOFiP)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "En tant que micro-entrepreneur, puis-je être redevable de la TVA ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture (entreprendre.service-public.fr)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Remise d'une note au client particulier (service-public.fr)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "Devis obligatoire : comment ça marche ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "Acompte, arrhes, avoir (DGCCRF, economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/acompte-arrhes-avoir"
+    },
+    {
+      "titre": "Fiche 2 — Mon entreprise sera-t-elle obligée de facturer électroniquement ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiche-2_mon-entreprise-sera-t-elle-obligee-de-facturer-electroniquement.pdf"
+    },
+    {
+      "titre": "Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "Entreprises : pouvez-vous bénéficier de la franchise de TVA ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "Je consulte la liste des plateformes agréées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

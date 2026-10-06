@@ -102,8 +102,12 @@ export const metierSchema = z.object({
           designation: z.string(),
           quantite: z.number().positive(),
           unite: z.string(),
-          prix_unitaire_ht: z.number().nonnegative(),
-          tva_pct: z.number().min(0).max(25),
+          /** Négatif pour une ligne de déduction (acompte déjà facturé) ;
+           *  null quand le montant relève d'un tarif réglementé non reproduit ici. */
+          prix_unitaire_ht: z.number().nullable(),
+          /** null = hors champ de la TVA (franchise en base, débours) : aucun taux
+           *  ne doit alors figurer sur la facture. */
+          tva_pct: z.number().min(0).max(25).nullable(),
         }),
       )
       .min(1),

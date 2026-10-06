@@ -1,0 +1,130 @@
+{
+  "nom": "Boucher-charcutier",
+  "slug": "boucher-charcutier",
+  "famille": "commerce",
+  "statuts_frequents": ["Entreprise individuelle (artisan-commerçant)", "EURL", "SARL"],
+  "volume_factures_typique": "Flux continu de tickets au comptoir ; factures hebdomadaires ou bimensuelles aux restaurants, traiteurs et cantines livrés.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Viandes fraîches, charcuteries et terrines sont des produits destinés à l'alimentation humaine : taux réduit de 5,5 %, sauf exceptions expressément soumises au taux normal.",
+    "Les préparations vendues chaudes ou en vue d'une consommation immédiate (poulet rôti chaud, plat du jour en barquette ouverte) relèvent du taux de 10 % au stade de la vente au consommateur final. Un conditionnement permettant la conservation (sous vide, conserve) maintient le 5,5 %.",
+    "Vos livraisons à des restaurants ou traiteurs qui revendent sont des livraisons de produits alimentaires entre professionnels : 5,5 %, y compris pour des produits préparés. L'administration a confirmé par rescrit que seul le stade de la vente au consommateur final relève du 10 %.",
+    "La facture est obligatoire dès que la vente est conclue avec un professionnel, avec la quantité pesée en kilogrammes, la dénomination précise de chaque morceau et le prix unitaire hors taxes au kilo.",
+    "Vos tickets aux particuliers ne deviendront pas des factures électroniques : leurs données de transactions partiront en e-reporting, à l'échéance applicable à votre entreprise, et vos recettes de caisse doivent être ventilées par taux."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Quantité exprimée dans l'unité réelle de vente (kilogramme ou pièce), ajustée au poids constaté à la pesée.",
+    "Prix unitaire hors taxes au kilo et taux de TVA propre à chaque ligne : 5,5 % sur viandes et charcuteries, 10 % sur les préparations vendues pour une consommation immédiate au consommateur final.",
+    "Identité complète du client professionnel (restaurant, cantine, traiteur) et du vendeur : la facture est obligatoire dès que la vente est conclue entre professionnels."
+  ],
+  "exemple_facture": {
+    "intitule": "Livraison hebdomadaire à un restaurant (viandes et charcuterie)",
+    "lignes": [
+      {
+        "designation": "Côte de bœuf maturée, race charolaise (poids constaté à la pesée)",
+        "quantite": 6.5,
+        "unite": "kg",
+        "prix_unitaire_ht": 24,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Saucisses de Toulouse artisanales",
+        "quantite": 4,
+        "unite": "kg",
+        "prix_unitaire_ht": 11,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Terrine de campagne maison, barquette sous vide de 1 kg",
+        "quantite": 3,
+        "unite": "pièce",
+        "prix_unitaire_ht": 9.5,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Boudin noir artisanal, barquette sous vide de 1 kg",
+        "quantite": 5,
+        "unite": "pièce",
+        "prix_unitaire_ht": 7.5,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "La terrine et le boudin sont vendus sous vide, dans un conditionnement permettant leur conservation : ils ne relèvent pas de la consommation immédiate.",
+      "Toutes les lignes relèvent de 5,5 % : il s'agit de livraisons de produits alimentaires entre assujettis, antérieures à toute vente au consommateur final.",
+      "Facture à émettre au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Gérer sur une même facture des lignes à 5,5 % et à 10 %, et sur un même ticket des produits aux deux taux.",
+    "Facturer au kilo avec des poids variables : la quantité facturée suit la pesée réelle, pas la commande.",
+    "Relier la caisse (e-reporting des ventes aux particuliers, ventilation des recettes par taux) et les factures électroniques aux restaurants sur une plateforme agréée."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "shine",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, associant compte professionnel en ligne et facturation. Elle couvre le besoin d'un artisan-commerçant qui encaisse au comptoir et émet quelques factures régulières à des restaurants. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP, dédiée à la gestion financière et à la comptabilité, conçue pour travailler avec votre expert-comptable. Utile quand la comptabilité multi-taux de la boucherie est déjà suivie en cabinet. Statut à vérifier à la date de votre choix sur https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+    },
+    {
+      "slug": "abby",
+      "justification": "Outil de facturation et de gestion pour les indépendants. Il permet d'éditer les factures hebdomadaires au kilo de vos clients restaurateurs sans ressaisie. Sa présence sur la liste des plateformes agréées n'a pas pu être confirmée sur un site officiel : vérifiez son statut au regard de la facturation électronique sur la liste publiée par la DGFiP, https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je livre un restaurant en viandes et en plats cuisinés : 5,5 % ou 10 % ?",
+      "reponse": "5,5 %. Les livraisons de produits alimentaires entre professionnels relèvent du taux de 5,5 %, y compris pour des produits préparés, tant qu'il ne s'agit pas d'une vente au consommateur final en vue d'une consommation immédiate. L'administration l'a confirmé par rescrit publié au BOFiP."
+    },
+    {
+      "question": "Mon poulet rôti vendu chaud au comptoir est-il à 5,5 % ?",
+      "reponse": "Non, à 10 %. Un produit vendu chaud est regardé comme vendu en vue d'une consommation immédiate et relève du taux de 10 %. La même volaille vendue crue au détail reste à 5,5 %."
+    },
+    {
+      "question": "Mes terrines et plats sous vide passent-ils à 10 % ?",
+      "reponse": "Non. Les produits vendus dans un conditionnement permettant leur conservation, comme les conserves et les produits sous vide, ne relèvent pas de la consommation immédiate. Ils restent au taux de 5,5 %."
+    },
+    {
+      "question": "Mes tickets de comptoir à 5,5 % et à 10 % doivent-ils partir en facture électronique ?",
+      "reponse": "Non. Vos ventes au comptoir à des particuliers ne deviennent pas des factures électroniques : leurs données de transactions sont transmises à l'administration par e-reporting, à l'échéance applicable à votre entreprise, et vos recettes doivent y être ventilées par taux, le rôti cru à 5,5 % d'un côté, le poulet rôti chaud à 10 % de l'autre. Seules vos livraisons aux restaurants, cantines et traiteurs passeront par la facture électronique."
+    },
+    {
+      "question": "Comment déclarer ma TVA avec du 5,5 % et du 10 % dans la même caisse ?",
+      "reponse": "Vos recettes doivent être ventilées par taux d'imposition. Le BOFiP décrit les méthodes de ventilation admises pour les redevables qui vendent à des taux différents. Une caisse qui enregistre le taux article par article sécurise cette ventilation."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Taux réduit de 5,5 % sur les produits destinés à l'alimentation humaine",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
+    },
+    {
+      "titre": "BOFiP — Tableau des taux applicables aux ventes à emporter ou à livrer de produits préparés en vue d'une consommation immédiate (BOI-ANNX-000495)",
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240821"
+    },
+    {
+      "titre": "BOFiP — Rescrit : taux applicable aux livraisons successives de produits alimentaires préparés entre assujettis (BOI-RES-TVA-000205)",
+      "url": "https://bofip.impots.gouv.fr/bofip/14665-PGP.html/identifiant=BOI-RES-TVA-000205-20251119"
+    },
+    {
+      "titre": "BOFiP — Méthodes de ventilation des opérations par taux d'imposition (BOI-TVA-DECLA-30-10-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/9759-PGP.html/identifiant=BOI-TVA-DECLA-30-10-20-20-20141117"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    },
+    {
+      "titre": "Je découvre la facturation électronique (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Je consulte la liste des plateformes agréées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

@@ -1,0 +1,145 @@
+{
+  "nom": "Cordonnier",
+  "slug": "cordonnier",
+  "famille": "artisanat",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle", "SARL"],
+  "volume_factures_typique": "Des dizaines de petites opérations encaissées chaque jour en caisse (ressemelage, patins, clés, gravures), presque toutes réglées par des particuliers ; les factures proprement dites restent rares.",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Votre quotidien est fait de petites opérations encaissées en caisse : pour un particulier, la note n'est obligatoire qu'à partir de 25 € TTC pour une prestation de services, ou dès que le client la demande.",
+    "Vos ressemelages, poses de patins, reproductions de clés et gravures réglés au comptoir par des particuliers ne passeront pas par la facture électronique : ils alimenteront un e-reporting en données agrégées quotidiennes, transmis depuis votre caisse ou votre outil de facturation, sans donnée personnelle sur vos clients. Concrètement, rien de plus n'est à demander au client au comptoir : c'est le total quotidien de votre caisse qui est transmis.",
+    "Activité multiservices : le ressemelage et la gravure sont des prestations de services, la reproduction de clés et les produits d'entretien des ventes de biens ; l'ensemble relève par défaut du taux normal de 20 %.",
+    "Si votre cordonnerie relève de la franchise en base, vous facturez sans TVA, avec la mention « TVA non applicable, article 293 B du CGI », et vous ne récupérez pas la TVA sur vos achats de cuir, de semelles et d'ébauches de clés.",
+    "Si vous êtes redevable de la TVA et que vous enregistrez les règlements de vos clients particuliers au moyen d'une caisse ou d'un logiciel de caisse, celui-ci doit garantir l'inaltérabilité, la sécurisation, la conservation et l'archivage des données ; les assujettis en franchise en base ne sont pas soumis à cette obligation.",
+    "Même avec une clientèle presque exclusivement de particuliers, vous devrez pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mention « TVA non applicable, article 293 B du CGI » sur chaque note ou facture si votre cordonnerie relève de la franchise en base, y compris sur la note d'un simple ressemelage.",
+    "Note obligatoire dès 25 € TTC pour une prestation de services réalisée pour un particulier (un ressemelage complet suffit souvent à franchir ce seuil), ou dès que le client la demande.",
+    "Sur une même note, décompte de chaque prestation (ressemelage, pose de patins) et de chaque article vendu (clé, lacets), en quantité et en prix, avec montants hors taxe et toutes taxes comprises."
+  ],
+  "exemple_facture": {
+    "intitule": "Note — ressemelage cuir et prestations associées pour un particulier",
+    "lignes": [
+      {
+        "designation": "Ressemelage complet cuir homme",
+        "quantite": 1,
+        "unite": "paire",
+        "prix_unitaire_ht": 45,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Pose de patins caoutchouc",
+        "quantite": 1,
+        "unite": "paire",
+        "prix_unitaire_ht": 12,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Reproduction de clé plate",
+        "quantite": 2,
+        "unite": "unité",
+        "prix_unitaire_ht": 6.5,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Gravure d'une médaille pour collier d'animal",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 8,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Prestation de services d'un montant supérieur à 25 € TTC pour un particulier : la remise d'une note est obligatoire.",
+      "En franchise en base : montants sans TVA et mention « TVA non applicable, article 293 B du CGI ».",
+      "Vente à un particulier : pas de facture électronique ; l'opération alimentera le e-reporting quotidien agrégé.",
+      "Montants donnés à titre d'illustration pour montrer la structure de la note ; seuls les taux de TVA indiqués sont normatifs."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Encaisser en caisse un flux quotidien d'opérations mêlant prestations (ressemelage, gravure) et ventes (clés, produits d'entretien)",
+    "Transmettre le e-reporting des ventes aux particuliers sous forme de totaux quotidiens via une plateforme agréée",
+    "Recevoir au format électronique les factures des fournisseurs de cuir, semelles et ébauches de clés à l'échéance applicable",
+    "Éditer une note conforme dès 25 € TTC et porter la mention de franchise en base le cas échéant"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "shine",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), proposant compte professionnel en ligne et facturation, destinée aux indépendants, freelances et TPE. Adaptée à une boutique qui encaisse surtout des particuliers et émet peu de factures."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), de facturation et de gestion, orientée indépendants et micro-entrepreneurs. Pertinente pour une cordonnerie en franchise en base exploitée en micro-entreprise."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), combinant compte professionnel et facturation, pour PME et indépendants. Un choix possible si la boutique est exploitée en société."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes tickets de ressemelage à moins de 25 € devront-ils devenir des factures électroniques ?",
+      "reponse": "Non. Les ventes et prestations aux particuliers ne donnent pas lieu à facture électronique : elles feront l'objet d'un e-reporting, sous forme de données agrégées quotidiennes, sans donnée personnelle sur vos clients. La note reste par ailleurs obligatoire dès 25 € TTC pour une prestation, ou dès que le client la demande."
+    },
+    {
+      "question": "Je suis en franchise en base : ma caisse doit-elle être certifiée ?",
+      "reponse": "Non, tant que vous relevez de la franchise en base : les assujettis qui en bénéficient (article 293 B du CGI) ne sont pas soumis à l'obligation d'utiliser un logiciel ou système de caisse sécurisé. Si vous devenez redevable de la TVA, l'obligation ne vous vise que si vous enregistrez les règlements de vos clients particuliers au moyen d'un logiciel ou système de caisse ; elle ne vous impose pas d'en acquérir un. Tenez-en compte au moment de choisir votre équipement de comptoir."
+    },
+    {
+      "question": "Ressemelage, reproduction de clés, gravure : ces activités ont-elles des taux de TVA différents ?",
+      "reponse": "Non. Toutes relèvent par défaut du taux normal de 20 % : le ressemelage et la gravure comme prestations de services, la clé reproduite ou les produits d'entretien comme ventes de biens. Aucun taux réduit n'est prévu en France pour la réparation de chaussures : ces opérations relèvent du taux normal de 20 %."
+    },
+    {
+      "question": "Je ne travaille qu'avec des particuliers : la réforme de la facturation électronique me concerne-t-elle ?",
+      "reponse": "Oui. Toutes les entreprises assujetties à la TVA établies en France sont concernées, y compris celles en franchise en base. À l'échéance applicable à votre entreprise, vous devrez pouvoir recevoir les factures électroniques de vos fournisseurs (cuir, semelles, ébauches de clés) et transmettre le e-reporting de vos ventes aux particuliers."
+    },
+    {
+      "question": "Une société de sécurité me demande une facture pour le ressemelage des chaussures de ses agents : qu'est-ce qui change ?",
+      "reponse": "Vous émettez une facture complète, avec toutes les mentions obligatoires : identité des deux parties, date, numéro unique, décompte des prestations, montants hors taxe et toutes taxes comprises. À l'échéance applicable à votre entreprise, cette facture entre professionnels devra être émise au format électronique via une plateforme agréée."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "TVA : quels sont les taux de votre quotidien ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "Remise d'une note au client particulier (service-public.fr)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "Quel est le champ d'application de l'obligation de détenir un logiciel de caisse sécurisé ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-est-le-champ-dapplication-de-lobligation-de-detenir-un-logiciel-de"
+    },
+    {
+      "titre": "Ce qu'il faut savoir sur la certification des logiciels de caisse (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/ce-quil-faut-savoir-sur-la-certification-des-logiciels-de-caisse"
+    },
+    {
+      "titre": "Entreprises : pouvez-vous bénéficier de la franchise de TVA ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "En tant que micro-entrepreneur, puis-je être redevable de la TVA ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture (entreprendre.service-public.fr)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Fiche 2 — Mon entreprise sera-t-elle obligée de facturer électroniquement ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiche-2_mon-entreprise-sera-t-elle-obligee-de-facturer-electroniquement.pdf"
+    },
+    {
+      "titre": "Je consulte la liste des plateformes agréées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

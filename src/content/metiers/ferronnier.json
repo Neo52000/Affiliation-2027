@@ -1,0 +1,149 @@
+{
+  "nom": "Ferronnier",
+  "slug": "ferronnier",
+  "famille": "artisanat",
+  "statuts_frequents": ["entreprise individuelle (artisan)", "micro-entrepreneur", "EURL", "SARL"],
+  "volume_factures_typique": "Volume faible mais dossiers longs : à titre indicatif, quelques chantiers par mois, chacun avec devis, facture d'acompte puis facture de solde, auxquels s'ajoutent des notes ponctuelles aux particuliers.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Deux taux de TVA cohabitent dans vos dossiers : 20 % pour un ouvrage vendu départ atelier, 10 % possible pour la fourniture et la pose au titre des travaux d'amélioration d'un logement achevé depuis plus de deux ans, à condition que le client certifie sur le devis ou la facture que les conditions du taux réduit sont remplies.",
+    "Le sur-mesure impose des acomptes à la commande. Que le dossier soit une prestation de pose ou la vente d'un ouvrage départ atelier, l'encaissement d'un acompte rend la TVA exigible à hauteur du montant perçu : pour les travaux, parce que la TVA des prestations de services est exigible à l'encaissement ; pour un ouvrage vendu seul, parce que les acomptes sur livraisons de biens rendent eux aussi la taxe exigible. Chaque acompte donne lieu à une facture d'acompte comportant toutes les mentions obligatoires, et la facture définitive doit faire référence aux factures d'acompte émises.",
+    "En pose sous-traitée pour un donneur d'ordre assujetti (métallerie, entreprise générale), vous facturez hors taxe avec la mention « Autoliquidation » : c'est le preneur qui déclare la TVA sur vos travaux immobiliers.",
+    "Vos devis et factures doivent indiquer l'assurance professionnelle obligatoire souscrite au titre de votre activité (décennale pour la pose), les coordonnées de l'assureur et la couverture géographique du contrat.",
+    "Pour un portail ou un escalier dont le prix dépend des relevés sur site, vous devez fournir un devis suffisamment détaillé au consommateur qui le demande, avant d'engager la fabrication."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mention certifiée par le client, portée sur le devis ou la facture, attestant que les conditions d'application du taux réduit de 10 % sont remplies (logement achevé depuis plus de deux ans, travaux éligibles)",
+    "« Autoliquidation » sur les factures de travaux immobiliers sous-traités pour un preneur assujetti, sans TVA facturée",
+    "Assurance professionnelle obligatoire : contrat souscrit, coordonnées de l'assureur et couverture géographique, sur chaque devis et chaque facture",
+    "« TVA non applicable, article 293 B du CGI » si l'atelier bénéficie de la franchise en base"
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — fabrication et pose d'un garde-corps en acier thermolaqué dans un logement achevé depuis plus de deux ans",
+    "lignes": [
+      {
+        "designation": "Garde-corps en acier thermolaqué, fabrication sur mesure en atelier (fourniture)",
+        "quantite": 5.2,
+        "unite": "ml",
+        "prix_unitaire_ht": 320,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Pose, scellement chimique et fixations sur maçonnerie existante",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 580,
+        "tva_pct": 10
+      },
+      {
+        "designation": "À déduire : acompte de 30 % versé à la commande (facture d'acompte n° FA-2026-041)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": -673.2,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Le client certifie que le logement est achevé depuis plus de deux ans et que les travaux remplissent les conditions d'application du taux réduit de 10 %.",
+      "Facture définitive faisant référence à la facture d'acompte n° FA-2026-041.",
+      "Assurance responsabilité décennale souscrite auprès de [assureur, n° de contrat], couverture géographique : France métropolitaine."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Transformer un devis accepté en facture d'acompte puis en facture de solde, sans ressaisie",
+    "Gérer deux taux de TVA (20 % atelier, 10 % pose en rénovation) sur un même dossier",
+    "Personnaliser les mentions : certification du client pour le taux réduit, assurance décennale, « Autoliquidation »",
+    "Recevoir les factures électroniques des fournisseurs d'acier et de consommables sur une plateforme agréée, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Compte professionnel et facturation réunis dans un même espace, pour les indépendants comme pour les PME : le rapprochement entre acomptes encaissés et factures émises se fait au même endroit. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Gestion financière et comptabilité pensées pour travailler avec son expert-comptable. Adapté à une ferronnerie en société qui délègue sa comptabilité tout en suivant ses chantiers. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Facturation et comptabilité associées, pour les indépendants, les TPE et les micro-entrepreneurs. Convient au ferronnier installé seul qui veut tenir ses dossiers de chantier sans outil séparé. Vérifiez le statut de plateforme agréée de l'éditeur sur la liste publiée par la DGFiP avant de vous engager."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quel taux de TVA pour un garde-corps fabriqué en atelier puis posé chez un particulier ?",
+      "reponse": "Si le logement est achevé depuis plus de deux ans, la fourniture et la pose peuvent relever du taux réduit de 10 % applicable aux travaux d'amélioration, de transformation, d'aménagement et d'entretien. Le client doit certifier sur le devis ou la facture que les conditions sont remplies. Un ouvrage vendu départ atelier, sans pose, reste au taux normal de 20 %. Au moindre doute sur l'éligibilité, appliquez 20 %."
+    },
+    {
+      "question": "Comment facturer l'acompte demandé à la commande d'un portail sur mesure ?",
+      "reponse": "Établissez une facture d'acompte comportant l'ensemble des mentions obligatoires, numérotée et datée. La TVA est exigible dès l'encaissement de l'acompte, à concurrence de son montant : parce que la taxe des prestations de services est exigible à l'encaissement pour un dossier de fourniture et pose, parce que les acomptes sur livraisons de biens rendent eux aussi la taxe exigible pour un ouvrage vendu seul. La facture définitive doit faire référence aux différentes factures d'acompte."
+    },
+    {
+      "question": "Je pose des ouvrages en sous-traitance pour une entreprise générale : qui déclare la TVA ?",
+      "reponse": "Pour des travaux immobiliers sous-traités au profit d'un preneur assujetti, la TVA est autoliquidée par ce dernier. Vous facturez hors taxe et portez la mention « Autoliquidation » sur la facture. Ce régime ne s'applique pas à la simple vente d'un ouvrage sans pose."
+    },
+    {
+      "question": "Dois-je indiquer mon assurance décennale sur mes devis et factures ?",
+      "reponse": "Oui. L'artisan soumis à une obligation d'assurance professionnelle doit indiquer sur chacun de ses devis et factures l'assurance souscrite au titre de son activité, les coordonnées de l'assureur ou du garant et la couverture géographique du contrat ou de la garantie."
+    },
+    {
+      "question": "Mes chantiers mêlent clients particuliers et entreprises générales : qu'est-ce qui changera pour chaque type de dossier ?",
+      "reponse": "Vos factures aux entreprises générales et aux métalleries donneuses d'ordre, y compris celles portant la mention « Autoliquidation », devront être émises et reçues au format électronique à l'échéance applicable à votre entreprise. Vos chantiers chez des particuliers ne donneront pas lieu à facture électronique mais à une transmission de données de transaction. Côté achats, vos factures d'acier, de quincaillerie et de thermolaquage vous parviendront au format électronique : vous devez pouvoir les recevoir. Si votre atelier est en franchise en base, la réforme vous concerne aussi et vos factures continueront de porter la mention « TVA non applicable, article 293 B du CGI »."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "TVA : quels sont les taux de votre quotidien ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "Quel taux de TVA appliquer pour les travaux réalisés dans les logements ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-20-90-40 — Travaux dans les logements achevés depuis plus de deux ans : modalités d'application et mention certifiée par le client sur le devis ou la facture",
+      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20251022"
+    },
+    {
+      "titre": "BOFiP — Exigibilité de la TVA sur les acomptes perçus dans le cadre de livraisons de biens",
+      "url": "https://bofip.impots.gouv.fr/bofip/13758-PGP.html/ACTU-2022-00148"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-BASE-20-20 — Prestations de services : exigibilité de la TVA à l'encaissement des acomptes, du prix ou de la rémunération",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-10-10 — Factures d'acompte : mentions obligatoires et référence sur la facture définitive",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-10-10-20 — Autoliquidation de la TVA pour les travaux immobiliers sous-traités et mention « Autoliquidation »",
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+    },
+    {
+      "titre": "Article 22-2 de la loi n° 96-603 du 5 juillet 1996 — Mention de l'assurance professionnelle, des coordonnées de l'assureur ou du garant et de la couverture géographique sur les devis et factures des artisans (Légifrance, version en vigueur)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044056690"
+    },
+    {
+      "titre": "Mentions obligatoires d'une facture entre professionnels (entreprendre.service-public.fr)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Devis obligatoire : comment ça marche ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "Facturation électronique : mon entreprise sera-t-elle obligée de facturer électroniquement ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiche-2_mon-entreprise-sera-t-elle-obligee-de-facturer-electroniquement.pdf"
+    },
+    {
+      "titre": "Liste des plateformes agréées (DGFiP, impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    },
+    {
+      "titre": "Micro-entrepreneur et TVA : franchise en base et mention de l'article 293 B du CGI (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

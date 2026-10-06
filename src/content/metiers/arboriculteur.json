@@ -1,0 +1,177 @@
+{
+  "nom": "Arboriculteur",
+  "slug": "arboriculteur",
+  "famille": "agriculture",
+  "statuts_frequents": [
+    "Entreprise individuelle (exploitant arboricole)",
+    "EARL",
+    "GAEC",
+    "SCEA",
+    "SAS agricole"
+  ],
+  "volume_factures_typique": "Un chiffre d'affaires concentré sur quelques semaines. La récolte provoque un pic de documents : apports à la coopérative ou à l'organisation de producteurs, livraisons répétées aux grossistes et aux centrales d'achat, ventes sur le carreau d'un marché de gros, puis cueillette à la ferme et vente au verger pour les particuliers. Le reste de l'année, l'activité de facturation retombe, hors déstockage des fruits conservés en chambre froide.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Les fruits frais vendus pour être mangés relèvent du taux réduit de 5,5 % des produits destinés à l'alimentation humaine, y compris lorsqu'ils doivent être lavés, épluchés ou dénoyautés avant d'être consommés.",
+    "Les écarts de tri et les fruits de petit calibre expédiés vers un transformateur restent destinés à l'alimentation humaine lorsqu'ils partent en jus, en compote ou en conserve : le calibre ne change pas le taux, qui reste de 5,5 %. Un lot vendu pour l'alimentation animale relève du même taux de 5,5 % dès lors qu'il nourrit des animaux eux-mêmes producteurs de denrées destinées à l'alimentation humaine, bétail, volailles ou abeilles. Le taux normal de 20 % ne s'applique que si l'acheteur destine le lot à des animaux qui ne produisent pas de telles denrées, animaux de compagnie ou chevaux de loisir. Faites préciser la destination par l'acheteur et conservez cette indication : c'est elle, et non le calibre, qui fixe le taux de la ligne.",
+    "Le cidre et le poiré que vous pressez sont des boissons alcooliques : ils relèvent du taux normal de 20 %, même vendus au verger à côté de vos plateaux de pommes.",
+    "Les fruits et légumes frais sont des produits périssables. Le paiement doit intervenir au plus tard trente jours après la fin de la décade de livraison lorsque vous facturez périodiquement, ou trente jours après la livraison à défaut de facture périodique. La date d'échéance portée sur la facture doit traduire ce délai, qui n'est pas allongeable par accord commercial.",
+    "Les livraisons quotidiennes au même grossiste pendant la récolte se prêtent à une facture périodique plutôt qu'à une facture par camion, à condition que l'échéance reste calculée à partir de la décade de livraison et que chaque bon de livraison reste rattachable à la facture. Une même décade regroupe souvent des livraisons issues de lots conservés en chambre froide et de lots fraîchement cueillis : le bon de livraison doit porter le lot de récolte, faute de quoi le déstockage de fin de campagne devient impossible à rapprocher.",
+    "Lorsque la coopérative ou l'organisation de producteurs établit la facture de vos apports à votre place, il s'agit d'une autofacturation : elle suppose un mandat de facturation écrit conclu avant la première facture émise, et la mention « Autofacturation » doit figurer sur le document ; le contenu reste sous votre responsabilité. Le contrôle porte moins sur la forme que sur le prix : vos apports sont réglés par un acompte à la livraison puis par un complément après commercialisation, parfois plusieurs mois plus tard. Chaque autofacture et chaque complément doivent rester rattachés au bon d'apport d'origine et au tonnage réellement livré, faute de quoi le solde de campagne n'est plus vérifiable.",
+    "La cueillette à la ferme et la vente au verger s'adressent à des particuliers : ces encaissements relèvent de la transmission des données de transaction, pas de la facture électronique. La caisse doit donc savoir séparer, dans le chiffre d'affaires du jour, les fruits à 5,5 % du cidre à 20 %.",
+    "Les pommes et les poires relèvent d'une norme de commercialisation spécifique, plus exigeante que la norme générale applicable à la plupart des fruits et légumes : le colis doit être homogène et porter la variété, l'origine, la catégorie de classement et le calibre, et une affichette porte ces mêmes informations pour les fruits vendus en vrac au détail. Reprendre la variété et le calibre sur la ligne de facture n'est pas une mention obligatoire de facturation, mais c'est ce qui rend possible le rapprochement d'une facture décadaire qui regroupe Gala, Golden et Conférence dans un même document."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Comme sur toute facture : taux des pénalités de retard, date d'échéance du règlement et numéro individuel d'identification à la TVA du vendeur, dispensé lorsque le total hors taxes reste inférieur ou égal à 150 €.",
+    "Date d'échéance calculée selon le régime des produits périssables : trente jours après la fin de la décade de livraison en cas de facture périodique, trente jours après la livraison à défaut.",
+    "Taux de 5,5 % sur les lignes de fruits destinés à l'alimentation humaine, y compris les lots destinés à la transformation alimentaire et les lots vendus pour l'alimentation d'animaux eux-mêmes producteurs de denrées destinées à l'alimentation humaine ; taux de 20 % sur les lignes de cidre et de poiré, ainsi que sur les lots destinés à des animaux qui ne produisent pas de telles denrées ; bases et montants de TVA présentés taux par taux.",
+    "Facture établie par la coopérative ou l'organisation de producteurs en votre nom et pour votre compte : mention « Autofacturation », après un mandat de facturation conclu avant la première facture émise.",
+    "À l'échéance applicable à votre entreprise, la facture porte en outre le numéro SIREN du grossiste ou de la coopérative, l'adresse de livraison de la plateforme lorsqu'elle diffère de celle du client, la nature des opérations facturées et, le cas échéant, la mention « Option pour le paiement de la taxe d'après les débits »."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture décadaire à un grossiste en fruits et légumes : pommes et poires de plusieurs variétés, lot d'écarts de tri et cidre fermier (arboriculteur redevable de la TVA)",
+    "lignes": [
+      {
+        "designation": "Pommes Gala, catégorie I, calibre 70/80, plateau 1 rang",
+        "quantite": 320,
+        "unite": "plateau",
+        "prix_unitaire_ht": 9.6,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Pommes Golden, catégorie I, calibre 75/85, palox",
+        "quantite": 14,
+        "unite": "palox",
+        "prix_unitaire_ht": 190,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Poires Conférence, catégorie I, calibre 60/70, plateau 1 rang",
+        "quantite": 150,
+        "unite": "plateau",
+        "prix_unitaire_ht": 12.4,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Écarts de tri, petit calibre, destinés à la transformation (jus et compote)",
+        "quantite": 8,
+        "unite": "tonne",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Cidre fermier bouché, bouteille de 75 cl",
+        "quantite": 60,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 3.1,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA à 5,5 % : fruits destinés à l'alimentation humaine, y compris les lots destinés à la transformation alimentaire",
+      "TVA à 20 % : cidre, boisson alcoolique",
+      "Variété, catégorie et calibre repris des colis livrés, dont le contenu doit être homogène",
+      "Numéros des bons de livraison de la décade rattachés à la facture",
+      "Date d'échéance fixée à trente jours après la fin de la décade de livraison",
+      "Bases et montants de TVA ventilés par taux"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Absorber un pic de facturation sur quelques semaines de récolte, à partir de modèles et de séries plutôt que de documents saisis un par un.",
+    "Calculer automatiquement une date d'échéance à trente jours après la fin de la décade de livraison, et déclencher les pénalités en cas de dépassement.",
+    "Regrouper les bons de livraison d'une décade en une facture périodique sans perdre le détail des lots.",
+    "Rapprocher les acomptes d'apport et les compléments de prix versés par la coopérative avec les bons d'apport et les autofactures reçues.",
+    "Séparer, dans les encaissements de la cueillette à la ferme, les fruits à 5,5 % des bouteilles à 20 %, pour une transmission journalière ventilée par taux."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée par la DGFiP réunissant facturation et comptabilité. Adaptée à une exploitation dont toute la facturation se concentre sur six à huit semaines de récolte, avec des séries de factures décadaires à produire à partir de bons de livraison, puis un volume quasi nul le reste de l'année."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme agréée par la DGFiP, orientée gestion financière et comptabilité partagée avec un cabinet. Pertinente lorsque le solde de campagne suppose de rapprocher acomptes d'apport, compléments de prix et autofactures reçues de la coopérative, travail généralement repris par l'expert-comptable à la clôture."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée par la DGFiP adossée à un compte professionnel en ligne, avec facturation intégrée. Adaptée à une exploitation qui encaisse au verger pendant les semaines de cueillette et facture ses grossistes depuis le même outil, sans ressaisie entre la caisse et les documents professionnels."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Sous quel délai le grossiste doit-il régler mes pommes ?",
+      "reponse": "Les fruits et légumes frais sont des produits périssables : le paiement doit intervenir au plus tard trente jours après la fin de la décade de livraison lorsque vous établissez des factures périodiques, et trente jours après la date de livraison à défaut. Ce délai ne peut pas être allongé par une clause contractuelle, et son non-respect expose l'acheteur à une amende administrative. La date d'échéance qui figure sur votre facture doit refléter ce calcul. Ce délai s'applique à vos livraisons de fruits frais quelle que soit leur destination, carreau de marché de gros, grossiste ou centrale d'achat."
+    },
+    {
+      "question": "Mes écarts de tri partent en jus et en compote. Sont-ils au même taux que mes pommes de table ?",
+      "reponse": "Oui, tant qu'ils restent destinés à l'alimentation humaine : le taux réduit de 5,5 % s'applique aux produits destinés à l'alimentation humaine, même lorsqu'une préparation est nécessaire avant consommation. Le calibre ou la catégorie de classement sont sans incidence sur le taux. Un lot orienté vers l'alimentation animale reste également à 5,5 % lorsqu'il nourrit des animaux producteurs de denrées destinées à l'alimentation humaine ; il ne passe à 20 % que s'il est destiné à des animaux qui n'en produisent pas."
+    },
+    {
+      "question": "C'est ma coopérative qui édite la facture de mes apports. Dois-je quand même la contrôler ?",
+      "reponse": "Oui. Confier l'établissement matériel de vos factures à votre client s'appelle l'autofacturation : elle suppose un mandat conclu avant l'émission de la première facture, et la mention « Autofacturation » doit figurer sur le document. Vous restez responsable du contenu de ces factures et de vos obligations en matière de TVA, ce qui impose de vérifier chaque autofacture reçue, en particulier les tonnages et les compléments de prix."
+    },
+    {
+      "question": "Pendant la cueillette à la ferme, je n'édite aucune facture. Suis-je en dehors de la réforme ?",
+      "reponse": "Non. Les ventes à des personnes non assujetties ne donnent pas lieu à une facture électronique, mais elles entrent dans la transmission des données de transaction : vous communiquerez à l'administration le chiffre d'affaires réalisé par jour, ventilé par taux de TVA, à l'échéance applicable à votre entreprise. Une caisse qui distingue les fruits du cidre suffit à produire cette ventilation. Aucune donnée nominative sur vos clients n'est transmise."
+    },
+    {
+      "question": "Dois-je reprendre la variété, la catégorie et le calibre sur mes factures ?",
+      "reponse": "Ce ne sont pas des mentions obligatoires de facturation : celles-ci restent les mentions de droit commun. Mais les normes de commercialisation imposent que chaque colis soit homogène et porte la variété, l'origine, la catégorie de classement et, le cas échéant, le calibre, et qu'une affichette porte ces informations pour les fruits vendus en vrac au détail. Les reprendre sur vos lignes de facture rend le rapprochement possible entre ce qui est facturé et ce qui a été livré, en particulier lorsqu'une décade regroupe plusieurs variétés."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-10 – Taux réduit de 5,5 % : produits destinés à l'alimentation humaine, y compris lorsqu'une préparation est nécessaire",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+    },
+    {
+      "titre": "BOFiP – Taux de TVA applicable aux boissons alcooliques (cidre, taux normal)",
+      "url": "https://bofip.impots.gouv.fr/bofip/11606-PGP.html/ACTU-2020-00195-8"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-30 – Produits destinés à l'alimentation animale et produits à usage agricole",
+      "url": "https://bofip.impots.gouv.fr/bofip/944-PGP.html/identifiant=BOI-TVA-LIQ-30-10-30-20250813"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-20 – Taux réduit : produits destinés à l'alimentation animale (version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/273-PGP.html/identifiant=BOI-TVA-LIQ-30-10-20-20241120"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-10 – Délivrance des factures : autofacturation, mandat de facturation préalable, mention « Autofacturation »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "DGCCRF (economie.gouv.fr) – Délais de paiement : régime des produits alimentaires périssables et des fruits et légumes frais",
+      "url": "https://www.economie.gouv.fr/dgccrf/Publications/Vie-pratique/fiches-pratiques/Delais-de-paiement"
+    },
+    {
+      "titre": "economie.gouv.fr – Entreprises : quels sont les délais de paiement à respecter ? (délais dérogatoires et sanctions)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/entreprises-quels-sont-les-delais-de-paiement"
+    },
+    {
+      "titre": "economie.gouv.fr – Guide de l'achat public de fruits, légumes et pommes de terre à l'état frais (normes de commercialisation : variété, origine, catégorie, calibre, homogénéité des colis, affichette au détail)",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/daj/marches_publics/oeap/gem/fruitleg/fruitleg.pdf"
+    },
+    {
+      "titre": "economie.gouv.fr – Denrées alimentaires : quelles sont les règles d'étiquetage ?",
+      "url": "https://www.economie.gouv.fr/particuliers/mes-droits-conso/alimentation/denrees-alimentaires-quelles-sont-les-regles-detiquetage"
+    },
+    {
+      "titre": "entreprendre.service-public.fr – Mentions obligatoires sur une facture, dont les mentions nouvelles liées à la facturation électronique",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "impots.gouv.fr – Je découvre la facturation électronique (champ d'application, transmission des données de transaction)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr – Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr – Comment obtenir un remboursement forfaitaire agricole ?",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/comment-obtenir-un-remboursement-forfaitaire-agricole"
+    }
+  ],
+  "date_maj": "2026-10-05"
+}

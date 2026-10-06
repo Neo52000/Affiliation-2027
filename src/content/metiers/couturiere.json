@@ -1,0 +1,130 @@
+{
+  "nom": "Couturière-retoucheuse",
+  "slug": "couturiere",
+  "famille": "artisanat",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle"],
+  "volume_factures_typique": "Un grand nombre de petites notes aux particuliers chaque semaine (ourlets, reprises, fermetures), et quelques factures ponctuelles à des professionnels (boutiques de prêt-à-porter, pressings, compagnies de théâtre).",
+  "clients_types": "B2C",
+  "specificites_facturation": [
+    "Lorsque vous êtes redevable de la TVA, les retouches et réparations de vêtements sont des prestations de services au taux normal de 20 %. Aucun taux réduit ne leur est applicable en l'état des textes en vigueur.",
+    "La plupart des ateliers de retouche fonctionnent en franchise en base : la taxe n'apparaît nulle part et chaque document de vente porte « TVA non applicable, article 293 B du CGI ».",
+    "Pour vos clientes et clients particuliers, la note est obligatoire dès que la prestation atteint 25 € TTC, en cas de vente à distance, ou dès qu'elle est demandée. Ce seuil est vite atteint avec une retouche de manteau ou une création sur mesure.",
+    "Pour une robe sur mesure, le prix ne peut pas être déterminé à l'avance : vous devez fournir un devis suffisamment détaillé au consommateur qui le demande, avant de commencer le travail.",
+    "Vos prestations aux particuliers ne passeront pas par la facture électronique : elles relèveront du e-reporting, une transmission de totaux quotidiens à l'administration. À l'inverse, une facture adressée à un pressing ou à une boutique est une facture entre professionnels, à émettre au format électronique à l'échéance applicable à votre entreprise.",
+    "Même en franchise en base, vous devrez pouvoir recevoir au format électronique les factures de vos fournisseurs de tissus et de mercerie, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Mentions communes à toute note ou facture : date d'émission, numéro unique, identité de l'atelier et du client, date de la prestation, détail et décompte en quantité et prix de chaque retouche, et montant total à payer. Si vous êtes redevable de la TVA, la note distingue les montants hors taxe et toutes taxes comprises ainsi que le taux appliqué ; en franchise en base, aucune TVA n'apparaît et les montants sont nets de taxe.",
+    "« TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base, cas le plus fréquent en retouche.",
+    "Les fournitures facturées (fermeture à glissière, doublure, boutons) apparaissent ligne par ligne, en quantité et en prix, au même titre que la main-d'œuvre."
+  ],
+  "exemple_facture": {
+    "intitule": "Note d'une couturière en franchise en base à une cliente : retouches sur deux vêtements",
+    "lignes": [
+      {
+        "designation": "Ourlet simple sur pantalon de tailleur",
+        "quantite": 2,
+        "unite": "pièce",
+        "prix_unitaire_ht": 12,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Reprise de la taille d'une robe (cintrage)",
+        "quantite": 1,
+        "unite": "prestation",
+        "prix_unitaire_ht": 25,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Remplacement d'une fermeture à glissière de manteau, fourniture comprise",
+        "quantite": 1,
+        "unite": "prestation",
+        "prix_unitaire_ht": 32,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "Montants nets de taxe : en franchise en base, la note ne comporte ni taux ni montant de TVA, la distinction hors taxe / toutes taxes comprises est sans objet et les prix unitaires indiqués sont nets de taxe.",
+      "TVA non applicable, article 293 B du CGI (franchise en base) : aucun taux ni montant de TVA ne figure sur la note.",
+      "Note remise à une cliente particulière : prestation de services d'un montant égal ou supérieur à 25 € TTC.",
+      "Prestation à un particulier : elle relèvera du e-reporting, pas de la facture électronique."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Éditer rapidement de nombreuses notes de petits montants, avec la mention de franchise en base pré-remplie.",
+    "Transmettre le e-reporting des encaissements des particuliers sous forme de totaux quotidiens.",
+    "Recevoir les factures électroniques des fournisseurs de tissus, de mercerie et de matériel.",
+    "Établir des devis détaillés pour les créations sur mesure, puis les transformer en note ou en facture."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée par la DGFiP qui regroupe comptabilité, compte professionnel et facturation pour les indépendants. Un seul outil pour un atelier géré en solo."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, qui réunit facturation et comptabilité pour les indépendants, freelances, TPE et micro-entrepreneurs. Adaptée à l'édition en série de petites notes avec mention de franchise en base pré-remplie."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, qui associe compte professionnel en ligne et facturation. Les encaissements du jour et les notes émises se suivent au même endroit, ce qui facilite la remontée des totaux quotidiens au titre du e-reporting."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Comment facturer les fournitures que j'avance pour une retouche ?",
+      "reponse": "Fermeture à glissière, doublure, boutons, fil : les fournitures que vous avancez apparaissent ligne par ligne sur la note, en quantité et en prix, au même titre que la main-d'œuvre, ou sont intégrées à une ligne dont le libellé précise « fourniture comprise ». Le client doit pouvoir reconstituer le décompte. En franchise en base, ces lignes ne portent ni taux ni montant de TVA ; si vous êtes redevable, elles suivent le taux normal de 20 %, comme la prestation elle-même."
+    },
+    {
+      "question": "À partir de quel montant dois-je remettre une note à un particulier pour une retouche ?",
+      "reponse": "Dès que la prestation atteint 25 € TTC, en cas de vente à distance, ou dès que le client la demande. En dessous de ce montant, remettez-la si on vous la demande. La note porte le détail de chaque retouche en quantité et en prix."
+    },
+    {
+      "question": "Dois-je établir un devis pour une robe sur mesure ?",
+      "reponse": "Oui, si la cliente le demande. Pour toute prestation dont le prix ne peut pas être déterminé à l'avance, vous devez fournir un devis suffisamment détaillé au consommateur qui en fait la demande. C'est le cas d'une création sur mesure, dont le prix dépend du modèle, du tissu et du temps de travail."
+    },
+    {
+      "question": "Existe-t-il un taux de TVA réduit pour les retouches de vêtements ?",
+      "reponse": "Non. En l'état des textes en vigueur, les retouches et réparations de vêtements relèvent du taux normal de 20 % si vous êtes redevable de la TVA. Des propositions d'extension d'un taux réduit aux activités de réparation reviennent régulièrement dans le débat budgétaire : ne changez de taux qu'au vu d'un texte publié et de sa date d'entrée en vigueur. Si vous êtes en franchise en base, la question ne se pose pas : vous ne facturez aucune TVA et portez la mention « TVA non applicable, article 293 B du CGI »."
+    },
+    {
+      "question": "Je retouche aussi pour une boutique de robes de mariée : ces factures changent-elles ?",
+      "reponse": "Oui. Ce sont des factures entre professionnels : à l'échéance applicable à votre entreprise, vous devrez les émettre au format électronique via une plateforme agréée. Elles portent les mentions communes et, en franchise en base, la mention « TVA non applicable, article 293 B du CGI »."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "TVA : quels sont les taux de votre quotidien ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-quels-sont-les-taux-de-votre-quotidien"
+    },
+    {
+      "titre": "En tant que micro-entrepreneur, puis-je être redevable de la TVA ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "Note : obligation de délivrance au client particulier (service-public.fr)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "Devis obligatoire : comment ça marche ? (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "Mentions obligatoires sur une facture (entreprendre.service-public.fr)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Fiche 2 : mon entreprise sera-t-elle obligée de facturer électroniquement ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiche-2_mon-entreprise-sera-t-elle-obligee-de-facturer-electroniquement.pdf"
+    },
+    {
+      "titre": "Facturation électronique : publication de la liste des plateformes agréées (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-publication-de-la-liste-des-plateformes-agreees"
+    },
+    {
+      "titre": "Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ? (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

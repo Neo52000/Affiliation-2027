@@ -1,0 +1,148 @@
+{
+  "nom": "Libraire-papetier",
+  "slug": "libraire-papetier",
+  "famille": "commerce",
+  "statuts_frequents": ["Entreprise individuelle", "EURL", "SARL", "SAS"],
+  "volume_factures_typique": "Encaissements quotidiens en caisse pour les particuliers, avec des paniers mêlant souvent livres et papeterie. Quelques factures par mois pour les mairies, écoles et bibliothèques, et des pics marqués au moment des marchés de rentrée.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Deux taux de TVA cohabitent en permanence : 5,5 % pour les ouvrages répondant à la définition fiscale du livre sur support physique, 20 % pour la papeterie, les jeux et la carterie. Chaque ticket ou facture ventile les bases hors taxes par taux.",
+    "Le prix de vente d'un livre neuf est fixé par l'éditeur ou l'importateur. Face au public, votre remise est plafonnée à 5 % de ce prix, et uniquement lorsque le client retire l'ouvrage dans un commerce de vente au détail de livres : depuis la loi du 8 juillet 2014, aucun rabais ne peut être consenti sur un livre expédié à l'acheteur et non retiré en magasin. Le prix effectif se situe donc entre 95 % et 100 % du prix éditeur pour un retrait en magasin, et à 100 % pour une commande expédiée.",
+    "Pour les achats de livres non scolaires effectués pour leurs besoins propres, à l'exclusion de la revente, par l'État, les collectivités territoriales et les établissements d'enseignement, de formation professionnelle ou de recherche, ainsi que pour les livres non scolaires destinés à l'enrichissement des collections des bibliothèques accueillant du public, le rabais est plafonné à 9 % : le prix effectif se situe entre 91 % et 100 % du prix public.",
+    "Les livres scolaires achetés par l'État, une collectivité ou un établissement d'enseignement pour leurs besoins propres échappent à ce plafond : leur prix se négocie librement dans les marchés.",
+    "Vos factures aux personnes publiques (communes, écoles publiques, bibliothèques municipales) se déposent sur le portail Chorus Pro, plateforme de référence de la facturation électronique du secteur public.",
+    "Vos ventes au comptoir à des particuliers relèveront de l'e-reporting : les données de transactions seront transmises à l'administration, à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Pour chaque ligne : dénomination précise de l'article, quantité, prix unitaire hors taxes et taux de TVA, avec ventilation des bases hors taxes entre 5,5 % et 20 % sur les paniers mixtes.",
+    "Sur une facture à une collectivité, à un établissement d'enseignement, de formation professionnelle ou de recherche, ou à une bibliothèque accueillant du public : prix public fixé par l'éditeur et rabais consenti, qui ne peut dépasser 9 % pour les livres non scolaires achetés pour leurs besoins propres, à l'exclusion de la revente.",
+    "Sur une facture mixte, récapitulatif des bases hors taxes et de la TVA par taux (5,5 % pour les livres, 20 % pour la papeterie et le matériel d'équipement), en plus de l'indication du taux sur chaque ligne."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture à une commune pour sa bibliothèque municipale : livres avec rabais de 9 % et fournitures d'équipement des ouvrages",
+    "lignes": [
+      {
+        "designation": "Romans littérature générale, prix public éditeur 19,90 € TTC, rabais collectivité de 9 % inclus",
+        "quantite": 12,
+        "unite": "exemplaire",
+        "prix_unitaire_ht": 17.16,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Albums jeunesse, prix public éditeur 13,00 € TTC, rabais collectivité de 9 % inclus",
+        "quantite": 20,
+        "unite": "exemplaire",
+        "prix_unitaire_ht": 11.21,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Film de protection adhésif pour couverture de livres, rouleau de 10 m",
+        "quantite": 6,
+        "unite": "rouleau",
+        "prix_unitaire_ht": 9.9,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Boîte de 100 étiquettes de cotation autocollantes",
+        "quantite": 2,
+        "unite": "boîte",
+        "prix_unitaire_ht": 7.4,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Ventilation des bases hors taxes par taux : lignes livres à 5,5 %, lignes d'équipement et de papeterie à 20 %.",
+      "Rabais de 9 % sur le prix public rappelé ligne à ligne, en application de la loi du 10 août 1981 relative au prix du livre.",
+      "Numéro d'engagement de la commune et dépôt de la facture sur le portail Chorus Pro."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Une caisse et une facturation qui ventilent automatiquement 5,5 % et 20 % au sein d'un même panier.",
+    "Gérer le prix éditeur comme prix de référence et encadrer les remises : jusqu'à 5 % au public pour un livre retiré en magasin, aucun rabais sur un livre expédié et non retiré, 9 % au maximum aux acheteurs publics et aux bibliothèques sur les livres non scolaires.",
+    "Articuler trois circuits : e-reporting pour les ventes aux particuliers à l'échéance applicable à votre entreprise, Chorus Pro pour les personnes publiques, plateforme agréée pour les clients professionnels privés.",
+    "Suivre les marchés de rentrée scolaire : devis, bons de commande, livraisons partielles et facturation associée."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle est dédiée à la facturation et à la gestion des indépendants et micro-entrepreneurs, un format qui correspond aux librairies-papeteries exploitées en nom propre."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle associe compte professionnel en ligne et facturation pour indépendants, freelances et TPE. Utile pour rapprocher au même endroit encaissements de caisse et factures émises aux collectivités."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle réunit facturation et comptabilité à destination des TPE, un atout quand la coexistence permanente de deux taux de TVA alourdit la tenue comptable."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Toute ma boutique peut-elle passer au taux de 5,5 % puisque je suis libraire ?",
+      "reponse": "Non. Seuls les ouvrages répondant à la définition fiscale du livre, fournis sur support physique, relèvent du taux réduit de 5,5 %. La papeterie, les jeux de société et la carterie restent au taux normal de 20 %. Ventilez les deux taux ligne par ligne sur vos tickets et factures."
+    },
+    {
+      "question": "Quelle remise maximale puis-je accorder à un client particulier sur un livre ?",
+      "reponse": "5 % du prix fixé par l'éditeur ou l'importateur, à condition que le client retire le livre dans un commerce de vente au détail de livres : le prix effectif reste alors entre 95 % et 100 % du prix public. Si vous expédiez le livre et qu'il n'est pas retiré en magasin, aucun rabais n'est possible et le prix public s'applique intégralement. Ce plafond ne vise que les livres : vos remises sur la papeterie restent libres."
+    },
+    {
+      "question": "Une bibliothèque municipale me demande 15 % de rabais sur une commande de romans : puis-je accepter ?",
+      "reponse": "Non. Pour les livres non scolaires destinés à l'enrichissement des collections d'une bibliothèque accueillant du public, comme pour les achats de livres non scolaires effectués par l'État, une collectivité ou un établissement d'enseignement pour leurs besoins propres et hors revente, le rabais est plafonné à 9 % du prix public. Accorder davantage contrevient à la loi du 10 août 1981 relative au prix du livre."
+    },
+    {
+      "question": "Comment facturer les manuels scolaires commandés par une école publique ?",
+      "reponse": "Le prix des livres scolaires achetés pour leurs besoins propres, à l'exclusion de la revente, par l'État, une collectivité territoriale ou un établissement d'enseignement est fixé librement : le plafond de rabais ne s'applique pas. Attention au destinataire de la facture : une école primaire publique n'a pas la personnalité morale, la facture est établie au nom de la commune et déposée sur Chorus Pro avec le numéro d'engagement qu'elle vous communique. Pour un collège ou un lycée, qui sont des établissements publics, la facture est établie au nom de l'établissement."
+    },
+    {
+      "question": "Une commande de la bibliothèque mélange des livres et du matériel d'équipement : comment ventiler la facture ?",
+      "reponse": "Ligne par ligne. Les ouvrages répondant à la définition fiscale du livre sur support physique relèvent du taux réduit de 5,5 %, tandis que le film de couverture, les étiquettes de cotation et la papeterie relèvent du taux normal de 20 %. Le rabais de 9 % ne concerne que les lignes de livres non scolaires : vos remises sur le matériel d'équipement restent libres. La facture fait apparaître, sur chaque ligne de livre, le prix public de l'éditeur et le rabais consenti, puis récapitule les bases hors taxes et la TVA par taux."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Loi n° 81-766 du 10 août 1981 relative au prix du livre (prix fixé par l'éditeur, remise plafonnée à 5 %)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000517179"
+    },
+    {
+      "titre": "Article 1er de la loi n° 81-766 dans sa rédaction issue de la loi du 8 juillet 2014 — rabais de 5 % réservé aux livres retirés dans un commerce de vente au détail de livres",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000029212493"
+    },
+    {
+      "titre": "Ministère de la Culture — Le prix du livre (prix unique, rabais de 5 %, exception des livres expédiés)",
+      "url": "https://www.culture.gouv.fr/thematiques/livre-et-lecture/pour-les-professionnels-de-l-economie-du-livre/regulation/prix-du-livre"
+    },
+    {
+      "titre": "Article 3 de la loi n° 81-766 — rabais plafonné à 9 % pour les collectivités et bibliothèques, prix libre des livres scolaires achetés par les personnes publiques",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006510841"
+    },
+    {
+      "titre": "DAJ (economie.gouv.fr) — Fiche technique sur les marchés publics de livres non scolaires",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/daj/marches_publics/conseil_acheteurs/fiches-techniques/preparation-procedure/Fiche-technique-Dispense-proc%C3%A9dure-march%C3%A9s-livres.pdf"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-40 — Taux réduit de 5,5 % applicable aux livres répondant à la définition fiscale",
+      "url": "https://bofip.impots.gouv.fr/bofip/1437-PGP.html/identifiant=BOI-TVA-LIQ-30-10-40-20240821"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-LIQ-20-10 — Taux normal de 20 % pour les produits non soumis à un taux réduit (papeterie, jeux)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1438-PGP.html/identifiant=BOI-TVA-LIQ-20-10-20140919"
+    },
+    {
+      "titre": "economie.gouv.fr — Chorus Pro, plateforme de référence pour la facturation électronique du secteur public",
+      "url": "https://www.economie.gouv.fr/actualites/chorus-pro-restera-la-plateforme-de-reference-pour-la-facturation-electronique-du"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique (e-reporting des ventes aux particuliers)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique : liste des plateformes agréées (plateformes de dématérialisation partenaires immatriculées)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "economie.gouv.fr — Mentions obligatoires d'une facture",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

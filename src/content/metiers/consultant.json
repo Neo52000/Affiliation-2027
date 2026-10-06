@@ -1,0 +1,149 @@
+{
+  "nom": "Consultant",
+  "slug": "consultant",
+  "famille": "liberal",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle", "EURL / SASU"],
+  "volume_factures_typique": "Faible : quelques factures par mois, à montant unitaire élevé (missions au forfait ou décomptées en jours au TJM), souvent avec acompte puis solde.",
+  "clients_types": "B2B",
+  "specificites_facturation": [
+    "Vous facturez au temps passé ou au forfait. La facture détaille le nombre de jours, le TJM en prix unitaire HT et chaque phase de la mission, ligne par ligne, comme l'exige la facturation entre professionnels.",
+    "Tout versement d'acompte donne lieu à une facture. Pour une prestation de services, la TVA est exigible à l'encaissement : chaque acompte encaissé déclenche la taxe, avant même la fin de la mission. Si vous avez opté pour le paiement de la TVA d'après les débits, l'exigibilité suit alors la facturation et vos factures doivent porter la mention « TVA acquittée sur les débits ».",
+    "Vos missions se découpent en phases jalonnées. Faites correspondre vos factures à ces jalons (cadrage, ateliers, restitution) plutôt qu'à des échéances calendaires : une facture adossée à un livrable accepté se conteste moins et se règle plus vite.",
+    "Les jours vendus et les jours consommés divergent sur toute mission longue. Tenez un relevé de jours contradictoire, visé par le client, et joignez-le à chaque facture au TJM : c'est la pièce qui justifie la quantité facturée en cas de litige.",
+    "Le sort des livrables (rapports, supports, méthodes) se règle dans le contrat et vos conditions générales. Si votre contrat subordonne le transfert des droits au paiement intégral, alignez la facture de solde sur cette clause et rappelez-la sur la facture."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base : aucune TVA ne figure alors sur la facture.",
+    "« Autoliquidation », sans TVA française, pour une prestation à un client assujetti établi dans un autre État membre de l'UE, avec les numéros de TVA intracommunautaire des deux parties.",
+    "Pour un preneur assujetti établi hors de l'Union européenne : facture sans TVA française, portant le motif de non-imposition — la prestation n'étant pas située en France au sens des règles de territorialité, la mention « TVA non applicable — prestation non située en France (art. 259, 1° du CGI) » est portée sur la facture.",
+    "Décompte précis de la prestation : nombre de jours, TJM en prix unitaire HT, taux de TVA ou motif d'exonération par ligne.",
+    "Taux des pénalités de retard et indemnité forfaitaire de 40 € pour frais de recouvrement, due dès le premier jour de retard (clients professionnels)."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — mission de conseil en organisation (forfait de cadrage puis jours au TJM)",
+    "lignes": [
+      {
+        "designation": "Cadrage de la mission et diagnostic initial (forfait)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 2400,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Jours de conseil — ateliers et accompagnement (TJM)",
+        "quantite": 6,
+        "unite": "jour",
+        "prix_unitaire_ht": 850,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Frais de déplacement refacturés au client",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Déduction de l'acompte de 30 % facturé et encaissé à la commande (facture d'acompte n° ... du ...)",
+        "quantite": 1,
+        "unite": "déduction",
+        "prix_unitaire_ht": -2304,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Un acompte de 30 % (2 304 € HT) a fait l'objet d'une facture d'acompte distincte, encaissée à la commande ; la TVA correspondante a été exigible dès cet encaissement. Il est déduit ci-dessus du présent solde.",
+      "Frais refacturés inclus dans la base d'imposition à la TVA, au taux de la prestation principale : ce ne sont pas des débours.",
+      "Pénalités de retard au taux prévu aux conditions générales et indemnité forfaitaire de 40 € pour frais de recouvrement, dues dès le premier jour de retard."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Suivre les jours facturables et produire des factures au TJM sans erreur de décompte.",
+    "Enchaîner devis, facture d'acompte et facture de solde liées, avec TVA exigible à chaque encaissement.",
+    "Facturer correctement hors TVA les clients assujettis de l'UE (autoliquidation) et les clients établis hors de l'UE.",
+    "Relancer les impayés et anticiper le passage par une plateforme agréée à l'échéance applicable à votre entreprise."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Offre réunissant comptabilité, compte professionnel et facturation pour les indépendants. Couvre l'essentiel d'une activité de conseil exercée en solo."
+    },
+    {
+      "slug": "abby",
+      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution de facturation et de gestion destinée aux indépendants et micro-entrepreneurs. Pertinente si vous démarrez en micro-entreprise, y compris sous franchise en base."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution associant facturation et comptabilité pour freelances et TPE. Utile quand vos missions au TJM s'accompagnent d'un suivi comptable régulier."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mon client me demande de facturer au forfait alors que la mission a dérivé : que faire figurer sur la facture ?",
+      "reponse": "Un forfait se facture tel qu'il a été convenu : la facture reprend le périmètre contractuel, sans ajout unilatéral de jours. Les jours hors périmètre se facturent sur une ligne distincte, au TJM, après accord écrit du client, en indiquant le nombre de jours et la période concernée. Une facture qui mélange forfait et dépassements sur une seule ligne est la première cause de contestation, donc de retard de paiement."
+    },
+    {
+      "question": "Et pour un client établi hors de l'UE, par exemple en Suisse ou aux États-Unis ?",
+      "reponse": "Lorsque le preneur est un assujetti établi hors de France, le lieu de la prestation n'est pas situé en France : votre prestation de conseil n'est pas soumise à la TVA française. Vous facturez donc sans TVA française, en portant le motif de non-imposition sur la facture, par exemple « TVA non applicable — prestation non située en France (art. 259, 1° du CGI) ». Vérifiez par ailleurs les obligations éventuelles dans le pays de votre client."
+    },
+    {
+      "question": "Dois-je émettre une facture pour l'acompte de 30 % demandé à la commande ?",
+      "reponse": "Oui. Tout assujetti doit délivrer une facture pour les acomptes versés avant la réalisation de la prestation. Et comme la TVA sur les prestations de services est exigible à l'encaissement, l'encaissement de cet acompte déclenche la taxe correspondante ; si vous avez opté pour le paiement de la TVA d'après les débits, l'exigibilité suit la facturation et vos factures portent la mention « TVA acquittée sur les débits ». En franchise en base, la facture d'acompte reste due, sans TVA et avec la mention de l'article 293 B du CGI. Pensez à déduire l'acompte sur la facture de solde, sinon vous facturez deux fois la même somme."
+    },
+    {
+      "question": "Comment facturer une mission interrompue en cours de route ?",
+      "reponse": "Vous facturez les jours réellement effectués au TJM et les phases livrées du forfait, poste par poste, en reprenant les acomptes déjà encaissés. Les acomptes encaissés restent soumis à la TVA même si la mission n'a pas été menée à son terme ; si une partie doit être restituée, elle donne lieu à une facture rectificative."
+    },
+    {
+      "question": "Mes journées de formation sont-elles exonérées de TVA ?",
+      "reponse": "Pas automatiquement. L'exonération de la formation professionnelle continue suppose une attestation délivrée par l'autorité administrative. Sans cette attestation, vos journées de formation restent taxables au taux normal de 20 %, comme vos prestations de conseil."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "impots.gouv.fr — Prestations de services entre assujettis (autoliquidation intracommunautaire)",
+      "url": "https://www.impots.gouv.fr/professionnel/prestations-entre-assujettis"
+    },
+    {
+      "titre": "BOFiP — TVA, territorialité : lieu des prestations de services, règles générales (BOI-TVA-CHAMP-20-50-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1488-PGP.html/identifiant=BOI-TVA-CHAMP-20-50-20-20190925"
+    },
+    {
+      "titre": "BOFiP — TVA, fait générateur et exigibilité des prestations de services : encaissement, acomptes, option pour les débits (BOI-TVA-BASE-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "BOFiP — TVA, délivrance de factures : obligation de facturer les acomptes (BOI-TVA-DECLA-30-20-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+    },
+    {
+      "titre": "BOFiP — TVA, exonération de la formation professionnelle continue sous condition d'attestation (BOI-TVA-CHAMP-30-10-20-50)",
+      "url": "https://bofip.impots.gouv.fr/bofip/943-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-50-20191016"
+    },
+    {
+      "titre": "BOFiP — TVA, taux normal applicable aux prestations de conseil et d'études (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "economie.gouv.fr — Franchise en base de TVA : conditions et mention obligatoire",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "economie.gouv.fr — Factures : les mentions obligatoires entre professionnels",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "DGCCRF — Délais de paiement : pénalités de retard et indemnité forfaitaire de 40 €",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Je consulte la liste des plateformes agréées",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}
