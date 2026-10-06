@@ -69,3 +69,9 @@ Décision (hors spec, demande utilisateur) : le style sobre de la section 10 est
 Accueil réécrit orienté conversion : promesse métier, double CTA (quiz / échéances), preuves, bande CTA finale. Header : bouton « Trouver mon logiciel ».
 Correctif WCAG 1.4.1 : le survol des liens renforce le soulignement au lieu de foncer la couleur (axe évalue l'état hover ; 2,35:1 < 3:1).
 Lighthouse : accueil 100/100/100/100 (LCP 0,8 s, CLS 0) ; plombier 100/100/100/100 (CLS 0). 74 tests Vitest + 6 parcours e2e verts ; garde-fous similarité/SEO verts.
+
+## Illustrations et images (2026-10-06)
+
+Demande utilisateur : « cela manque d'images ». Choix : SVG inline uniquement (zéro requête, net en Retina, couleurs par variables CSS donc thème sombre automatique) — aucune photo stock ni visuel inventé ; les captures réelles des outils viendront des tests documentés et les logos éditeurs attendent les kits presse (TODO #17).
+Livré : illustration du hero (facture → plateforme agréée → destinataire), 10 pictogrammes de familles de métiers (accueil + hubs), pictos étapes/preuves/outils, favicon aligné sur l'identité dégradé, image Open Graph 1200×630 générée par capture Chromium (og.png) + balises og:image/twitter:card.
+Lighthouse accueil et plombier : 100/100/100/100, CLS 0, LCP 1,4 s. 74 tests + 6 e2e verts, garde-fous OK.

@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Quiz from '../components/islands/Quiz.tsx';
+import Picto, { type NomPicto } from '../components/Picto.astro';
+import HeroIllustration from '../components/HeroIllustration.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import { FAMILLE_LABELS, type Famille } from '../lib/familles';
@@ -52,56 +54,76 @@ const famillesActives = (Object.keys(FAMILLE_LABELS) as Famille[])
   }))
   .filter((f) => f.nb > 0);
 
-const PREUVES = [
+const PREUVES: { titre: string; texte: string; href: string; picto: NomPicto }[] = [
   {
     titre: 'Classement indépendant',
     texte: 'Les commissions ne pèsent ni sur l’ordre ni sur les notes. Méthode publique.',
     href: '/methode',
+    picto: 'medaille',
   },
   {
     titre: 'Données datées et sourcées',
     texte: 'Chaque affirmation réglementaire renvoie à une source officielle.',
     href: '/transparence',
+    picto: 'document-source',
   },
   {
     titre: 'Tests réels documentés',
     texte: 'Aucune note avant un test réel : « Test en cours » est assumé.',
     href: '/methode',
+    picto: 'loupe',
   },
 ];
 
-const ETAPES = [
+const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
   {
     n: '1',
     titre: 'Votre métier',
     texte: 'Chaque activité a ses règles : TVA, mentions, acomptes.',
+    picto: 'profil',
   },
-  { n: '2', titre: 'Votre recommandation', texte: '5 questions, 1 outil adapté + 2 alternatives.' },
-  { n: '3', titre: 'Votre conformité', texte: 'Échéances, check-list et facture vérifiée.' },
+  {
+    n: '2',
+    titre: 'Votre recommandation',
+    texte: '5 questions, 1 outil adapté + 2 alternatives.',
+    picto: 'cible',
+  },
+  {
+    n: '3',
+    titre: 'Votre conformité',
+    texte: 'Échéances, check-list et facture vérifiée.',
+    picto: 'bouclier',
+  },
 ];
 ---
 
 <Base title={title} description={SITE.description}>
   <section class="hero pt-4">
-    <div class="max-w-3xl">
-      <p class="badge-ok">Réforme en vigueur — vérifié sur sources officielles</p>
-      <h1 class="display-title mt-4">
-        <span class="text-gradient">Le bon logiciel de facturation électronique</span>
-        <br />
-        pour votre métier
-      </h1>
-      <p class="prose-measure mt-5 text-lg">
-        Plombier, infirmière libérale, développeur freelance… chaque métier facture différemment.
-        Répondez à 5 questions et obtenez une recommandation fondée sur des faits vérifiés — jamais
-        sur les commissions.
-      </p>
-      <div class="mt-6 flex flex-wrap items-center gap-4">
-        <a href="/outils/quiz" class="btn-cta text-lg">
-          Trouver mon logiciel en 1 min
-        </a>
-        <a href="/outils/echeance" class="btn-ghost">
-          Voir mes échéances
-        </a>
+    <div class="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+      <div class="max-w-3xl">
+        <p class="badge-ok">Réforme en vigueur — vérifié sur sources officielles</p>
+        <h1 class="display-title mt-4">
+          <span class="text-gradient">Le bon logiciel de facturation électronique</span>
+          <br />
+          pour votre métier
+        </h1>
+        <p class="prose-measure mt-5 text-lg">
+          Plombier, infirmière libérale, développeur freelance… chaque métier facture différemment.
+          Répondez à 5 questions et obtenez une recommandation fondée sur des faits vérifiés —
+          jamais sur les commissions.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-4">
+          <a href="/outils/quiz" class="btn-cta text-lg">
+            Trouver mon logiciel en 1 min
+          </a>
+          <a href="/outils/echeance" class="btn-ghost">
+            Voir mes échéances
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden w-[400px] lg:block">
+        <HeroIllustration />
       </div>
     </div>
 
@@ -134,8 +156,12 @@ const ETAPES = [
     <ol class="grid gap-4 sm:grid-cols-3">
       {ETAPES.map((e) => (
         <li class="rounded-md border border-border p-4">
-          <p class="text-gradient text-2xl font-extrabold">{e.n}</p>
-          <p class="mt-1 font-bold">{e.titre}</p>
+          <span class="picto-carre">
+            <Picto nom={e.picto} />
+          </span>
+          <p class="mt-3 font-bold">
+            <span class="text-gradient">{e.n}.</span> {e.titre}
+          </p>
           <p class="mt-1 text-sm text-ink-soft">{e.texte}</p>
         </li>
       ))}
@@ -149,7 +175,10 @@ const ETAPES = [
     <ul class="mt-4 grid gap-4 sm:grid-cols-3">
       {PREUVES.map((p) => (
         <li class="card-reco rounded-md border border-border p-4">
-          <p class="font-bold">{p.titre}</p>
+          <span class="picto-carre">
+            <Picto nom={p.picto} />
+          </span>
+          <p class="mt-3 font-bold">{p.titre}</p>
           <p class="mt-1 text-sm text-ink-soft">{p.texte}</p>
           <p class="mt-2 text-sm">
             <a href={p.href}>En savoir plus</a>
@@ -166,10 +195,15 @@ const ETAPES = [
       </h2>
       <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {famillesActives.map((f) => (
-          <li class="card-reco rounded-md border border-border p-3">
-            {f.hub ? <a href={`/metiers/${f.famille}`}>{f.label}</a> : <span>{f.label}</span>}{' '}
-            <span class="text-sm text-ink-soft">
-              · {f.nb} métier{f.nb > 1 ? 's' : ''}
+          <li class="card-reco flex items-center gap-3 rounded-md border border-border p-3">
+            <span class="picto-carre picto-carre-sm">
+              <Picto nom={f.famille} taille={20} />
+            </span>
+            <span>
+              {f.hub ? <a href={`/metiers/${f.famille}`}>{f.label}</a> : <span>{f.label}</span>}{' '}
+              <span class="text-sm text-ink-soft">
+                · {f.nb} métier{f.nb > 1 ? 's' : ''}
+              </span>
             </span>
           </li>
         ))}

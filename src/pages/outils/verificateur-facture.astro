@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import VerificateurFacture from '../../components/islands/VerificateurFacture.tsx';
+import Picto from '../../components/Picto.astro';
 import { SITE } from '../../config';
 import { pageTitle } from '../../lib/seo';
 import { formatDateFr } from '../../lib/dates';
@@ -16,7 +17,12 @@ const mentions = mentionsData.mentions as MentionFacture[];
   description="Cochez les mentions présentes sur votre facture : le vérificateur liste celles qui manquent, avec la règle et la source officielle. Aucune donnée envoyée."
 >
   <Breadcrumb items={[{ label: 'Outils' }, { label: 'Vérificateur de facture' }]} />
-  <h1 class="prose-measure mt-4 text-3xl font-bold">Votre facture est-elle conforme ?</h1>
+  <div class="mt-4 flex items-center gap-4">
+    <span class="picto-carre">
+      <Picto nom="facture" taille={26} />
+    </span>
+    <h1 class="prose-measure text-3xl font-bold">Votre facture est-elle conforme ?</h1>
+  </div>
   <p class="prose-measure mt-3">
     {mentions.length} mentions contrôlées, chacune adossée à une source officielle. Relevé du{' '}
     {formatDateFr(mentionsData.date_releve)}.

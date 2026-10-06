@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import Picto from '../../components/Picto.astro';
 import { FAMILLE_LABELS, type Famille } from '../../lib/familles';
 import { pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
@@ -28,9 +29,14 @@ const metiers = (await getCollection('metiers')).filter((m) => m.data.famille ==
 >
   <Breadcrumb items={[{ label: 'Métiers' }, { label }]} />
 
-  <h1 class="prose-measure mt-4 text-3xl font-bold">
-    Facturation électronique : {label.toLowerCase()}
-  </h1>
+  <div class="mt-4 flex items-center gap-4">
+    <span class="picto-carre">
+      <Picto nom={famille} taille={26} />
+    </span>
+    <h1 class="prose-measure text-3xl font-bold">
+      Facturation électronique : {label.toLowerCase()}
+    </h1>
+  </div>
 
   <section class="prose-measure mt-4 space-y-3">
     {intro.map((p) => (
