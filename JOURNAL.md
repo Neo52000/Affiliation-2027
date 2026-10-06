@@ -107,3 +107,12 @@ Décision : ne jamais écrire « TVA 0 % » en franchise en base — un taux aff
 Incident d'outillage : le rédacteur du lot agriculture-lot3 a inventé sa propre structure, ma consigne décrivant le fichier de sortie sans énumérer les champs. Relancé sur un workflow dédié où le schéma est imposé par l'outil de réponse, pas par la consigne.
 TODO #18 ouvert : un vérificateur n'a pas retrouvé Indy sur la liste officielle des plateformes agréées, alors que les cinq autres outils y figurent — à revérifier à la source avant toute exploitation commerciale.
 Garde-fous : 103 pages construites, 1830 paires comparées, similarité maximale 20,7 % (seuil 50 %), check-seo 100 pages indexables conformes, 77 tests + 6 parcours e2e verts.
+
+## Design v5 — outils, méthode et registre (2026-10-06)
+
+Les trois pages d'outils interactifs portaient encore des styles bruts antérieurs au système : champs sans états, boutons radio par défaut, et un bouton principal en aplat bleu là où tout le site utilise le dégradé. Les quatre îlots Preact sont alignés sur les classes du système (champ, choix, btn-cta, card-top).
+Page quiz, cœur de la conversion : formulaire dans une carte à liseré, choix oui/non en pastilles de 44 px avec état sélectionné lisible (le bouton radio reste visible, la couleur ne porte pas seule l'information), et colonne d'appui qui répond aux objections réelles — comment la recommandation est calculée, pourquoi aucune note n'est encore publiée, où simuler son échéance.
+Page méthode : la pondération des critères devient une jauge par ligne, le pourcentage restant écrit en toutes lettres — l'indépendance du classement se lit d'un coup d'œil.
+Page des plateformes agréées : correction d'un vrai défaut, deux espaces manquants collaient le texte aux liens de provenance (« republiée surdata.gouv.fr ») ; statuts en badges plutôt qu'en texte répété 149 fois ; en-tête de tableau collant au défilement.
+Correctif de test : le garde-fou d'hydratation e2e exigeait que tous les îlots d'une page soient hydratés, ce qui contredit l'intérêt d'un îlot client:visible. Il cible désormais le seul îlot contenant le contrôle manipulé — le test cassait parce que la page avait grandi, pas parce qu'elle était cassée.
+Lighthouse 100/100/100/100 et CLS 0 sur les trois pages retouchées ; 77 tests + 6 parcours e2e verts ; similarité et SEO inchangés.

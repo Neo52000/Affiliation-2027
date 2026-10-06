@@ -25,11 +25,11 @@ const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
 
     <p class="prose-measure mt-4 rounded-md border border-border bg-paper-soft p-4 text-sm">
       <strong>Provenance :</strong> copie du registre DGFiP (état du{' '}
-      {formatDateFr(provenance.date_registre)}) republiée sur
+      {formatDateFr(provenance.date_registre)}) republiée sur{' '}
       <a href={provenance.copie_consultee} rel="noopener">
         data.gouv.fr
       </a>
-      , relevée le {formatDateFr(provenance.date_releve)}. Liste officielle :
+      , relevée le {formatDateFr(provenance.date_releve)}. Liste officielle :{' '}
       <a href={provenance.source_officielle} rel="noopener">
         impots.gouv.fr
       </a>
@@ -50,7 +50,7 @@ const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
     </div>
 
     <div class="table-scroll mt-4">
-      <table class="table-interactive w-full border-collapse text-sm" id="table-pa">
+      <table class="table-interactive table-longue w-full border-collapse text-sm" id="table-pa">
         <thead>
           <tr class="border-b-2 border-border text-left">
             <th scope="col" class="py-2 pr-3">
@@ -79,7 +79,11 @@ const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
                 </a>
               </td>
               <td class="py-2 pr-3">
-                {p.statut === 'immatriculation_definitive' ? 'Immatriculée' : 'En attente d’audit'}
+                {p.statut === 'immatriculation_definitive' ? (
+                  <span class="badge-ok">Immatriculée</span>
+                ) : (
+                  <span class="badge-attente">En attente d’audit</span>
+                )}
               </td>
               <td class="py-2 pr-3">
                 {p.date_immatriculation ? formatDateFr(p.date_immatriculation) : '—'}

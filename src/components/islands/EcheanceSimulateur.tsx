@@ -39,7 +39,7 @@ export default function EcheanceSimulateur({ echeances }: Props) {
           </label>
           <select
             id="sim-taille"
-            class="mt-1 block w-full max-w-md rounded border border-border px-3 py-2"
+            class="champ mt-1"
             value={taille}
             onChange={(e) => {
               setTaille((e.target as HTMLSelectElement).value as Taille);
@@ -56,7 +56,7 @@ export default function EcheanceSimulateur({ echeances }: Props) {
           </label>
           <select
             id="sim-tva"
-            class="mt-1 block w-full max-w-md rounded border border-border px-3 py-2"
+            class="champ mt-1"
             value={tva}
             onChange={(e) => {
               setTva((e.target as HTMLSelectElement).value as SituationTva);
@@ -68,10 +68,7 @@ export default function EcheanceSimulateur({ echeances }: Props) {
             <option value="non-assujetti">Non assujettie</option>
           </select>
         </div>
-        <button
-          type="submit"
-          class="rounded bg-accent px-5 py-2 font-bold text-white hover:bg-accent-dark"
-        >
+        <button type="submit" class="btn-cta text-lg">
           Voir mes échéances
         </button>
       </form>

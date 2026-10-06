@@ -75,10 +75,7 @@ export default function VerificateurFacture({ mentions }: Props) {
         </p>
         <Groupe titre="Mentions toujours obligatoires" liste={socle} />
         <Groupe titre="Mentions selon votre situation" liste={conditionnelles} />
-        <button
-          type="submit"
-          class="mt-5 rounded bg-accent px-5 py-2 font-bold text-white hover:bg-accent-dark"
-        >
+        <button type="submit" class="btn-cta mt-5 text-lg">
           Vérifier ma facture
         </button>
       </form>
@@ -86,7 +83,7 @@ export default function VerificateurFacture({ mentions }: Props) {
       {resultat && (
         <section aria-live="polite" class="mt-8">
           {resultat.complet ? (
-            <p class="rounded border-2 border-accent p-4 font-bold">
+            <p class="card-top rounded-lg border border-border p-4 font-bold">
               Toutes les mentions toujours obligatoires sont présentes. Vérifiez encore les mentions
               conditionnelles ci-dessous si votre situation est concernée.
             </p>

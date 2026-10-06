@@ -6,12 +6,12 @@ import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 
 const PONDERATIONS = [
-  { critere: 'Conformité (plateforme agréée, réforme)', poids: '25 %' },
-  { critere: 'Prix réel sur 12 mois', poids: '20 %' },
-  { critere: 'Simplicité de prise en main', poids: '20 %' },
-  { critere: 'Fonctionnalités utiles au métier', poids: '20 %' },
-  { critere: 'Support', poids: '10 %' },
-  { critere: "Pérennité de l'éditeur", poids: '5 %' },
+  { critere: 'Conformité (plateforme agréée, réforme)', poids: 25 },
+  { critere: 'Prix réel sur 12 mois', poids: 20 },
+  { critere: 'Simplicité de prise en main', poids: 20 },
+  { critere: 'Fonctionnalités utiles au métier', poids: 20 },
+  { critere: 'Support', poids: 10 },
+  { critere: "Pérennité de l'éditeur", poids: 5 },
 ];
 
 const protocole = (await getCollection('tests'))[0]?.data.protocole ?? [];
@@ -51,8 +51,11 @@ const protocole = (await getCollection('tests'))[0]?.data.protocole ?? [];
             <th scope="col" class="py-2 pr-3">
               Critère
             </th>
-            <th scope="col" class="py-2">
+            <th scope="col" class="nombre py-2 pr-3">
               Poids
+            </th>
+            <th scope="col" class="py-2">
+              <span class="sr-only">Représentation du poids</span>
             </th>
           </tr>
         </thead>
@@ -60,7 +63,12 @@ const protocole = (await getCollection('tests'))[0]?.data.protocole ?? [];
           {PONDERATIONS.map((p) => (
             <tr class="border-b border-border">
               <td class="py-2 pr-3">{p.critere}</td>
-              <td class="py-2">{p.poids}</td>
+              <td class="nombre py-2 pr-3">{p.poids} %</td>
+              <td class="w-40 py-2">
+                <span class="jauge" aria-hidden="true">
+                  <span style={`width: ${(p.poids / 25) * 100}%`}></span>
+                </span>
+              </td>
             </tr>
           ))}
         </tbody>
