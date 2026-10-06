@@ -61,15 +61,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), orientée gestion financière et comptabilité, pensée pour travailler avec son expert-comptable, interlocuteur habituel des sociétés de transport pour la TVA et le remboursement d'accise. Elle cible les TPE et PME, format courant du secteur."
+      "justification": "Pennylane cible les TPE et PME, format courant du secteur."
     },
     {
       "slug": "qonto",
-      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), associant compte professionnel et facturation, adaptée aux PME qui encaissent de nombreux règlements B2B. Le suivi conjoint des factures et des paiements aide à surveiller les règlements des donneurs d'ordre."
+      "justification": "Le suivi conjoint des factures et des paiements aide à surveiller les règlements des donneurs d'ordre."
     },
     {
       "slug": "shine",
-      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), réunissant compte pro en ligne et facturation, adaptée à un artisan transporteur ou une TPE qui démarre. Elle permet d'émettre les factures de fret sans multiplier les outils."
+      "justification": "Shine permet d'émettre les factures de fret sans multiplier les outils."
     }
   ],
   "faq": [

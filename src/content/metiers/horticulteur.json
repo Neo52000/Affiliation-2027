@@ -87,15 +87,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP qui associe un compte professionnel et la facturation, pour les PME et les indépendants. Elle correspond à une pépinière qui gère en parallèle des encaissements au détail et des commandes professionnelles et publiques."
+      "justification": "Qonto correspond à une pépinière qui gère en parallèle des encaissements au détail et des commandes professionnelles et publiques."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée par la DGFiP, orientée gestion financière et comptabilité partagée avec un cabinet. Pertinente pour une exploitation horticole en société dont le catalogue compte plusieurs centaines de références à deux taux et dont les marchés de fleurissement se soldent sur plusieurs livraisons échelonnées, avec un expert-comptable qui suit la campagne."
+      "justification": "Pertinente pour une exploitation horticole en société dont le catalogue compte plusieurs centaines de références à deux taux et dont les marchés de fleurissement se soldent sur plusieurs livraisons échelonnées, avec un expert-comptable qui suit la campagne."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP réunissant facturation et comptabilité pour les TPE et les indépendants. Adaptée à une structure qui veut éditer ses commandes et conserver ses pièces au même endroit."
+      "justification": "Adaptée à une structure qui veut éditer ses commandes et conserver ses pièces au même endroit."
     }
   ],
   "faq": [

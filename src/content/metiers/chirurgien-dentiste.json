@@ -56,15 +56,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Pennylane, plateforme agréée, associe gestion financière et comptabilité et est pensée pour travailler avec un expert-comptable. Un cabinet dentaire qui délègue sa comptabilité y partage directement ses pièces."
+      "justification": "Un cabinet dentaire qui délègue sa comptabilité y partage directement ses pièces."
     },
     {
       "slug": "qonto",
-      "justification": "Qonto, plateforme agréée, réunit compte professionnel et facturation pour PME et indépendants. Le cabinet y suit sur un même espace ses encaissements et la réception des factures de ses fournisseurs."
+      "justification": "Le cabinet y suit sur un même espace ses encaissements et la réception des factures de ses fournisseurs."
     },
     {
       "slug": "tiime",
-      "justification": "Tiime, plateforme agréée, propose facturation et comptabilité pour indépendants et TPE. Format adapté à un praticien exerçant seul qui centralise notes d'honoraires et pièces comptables."
+      "justification": "Format adapté à un praticien exerçant seul qui centralise notes d'honoraires et pièces comptables."
     }
   ],
   "faq": [

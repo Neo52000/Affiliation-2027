@@ -61,15 +61,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Elle associe facturation et gestion, avec pour cible les indépendants et micro-entrepreneurs. Ce périmètre correspond aux forfaits mensuels récurrents et au suivi client du métier."
+      "justification": "Abby associe facturation et gestion, avec pour cible les indépendants et micro-entrepreneurs. Ce périmètre correspond aux forfaits mensuels récurrents et au suivi client du métier."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Elle réunit facturation et comptabilité pour les indépendants, freelances et micro-entrepreneurs. Utile quand l'activité d'animation devient régulière et que le suivi comptable se structure."
+      "justification": "Tiime réunit facturation et comptabilité pour les indépendants, freelances et micro-entrepreneurs. Utile quand l'activité d'animation devient régulière et que le suivi comptable se structure."
     },
     {
       "slug": "shine",
-      "justification": "Compte professionnel en ligne avec facturation, sur une plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. L'offre vise les indépendants, freelances et TPE : le rapprochement entre forfaits facturés et encaissements se fait au même endroit."
+      "justification": "L'offre vise les indépendants, freelances et TPE : le rapprochement entre forfaits facturés et encaissements se fait au même endroit."
     }
   ],
   "faq": [

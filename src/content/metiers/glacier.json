@@ -61,15 +61,15 @@
   "outils_recommandes": [
     {
       "slug": "shine",
-      "justification": "Compte professionnel en ligne avec facturation, figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), destiné aux indépendants, freelances et TPE. Adapté à une activité saisonnière qui veut encaisser et facturer depuis un seul outil."
+      "justification": "Adapté à une activité saisonnière qui veut encaisser et facturer depuis un seul outil."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), combinant comptabilité, compte pro et facturation pour les indépendants. Utile à un glacier qui tient seul ses comptes, notamment hors saison."
+      "justification": "Utile à un glacier qui tient seul ses comptes, notamment hors saison."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), de facturation et de gestion pour indépendants et micro-entrepreneurs. Convient à un glacier exerçant en micro-entreprise avec un volume de factures concentré sur quelques mois."
+      "justification": "Convient à un glacier exerçant en micro-entreprise avec un volume de factures concentré sur quelques mois."
     }
   ],
   "faq": [

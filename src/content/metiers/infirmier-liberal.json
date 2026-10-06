@@ -53,15 +53,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Indy est une plateforme agréée DGFiP qui combine comptabilité, compte pro et facturation pour les indépendants. Ce périmètre couvre la tenue comptable d'une activité libérale et la réception des factures électroniques des fournisseurs."
+      "justification": "Son périmètre couvre la tenue comptable d'une activité libérale et la réception des factures électroniques des fournisseurs."
     },
     {
       "slug": "abby",
-      "justification": "Abby est une plateforme agréée DGFiP de facturation et de gestion destinée aux indépendants et micro-entrepreneurs. Elle correspond au profil d'un infirmier en micro-BNC qui émet peu de factures mais doit pouvoir en recevoir au format électronique."
+      "justification": "Abby correspond au profil d'un infirmier en micro-BNC qui émet peu de factures mais doit pouvoir en recevoir au format électronique."
     },
     {
       "slug": "tiime",
-      "justification": "Tiime est une plateforme agréée DGFiP qui réunit facturation et comptabilité, avec pour cible les indépendants, freelances et micro-entrepreneurs. Elle couvre l'émission des notes d'honoraires et le suivi des recettes dans un même outil."
+      "justification": "Tiime couvre l'émission des notes d'honoraires et le suivi des recettes dans un même outil."
     }
   ],
   "faq": [

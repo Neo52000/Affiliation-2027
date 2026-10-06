@@ -55,15 +55,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP qui associe facturation et comptabilité pour les indépendants et TPE. Ce socle permet de suivre ensemble notes d'honoraires exonérées et achats du cabinet."
+      "justification": "Réunir facturation et comptabilité permet de suivre ensemble notes d'honoraires exonérées et achats du cabinet."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP offrant compte professionnel et facturation, pour les indépendants comme les PME. Un compte dédié aide à distinguer les virements des caisses en tiers payant des règlements directs des patientes."
+      "justification": "Un compte dédié aide à distinguer les virements des caisses en tiers payant des règlements directs des patientes."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme agréée DGFiP orientée facturation et gestion pour les indépendants et micro-entrepreneurs. Elle s'adresse notamment à un début d'activité libérale, par exemple en collaboration."
+      "justification": "Abby s'adresse notamment à un début d'activité libérale, par exemple en collaboration."
     }
   ],
   "faq": [

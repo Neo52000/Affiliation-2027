@@ -71,15 +71,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), qui associe gestion financière et comptabilité et se travaille avec votre expert-comptable. Utile quand des contrats mensuels multi-sites génèrent un flux régulier d'écritures à transmettre au cabinet."
+      "justification": "Utile quand des contrats mensuels multi-sites génèrent un flux régulier d'écritures à transmettre au cabinet."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), combinant compte professionnel et facturation, avec une cible PME et indépendants. Le rapprochement entre factures mensuelles émises et encaissements B2B se fait depuis le même environnement."
+      "justification": "Le rapprochement entre factures mensuelles émises et encaissements B2B se fait depuis le même environnement."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), proposant compte pro en ligne et facturation, orientée indépendants, freelances et TPE. Adaptée à une petite structure de nettoyage qui veut centraliser émission des factures et suivi bancaire."
+      "justification": "Adaptée à une petite structure de nettoyage qui veut centraliser émission des factures et suivi bancaire."
     }
   ],
   "faq": [

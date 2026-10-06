@@ -54,15 +54,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée DGFiP de facturation et de gestion, ciblant les indépendants et micro-entrepreneurs. Ce positionnement correspond aux notes d'honoraires B2C répétées d'un cabinet d'ostéopathie, y compris en micro-BNC."
+      "justification": "Son positionnement correspond aux notes d'honoraires B2C répétées d'un cabinet d'ostéopathie, y compris en micro-BNC."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée DGFiP combinant compte pro en ligne et facturation, pour les indépendants, freelances et TPE. Utile quand les encaissements se font consultation par consultation, directement auprès des patients."
+      "justification": "Utile quand les encaissements se font consultation par consultation, directement auprès des patients."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée DGFiP destinée aux indépendants, avec comptabilité, compte pro et facturation. Elle couvre la tenue du BNC et l'émission des notes d'honoraires dans un même outil."
+      "justification": "Indy couvre la tenue du BNC et l'émission des notes d'honoraires dans un même outil."
     }
   ],
   "faq": [

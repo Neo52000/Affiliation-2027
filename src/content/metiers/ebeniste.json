@@ -68,15 +68,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), orientée gestion financière et comptabilité, conçue pour travailler avec un expert-comptable. Pertinente si votre atelier confie ses comptes à un cabinet et traite de nombreuses factures fournisseurs de bois et de quincaillerie."
+      "justification": "Pertinente si votre atelier confie ses comptes à un cabinet et traite de nombreuses factures fournisseurs de bois et de quincaillerie."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), associant compte professionnel et facturation, destinée aux PME et aux indépendants. Utile pour suivre au même endroit les acomptes encaissés à la commande et les factures de solde."
+      "justification": "Utile pour suivre au même endroit les acomptes encaissés à la commande et les factures de solde."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), combinant facturation et comptabilité, destinée aux indépendants, freelances, TPE et micro-entrepreneurs. Adaptée à un ébéniste travaillant seul, y compris en franchise en base."
+      "justification": "Adaptée à un ébéniste travaillant seul, y compris en franchise en base."
     }
   ],
   "faq": [

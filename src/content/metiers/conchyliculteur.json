@@ -68,15 +68,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP qui réunit le compte professionnel et la facturation, utile quand les encaissements de l'étal et les virements des mareyeurs arrivent sur le même compte. Son positionnement vise les PME et les indépendants."
+      "justification": "Son positionnement vise les PME et les indépendants."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP qui relie la facturation et la comptabilité, adaptée à une exploitation qui émet des factures professionnelles par séries pendant la saison. Elle s'adresse aux indépendants, aux freelances, aux TPE et aux micro-entrepreneurs."
+      "justification": "Tiime s'adresse aux indépendants, aux freelances, aux TPE et aux micro-entrepreneurs."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée DGFiP qui regroupe comptabilité, compte professionnel et facturation pour un exploitant qui travaille seul. Le périmètre couvre l'ensemble sans passer par plusieurs abonnements."
+      "justification": "Le périmètre couvre l'ensemble sans passer par plusieurs abonnements."
     }
   ],
   "faq": [

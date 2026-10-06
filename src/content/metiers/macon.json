@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée par la DGFiP, construite pour travailler main dans la main avec son expert-comptable, ce qui compte quand situations, acomptes et retenues de garantie compliquent le suivi. Elle cible les TPE et PME, profil fréquent des entreprises de maçonnerie."
+      "justification": "Pennylane cible les TPE et PME, profil fréquent des entreprises de maçonnerie."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée par la DGFiP qui combine compte professionnel et facturation, pour PME et indépendants. Le compte dédié centralise des encaissements échelonnés sur plusieurs mois de chantier."
+      "justification": "Le compte dédié centralise des encaissements échelonnés sur plusieurs mois de chantier."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par la DGFiP associant facturation et comptabilité, destinée aux indépendants, TPE et micro-entrepreneurs. Convient au maçon à son compte qui veut tenir ses pièces de facturation et sa comptabilité au même endroit."
+      "justification": "Convient au maçon à son compte qui veut tenir ses pièces de facturation et sa comptabilité au même endroit."
     }
   ],
   "faq": [

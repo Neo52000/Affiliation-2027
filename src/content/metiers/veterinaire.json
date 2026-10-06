@@ -61,15 +61,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Qonto, plateforme agréée, combine compte professionnel et facturation pour PME et indépendants. Une clinique qui encaisse quotidiennement et facture des éleveurs y suit les deux flux au même endroit."
+      "justification": "Une clinique qui encaisse quotidiennement et facture des éleveurs y suit les deux flux au même endroit."
     },
     {
       "slug": "pennylane",
-      "justification": "Pennylane, plateforme agréée, couvre gestion financière et comptabilité en lien avec un expert-comptable. Pertinent pour une structure vétérinaire dont le volume de pièces et la TVA multi-taux exigent un suivi comptable serré."
+      "justification": "Pertinent pour une structure vétérinaire dont le volume de pièces et la TVA multi-taux exigent un suivi comptable serré."
     },
     {
       "slug": "shine",
-      "justification": "Shine, plateforme agréée, propose un compte professionnel en ligne avec facturation, pour indépendants, freelances et TPE. Un praticien exerçant seul y gère facturation et encaissements sans multiplier les outils."
+      "justification": "Un praticien exerçant seul y gère facturation et encaissements sans multiplier les outils."
     }
   ],
   "faq": [

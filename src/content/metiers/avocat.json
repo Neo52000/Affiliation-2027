@@ -64,15 +64,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Indy cible les indépendants et réunit comptabilité, compte pro et facturation, ce qui correspond à l'avocat exerçant en entreprise individuelle (BNC). La plateforme est agréée par la DGFiP pour la facturation électronique."
+      "justification": "Indy cible les indépendants et réunit comptabilité, compte pro et facturation, ce qui correspond à l'avocat exerçant en entreprise individuelle (BNC)."
     },
     {
       "slug": "pennylane",
-      "justification": "Pennylane est conçu pour travailler avec son expert-comptable, configuration courante des cabinets constitués en société (SELARL, SELAS). La plateforme est agréée par la DGFiP et couvre gestion financière et comptabilité."
+      "justification": "Pennylane est conçu pour travailler avec son expert-comptable, configuration courante des cabinets constitués en société (SELARL, SELAS)."
     },
     {
       "slug": "qonto",
-      "justification": "Qonto associe compte professionnel et facturation, ce qui aide un cabinet à séparer les encaissements d'honoraires de ses autres flux. La plateforme est agréée par la DGFiP et s'adresse aux PME comme aux indépendants."
+      "justification": "Qonto associe compte professionnel et facturation, ce qui aide un cabinet à séparer les encaissements d'honoraires de ses autres flux."
     }
   ],
   "faq": [

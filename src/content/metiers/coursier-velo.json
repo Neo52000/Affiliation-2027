@@ -60,15 +60,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Outil de facturation et de gestion destiné aux indépendants et micro-entrepreneurs, profil qui correspond au statut dominant chez les coursiers à vélo. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+      "justification": "Outil de facturation et de gestion destiné aux indépendants et micro-entrepreneurs, profil qui correspond au statut dominant chez les coursiers à vélo."
     },
     {
       "slug": "indy",
-      "justification": "Outil réunissant comptabilité, compte professionnel et facturation pour les indépendants, utile quand vous voulez un seul endroit pour facturer les plateformes et suivre vos encaissements. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+      "justification": "Outil réunissant comptabilité, compte professionnel et facturation pour les indépendants, utile quand vous voulez un seul endroit pour facturer les plateformes et suivre vos encaissements."
     },
     {
       "slug": "shine",
-      "justification": "Compte professionnel en ligne avec facturation intégrée, adapté à une activité pilotée depuis un mobile, en tournée. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+      "justification": "Compte professionnel en ligne avec facturation intégrée, adapté à une activité pilotée depuis un mobile, en tournée."
     }
   ],
   "faq": [

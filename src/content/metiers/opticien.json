@@ -64,15 +64,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Orientée gestion financière et comptabilité, elle est pensée pour travailler avec votre expert-comptable. Un appui utile quand la ventilation liée au tiers payant alourdit la comptabilité du magasin."
+      "justification": "Orientée gestion financière et comptabilité, elle est pensée pour travailler avec votre expert-comptable. Un appui utile quand la ventilation liée au tiers payant alourdit la comptabilité du magasin."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle réunit facturation et comptabilité pour les TPE et peut couvrir vos rares factures à des clients professionnels ainsi que la réception de celles de vos fournisseurs."
+      "justification": "Tiime réunit facturation et comptabilité pour les TPE et peut couvrir vos rares factures à des clients professionnels ainsi que la réception de celles de vos fournisseurs."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle associe compte professionnel et facturation, pour PME et indépendants. Pertinente si vous souhaitez regrouper encaissements du magasin et factures fournisseurs au même endroit."
+      "justification": "Qonto associe compte professionnel et facturation, pour PME et indépendants. Pertinente si vous souhaitez regrouper encaissements du magasin et factures fournisseurs au même endroit."
     }
   ],
   "faq": [

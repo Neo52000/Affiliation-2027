@@ -57,15 +57,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), réunissant comptabilité, compte pro et facturation pour les indépendants, statut fréquent chez les livreurs sous-traitants. Un seul outil pour rapprocher les virements des donneurs d'ordre et les pièces comptables."
+      "justification": "Un seul outil pour rapprocher les virements des donneurs d'ordre et les pièces comptables."
     },
     {
       "slug": "shine",
-      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), combinant compte professionnel en ligne et facturation, utilisable par un indépendant ou une TPE. Utile pour vérifier que chaque facture mensuelle de tournées correspond bien à un règlement reçu."
+      "justification": "Utile pour vérifier que chaque facture mensuelle de tournées correspond bien à un règlement reçu."
     },
     {
       "slug": "abby",
-      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), dédiée à la facturation et à la gestion des indépendants et micro-entrepreneurs. Elle convient à un livreur en franchise en base qui doit produire des factures conformes sans TVA."
+      "justification": "Abby convient à un livreur en franchise en base qui doit produire des factures conformes sans TVA."
     }
   ],
   "faq": [

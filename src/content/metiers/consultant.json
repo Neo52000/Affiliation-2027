@@ -66,15 +66,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Offre réunissant comptabilité, compte professionnel et facturation pour les indépendants. Couvre l'essentiel d'une activité de conseil exercée en solo."
+      "justification": "Offre réunissant comptabilité, compte professionnel et facturation pour les indépendants. Couvre l'essentiel d'une activité de conseil exercée en solo."
     },
     {
       "slug": "abby",
-      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution de facturation et de gestion destinée aux indépendants et micro-entrepreneurs. Pertinente si vous démarrez en micro-entreprise, y compris sous franchise en base."
+      "justification": "Solution de facturation et de gestion destinée aux indépendants et micro-entrepreneurs. Pertinente si vous démarrez en micro-entreprise, y compris sous franchise en base."
     },
     {
       "slug": "tiime",
-      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution associant facturation et comptabilité pour freelances et TPE. Utile quand vos missions au TJM s'accompagnent d'un suivi comptable régulier."
+      "justification": "Solution associant facturation et comptabilité pour freelances et TPE. Utile quand vos missions au TJM s'accompagnent d'un suivi comptable régulier."
     }
   ],
   "faq": [

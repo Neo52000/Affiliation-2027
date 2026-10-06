@@ -65,15 +65,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée DGFiP orientée facturation et gestion pour les indépendants et micro-entrepreneurs, profils fréquents en institut. Elle couvre l'édition des notes et factures au quotidien. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+      "justification": "Abby couvre l'édition des notes et factures au quotidien."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP qui réunit facturation et comptabilité pour les indépendants, freelances, TPE et micro-entrepreneurs. Utile si vous tenez vous-même votre suivi comptable en plus de la caisse. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+      "justification": "Utile si vous tenez vous-même votre suivi comptable en plus de la caisse."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée DGFiP combinant compte professionnel en ligne et facturation, pensée pour les indépendants et TPE. Un seul outil pour le compte qui reçoit vos encaissements et l'émission de vos documents. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+      "justification": "Un seul outil pour le compte qui reçoit vos encaissements et l'émission de vos documents."
     }
   ],
   "faq": [

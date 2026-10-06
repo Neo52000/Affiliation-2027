@@ -1,0 +1,51 @@
+---
+/**
+ * Statut de plateforme agréée d'un outil, rendu depuis la donnée canonique de
+ * src/content/outils/*.json — jamais réécrit à la main.
+ *
+ * Cette affirmation est réglementaire : elle était auparavant reformulée en
+ * texte libre dans les 300 justifications d'outils des pages métier, qui
+ * avaient dérivé en 225 formulations distinctes. Une seule source, un seul
+ * rendu, un seul endroit à corriger quand le registre évolue (TODO.md #9, #18).
+ */
+import { formatDateFr } from '../lib/dates';
+
+interface Props {
+  statut: {
+    valeur: boolean;
+    date_immatriculation: string | null;
+    source: string | null;
+  };
+  nom: string;
+  /** `compact` sous une carte de recommandation, `complet` sur une fiche outil. */
+  variante?: 'compact' | 'complet';
+}
+
+const { statut, nom, variante = 'compact' } = Astro.props;
+---
+
+{statut.valeur ? (
+  <p class="mt-2 text-sm">
+    <span class="badge-ok">Plateforme agréée</span>{' '}
+    <span class="text-ink-soft">
+      d'après le{' '}
+      {statut.source ? (
+        <a href={statut.source} rel="noopener">
+          registre DGFiP
+        </a>
+      ) : (
+        <>registre DGFiP</>
+      )}
+      {statut.date_immatriculation ? (
+        <>, immatriculée le {formatDateFr(statut.date_immatriculation)}.</>
+      ) : (
+        <>. Date d'immatriculation en cours de relevé à la source.</>
+      )}
+    </span>
+  </p>
+) : (
+  <p class="mt-2 text-sm text-ink-soft">
+    {nom} n'est pas lui-même une plateforme agréée
+    {variante === 'complet' ? " : vos factures transitent par la plateforme d'un tiers." : '.'}
+  </p>
+)}

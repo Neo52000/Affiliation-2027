@@ -67,15 +67,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Offre réunissant compte professionnel et facturation, pour PME et indépendants. Adaptée à un cabinet qui encaisse des quotes-parts de particuliers et des règlements d'acheteurs publics."
+      "justification": "Offre réunissant compte professionnel et facturation, pour PME et indépendants. Adaptée à un cabinet qui encaisse des quotes-parts de particuliers et des règlements d'acheteurs publics."
     },
     {
       "slug": "pennylane",
-      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution de gestion financière et de comptabilité, conçue pour travailler avec votre expert-comptable. Pertinente pour un cabinet structuré en société avec des dossiers facturés en plusieurs temps."
+      "justification": "Solution de gestion financière et de comptabilité, conçue pour travailler avec votre expert-comptable. Pertinente pour un cabinet structuré en société avec des dossiers facturés en plusieurs temps."
     },
     {
       "slug": "shine",
-      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Compte professionnel en ligne avec facturation, destiné aux indépendants, freelances et TPE. Convient à un géomètre-expert exerçant seul ou en petite équipe."
+      "justification": "Compte professionnel en ligne avec facturation, destiné aux indépendants, freelances et TPE. Convient à un géomètre-expert exerçant seul ou en petite équipe."
     }
   ],
   "faq": [

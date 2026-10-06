@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), orientée gestion financière et comptabilité, conçue pour travailler avec votre expert-comptable. Adaptée à une boulangerie (TPE) qui confie ses comptes à un cabinet tout en facturant elle-même ses clients professionnels."
+      "justification": "Adaptée à une boulangerie (TPE) qui confie ses comptes à un cabinet tout en facturant elle-même ses clients professionnels."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), qui combine compte professionnel et facturation, pour PME et indépendants. Utile pour encaisser les règlements des restaurants livrés et émettre les factures depuis le même outil."
+      "justification": "Utile pour encaisser les règlements des restaurants livrés et émettre les factures depuis le même outil."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), associant facturation et comptabilité, à destination des indépendants et TPE. Convient à un artisan qui émet des factures régulières aux mêmes clients professionnels."
+      "justification": "Convient à un artisan qui émet des factures régulières aux mêmes clients professionnels."
     }
   ],
   "faq": [

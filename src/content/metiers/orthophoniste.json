@@ -54,15 +54,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Plateforme agréée DGFiP qui réunit comptabilité, compte pro et facturation pour les indépendants. Ce périmètre correspond à un exercice libéral en BNC où la facturation côté patients reste simple."
+      "justification": "Son périmètre correspond à un exercice libéral en BNC où la facturation côté patients reste simple."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP associant facturation et comptabilité, conçue pour les indépendants et les TPE. Elle couvre l'édition des notes d'honoraires et la tenue comptable d'un cabinet individuel."
+      "justification": "Tiime couvre l'édition des notes d'honoraires et la tenue comptable d'un cabinet individuel."
     },
     {
       "slug": "shine",
-      "justification": "Compte professionnel en ligne avec facturation, sur une plateforme agréée DGFiP ciblant les indépendants et freelances. Un compte dédié aide à distinguer les virements des caisses des règlements directs des patients."
+      "justification": "Un compte dédié aide à distinguer les virements des caisses des règlements directs des patients."
     }
   ],
   "faq": [

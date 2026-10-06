@@ -51,15 +51,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Solution orientée gestion financière et comptabilité, pensée pour que vous travailliez avec votre expert-comptable. Sa cible TPE et PME correspond aux sociétés d'autocars qui emploient des conducteurs et sont suivies en cabinet. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+      "justification": "Solution orientée gestion financière et comptabilité, pensée pour que vous travailliez avec votre expert-comptable. Sa cible TPE et PME correspond aux sociétés d'autocars qui emploient des conducteurs et sont suivies en cabinet."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel associé à un module de facturation, avec une cible PME et indépendants. Utile pour encaisser vos marchés et suivre la trésorerie de votre flotte. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+      "justification": "Compte professionnel associé à un module de facturation, avec une cible PME et indépendants. Utile pour encaisser vos marchés et suivre la trésorerie de votre flotte."
     },
     {
       "slug": "tiime",
-      "justification": "Outil combinant facturation et comptabilité pour indépendants et TPE. Il convient si vous exploitez seul votre autocar ou au sein d'une petite structure familiale. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+      "justification": "Outil combinant facturation et comptabilité pour indépendants et TPE. Il convient si vous exploitez seul votre autocar ou au sein d'une petite structure familiale."
     }
   ],
   "faq": [

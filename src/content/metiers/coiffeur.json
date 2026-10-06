@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée orientée facturation et gestion pour les indépendants et micro-entrepreneurs, un positionnement adapté à la coiffure à domicile. Elle répond au besoin d'éditer des notes conformes et de suivre l'activité en franchise en base."
+      "justification": "Abby répond au besoin d'éditer des notes conformes et de suivre l'activité en franchise en base."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée qui associe facturation et comptabilité pour les indépendants, TPE et micro-entrepreneurs. Ce périmètre convient à un salon qui veut suivre au même endroit ses prestations et ses ventes de produits."
+      "justification": "Son périmètre convient à un salon qui veut suivre au même endroit ses prestations et ses ventes de produits."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée combinant compte professionnel en ligne et facturation, pour les indépendants, freelances et TPE. Elle permet de centraliser encaissements et documents de vente d'un salon ou d'une activité à domicile."
+      "justification": "Shine permet de centraliser encaissements et documents de vente d'un salon ou d'une activité à domicile."
     }
   ],
   "faq": [

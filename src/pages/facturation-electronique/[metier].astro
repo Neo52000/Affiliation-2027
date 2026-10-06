@@ -6,6 +6,7 @@ import AffiliateButton from '../../components/AffiliateButton.astro';
 import ExempleFacture from '../../components/ExempleFacture.astro';
 import ComparatifCourt from '../../components/ComparatifCourt.astro';
 import Picto from '../../components/Picto.astro';
+import StatutPlateforme from '../../components/StatutPlateforme.astro';
 import { FAMILLE_LABELS } from '../../lib/familles';
 import { formatDateFr } from '../../lib/dates';
 import { metierDescription, metierTitle } from '../../lib/seo';
@@ -193,6 +194,7 @@ const faqJsonLd = {
                 <span class="pill ml-2 align-middle font-normal">Test en cours</span>
               </p>
               <p class="prose-measure mt-1">{justification}</p>
+              <StatutPlateforme statut={outil.data.est_plateforme_agreee} nom={outil.data.nom} />
               <div class="mt-3">
                 <AffiliateButton
                   outil={outil.data.slug}

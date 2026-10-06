@@ -63,15 +63,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation réunis, pour PME et indépendants, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Un cadre adapté à une agence qui encaisse des acomptes échelonnés sur plusieurs mois."
+      "justification": "Un cadre adapté à une agence qui encaisse des acomptes échelonnés sur plusieurs mois."
     },
     {
       "slug": "shine",
-      "justification": "Compte professionnel en ligne et facturation, ciblés indépendants, freelances et TPE. Un format qui correspond à l'architecte exerçant seul ou en petite structure. Vérifiez sur la liste publiée par la DGFiP si l'éditeur est immatriculé comme plateforme de dématérialisation partenaire, ou par quelle plateforme il transmet vos factures."
+      "justification": "Compte professionnel en ligne et facturation, ciblés indépendants, freelances et TPE. Un format qui correspond à l'architecte exerçant seul ou en petite structure."
     },
     {
       "slug": "pennylane",
-      "justification": "Outil de gestion financière et de comptabilité, pensé pour travailler avec son expert-comptable, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Utile quand l'agence confie ses comptes à un cabinet et veut partager les mêmes données."
+      "justification": "Utile quand l'agence confie ses comptes à un cabinet et veut partager les mêmes données."
     }
   ],
   "faq": [

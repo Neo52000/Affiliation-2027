@@ -117,15 +117,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée par l'administration fiscale, centrée sur la facturation et la gestion des indépendants et micro-entrepreneurs, périmètre qui correspond aux statuts listés plus haut pour ce métier."
+      "justification": "Outil centré sur la facturation et la gestion des indépendants et micro-entrepreneurs, périmètre qui correspond aux statuts listés plus haut pour ce métier."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée combinant compte pro en ligne et facturation pour les indépendants et freelances. Utile pour rapprocher les encaissements de clients multiples des factures récapitulatives émises."
+      "justification": "Utile pour rapprocher les encaissements de clients multiples des factures récapitulatives émises."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée réunissant comptabilité, compte pro et facturation pour les indépendants. Ce périmètre aide à tenir le suivi des recettes BNC tout au long de l'année."
+      "justification": "Son périmètre aide à tenir le suivi des recettes BNC tout au long de l'année."
     }
   ],
   "faq": [

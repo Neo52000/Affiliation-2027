@@ -65,15 +65,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée par la DGFiP dédiée à la facturation et à la gestion des indépendants et des micro-entrepreneurs, statuts fréquents chez les chefs à domicile. Ce périmètre resserré correspond à une activité exercée seul, sans fonction administrative dédiée."
+      "justification": "Son périmètre resserré correspond à une activité exercée seul, sans fonction administrative dédiée."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par la DGFiP réunissant facturation et comptabilité pour les indépendants et les micro-entrepreneurs, statuts les plus fréquents chez les chefs à domicile. Le même outil porte le devis obligatoire au-delà de 100 € TTC par mois, la facture d'acompte et la facture de solde, sans ressaisie entre les trois documents."
+      "justification": "Le même outil porte le devis obligatoire au-delà de 100 € TTC par mois, la facture d'acompte et la facture de solde, sans ressaisie entre les trois documents."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée par la DGFiP associant un compte professionnel en ligne et la facturation, pour les indépendants, les freelances et les TPE. Les acomptes encaissés et les factures émises se consultent depuis le même espace."
+      "justification": "Les acomptes encaissés et les factures émises se consultent depuis le même espace."
     }
   ],
   "faq": [

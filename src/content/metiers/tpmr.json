@@ -50,15 +50,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Outil dédié à la facturation et à la gestion des indépendants et micro-entrepreneurs. Il correspond aux conducteurs TPMR en franchise en base qui facturent familles et établissements. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+      "justification": "Outil dédié à la facturation et à la gestion des indépendants et micro-entrepreneurs. Il correspond aux conducteurs TPMR en franchise en base qui facturent familles et établissements."
     },
     {
       "slug": "indy",
-      "justification": "Outil qui regroupe comptabilité, compte professionnel et facturation pour les indépendants. Un choix cohérent si vous gérez seul votre activité de transport adapté. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+      "justification": "Outil qui regroupe comptabilité, compte professionnel et facturation pour les indépendants. Un choix cohérent si vous gérez seul votre activité de transport adapté."
     },
     {
       "slug": "tiime",
-      "justification": "Outil associant facturation et comptabilité, ciblé indépendants, micro-entrepreneurs et TPE. Ce périmètre couvre les petites structures de transport adapté. Vérifiez son immatriculation comme plateforme de dématérialisation partenaire dans la liste publiée par l'administration fiscale avant de vous engager."
+      "justification": "Outil associant facturation et comptabilité, ciblé indépendants, micro-entrepreneurs et TPE. Ce périmètre couvre les petites structures de transport adapté."
     }
   ],
   "faq": [

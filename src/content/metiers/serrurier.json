@@ -60,15 +60,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par la DGFiP combinant facturation et comptabilité, ciblant les indépendants et TPE. Ce périmètre couvre l'activité mixte du serrurier, dépannage au fil de l'eau et chantiers de pose, avec la préparation comptable qui suit."
+      "justification": "Son périmètre couvre l'activité mixte du serrurier, dépannage au fil de l'eau et chantiers de pose, avec la préparation comptable qui suit."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme agréée par la DGFiP orientée facturation et gestion, conçue pour les indépendants et micro-entrepreneurs. Elle correspond au profil du serrurier en entreprise individuelle ou micro-entreprise qui doit facturer simplement tout en restant conforme à la réforme."
+      "justification": "Abby correspond au profil du serrurier en entreprise individuelle ou micro-entreprise qui doit facturer simplement tout en restant conforme à la réforme."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée par la DGFiP associant compte professionnel et facturation, pour PME et indépendants. Le compte professionnel intégré facilite le rapprochement entre les nombreuses petites factures de dépannage et les paiements reçus."
+      "justification": "Le compte professionnel intégré facilite le rapprochement entre les nombreuses petites factures de dépannage et les paiements reçus."
     }
   ],
   "faq": [

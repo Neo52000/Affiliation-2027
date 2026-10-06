@@ -60,15 +60,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Opérateur réunissant compte professionnel et facturation, pour PME et indépendants. Adapté à une boutique qui gère des encaissements quotidiens et quelques factures à des clients professionnels. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+      "justification": "Opérateur réunissant compte professionnel et facturation, pour PME et indépendants. Adapté à une boutique qui gère des encaissements quotidiens et quelques factures à des clients professionnels."
     },
     {
       "slug": "shine",
-      "justification": "Opérateur de compte professionnel en ligne et de facturation, pour indépendants, freelances et TPE. Un format léger pour une boutique indépendante. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+      "justification": "Opérateur de compte professionnel en ligne et de facturation, pour indépendants, freelances et TPE. Un format léger pour une boutique indépendante."
     },
     {
       "slug": "tiime",
-      "justification": "Opérateur associant facturation et comptabilité, ciblé indépendants et TPE. Utile pour relier les ventes de la boutique à la tenue comptable. Vérifiez son statut d'immatriculation, et s'il est définitif ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+      "justification": "Opérateur associant facturation et comptabilité, ciblé indépendants et TPE. Utile pour relier les ventes de la boutique à la tenue comptable."
     }
   ],
   "faq": [

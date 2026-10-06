@@ -55,15 +55,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Outil de gestion financière et de comptabilité conçu pour travailler avec un expert-comptable, utile à une société de transport sanitaire qui doit ventiler opérations exonérées et courses taxées à 10 %. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+      "justification": "Outil de gestion financière et de comptabilité conçu pour travailler avec un expert-comptable, utile à une société de transport sanitaire qui doit ventiler opérations exonérées et courses taxées à 10 %."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel assorti d'une fonction de facturation, orienté PME et indépendants ; utile pour suivre les virements du tiers payant et les encaissements patients au même endroit. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+      "justification": "Compte professionnel assorti d'une fonction de facturation, orienté PME et indépendants ; utile pour suivre les virements du tiers payant et les encaissements patients au même endroit."
     },
     {
       "slug": "tiime",
-      "justification": "Outil de facturation et de comptabilité pour TPE, qui convient à une petite entreprise d'ambulances souhaitant centraliser factures patients et pièces comptables. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+      "justification": "Outil de facturation et de comptabilité pour TPE, qui convient à une petite entreprise d'ambulances souhaitant centraliser factures patients et pièces comptables."
     }
   ],
   "faq": [

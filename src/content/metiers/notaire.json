@@ -64,15 +64,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation réunis, orientés PME et indépendants, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Le périmètre utile se limite aux honoraires libres de l'office et à ses dépenses propres ; les fonds reçus pour le compte des clients restent gérés dans le cadre de la comptabilité notariale et des circuits prévus pour le maniement de fonds."
+      "justification": "Le périmètre utile se limite aux honoraires libres de l'office et à ses dépenses propres ; les fonds reçus pour le compte des clients restent gérés dans le cadre de la comptabilité notariale et des circuits prévus pour le maniement de fonds."
     },
     {
       "slug": "pennylane",
-      "justification": "Outil de gestion financière et de comptabilité, conçu pour travailler avec son expert-comptable, figurant sur la liste des plateformes de dématérialisation partenaires immatriculées sous réserve publiée par la DGFiP (statut à revérifier à la date de publication). Adapté à un office dont les comptes sont suivis en cabinet."
+      "justification": "Adapté à un office dont les comptes sont suivis en cabinet."
     },
     {
       "slug": "indy",
-      "justification": "Comptabilité, compte professionnel et facturation pour les indépendants au régime BNC, utilisable pour la facturation des prestations non tarifées d'un notaire exerçant à titre individuel, en complément du logiciel métier de l'office. Vérifiez sur la liste publiée par la DGFiP si l'éditeur est immatriculé comme plateforme de dématérialisation partenaire, ou par quelle plateforme il transmet vos factures."
+      "justification": "Comptabilité, compte professionnel et facturation pour les indépendants au régime BNC, utilisable pour la facturation des prestations non tarifées d'un notaire exerçant à titre individuel, en complément du logiciel métier de l'office."
     }
   ],
   "faq": [

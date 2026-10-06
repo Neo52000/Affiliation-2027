@@ -54,15 +54,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP associant facturation et comptabilité, destinée aux indépendants, freelances et micro-entrepreneurs. Elle couvre les notes d'honoraires du cabinet comme la tenue comptable d'une activité en BNC."
+      "justification": "Tiime couvre les notes d'honoraires du cabinet comme la tenue comptable d'une activité en BNC."
     },
     {
       "slug": "abby",
-      "justification": "Facturation et gestion sur une plateforme agréée DGFiP, ciblant les indépendants et micro-entrepreneurs. Un choix cohérent avec le régime micro-BNC fréquent en début d'exercice libéral."
+      "justification": "Un choix cohérent avec le régime micro-BNC fréquent en début d'exercice libéral."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation sur une plateforme agréée DGFiP, pour indépendants et PME. Pertinent si vous facturez aussi des entreprises ou institutions pour de la supervision ou de la formation."
+      "justification": "Pertinent si vous facturez aussi des entreprises ou institutions pour de la supervision ou de la formation."
     }
   ],
   "faq": [

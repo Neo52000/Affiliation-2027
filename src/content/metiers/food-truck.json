@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme agréée dédiée aux indépendants et micro-entrepreneurs, combinant facturation et gestion. Le profil correspond au food truck en micro-entreprise qui facture quelques privatisations et suit ses dépenses d'emplacement."
+      "justification": "Le profil correspond au food truck en micro-entreprise qui facture quelques privatisations et suit ses dépenses d'emplacement."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée réunissant compte professionnel en ligne et facturation, pour indépendants, freelances et TPE. Elle permet d'isoler les recettes du camion sur un compte dédié et d'émettre les factures de privatisation depuis le même service."
+      "justification": "Shine permet d'isoler les recettes du camion sur un compte dédié et d'émettre les factures de privatisation depuis le même service."
     },
     {
       "slug": "indy",
-      "justification": "Plateforme agréée associant comptabilité, compte pro et facturation pour les indépendants. Un exploitant en nom propre y tient sa comptabilité et facture ses clients professionnels occasionnels au même endroit."
+      "justification": "Un exploitant en nom propre y tient sa comptabilité et facture ses clients professionnels occasionnels au même endroit."
     }
   ],
   "faq": [

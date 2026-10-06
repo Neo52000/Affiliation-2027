@@ -76,15 +76,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable, ce qui correspond au suivi d'un parc de matériel et d'une main-d'œuvre saisonnière. Elle vise les TPE, les PME et les cabinets d'expertise comptable."
+      "justification": "Pennylane vise les TPE, les PME et les cabinets d'expertise comptable."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP qui associe le compte professionnel et la facturation, utile quand les règlements de chantiers et les achats de carburant et de pièces passent par le même compte. L'outil est positionné sur les PME comme sur les travailleurs indépendants."
+      "justification": "L'outil est positionné sur les PME comme sur les travailleurs indépendants."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP qui relie la facturation à la comptabilité, adaptée à une facturation de fin de campagne qui mêle plusieurs taux sur une même pièce. Son public déclaré va du micro-entrepreneur à la TPE."
+      "justification": "Son public déclaré va du micro-entrepreneur à la TPE."
     }
   ],
   "faq": [

@@ -59,15 +59,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), réunissant compte professionnel et facturation, pour PME et indépendants. Pratique quand l'activité repose sur des encaissements d'acomptes à suivre poste par poste depuis le compte pro."
+      "justification": "Pratique quand l'activité repose sur des encaissements d'acomptes à suivre poste par poste depuis le compte pro."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), de gestion financière et de comptabilité, qui se travaille avec votre expert-comptable. Un appui utile quand le traitement des débours et des refacturations exige une comptabilité rigoureuse."
+      "justification": "Un appui utile quand le traitement des débours et des refacturations exige une comptabilité rigoureuse."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), orientée facturation et gestion pour indépendants et micro-entrepreneurs. Elle correspond aux organisateurs et wedding planners exerçant seuls, avec peu de factures mais des dossiers à documenter."
+      "justification": "Abby correspond aux organisateurs et wedding planners exerçant seuls, avec peu de factures mais des dossiers à documenter."
     }
   ],
   "faq": [

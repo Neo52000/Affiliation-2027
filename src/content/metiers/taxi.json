@@ -62,15 +62,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), orientée indépendants, freelances et micro-entrepreneurs, profils fréquents chez les artisans taxis. Elle réunit facturation et comptabilité, ce qui permet de suivre au même endroit notes émises et courses en compte."
+      "justification": "Tiime réunit facturation et comptabilité, ce qui permet de suivre au même endroit notes émises et courses en compte."
     },
     {
       "slug": "abby",
-      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), pensée pour les indépendants et micro-entrepreneurs. Son volet facturation et gestion aide à tenir à jour les factures mensuelles des entreprises clientes à côté de l'activité au compteur."
+      "justification": "Son volet facturation et gestion aide à tenir à jour les factures mensuelles des entreprises clientes à côté de l'activité au compteur."
     },
     {
       "slug": "indy",
-      "justification": "Immatriculée sous réserve par la DGFiP comme plateforme de dématérialisation partenaire (liste officielle publiée sur impots.gouv.fr, à vérifier à la date de votre choix), combinant comptabilité, compte pro et facturation pour les indépendants. Ce regroupement convient à un chauffeur seul qui veut limiter le nombre d'outils à gérer."
+      "justification": "Réunir comptabilité, compte professionnel et facturation convient à un chauffeur seul qui veut limiter le nombre d’outils à gérer."
     }
   ],
   "faq": [

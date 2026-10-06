@@ -57,15 +57,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, qui réunit facturation et comptabilité pour les indépendants, freelances, TPE et micro-entrepreneurs. Permet de tenir dans un même outil les factures aux restaurants et boutiques et les lignes de vente au taux normal ou, le cas échéant, au taux réduit des pièces uniques."
+      "justification": "Permet de tenir dans un même outil les factures aux restaurants et boutiques et les lignes de vente au taux normal ou, le cas échéant, au taux réduit des pièces uniques."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme agréée figurant sur la liste publiée par la DGFiP, orientée indépendants et micro-entrepreneurs. Devis, factures et suivi des encaissements au même endroit : utile à un atelier seul qui doit à la fois facturer les boutiques et faire remonter en totaux quotidiens ses ventes de marché."
+      "justification": "Devis, factures et suivi des encaissements au même endroit : utile à un atelier seul qui doit à la fois facturer les boutiques et faire remonter en totaux quotidiens ses ventes de marché."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée par la DGFiP qui associe compte professionnel et facturation, pour les PME et les indépendants. Utile si vous souhaitez regrouper encaissements et émission de factures au même endroit."
+      "justification": "Utile si vous souhaitez regrouper encaissements et émission de factures au même endroit."
     }
   ],
   "faq": [

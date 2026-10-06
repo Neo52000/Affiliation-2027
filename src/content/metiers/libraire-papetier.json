@@ -65,15 +65,15 @@
   "outils_recommandes": [
     {
       "slug": "abby",
-      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle est dédiée à la facturation et à la gestion des indépendants et micro-entrepreneurs, un format qui correspond aux librairies-papeteries exploitées en nom propre."
+      "justification": "Abby est dédiée à la facturation et à la gestion des indépendants et micro-entrepreneurs, un format qui correspond aux librairies-papeteries exploitées en nom propre."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle associe compte professionnel en ligne et facturation pour indépendants, freelances et TPE. Utile pour rapprocher au même endroit encaissements de caisse et factures émises aux collectivités."
+      "justification": "Shine associe compte professionnel en ligne et facturation pour indépendants, freelances et TPE. Utile pour rapprocher au même endroit encaissements de caisse et factures émises aux collectivités."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme qui se présente comme agréée par la DGFiP : vérifiez son immatriculation sur la liste publiée par impots.gouv.fr avant de vous engager. Elle réunit facturation et comptabilité à destination des TPE, un atout quand la coexistence permanente de deux taux de TVA alourdit la tenue comptable."
+      "justification": "Tiime réunit facturation et comptabilité à destination des TPE, un atout quand la coexistence permanente de deux taux de TVA alourdit la tenue comptable."
     }
   ],
   "faq": [

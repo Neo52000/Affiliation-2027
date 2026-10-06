@@ -70,15 +70,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution orientée gestion financière et comptabilité, pensée pour travailler avec votre expert-comptable. Adaptée à une étude dont le volume d'actes génère beaucoup d'écritures."
+      "justification": "Solution orientée gestion financière et comptabilité, pensée pour travailler avec votre expert-comptable. Adaptée à une étude dont le volume d'actes génère beaucoup d'écritures."
     },
     {
       "slug": "qonto",
-      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Offre associant compte professionnel et facturation, pour PME et indépendants. Utile pour suivre les flux d'une étude employant plusieurs collaborateurs."
+      "justification": "Offre associant compte professionnel et facturation, pour PME et indépendants. Utile pour suivre les flux d'une étude employant plusieurs collaborateurs."
     },
     {
       "slug": "tiime",
-      "justification": "Éditeur annonçant une immatriculation en tant que plateforme agréée — à vérifier à date sur la liste officielle de la DGFiP. Solution combinant facturation et comptabilité pour indépendants et TPE. Convient à un commissaire de justice installé récemment en structure individuelle."
+      "justification": "Solution combinant facturation et comptabilité pour indépendants et TPE. Convient à un commissaire de justice installé récemment en structure individuelle."
     }
   ],
   "faq": [

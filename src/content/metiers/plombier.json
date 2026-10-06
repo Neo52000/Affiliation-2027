@@ -67,15 +67,15 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP couvrant la facturation et la comptabilité, avec une cible revendiquée d'indépendants, de TPE et de micro-entrepreneurs. Ce périmètre correspond au plombier à son compte qui veut émettre ses factures multi-taux et tenir sa comptabilité au même endroit."
+      "justification": "Son périmètre correspond au plombier à son compte qui veut émettre ses factures multi-taux et tenir sa comptabilité au même endroit."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme agréée DGFiP orientée facturation et gestion, destinée aux indépendants et micro-entrepreneurs. Elle s'adresse au plombier en micro-entreprise, y compris en franchise en base avec la mention « TVA non applicable, art. 293 B du CGI » à porter sur chaque facture."
+      "justification": "Abby s'adresse au plombier en micro-entreprise, y compris en franchise en base avec la mention « TVA non applicable, art. 293 B du CGI » à porter sur chaque facture."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable et ciblant TPE et PME. Elle convient au plombier en société dont les sujets TVA multi-taux, acomptes et sous-traitance sont suivis avec un cabinet comptable."
+      "justification": "Pennylane convient au plombier en société dont les sujets TVA multi-taux, acomptes et sous-traitance sont suivis avec un cabinet comptable."
     }
   ],
   "faq": [

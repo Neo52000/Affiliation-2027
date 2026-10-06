@@ -58,15 +58,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Comptabilité, compte professionnel et facturation réunis : un formateur indépendant y suit seul ses conventions et ses encaissements. Plateforme agréée DGFiP, destinée aux indépendants."
+      "justification": "Comptabilité, compte professionnel et facturation réunis : un formateur indépendant y suit seul ses conventions et ses encaissements."
     },
     {
       "slug": "abby",
-      "justification": "Facturation et gestion orientées indépendants et micro-entrepreneurs : adapté au formateur en franchise en base qui démarre son activité. Plateforme agréée DGFiP."
+      "justification": "Facturation et gestion orientées indépendants et micro-entrepreneurs : adapté au formateur en franchise en base qui démarre son activité."
     },
     {
       "slug": "pennylane",
-      "justification": "Gestion financière et comptabilité conçues pour collaborer avec un expert-comptable : pertinent pour un organisme de formation qui doit tenir à la fois des lignes exonérées et des lignes taxables. Plateforme agréée DGFiP, destinée aux TPE, PME et experts-comptables."
+      "justification": "Gestion financière et comptabilité conçues pour collaborer avec un expert-comptable : pertinent pour un organisme de formation qui doit tenir à la fois des lignes exonérées et des lignes taxables."
     }
   ],
   "faq": [

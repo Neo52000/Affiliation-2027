@@ -60,15 +60,15 @@
   "outils_recommandes": [
     {
       "slug": "shine",
-      "justification": "Compte professionnel en ligne et facturation : utile pour suivre les encaissements échelonnés de nombreux élèves. Plateforme agréée DGFiP, destinée aux indépendants, freelances et TPE."
+      "justification": "Compte professionnel en ligne et facturation : utile pour suivre les encaissements échelonnés de nombreux élèves."
     },
     {
       "slug": "tiime",
-      "justification": "Facturation et comptabilité pour une auto-école de taille TPE qui émet un grand nombre de notes. Plateforme agréée DGFiP, destinée aux indépendants, TPE et micro-entrepreneurs."
+      "justification": "Facturation et comptabilité pour une auto-école de taille TPE qui émet un grand nombre de notes."
     },
     {
       "slug": "qonto",
-      "justification": "Compte professionnel et facturation pour un établissement en société qui gère plusieurs enseignants et des flux d'encaissement réguliers. Plateforme agréée DGFiP, destinée aux PME et aux indépendants."
+      "justification": "Compte professionnel et facturation pour un établissement en société qui gère plusieurs enseignants et des flux d'encaissement réguliers."
     }
   ],
   "faq": [

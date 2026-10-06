@@ -66,15 +66,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée associant compte professionnel et facturation, ciblée PME et indépendants. Le suivi des encaissements d'acomptes et de soldes par événement se fait depuis le même outil que l'émission des factures."
+      "justification": "Le suivi des encaissements d'acomptes et de soldes par événement se fait depuis le même outil que l'émission des factures."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Adaptée à un traiteur en société qui délègue sa comptabilité tout en produisant des factures multi-taux."
+      "justification": "Adaptée à un traiteur en société qui délègue sa comptabilité tout en produisant des factures multi-taux."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée orientée indépendants, freelances et TPE, réunissant facturation et comptabilité. Convient à un traiteur seul ou en petite équipe qui veut gérer devis, factures d'acompte et factures de solde dans un outil unique."
+      "justification": "Convient à un traiteur seul ou en petite équipe qui veut gérer devis, factures d'acompte et factures de solde dans un outil unique."
     }
   ],
   "faq": [

@@ -66,15 +66,15 @@
   "outils_recommandes": [
     {
       "slug": "shine",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), proposant compte professionnel en ligne et facturation, destinée aux indépendants, freelances et TPE. Adaptée à une boutique qui encaisse surtout des particuliers et émet peu de factures."
+      "justification": "Adaptée à une boutique qui encaisse surtout des particuliers et émet peu de factures."
     },
     {
       "slug": "abby",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), de facturation et de gestion, orientée indépendants et micro-entrepreneurs. Pertinente pour une cordonnerie en franchise en base exploitée en micro-entreprise."
+      "justification": "Pertinente pour une cordonnerie en franchise en base exploitée en micro-entreprise."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste à vérifier sur impots.gouv.fr avant de souscrire), combinant compte professionnel et facturation, pour PME et indépendants. Un choix possible si la boutique est exploitée en société."
+      "justification": "Un choix possible si la boutique est exploitée en société."
     }
   ],
   "faq": [

@@ -58,15 +58,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Opérateur de facturation et de comptabilité pour indépendants et TPE, pensé pour travailler avec votre expert-comptable. Un appui pertinent quand le régime de la marge impose un suivi comptable rigoureux des achats et des reventes. Vérifiez son statut d'immatriculation, et s'il s'agit d'une immatriculation définitive ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+      "justification": "Opérateur de facturation et de comptabilité pour indépendants et TPE, pensé pour travailler avec votre expert-comptable. Un appui pertinent quand le régime de la marge impose un suivi comptable rigoureux des achats et des reventes."
     },
     {
       "slug": "tiime",
-      "justification": "Opérateur qui associe facturation et comptabilité, ciblé indépendants, TPE et micro-entrepreneurs. Adapté à une activité de brocante exercée seul ou en très petite équipe. Vérifiez son statut d'immatriculation, et s'il s'agit d'une immatriculation définitive ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+      "justification": "Opérateur qui associe facturation et comptabilité, ciblé indépendants, TPE et micro-entrepreneurs. Adapté à une activité de brocante exercée seul ou en très petite équipe."
     },
     {
       "slug": "qonto",
-      "justification": "Opérateur qui combine compte professionnel et facturation, pour PME et indépendants. Permet de regrouper encaissements et factures aux marchands dans un même espace. Vérifiez son statut d'immatriculation, et s'il s'agit d'une immatriculation définitive ou sous réserve, dans la liste officielle des plateformes agréées publiée par la DGFiP (https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees)."
+      "justification": "Opérateur qui combine compte professionnel et facturation, pour PME et indépendants. Permet de regrouper encaissements et factures aux marchands dans un même espace."
     }
   ],
   "faq": [

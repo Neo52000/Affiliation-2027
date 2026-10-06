@@ -71,15 +71,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Compte professionnel assorti d'une fonction de facturation, orienté PME et indépendants ; adapté au suivi des avances encaissées puis des factures de solde, dossier par dossier. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+      "justification": "Compte professionnel assorti d'une fonction de facturation, orienté PME et indépendants ; adapté au suivi des avances encaissées puis des factures de solde, dossier par dossier."
     },
     {
       "slug": "pennylane",
-      "justification": "Outil de gestion financière et de comptabilité pensé pour collaborer avec un expert-comptable, pertinent pour une société de déménagement dont l'activité saisonnière exige un pilotage comptable suivi. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+      "justification": "Outil de gestion financière et de comptabilité pensé pour collaborer avec un expert-comptable, pertinent pour une société de déménagement dont l'activité saisonnière exige un pilotage comptable suivi."
     },
     {
       "slug": "abby",
-      "justification": "Outil de facturation et de gestion destiné aux indépendants et micro-entrepreneurs, qui convient au déménageur exerçant seul avec un utilitaire et facturant de petits volumes. Vérifiez son statut de plateforme de dématérialisation partenaire sur la liste officielle publiée par l'administration fiscale."
+      "justification": "Outil de facturation et de gestion destiné aux indépendants et micro-entrepreneurs, qui convient au déménageur exerçant seul avec un utilitaire et facturant de petits volumes."
     }
   ],
   "faq": [

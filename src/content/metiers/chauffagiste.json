@@ -72,15 +72,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée par la DGFiP, orientée gestion financière et comptabilité en lien avec votre expert-comptable. Adaptée à une entreprise de chauffage structurée en TPE ou PME, avec du matériel et des contrats d'entretien à suivre comptablement."
+      "justification": "Adaptée à une entreprise de chauffage structurée en TPE ou PME, avec du matériel et des contrats d'entretien à suivre comptablement."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée par la DGFiP combinant compte professionnel et facturation, pensée pour les PME et les indépendants. Utile quand les encaissements de dépannages et les règlements des contrats d'entretien passent par le même compte."
+      "justification": "Utile quand les encaissements de dépannages et les règlements des contrats d'entretien passent par le même compte."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée par la DGFiP réunissant facturation et comptabilité pour les indépendants et TPE. Convient à un chauffagiste exerçant seul ou en très petite équipe."
+      "justification": "Convient à un chauffagiste exerçant seul ou en très petite équipe."
     }
   ],
   "faq": [

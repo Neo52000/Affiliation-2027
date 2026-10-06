@@ -84,15 +84,15 @@
   "outils_recommandes": [
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Pertinente pour les exploitations en EARL, GAEC ou SCEA dont le centre de gestion suit la comptabilité de campagne."
+      "justification": "Pertinente pour les exploitations en EARL, GAEC ou SCEA dont le centre de gestion suit la comptabilité de campagne."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP qui réunit facturation et comptabilité pour les indépendants et les TPE. Adaptée à un exploitant individuel qui émet peu de factures mais doit conserver et classer les documents reçus de ses acheteurs."
+      "justification": "Adaptée à un exploitant individuel qui émet peu de factures mais doit conserver et classer les documents reçus de ses acheteurs."
     },
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP associant compte professionnel et facturation, pour les indépendants et les PME. Utile quand les règlements de campagne arrivent par virements de gros montants et doivent être rapprochés des livraisons."
+      "justification": "Utile quand les règlements de campagne arrivent par virements de gros montants et doivent être rapprochés des livraisons."
     }
   ],
   "faq": [

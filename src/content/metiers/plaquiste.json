@@ -66,15 +66,15 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Plateforme agréée DGFiP associant compte professionnel et facturation, orientée PME et indépendants. Le rapprochement entre factures de situation et virements des donneurs d'ordre se fait depuis un même espace."
+      "justification": "Le rapprochement entre factures de situation et virements des donneurs d'ordre se fait depuis un même espace."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP conçue pour travailler avec votre expert-comptable, ce qui sécurise le report des opérations en autoliquidation dans les déclarations de TVA. Gestion financière et comptabilité sont centralisées."
+      "justification": "Gestion financière et comptabilité sont centralisées."
     },
     {
       "slug": "shine",
-      "justification": "Plateforme agréée DGFiP combinant compte professionnel en ligne et facturation, adaptée à un plaquiste indépendant ou en petite structure. Émission des factures et suivi des encaissements se font au même endroit."
+      "justification": "Émission des factures et suivi des encaissements se font au même endroit."
     }
   ],
   "faq": [

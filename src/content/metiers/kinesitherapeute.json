@@ -56,15 +56,15 @@
   "outils_recommandes": [
     {
       "slug": "indy",
-      "justification": "Plateforme agréée DGFiP conçue pour les indépendants, réunissant comptabilité, compte pro et facturation. Ce périmètre couvre la tenue d'un BNC de cabinet et l'émission des factures de redevance de collaboration."
+      "justification": "Son périmètre couvre la tenue d'un BNC de cabinet et l'émission des factures de redevance de collaboration."
     },
     {
       "slug": "pennylane",
-      "justification": "Plateforme agréée DGFiP pensée pour travailler avec votre expert-comptable. Un cabinet avec assistants, où coexistent honoraires exonérés et redevances soumises à TVA, peut ainsi partager ses données avec le professionnel qui établit ses déclarations."
+      "justification": "Un cabinet avec assistants, où coexistent honoraires exonérés et redevances soumises à TVA, peut ainsi partager ses données avec le professionnel qui établit ses déclarations."
     },
     {
       "slug": "tiime",
-      "justification": "Plateforme agréée DGFiP associant facturation et comptabilité pour les indépendants et TPE. Elle répond au cas d'un exercice individuel qui centralise notes d'honoraires et pièces d'achat avant l'obligation de réception."
+      "justification": "Tiime répond au cas d'un exercice individuel qui centralise notes d'honoraires et pièces d'achat avant l'obligation de réception."
     }
   ],
   "faq": [
