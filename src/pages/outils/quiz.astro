@@ -46,8 +46,42 @@ const outils = outilsColl.map((o) => ({
     5 questions, une recommandation fondée uniquement sur des faits vérifiés et sur votre métier.
   </p>
 
-  <div class="mt-6">
-    <Quiz client:load metiers={metiers} outils={outils} recosParMetier={recosParMetier} />
+  <div class="layout-article mt-6">
+    <div class="card-top rounded-lg border border-border bg-paper p-5 sm:p-6">
+      <Quiz client:load metiers={metiers} outils={outils} recosParMetier={recosParMetier} />
+    </div>
+
+    <aside class="colonne-appui" aria-label="Ce que vaut cette recommandation">
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Comment elle est calculée</p>
+        <ul class="mt-2 space-y-2 text-sm text-ink-soft">
+          <li>Votre métier détermine les besoins réellement utiles.</li>
+          <li>Seuls les faits vérifiés de chaque outil entrent dans le calcul.</li>
+          <li>Les commissions n'y entrent jamais.</li>
+        </ul>
+        <p class="mt-3 text-sm">
+          <a href="/methode">Notre méthode en détail</a>
+        </p>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Pas encore de note</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Aucun outil n'est noté avant un test réel documenté. En attendant, la recommandation
+          s'appuie sur le périmètre et la cible vérifiés.
+        </p>
+      </div>
+
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Vos échéances</p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Savoir à quelle date vous êtes concerné, selon votre situation.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/outils/echeance">Ouvrir le simulateur</a>
+        </p>
+      </div>
+    </aside>
   </div>
 
   <noscript>

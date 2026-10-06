@@ -37,7 +37,7 @@ export default function RappelEmail({ metiers }: Props) {
   };
 
   if (etat.phase === 'ok') {
-    return <p class="rounded border-2 border-accent p-4 font-bold">{etat.message}</p>;
+    return <p class="card-top rounded-lg border border-border p-4 font-bold">{etat.message}</p>;
   }
 
   return (
@@ -51,7 +51,7 @@ export default function RappelEmail({ metiers }: Props) {
           type="email"
           required
           autocomplete="email"
-          class="mt-1 block w-full max-w-md rounded border border-border px-3 py-2"
+          class="champ mt-1"
           value={email}
           onInput={(e) => setEmail((e.target as HTMLInputElement).value)}
         />
@@ -62,7 +62,7 @@ export default function RappelEmail({ metiers }: Props) {
         </label>
         <select
           id="rappel-metier"
-          class="mt-1 block w-full max-w-md rounded border border-border px-3 py-2"
+          class="champ mt-1"
           value={metier}
           onChange={(e) => setMetier((e.target as HTMLSelectElement).value)}
         >
@@ -91,7 +91,7 @@ export default function RappelEmail({ metiers }: Props) {
       <button
         type="submit"
         disabled={etat.phase === 'envoi'}
-        class="rounded bg-accent px-5 py-2 font-bold text-white hover:bg-accent-dark disabled:opacity-50"
+        class="btn-cta text-lg disabled:opacity-50"
       >
         {etat.phase === 'envoi' ? 'Envoi…' : 'Recevoir mon rappel'}
       </button>

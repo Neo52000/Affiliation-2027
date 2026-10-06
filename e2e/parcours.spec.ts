@@ -1,8 +1,12 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Locator, type Page } from '@playwright/test';
 
-/** Attend la fin de l'hydratation des îlots (l'attribut ssr disparaît). */
-async function attendreHydratation(page: Page) {
-  await expect(page.locator('astro-island[ssr]')).toHaveCount(0);
+/**
+ * Attend l'hydratation du seul îlot qui contient `element` : son attribut ssr
+ * disparaît. On ne réclame pas l'hydratation de toute la page — un îlot
+ * client:visible resté hors écran n'a pas à être hydraté, c'est son intérêt.
+ */
+async function attendreHydratation(page: Page, element: Locator) {
+  await expect(page.locator('astro-island[ssr]').filter({ has: element })).toHaveCount(0);
 }
 
 test('1. accueil → hub bâtiment → page métier plombier', async ({ page }) => {
@@ -15,7 +19,7 @@ test('1. accueil → hub bâtiment → page métier plombier', async ({ page }) 
 
 test('2. quiz : 5 réponses → 1 recommandation + 2 alternatives', async ({ page }) => {
   await page.goto('/outils/quiz');
-  await attendreHydratation(page);
+  await attendreHydratation(page, page.getByLabel('1. Votre métier'));
   await page.getByLabel('1. Votre métier').fill('Plombier');
   await page.getByLabel('2. Votre statut').selectOption('micro');
   await page.getByLabel('3. Factures émises par mois').selectOption('10-50');
@@ -34,7 +38,7 @@ test('2. quiz : 5 réponses → 1 recommandation + 2 alternatives', async ({ pag
 
 test('3. simulateur : TPE assujettie → échéances et check-list', async ({ page }) => {
   await page.goto('/outils/echeance');
-  await attendreHydratation(page);
+  await attendreHydratation(page, page.getByLabel('Taille de votre entreprise'));
   await page.getByLabel('Taille de votre entreprise').selectOption('pme-tpe-micro');
   await page.getByLabel('Votre situation TVA').selectOption('assujetti');
   await page.getByRole('button', { name: 'Voir mes échéances' }).click();
@@ -54,7 +58,7 @@ test('5. vérificateur de facture : mentions manquantes listées avec leur sourc
   page,
 }) => {
   await page.goto('/outils/verificateur-facture');
-  await attendreHydratation(page);
+  await attendreHydratation(page, page.getByRole('button', { name: 'Vérifier ma facture' }));
   await page.getByRole('button', { name: 'Vérifier ma facture' }).click();
   await expect(
     page.getByRole('heading', { name: /mention\(s\) obligatoire\(s\) manquante/ }),

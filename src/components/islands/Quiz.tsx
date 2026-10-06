@@ -52,7 +52,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
         <a
           href={lien.href}
           rel={lien.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
-          class="inline-block rounded bg-accent px-4 py-2 font-bold text-white no-underline hover:bg-accent-dark"
+          class="btn-cta"
           data-emplacement={`quiz-${slug}`}
         >
           Découvrir {nom}
@@ -64,7 +64,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
 
   return (
     <div>
-      <form onSubmit={calculer} class="space-y-4" aria-describedby="quiz-note">
+      <form onSubmit={calculer} class="space-y-5" aria-describedby="quiz-note">
         <div>
           <label class="font-bold" for="quiz-metier">
             1. Votre métier
@@ -72,7 +72,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
           <input
             id="quiz-metier"
             list="quiz-metiers-liste"
-            class="mt-1 block w-full max-w-md rounded border border-border px-3 py-2"
+            class="champ mt-1"
             placeholder="Ex. : plombier, infirmier libéral…"
             value={metierSaisi}
             onInput={(e) => setMetierSaisi((e.target as HTMLInputElement).value)}
@@ -90,7 +90,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
           </label>
           <select
             id="quiz-statut"
-            class="mt-1 block w-full max-w-md rounded border border-border px-3 py-2"
+            class="champ mt-1"
             value={statut}
             onChange={(e) =>
               setStatut((e.target as HTMLSelectElement).value as QuizReponses['statut'])
@@ -108,7 +108,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
           </label>
           <select
             id="quiz-volume"
-            class="mt-1 block w-full max-w-md rounded border border-border px-3 py-2"
+            class="champ mt-1"
             value={volume}
             onChange={(e) =>
               setVolume((e.target as HTMLSelectElement).value as QuizReponses['facturesParMois'])
@@ -122,7 +122,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
 
         <fieldset>
           <legend class="font-bold">4. Avez-vous besoin d'un compte professionnel ?</legend>
-          <label class="mr-4">
+          <label class="choix mr-2">
             <input
               type="radio"
               name="compte-pro"
@@ -131,7 +131,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
             />{' '}
             Oui
           </label>
-          <label>
+          <label class="choix">
             <input
               type="radio"
               name="compte-pro"
@@ -144,20 +144,17 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
 
         <fieldset>
           <legend class="font-bold">5. Travaillez-vous avec un expert-comptable ?</legend>
-          <label class="mr-4">
+          <label class="choix mr-2">
             <input type="radio" name="expert" checked={expert} onChange={() => setExpert(true)} />{' '}
             Oui
           </label>
-          <label>
+          <label class="choix">
             <input type="radio" name="expert" checked={!expert} onChange={() => setExpert(false)} />{' '}
             Non
           </label>
         </fieldset>
 
-        <button
-          type="submit"
-          class="rounded bg-accent px-5 py-2 font-bold text-white hover:bg-accent-dark"
-        >
+        <button type="submit" class="btn-cta text-lg">
           Voir ma recommandation
         </button>
         <p id="quiz-note" class="text-xs text-ink-soft">
@@ -169,7 +166,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
       {resultat && (
         <section aria-live="polite" class="mt-8 space-y-4">
           <h2 class="text-2xl font-bold">Notre recommandation</h2>
-          <div class="rounded border-2 border-accent p-4">
+          <div class="card-top carte-reco rounded-lg border border-border p-4">
             <p class="font-bold">
               <a href={`/logiciels/${resultat.recommande.slug}`}>{resultat.recommande.nom}</a>
               <span class="ml-2 text-sm font-normal text-ink-soft">Test en cours</span>
@@ -181,7 +178,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
           </div>
           <h3 class="text-lg font-bold">Deux alternatives</h3>
           {resultat.alternatives.map((a) => (
-            <div class="rounded border border-border p-4" key={a.slug}>
+            <div class="card-reco rounded-lg border border-border p-4" key={a.slug}>
               <p class="font-bold">
                 <a href={`/logiciels/${a.slug}`}>{a.nom}</a>
               </p>
