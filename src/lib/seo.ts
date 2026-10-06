@@ -35,6 +35,21 @@ export function metierTitle(nom: string): string {
   return variantes.find((v) => v.length < TITLE_MAX) ?? variantes[2]!.slice(0, TITLE_MAX - 1);
 }
 
+/**
+ * Title d'un hub famille : la première variante qui respecte TITLE_MAX.
+ * Les libellés composés sont réduits à leur tête (« Restauration et métiers de
+ * bouche » → « Restauration ») ; la page garde le libellé complet en H1.
+ */
+export function familleTitle(label: string): string {
+  const court = label.split(' et ')[0]!;
+  const variantes = [
+    `Facturation électronique : ${label.toLowerCase()}`,
+    `Facturation électronique : ${court.toLowerCase()}`,
+    `${court} : facturation électronique`,
+  ];
+  return variantes.find((v) => v.length < TITLE_MAX) ?? variantes[1]!.slice(0, TITLE_MAX - 1);
+}
+
 /** Meta description d'une page métier (< DESCRIPTION_MAX, unique par métier). */
 export function metierDescription(nom: string): string {
   const d = `Facturation électronique pour ${nom} : obligations, spécificités du métier, exemple de facture conforme et logiciels adaptés. Données datées et sourcées.`;

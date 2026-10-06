@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { canonicalUrl, pageTitle, validateMeta, TITLE_MAX } from './seo';
+import { FAMILLE_LABELS } from './familles';
+import { TITLE_MAX, canonicalUrl, familleTitle, pageTitle, validateMeta } from './seo';
 
 describe('pageTitle', () => {
   it('compose « Page | Site » quand la longueur le permet', () => {
@@ -49,5 +50,23 @@ describe('canonicalUrl', () => {
     expect(canonicalUrl('https://exemple.fr/', '/outils/quiz?x=1')).toBe(
       'https://exemple.fr/outils/quiz',
     );
+  });
+});
+
+describe('familleTitle', () => {
+  it('garde le libellé complet quand il tient', () => {
+    expect(familleTitle('Agriculture')).toBe('Facturation électronique : agriculture');
+  });
+
+  it('réduit un libellé composé trop long à sa tête', () => {
+    expect(familleTitle('Restauration et métiers de bouche')).toBe(
+      'Facturation électronique : restauration',
+    );
+  });
+
+  it('reste sous la limite pour les dix familles', () => {
+    for (const label of Object.values(FAMILLE_LABELS)) {
+      expect(pageTitle(familleTitle(label), 'Mon Comparateur').length).toBeLessThan(TITLE_MAX);
+    }
   });
 });

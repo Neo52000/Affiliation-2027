@@ -4,8 +4,10 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picto from '../../components/Picto.astro';
 import { FAMILLE_LABELS, type Famille } from '../../lib/familles';
-import { pageTitle } from '../../lib/seo';
+import { familleTitle, pageTitle } from '../../lib/seo';
+import { formatDateFr } from '../../lib/dates';
 import { SITE } from '../../config';
+import echeances from '../../data/echeances.json';
 
 export async function getStaticPaths() {
   // Un hub n'est publié que lorsque son introduction est rédigée (src/data/hubs.json)
@@ -21,10 +23,15 @@ const { intro } = Astro.props;
 const famille = Astro.params.famille as Famille;
 const label = FAMILLE_LABELS[famille];
 const metiers = (await getCollection('metiers')).filter((m) => m.data.famille === famille);
+
+// L'introduction du hub décrit la réforme : elle renvoie à la source officielle,
+// comme les pages métier (règle : toute affirmation réglementaire est sourcée).
+const reception = echeances.echeances.find((e) => e.id === 'reception-toutes-entreprises');
+if (!reception) throw new Error('echeances.json : échéance de réception manquante');
 ---
 
 <Base
-  title={pageTitle(`Facturation électronique : ${label.toLowerCase()}`, SITE.name)}
+  title={pageTitle(familleTitle(label), SITE.name)}
   description={`Facturation électronique pour les métiers de la famille ${label.toLowerCase()} : obligations communes, spécificités et guides par métier.`}
 >
   <Breadcrumb items={[{ label: 'Métiers' }, { label }]} />
@@ -59,6 +66,21 @@ const metiers = (await getCollection('metiers')).filter((m) => m.data.famille ==
     </ul>
     <p class="prose-measure mt-4 text-sm text-ink-soft">
       D'autres métiers de cette famille seront ajoutés progressivement.
+    </p>
+  </section>
+
+  <section aria-labelledby="sources-hub" class="prose-measure mt-8 border-t border-border pt-4">
+    <h2 id="sources-hub" class="text-lg font-bold">
+      Source
+    </h2>
+    <p class="mt-2 text-sm">
+      <a href={reception.sources[0]} rel="noopener">
+        Calendrier officiel de la réforme (impots.gouv.fr)
+      </a>
+    </p>
+    <p class="mt-2 text-sm text-ink-soft">
+      Données relevées le {formatDateFr(echeances.date_releve)}. Information générale : ne remplace
+      pas l'avis de votre expert-comptable.
     </p>
   </section>
 </Base>
