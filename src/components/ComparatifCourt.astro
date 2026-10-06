@@ -1,6 +1,7 @@
 ---
 import type { z } from 'astro/zod';
 import type { outilSchema } from '../lib/schemas';
+import Statut from './Statut.astro';
 
 type Outil = z.infer<typeof outilSchema>;
 
@@ -10,18 +11,24 @@ interface Props {
 
 const { outils } = Astro.props;
 
-const cell = (v: boolean | null) => (v === true ? 'Oui' : v === false ? 'Non' : 'À vérifier');
+/** Une ligne rend soit un statut (icône + texte), soit du texte libre. */
+type Ligne =
+  | { label: string; type: 'statut'; valeur: (o: Outil) => boolean | null }
+  | { label: string; type: 'texte'; valeur: (o: Outil) => string }
+  | { label: string; type: 'note'; valeur: (o: Outil) => string };
 
-const lignes: { label: string; valeur: (o: Outil) => string }[] = [
+const lignes: Ligne[] = [
   {
     label: 'Plateforme agréée (registre DGFiP)',
-    valeur: (o) => (o.est_plateforme_agreee.valeur ? 'Oui' : 'Non'),
+    type: 'statut',
+    valeur: (o) => o.est_plateforme_agreee.valeur,
   },
-  { label: 'Pour qui (cible de l’éditeur)', valeur: (o) => o.cible.join(', ') },
-  { label: 'Comptabilité intégrée', valeur: (o) => cell(o.fonctionnalites.compta) },
-  { label: 'Compte professionnel', valeur: (o) => cell(o.fonctionnalites.compte_pro) },
+  { label: 'Pour qui (cible de l’éditeur)', type: 'texte', valeur: (o) => o.cible.join(', ') },
+  { label: 'Comptabilité intégrée', type: 'statut', valeur: (o) => o.fonctionnalites.compta },
+  { label: 'Compte professionnel', type: 'statut', valeur: (o) => o.fonctionnalites.compte_pro },
   {
     label: 'Note',
+    type: 'note',
     valeur: (o) => (o.statut_test === 'a_tester' ? 'Test en cours' : String(o.notes.finale ?? '—')),
   },
 ];
@@ -35,7 +42,7 @@ const lignes: { label: string; valeur: (o: Outil) => string }[] = [
           <span class="sr-only">Critère</span>
         </th>
         {outils.map((o) => (
-          <th scope="col" class="py-2 pr-3">
+          <th scope="col" class="py-2 pr-3 font-bold">
             <a href={`/logiciels/${o.slug}`}>{o.nom}</a>
           </th>
         ))}
@@ -49,8 +56,10 @@ const lignes: { label: string; valeur: (o: Outil) => string }[] = [
           </th>
           {outils.map((o) => (
             <td class="py-2 pr-3">
-              {l.valeur(o) === 'Test en cours' ? (
-                <span class="pill">Test en cours</span>
+              {l.type === 'statut' ? (
+                <Statut valeur={l.valeur(o)} />
+              ) : l.type === 'note' ? (
+                <span class="pill">{l.valeur(o)}</span>
               ) : (
                 l.valeur(o)
               )}
