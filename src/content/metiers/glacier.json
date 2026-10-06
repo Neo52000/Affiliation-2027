@@ -1,0 +1,136 @@
+{
+  "nom": "Glacier",
+  "slug": "glacier",
+  "famille": "restauration",
+  "statuts_frequents": [
+    "Entreprise individuelle (artisan glacier)",
+    "Micro-entrepreneur (activité saisonnière)",
+    "SARL / EURL"
+  ],
+  "volume_factures_typique": "Fortement saisonnier : l'essentiel des tickets B2C se concentre sur la belle saison ; quelques factures B2B par mois en saison (bacs fournis aux restaurants et cafés), presque aucune émission l'hiver, mais des factures fournisseurs à recevoir toute l'année.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Le même parfum change de taux selon le format de vente : 10 % pour le cornet, la coupe, l'esquimau et le pot individuel de faible contenance, réputés vendus en vue d'une consommation immédiate ; 5,5 % pour les glaces conditionnées en vrac, en lot, en paquet ou en pot familial, destinées à une consommation différée.",
+    "La terrasse transforme la vente : une coupe servie à table relève des ventes à consommer sur place à 10 % (hors boissons alcooliques), et la remise d'une note au consommateur est obligatoire dès 25 € TTC pour une prestation de services.",
+    "Vos fournisseurs (produits laitiers, fruits, emballages, énergie) continueront de facturer hors saison : prévoyez de pouvoir recevoir ces factures électroniques via une plateforme agréée, même pendant la fermeture hivernale.",
+    "La fourniture de bacs aux restaurants et cafés en saison est une vente entre professionnels : les produits alimentaires livrés à un client assujetti qui les revendra relèvent de 5,5 % (rescrit BOI-RES-TVA-000205), et ces factures devront passer au format électronique à l'échéance applicable à votre entreprise, tandis que les ventes au comptoir aux particuliers relèveront de l'e-reporting."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Taux de TVA par ligne : 10 % pour une coupe, un cornet, un esquimau ou un pot individuel vendus au consommateur final, 5,5 % pour un bac ou un pot familial conditionné",
+    "Dénomination précise de chaque référence : parfum, contenance du bac ou du pot, et format de vente, car c'est lui qui détermine le taux",
+    "Période de livraison couverte par la facture, lorsque vous regroupez les livraisons d'une même semaine de saison",
+    "Pour un micro-entrepreneur en franchise en base : mention « TVA non applicable, article 293 B du CGI », sans aucun taux affiché",
+    "Pour le reste, les mentions générales de toute facture s'appliquent sans particularité : reportez-vous au bloc commun à la famille restauration plutôt que de les recopier"
+  ],
+  "exemple_facture": {
+    "intitule": "Facture — bacs et coupes de glace livrés à une brasserie pour la saison",
+    "lignes": [
+      {
+        "designation": "Bac 5 L glace vanille gousse, conditionné pour conservation au congélateur",
+        "quantite": 6,
+        "unite": "bac",
+        "prix_unitaire_ht": 39,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Bac 5 L sorbet framboise, conditionné pour conservation au congélateur",
+        "quantite": 4,
+        "unite": "bac",
+        "prix_unitaire_ht": 44,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Coupes deux boules fournies à la brasserie pour son service en terrasse (livraison entre assujettis, revente au consommateur final par la brasserie)",
+        "quantite": 80,
+        "unite": "coupe",
+        "prix_unitaire_ht": 2.7,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "Facture adressée à un client assujetti : les produits livrés en amont de la vente au consommateur final relèvent de 5,5 %. Le taux de 10 % s'applique à la vente au consommateur final — celle que réalise la brasserie en terrasse, ou celle que vous réalisez vous-même à votre comptoir.",
+      "Identification complète de la brasserie cliente et date d'émission",
+      "Conditions et délai de paiement convenus pour la saison"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Appliquer le bon taux selon le format de vente au moment de l'encaissement : 10 % pour le cornet, la coupe, l'esquimau et le pot individuel vendus au consommateur final, 5,5 % pour le bac et le pot familial",
+    "Absorber la saisonnalité : facturation simple en saison, réception des factures fournisseurs toute l'année via une plateforme agréée",
+    "Facturer les clients professionnels (bacs, fournitures aux restaurants) au format électronique à l'échéance applicable et transmettre les ventes B2C en e-reporting"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "shine",
+      "justification": "Compte professionnel en ligne avec facturation, figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), destiné aux indépendants, freelances et TPE. Adapté à une activité saisonnière qui veut encaisser et facturer depuis un seul outil."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), combinant comptabilité, compte pro et facturation pour les indépendants. Utile à un glacier qui tient seul ses comptes, notamment hors saison."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), de facturation et de gestion pour indépendants et micro-entrepreneurs. Convient à un glacier exerçant en micro-entreprise avec un volume de factures concentré sur quelques mois."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Cornet vendu au comptoir et bac d'un litre à emporter : pourquoi deux taux différents ?",
+      "reponse": "Le cornet est vendu en vue d'une consommation immédiate : 10 %, même à emporter. Il en va de même de l'esquimau et du pot individuel de faible contenance. Le bac et le pot familial, conditionnés pour une consommation différée, relèvent de 5,5 %. C'est le format de vente qui fait le taux, pas le parfum ni le point de vente ; le tableau du BOFIP (BOI-ANNX-000495) fait référence, et c'est le point à vérifier avant de paramétrer votre caisse."
+    },
+    {
+      "question": "Mes coupes glacées servies en terrasse sont-elles traitées comme de la restauration ?",
+      "reponse": "Oui. Une coupe servie à table relève des ventes à consommer sur place, au taux réduit de 10 %, à l'exclusion des boissons alcooliques qui restent au taux normal. Et pour une prestation de services à un consommateur, la remise d'une note est obligatoire dès que le prix atteint 25 € TTC, et sur demande du client en dessous."
+    },
+    {
+      "question": "Je ferme de novembre à mars : que devient mon obligation de recevoir des factures électroniques ?",
+      "reponse": "La réforme concerne toutes les entreprises assujetties à la TVA, et vos fournisseurs continueront de vous facturer hors saison. Prévoyez une plateforme agréée accessible toute l'année pour recevoir ces factures, même boutique fermée. L'émission vers vos clients professionnels s'appliquera, elle, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Je fournis des bacs à des restaurants pendant l'été : quelles mentions sur ces factures ?",
+      "reponse": "Chaque facture doit porter la date d'émission, l'identification des deux parties, le détail ligne par ligne (quantité, dénomination, prix unitaire HT), le taux de TVA par ligne — 5,5 %, aussi bien parce que les bacs sont conditionnés pour une consommation différée que parce qu'il s'agit d'une livraison entre assujettis en amont de la vente au consommateur final (rescrit BOI-RES-TVA-000205) —, les montants HT et TTC et les conditions de paiement. À l'échéance applicable à votre entreprise, ces factures devront être émises au format électronique."
+    },
+    {
+      "question": "Milkshakes et smoothies préparés minute : quel taux appliquer ?",
+      "reponse": "Préparés et servis pour une consommation immédiate, ils relèvent de 10 %, sur place comme à emporter. Seules les boissons non alcooliques vendues en contenant fermé permettant leur conservation relèvent de 5,5 %. Attention au cas fréquent de la terrasse : le même milkshake servi à table relève des ventes à consommer sur place, et vous devez alors remettre une note au client dès 25 € TTC."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFIP (BOI-ANNX-000495) : glaces et boissons — cornet, esquimau et pot individuel vendus en vue d'une consommation immédiate à 10 %, glaces conditionnées en vrac, en lot, en paquet ou en pot familial à 5,5 %",
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+    },
+    {
+      "titre": "BOFIP : TVA à 10 % sur les ventes à consommer sur place, à l'exclusion des boissons alcooliques",
+      "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20201014"
+    },
+    {
+      "titre": "BOFIP, rescrit BOI-RES-TVA-000205 : taux de 5,5 % sur les livraisons de produits alimentaires préparés entre assujettis, en amont de la vente au consommateur final",
+      "url": "https://bofip.impots.gouv.fr/bofip/14665-PGP.html/identifiant=BOI-RES-TVA-000205-20251119"
+    },
+    {
+      "titre": "DGCCRF : obligation de remettre une note au consommateur dès 25 € TTC pour une prestation de services",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/cafes-et-bars-quelles-obligations-pour-les-professionnels"
+    },
+    {
+      "titre": "economie.gouv.fr : mentions devant figurer sur les factures adressées à vos clients restaurateurs",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "BOFIP : franchise en base — facturer sans TVA avec la mention de l'article 293 B du CGI",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "impots.gouv.fr : réforme de la facturation électronique — réception puis émission pour toute entreprise assujettie",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr : e-reporting — les ventes aux particuliers suivent le même calendrier que la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr : les plateformes agréées — immatriculation par la DGFiP et consultation de la liste officielle",
+      "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

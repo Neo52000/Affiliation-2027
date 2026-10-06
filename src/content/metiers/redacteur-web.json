@@ -1,0 +1,200 @@
+{
+  "nom": "Rédacteur web",
+  "slug": "redacteur-web",
+  "famille": "numerique",
+  "statuts_frequents": [
+    "Micro-entrepreneur (BNC)",
+    "Entreprise individuelle au régime de la déclaration contrôlée (BNC)",
+    "EURL, pour les activités rédactionnelles exercées en société"
+  ],
+  "volume_factures_typique": "De l'ordre de 1 à 6 factures par mois : les textes livrés à un même client au fil du mois peuvent être regroupés sur une facture récapitulative mensuelle.",
+  "clients_types": "B2B",
+  "specificites_facturation": [
+    "Lorsque vous livrez plusieurs articles à un même client au fil du mois, vous pouvez émettre une facture périodique (récapitulative) au plus tard à la fin du mois civil, en reprenant chaque livraison ligne par ligne avec sa date de réalisation, y compris lorsque deux lignes sont identiques.",
+    "Si votre client établit lui-même vos factures, il s'agit d'une autofacturation : un mandat de facturation doit exister avant la première facture, la facture est émise en votre nom et pour votre compte et porte la mention « Autofacturation ». Si c'est une plateforme tierce, qui n'est pas votre client, qui émet la facture pour vous, le mandat est également requis mais la mention attendue est du type « facture établie par [plateforme] au nom et pour le compte de [votre entreprise] ». Dans les deux cas, vous restez responsable de vos obligations de facturation et de TVA et vous devez conserver un double de chaque facture.",
+    "La rédaction facturée comme prestation (articles, fiches produits, newsletters) relève du taux normal de 20 %. Seule la cession des droits patrimoniaux d'auteur sur un texte, identifiée et valorisée distinctement, relève du taux réduit de 10 %. En franchise en base, aucune TVA n'est facturée.",
+    "En micro-BNC, vous déclarez vos recettes encaissées et le bénéfice imposable est calculé après abattement forfaitaire de 34 % ; après dépassement du seuil du régime deux années consécutives, le passage à la déclaration contrôlée est obligatoire.",
+    "Avec une tarification au mot, au feuillet ou à l'article, la facture doit préciser pour chaque ligne la quantité, la dénomination précise de la prestation et le prix unitaire HT."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base",
+    "« Autofacturation » lorsque c'est votre client qui établit lui-même la facture dans le cadre d'un mandat de facturation ; mention du type « facture établie par [plateforme] au nom et pour le compte de [votre entreprise] » lorsque l'émission est confiée à une plateforme tierce qui n'est pas votre client",
+    "Sur une facture récapitulative mensuelle : chaque texte livré sur sa propre ligne, avec sa date de réalisation, même lorsque deux lignes sont identiques"
+  ],
+  "exemple_facture": {
+    "intitule": "Facture récapitulative mensuelle — rédacteur web en franchise en base (micro-BNC), client professionnel français",
+    "lignes": [
+      {
+        "designation": "Article de blog « Bien organiser son calendrier éditorial » (1 200 mots, brief, optimisation sémantique, une révision incluse) — livré le 04/09",
+        "quantite": 1,
+        "unite": "article",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Article de blog « Cinq erreurs à éviter dans un devis client » (1 200 mots, brief, optimisation sémantique, une révision incluse) — livré le 08/09",
+        "quantite": 1,
+        "unite": "article",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Article de blog « Comment structurer une page de service » (1 200 mots, brief, optimisation sémantique, une révision incluse) — livré le 11/09",
+        "quantite": 1,
+        "unite": "article",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Article de blog « Rédiger une fiche produit qui convertit » (1 200 mots, brief, optimisation sémantique, une révision incluse) — livré le 16/09",
+        "quantite": 1,
+        "unite": "article",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Article de blog « Les bases du maillage interne » (1 200 mots, brief, optimisation sémantique, une révision incluse) — livré le 22/09",
+        "quantite": 1,
+        "unite": "article",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Article de blog « Préparer la rentrée côté contenus » (1 200 mots, brief, optimisation sémantique, une révision incluse) — livré le 25/09",
+        "quantite": 1,
+        "unite": "article",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Réécriture de la fiche produit « Classeur à levier A4 » (700 mots, harmonisation du ton de marque) — livrée le 10/09",
+        "quantite": 1,
+        "unite": "fiche",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Réécriture de la fiche produit « Agenda deux pages par jour » (700 mots, harmonisation du ton de marque) — livrée le 10/09",
+        "quantite": 1,
+        "unite": "fiche",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Réécriture de la fiche produit « Stylo roller rechargeable » (700 mots, harmonisation du ton de marque) — livrée le 19/09",
+        "quantite": 1,
+        "unite": "fiche",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Réécriture de la fiche produit « Trieur douze compartiments » (700 mots, harmonisation du ton de marque) — livrée le 19/09",
+        "quantite": 1,
+        "unite": "fiche",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Rédaction de la newsletter mensuelle (objet, corps du message, déclinaison pour le site) — livrée le 29/09",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "« TVA non applicable, article 293 B du CGI »",
+      "Facture récapitulative émise au plus tard le dernier jour du mois civil au cours duquel la taxe est devenue exigible ; chaque livraison figure sur sa propre ligne, avec sa date de réalisation, même lorsque deux lignes sont identiques",
+      "Taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € (client professionnel)"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Regrouper les textes livrés dans le mois en une facture récapitulative conforme, ligne par ligne et datée",
+    "Suivre les recettes encaissées pour la déclaration micro-BNC et surveiller l'approche des limites de la franchise en base, sans attendre la régularisation",
+    "Garder une trace propre des factures émises pour votre compte par un client ou une plateforme mandatée",
+    "Recevoir puis émettre des factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée par l'administration fiscale, centrée sur la facturation et la gestion des indépendants et micro-entrepreneurs, périmètre qui correspond aux statuts listés plus haut pour ce métier."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée combinant compte pro en ligne et facturation pour les indépendants et freelances. Utile pour rapprocher les encaissements de clients multiples des factures récapitulatives émises."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée réunissant comptabilité, compte pro et facturation pour les indépendants. Ce périmètre aide à tenir le suivi des recettes BNC tout au long de l'année."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes articles sont-ils des droits d'auteur facturables à 10 % ?",
+      "reponse": "Pas par défaut. La rédaction facturée comme prestation de services relève du taux normal de 20 %. Le taux réduit de 10 % ne s'applique qu'à la cession des droits patrimoniaux d'auteur sur une œuvre de l'esprit, identifiée et valorisée distinctement sur la facture. Si vous êtes en franchise en base, vous ne facturez de toute façon aucune TVA."
+    },
+    {
+      "question": "Une plateforme de rédaction édite mes factures à ma place : est-ce conforme ?",
+      "reponse": "Oui, à condition qu'un mandat de facturation ait été conclu avant la première facture. Si c'est votre client qui émet lui-même la facture, il s'agit d'une autofacturation et la facture porte la mention « Autofacturation ». Si c'est une plateforme tierce, qui n'est pas votre client, la facture est établie en votre nom et pour votre compte et porte une mention du type « facture établie par [plateforme] au nom et pour le compte de [votre entreprise] ». Dans les deux cas, vous restez entièrement responsable de vos obligations de facturation et de TVA : conservez un double de chaque facture émise ainsi."
+    },
+    {
+      "question": "Puis-je regrouper tous les textes livrés dans le mois sur une seule facture ?",
+      "reponse": "Oui. Pour plusieurs prestations distinctes réalisées pour un même client dont la taxe devient exigible au cours du même mois civil, une facture périodique est admise. Elle doit être émise au plus tard à la fin de ce mois, et chaque livraison doit y figurer ligne par ligne avec sa date, même lorsque deux lignes sont identiques."
+    },
+    {
+      "question": "Un client me règle en janvier des articles livrés en décembre : sur quelle année déclarer cette recette ?",
+      "reponse": "En micro-BNC, vous déclarez les recettes effectivement encaissées au cours de l'année civile. Un article livré en décembre et payé en janvier se déclare sur l'année du paiement, pas sur celle de la livraison. Tenez votre registre des recettes par date d'encaissement, et non par date de facture, pour éviter tout décalage au moment de la déclaration."
+    },
+    {
+      "question": "Je suis payé au mot : comment remplir la quantité et le prix unitaire sur ma facture ?",
+      "reponse": "Tenez-vous à l'unité de facturation retenue dans votre devis sur toute la facture. Si vous vendez au mot, la quantité est le nombre de mots livrés et le prix unitaire HT votre tarif au mot ; si vous vendez à l'article ou au feuillet, la quantité est le nombre d'articles ou de feuillets et le prix unitaire celui convenu pour chacun. Chaque ligne doit porter la dénomination précise de la prestation, sa quantité et son prix unitaire hors taxe : un simple « rédaction web, forfait » ne suffit pas. Lorsque vous facturez à l'article, indiquez le volume de mots dans la dénomination pour que votre client retrouve ce qui a été commandé."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Facturation périodique ou récapitulative pour plusieurs opérations du même mois civil (BOI-TVA-DECLA-30-20-10, version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20210813"
+    },
+    {
+      "titre": "BOFiP — Autofacturation et mandat de facturation : facture émise au nom et pour le compte du prestataire (BOI-TVA-DECLA-30-20-10-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13244-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-30-20210813"
+    },
+    {
+      "titre": "BOFiP — Taux normal de TVA de 20 % applicable par défaut (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "BOFiP — Taux réduit de 10 % réservé aux cessions de droits patrimoniaux d'auteur (BOI-TVA-LIQ-30-20-100, version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20260415"
+    },
+    {
+      "titre": "economie.gouv.fr — Franchise en base de TVA et mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "BOFiP — Micro-BNC : champ d'application et bascule en déclaration contrôlée (BOI-BNC-DECLA-20-10, version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/4807-PGP.html/identifiant=BOI-BNC-DECLA-20-10-20260819"
+    },
+    {
+      "titre": "BOFiP — Micro-BNC : abattement forfaitaire de 34 % et recettes encaissées au cours de l'année civile (BOI-BNC-DECLA-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/4802-PGP.html/identifiant=BOI-BNC-DECLA-20-20-20120912"
+    },
+    {
+      "titre": "service-public.fr — Mentions obligatoires d'une facture : quantité, dénomination précise, prix unitaire HT",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "DGCCRF — Pénalités de retard et indemnité forfaitaire de recouvrement de 40 €",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Liste des plateformes agréées de facturation électronique (liste consultée le 06/10/2026)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

@@ -1,0 +1,140 @@
+{
+  "nom": "Pâtissier",
+  "slug": "patissier",
+  "famille": "restauration",
+  "statuts_frequents": [
+    "Entreprise individuelle (artisan pâtissier)",
+    "Micro-entrepreneur (pâtissier en laboratoire partagé ou à domicile)",
+    "EURL / SARL"
+  ],
+  "volume_factures_typique": "Quelques factures à quelques dizaines par mois, concentrées autour des commandes et des événements (mariages, baptêmes, réceptions d'entreprise) ; le reste de l'activité passe en tickets au comptoir.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Une commande d'événement se règle souvent en deux temps : acompte encaissé à la commande, solde à la livraison. La facture finale doit alors détailler chaque élément (pièce montée, plateaux, coffrets) avec sa quantité, son prix unitaire HT et son taux propre.",
+    "Le pain, les viennoiseries et les pâtisseries sucrées ne sont pas traités comme des produits préparés en vue d'une consommation immédiate : vendus à emporter ou livrés, ils relèvent du taux de 5,5 % applicable aux produits destinés à l'alimentation humaine, que le produit soit conditionné ou non et qu'il soit consommé le jour même ou plus tard. Le taux de 10 % ne s'applique que si vous réalisez une vente à consommer sur place, c'est-à-dire si vous servez vos produits ou mettez des installations à disposition (salon de thé, service en réception).",
+    "Clientèle double : particuliers pour les gâteaux de fête (données transmises en e-reporting) et professionnels pour les réceptions d'entreprise ou les restaurants (factures électroniques à l'échéance applicable à votre entreprise).",
+    "En micro-entreprise en franchise de TVA, aucun taux ne figure sur la facture : la mention « TVA non applicable, article 293 B du CGI » est obligatoire, et facturer la TVA à tort vous en rendrait redevable."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Dénomination précise de chaque produit ou prestation (ex. « pièce montée 60 choux », « coffret de sablés 250 g »), quantité et prix unitaire HT",
+    "Taux de TVA applicable ligne par ligne : 5,5 % sur les pâtisseries livrées ou vendues à emporter, 10 % sur la part éventuelle de vente à consommer sur place (service assuré par vos soins), 20 % sur une boisson alcoolique",
+    "Date d'émission, identification du pâtissier et du client, montants HT et TTC",
+    "Conditions et délai de paiement du solde après acompte",
+    "Mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base"
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — réception d'entreprise : pièce montée, mignardises et coffrets",
+    "lignes": [
+      {
+        "designation": "Pièce montée 60 choux, livrée le jour de la réception",
+        "quantite": 1,
+        "unite": "pièce",
+        "prix_unitaire_ht": 290,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Plateaux de mignardises fraîches livrés pour la réception",
+        "quantite": 5,
+        "unite": "plateau",
+        "prix_unitaire_ht": 48,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Coffret de sablés remis aux invités (pâtisserie sucrée livrée)",
+        "quantite": 40,
+        "unite": "coffret",
+        "prix_unitaire_ht": 6.2,
+        "tva_pct": 5.5
+      },
+      {
+        "designation": "Service en salle assuré par nos soins pendant la réception (vente à consommer sur place)",
+        "quantite": 1,
+        "unite": "prestation",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Acompte encaissé à la commande, déduit du montant restant à régler",
+      "Taux de TVA par ligne : 5,5 % sur les pâtisseries livrées, 10 % sur la prestation de service en salle (vente à consommer sur place), 20 % sur une éventuelle boisson alcoolique — le taux suit la nature de l'opération, pas le conditionnement du produit",
+      "Conditions et délai de paiement du solde",
+      "Date et lieu de livraison de la commande"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Enchaîner devis, acompte et facture de solde sur une même commande d'événement",
+    "Paramétrer le taux selon la nature de l'opération : 5,5 % sur les pâtisseries livrées ou vendues à emporter, 10 % sur la part de vente à consommer sur place",
+    "Transmettre les données des ventes aux particuliers (e-reporting) et émettre les factures B2B au format électronique à l'échéance applicable"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), de facturation et de gestion, pensée pour les indépendants et micro-entrepreneurs. Adaptée à un pâtissier qui facture des commandes ponctuelles liées à des événements."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), réunissant facturation et comptabilité pour indépendants, freelances et TPE. Permet d'émettre les factures de vos commandes et de tenir vos comptes au même endroit."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par l'administration (immatriculation délivrée pour trois ans, statut à vérifier à date sur impots.gouv.fr), de gestion financière et de comptabilité, conçue pour collaborer avec un expert-comptable. Pertinente pour un laboratoire de pâtisserie structuré en TPE et suivi par un cabinet."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je demande 30 % d'acompte à la commande d'une pièce montée : comment l'indiquer dans mes documents ?",
+      "reponse": "Formalisez la commande par écrit, puis indiquez sur la facture finale l'acompte encaissé et le solde restant dû. La facture doit détailler chaque élément (dénomination, quantité, prix unitaire HT), le taux de TVA par ligne, les montants HT et TTC et les conditions de paiement. Pour le traitement de la TVA sur l'acompte lui-même, faites valider le paramétrage par votre expert-comptable."
+    },
+    {
+      "question": "Une pièce montée livrée le jour du mariage : quel taux de TVA ?",
+      "reponse": "5,5 %. Le BOFIP exclut expressément le pain, les viennoiseries et les pâtisseries sucrées des produits préparés en vue d'une consommation immédiate : livrée ou vendue à emporter, une pièce montée relève du taux de 5,5 % applicable aux produits destinés à l'alimentation humaine, même si elle est consommée dans l'heure. Vous passeriez à 10 % uniquement sur la part de vente à consommer sur place, par exemple si vous assurez vous-même le découpage et le service pendant la réception."
+    },
+    {
+      "question": "Une entreprise me commande des desserts pour ses séminaires : dois-je lui adresser une facture électronique ?",
+      "reponse": "Oui, à terme. Un comité d'entreprise ou un service achats est un client professionnel assujetti : ces commandes devront être facturées au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise. En pratique, pensez à collecter dès la prise de commande le SIREN et l'adresse de facturation du siège, souvent différente du lieu de livraison du séminaire : sans ces données, la facture ne pourra pas être routée vers la plateforme du client."
+    },
+    {
+      "question": "Boîtes de sablés, confiseries, entremets : tout est-il au même taux ?",
+      "reponse": "Les pâtisseries sucrées, les entremets et les boîtes de sablés relèvent de 5,5 %, qu'ils soient conditionnés ou non. Le chocolat et la confiserie obéissent en revanche à des règles propres : vérifiez chaque référence sur le tableau du BOFIP (BOI-ANNX-000495) avant de paramétrer votre logiciel, et faites valider votre table de taux par votre expert-comptable."
+    },
+    {
+      "question": "Un particulier me commande un gâteau d'anniversaire : facture électronique obligatoire ?",
+      "reponse": "Non. Une commande passée par un particulier ne donne pas lieu à facture électronique, mais ses données de transaction devront être transmises à l'administration par e-reporting, selon le même calendrier. Concrètement, votre outil doit savoir distinguer dès la prise de commande un particulier d'un client professionnel — une distinction qui, en pâtisserie, se joue souvent sur la même commande d'événement selon que c'est la mariée ou l'entreprise qui règle."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFIP, BOI-TVA-LIQ-30-10-10 : le pain, les viennoiseries et les pâtisseries sucrées ne sont pas des produits préparés en vue d'une consommation immédiate et relèvent du taux de 5,5 %",
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+    },
+    {
+      "titre": "Tableau BOFIP (BOI-ANNX-000495) : classement produit par produit des ventes à emporter ou à livrer",
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+    },
+    {
+      "titre": "BOFIP : TVA à 10 % sur les ventes à consommer sur place, à l'exclusion des boissons alcooliques",
+      "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20201014"
+    },
+    {
+      "titre": "economie.gouv.fr : la liste des mentions qui doivent figurer sur chaque facture (détail des lignes, taux par ligne, HT/TTC, paiement)",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "BOFIP : conséquences de la franchise en base sur la facturation — mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "impots.gouv.fr : la facturation électronique s'impose à toutes les entreprises assujetties — recevoir puis émettre à l'échéance applicable",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr : ventes aux particuliers — transmission des données de transactions (e-reporting) au même calendrier",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr : les plateformes agréées — immatriculation par la DGFiP et consultation de la liste officielle",
+      "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

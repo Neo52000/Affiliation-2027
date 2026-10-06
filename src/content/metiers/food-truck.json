@@ -1,0 +1,138 @@
+{
+  "nom": "Food truck",
+  "slug": "food-truck",
+  "famille": "restauration",
+  "statuts_frequents": ["Micro-entreprise", "Entreprise individuelle", "EURL", "SASU"],
+  "volume_factures_typique": "Des dizaines de tickets de caisse par service au guichet, mais peu de vraies factures émises : quelques privatisations ou prestations événementielles par mois. En face, des redevances d'emplacement et des factures fournisseurs à recevoir régulièrement.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "L'essentiel des ventes se fait au guichet, auprès de particuliers, sans facture. Ces recettes ne donneront pas lieu à facture électronique mais à l'e-reporting : transmission à l'administration de données agrégées par jour, ventilées par taux de TVA, sans donnée nominative sur les clients.",
+    "La vente à emporter depuis le camion ne bascule pas à 5,5 % : un burger, une portion de frites ou une crêpe préparés en vue d'une consommation immédiate restent à 10 %, même emportés. Le 5,5 % ne vise que les produits conditionnés permettant leur conservation, comme une canette fermée ; la même boisson servie en gobelet passe à 10 % et les bières restent à 20 %.",
+    "Les emplacements génèrent un flux administratif propre au métier : l'occupation du domaine public exige une autorisation (permis de stationnement ou AOT) délivrée notamment par la mairie, personnelle, révocable, assortie d'une redevance fixée par la commune et révisable. Ces redevances et les factures des organisateurs d'événements s'ajoutent aux achats à suivre. À cette autorisation s'ajoute, lorsque vous exercez en dehors de la commune de votre établissement, une carte permettant l'exercice d'une activité commerciale ambulante, à obtenir avant de commencer la tournée. Conservez-la avec vos autorisations d'emplacement : ce sont les justificatifs qu'un contrôle vous demandera en premier.",
+    "La franchise en base de TVA est fréquente dans l'activité : les factures de privatisation ne portent alors aucun taux, mais la mention « TVA non applicable, article 293 B du CGI ». Facturer la TVA à tort rendrait l'entreprise redevable de la taxe.",
+    "Depuis la fin de l'impression systématique, le ticket de caisse est remis à la demande du client, avec affichage lisible au point d'encaissement : c'est le régime de vos ventes à emporter au guichet, qui sont des livraisons de biens. La note reste en revanche due dès 25 € TTC, et sur demande en dessous, lorsque vous vendez à consommer sur place — mange-debout ou tables mises à disposition — ainsi que pour vos prestations de privatisation."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Sur une facture de privatisation établie en franchise en base, aucune colonne de taux : la mention « TVA non applicable, article 293 B du CGI » remplace la ventilation par taux que l'on attendrait d'une prestation mêlant plats et boissons.",
+    "Pour une privatisation facturée à une entreprise : date du service et adresse de l'événement (le camion se déplace chez le client), en plus des mentions communes.",
+    "Si l'entreprise est redevable de la TVA : taux ventilé ligne par ligne, 10 % sur les plats et boissons servis pour consommation immédiate, 20 % sur les boissons alcooliques.",
+    "Remise d'une note dès 25 € TTC pour les ventes à consommer sur place et les prestations de privatisation ; les ventes à emporter au guichet relèvent des seules règles du ticket de caisse."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture — privatisation du camion pour une soirée d'équipe (60 personnes, service au comptoir sur le site de l'entreprise)",
+    "lignes": [
+      {
+        "designation": "Menu burger-frites servi au comptoir du camion (consommation immédiate)",
+        "quantite": 60,
+        "unite": "menu",
+        "prix_unitaire_ht": 11,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Limonades et sodas servis en gobelet (consommation immédiate)",
+        "quantite": 60,
+        "unite": "gobelet",
+        "prix_unitaire_ht": 2.3,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Bières artisanales (33 cl) servies au comptoir",
+        "quantite": 40,
+        "unite": "bouteille",
+        "prix_unitaire_ht": 4.2,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Adresse du service : site du client (le lieu de l'événement figure sur la facture, en plus de la date d'émission).",
+      "Variante fréquente en franchise en base : aucune colonne TVA, mention « TVA non applicable, article 293 B du CGI » à la place des taux.",
+      "Les ventes du midi au guichet ne font pas l'objet de telles factures : elles relèvent de l'e-reporting en données agrégées.",
+      "Conditions et délai de paiement du client professionnel indiqués."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Encaisser vite au guichet avec une caisse qui affecte le bon taux selon le produit et son contenant (5,5 %, 10 %, 20 %)",
+    "Facturer ponctuellement des privatisations d'entreprise, y compris sous franchise en base sans TVA",
+    "Recevoir et classer les factures fournisseurs et les redevances d'emplacement, y compris au format électronique",
+    "Préparer l'e-reporting des recettes du guichet, agrégées par jour et par taux"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée dédiée aux indépendants et micro-entrepreneurs, combinant facturation et gestion. Le profil correspond au food truck en micro-entreprise qui facture quelques privatisations et suit ses dépenses d'emplacement."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme agréée réunissant compte professionnel en ligne et facturation, pour indépendants, freelances et TPE. Elle permet d'isoler les recettes du camion sur un compte dédié et d'émettre les factures de privatisation depuis le même service."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée associant comptabilité, compte pro et facturation pour les indépendants. Un exploitant en nom propre y tient sa comptabilité et facture ses clients professionnels occasionnels au même endroit."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je vends uniquement au guichet à des particuliers : la facturation électronique me concerne-t-elle vraiment ?",
+      "reponse": "Oui, même si vous n'émettez presque jamais de facture. Côté réception d'abord : les factures de vos fournisseurs, les redevances d'emplacement et les factures des organisateurs d'événements devront vous parvenir au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise — c'est le volet qui vous concerne en premier. Côté ventes ensuite : vos recettes du guichet ne deviennent pas des factures électroniques, elles alimentent l'e-reporting sous forme de données agrégées par jour et par taux de TVA, sans le nom de vos clients. Seules vos privatisations facturées à des entreprises passeront par la facture électronique. En pratique, c'est votre caisse qui doit savoir ventiler 5,5 %, 10 % et 20 % pour que ces données soient justes."
+    },
+    {
+      "question": "Mes burgers vendus à emporter sont-ils à 5,5 % ou à 10 % ?",
+      "reponse": "À 10 %. Un produit préparé en vue d'une consommation immédiate reste à 10 % même vendu à emporter depuis le camion. Le taux de 5,5 % est réservé aux produits conditionnés permettant leur conservation, par exemple une canette fermée ; la même boisson servie en gobelet repasse à 10 %, et les boissons alcooliques restent à 20 % dans tous les cas."
+    },
+    {
+      "question": "Quelles autorisations pour stationner mon camion sur la voie publique, et que devient la redevance ?",
+      "reponse": "Toute vente sur la voie publique suppose une autorisation, délivrée en général par la mairie, qui précise les lieux, dates et horaires. L'autorisation d'occupation du domaine public est personnelle, révocable et donne lieu à une redevance dont le montant est fixé par la commune et révisable. Conservez ces justificatifs : ils font partie des pièces à classer avec vos factures fournisseurs."
+    },
+    {
+      "question": "Dois-je encore imprimer un ticket pour chaque client ?",
+      "reponse": "Non. Le ticket de caisse est remis à la demande du client, et vous devez l'en informer par un affichage lisible au point d'encaissement. Attention toutefois : si vous proposez une consommation sur place ou si vous facturez une prestation, la remise d'une note reste obligatoire dès 25 € TTC, et elle est due sur demande en dessous de ce montant."
+    },
+    {
+      "question": "Je suis en franchise de TVA : puis-je quand même afficher un taux sur mes factures de privatisation ?",
+      "reponse": "Non. Vos factures ne portent aucun taux et doivent mentionner « TVA non applicable, article 293 B du CGI ». Facturer la TVA à tort vous en rendrait redevable. La franchise ne vous fait pas non plus sortir de la réforme : réception des factures fournisseurs au format électronique et e-reporting de vos ventes s'appliquent à l'échéance applicable à votre entreprise."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Tableau des taux applicables aux produits vendus à emporter ou à livrer (consommation immédiate ou différée)",
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+    },
+    {
+      "titre": "economie.gouv.fr — Les taux de TVA du quotidien (boissons alcooliques au taux normal)",
+      "url": "https://www.economie.gouv.fr/particuliers/tva-taux-quotidien"
+    },
+    {
+      "titre": "economie.gouv.fr — Commerçants : l'autorisation d'occupation du domaine public (AOT, permis de stationnement, redevance)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-un-commerce/commercants-vous-avez-besoin-dune-autorisation-pour-occuper-le-domaine-public"
+    },
+    {
+      "titre": "DGCCRF — Ventes sur la voie publique : autorisations nécessaires et carte permettant l'exercice d'une activité commerciale ou artisanale ambulante",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/ventes-sur-la-voie-publique-autorisations-necessaires"
+    },
+    {
+      "titre": "economie.gouv.fr — Ticket de caisse : les obligations des professionnels (remise à la demande)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-un-commerce/ticket-de-caisse-professionnels-quelles-sont-vos-obligations"
+    },
+    {
+      "titre": "DGCCRF — Cafés et bars : obligations des professionnels (note obligatoire dès 25 € TTC pour les prestations de services et la consommation sur place)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/cafes-et-bars-quelles-obligations-pour-les-professionnels"
+    },
+    {
+      "titre": "BOFiP — Franchise en base : mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Fiche : la transmission des données de transactions (e-reporting)",
+      "url": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fiches_reforme/fiche-e-reporting_transactions.pdf"
+    },
+    {
+      "titre": "impots.gouv.fr — Clients entreprises et particuliers : facturation électronique et e-reporting",
+      "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

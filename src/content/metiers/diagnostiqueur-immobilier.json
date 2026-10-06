@@ -1,0 +1,167 @@
+{
+  "nom": "Diagnostiqueur immobilier",
+  "slug": "diagnostiqueur-immobilier",
+  "famille": "liberal",
+  "statuts_frequents": ["Entreprise individuelle", "Micro-entrepreneur", "EURL / SASU"],
+  "volume_factures_typique": "Ordre de grandeur observé : plusieurs dizaines de factures et de notes par mois, de faible montant unitaire, émises au fil des interventions. Ce repère est indicatif et n'est pas issu d'une statistique publique.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos diagnostics (DPE, amiante, plomb, gaz, électricité, termites) sont des prestations d'expert soumises à la TVA au taux normal de 20 %. Le taux réduit réservé à certains travaux sur locaux d'habitation ne s'applique pas à un diagnostic facturé isolément.",
+    "Votre clientèle est mixte : au particulier vendeur ou bailleur, vous remettez une note détaillée avant le paiement dès 25 € TTC ; à l'agence, au notaire ou au syndic, vous adressez une facture complète avec les mentions entre professionnels, dont les pénalités de retard et l'indemnité de 40 €.",
+    "Un dossier de diagnostic technique avant vente regroupe plusieurs diagnostics : détaillez chaque intervention sur une ligne distincte avec son prix unitaire hors taxes, même lorsque vous vendez un forfait global.",
+    "Vous exercez sous certification par domaine de diagnostic, délivrée par un organisme accrédité, avec une assurance couvrant les conséquences de vos interventions et une obligation d'indépendance vis-à-vis du propriétaire qui vous mandate et des entreprises de travaux.",
+    "Les frais de déplacement que vous refacturez sont des frais accessoires : ils entrent dans la base d'imposition et suivent le régime de la prestation principale, donc le taux de 20 %. Les sommes que vous avancez au nom et pour le compte de votre client, sur justificatif et en rendant compte exactement, sont des débours : elles restent hors base d'imposition et ne supportent pas la TVA. Distinguez les deux sur la facture.",
+    "Assujetti à la TVA, vous êtes concerné par la facturation électronique à l'échéance applicable à votre entreprise : factures électroniques pour vos clients professionnels établis en France, transmission de données à l'administration pour vos interventions auprès des particuliers."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Détail de chaque diagnostic sur une ligne propre : désignation, quantité, prix unitaire hors taxes",
+    "Note remise avant le paiement au client particulier dès 25 € TTC",
+    "Taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € pour les donneurs d'ordre professionnels",
+    "« TVA non applicable, article 293 B du CGI » si vous exercez en franchise en base"
+  ],
+  "exemple_facture": {
+    "intitule": "Dossier de diagnostic technique avant la vente d'un appartement construit avant 1949",
+    "lignes": [
+      {
+        "designation": "Diagnostic de performance énergétique (DPE)",
+        "quantite": 1,
+        "unite": "intervention",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Constat de risque d'exposition au plomb (CREP)",
+        "quantite": 1,
+        "unite": "intervention",
+        "prix_unitaire_ht": 110,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Repérage amiante avant vente",
+        "quantite": 1,
+        "unite": "intervention",
+        "prix_unitaire_ht": 100,
+        "tva_pct": 20
+      },
+      {
+        "designation": "État de l'installation intérieure d'électricité",
+        "quantite": 1,
+        "unite": "intervention",
+        "prix_unitaire_ht": 90,
+        "tva_pct": 20
+      },
+      {
+        "designation": "État de l'installation intérieure de gaz",
+        "quantite": 1,
+        "unite": "intervention",
+        "prix_unitaire_ht": 90,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "La composition du dossier dépend du bien : le constat de risque d'exposition au plomb n'est exigé, en cas de vente, que pour les logements construits avant le 1er janvier 1949, ce qui est le cas du bien facturé ici",
+      "Note remise au client particulier avant paiement (prestation supérieure à 25 € TTC)",
+      "Chaque diagnostic est détaillé sur une ligne distincte avec son prix unitaire hors taxes",
+      "TVA au taux normal de 20 % sur l'ensemble des diagnostics"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Éditer rapidement des factures et notes de faible montant, souvent depuis le terrain après l'intervention",
+    "Adapter le document au client : note au particulier dès 25 € TTC, facture complète aux professionnels",
+    "Détailler chaque diagnostic d'un dossier avant vente sur une ligne distincte",
+    "Distinguer sur la facture les frais accessoires refacturés, taxables, et les débours engagés au nom et pour le compte du client",
+    "Suivre les règlements des donneurs d'ordre récurrents (agences, notaires, syndics) et relancer",
+    "Anticiper la facturation électronique et la transmission des données de vos interventions pour particuliers, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Tiime réunit facturation et comptabilité pour les indépendants, micro-entrepreneurs et TPE. Ce couplage aide un diagnostiqueur qui émet de nombreuses factures de faible montant."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Qonto combine compte professionnel et facturation pour les PME et les indépendants. Ce format est utile quand les règlements proviennent de donneurs d'ordre variés : agences, notaires, syndics, particuliers."
+    },
+    {
+      "slug": "abby",
+      "justification": "Abby cible les indépendants et micro-entrepreneurs avec facturation et gestion. Ce positionnement correspond à un diagnostiqueur qui démarre en entreprise individuelle."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes diagnostics portent sur des logements anciens : puis-je appliquer le taux de TVA réduit des travaux de rénovation ?",
+      "reponse": "Non. Un diagnostic est une prestation d'expert soumise au taux normal de 20 %, même lorsqu'il concerne un logement ancien. Les taux réduits visent certains travaux sur locaux d'habitation, pas les diagnostics facturés isolément."
+    },
+    {
+      "question": "Je vends un pack complet de diagnostics avant vente : puis-je facturer une seule ligne forfaitaire ?",
+      "reponse": "Non. Le document détaille chaque prestation : désignation du diagnostic, quantité et prix unitaire hors taxes. Ce détail vaut aussi bien pour la facture adressée à un professionnel que pour la note remise au particulier avant paiement."
+    },
+    {
+      "question": "Quelles garanties dois-je pouvoir justifier pour réaliser des diagnostics réglementés ?",
+      "reponse": "Une certification par domaine de diagnostic, délivrée par un organisme accrédité, et une assurance couvrant les conséquences de vos interventions, dont les minima sont fixés par décret : 300 000 € par sinistre et 500 000 € par année d'assurance. Vous devez aussi rester indépendant du propriétaire qui vous mandate et de toute entreprise susceptible de réaliser des travaux sur les ouvrages diagnostiqués."
+    },
+    {
+      "question": "Un diagnostic se révèle incomplet ou erroné après la vente : quelles conséquences pour ma facturation et mes garanties ?",
+      "reponse": "Votre responsabilité est engagée envers l'acquéreur, qui peut se prévaloir du rapport. Vous devez être assuré pour les conséquences de vos interventions, avec une garantie dont le montant ne peut être inférieur à 300 000 € par sinistre et 500 000 € par année d'assurance. Conservez le rapport, la facture et la preuve de la certification en cours de validité au jour de l'intervention : ces trois pièces sont demandées en cas de réclamation. Une contre-visite réalisée à votre initiative pour corriger votre propre rapport ne se refacture pas au client."
+    },
+    {
+      "question": "Avec une clientèle en partie composée de particuliers, que change la facturation électronique pour moi ?",
+      "reponse": "Vous êtes concerné en tant qu'assujetti établi en France. À l'échéance applicable à votre entreprise, vos factures aux agences, notaires et syndics établis en France passeront par une plateforme, et vos interventions pour des particuliers donneront lieu à une transmission de données à l'administration. Préparez dès maintenant l'identification de vos donneurs d'ordre professionnels par leur numéro SIREN : un dossier de diagnostic commandé par une agence pour le compte d'un vendeur particulier se facture à l'agence si c'est elle qui vous mandate, et au vendeur si le mandat vient de lui. Le statut du destinataire de la facture détermine le circuit applicable."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Prestations d'experts au taux normal de TVA de 20 % (BOFiP, BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "Taux réduits limités à certains travaux sur locaux d'habitation (BOFiP, BOI-TVA-LIQ-30-20-90-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1733-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-30-20240731"
+    },
+    {
+      "titre": "Compétences, assurance et impartialité du diagnostiqueur, article L. 271-6 du code de la construction et de l'habitation (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000022493212/"
+    },
+    {
+      "titre": "Dossier de diagnostic technique annexé à la vente, articles L. 271-4 à L. 271-6 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006176358"
+    },
+    {
+      "titre": "Constat de risque d'exposition au plomb en cas de vente, articles L. 1334-5 à L. 1334-10 du code de la santé publique (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072665/LEGISCTA000006171529/"
+    },
+    {
+      "titre": "Décret n° 2010-1200 pris pour l'application de l'article L. 271-6 : minima d'assurance des diagnostiqueurs (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000022913492"
+    },
+    {
+      "titre": "Certification des diagnostiqueurs intervenant sur le DPE, arrêté du 20 juillet 2023 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047927747"
+    },
+    {
+      "titre": "Certification des diagnostiqueurs amiante, électricité, gaz, plomb et termites, arrêté du 1er juillet 2024 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049890008"
+    },
+    {
+      "titre": "Frais refacturés et débours : base d'imposition à la TVA (BOFiP, BOI-TVA-BASE-10-10-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/488-PGP.html/identifiant=BOI-TVA-BASE-10-10-30-20220511"
+    },
+    {
+      "titre": "Détail de chaque prestation et mentions des factures entre professionnels (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "Note détaillée au client particulier dès 25 € TTC (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "Pénalités de retard entre professionnels et indemnité de recouvrement de 40 € (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "La facturation électronique s'applique aux assujettis établis en France (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

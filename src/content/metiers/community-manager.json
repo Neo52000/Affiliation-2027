@@ -1,0 +1,140 @@
+{
+  "nom": "Community manager",
+  "slug": "community-manager",
+  "famille": "numerique",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle", "SASU"],
+  "volume_factures_typique": "Volume souvent observé : une poignée de factures par mois, avec une part importante de factures récurrentes liées aux forfaits mensuels d'animation (estimation éditoriale, non réglementaire)",
+  "clients_types": "B2B",
+  "specificites_facturation": [
+    "L'animation de comptes sociaux se facture le plus souvent au forfait mensuel reconduit. Chaque mois de prestation donne lieu à une facture distincte, qui précise la période couverte et le détail des prestations rendues : publications programmées, modération, veille.",
+    "Vos prestations sont immatérielles. Le décompte détaillé exigé sur la facture sert aussi de justificatif : réseaux animés, nombre de publications, reporting remis. Un intitulé vague comme « prestation communication » vous expose à des contestations.",
+    "Si vous relevez de la franchise en base de TVA, vous facturez vos forfaits sans TVA, avec la mention « TVA non applicable, article 293 B du CGI », et vous ne déduisez pas la TVA sur vos outils de planification ou vos banques d'images.",
+    "Si vous êtes redevable de la TVA, vos prestations d'animation, de modération et de création de contenus pour les réseaux sociaux relèvent du taux normal de 20 %. Si vous facturez en plus, sur une ligne distincte, la cession des droits patrimoniaux sur les contenus que vous avez créés (visuels, textes, photos, vidéos), cette cession relève du taux réduit de 10 % applicable aux cessions de droits patrimoniaux reconnus aux auteurs d'œuvres de l'esprit. Chaque ligne porte alors son propre taux.",
+    "Lorsque vous pilotez le budget publicitaire d'un client sur les régies sociales, distinguez vos honoraires de gestion des sommes destinées à la régie. Une organisation courante consiste à faire régler la régie directement par le client : vous ne facturez alors que vos honoraires.",
+    "En micro-entreprise, vous déclarez à l'Urssaf le chiffre d'affaires encaissé chaque mois ou chaque trimestre, même s'il est nul. Attention au décalage propre aux forfaits reconduits : la facture de septembre réglée en octobre se déclare sur octobre. Un suivi des encaissements par client, et non des factures émises, évite les écarts de déclaration sur les portefeuilles de forfaits."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Date ou période de la prestation : indiquez le mois d'animation couvert par le forfait.",
+    "Décompte détaillé des prestations : réseaux animés, volumes de publications, modération, reporting remis.",
+    "Taux de TVA propre à chaque ligne lorsque la facture distingue la prestation de création (taux normal) de la cession des droits patrimoniaux sur les contenus créés (taux réduit de 10 %).",
+    "« TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base.",
+    "Pour vos clients professionnels : taux des pénalités de retard, indemnité forfaitaire de recouvrement de 40 € et conditions d'escompte (ou « Escompte pour paiement anticipé : néant »)."
+  ],
+  "exemple_facture": {
+    "intitule": "Forfait mensuel d'animation de réseaux sociaux — community manager en franchise en base",
+    "lignes": [
+      {
+        "designation": "Forfait animation Instagram et LinkedIn — septembre 2026 (16 publications, modération quotidienne des commentaires)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 850,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Reporting mensuel de performance des communautés (portée, engagement, évolution des abonnés)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 120,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Couverture éditoriale en direct d'un événement client (stories et publications)",
+        "quantite": 4,
+        "unite": "heure",
+        "prix_unitaire_ht": 65,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "TVA non applicable, article 293 B du CGI",
+      "Période de prestation : du 1er au 30 septembre 2026",
+      "Pénalités de retard : taux prévu aux conditions de règlement ; indemnité forfaitaire pour frais de recouvrement : 40 €",
+      "Escompte pour paiement anticipé : néant"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Automatiser les factures récurrentes liées aux forfaits mensuels d'animation",
+    "Suivre les encaissements pour la déclaration Urssaf du chiffre d'affaires",
+    "Centraliser devis, factures et reportings par client",
+    "Pouvoir recevoir puis émettre des factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Elle associe facturation et gestion, avec pour cible les indépendants et micro-entrepreneurs. Ce périmètre correspond aux forfaits mensuels récurrents et au suivi client du métier."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. Elle réunit facturation et comptabilité pour les indépendants, freelances et micro-entrepreneurs. Utile quand l'activité d'animation devient régulière et que le suivi comptable se structure."
+    },
+    {
+      "slug": "shine",
+      "justification": "Compte professionnel en ligne avec facturation, sur une plateforme agréée (DGFiP), à vérifier sur la liste officielle tenue à jour par l'administration. L'offre vise les indépendants, freelances et TPE : le rapprochement entre forfaits facturés et encaissements se fait au même endroit."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je facture un forfait mensuel d'animation : dois-je émettre une facture chaque mois ou une seule pour l'année ?",
+      "reponse": "Chaque prestation rendue à un client professionnel donne lieu à une facture comportant les mentions obligatoires, dont la date ou la période de la prestation. Pour un forfait reconduit, l'usage est une facture par mois, qui précise le mois d'animation couvert. Vous gardez ainsi un suivi clair de vos encaissements."
+    },
+    {
+      "question": "Comment justifier sur une facture des prestations immatérielles comme la modération ou la veille ?",
+      "reponse": "La facture doit comporter la désignation précise et le décompte détaillé de chaque prestation. Indiquez les réseaux animés, les volumes réalisés et le reporting remis. Ce détail est une mention obligatoire et vous protège en cas de contestation du client."
+    },
+    {
+      "question": "Je gère le budget publicitaire de mes clients sur les régies sociales : comment le traiter dans mes factures ?",
+      "reponse": "Distinguez vos honoraires de gestion, qui sont vos prestations de services, des montants destinés à la régie publicitaire. Une organisation courante consiste à faire régler la régie directement par le client, avec son propre moyen de paiement. Vous ne facturez alors que vos honoraires, soumis à votre régime de TVA habituel : taux normal de 20 % si vous êtes redevable, mention de l'article 293 B du CGI si vous êtes en franchise en base."
+    },
+    {
+      "question": "Mes forfaits d'animation sont réglés avec un mois de décalage : quel chiffre d'affaires dois-je déclarer à l'Urssaf ?",
+      "reponse": "En micro-entreprise, vous déclarez le chiffre d'affaires effectivement encaissé sur la période, et non celui facturé. Un forfait d'animation de septembre réglé en octobre se déclare donc sur octobre. Vous déclarez chaque mois ou chaque trimestre, même si aucun forfait n'a été encaissé : vous portez alors 0. Pour un portefeuille de forfaits reconduits, tenez un suivi des encaissements par client plutôt qu'un suivi des factures émises, les deux ne coïncident pas."
+    },
+    {
+      "question": "Combien de temps conserver mes factures de forfaits et les éléments qui prouvent mes prestations ?",
+      "reponse": "Les factures se conservent 10 ans. Gardez aussi les éléments qui attestent la réalisation des prestations, comme les calendriers éditoriaux validés et les reportings mensuels envoyés. À l'échéance applicable à votre entreprise, vos factures seront émises et reçues via une plateforme agréée, y compris si vous êtes en franchise en base."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Tout savoir sur la facturation (mentions obligatoires, conservation des factures) — service-public.fr",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "Mentions obligatoires sur une facture — entreprendre.service-public.fr",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+    },
+    {
+      "titre": "Entreprises : pouvez-vous bénéficier de la franchise de TVA ? — economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "BOFiP — Prestations de services imposables au taux normal (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "BOFiP — Taux réduit de 10 % applicable aux cessions de droits patrimoniaux d'auteurs d'œuvres de l'esprit (BOI-TVA-LIQ-30-20-100)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20230823"
+    },
+    {
+      "titre": "Article 279 du Code général des impôts (g : cessions de droits patrimoniaux d'auteurs) — Légifrance",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028416998/2014-01-01"
+    },
+    {
+      "titre": "Délais de paiement : les règles à connaître — DGCCRF",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "Je découvre la facturation électronique — impots.gouv.fr",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "Je consulte la liste des plateformes agréées — impots.gouv.fr",
+      "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
+    },
+    {
+      "titre": "Déterminer mon chiffre d'affaires — autoentrepreneur.urssaf.fr",
+      "url": "https://www.autoentrepreneur.urssaf.fr/portail/accueil/une-question/toutes-les-fiches-pratiques/determiner-mon-chiffre-daffaires.html"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

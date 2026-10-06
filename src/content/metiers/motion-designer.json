@@ -1,0 +1,155 @@
+{
+  "nom": "Motion designer",
+  "slug": "motion-designer",
+  "famille": "numerique",
+  "statuts_frequents": [
+    "Micro-entrepreneur (franchise en base fréquente en début d'activité)",
+    "Entreprise individuelle au régime réel",
+    "EURL ou SASU",
+    "Régime social des artistes-auteurs possible pour certains revenus de création, selon la nature des œuvres"
+  ],
+  "volume_factures_typique": "Faible : quelques factures par mois, le plus souvent en deux temps par projet (facture d'acompte à la commande, facture de solde à la livraison du master).",
+  "clients_types": "B2B",
+  "specificites_facturation": [
+    "La production du film (script, storyboard, animation, montage, sound design) relève du taux normal de TVA de 20 %. Seule la cession des droits patrimoniaux d'auteur sur l'œuvre livrée, portée sur une ligne distincte et valorisée séparément, peut relever du taux réduit de 10 %. Ce taux réduit est réservé aux droits patrimoniaux reconnus par la loi aux auteurs, à l'exclusion de ceux reconnus à d'autres personnes : si vous exercez en société (EURL, SASU) et que la société cède des droits dont elle n'est pas l'auteur, vérifiez le taux applicable avant de facturer, le taux normal de 20 % restant la règle à défaut. Les droits portant sur les œuvres cinématographiques bénéficient pour leur part du taux de 10 % quel que soit leur détenteur.",
+    "Les droits portant sur des logiciels sont exclus du taux réduit de 10 % : un template After Effects, un preset ou un plugin vendu comme fichier réutilisable reste au taux normal, même si vous cédez des droits d'utilisation.",
+    "La TVA sur vos prestations est exigible à l'encaissement : chaque acompte encaissé déclenche la taxe. Organisez votre facturation en facture d'acompte puis facture de solde, projet par projet.",
+    "La cession de droits doit délimiter les droits cédés, leur destination, le territoire et la durée. Reportez ces éléments sur le devis et la facture : une extension de diffusion (TV, cinéma, publicité payante) se traite par avenant facturé.",
+    "Cadrez les allers-retours de validation dès le devis : indiquez le nombre de versions incluses. Au-delà, chaque itération devient une ligne supplémentaire de la facture de solde, au taux normal.",
+    "Si le film est destiné à une exploitation cinématographique et non à une simple diffusion web, le régime de la ligne de cession n'est pas le même : les droits portant sur les œuvres cinématographiques suivent une règle propre, indépendante de la qualité de leur détenteur. Vérifiez la destination réelle de l'œuvre avant d'arrêter le taux de la ligne de cession."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Ligne distincte décrivant la cession de droits patrimoniaux (droits cédés, supports, territoire, durée) lorsque le taux réduit de 10 % est appliqué",
+    "Mention « TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base : la cession de droits part alors sans TVA, comme le reste de la facture",
+    "Mention « Autoliquidation » pour un client assujetti établi dans un autre État membre de l'UE",
+    "Taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € sur les factures adressées à des professionnels"
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — film d'animation 2D de 45 secondes pour le lancement d'un produit (client : agence de communication française ; prestataire assujetti à la TVA)",
+    "lignes": [
+      {
+        "designation": "Conception : script, storyboard et animatic (deux allers-retours de validation inclus)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 1800,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Animation 2D, sound design et exports (16:9, 1:1, 9:16)",
+        "quantite": 8,
+        "unite": "jour",
+        "prix_unitaire_ht": 450,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Version supplémentaire au-delà des deux incluses (reprise du plan final)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 350,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Cession des droits patrimoniaux de reproduction et de représentation sur le film — web et réseaux sociaux, France, 2 ans",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 600,
+        "tva_pct": 10
+      }
+    ],
+    "mentions_specifiques": [
+      "Cession limitée aux supports, au territoire et à la durée indiqués ; toute autre exploitation fera l'objet d'un avenant",
+      "Taux de 10 % appliqué au titre de la cession de droits patrimoniaux par l'auteur personne physique ; en société, vérifiez le taux applicable à votre situation",
+      "Acompte de 30 % facturé à la commande (facture d'acompte n° FA-041) et déduit du présent solde",
+      "Pénalités de retard : taux indiqué aux conditions de règlement ; indemnité forfaitaire de recouvrement : 40 €"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Enchaîner devis, facture d'acompte et facture de solde sans ressaisie, projet par projet",
+    "Gérer deux taux de TVA (20 % et 10 %) sur une même facture, avec une ligne de cession de droits distincte",
+    "Suivre les encaissements pour déclarer la TVA au bon moment (exigibilité à l'encaissement)",
+    "Préparer la réception, puis l'émission, de vos factures via une plateforme agréée à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), orientée indépendants et freelances. Facturation et comptabilité sont réunies au même endroit, ce qui s'accorde avec un rythme d'acomptes et de soldes par projet."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), destinée aux indépendants, qui combine comptabilité, compte pro et facturation. Cette combinaison limite les ressaisies entre encaissements et factures."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), associant compte professionnel et facturation, pour indépendants et PME. Un choix cohérent si vous voulez rapprocher vos encaissements d'acomptes de vos factures depuis le compte pro."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Puis-je facturer tout mon film d'animation à 10 % au titre des droits d'auteur ?",
+      "reponse": "Non. La production du film (conception, animation, montage) relève du taux normal de 20 %. Seule la cession des droits patrimoniaux, identifiée et valorisée sur une ligne distincte de la facture, relève du taux réduit de 10 %. Si la cession n'est pas individualisée, l'ensemble reste au taux normal. Ce taux réduit vise par ailleurs les droits reconnus par la loi aux auteurs : si la cession est consentie par votre société (EURL, SASU) et non par vous en tant qu'auteur, vérifiez le taux applicable avant de facturer."
+    },
+    {
+      "question": "Comment facturer l'acompte demandé avant de lancer la production ?",
+      "reponse": "Émettez une facture d'acompte à la commande, puis une facture de solde à la livraison du master. Pour une prestation de services, la TVA est exigible à l'encaissement : chaque acompte encaissé est à déclarer. En franchise en base, l'acompte part sans TVA avec la mention « TVA non applicable, article 293 B du CGI »."
+    },
+    {
+      "question": "Une agence européenne me commande un film et veut l'exploiter dans plusieurs pays : comment facturer ?",
+      "reponse": "Si l'agence est assujettie dans un autre État de l'UE, la prestation de production part hors taxe avec la mention « Autoliquidation ». La cession de droits suit le même traitement : elle ne reste pas en TVA française. En revanche, le périmètre d'exploitation reste à délimiter contractuellement — territoire, supports, durée — et une diffusion multi-pays doit être prévue dès le devis, faute de quoi l'extension se facturera par avenant. Ne confondez pas la mention « Autoliquidation » avec celle de la franchise en base, qui correspond à une situation différente."
+    },
+    {
+      "question": "Je vends aussi des templates After Effects : quel taux de TVA appliquer ?",
+      "reponse": "Le taux normal de 20 %. Les droits portant sur des logiciels sont expressément exclus du taux réduit applicable aux cessions de droits d'auteur. Un template, un preset ou un plugin reste donc taxé à 20 %, même assorti d'une licence d'utilisation."
+    },
+    {
+      "question": "Comment facturer des allers-retours de validation non prévus au devis ?",
+      "reponse": "Précisez dans le devis le nombre de versions incluses. Au-delà, facturez chaque itération sur une ligne distincte, au taux normal de 20 %. Si la demande étend l'exploitation du film (nouveaux supports, durée allongée), traitez-la par avenant à la cession de droits, celle-ci devant rester délimitée en étendue, destination, lieu et durée."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Taux réduit de 10 % applicable aux cessions de droits d'auteur (BOI-TVA-LIQ-30-20-100, version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html?identifiant=BOI-TVA-LIQ-30-20-100"
+    },
+    {
+      "titre": "BOFiP — Taux normal de TVA de 20 % applicable à défaut de taux réduit (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "BOFiP — Fait générateur et exigibilité de la TVA sur les prestations de services, acomptes compris (BOI-TVA-BASE-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "Légifrance — Article L131-3 du code de la propriété intellectuelle (délimitation de la cession de droits)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278958"
+    },
+    {
+      "titre": "economie.gouv.fr — Franchise en base de TVA et mention de l'article 293 B du CGI",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "BOFiP — Facturation sans TVA avec mention « Autoliquidation » pour un preneur assujetti dans l'UE (BOI-TVA-DECLA-30-20-20-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1531-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-30-20190925"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — Pénalités de retard et indemnité forfaitaire de recouvrement de 40 € entre professionnels",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "entreprendre.service-public.fr — Mentions obligatoires d'une facture entre professionnels (fiche F31410)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique (réception et émission via plateforme agréée)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique : liste des plateformes de dématérialisation partenaires immatriculées",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    },
+    {
+      "titre": "Urssaf — Le régime social des artistes-auteurs",
+      "url": "https://www.urssaf.fr/accueil/artiste-auteur-diffuseur/artiste-auteur.html"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

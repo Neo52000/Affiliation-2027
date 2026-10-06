@@ -1,0 +1,153 @@
+{
+  "nom": "Traducteur-interprète",
+  "slug": "traducteur",
+  "famille": "liberal",
+  "statuts_frequents": [
+    "Micro-entrepreneur (BNC)",
+    "Entreprise individuelle",
+    "EURL / SASU",
+    "Artiste-auteur pour les traductions d'œuvres"
+  ],
+  "volume_factures_typique": "Ordre de grandeur observé : quelques dizaines de factures par mois, souvent de petits montants, réparties entre agences, clients directs et éditeurs. Ce repère est indicatif et n'est pas issu d'une statistique publique.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos traductions et missions d'interprétation facturées à des clients établis en France relèvent du taux normal de TVA de 20 %, comme les autres prestations intellectuelles d'expert.",
+    "Pour une agence ou une entreprise assujettie établie dans un autre État membre de l'UE, vous facturez hors TVA avec la mention « Autoliquidation » et le numéro de TVA intracommunautaire des deux parties. Vous déposez ensuite une déclaration européenne de services (DES) au plus tard le dixième jour ouvrable du mois qui suit celui au cours duquel la TVA est devenue exigible chez votre client.",
+    "Pour un client professionnel établi hors de l'Union européenne, la prestation n'est en principe pas soumise à la TVA française : le lieu d'imposition se situe chez le preneur. La DES, elle, ne vise que les clients établis dans l'UE.",
+    "Vos traductions d'œuvres de l'esprit (ouvrages littéraires, conférences) sont elles-mêmes des œuvres de l'esprit : la cession de vos droits patrimoniaux sur ces traductions relève du taux réduit de 10 %. Vos traductions de textes de toute autre nature (documents juridiques, commerciaux, techniques) restent au taux normal de 20 %, quel que soit le mode de rémunération. L'éditeur opère en principe une retenue de TVA et vous remet un relevé de droits à chaque paiement, sauf renonciation de votre part à ce dispositif.",
+    "Certaines traductions littéraires ou audiovisuelles relèvent du régime social des artistes-auteurs, distinct de vos prestations de traduction technique classiques. Vérifiez le rattachement de chaque revenu avant de le facturer.",
+    "En franchise en base, aucune TVA ne figure sur vos factures, qui portent la mention « TVA non applicable, article 293 B du CGI ». Vous restez assujetti, donc concerné par la facturation électronique à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "« Autoliquidation » sur les factures adressées à un assujetti établi dans un autre État membre de l'UE",
+    "Numéro de TVA intracommunautaire du prestataire et du preneur sur les factures intracommunautaires (et au-delà de 150 € HT entre professionnels français)",
+    "« TVA non applicable, article 293 B du CGI » en cas de franchise en base",
+    "Taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € sur les factures aux clients professionnels"
+  ],
+  "exemple_facture": {
+    "intitule": "Traduction d'un manuel technique pour un client assujetti établi en Allemagne",
+    "lignes": [
+      {
+        "designation": "Traduction technique français-allemand, manuel utilisateur (texte source)",
+        "quantite": 12400,
+        "unite": "mot",
+        "prix_unitaire_ht": 0.14,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Relecture croisée par un second traducteur",
+        "quantite": 6,
+        "unite": "heure",
+        "prix_unitaire_ht": 55,
+        "tva_pct": 0
+      },
+      {
+        "designation": "Mise à jour du glossaire terminologique client",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "Autoliquidation — TVA due par le preneur",
+      "Numéro de TVA intracommunautaire du prestataire et du preneur",
+      "Prestation à reporter sur la déclaration européenne de services (DES)",
+      "Taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 €, lorsque le contrat est soumis au droit français"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer hors TVA française vos clients assujettis de l'UE et hors UE, avec les mentions et numéros de TVA requis",
+    "Gérer des unités de facturation variées : mot source, page, heure de relecture, journée d'interprétation",
+    "Préparer la déclaration européenne de services à partir de vos factures intracommunautaires",
+    "Distinguer prestations classiques et revenus relevant des droits d'auteur (taux de 10 % sur les cessions portant sur une œuvre de l'esprit, retenue de TVA de l'éditeur)",
+    "Recevoir puis émettre des factures électroniques à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Indy réunit comptabilité, compte professionnel et facturation pour les indépendants. Ce périmètre s'adresse à un traducteur qui gère seul l'ensemble de son activité."
+    },
+    {
+      "slug": "abby",
+      "justification": "Abby associe facturation et gestion, avec pour cible les indépendants et micro-entrepreneurs. Ce positionnement correspond à un traducteur exerçant en micro-entreprise."
+    },
+    {
+      "slug": "shine",
+      "justification": "Shine propose un compte professionnel en ligne avec facturation, pour les indépendants, freelances et TPE. Ce format convient à un traducteur qui souhaite regrouper encaissements et facturation au même endroit."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je facture une agence de traduction établie en Belgique : dois-je appliquer la TVA française ?",
+      "reponse": "Non. Votre cliente est un assujetti établi dans un autre État membre : vous facturez hors TVA avec la mention « Autoliquidation », la taxe étant due par le preneur. Indiquez votre numéro de TVA intracommunautaire et le sien sur la facture. Vous reportez ensuite cette prestation sur la déclaration européenne de services, déposée au plus tard le dixième jour ouvrable du mois qui suit celui au cours duquel la TVA est devenue exigible chez votre client."
+    },
+    {
+      "question": "Un éditeur me rémunère en droits d'auteur pour la traduction d'un roman : quel taux de TVA s'applique ?",
+      "reponse": "La cession de vos droits patrimoniaux sur cette traduction relève du taux réduit de 10 % : la traduction d'une œuvre de l'esprit est elle-même une œuvre de l'esprit. Ce taux ne vaut pas pour les traductions de textes de toute autre nature, juridiques, commerciaux ou techniques, qui restent au taux normal de 20 % même rémunérées sous forme de droits. L'éditeur opère en principe une retenue de TVA sur les droits versés et vous remet, à chaque paiement, un relevé mentionnant les montants hors taxe et la TVA acquittée. Vous pouvez renoncer à ce dispositif de retenue."
+    },
+    {
+      "question": "Mon client est une entreprise établie aux États-Unis : ma facture porte-t-elle de la TVA ?",
+      "reponse": "En principe non. Pour une prestation rendue à un assujetti établi hors de France, le lieu d'imposition se situe chez le preneur : la TVA française ne s'applique pas. La déclaration européenne de services ne concerne que les clients établis dans l'Union européenne."
+    },
+    {
+      "question": "Je suis traducteur en franchise en base : la facturation électronique me concerne-t-elle ?",
+      "reponse": "Oui. La réforme vise toutes les entreprises assujetties à la TVA établies en France, y compris en franchise en base. À l'échéance applicable à votre entreprise, vous devrez pouvoir recevoir des factures électroniques, puis en émettre pour vos clients professionnels établis en France. Vos prestations pour des clients étrangers donneront lieu à une transmission de données à l'administration."
+    },
+    {
+      "question": "Je facture au mot source, à la page et à la journée d'interprétation sur une même mission : comment présenter la facture ?",
+      "reponse": "Détaillez chaque prestation sur une ligne distincte, avec son unité, sa quantité et son prix unitaire hors taxes : nombre de mots du texte source pour la traduction, heures de relecture, journée ou demi-journée d'interprétation, forfait de mise à jour terminologique. Un total global ne suffit pas entre professionnels. Les frais accessoires que vous refacturez, déplacement ou location de matériel d'interprétation, suivent le régime de la prestation principale et figurent sur des lignes propres."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "Taux normal de TVA sur les prestations des traducteurs et interprètes (BOFiP, BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "Territorialité et autoliquidation des prestations entre assujettis (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/prestations-entre-assujettis"
+    },
+    {
+      "titre": "Déclaration européenne de services : obligation, contenu et délai (BOFiP, BOI-TVA-DECLA-20-20-40)",
+      "url": "https://bofip.impots.gouv.fr/bofip/979-PGP.html/identifiant=BOI-TVA-DECLA-20-20-40-20220216"
+    },
+    {
+      "titre": "Taux réduit de 10 % sur les cessions de droits d'auteur portant sur une œuvre de l'esprit (BOFiP, BOI-TVA-LIQ-30-20-100)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20250514"
+    },
+    {
+      "titre": "Retenue de TVA opérée par les éditeurs sur les droits d'auteur (BOFiP, BOI-TVA-CHAMP-10-10-60-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/381-PGP.html/identifiant=BOI-TVA-CHAMP-10-10-60-30-20241009"
+    },
+    {
+      "titre": "Activités de traduction relevant du régime des artistes-auteurs (Urssaf)",
+      "url": "https://www.urssaf.fr/accueil/artiste-auteur-diffuseur/artiste-auteur/verification-regime-activite-aa.html"
+    },
+    {
+      "titre": "Frais accessoires refacturés et base d'imposition à la TVA (BOFiP, BOI-TVA-BASE-10-10-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/488-PGP.html/identifiant=BOI-TVA-BASE-10-10-30-20220511"
+    },
+    {
+      "titre": "Franchise en base de TVA et mention de l'article 293 B du CGI (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "Mentions obligatoires des factures entre professionnels (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "Obligation de remise d'une note détaillée au client particulier (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "Pénalités de retard et indemnité forfaitaire de recouvrement de 40 € (DGCCRF, economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "Champ de la facturation électronique pour les assujettis établis en France (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

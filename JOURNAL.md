@@ -125,3 +125,10 @@ Bordures sous le seuil : `--color-border` #d0d7de donne 1,45:1 sur blanc, 1,49:1
 Ligne de lecture trop longue : `prose-measure` à 70ch rendait 86 caractères par ligne, l'unité ch valant l'avance du glyphe « 0 », nettement plus large qu'un caractère moyen en Inter. Ramenée à 54ch, soit 71 caractères mesurés, dans la plage de confort 45-75.
 Détails : ancres décalées de 5,5 rem sous l'en-tête collant, listes à puces aérées et puces accentuées, tuiles de chiffres de l'accueil lisibles sous 400 px, et un appel au quiz au milieu de la page métier — sur mobile la colonne d'appui tombe à 7 969 px du haut d'une page qui en fait 8 697, le lecteur n'y arrive jamais.
 Garde-fous : 103 pages, similarité maximale 20,7 % (seuil 50 %), check-seo 100 pages indexables, 77 tests + 6 parcours e2e verts, Lighthouse 100/100/100/100 et CLS 0.
+
+## Phase 4 (vague 3) — 88 métiers publiés (2026-10-06)
+
+27 contenus métier importés : les 9 lots dont la correction était écrite sur disque mais jamais reprise par l'assembleur après l'assouplissement du schéma — professions libérales, numérique (3 lots), restauration (2 lots), services (3 lots). Huit familles sur dix sont complètes à 10 métiers sur 10.
+L'assembleur proposait aussi de réécrire 21 fiches déjà publiées. Vérification faite, 15 différences ne portaient que sur la mise en forme et 6 sur des reformulations équivalentes — aucune correction de fond. Écrasées, elles auraient produit du bruit de revue sans bénéfice pour le lecteur : les fiches publiées sont restées intactes.
+Reste 12 métiers pour atteindre 100 : les 9 du transport, dont les rédactions et les rapports de vérification existent mais dont les trois agents correcteurs ont échoué avant d'écrire, et les 3 de l'agriculture-lot3, dont le contenu corrigé est hors schéma.
+Garde-fous : 130 pages construites, 3 828 paires comparées, similarité maximale 20,7 % (seuil 50 %), check-seo 127 pages indexables conformes, 77 tests + 6 parcours e2e verts.

@@ -1,0 +1,156 @@
+{
+  "nom": "Créateur de formations en ligne",
+  "slug": "formateur-en-ligne",
+  "famille": "numerique",
+  "statuts_frequents": [
+    "Micro-entrepreneur (franchise en base fréquente au lancement)",
+    "Entreprise individuelle",
+    "SASU ou EURL",
+    "Organisme de formation déclaré (numéro de déclaration d'activité) pour l'activité de formation professionnelle"
+  ],
+  "volume_factures_typique": "Variable : de nombreuses ventes unitaires B2C, souvent encaissées via une plateforme de diffusion, et quelques factures B2B de montants plus élevés chaque mois.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos cours en ligne ne sont pas exonérés de TVA par principe. L'exonération vise la formation professionnelle continue réalisée par un organisme titulaire de l'attestation fiscale, demandée via le formulaire 3511-SD. Sans attestation en cours de validité, vos ventes sont taxées au taux normal de 20 %. Attention au sens de la démarche : une fois l'attestation délivrée, l'exonération s'impose à vous pour vos opérations de formation professionnelle continue — vous ne pouvez pas y renoncer, et vous perdez le droit de déduire la TVA sur les dépenses affectées à ces opérations. Mesurez cet effet avant de déposer la demande.",
+    "L'attestation ne couvre que les opérations relevant de la formation professionnelle continue : un même catalogue peut mêler ventes exonérées et ventes taxées. Identifiez chaque régime, facture par facture.",
+    "Pour une vente à un particulier établi dans un autre État de l'UE, un contenu en ligne automatisé relève des régimes particuliers du commerce électronique, mais seulement au-delà d'un seuil : tant que vos ventes transfrontalières à des non-assujettis de l'UE n'ont pas dépassé 10 000 € HT sur l'année civile en cours ni sur la précédente, et que vous êtes établi dans le seul État français, la TVA reste due en France dans vos conditions habituelles. Au-delà du seuil, la TVA est due dans l'État du consommateur et peut être déclarée via le guichet unique (OSS), sans immatriculation pays par pays ; le franchissement s'applique dès l'opération qui le dépasse et à toutes les suivantes.",
+    "Pour une entreprise assujettie établie dans un autre État de l'UE, vous facturez hors taxe avec la mention « Autoliquidation » : ce traitement B2B est distinct du guichet OSS.",
+    "Si vous vendez via une plateforme de diffusion, conservez ses relevés de ventes et vérifiez dans votre contrat qui émet quel document : ces relevés devront se rapprocher de vos propres factures et déclarations.",
+    "Le numéro de déclaration d'activité de prestataire de formation et l'attestation fiscale d'exonération de TVA sont deux démarches distinctes : détenir l'un ne dispense pas de demander l'autre."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Référence à la disposition justifiant l'exonération de TVA sur les factures de formation professionnelle continue, uniquement si vous détenez l'attestation fiscale en cours de validité",
+    "Mention « TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base",
+    "Mention « Autoliquidation » pour une entreprise cliente assujettie établie dans un autre État membre de l'UE",
+    "Sur les factures aux professionnels : taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 €"
+  ],
+  "exemple_facture": {
+    "intitule": "Vente B2B : parcours e-learning et classes virtuelles pour l'équipe support d'une PME française (créateur non titulaire de l'attestation fiscale : TVA au taux normal)",
+    "lignes": [
+      {
+        "designation": "Accès 12 mois au parcours en ligne « Relation client, niveau 2 » (10 apprenants)",
+        "quantite": 10,
+        "unite": "licence",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Classes virtuelles de lancement et de clôture, préparation incluse",
+        "quantite": 2,
+        "unite": "session",
+        "prix_unitaire_ht": 350,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Adaptation des études de cas aux procédures internes du client",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 500,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Opérations taxées au taux normal : le vendeur ne détient pas l'attestation fiscale d'exonération au titre de la formation professionnelle continue",
+      "Durée et conditions d'accès aux licences détaillées en annexe de la facture",
+      "Pénalités de retard : taux indiqué aux conditions de règlement ; indemnité forfaitaire de recouvrement : 40 €"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Séparer, dans la même comptabilité, les ventes exonérées (avec attestation) des ventes taxées",
+    "Rapprocher les relevés des plateformes de vente de vos factures et de vos écritures",
+    "Suivre le cumul de vos ventes B2C vers l'UE pour détecter le franchissement du seuil de 10 000 € HT et basculer au bon moment sur le guichet OSS",
+    "Préparer la facturation avec l'appui d'un expert-comptable sur les régimes de TVA (exonération, OSS, autoliquidation)",
+    "Anticiper la réception puis l'émission de factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), de gestion financière et de comptabilité, pensée pour travailler avec son expert-comptable. Cet appui compte quand la TVA mêle exonération formation, ventes UE et autoliquidation."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), orientée indépendants et micro-entrepreneurs, réunissant facturation et gestion. Un cadre adapté au créateur qui démarre en franchise en base avec des ventes unitaires."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), pour indépendants, qui combine comptabilité, compte pro et facturation. Utile pour centraliser les encaissements issus des plateformes et vos factures B2B."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes formations en ligne sont-elles exonérées de TVA ?",
+      "reponse": "Pas par principe. L'exonération concerne la formation professionnelle continue réalisée par un organisme titulaire de l'attestation fiscale en cours de validité, demandée via le formulaire 3511-SD. Sans cette attestation, vos cours en ligne sont taxés dans les conditions de droit commun, au taux normal de 20 %."
+    },
+    {
+      "question": "J'ai obtenu l'attestation fiscale : tout mon catalogue devient-il exonéré ?",
+      "reponse": "Non. L'exonération couvre les seules opérations réalisées dans le cadre de la formation professionnelle continue. Vos autres ventes, comme des contenus grand public hors de ce cadre, restent soumises à la TVA dans les conditions habituelles. Distinguez chaque catégorie sur vos factures et portez la référence de l'exonération sur les seules factures concernées. Notez aussi que, pour les opérations couvertes, l'exonération n'est pas optionnelle : elle s'applique de plein droit et emporte perte du droit à déduction correspondant."
+    },
+    {
+      "question": "Un particulier établi en Espagne achète mon cours vidéo : quelle TVA appliquer ?",
+      "reponse": "Cela dépend de votre volume. Tant que vos ventes à des particuliers d'autres États de l'UE n'ont pas dépassé 10 000 € HT sur l'année en cours ni sur la précédente, la TVA reste due en France : vous facturez dans vos conditions habituelles, ou sans TVA avec la mention « TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base. Au-delà de ce seuil, la vente est imposable en Espagne : le guichet unique (OSS) vous permet alors de déclarer et payer cette TVA depuis la France, sans vous immatriculer dans chaque État. Suivez ce seuil dès vos premières ventes à l'étranger et inscrivez-vous au service en ligne avant la déclaration qui suit le franchissement."
+    },
+    {
+      "question": "Une entreprise belge achète des licences pour ses salariés : dois-je facturer la TVA française ?",
+      "reponse": "Non, si elle est assujettie : vous facturez hors taxe et portez la mention « Autoliquidation » sur la facture, la TVA étant due par votre cliente dans son État. Ce traitement B2B est distinct du guichet OSS, qui concerne les ventes aux particuliers."
+    },
+    {
+      "question": "Faut-il un numéro de déclaration d'activité pour vendre mes formations ?",
+      "reponse": "La déclaration d'activité vise les prestataires qui réalisent des actions de formation professionnelle ; elle se dépose auprès de l'administration via le bulletin dédié (Cerfa 10782), qui demande notamment la date de la première convention ou du premier contrat de formation. Ce numéro ne vaut pas exonération de TVA : l'attestation fiscale est une démarche distincte. Pour la vente de contenus hors de ce cadre, vérifiez votre situation sur les pages officielles."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Exonération de TVA de la formation professionnelle continue sous condition d'attestation (BOI-TVA-CHAMP-30-10-20-50)",
+      "url": "https://bofip.impots.gouv.fr/bofip/943-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-50-20191016"
+    },
+    {
+      "titre": "impots.gouv.fr — Formulaire 3511-SD : demande d'attestation au titre de la formation professionnelle continue",
+      "url": "https://www.impots.gouv.fr/formulaire/3511-sd/demande-dattestation-au-titre-dactivites-sinscrivant-dans-le-cadre-de-la-fpc"
+    },
+    {
+      "titre": "BOFiP — Régimes particuliers du commerce électronique : imposition dans l'État du consommateur et guichet unique (BOI-TVA-DECLA-20-20-60-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13240-PGP.html/identifiant=BOI-TVA-DECLA-20-20-60-10-20220629"
+    },
+    {
+      "titre": "BOFiP — Seuil de 10 000 € applicable aux services fournis par voie électronique à des non-assujettis de l'UE (BOI-TVA-CHAMP-20-50-40-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/11964-PGP.html/identifiant=BOI-TVA-CHAMP-20-50-40-20-20210813"
+    },
+    {
+      "titre": "impots.gouv.fr — S'inscrire au service du guichet unique de TVA (OSS)",
+      "url": "https://www.impots.gouv.fr/portail/professionnel/je-minscris-au-service-du-guichet-unique-de-tva"
+    },
+    {
+      "titre": "entreprendre.service-public.fr — Déclaration d'activité d'un organisme de formation professionnelle (bulletin Cerfa 10782)",
+      "url": "https://entreprendre.service-public.fr/vosdroits/F23897"
+    },
+    {
+      "titre": "BOFiP — Le taux normal de 20 % s'applique aux opérations sans taux réduit prévu (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "BOFiP — Mention « Autoliquidation » sur la facture adressée à un preneur assujetti d'un autre État membre (BOI-TVA-DECLA-30-20-20-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1531-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-30-20190925"
+    },
+    {
+      "titre": "economie.gouv.fr — La franchise en base de TVA et la mention de l'article 293 B du CGI",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — Règles de délais de paiement : pénalités et indemnité forfaitaire de 40 €",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "service-public.fr — Les mentions qu'une facture doit comporter, dont la référence d'une exonération (fiche F31410)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "impots.gouv.fr — Découvrir la facturation électronique (plateformes agréées, réception et émission)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique : liste des plateformes de dématérialisation partenaires immatriculées",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

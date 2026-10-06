@@ -1,0 +1,152 @@
+{
+  "nom": "Graphiste",
+  "slug": "graphiste",
+  "famille": "numerique",
+  "statuts_frequents": [
+    "Micro-entrepreneur (BNC)",
+    "Entreprise individuelle au régime de la déclaration contrôlée (BNC)",
+    "EURL ou SASU",
+    "Artiste-auteur pour certaines créations graphiques originales (régime social Urssaf dédié, à vérifier au cas par cas)"
+  ],
+  "volume_factures_typique": "De l'ordre de 2 à 10 factures par mois, souvent en deux temps pour un même projet : facture d'acompte à la commande, puis facture de solde à la livraison.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "La création elle-même (logo, charte graphique, affiche) est une prestation de services taxée au taux normal de 20 %. La cession des droits patrimoniaux d'auteur sur l'œuvre relève du taux réduit de 10 % (CGI, art. 279, g), à condition que l'opération ait bien la nature d'une cession de droits. En pratique, ventilez la cession sur une ligne propre, avec son prix : cette ventilation n'est pas exigée par le texte, mais elle vous permet de justifier le taux appliqué en cas de contrôle. Les droits portant sur des logiciels et sur des œuvres d'architecture sont exclus du taux réduit.",
+    "Toute somme encaissée avant la livraison de la création (acompte à la signature du devis) doit donner lieu à une facture d'acompte. Un simple reçu ne suffit pas.",
+    "Une facture de cession de droits précise l'étendue de la cession : supports, durée et territoire. Sans ces trois éléments, la ligne de cession est difficile à justifier au taux réduit.",
+    "Les frais techniques que vous refacturez (polices sous licence, banque d'images, impression) ne sont pas des honoraires de création : faites-les figurer sur des lignes distinctes, avec leur dénomination précise, leur quantité et leur prix unitaire hors taxe, en les rattachant à la prestation qu'ils complètent.",
+    "Vos revenus de graphiste indépendant relèvent des BNC. En micro-BNC, le bénéfice imposable est calculé après un abattement forfaitaire de 34 % sur les recettes ; vos frais réels ne sont pas déduits."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Ligne distincte identifiant la cession des droits patrimoniaux d'auteur et son prix, en précisant les supports, la durée et le territoire : cette ventilation n'est pas imposée par le texte, mais c'est elle qui justifie le taux de 10 % appliqué à cette ligne",
+    "Dénomination précise de chaque poste (recherches créatives, déclinaisons, frais techniques refacturés), avec sa quantité et son prix unitaire hors taxe, y compris lorsque le projet est vendu au forfait",
+    "Sur la facture de solde, le rappel du numéro et de la date de la facture d'acompte déjà émise, et le montant déduit du net à payer"
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — identité visuelle avec cession de droits (graphiste assujetti à la TVA, client professionnel français)",
+    "lignes": [
+      {
+        "designation": "Conception d'un logotype et de ses déclinaisons couleur (trois pistes créatives, deux séries de retours)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 1800,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Charte graphique : typographies, règles d'usage, gabarits pour supports imprimés et réseaux sociaux",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 900,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Cession des droits patrimoniaux de reproduction et de représentation sur le logotype (supports, durée et territoire définis au contrat)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 600,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Acompte de 30 % facturé à la commande (facture n° … du …), déduit du présent solde",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": -990,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "La cession de droits est identifiée et valorisée sur sa propre ligne : cette ventilation n'est pas imposée par le texte, mais c'est elle qui justifie le taux de 10 % appliqué à cette ligne",
+      "Facture de solde : l'acompte encaissé à la commande a fait l'objet d'une facture d'acompte distincte, dont le numéro et la date sont rappelés ci-dessus et dont le montant est déduit du net à payer",
+      "Pénalités de retard au taux indiqué sur la facture et indemnité forfaitaire de recouvrement de 40 €, dues par les clients professionnels"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Enchaîner devis, facture d'acompte et facture de solde sur un même projet créatif sans erreur de numérotation",
+    "Gérer deux taux de TVA (20 % et 10 %) ou la franchise en base sur une même facture, selon la présence d'une cession de droits",
+    "Suivre les recettes encaissées pour la déclaration micro-BNC",
+    "Recevoir puis émettre des factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "tiime",
+      "justification": "Plateforme agréée par l'administration fiscale pour la facturation électronique, qui réunit facturation et comptabilité. Elle s'adresse aux indépendants, freelances et micro-entrepreneurs, périmètre qui couvre les statuts listés plus haut pour ce métier."
+    },
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée combinant comptabilité, compte pro et facturation, pensée pour les indépendants. Ce périmètre couvre le suivi d'une activité BNC du devis à la déclaration."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée orientée facturation et gestion pour les indépendants et micro-entrepreneurs. Elle correspond au graphiste en micro-BNC qui veut centraliser factures d'acompte, factures de solde et suivi des encaissements."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Puis-je facturer la création de mon logo à 10 % de TVA ?",
+      "reponse": "La prestation de création (recherche, maquettes, exécution du logo) relève du taux normal de 20 %. Le taux réduit de 10 % vise la cession des droits patrimoniaux d'auteur sur l'œuvre. Lorsque votre facture couvre à la fois une création et une cession de droits, appliquez 20 % à la création et 10 % à la cession, et ventilez les deux. Si vous êtes en franchise en base, aucune TVA n'est facturée dans les deux cas."
+    },
+    {
+      "question": "Mon client verse 30 % à la signature du devis : dois-je émettre une facture pour cet acompte ?",
+      "reponse": "Oui. Toute somme encaissée avant la réalisation de la prestation doit donner lieu à une facture d'acompte. La facture de solde émise à la livraison mentionne ensuite l'acompte déjà facturé et déduit son montant du net à payer. Ce découpage s'applique aussi en franchise en base, sans TVA."
+    },
+    {
+      "question": "Comment présenter la cession de droits sur ma facture pour sécuriser le taux de 10 % ?",
+      "reponse": "Faites apparaître la cession des droits patrimoniaux sur une ligne distincte de la prestation de création, avec son propre prix, en précisant les supports, la durée et le territoire. Cette ventilation n'est pas imposée par le texte, mais c'est elle qui vous permet de justifier le taux de 10 % appliqué à cette ligne. À défaut, vous risquez une remise en cause du taux réduit sur l'ensemble de la facture."
+    },
+    {
+      "question": "Mon client me demande d'étendre la cession de droits deux ans après la livraison : dois-je émettre une nouvelle facture ?",
+      "reponse": "Oui. Une extension de la cession — nouveaux supports, nouveau territoire, durée prolongée — est une opération distincte de la mission initiale : elle donne lieu à une nouvelle facture, avec sa propre ligne décrivant l'étendue accordée et son prix. S'il s'agit bien d'une cession de droits patrimoniaux, le taux de 10 % s'applique à cette ligne ; en franchise en base, vous facturez sans TVA avec la mention prévue. Conservez l'avenant ou le contrat signé : c'est lui qui matérialise l'étendue cédée."
+    },
+    {
+      "question": "Mes créations graphiques peuvent-elles relever du régime des artistes-auteurs ?",
+      "reponse": "Certaines œuvres de design graphique, en tant que créations de modèles originaux, entrent dans la branche des arts graphiques et plastiques du régime social des artistes-auteurs. L'éligibilité se vérifie activité par activité sur la page dédiée de l'Urssaf. Ce régime social ne vous dispense pas des règles de facturation applicables à tout professionnel."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Taux réduit de 10 % sur les cessions de droits patrimoniaux d'auteur (BOI-TVA-LIQ-30-20-100, version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20260415"
+    },
+    {
+      "titre": "BOFiP — Taux normal de TVA de 20 % applicable par défaut (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "BOFiP — Obligation de délivrer une facture pour les acomptes (BOI-TVA-DECLA-30-20-10-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+    },
+    {
+      "titre": "economie.gouv.fr — Franchise en base de TVA et mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "BOFiP — Micro-BNC : champ d'application du régime déclaratif spécial (BOI-BNC-DECLA-20-10, version en vigueur)",
+      "url": "https://bofip.impots.gouv.fr/bofip/4807-PGP.html/identifiant=BOI-BNC-DECLA-20-10-20260819"
+    },
+    {
+      "titre": "BOFiP — Micro-BNC : bénéfice déterminé après abattement forfaitaire de 34 % (BOI-BNC-DECLA-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/4802-PGP.html/identifiant=BOI-BNC-DECLA-20-20-20120912"
+    },
+    {
+      "titre": "Urssaf — Vérifier que votre activité relève du régime artiste-auteur",
+      "url": "https://www.urssaf.fr/accueil/artiste-auteur-diffuseur/artiste-auteur/verification-regime-activite-aa.html"
+    },
+    {
+      "titre": "service-public.fr — Mentions obligatoires sur une facture entre professionnels",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "DGCCRF — Délais de paiement, pénalités de retard et indemnité forfaitaire de 40 €",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "impots.gouv.fr — Je découvre la facturation électronique",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Liste des plateformes agréées de facturation électronique (liste consultée le 06/10/2026)",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

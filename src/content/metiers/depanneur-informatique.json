@@ -1,0 +1,162 @@
+{
+  "nom": "Dépanneur informatique",
+  "slug": "depanneur-informatique",
+  "famille": "numerique",
+  "statuts_frequents": [
+    "Micro-entrepreneur (franchise en base courante)",
+    "Entreprise individuelle",
+    "EURL ou SASU",
+    "SARL pour les structures employant plusieurs techniciens"
+  ],
+  "volume_factures_typique": "Soutenu : plusieurs notes et factures par semaine pour des montants unitaires modestes, auxquelles s'ajoutent des factures récurrentes de contrats de maintenance.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Chez un particulier, remettez une note détaillée avant le paiement dès que la prestation atteint 25 € TTC : main-d'œuvre, déplacement et pièces y figurent ligne par ligne. En dessous de 25 € TTC, la note n'est pas systématique, mais vous devez la remettre si le client la demande.",
+    "L'obligation de devis écrit dès le premier euro, propre aux prestations de dépannage, réparation et entretien, vise une liste limitative de secteurs du bâtiment et de l'équipement de la maison (plomberie, serrurerie, électricité, systèmes d'alarme, etc.) qui ne comprend pas le dépannage informatique. Elle ne s'impose donc pas à vos interventions sur postes et réseaux, sauf si vous intervenez aussi sur l'un de ces secteurs, par exemple l'entretien ou la réparation d'un système d'alarme. Un devis accepté avant intervention reste en toute hypothèse la meilleure protection contre les litiges de tarif.",
+    "Distinguez sur chaque facture le forfait d'intervention, les heures en régie et les pièces remplacées (SSD, alimentation, barrette mémoire) : vente de matériel et main-d'œuvre sont des lignes séparées, chacune avec son taux de TVA.",
+    "L'assistance informatique et internet à domicile fait partie des services à la personne : si votre activité est déclarée et respecte les conditions du dispositif, vos clients particuliers peuvent prétendre à un crédit d'impôt de 50 % des sommes versées, dans la limite d'un plafond annuel propre à cette activité.",
+    "Les pénalités de retard et l'indemnité forfaitaire de recouvrement de 40 € concernent vos contrats avec des professionnels (maintenance de parc, infogérance) ; ne les réclamez pas à vos clients particuliers.",
+    "En franchise en base, toutes vos lignes — forfaits, heures, pièces — partent sans TVA, avec la mention « TVA non applicable, article 293 B du CGI » sur chaque document."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Note détaillée remise au client particulier, avant paiement, pour toute prestation d'un montant au moins égal à 25 € TTC, et en dessous de ce montant si le client la demande",
+    "Devis écrit préalable si vous intervenez également sur un système d'alarme ou un autre secteur visé par l'arrêté du 24 janvier 2017",
+    "Mention « TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base",
+    "Sur les factures aux professionnels : taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 €"
+  ],
+  "exemple_facture": {
+    "intitule": "Intervention sur site pour une TPE : remplacement du disque d'un poste de caisse et remise en route (prestataire assujetti à la TVA)",
+    "lignes": [
+      {
+        "designation": "Forfait intervention sur site sous 4 heures ouvrées (diagnostic inclus)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 90,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Main-d'œuvre au-delà du forfait : clonage du disque et réinstallation du logiciel de caisse",
+        "quantite": 1.5,
+        "unite": "heure",
+        "prix_unitaire_ht": 60,
+        "tva_pct": 20
+      },
+      {
+        "designation": "SSD 1 To (pièce remplacée)",
+        "quantite": 1,
+        "unite": "unité",
+        "prix_unitaire_ht": 95,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Frais de déplacement",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 25,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Pénalités de retard : taux précisé aux conditions de règlement ; indemnité forfaitaire de recouvrement : 40 €",
+      "Ancien disque restitué au client à sa demande",
+      "Intervention réalisée au titre du contrat hors forfait n° MA-112 ; les visites comprises au contrat sont facturées à l'échéance mensuelle"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Facturer vite, sur place : note au particulier, facture au professionnel, pour des petits montants répétés",
+    "Gérer un catalogue mixte mêlant forfaits d'intervention, heures de main-d'œuvre et pièces détachées",
+    "Suivre les règlements de nombreux clients et relancer les professionnels en retard de paiement",
+    "Passer un volume important de petites factures au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "abby",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), conçue pour les indépendants et micro-entrepreneurs, qui réunit facturation et gestion. Ce périmètre correspond à un volume soutenu de petites factures et de notes."
+    },
+    {
+      "slug": "shine",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), combinant compte pro en ligne et facturation, pour indépendants, freelances et TPE. Encaisser et facturer les interventions depuis un même service évite de multiplier les outils."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (à vérifier à la date de votre choix), associant compte professionnel et facturation, avec une cible qui couvre les PME. Pertinent si vos contrats de maintenance B2B se développent."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Dois-je remettre un devis avant de dépanner un ordinateur au domicile d'un particulier ?",
+      "reponse": "Pas au titre de la réglementation sur le dépannage à domicile : sa liste de secteurs, limitative, ne vise pas l'informatique. Vous restez soumis à l'information précontractuelle de droit commun et à la remise d'une note dès 25 € TTC. Si vous intervenez aussi sur un système d'alarme, le devis préalable devient en revanche obligatoire dès le premier euro pour cette prestation."
+    },
+    {
+      "question": "Quel document remettre à un particulier après un dépannage de 80 € ?",
+      "reponse": "Une note, remise avant le paiement : elle est obligatoire dès que la prestation atteint 25 € TTC. Elle détaille la main-d'œuvre, le déplacement et les pièces, avec leurs prix. Conservez-en un double. En dessous de 25 € TTC, la note n'est pas systématique, mais vous devez la remettre si le client la demande."
+    },
+    {
+      "question": "Mes clients particuliers peuvent-ils bénéficier d'un crédit d'impôt sur mes interventions à domicile ?",
+      "reponse": "L'assistance informatique et internet à domicile figure parmi les services à la personne ouvrant droit à un crédit d'impôt de 50 % des dépenses, dans la limite d'un plafond annuel propre à cette activité. Encore faut-il que votre activité soit déclarée et respecte les conditions du dispositif. Vérifiez votre éligibilité avant de l'annoncer à vos clients."
+    },
+    {
+      "question": "Comment facturer un contrat de maintenance mensuel à une entreprise ?",
+      "reponse": "Émettez une facture à chaque échéance, avec les mentions obligatoires, dont le taux des pénalités de retard et l'indemnité forfaitaire de recouvrement de 40 €, due dès le premier jour de retard entre professionnels. Les interventions hors forfait s'ajoutent en lignes distinctes ou sur une facture séparée."
+    },
+    {
+      "question": "Je vends une pièce et je la pose : un seul taux de TVA sur la facture ?",
+      "reponse": "Si vous êtes assujetti, la pièce vendue et la main-d'œuvre relèvent chacune du taux normal de 20 %, sur des lignes séparées, aucun taux réduit n'étant prévu pour ces opérations. En franchise en base, tout part sans TVA avec la mention « TVA non applicable, article 293 B du CGI ». Les deux régimes ne se combinent pas sur une même facture."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "economie.gouv.fr — Mentions obligatoires d'une facture",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "Légifrance — Arrêté n° 83-50/A du 3 octobre 1983 relatif à la publicité des prix de tous les services (note dès 25 € TTC)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "Légifrance — Arrêté du 24 janvier 2017, annexe : liste des secteurs visés par l'écrit préalable",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000033935513"
+    },
+    {
+      "titre": "economie.gouv.fr — Dépannage, réparation et entretien à domicile : écrit préalable systématique",
+      "url": "https://www.economie.gouv.fr/particuliers/depannage-reparation-entretien-domicile"
+    },
+    {
+      "titre": "economie.gouv.fr — Devis obligatoire : secteurs et modalités",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
+    },
+    {
+      "titre": "entreprendre.service-public.fr — Avantages fiscaux ouverts par une entreprise de services à la personne (fiche F31554)",
+      "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F31554"
+    },
+    {
+      "titre": "economie.gouv.fr — Crédit d'impôt de 50 % pour l'emploi à domicile, dont l'assistance informatique et internet",
+      "url": "https://www.economie.gouv.fr/particuliers/gerer-mon-argent/beneficier-daides-et-de-reductions-dimpots/tout-savoir-sur-le-credit-dimpot-lie-lemploi-dun-salarie-domicile"
+    },
+    {
+      "titre": "BOFiP — Application du taux normal de 20 % à défaut de disposition prévoyant un taux réduit (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "economie.gouv.fr — Bénéficier de la franchise en base de TVA (mention article 293 B du CGI)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "economie.gouv.fr (DGCCRF) — Délais de paiement entre professionnels : pénalités et indemnité de 40 €",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "service-public.fr — Facturation entre professionnels : mentions exigées (fiche F31410)",
+      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+    },
+    {
+      "titre": "impots.gouv.fr — La facturation électronique : recevoir puis émettre via une plateforme agréée",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique : liste des plateformes de dématérialisation partenaires immatriculées",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

@@ -1,0 +1,134 @@
+{
+  "nom": "Organisateur d'événements",
+  "slug": "organisateur-evenements",
+  "famille": "services",
+  "statuts_frequents": ["Micro-entrepreneur", "EURL", "SAS / SASU", "Entreprise individuelle"],
+  "volume_factures_typique": "Volume faible mais documents multiples et montants élevés : chaque événement génère en général un devis détaillé par postes, une ou plusieurs factures d'acompte, une facture de solde, parfois un avoir. L'activité est saisonnière, avec des pics avant les périodes de mariages et de séminaires.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Les acomptes structurent votre facturation : pour une prestation de services, la TVA est exigible dès l'encaissement de chaque acompte, pas seulement au solde — sauf si vous avez opté pour le paiement de la TVA d'après les débits. Pour un client professionnel, vous devez délivrer une facture pour chaque versement d'acompte, et la facture définitive doit faire référence aux factures d'acompte déjà émises et imputer les montants versés. Pour un client particulier, l'obligation est celle de la note détaillée dès 25 € TTC, remise avant paiement : établissez-la pour chaque acompte encaissé, puis pour le solde.",
+    "Débours ou refacturation, il faut choisir et documenter : une dépense engagée au nom et pour le compte de votre client peut être exclue de votre base d'imposition à la TVA, sous conditions cumulatives — mandat préalable et explicite, reddition de compte exacte, enregistrement en comptes de passage, et justification, auprès de l'administration, de la nature ou du montant exact des débours (2° du II de l'article 267 du CGI), toutes pièces utiles à l'appui : factures des fournisseurs, copies de relevés ou factures détaillées adressées au client. À défaut, tout frais refacturé (salle, technique, décoration) entre dans votre base d'imposition et supporte la TVA.",
+    "Vos honoraires de conception et de coordination relèvent du taux normal de 20 %, aucun texte ne prévoyant de taux réduit pour l'organisation d'événements. Chaque prestataire que vous mobilisez (traiteur, lieu, technique) applique son propre régime de TVA sur sa propre facture ; ce que vous refacturez en votre nom suit vos règles, pas les leurs.",
+    "Votre clientèle est double : pour un séminaire d'entreprise, facture obligatoire avec mentions légales et, à l'échéance applicable à votre entreprise, émission via une plateforme agréée avec le SIREN du client ; pour un mariage, note détaillée remise au particulier dès 25 € TTC et transmission des données de vente à l'administration (e-reporting).",
+    "Si vous vendez aussi des biens (décoration, cadeaux d'invités), la facture devient une opération mixte : la catégorie de l'opération figurera parmi les mentions exigées à l'échéance applicable à votre entreprise."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Pour un client professionnel : une facture pour chaque acompte encaissé ; la facture définitive référence les factures d'acompte et impute les montants déjà versés. Pour un client particulier : une note détaillée dès 25 € TTC, établie pour chaque acompte puis pour le solde.",
+    "Les débours exclus de la base de TVA doivent pouvoir être justifiés auprès de l'administration dans leur nature ou leur montant exact (2° du II de l'article 267 du CGI), toutes pièces utiles à l'appui (factures des fournisseurs, reddition de compte au client), et être comptabilisés en comptes de passage.",
+    "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel, catégorie de l'opération (prestation de services ou opération mixte en cas de vente de biens), option éventuelle pour la TVA d'après les débits, adresse de livraison (lieu de l'événement) si elle diffère de l'adresse de facturation."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de solde — organisation d'un séminaire d'entreprise de 90 participants (après facture d'acompte n° FA-2026-118)",
+    "lignes": [
+      {
+        "designation": "Honoraires de conception, coordination des prestataires et régie le jour J",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 3800,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Location de mobilier et de matériel scénique, refacturée en notre nom",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 1450,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Personnel d'accueil et vestiaire le jour de l'événement",
+        "quantite": 16,
+        "unite": "heure",
+        "prix_unitaire_ht": 28,
+        "tva_pct": 20
+      }
+    ],
+    "mentions_specifiques": [
+      "Référence à la facture d'acompte n° FA-2026-118 et imputation de l'acompte encaissé sur le montant du solde.",
+      "Débours éventuels (dépenses engagées au nom et pour le compte du client, sur mandat) listés à part, hors base de TVA, dont la nature ou le montant exact peut être justifié auprès de l'administration, justificatifs à l'appui.",
+      "Catégorie de l'opération : prestation de services (opération mixte si vente de décoration) — à l'échéance applicable à votre entreprise.",
+      "Numéro SIREN du client professionnel et adresse du lieu de l'événement si elle diffère de l'adresse de facturation."
+    ]
+  },
+  "besoins_prioritaires": [
+    "Chaîner devis, factures d'acompte et facture de solde sur un même dossier événement, avec imputation automatique des acomptes.",
+    "Suivre les débours et les refacturations de prestataires avec leurs justificatifs, sans les mélanger avec les honoraires.",
+    "Encaisser des acomptes et piloter la trésorerie entre l'engagement des dépenses fournisseurs et le règlement du solde.",
+    "Facturer une clientèle mixte : factures B2B via plateforme agréée et notes aux particuliers avec e-reporting, à l'échéance applicable à votre entreprise.",
+    "Produire des devis détaillés par postes (lieu, technique, personnel, honoraires) qui engagent les deux parties une fois acceptés."
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "qonto",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), réunissant compte professionnel et facturation, pour PME et indépendants. Pratique quand l'activité repose sur des encaissements d'acomptes à suivre poste par poste depuis le compte pro."
+    },
+    {
+      "slug": "pennylane",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), de gestion financière et de comptabilité, qui se travaille avec votre expert-comptable. Un appui utile quand le traitement des débours et des refacturations exige une comptabilité rigoureuse."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP (liste consultée le 5 octobre 2026), orientée facturation et gestion pour indépendants et micro-entrepreneurs. Elle correspond aux organisateurs et wedding planners exerçant seuls, avec peu de factures mais des dossiers à documenter."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Dois-je facturer la TVA sur l'acompte encaissé à la signature du contrat ?",
+      "reponse": "Oui. Pour une prestation de services, la TVA est exigible lors de l'encaissement, acomptes compris — sauf si vous avez opté pour le paiement de la TVA d'après les débits. Pour un client professionnel, vous devez délivrer une facture pour ce versement d'acompte, puis la facture définitive devra faire référence aux factures d'acompte émises et imputer les montants versés. Pour un client particulier, c'est une note détaillée dès 25 € TTC, remise avant paiement, que vous établissez pour chaque acompte puis pour le solde."
+    },
+    {
+      "question": "Puis-je refacturer la location de salle ou le traiteur à mon client sans y ajouter de TVA ?",
+      "reponse": "Uniquement en débours, et les conditions sont strictes : mandat préalable et explicite, dépense engagée au nom et pour le compte du client, reddition de compte exacte, enregistrement en comptes de passage, et justification, auprès de l'administration, de la nature ou du montant exact des débours (2° du II de l'article 267 du CGI), toutes pièces utiles à l'appui : factures des fournisseurs, copies de relevés ou factures détaillées adressées au client. Si l'une manque, la somme refacturée entre dans votre base d'imposition et supporte la TVA."
+    },
+    {
+      "question": "Quels documents remettre pour un mariage, où mes clients sont des particuliers ?",
+      "reponse": "Une note détaillée dès que la prestation atteint 25 € TTC : date, identité du prestataire, décompte par prestation, montants HT et TTC, remise avant le paiement. Côté réforme, ces ventes aux particuliers ne passent pas par l'émission de factures électroniques : leurs données seront transmises à l'administration via l'e-reporting, à l'échéance applicable à votre entreprise."
+    },
+    {
+      "question": "Mes honoraires d'organisation bénéficient-ils d'un taux réduit de TVA ?",
+      "reponse": "Non. Sauf taux réduit ou exonération expressément prévus par un texte, les prestations de services relèvent du taux normal de 20 %, et aucun texte ne vise la prestation d'organisation d'événements. Les taux particuliers que peuvent appliquer vos prestataires valent pour leurs propres factures, pas pour vos honoraires."
+    },
+    {
+      "question": "Mes acomptes sont encaissés très en amont de l'événement : comment les traiter à l'approche de la facturation électronique ?",
+      "reponse": "Chaque acompte encaissé auprès d'un client professionnel donne lieu à une facture qui devra, à l'échéance applicable à votre entreprise, transiter par une plateforme agréée au même titre que la facture de solde, avec le numéro SIREN du client, la catégorie de l'opération et, si le lieu de l'événement diffère de l'adresse de facturation, cette adresse de livraison. Veillez donc à ce que votre outil chaîne devis, factures d'acompte et facture de solde sur un même dossier : la facture définitive doit référencer les factures d'acompte et imputer les montants déjà versés, et ce chaînage doit rester lisible une fois les documents transmis. Pour vos clients particuliers, ce sont les données de vente qui seront transmises à l'administration (e-reporting), la note détaillée dès 25 € TTC restant le document remis au client."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP — Fait générateur et exigibilité de la TVA : prestations de services, encaissements et acomptes (BOI-TVA-BASE-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "BOFiP — Délivrance de factures, factures d'acompte et facture définitive (BOI-TVA-DECLA-30-20-10-40)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13245-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-40-20210813"
+    },
+    {
+      "titre": "BOFiP — Éléments exclus de la base d'imposition : débours des intermédiaires (BOI-TVA-BASE-10-10-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/488-PGP.html/identifiant=BOI-TVA-BASE-10-10-30-20220511"
+    },
+    {
+      "titre": "BOFiP — Frais divers inclus dans la base d'imposition à la TVA (BOI-TVA-BASE-10-10-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/375-PGP.html/identifiant=BOI-TVA-BASE-10-10-10-20220511"
+    },
+    {
+      "titre": "BOFiP — Taux normal de TVA de 20 % (BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20130619"
+    },
+    {
+      "titre": "economie.gouv.fr — Mentions obligatoires d'une facture (dont les quatre nouvelles mentions)",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "Arrêté n° 83-50/A du 3 octobre 1983 — Note obligatoire pour les prestations de services aux particuliers",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "economie.gouv.fr — Tout savoir sur la facturation électronique pour les entreprises",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "impots.gouv.fr — Facturation électronique : liste des plateformes agréées",
+      "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

@@ -1,0 +1,149 @@
+{
+  "nom": "Photographe",
+  "slug": "photographe",
+  "famille": "services",
+  "statuts_frequents": ["Micro-entrepreneur", "Entreprise individuelle", "EURL", "SASU"],
+  "volume_factures_typique": "Peu de factures chaque mois, mais des montants unitaires élevés (mariages, reportages d'entreprise) réglés par acomptes puis solde, auxquels s'ajoutent des ventes ponctuelles de tirages.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Trois taux de TVA peuvent coexister dans votre activité : la prise de vue et la post-production relèvent du taux normal de 20 % ; la cession des droits patrimoniaux d'auteur relève du taux réduit de 10 % ; la vente d'un tirage répondant à la définition fiscale de la photographie d'art relève de 5,5 %.",
+    "Facturez la cession de droits sur une ligne distincte de la prestation de prise de vue, en précisant supports, durée et territoire. Seule cette ligne porte le taux de 10 %.",
+    "Le taux de 5,5 % sur un tirage suppose une photographie prise par vous, tirée par vous ou sous votre contrôle, signée et numérotée dans la limite de trente exemplaires, tous formats et supports confondus. La livraison de fichiers numériques ou un tirage non signé et non numéroté reste au taux normal. Ce taux ne s'applique pas lorsque la base d'imposition est déterminée selon le régime de la marge.",
+    "Chaque versement d'un contrat de mariage (acompte de réservation de la date, acompte intermédiaire, solde) rend la TVA exigible à son encaissement. Datez et tracez chaque encaissement.",
+    "Votre clientèle se partage entre entreprises et particuliers : à l'échéance applicable à votre entreprise, vos factures aux entreprises passeront par une plateforme agréée, tandis que mariages et portraits de famille relèveront de l'e-reporting.",
+    "En franchise en base, aucun taux n'apparaît sur votre facture, pas même les 10 % de la cession de droits : toutes les lignes relèvent de la mention « TVA non applicable, article 293 B du CGI », et une TVA facturée à tort serait due du seul fait de sa facturation. Vérifiez en revanche quelle franchise vous est applicable : les auteurs d'œuvres de l'esprit bénéficient d'une franchise propre, prévue au III de l'article 293 B du CGI, qui vise la livraison de leurs œuvres et la cession de leurs droits patrimoniaux, avec un plafond distinct de celui applicable à vos autres recettes de prise de vue et de post-production. Les montants en vigueur sont publiés sur impots.gouv.fr."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Dénomination précise de chaque ligne : prise de vue, post-production, cession de droits avec son périmètre, tirages — chacune avec son prix unitaire HT et son taux de TVA propre lorsque plusieurs taux coexistent.",
+    "Mention « TVA non applicable, article 293 B du CGI » sur la facture en cas de franchise en base, y compris pour la ligne de cession de droits, que vous releviez de la franchise de droit commun ou de la franchise propre aux auteurs d'œuvres de l'esprit prévue au III de l'article 293 B du CGI.",
+    "À l'échéance applicable à votre entreprise, pour vos clients professionnels : SIREN du client et catégorie de l'opération (prestation de services, livraison de biens pour les tirages, ou opération mixte)."
+  ],
+  "exemple_facture": {
+    "intitule": "Facture de reportage d'entreprise avec cession de droits et tirage d'exposition",
+    "lignes": [
+      {
+        "designation": "Reportage photographique dans vos locaux : préparation et prise de vue (1 journée)",
+        "quantite": 1,
+        "unite": "jour",
+        "prix_unitaire_ht": 850,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Post-production et livraison de 60 fichiers haute définition",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 300,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Cession des droits de reproduction et de représentation : site web et plaquette, France, 2 ans",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 400,
+        "tva_pct": 10
+      },
+      {
+        "designation": "Tirage d'exposition 40 × 60 cm, signé, numéroté 4/30",
+        "quantite": 1,
+        "unite": "exemplaire",
+        "prix_unitaire_ht": 180,
+        "tva_pct": 5.5
+      }
+    ],
+    "mentions_specifiques": [
+      "Périmètre de la cession de droits détaillé sur la facture : supports, durée, territoire",
+      "Tirage signé et numéroté dans la limite de trente exemplaires : taux réduit propre aux œuvres d'art",
+      "Taux de 5,5 % applicable à la livraison de l'œuvre par son auteur, la base d'imposition n'étant pas déterminée selon le régime de la marge",
+      "À l'échéance applicable à votre entreprise : SIREN du client professionnel et catégorie de l'opération (ici, opération mixte)"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Émettre des factures multi-taux (20 %, 10 %, 5,5 %) avec une ligne distincte pour la cession de droits",
+    "Encaisser et tracer des acomptes de mariage échelonnés jusqu'au solde",
+    "Distinguer clients professionnels (facture électronique à terme) et particuliers (e-reporting)",
+    "Tenir une comptabilité simple d'indépendant entre deux saisons de reportages"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "indy",
+      "justification": "Plateforme agréée DGFiP qui regroupe comptabilité, compte pro et facturation pour les indépendants. Un seul outil pour suivre vos encaissements d'acomptes et votre comptabilité. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+    },
+    {
+      "slug": "abby",
+      "justification": "Plateforme agréée DGFiP de facturation et de gestion, ciblée indépendants et micro-entrepreneurs. Adaptée si vous démarrez en franchise en base avec un volume de factures réduit. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Plateforme agréée DGFiP associant compte professionnel et facturation, pour PME et indépendants. Les acomptes de mariage et les règlements d'entreprises transitent alors par un compte dédié relié à vos factures. Plateforme figurant sur la liste des plateformes agréées publiée par la DGFiP sur impots.gouv.fr (espace Partenaires), vérifiée le 05/10/2026."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quel taux de TVA pour la cession des droits d'utilisation de mes photos à une entreprise ?",
+      "reponse": "La cession des droits patrimoniaux reconnus par la loi aux auteurs d'œuvres de l'esprit relève du taux réduit de 10 %. La prise de vue et la post-production restent au taux normal de 20 %. Isolez donc la cession sur sa propre ligne, avec son périmètre : supports, durée, territoire."
+    },
+    {
+      "question": "Mes tirages peuvent-ils bénéficier du taux de 5,5 % ?",
+      "reponse": "Oui, si le tirage répond à la définition fiscale de la photographie d'art : pris par vous, tiré par vous ou sous votre contrôle, signé et numéroté dans la limite de trente exemplaires. Les livraisons d'œuvres d'art relèvent alors du taux réduit de 5,5 %, sauf application du régime de la marge. À défaut, le taux normal s'applique."
+    },
+    {
+      "question": "Je demande un acompte à la réservation d'une date de mariage : la TVA est-elle due immédiatement ?",
+      "reponse": "Oui. Pour une prestation de services, la TVA est exigible à l'encaissement de chaque versement : acompte de réservation, acompte intermédiaire, solde. Chaque encaissement déclenche sa part de TVA, même si le mariage a lieu plusieurs mois plus tard."
+    },
+    {
+      "question": "Devrai-je envoyer des factures électroniques à mes mariés ?",
+      "reponse": "Non. La facturation électronique vise les opérations entre entreprises. Vos ventes aux particuliers feront l'objet d'une transmission de données à l'administration, l'e-reporting, à l'échéance applicable à votre entreprise. Vous devrez en revanche être en mesure de recevoir des factures électroniques de vos fournisseurs."
+    },
+    {
+      "question": "En franchise en base, puis-je tout de même appliquer 10 % sur la cession de droits ?",
+      "reponse": "Non. En franchise en base, vous facturez sans TVA : aucune ligne ne porte de taux, pas même la cession de droits. Chaque facture mentionne « TVA non applicable, article 293 B du CGI ». Une TVA facturée à tort serait due du seul fait de sa facturation. Vérifiez par ailleurs quelle franchise vous est applicable : les auteurs d'œuvres de l'esprit disposent d'une franchise propre, prévue au III de l'article 293 B du CGI, qui couvre la livraison de leurs œuvres et la cession de leurs droits patrimoniaux, avec un plafond distinct de celui de vos autres recettes."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "BOFiP – Taux normal de 20 % applicable aux prestations de services, prise de vue et post-production (version du 23/09/2020)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20200923"
+    },
+    {
+      "titre": "BOFiP – Taux réduit de 10 % sur les cessions de droits patrimoniaux des auteurs d'œuvres de l'esprit",
+      "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20250514"
+    },
+    {
+      "titre": "BOFiP – Définition de la photographie d'art : prise par l'auteur, tirée par lui ou sous son contrôle, signée et numérotée dans la limite de trente exemplaires, à l'exclusion de tout autre critère (version du 20/03/2024)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1279-PGP.html/identifiant=BOI-TVA-SECT-90-10-20240320"
+    },
+    {
+      "titre": "BOFiP – Mise à jour des précisions doctrinales relatives à la qualification de photographie d'art, suite à CJUE 5 septembre 2019, aff. C-145/18, Regards Photographiques",
+      "url": "https://bofip.impots.gouv.fr/bofip/14178-PGP.html/ACTU-2024-00067"
+    },
+    {
+      "titre": "BOFiP – Taux réduit de 5,5 % sur les livraisons d'œuvres d'art, sauf régime de la marge",
+      "url": "https://bofip.impots.gouv.fr/bofip/1285-PGP.html/identifiant=BOI-TVA-SECT-90-40-20250514"
+    },
+    {
+      "titre": "BOFiP – Exigibilité de la TVA à l'encaissement de chaque acompte sur les prestations de services",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "BOFiP – Franchise en base : facturation sans TVA et mention de l'article 293 B du CGI",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+    },
+    {
+      "titre": "BOFiP – Franchise en base accordée aux auteurs d'œuvres de l'esprit et aux artistes (III de l'article 293 B du CGI)",
+      "url": "https://bofip.impots.gouv.fr/bofip/148-PGP.html/identifiant=BOI-TVA-DECLA-40-30-20170705"
+    },
+    {
+      "titre": "economie.gouv.fr – Facturation électronique entre entreprises et e-reporting des ventes aux particuliers",
+      "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "economie.gouv.fr – Mentions légales des factures et mentions ajoutées par la réforme (SIREN, catégorie d'opération)",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "impots.gouv.fr – Facturation électronique et plateformes agréées (liste officielle)",
+      "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}

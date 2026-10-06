@@ -1,0 +1,155 @@
+{
+  "nom": "Conseiller en gestion de patrimoine",
+  "slug": "conseiller-gestion-patrimoine",
+  "famille": "liberal",
+  "statuts_frequents": ["SARL / EURL", "SAS / SASU", "Entreprise individuelle"],
+  "volume_factures_typique": "Ordre de grandeur observé : quelques factures d'honoraires par mois, les rétrocessions et commissions étant généralement réglées sur bordereaux des compagnies et plateformes. Ce repère est indicatif et n'est pas issu d'une statistique publique.",
+  "clients_types": "mixte",
+  "specificites_facturation": [
+    "Vos honoraires de conseil patrimonial (bilan, stratégie, ingénierie de transmission) sont soumis à la TVA au taux normal de 20 %, comme les autres prestations de conseil.",
+    "Vos commissions de courtage et d'intermédiation en assurance sont exonérées de TVA en application de l'article 261 C, 2° du CGI. L'exonération tient au contenu réel de l'opération et non à votre statut : elle suppose que vous entreteniez un rapport avec l'assureur et avec l'assuré et que vous fournissiez des prestations caractéristiques d'un intermédiaire d'assurance. Ne généralisez ni l'exonération ni la taxation : chaque rémunération suit sa propre nature.",
+    "Vos commissions d'intermédiation portant sur des titres (actions, obligations, parts) peuvent aussi être exonérées au titre des opérations bancaires et financières de l'article 261 C du CGI.",
+    "Sur un document mêlant prestations taxées et exonérées, chaque ligne porte son taux de TVA ou son motif d'exonération. Ne fondez jamais conseil taxé et commission exonérée dans une ligne globale.",
+    "Avant la conclusion d'un contrat d'assurance, vous indiquez au client si vous êtes rémunéré par honoraires, par commission, par un autre avantage économique lié au contrat, ou par une combinaison de ces modes. Lorsque le client doit vous payer des honoraires, vous lui en communiquez le montant ou, si cela n'est pas possible, leur mode de calcul. En tant que CIF, vous remettez un document d'entrée en relation mentionnant votre statut et votre numéro d'immatriculation au registre unique des intermédiaires tenu par l'ORIAS.",
+    "Pour un client particulier, une note détaillée est remise avant le paiement dès que vos honoraires atteignent 25 € TTC."
+  ],
+  "mentions_obligatoires_specifiques": [
+    "Motif d'exonération sur chaque ligne de commission exonérée, par référence à l'article 261 C du CGI",
+    "Taux de TVA de 20 % sur les lignes d'honoraires de conseil",
+    "« TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base",
+    "Taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € sur les factures adressées à des professionnels"
+  ],
+  "exemple_facture": {
+    "intitule": "Honoraires de conseil facturés à une PME pour l'accompagnement de la transmission de l'entreprise",
+    "lignes": [
+      {
+        "designation": "Audit civil, fiscal et financier du projet de transmission de l'entreprise",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 1800,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Suivi annuel : rendez-vous semestriels de mise à jour",
+        "quantite": 2,
+        "unite": "rendez-vous",
+        "prix_unitaire_ht": 350,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Note écrite de stratégie de transmission d'entreprise",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 600,
+        "tva_pct": 20
+      },
+      {
+        "designation": "Commission d'intermédiation sur contrat d'assurance souscrit par la société — exonérée (art. 261 C, 2° du CGI)",
+        "quantite": 1,
+        "unite": "forfait",
+        "prix_unitaire_ht": 450,
+        "tva_pct": 0
+      }
+    ],
+    "mentions_specifiques": [
+      "Honoraires de conseil soumis à la TVA au taux normal de 20 %",
+      "Chaque ligne porte son taux de TVA ou son motif d'exonération : 20 % sur les honoraires de conseil, exonération au titre de l'article 261 C, 2° du CGI sur la commission d'intermédiation",
+      "Un bilan patrimonial portant sur la situation personnelle du dirigeant est facturé à celui-ci et non à la société",
+      "Taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € (client professionnel)"
+    ]
+  },
+  "besoins_prioritaires": [
+    "Séparer les honoraires de conseil taxés à 20 % des commissions exonérées, dans la facturation comme dans le suivi",
+    "Adosser chaque facture d'honoraires à la lettre de mission et au document d'entrée en relation remis au client",
+    "Tracer la transparence sur le mode de rémunération exigée avant la souscription",
+    "Distinguer le destinataire de la facture selon le bénéficiaire réel de la prestation : la société pour un conseil d'entreprise, le dirigeant pour un conseil patrimonial personnel",
+    "Préparer la facturation électronique malgré une part d'activité exonérée de TVA, à l'échéance applicable à votre entreprise"
+  ],
+  "outils_recommandes": [
+    {
+      "slug": "pennylane",
+      "justification": "Pennylane couvre la gestion financière et la comptabilité et est pensé pour travailler avec son expert-comptable. Ce fonctionnement aide un cabinet qui doit suivre côte à côte honoraires taxés et commissions exonérées."
+    },
+    {
+      "slug": "qonto",
+      "justification": "Qonto associe compte professionnel et facturation, avec pour cible les PME et les indépendants. Ce périmètre correspond à un cabinet de gestion de patrimoine structuré en société."
+    },
+    {
+      "slug": "tiime",
+      "justification": "Tiime relie facturation et comptabilité pour les indépendants et les TPE. Ce périmètre s'adresse à un conseiller qui exerce seul."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mes commissions sur les contrats d'assurance-vie que je distribue sont-elles soumises à la TVA ?",
+      "reponse": "Non, dès lors que l'opération est bien une opération d'intermédiation : l'exonération de l'article 261 C, 2° du CGI s'apprécie au contenu réel de la prestation, qui suppose un rapport avec l'assureur et avec l'assuré. Cette exonération ne s'étend pas à vos honoraires de conseil, qui restent au taux normal de 20 %."
+    },
+    {
+      "question": "Comment présenter une mission qui mêle conseil facturé en honoraires et placement rémunéré par rétrocessions ?",
+      "reponse": "Séparez les deux flux ligne par ligne. Les honoraires sont au taux normal de 20 %. Les commissions exonérées portent leur motif d'exonération, par référence à l'article 261 C du CGI, et ne sont jamais fondues dans une ligne globale avec le conseil taxé. Qu'elles figurent sur la même facture ou sur des bordereaux distincts, chaque ligne doit rester identifiable avec son régime propre."
+    },
+    {
+      "question": "Dois-je révéler ma rémunération au client avant de lui proposer un contrat ?",
+      "reponse": "Oui, mais la règle est plus précise qu'une simple annonce de tarif. Avant la conclusion du contrat, le code des assurances vous impose d'indiquer si vous êtes rémunéré par honoraires, par commission, par un autre avantage économique lié au contrat, ou par une combinaison de ces modes. Lorsque le client doit vous payer des honoraires, vous lui en communiquez le montant ou, si cela n'est pas possible, leur mode de calcul. En tant que CIF, vous remettez aussi un document d'entrée en relation mentionnant votre statut et votre numéro d'immatriculation au registre unique des intermédiaires tenu par l'ORIAS."
+    },
+    {
+      "question": "Mon activité est en grande partie exonérée de TVA : suis-je quand même visé par la facturation électronique ?",
+      "reponse": "Oui. La réforme concerne les assujettis à la TVA établis en France, même lorsque leurs opérations sont exonérées. À l'échéance applicable à votre entreprise, vous devrez pouvoir recevoir des factures électroniques, puis en émettre pour vos clients professionnels établis en France."
+    },
+    {
+      "question": "Les commissions que je perçois sur des placements financiers suivent-elles le même régime de TVA que l'assurance ?",
+      "reponse": "Pas automatiquement : vérifiez chaque flux. L'intermédiation portant sur des titres comme les actions ou les obligations peut être exonérée au titre des opérations bancaires et financières de l'article 261 C du CGI. Les prestations de conseil ou d'analyse facturées à côté restent taxables au taux normal de 20 %."
+    }
+  ],
+  "sources": [
+    {
+      "titre": "TVA au taux normal sur les honoraires de conseil des professions libérales (BOFiP, BOI-TVA-LIQ-20-20)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+    },
+    {
+      "titre": "Exonération de TVA du courtage et de l'intermédiation en assurance (BOFiP)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13492-PGP.html/ACTU-2022-00026"
+    },
+    {
+      "titre": "Opérations bancaires et financières exonérées de TVA, dont les opérations sur titres (BOFiP, BOI-TVA-SECT-50-10-10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1839-PGP.html/identifiant=BOI-TVA-SECT-50-10-10-20230823"
+    },
+    {
+      "titre": "Article 261 C du code général des impôts (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041467574"
+    },
+    {
+      "titre": "Conseillers en investissements financiers, articles L. 541-1 et suivants du code monétaire et financier, dont l'immatriculation au registre unique (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072026/LEGISCTA000006154698/"
+    },
+    {
+      "titre": "Document d'entrée en relation du conseiller en investissements financiers, article 325-5 du règlement général de l'AMF",
+      "url": "https://www.amf-france.org/fr/reglementation/reglement-general"
+    },
+    {
+      "titre": "Informations à fournir par les distributeurs d'assurance, articles L. 521-1 et suivants du code des assurances (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006073984/LEGISCTA000006143006/2021-04-06/"
+    },
+    {
+      "titre": "Taux de TVA ou motif d'exonération à porter sur chaque ligne de facture (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+    },
+    {
+      "titre": "Conditions de la franchise en base de TVA (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-fiscalite-et-ses-impots/autres-impots-et-taxes/entreprises-pouvez-vous-beneficier-de-la-franchise-de-tva"
+    },
+    {
+      "titre": "Note à remettre avant paiement au client particulier (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "Délais de paiement, pénalités de retard et indemnité de 40 € (economie.gouv.fr)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
+    },
+    {
+      "titre": "Facturation électronique : les assujettis concernés, exonérés compris (impots.gouv.fr)",
+      "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    }
+  ],
+  "date_maj": "2026-10-06"
+}
