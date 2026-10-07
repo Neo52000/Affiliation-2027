@@ -45,6 +45,9 @@ jobs:
       - name: Liens internes (toute cible existe)
         run: pnpm check:liens
 
+      - name: Présentation partenaires (générée depuis les données)
+        run: pnpm build:presentation
+
       - name: Installer Chromium (Playwright)
         run: npx playwright install --with-deps chromium
 

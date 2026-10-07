@@ -1,0 +1,969 @@
+/* Concept : une frise réglementaire qui devient un registre de métiers.
+   Scène plein écran, une idée par scène, barre de lecture en pied.
+   Tokens repris du design system « Affiliation 2027 » (src/styles/global.css). */
+:root {
+  --paper: #ffffff;
+  --paper-soft: #f6f8fa;
+  --ink: #1f2328;
+  --ink-soft: #57606a;
+  --border: #d0d7de;
+  --border-strong: #6e7781;
+  --accent: #2563eb;
+  --accent-2: #7c3aed;
+  --accent-soft: #eff4ff;
+  --ok: #047857;
+  --ok-soft: #ecfdf3;
+  /* Dégradé d'action : saturé dans les deux thèmes, texte blanc AA */
+  --cta-from: #2563eb;
+  --cta-to: #7c3aed;
+  --on-cta: #ffffff;
+  /* Dégradé de titre : chaque extrémité AA sur paper */
+  --titre-from: #1d4ed8;
+  --titre-to: #6d28d9;
+  --halo-1: rgba(37, 99, 235, 0.12);
+  --halo-2: rgba(124, 58, 237, 0.1);
+  --ombre-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --ombre-md: 0 4px 12px rgba(15, 23, 42, 0.1);
+
+  --font: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Échelle d'affiche, indexée sur le plus petit côté de l'écran */
+  --fs-affiche: clamp(2.4rem, 0.6rem + 9.5vmin, 8.5rem);
+  --fs-titre: clamp(1.6rem, 0.5rem + 5.4vmin, 5rem);
+  --fs-chapo: clamp(1.05rem, 0.6rem + 1.9vmin, 1.9rem);
+  --fs-corps: clamp(0.95rem, 0.7rem + 1.15vmin, 1.4rem);
+  --fs-legende: clamp(0.78rem, 0.65rem + 0.55vmin, 1rem);
+  --fs-chiffre: clamp(2rem, 0.6rem + 6.5vmin, 5.5rem);
+  --point: clamp(7px, 2.1vmin, 20px);
+  --ecart-point: clamp(4px, 1.3vmin, 12px);
+
+  --rayon-sm: 6px;
+  --rayon-md: 10px;
+  --rayon-lg: 16px;
+  --gouttiere: max(16px, 4vw);
+  --pas: clamp(0.75rem, 0.3rem + 2.2vmin, 2.25rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #0e1116;
+    --paper-soft: #161b22;
+    --ink: #e6e9ef;
+    --ink-soft: #9aa4b2;
+    --border: #2b3340;
+    --border-strong: #7d8590;
+    --accent: #60a5fa;
+    --accent-2: #a78bfa;
+    --accent-soft: #16233f;
+    --ok: #34d399;
+    --ok-soft: #0b2e22;
+    --titre-from: #60a5fa;
+    --titre-to: #a78bfa;
+    --halo-1: rgba(96, 165, 250, 0.14);
+    --halo-2: rgba(167, 139, 250, 0.12);
+    --ombre-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --ombre-md: 0 4px 14px rgba(0, 0, 0, 0.55);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper: #0e1116;
+  --paper-soft: #161b22;
+  --ink: #e6e9ef;
+  --ink-soft: #9aa4b2;
+  --border: #2b3340;
+  --border-strong: #7d8590;
+  --accent: #60a5fa;
+  --accent-2: #a78bfa;
+  --accent-soft: #16233f;
+  --ok: #34d399;
+  --ok-soft: #0b2e22;
+  --titre-from: #60a5fa;
+  --titre-to: #a78bfa;
+  --halo-1: rgba(96, 165, 250, 0.14);
+  --halo-2: rgba(167, 139, 250, 0.12);
+  --ombre-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --ombre-md: 0 4px 14px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}
+
+/* ---------------------------------------------------------------------------
+   Cadre
+   ------------------------------------------------------------------------- */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--fs-corps);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.pitch {
+  position: relative;
+  isolation: isolate;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'scenes'
+    'commandes';
+  padding-inline: var(--gouttiere);
+  overflow: hidden;
+}
+
+/* Halo très faible derrière la scène (design system : --hero-glow, opacité ≤ 0,16) */
+.pitch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60vmax 40vmax at 12% 0%, var(--halo-1), transparent 60%),
+    radial-gradient(50vmax 36vmax at 92% 8%, var(--halo-2), transparent 60%);
+}
+
+.scenes {
+  grid-area: scenes;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding-block: var(--pas);
+}
+
+.scene {
+  grid-area: 1 / 1;
+  width: min(100%, 78rem);
+  min-width: 0;
+  display: grid;
+  gap: var(--pas);
+  align-content: center;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------------
+   Typographie
+   ------------------------------------------------------------------------- */
+.surtitre {
+  margin: 0;
+  font-size: var(--fs-legende);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.titre-affiche,
+.titre-scene {
+  margin: 0;
+  font-weight: 800;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.titre-affiche {
+  display: grid;
+  gap: 0.35em;
+}
+
+.titre-date {
+  font-size: var(--fs-affiche);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.titre-suite {
+  font-size: var(--fs-chapo);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  max-width: 30ch;
+}
+
+.titre-scene {
+  font-size: var(--fs-titre);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  max-width: 22ch;
+}
+
+.degrade {
+  color: var(--titre-from);
+  background: linear-gradient(100deg, var(--titre-from), var(--titre-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.chapo {
+  margin: 0;
+  font-size: var(--fs-chapo);
+  line-height: 1.4;
+  max-width: 44ch;
+  text-wrap: pretty;
+}
+
+.legende {
+  margin: 0;
+  font-size: var(--fs-legende);
+  color: var(--ink-soft);
+  max-width: 70ch;
+}
+
+.picto {
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+}
+
+.picto-carre {
+  display: inline-grid;
+  place-items: center;
+  width: clamp(2.25rem, 1.5rem + 2.4vmin, 3.5rem);
+  height: clamp(2.25rem, 1.5rem + 2.4vmin, 3.5rem);
+  border-radius: var(--rayon-md);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.badge-ok {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.1em 0.55em;
+  border: 1px solid var(--ok);
+  border-radius: 999px;
+  background: var(--ok-soft);
+  color: var(--ok);
+  font-size: var(--fs-legende);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------------
+   Scène 1 — la frise des échéances
+   Le trajet est piloté par --p (0 → 1) : le CSS le projette sur la largeur du
+   rail (unités de conteneur), si bien que le mouvement suit toute mise en page.
+   ------------------------------------------------------------------------- */
+.frise {
+  --p: 0;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 46rem;
+  margin-top: calc(var(--pas) * 0.5);
+}
+
+.frise-rail {
+  position: relative;
+  height: 4px;
+  margin-inline: 9px;
+  border-radius: 2px;
+  background: var(--border-strong);
+  container-type: inline-size;
+}
+
+.frise-remplissage {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform-origin: left center;
+  transform: scaleX(var(--p));
+}
+
+.frise-point {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--paper);
+  transform: translateX(calc(var(--p) * 100cqi));
+}
+
+.frise-jalons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.jalon {
+  position: relative;
+  display: grid;
+  gap: 0.2rem;
+  justify-items: start;
+  min-width: 0;
+}
+
+.jalon-arrivee {
+  justify-items: end;
+  text-align: right;
+}
+
+.jalon-date {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.jalon-libelle {
+  color: var(--ink-soft);
+  font-size: var(--fs-legende);
+}
+
+.anneau {
+  position: absolute;
+  /* centré sur l'extrémité droite du rail (marge 9 px, rail de 4 px, écart 0,75 rem) */
+  top: calc(-0.75rem - 13px);
+  right: -2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Scène 2 — trois métiers, trois besoins
+   ------------------------------------------------------------------------- */
+.cartes-metier {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--pas);
+}
+
+.carte {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  min-width: 0;
+  padding: clamp(0.9rem, 0.5rem + 1.4vmin, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--rayon-lg);
+  background: var(--paper);
+  box-shadow: var(--ombre-sm);
+}
+
+.carte-tete {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.carte h3 {
+  margin: 0;
+  font-size: var(--fs-chapo);
+  line-height: 1.2;
+}
+
+.carte p {
+  margin: 0;
+}
+
+.pastilles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pastille {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: var(--fs-legende);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------------------
+   Scène 3 — le registre : une ligne par famille, un point par métier
+   ------------------------------------------------------------------------- */
+.registre {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: calc(var(--pas) * 1.5);
+}
+
+.grille {
+  display: grid;
+  gap: var(--ecart-point);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rang {
+  display: flex;
+  align-items: center;
+  gap: var(--ecart-point);
+}
+
+.rang .picto {
+  width: calc(var(--point) * 1.3);
+  height: calc(var(--point) * 1.3);
+  margin-right: calc(var(--ecart-point) * 0.6);
+  color: var(--ink-soft);
+}
+
+.point {
+  width: var(--point);
+  height: var(--point);
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.compteur {
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.compteur-valeur {
+  font-size: var(--fs-affiche);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.compteur-libelle {
+  font-size: var(--fs-chapo);
+  color: var(--ink-soft);
+}
+
+.tuiles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--pas);
+}
+
+.tuile {
+  display: grid;
+  gap: 0.15rem;
+  align-content: start;
+  min-width: 0;
+  padding-top: 0.6rem;
+  border-top: 2px solid var(--border-strong);
+}
+
+.tuile-chiffre {
+  font-size: var(--fs-chiffre);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.tuile-libelle {
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+   Scène 4 — deux entrées alimentent le classement ; la commission suit son couloir
+   ------------------------------------------------------------------------- */
+.schema {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(2.5rem, 6rem) minmax(0, 1fr);
+  grid-template-areas:
+    'entrees fleche classement'
+    'couloir couloir couloir';
+  align-items: center;
+  gap: var(--pas) calc(var(--pas) * 0.75);
+  max-width: 52rem;
+}
+
+.entrees {
+  grid-area: entrees;
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entree {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.entree .picto {
+  color: var(--accent);
+}
+
+.fleche {
+  --p: 1;
+  grid-area: fleche;
+  position: relative;
+  height: 2px;
+  background: var(--border-strong);
+  transform-origin: left center;
+  transform: scaleX(var(--p));
+}
+
+.fleche::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--border-strong);
+  border-right: 2px solid var(--border-strong);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.classement {
+  grid-area: classement;
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+.classement li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--rayon-md);
+  background: var(--paper);
+  box-shadow: var(--ombre-sm);
+}
+
+.classement li:first-child {
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.classement .picto {
+  color: var(--accent);
+}
+
+.couloir {
+  --q: 0;
+  grid-area: couloir;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--rayon-md);
+  background: var(--paper-soft);
+}
+
+.couloir-piste {
+  position: relative;
+  height: 2.2rem;
+  container-type: inline-size;
+}
+
+/* Deux éléments : le porteur se translate via --q (CSS), le disque est animé en
+   échelle par GSAP. Sur un seul élément, le transform écrit par GSAP écraserait
+   la translation. */
+.jeton {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-top: -1.1rem;
+  transform: translateX(calc(var(--q) * (100cqi - 2.2rem)));
+}
+
+.jeton-disque {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.financement {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.financement .anneau {
+  top: 50%;
+  left: -0.2rem;
+  right: auto;
+  width: 2rem;
+  height: 2rem;
+  margin-top: -1rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Scène 5 — la proposition
+   ------------------------------------------------------------------------- */
+.logiciels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bloc-logiciels {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.logiciels-libelle {
+  margin: 0;
+  font-size: var(--fs-legende);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.logiciel {
+  padding: 0.2em 0.7em;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin: 0;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--rayon-md);
+  background: linear-gradient(100deg, var(--cta-from), var(--cta-to));
+  color: var(--on-cta);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--ombre-md);
+}
+
+/* Pas de transition CSS sur le transform du bouton : GSAP l'anime, une
+   transition brouillerait la timeline. Le survol joue sur la saturation. */
+.btn-cta:hover {
+  filter: saturate(1.15);
+}
+
+.contact {
+  margin: 0;
+  font-size: var(--fs-legende);
+  color: var(--ink-soft);
+}
+
+.contact strong {
+  color: var(--ink);
+  user-select: all;
+}
+
+/* ---------------------------------------------------------------------------
+   Barre de lecture : les segments de progression sont aussi la navigation
+   ------------------------------------------------------------------------- */
+.commandes {
+  grid-area: commandes;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 0.6rem calc(0.8rem + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--border);
+}
+
+.bouton-lecture {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 7.2rem;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-legende);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+.bouton-lecture:hover {
+  background: var(--accent-soft);
+}
+
+.bouton-lecture svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+.segments {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+.segment {
+  display: grid;
+  gap: 0.3rem;
+  width: 100%;
+  min-height: 2.5rem;
+  align-content: center;
+  padding: 0.3rem 0;
+  border: 0;
+  background: none;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: var(--fs-legende);
+  text-align: left;
+  cursor: pointer;
+}
+
+.segment-piste {
+  position: relative;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.segment-remplissage {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.segment-libelle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.segment[aria-current='step'] {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.segment:hover .segment-piste {
+  background: var(--border-strong);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Mode statique (mouvement réduit ou GSAP indisponible) : une scène à la fois */
+.pitch[data-mode='statique'] .anneau {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Compositions : portrait, écrans bas
+   ------------------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .segment-libelle {
+    display: none;
+  }
+}
+
+@media (orientation: portrait), (max-width: 700px) {
+  .cartes-metier {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.6rem;
+  }
+
+  .carte {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    column-gap: 0.75rem;
+    row-gap: 0.35rem;
+  }
+
+  .carte-tete {
+    display: contents;
+  }
+
+  .carte .picto-carre {
+    grid-row: span 3;
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+
+  .registre {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+  }
+
+  .tuile-libelle {
+    font-size: var(--fs-legende);
+  }
+
+  .schema {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'entrees'
+      'fleche'
+      'classement'
+      'couloir';
+    justify-items: stretch;
+  }
+
+  .entrees {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+  }
+
+  .fleche {
+    justify-self: center;
+    width: 2px;
+    height: 1.6rem;
+    transform-origin: center top;
+    transform: scaleY(var(--p));
+  }
+
+  .fleche::after {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -1px;
+    transform: translateX(-50%) rotate(135deg);
+  }
+}
+
+/* Téléphone en portrait : on resserre les blocs du schéma plutôt que le texte */
+@media (max-width: 440px) {
+  .entree,
+  .classement li {
+    padding-block: 0.32rem;
+  }
+
+  .fleche {
+    height: 1.1rem;
+  }
+
+  .couloir-piste,
+  .jeton {
+    height: 1.9rem;
+  }
+
+  .jeton {
+    width: 1.9rem;
+    margin-top: -0.95rem;
+    transform: translateX(calc(var(--q) * (100cqi - 1.9rem)));
+  }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  :root {
+    --fs-affiche: clamp(1.8rem, 0.4rem + 8vmin, 3rem);
+    --fs-titre: clamp(1.25rem, 0.3rem + 5vmin, 2.2rem);
+    --fs-chapo: 1rem;
+    --fs-corps: 0.9rem;
+    --fs-legende: 0.75rem;
+    --fs-chiffre: clamp(1.6rem, 0.3rem + 6vmin, 2.4rem);
+    --point: clamp(6px, 1.9vmin, 10px);
+    --ecart-point: 4px;
+    --pas: 0.55rem;
+  }
+
+  /* Écran bas : le schéma tient sur une seule rangée */
+  .schema {
+    grid-template-columns: auto minmax(1.5rem, 3rem) minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-areas: 'entrees fleche classement couloir';
+    max-width: none;
+  }
+
+  .couloir {
+    grid-template-columns: minmax(3rem, 1fr);
+    justify-items: start;
+  }
+
+  .carte {
+    padding: 0.7rem 0.85rem;
+    gap: 0.4rem;
+  }
+
+  .carte .picto-carre {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .commandes {
+    padding-block: 0.35rem calc(0.45rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .bouton-lecture,
+  .segment {
+    min-height: 2.25rem;
+  }
+
+  .classement li,
+  .entree {
+    padding-block: 0.3rem;
+  }
+}

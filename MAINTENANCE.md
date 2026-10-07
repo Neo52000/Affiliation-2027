@@ -28,6 +28,11 @@ passe par une PR (la CI rejoue les garde-fous : similarité, SEO, tests, e2e).
   échéances ; mettre à jour `src/data/echeances.json` (`date_releve`, sources) le
   cas échéant. Aucune date n'est écrite en dur dans les pages : ce fichier est la
   source unique.
+- La présentation partenaires est un instantané publié à part : après toute
+  modification de `echeances.json`, des métiers ou des outils, lancer
+  `pnpm build:presentation` puis republier `presentation/dist/pitch.html` à la
+  même adresse d'Artifact (le commit et la date de relevé sont tamponnés en
+  commentaire dans la page, ce qui permet de vérifier qu'elle est à jour).
 
 ## 4. Ajout de 10 métiers
 
