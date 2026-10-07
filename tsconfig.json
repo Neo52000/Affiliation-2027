@@ -4,6 +4,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
   },
-  "include": [".astro/types.d.ts", "src/**/*", "scripts/**/*"],
+  "include": [".astro/types.d.ts", "src/**/*", "scripts/**/*", "presentation/**/*"],
   "exclude": ["dist", "node_modules"]
 }
