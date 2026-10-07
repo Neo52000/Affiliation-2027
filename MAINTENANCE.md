@@ -31,7 +31,7 @@ passe par une PR (la CI rejoue les garde-fous : similarité, SEO, tests, e2e).
 - La présentation partenaires est un instantané publié à part : après toute
   modification de `echeances.json`, des métiers ou des outils, lancer
   `pnpm build:presentation` puis republier `presentation/dist/pitch.html` à la
-  même adresse d'Artifact (le commit et la date de relevé sont tamponnés en
+  même adresse d'Artifact (https://claude.ai/artifact/3BxhNJrafSYbS74YiwHN1J) (le commit et la date de relevé sont tamponnés en
   commentaire dans la page, ce qui permet de vérifier qu'elle est à jour).
 
 ## 4. Ajout de 10 métiers
