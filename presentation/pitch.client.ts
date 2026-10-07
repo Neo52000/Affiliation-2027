@@ -8,7 +8,7 @@
  * - toute l'interface autour de la scène dérive d'un seul syncUI(), appelé à
  *   chaque image et après chaque saut.
  * Mode statique (mouvement réduit, ou GSAP non chargé) : une scène à la fois,
- * sans aucun déplacement.
+ * dans l'état final de son animation, sans aucun déplacement.
  */
 (() => {
   type Gsap = typeof import('gsap').gsap;
@@ -17,20 +17,26 @@
   interface Scene {
     id: string;
     debut: number;
-    /** Instant où tout le contenu de la scène est en place (tests, navigation à l'arrêt) */
+    /** Instant où tout le contenu de la scène est en place (pause, tests) */
     tenue: number;
     fin: number;
   }
 
+  // L'hôte fournit <html> sans langue : le titre de la page doit être lu en français.
+  if (!document.documentElement.lang) document.documentElement.lang = 'fr';
+
   /** Découpage de la timeline, en secondes. La durée totale est fixée à 30,0 s. */
   const SCENES: readonly Scene[] = [
-    { id: 'scene-echeance', debut: 0, tenue: 3.8, fin: 4.5 },
-    { id: 'scene-metiers', debut: 4.5, tenue: 7.2, fin: 12 },
-    { id: 'scene-registre', debut: 12, tenue: 15.6, fin: 18.5 },
-    { id: 'scene-independance', debut: 18.5, tenue: 23.2, fin: 25 },
-    { id: 'scene-proposition', debut: 25, tenue: 28.5, fin: 30 },
+    { id: 'scene-echeance', debut: 0, tenue: 3.8, fin: 6 },
+    { id: 'scene-metiers', debut: 6, tenue: 8.2, fin: 12 },
+    { id: 'scene-registre', debut: 12, tenue: 15.6, fin: 18 },
+    { id: 'scene-independance', debut: 18, tenue: 22.7, fin: 24.5 },
+    { id: 'scene-proposition', debut: 24.5, tenue: 27, fin: 30 },
   ];
   const DUREE = 30;
+  /** Fondu enchaîné : la scène suivante commence à entrer avant la fin de la sortie */
+  const AVANCE = 0.15;
+  const SORTIE_DUREE = 0.35;
   /** Rythme de la lecture en mode statique : une scène toutes les 6 s, sans mouvement */
   const PAS_STATIQUE_MS = 6000;
 
@@ -41,7 +47,8 @@
 
   const racine = document.getElementById('pitch');
   const boutonLecture = document.getElementById('bouton-lecture');
-  if (!racine || !(boutonLecture instanceof HTMLButtonElement)) return;
+  const commandes = racine?.querySelector<HTMLElement>('.commandes');
+  if (!racine || !commandes || !(boutonLecture instanceof HTMLButtonElement)) return;
 
   const scenesEl = SCENES.map((s) => document.getElementById(s.id));
   if (scenesEl.some((el) => el === null)) return;
@@ -58,6 +65,8 @@
   const mouvementReduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mode: 'mouvement' | 'statique' = g && !mouvementReduit ? 'mouvement' : 'statique';
   racine.dataset['mode'] = mode;
+
+  const borner = (i: number): number => Math.max(0, Math.min(SCENES.length - 1, i));
 
   const libelleScene = (i: number): string =>
     segments[i]?.querySelector('.segment-libelle')?.textContent?.trim() ?? `Scène ${i + 1}`;
@@ -83,6 +92,12 @@
       if (k === i) seg.setAttribute('aria-current', 'step');
       else seg.removeAttribute('aria-current');
     });
+    // Le focus ne doit jamais rester dans une scène qui sort du champ : il passe
+    // sur le segment de la scène affichée.
+    const actif = document.activeElement;
+    if (actif && scenes.some((el, k) => k !== i && el.contains(actif))) {
+      segments[i]?.focus({ preventScroll: true });
+    }
     // Les scènes empilées hors champ sortent de l'arbre d'accessibilité et du focus.
     scenes.forEach((el, k) => {
       el.inert = k !== i;
@@ -98,6 +113,32 @@
     return i;
   };
 
+  /**
+   * Navigation clavier limitée à la barre de lecture (motif d'onglets) : aucune
+   * touche n'est captée ailleurs dans la page, aucun raccourci à une lettre.
+   */
+  const brancherClavier = (courante: () => number, aller: (i: number) => void): void => {
+    commandes.addEventListener('keydown', (e) => {
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      const i = courante();
+      const cible =
+        e.key === 'ArrowRight'
+          ? i + 1
+          : e.key === 'ArrowLeft'
+            ? i - 1
+            : e.key === 'Home'
+              ? 0
+              : e.key === 'End'
+                ? SCENES.length - 1
+                : null;
+      if (cible === null) return;
+      e.preventDefault();
+      const k = borner(cible);
+      aller(k);
+      segments[k]?.focus();
+    });
+  };
+
   // -------------------------------------------------------------------------
   // Mode statique
   // -------------------------------------------------------------------------
@@ -106,7 +147,7 @@
     let minuterie: number | null = null;
 
     const montrer = (i: number): void => {
-      courante = Math.max(0, Math.min(SCENES.length - 1, i));
+      courante = borner(i);
       scenes.forEach((el, k) => {
         el.hidden = k !== courante;
       });
@@ -140,12 +181,7 @@
 
     boutonLecture.addEventListener('click', () => (minuterie === null ? lire() : arreter()));
     segments.forEach((seg, k) => seg.addEventListener('click', () => aller(k)));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') aller(courante + 1);
-      else if (e.key === 'ArrowLeft') aller(courante - 1);
-      else if (e.key === 'Home') aller(0);
-      else if (e.key === 'End') aller(SCENES.length - 1);
-    });
+    brancherClavier(() => courante, aller);
 
     montrer(0);
     afficherBouton('Lecture');
@@ -170,119 +206,156 @@
     HTMLElement,
     HTMLElement,
   ];
+  const debut = (i: number): number => SCENES[i]?.debut ?? 0;
+  const fin = (i: number): number => SCENES[i]?.fin ?? DUREE;
 
   scenes.forEach((el) => {
     el.hidden = false;
   });
   g.set(scenes.slice(1), { autoAlpha: 0 });
+  g.set(q('.anneau', racine), { autoAlpha: 0 });
 
   const tl: Timeline = g.timeline({ paused: true, defaults: { ease: SORTIE, duration: 0.7 } });
 
-  const entrer = (el: HTMLElement, t: number): void => {
+  /** La scène devient visible un peu avant son début : fondu enchaîné, jamais d'image vide. */
+  const entrer = (el: HTMLElement, i: number): number => {
+    const t = debut(i) - AVANCE;
     tl.set(el, { autoAlpha: 1 }, t);
+    return t;
   };
-  const sortir = (el: HTMLElement, t: number): void => {
-    tl.to(el, { autoAlpha: 0, y: -12, duration: 0.4, ease: 'power2.in' }, t - 0.4);
+  const sortir = (el: HTMLElement, i: number): void => {
+    tl.to(
+      el,
+      { autoAlpha: 0, y: -12, duration: SORTIE_DUREE, ease: BASCULE },
+      fin(i) - SORTIE_DUREE,
+    );
   };
   const monter = (cibles: Element | Element[], t: number, distance = 28, decalage = 0): void => {
     tl.from(cibles, { y: distance, autoAlpha: 0, stagger: decalage }, t);
   };
+  /** Pulsation finie d'un anneau : visible seulement pendant sa propre animation. */
+  const pulser = (anneau: Element | null, t: number, repetitions = 0): void => {
+    if (!anneau) return;
+    tl.set(anneau, { autoAlpha: 1, scale: 0.6 }, t);
+    tl.to(
+      anneau,
+      { scale: 1.9, autoAlpha: 0, duration: 0.6, ease: SORTIE, repeat: repetitions },
+      t,
+    );
+  };
 
   // Scène 1 — l'échéance. Le titre et la frise sont lisibles dès t = 0 (image
-  // d'aperçu) : seul le trajet du point et la pulsation de l'échéance bougent.
+  // d'aperçu) : seuls le trajet du point et la pulsation de l'échéance bougent.
   const frise = s1.querySelector('.frise');
-  const anneauEcheance = s1.querySelector('.anneau');
   if (frise) tl.fromTo(frise, { '--p': 0 }, { '--p': 1, duration: 2, ease: BASCULE }, 0.4);
-  if (anneauEcheance) {
-    tl.fromTo(
-      anneauEcheance,
-      { scale: 0.6, autoAlpha: 1 },
-      { scale: 1.9, autoAlpha: 0, duration: 0.6, ease: 'power1.out', repeat: 1 },
-      2.4,
-    );
-  }
-  sortir(s1, SCENES[0]?.fin ?? 4.5);
+  pulser(s1.querySelector('.anneau'), 2.4, 1);
+  sortir(s1, 0);
 
   // Scène 2 — trois métiers, trois besoins.
-  entrer(s2, 4.5);
-  monter(q('.surtitre, .titre-scene', s2), 4.5, 28, 0.08);
-  monter(q('.carte', s2), 4.8, 36, 0.16);
+  const t2 = entrer(s2, 1);
+  monter(q('.surtitre, .titre-scene', s2), t2, 28, 0.08);
+  monter(q('.carte', s2), t2 + 0.3, 36, 0.16);
   tl.from(
     q('.pastille', s2),
     { scale: 0.6, autoAlpha: 0, duration: 0.45, ease: RESSORT, stagger: 0.08 },
-    5.6,
+    t2 + 1.1,
   );
-  tl.from(q('.legende', s2), { autoAlpha: 0, duration: 0.5 }, 5.9);
-  sortir(s2, 12);
+  tl.from(q('.legende', s2), { autoAlpha: 0, duration: 0.5 }, t2 + 1.45);
+  sortir(s2, 1);
 
-  // Scène 3 — le registre se remplit, le compteur suit les points.
-  const points = q('.point', s3);
+  // Scène 3 — le registre. Les trois métiers de la scène 2 s'allument d'abord,
+  // puis le registre se remplit rang par rang, une famille par ligne ; le
+  // compteur avance d'une unité par point affiché.
+  const t3 = entrer(s3, 2);
+  monter(q('.surtitre, .titre-scene', s3), t3, 28, 0.08);
+  const exemples = q('.point-exemple', s3);
+  const autres = q('.point', s3).filter((p) => !p.classList.contains('point-exemple'));
   const compteur = s3.querySelector<HTMLElement>('.compteur-valeur');
   const total = Number(compteur?.textContent ?? '0');
-  entrer(s3, 12);
-  monter(q('.surtitre, .titre-scene', s3), 12, 28, 0.08);
-  tl.from(q('.rang .picto', s3), { autoAlpha: 0, duration: 0.5, stagger: 0.04 }, 12.35);
+  const tExemples = t3 + 0.35;
+  const tRegistre = tExemples + 0.45;
+  const remplissage = 1.5;
+  const pas = autres.length > 0 ? remplissage / autres.length : 0;
   tl.fromTo(
-    points,
+    exemples,
     { scale: 0, autoAlpha: 0 },
-    {
-      scale: 1,
-      autoAlpha: 1,
-      duration: 0.35,
-      ease: RESSORT,
-      stagger: { grid: 'auto', from: 'center', amount: 1.5 },
-    },
-    12.35,
+    { scale: 1, autoAlpha: 1, duration: 0.45, ease: RESSORT, stagger: 0.1 },
+    tExemples,
   );
+  tl.fromTo(
+    autres,
+    { scale: 0.4, autoAlpha: 0 },
+    { scale: 1, autoAlpha: 1, duration: 0.25, ease: SORTIE, stagger: { each: pas } },
+    tRegistre,
+  );
+  // Chaque picto de famille s'allume quand son rang commence à se remplir.
+  q('.rang', s3).forEach((rang) => {
+    const premier = autres.findIndex((p) => rang.contains(p));
+    const picto = rang.querySelector('.picto');
+    if (picto && premier >= 0) {
+      tl.from(picto, { autoAlpha: 0, duration: 0.3 }, tRegistre + premier * pas);
+    }
+  });
   if (compteur) {
-    // Le compteur apparaît avec la grille : jamais un « 0 » seul avant le titre.
-    tl.from(compteur, { autoAlpha: 0, duration: 0.3 }, 12.35);
+    tl.from(compteur, { autoAlpha: 0, duration: 0.3 }, tExemples);
     tl.fromTo(
       compteur,
       { innerText: 0 },
-      { innerText: total, snap: { innerText: 1 }, duration: 1.85, ease: 'none' },
-      12.35,
+      { innerText: exemples.length, snap: { innerText: 1 }, duration: 0.3, ease: 'none' },
+      tExemples,
+    );
+    tl.fromTo(
+      compteur,
+      { innerText: exemples.length },
+      {
+        innerText: total,
+        snap: { innerText: 1 },
+        duration: remplissage,
+        ease: 'none',
+        immediateRender: false,
+      },
+      tRegistre,
     );
   }
-  monter(q('.compteur-libelle', s3), 12.6, 16);
-  monter(q('.tuile', s3), 14.3, 24, 0.15);
-  sortir(s3, 18.5);
+  monter(q('.compteur-libelle', s3), tExemples, 16);
+  monter(q('.tuile', s3), tRegistre + remplissage + 0.1, 24, 0.15);
+  sortir(s3, 2);
 
   // Scène 4 — deux entrées alimentent le classement ; la commission suit son
   // propre couloir jusqu'au financement du site. Le classement ne bouge plus.
+  const t4 = entrer(s4, 3);
   const fleche = s4.querySelector('.fleche');
   const couloir = s4.querySelector('.couloir');
   const jeton = s4.querySelector('.jeton-disque');
-  const anneauFinancement = s4.querySelector('.anneau');
-  entrer(s4, 18.5);
-  monter(q('.surtitre, .titre-scene', s4), 18.5, 28, 0.08);
-  monter(q('.entree', s4), 18.9, 16, 0.12);
-  if (fleche) tl.fromTo(fleche, { '--p': 0 }, { '--p': 1, duration: 0.6, ease: BASCULE }, 19.3);
-  monter(q('.classement li', s4), 19.7, 16, 0.12);
-  if (couloir) tl.from(couloir, { autoAlpha: 0, duration: 0.5 }, 20.3);
+  monter(q('.surtitre, .titre-scene', s4), t4, 28, 0.08);
+  monter(q('.entree', s4), t4 + 0.45, 16, 0.12);
+  if (fleche) {
+    tl.fromTo(fleche, { '--p': 0 }, { '--p': 1, duration: 0.6, ease: BASCULE }, t4 + 0.85);
+  }
+  monter(q('.classement li', s4), t4 + 1.25, 16, 0.12);
+  if (couloir) tl.from(couloir, { autoAlpha: 0, duration: 0.4 }, t4 + 1.75);
   if (jeton) {
-    tl.from(jeton, { scale: 0.6, autoAlpha: 0, duration: 0.45, ease: RESSORT }, 20.5);
+    tl.from(jeton, { scale: 0.6, autoAlpha: 0, duration: 0.45, ease: RESSORT }, t4 + 1.95);
   }
-  if (couloir) tl.fromTo(couloir, { '--q': 0 }, { '--q': 1, duration: 1.4, ease: BASCULE }, 20.9);
-  if (anneauFinancement) {
-    tl.fromTo(
-      anneauFinancement,
-      { scale: 0.6, autoAlpha: 1 },
-      { scale: 1.8, autoAlpha: 0, duration: 0.6, ease: 'power1.out' },
-      22.3,
-    );
+  if (couloir) {
+    tl.fromTo(couloir, { '--q': 0 }, { '--q': 1, duration: 1.4, ease: BASCULE }, t4 + 2.35);
   }
-  monter(q('.chapo', s4), 21.2, 16);
-  tl.from(q('.legende', s4), { autoAlpha: 0, duration: 0.5 }, 21.7);
-  sortir(s4, 25);
+  pulser(s4.querySelector('.financement .anneau'), t4 + 3.75);
+  tl.from(q('.legende', s4), { autoAlpha: 0, duration: 0.5 }, t4 + 4.15);
+  sortir(s4, 3);
 
-  // Scène 5 — la proposition. Tenue jusqu'à la fin.
-  entrer(s5, 25);
-  monter(q('.surtitre, .titre-scene', s5), 25, 32, 0.08);
-  monter(q('.chapo', s5), 25.6, 18);
-  monter(q('.logiciels-libelle, .logiciel', s5), 26.1, 12, 0.07);
-  tl.from(q('.btn-cta', s5), { scale: 0.85, autoAlpha: 0, duration: 0.6, ease: RESSORT }, 26.8);
-  tl.from(q('.contact', s5), { autoAlpha: 0, duration: 0.5 }, 27.2);
+  // Scène 5 — la proposition. Les noms arrivent ensemble : aucun ordre suggéré.
+  const t5 = entrer(s5, 4);
+  monter(q('.surtitre, .titre-scene', s5), t5, 32, 0.08);
+  monter(q('.chapo', s5), t5 + 0.6, 18);
+  monter(q('.bloc-logiciels', s5), t5 + 1.05, 12);
+  tl.from(
+    q('.btn-cta', s5),
+    { scale: 0.85, autoAlpha: 0, duration: 0.6, ease: RESSORT },
+    t5 + 1.55,
+  );
+  const contact = q('.contact', s5);
+  if (contact.length) tl.from(contact, { autoAlpha: 0, duration: 0.5 }, t5 + 1.95);
 
   // Durée totale fixée : la dernière image tenue dure jusqu'à 30,0 s.
   tl.set({}, {}, DUREE);
@@ -292,18 +365,35 @@
   // -------------------------------------------------------------------------
   const syncUI = (): void => {
     const t = tl.time();
-    const i = sceneA(t);
     SCENES.forEach((s, k) => {
       const local = Math.max(0, Math.min(1, (t - s.debut) / (s.fin - s.debut)));
       const r = remplissages[k];
       if (r) r.style.transform = `scaleX(${local})`;
     });
-    marquerScene(i);
+    marquerScene(sceneA(t));
     afficherBouton(tl.paused() ? (t >= DUREE ? 'Rejouer' : 'Lecture') : 'Pause');
   };
 
+  /**
+   * Instant où se figer : jamais au milieu d'une entrée ou d'une sortie (texte
+   * fantôme illisible), mais sur l'image tenue de la scène en cours.
+   */
+  const instantLisible = (t: number): number => {
+    const i = sceneA(t);
+    const s = SCENES[i];
+    if (!s) return t;
+    const derniere = i === SCENES.length - 1;
+    if (t < s.tenue || (!derniere && t > s.fin - SORTIE_DUREE - AVANCE)) return s.tenue;
+    return t;
+  };
+
+  const suspendre = (): void => {
+    tl.pause(instantLisible(tl.time()));
+    syncUI();
+  };
+
   const allerScene = (i: number, manuel: boolean): void => {
-    const k = Math.max(0, Math.min(SCENES.length - 1, i));
+    const k = borner(i);
     const s = SCENES[k];
     if (!s) return;
     if (tl.paused()) tl.pause(s.tenue);
@@ -313,36 +403,24 @@
   };
 
   boutonLecture.addEventListener('click', () => {
-    if (!tl.paused()) tl.pause();
-    else if (tl.time() >= DUREE) tl.restart();
-    else tl.play();
-    syncUI();
-  });
-  segments.forEach((seg, k) => seg.addEventListener('click', () => allerScene(k, true)));
-
-  document.addEventListener('keydown', (e) => {
-    const cible = e.target;
-    const surControle =
-      cible instanceof HTMLButtonElement ||
-      cible instanceof HTMLAnchorElement ||
-      cible instanceof HTMLInputElement;
-    const i = sceneA(tl.time());
-    if (e.key === 'ArrowRight') allerScene(i + 1, true);
-    else if (e.key === 'ArrowLeft') allerScene(i - 1, true);
-    else if (e.key === 'Home') allerScene(0, true);
-    else if (e.key === 'End') allerScene(SCENES.length - 1, true);
-    else if ((e.key === ' ' || e.key === 'k') && !surControle) {
-      e.preventDefault();
-      boutonLecture.click();
+    if (!tl.paused()) suspendre();
+    else if (tl.time() >= DUREE) {
+      tl.restart();
+      syncUI();
+    } else {
+      tl.play();
+      syncUI();
     }
   });
+  segments.forEach((seg, k) => seg.addEventListener('click', () => allerScene(k, true)));
+  brancherClavier(
+    () => sceneA(tl.time()),
+    (k) => allerScene(k, true),
+  );
 
   // Le focus qui entre dans une scène suspend la lecture (motif carrousel WAI-ARIA).
   zoneScenes?.addEventListener('focusin', () => {
-    if (!tl.paused()) {
-      tl.pause();
-      syncUI();
-    }
+    if (!tl.paused()) suspendre();
   });
 
   g.ticker.add(syncUI);

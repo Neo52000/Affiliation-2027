@@ -22,6 +22,7 @@ import {
   EXTRAITS_METIERS,
   compterSourcesGouv,
   echapperHtml,
+  espacesFautives,
   extraireTaux,
   formatNombre,
   hotesGouv,
@@ -31,7 +32,13 @@ import {
   valeurConfiguree,
   verifierExtrait,
 } from '../src/lib/presentation.ts';
-import { FAMILLES, echeancesSchema, metierSchema, outilSchema } from '../src/lib/schemas.ts';
+import {
+  FAMILLES,
+  affiliationSchema,
+  echeancesSchema,
+  metierSchema,
+  outilSchema,
+} from '../src/lib/schemas.ts';
 
 /** Adresse publique tant que le domaine définitif (TODO.md #2) n'est pas branché. */
 const URL_PRODUCTION = 'https://affiliation2027.netlify.app';
@@ -109,9 +116,9 @@ const cartes = EXTRAITS_METIERS.map((x) => {
   }
   taux.forEach((t, i) => noter(`carte.${x.slug}.taux[${i}]`, t, origine));
   const pastilles = taux.length
-    ? `<p class="pastilles" aria-label="Taux de TVA">${taux
-        .map((t) => `<span class="pastille">${texte(t)}</span>`)
-        .join('')}</p>`
+    ? `<ul class="pastilles" aria-label="Taux de TVA">${taux
+        .map((t) => `<li class="pastille">${texte(t)}</li>`)
+        .join('')}</ul>`
     : '';
   return {
     sources: m.sources.map((s) => s.url),
@@ -122,11 +129,24 @@ const cartes = EXTRAITS_METIERS.map((x) => {
   };
 });
 
+/** Les trois métiers de la scène 2 sont repérables dans le registre de la scène 3. */
+const slugsExemples = new Set<string>(EXTRAITS_METIERS.map((x) => x.slug));
 const grille = `<ul class="grille" aria-hidden="true">${familles
-  .map(
-    (f) => `<li class="rang">${picto(f.famille)}${'<span class="point"></span>'.repeat(f.n)}</li>`,
-  )
+  .map((f) => {
+    const points = metiers
+      .filter((m) => m.famille === f.famille)
+      .map((m) =>
+        slugsExemples.has(m.slug)
+          ? `<span class="point point-exemple" data-metier="${m.slug}"></span>`
+          : '<span class="point"></span>',
+      )
+      .join('');
+    return `<li class="rang">${picto(f.famille)}${points}</li>`;
+  })
   .join('')}</ul>`;
+if ((grille.match(/point-exemple/g) ?? []).length !== EXTRAITS_METIERS.length) {
+  throw new Error('chaque métier de la scène 2 doit avoir son point dans le registre');
+}
 
 // ---------------------------------------------------------------------------
 // Outils et comparatifs
@@ -145,8 +165,19 @@ if (existsSync(dossierComparatifs)) {
     );
   }
 }
+// Partenariats réellement actifs (liens non null) : le pitch ne laisse jamais
+// croire que des partenaires existent déjà.
+const affiliation = affiliationSchema.parse(lireJson('src', 'data', 'affiliation.json'));
+const nbPartenaires = Object.values(affiliation.liens).filter((l) => l !== null).length;
+const etatPartenariats = noter(
+  'etatPartenariats',
+  nbPartenaires === 0
+    ? 'aucun partenariat actif à ce jour'
+    : `${nbPartenaires} partenariat${nbPartenaires > 1 ? 's actifs' : ' actif'}`,
+  'src/data/affiliation.json#liens (entrées non null)',
+);
 const logiciels = `<div class="bloc-logiciels">
-        <p class="logiciels-libelle" id="titre-logiciels">Logiciels comparés</p>
+        <p class="logiciels-libelle" id="titre-logiciels">Logiciels comparés · ${texte(etatPartenariats)}</p>
         <ul class="logiciels" aria-labelledby="titre-logiciels">${noms
           .map(
             (n, i) =>
@@ -242,6 +273,11 @@ const valeurs: Record<string, string> = {
   ),
   urlCta: echapperHtml(noter('urlCta', urlCta, 'src/config.ts#url, sinon adresse de production')),
   versionGsap: echapperHtml(versionGsap),
+  verbeCommission: noter(
+    'verbeCommission',
+    nbPartenaires === 0 ? 'ira' : 'va',
+    'src/data/affiliation.json#liens (futur tant qu’aucun partenariat n’est actif)',
+  ),
   pictoProfil: picto('profil'),
   pictoLoupe: picto('loupe'),
   pictoMedaille: picto('medaille'),
@@ -294,6 +330,12 @@ const contenu = page
 const autorises = new Set<string>(['1', '2', '3', '4', '5']);
 for (const a of affirmations)
   for (const n of a.valeur.match(/\d+(?:,\d+)?/g) ?? []) autorises.add(n);
+const fautives = espacesFautives(contenu.replace(/&nbsp;/g, '\u00a0'));
+if (fautives.length) {
+  throw new Error(
+    `espace ordinaire devant une ponctuation française : « ${fautives.join(' » « ')} »`,
+  );
+}
 const intrus = (contenu.match(/\d+(?:,\d+)?/g) ?? []).filter((n) => !autorises.has(n));
 if (intrus.length)
   throw new Error(`nombres affichés sans origine dans les données : ${intrus.join(', ')}`);

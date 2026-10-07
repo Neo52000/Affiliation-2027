@@ -9,7 +9,6 @@
   --border: #d0d7de;
   --border-strong: #6e7781;
   --accent: #2563eb;
-  --accent-2: #7c3aed;
   --accent-soft: #eff4ff;
   --ok: #047857;
   --ok-soft: #ecfdf3;
@@ -17,7 +16,7 @@
   --cta-from: #2563eb;
   --cta-to: #7c3aed;
   --on-cta: #ffffff;
-  /* Dégradé de titre : chaque extrémité AA sur paper */
+  /* Dégradé de titre (un mot clé par titre) : chaque extrémité AA sur paper */
   --titre-from: #1d4ed8;
   --titre-to: #6d28d9;
   --halo-1: rgba(37, 99, 235, 0.12);
@@ -32,7 +31,8 @@
   --fs-chapo: clamp(1.05rem, 0.6rem + 1.9vmin, 1.9rem);
   --fs-corps: clamp(0.95rem, 0.7rem + 1.15vmin, 1.4rem);
   --fs-legende: clamp(0.78rem, 0.65rem + 0.55vmin, 1rem);
-  --fs-chiffre: clamp(2rem, 0.6rem + 6.5vmin, 5.5rem);
+  /* Les chiffres des tuiles restent sous le titre de scène */
+  --fs-chiffre: clamp(1.5rem, 0.4rem + 3.8vmin, 3.25rem);
   --point: clamp(7px, 2.1vmin, 20px);
   --ecart-point: clamp(4px, 1.3vmin, 12px);
 
@@ -52,7 +52,6 @@
     --border: #2b3340;
     --border-strong: #7d8590;
     --accent: #60a5fa;
-    --accent-2: #a78bfa;
     --accent-soft: #16233f;
     --ok: #34d399;
     --ok-soft: #0b2e22;
@@ -74,7 +73,6 @@
   --border: #2b3340;
   --border-strong: #7d8590;
   --accent: #60a5fa;
-  --accent-2: #a78bfa;
   --accent-soft: #16233f;
   --ok: #34d399;
   --ok-soft: #0b2e22;
@@ -88,11 +86,17 @@
 }
 
 /* ---------------------------------------------------------------------------
-   Cadre
+   Cadre : plein écran quand tout tient ; sinon la page défile (zoom 200 %,
+   petits écrans, espacement de texte agrandi) et la barre de lecture reste
+   collée en pied, toujours atteignable.
    ------------------------------------------------------------------------- */
 html,
 body {
   height: 100%;
+}
+
+html {
+  scroll-padding-bottom: 5rem;
 }
 
 body {
@@ -114,14 +118,10 @@ body {
 .pitch {
   position: relative;
   isolation: isolate;
-  height: 100%;
+  min-height: 100%;
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  grid-template-areas:
-    'scenes'
-    'commandes';
   padding-inline: var(--gouttiere);
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 /* Halo très faible derrière la scène (design system : --hero-glow, opacité ≤ 0,16) */
@@ -136,21 +136,35 @@ body {
     radial-gradient(50vmax 36vmax at 92% 8%, var(--halo-2), transparent 60%);
 }
 
+.carrousel {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'scenes'
+    'commandes';
+  min-width: 0;
+}
+
+/* Les scènes sont empilées dans une seule cellule, haute comme la plus haute
+   d'entre elles : toutes commencent à la même hauteur, le titre ne saute pas
+   d'une scène à l'autre. */
 .scenes {
   grid-area: scenes;
   display: grid;
-  place-items: center;
-  min-height: 0;
+  align-content: safe center;
+  justify-items: center;
+  min-width: 0;
   padding-block: var(--pas);
 }
 
 .scene {
   grid-area: 1 / 1;
-  width: min(100%, 78rem);
+  align-self: stretch;
+  width: min(100%, 66rem);
   min-width: 0;
   display: grid;
   gap: var(--pas);
-  align-content: center;
+  align-content: start;
 }
 
 .sr {
@@ -188,7 +202,9 @@ body {
 }
 
 .titre-date {
-  font-size: var(--fs-affiche);
+  /* Bornée par la largeur : « 1er septembre » est insécable et doit tenir sur un
+     téléphone, même en police de repli */
+  font-size: min(var(--fs-affiche), 11vw);
   line-height: 1.02;
   letter-spacing: -0.03em;
 }
@@ -229,6 +245,7 @@ body {
   font-size: var(--fs-legende);
   color: var(--ink-soft);
   max-width: 70ch;
+  text-wrap: pretty;
 }
 
 .picto {
@@ -261,35 +278,33 @@ body {
   white-space: nowrap;
 }
 
+.anneau {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ---------------------------------------------------------------------------
    Scène 1 — la frise des échéances
    Le trajet est piloté par --p (0 → 1) : le CSS le projette sur la largeur du
    rail (unités de conteneur), si bien que le mouvement suit toute mise en page.
+   Le rail est en pointillé : un trajet vers l'échéance, pas une jauge remplie.
    ------------------------------------------------------------------------- */
 .frise {
   --p: 0;
   display: grid;
   gap: 0.75rem;
-  max-width: 46rem;
   margin-top: calc(var(--pas) * 0.5);
 }
 
 .frise-rail {
   position: relative;
-  height: 4px;
+  height: 2px;
   margin-inline: 9px;
-  border-radius: 2px;
-  background: var(--border-strong);
+  background: repeating-linear-gradient(90deg, var(--border-strong) 0 6px, transparent 6px 12px);
   container-type: inline-size;
-}
-
-.frise-remplissage {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  transform-origin: left center;
-  transform: scaleX(var(--p));
 }
 
 .frise-point {
@@ -305,17 +320,29 @@ body {
   transform: translateX(calc(var(--p) * 100cqi));
 }
 
+/* L'anneau entoure l'extrémité du rail : l'échéance, là où le point arrive */
+.frise-rail .anneau {
+  top: 50%;
+  left: 100%;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+}
+
 .frise-jalons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .jalon {
-  position: relative;
   display: grid;
   gap: 0.2rem;
   justify-items: start;
+  align-content: start;
   min-width: 0;
 }
 
@@ -332,19 +359,6 @@ body {
 .jalon-libelle {
   color: var(--ink-soft);
   font-size: var(--fs-legende);
-}
-
-.anneau {
-  position: absolute;
-  /* centré sur l'extrémité droite du rail (marge 9 px, rail de 4 px, écart 0,75 rem) */
-  top: calc(-0.75rem - 13px);
-  right: -2px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 2px solid var(--accent);
-  opacity: 0;
-  pointer-events: none;
 }
 
 /* ---------------------------------------------------------------------------
@@ -387,10 +401,14 @@ body {
   margin: 0;
 }
 
+/* Les taux de TVA : seule information présentée en pastille */
 .pastilles {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .pastille {
@@ -439,6 +457,13 @@ body {
   height: var(--point);
   border-radius: 50%;
   background: var(--accent);
+}
+
+/* Les trois métiers de la scène précédente, retrouvés dans le registre */
+.point-exemple {
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 3.5px var(--ink);
 }
 
 .compteur {
@@ -491,7 +516,8 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Scène 4 — deux entrées alimentent le classement ; la commission suit son couloir
+   Scène 4 — deux entrées alimentent le classement ; la commission suit son
+   propre couloir, du départ « Commission » au « Financement du site ».
    ------------------------------------------------------------------------- */
 .schema {
   display: grid;
@@ -501,7 +527,6 @@ body {
     'couloir couloir couloir';
   align-items: center;
   gap: var(--pas) calc(var(--pas) * 0.75);
-  max-width: 52rem;
 }
 
 .entrees {
@@ -519,7 +544,7 @@ body {
   gap: 0.5rem;
   padding: 0.45rem 0.8rem;
   border: 1px solid var(--border-strong);
-  border-radius: 999px;
+  border-radius: var(--rayon-md);
   font-weight: 700;
   white-space: nowrap;
 }
@@ -584,19 +609,41 @@ body {
   --q: 0;
   grid-area: couloir;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(4rem, 1fr) auto;
+  grid-template-areas: 'depart piste financement';
   align-items: center;
   gap: 0.75rem;
-  padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   border: 1px dashed var(--border-strong);
   border-radius: var(--rayon-md);
   background: var(--paper-soft);
 }
 
+.couloir-depart {
+  grid-area: depart;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
 .couloir-piste {
+  grid-area: piste;
   position: relative;
+  min-width: 4rem;
   height: 2.2rem;
   container-type: inline-size;
+}
+
+/* Le trajet parcouru reste tracé derrière le jeton */
+.couloir-trace {
+  position: absolute;
+  top: 50%;
+  left: 1.1rem;
+  right: 1.1rem;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(var(--q));
 }
 
 /* Deux éléments : le porteur se translate via --q (CSS), le disque est animé en
@@ -625,18 +672,19 @@ body {
 }
 
 .financement {
+  grid-area: financement;
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin: 0;
   font-weight: 700;
   white-space: nowrap;
 }
 
 .financement .anneau {
   top: 50%;
-  left: -0.2rem;
-  right: auto;
+  left: -0.25rem;
   width: 2rem;
   height: 2rem;
   margin-top: -1rem;
@@ -645,16 +693,6 @@ body {
 /* ---------------------------------------------------------------------------
    Scène 5 — la proposition
    ------------------------------------------------------------------------- */
-.logiciels {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.4rem 0.6rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .bloc-logiciels {
   display: grid;
   gap: 0.5rem;
@@ -669,11 +707,26 @@ body {
   color: var(--ink-soft);
 }
 
+/* Des noms, pas des boutons : du texte séparé par des points médians */
+.logiciels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .logiciel {
-  padding: 0.2em 0.7em;
-  border: 1px solid var(--border-strong);
-  border-radius: 999px;
+  font-size: var(--fs-chapo);
   font-weight: 700;
+}
+
+.logiciel + .logiciel::before {
+  content: '·';
+  margin-right: 0.6rem;
+  color: var(--ink-soft);
+  font-weight: 400;
 }
 
 .actions {
@@ -684,10 +737,11 @@ body {
   margin: 0;
 }
 
+/* Pas de transition CSS sur le transform du bouton : GSAP l'anime, une
+   transition brouillerait la timeline. Le survol joue sur la saturation. */
 .btn-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   padding: 0.8rem 1.4rem;
   border-radius: var(--rayon-md);
   background: linear-gradient(100deg, var(--cta-from), var(--cta-to));
@@ -697,10 +751,15 @@ body {
   box-shadow: var(--ombre-md);
 }
 
-/* Pas de transition CSS sur le transform du bouton : GSAP l'anime, une
-   transition brouillerait la timeline. Le survol joue sur la saturation. */
 .btn-cta:hover {
   filter: saturate(1.15);
+}
+
+.icone-externe {
+  width: 1em;
+  height: 1em;
+  margin-left: 0.5rem;
+  flex: none;
 }
 
 .contact {
@@ -715,15 +774,20 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Barre de lecture : les segments de progression sont aussi la navigation
+   Barre de lecture : les segments de progression sont aussi la navigation.
+   Collée en pied : elle reste atteignable quand la page défile.
    ------------------------------------------------------------------------- */
 .commandes {
   grid-area: commandes;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding-block: 0.6rem calc(0.8rem + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--border);
+  background: var(--paper);
 }
 
 .bouton-lecture {
@@ -766,6 +830,7 @@ body {
 }
 
 .segment {
+  position: relative;
   display: grid;
   gap: 0.3rem;
   width: 100%;
@@ -781,11 +846,12 @@ body {
   cursor: pointer;
 }
 
+/* Piste en contour : repère ≥ 3:1 même vide (WCAG 1.4.11) */
 .segment-piste {
   position: relative;
-  height: 4px;
-  border-radius: 2px;
-  background: var(--border);
+  height: 6px;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px var(--border-strong);
   overflow: hidden;
 }
 
@@ -795,6 +861,11 @@ body {
   background: var(--accent);
   transform-origin: left center;
   transform: scaleX(0);
+}
+
+.segment-numero {
+  display: none;
+  font-variant-numeric: tabular-nums;
 }
 
 .segment-libelle {
@@ -809,26 +880,96 @@ body {
 }
 
 .segment:hover .segment-piste {
-  background: var(--border-strong);
+  box-shadow: inset 0 0 0 2px var(--border-strong);
 }
 
+/* L'anneau de focus suit l'arrondi propre à chaque élément */
 :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
-  border-radius: 2px;
 }
 
-/* Mode statique (mouvement réduit ou GSAP indisponible) : une scène à la fois */
+/* Mode statique (mouvement réduit ou GSAP indisponible) : chaque scène montre
+   l'état final de son animation, une scène à la fois. */
+.pitch[data-mode='statique'] .frise {
+  --p: 1;
+}
+
+.pitch[data-mode='statique'] .couloir {
+  --q: 1;
+}
+
 .pitch[data-mode='statique'] .anneau {
   display: none;
 }
 
 /* ---------------------------------------------------------------------------
-   Compositions : portrait, écrans bas
+   Contrastes forcés : les repères dessinés en fond passent aux couleurs système
+   ------------------------------------------------------------------------- */
+@media (forced-colors: active) {
+  .segment-piste {
+    box-shadow: none;
+    border: 1px solid ButtonText;
+  }
+
+  .segment-remplissage,
+  .frise-point,
+  .point,
+  .couloir-trace {
+    forced-color-adjust: none;
+    background: Highlight;
+  }
+
+  .frise-rail {
+    forced-color-adjust: none;
+    background: repeating-linear-gradient(90deg, CanvasText 0 6px, transparent 6px 12px);
+  }
+
+  .fleche {
+    forced-color-adjust: none;
+    background: CanvasText;
+  }
+
+  .fleche::after {
+    border-color: CanvasText;
+  }
+
+  .degrade {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .segment[aria-current='step'] {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  .btn-cta {
+    border: 1px solid ButtonText;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Compositions : écrans étroits, portrait, écrans bas
    ------------------------------------------------------------------------- */
 @media (max-width: 760px) {
   .segment-libelle {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .segment-numero {
+    display: block;
+  }
+}
+
+@media (orientation: portrait) {
+  :root {
+    --point: clamp(7px, 3.4vmin, 16px);
+    --ecart-point: clamp(4px, 1.5vmin, 9px);
   }
 }
 
@@ -902,8 +1043,20 @@ body {
     padding-block: 0.32rem;
   }
 
+  .entree {
+    padding-inline: 0.6rem;
+  }
+
   .fleche {
     height: 1.1rem;
+  }
+
+  .couloir {
+    grid-template-columns: minmax(4rem, 1fr) auto;
+    grid-template-areas:
+      'depart depart'
+      'piste financement';
+    row-gap: 0.2rem;
   }
 
   .couloir-piste,
@@ -925,22 +1078,10 @@ body {
     --fs-chapo: 1rem;
     --fs-corps: 0.9rem;
     --fs-legende: 0.75rem;
-    --fs-chiffre: clamp(1.6rem, 0.3rem + 6vmin, 2.4rem);
+    --fs-chiffre: clamp(1.4rem, 0.3rem + 5vmin, 2rem);
     --point: clamp(6px, 1.9vmin, 10px);
     --ecart-point: 4px;
     --pas: 0.55rem;
-  }
-
-  /* Écran bas : le schéma tient sur une seule rangée */
-  .schema {
-    grid-template-columns: auto minmax(1.5rem, 3rem) minmax(0, 1fr) minmax(0, 1.2fr);
-    grid-template-areas: 'entrees fleche classement couloir';
-    max-width: none;
-  }
-
-  .couloir {
-    grid-template-columns: minmax(3rem, 1fr);
-    justify-items: start;
   }
 
   .carte {
@@ -965,5 +1106,21 @@ body {
   .classement li,
   .entree {
     padding-block: 0.3rem;
+  }
+}
+
+/* Écran bas et large : le schéma tient sur une seule rangée, le couloir sur deux lignes */
+@media (max-height: 560px) and (orientation: landscape) and (min-width: 701px) {
+  .schema {
+    grid-template-columns: auto minmax(1.5rem, 3rem) minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-areas: 'entrees fleche classement couloir';
+  }
+
+  .couloir {
+    grid-template-columns: minmax(4rem, 1fr) auto;
+    grid-template-areas:
+      'depart depart'
+      'piste financement';
+    row-gap: 0.2rem;
   }
 }

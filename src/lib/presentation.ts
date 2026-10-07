@@ -28,12 +28,28 @@ export function echapperHtml(texte: string): string {
   return texte.replace(/[&<>"']/g, (c) => ENTITES[c] ?? c);
 }
 
+const MOIS = 'janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre';
+
 /**
- * Typographie française : espace insécable avant % : ; ! ? » et après «,
- * pour qu'un « 5,5 % » ou un « : » ne se retrouve jamais seul en début de ligne.
+ * Typographie française : espace insécable avant % : ; ! ? » et après «, et
+ * entre le jour et le mois (« 4 octobre » ne se coupe pas ; l'année peut passer
+ * à la ligne, sans quoi une date en titre d'affiche déborderait d'un téléphone).
  */
 export function insecables(texte: string): string {
-  return texte.replace(/[ \t]+([%:;!?»])/g, '\u00a0$1').replace(/«[ \t]+/g, '«\u00a0');
+  return texte
+    .replace(/[ \t]+([%:;!?»])/g, '\u00a0$1')
+    .replace(/«[ \t]+/g, '«\u00a0')
+    .replace(new RegExp(`(\\d{1,2}(?:er)?)[ \\t]+(${MOIS})`, 'g'), '$1\u00a0$2');
+}
+
+/**
+ * Espaces fautives qui subsistent dans un texte affiché : espace ordinaire
+ * avant : ; ! ? » ou après «. Sert de garde-fou sur la page générée.
+ */
+export function espacesFautives(texte: string): string[] {
+  return [...texte.matchAll(/ [:;!?»]|« /g)].map((m) =>
+    texte.slice(Math.max(0, m.index - 12), m.index + 14),
+  );
 }
 
 const MOTIF_CLE = /\{\{\s*([A-Za-z0-9_.-]+)\s*\}\}/g;
@@ -76,8 +92,10 @@ export function extraireUrls(texte: string): string[] {
  * Clé de document d'une source .gouv.fr, ou null si l'URL n'en est pas une.
  * Deux URL du même document comptent pour une seule source :
  * - sans « www. », sans « / » final, sans fragment ;
- * - Légifrance : le suffixe de version /AAAA-MM-JJ est retiré ;
- * - BOFiP : le document est son identifiant BOI, sans la date de publication ;
+ * - Légifrance : le document est son dernier identifiant (JORFTEXT, LEGIARTI,
+ *   LEGISCTA…), quel que soit le chemin (/loda/, /jorf/, /codes/…) ou la version ;
+ * - BOFiP : le document est son numéro permanent « NNN-PGP » (à défaut, son
+ *   identifiant BOI sans date de publication) ;
  * - les paramètres de requête restants sont conservés (ils désignent une page) ;
  * - data.gouv.fr est exclu : on y cite une copie tierce, pas un texte officiel.
  */
@@ -92,12 +110,19 @@ export function cleSourceGouv(url: string): string | null {
   if (!hote.endsWith('.gouv.fr') || hote === 'data.gouv.fr') return null;
 
   if (hote === 'bofip.impots.gouv.fr') {
+    const pgp = u.pathname.match(/\/bofip\/(\d+-PGP)/i)?.[1];
+    if (pgp) return `${hote}/${pgp.toUpperCase()}`;
     const boi = `${u.pathname}${u.search}`.match(/identifiant=(BOI-[A-Z0-9-]+)/i)?.[1];
     if (boi) return `${hote}/${boi.toUpperCase().replace(/-\d{8}$/, '')}`;
   }
 
-  let chemin = u.pathname.replace(/\/+$/, '');
-  if (hote === 'legifrance.gouv.fr') chemin = chemin.replace(/\/\d{4}-\d{2}-\d{2}$/, '');
+  if (hote === 'legifrance.gouv.fr') {
+    const ids = u.pathname.match(/(?:JORFTEXT|JORFARTI|LEGITEXT|LEGISCTA|LEGIARTI|KALITEXT)\d+/g);
+    const dernier = ids?.at(-1);
+    if (dernier) return `${hote}/${dernier}`;
+  }
+
+  const chemin = u.pathname.replace(/\/+$/, '');
   return `${hote}${chemin}${u.search}`;
 }
 

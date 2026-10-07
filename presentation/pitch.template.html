@@ -9,201 +9,231 @@
 <!-- @CSS -->
 
 <main class="pitch" id="pitch" lang="fr" data-mode="statique">
-  <!-- Commandes d'abord dans l'ordre de tabulation (motif carrousel WAI-ARIA) : la
-       pause est atteignable avant tout contenu en mouvement. Affichées en pied. -->
-  <div class="commandes" role="group" aria-label="Lecture de la présentation">
-    <button type="button" class="bouton-lecture" id="bouton-lecture">
-      <svg viewBox="0 0 16 16" aria-hidden="true" class="icone-lecture">
-        <path d="M4 2.5v11l9-5.5z" fill="currentColor" />
-      </svg>
-      <svg viewBox="0 0 16 16" aria-hidden="true" class="icone-pause" hidden>
-        <path d="M4 2.5h2.6v11H4zM9.4 2.5H12v11H9.4z" fill="currentColor" />
-      </svg>
-      <span class="bouton-libelle">Lecture</span>
-    </button>
-    <ol class="segments">
-      <li>
-        <button type="button" class="segment" data-scene="0" aria-current="step">
-          <span class="segment-piste"><span class="segment-remplissage"></span></span>
-          <span class="segment-libelle">L’échéance</span>
-          <span class="sr">, scène 1 sur 5</span>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="segment" data-scene="1">
-          <span class="segment-piste"><span class="segment-remplissage"></span></span>
-          <span class="segment-libelle">Les métiers</span>
-          <span class="sr">, scène 2 sur 5</span>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="segment" data-scene="2">
-          <span class="segment-piste"><span class="segment-remplissage"></span></span>
-          <span class="segment-libelle">Le comparateur</span>
-          <span class="sr">, scène 3 sur 5</span>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="segment" data-scene="3">
-          <span class="segment-piste"><span class="segment-remplissage"></span></span>
-          <span class="segment-libelle">L’indépendance</span>
-          <span class="sr">, scène 4 sur 5</span>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="segment" data-scene="4">
-          <span class="segment-piste"><span class="segment-remplissage"></span></span>
-          <span class="segment-libelle">La proposition</span>
-          <span class="sr">, scène 5 sur 5</span>
-        </button>
-      </li>
-    </ol>
-    <p class="sr" id="annonce" aria-live="polite"></p>
-  </div>
+  <h1 class="sr">Proposition aux éditeurs&nbsp;: la facturation électronique, métier par métier</h1>
 
-  <div class="scenes" role="region" aria-roledescription="carrousel" aria-label="Pitch partenaires">
-    <section
-      class="scene scene-echeance"
-      id="scene-echeance"
-      role="group"
-      aria-roledescription="scène"
-      aria-label="1 sur 5"
-    >
-      <p class="surtitre">Facturation électronique</p>
-      <h1 class="titre-affiche">
-        <span class="titre-date degrade">{{dateEmission}}</span>
-        <span class="titre-suite"
-          >Émission électronique obligatoire pour les {{concernesEmission}}.</span
-        >
-      </h1>
-      <div class="frise">
-        <div class="frise-rail" aria-hidden="true">
-          <span class="frise-remplissage"></span>
-          <span class="frise-point"></span>
-        </div>
-        <ol class="frise-jalons" aria-label="Calendrier de la réforme">
-          <li class="jalon jalon-depart">
-            <span class="jalon-date">{{dateReception}}</span>
-            <span class="jalon-libelle">Réception des factures électroniques</span>
-            <span class="badge-ok">{{statutReception}}</span>
-          </li>
-          <li class="jalon jalon-arrivee">
-            <span class="anneau" aria-hidden="true"></span>
-            <span class="jalon-date">{{dateEmission}}</span>
-            <span class="jalon-libelle">Émission des factures électroniques</span>
-          </li>
-        </ol>
-      </div>
-      <p class="legende">Sources : {{sourcesEcheances}} · relevé du {{dateReleve}}</p>
-    </section>
+  <!-- Motif carrousel WAI-ARIA : la région englobe commandes et scènes ; les commandes
+       viennent d'abord dans l'ordre de tabulation (pause atteignable avant tout
+       contenu en mouvement) et sont affichées en pied. -->
+  <section
+    class="carrousel"
+    aria-roledescription="carrousel"
+    aria-label="Pitch partenaires, 5 scènes"
+  >
+    <div class="commandes" role="group" aria-label="Lecture de la présentation">
+      <button type="button" class="bouton-lecture" id="bouton-lecture">
+        <svg viewBox="0 0 16 16" aria-hidden="true" class="icone-lecture">
+          <path d="M4 2.5v11l9-5.5z" fill="currentColor" />
+        </svg>
+        <svg viewBox="0 0 16 16" aria-hidden="true" class="icone-pause" hidden>
+          <path d="M4 2.5h2.6v11H4zM9.4 2.5H12v11H9.4z" fill="currentColor" />
+        </svg>
+        <span class="bouton-libelle">Lecture</span>
+      </button>
+      <ol class="segments">
+        <li>
+          <button type="button" class="segment" data-scene="0" aria-current="step">
+            <span class="segment-piste"><span class="segment-remplissage"></span></span>
+            <span class="segment-numero" aria-hidden="true">1</span>
+            <span class="segment-libelle">L’échéance</span>
+            <span class="sr">, scène 1 sur 5</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="segment" data-scene="1">
+            <span class="segment-piste"><span class="segment-remplissage"></span></span>
+            <span class="segment-numero" aria-hidden="true">2</span>
+            <span class="segment-libelle">Les métiers</span>
+            <span class="sr">, scène 2 sur 5</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="segment" data-scene="2">
+            <span class="segment-piste"><span class="segment-remplissage"></span></span>
+            <span class="segment-numero" aria-hidden="true">3</span>
+            <span class="segment-libelle">Le comparateur</span>
+            <span class="sr">, scène 3 sur 5</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="segment" data-scene="3">
+            <span class="segment-piste"><span class="segment-remplissage"></span></span>
+            <span class="segment-numero" aria-hidden="true">4</span>
+            <span class="segment-libelle">L’indépendance</span>
+            <span class="sr">, scène 4 sur 5</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="segment" data-scene="4">
+            <span class="segment-piste"><span class="segment-remplissage"></span></span>
+            <span class="segment-numero" aria-hidden="true">5</span>
+            <span class="segment-libelle">La proposition</span>
+            <span class="sr">, scène 5 sur 5</span>
+          </button>
+        </li>
+      </ol>
+      <p class="sr" id="annonce" aria-live="polite"></p>
+    </div>
 
-    <section
-      class="scene scene-metiers"
-      id="scene-metiers"
-      role="group"
-      aria-roledescription="scène"
-      aria-label="2 sur 5"
-      hidden
-    >
-      <p class="surtitre">Le constat</p>
-      <h2 class="titre-scene">Le bon logiciel dépend du <span class="degrade">métier</span>.</h2>
-      <!-- @CARTES -->
-      <p class="legende">Besoins relevés sur nos fiches métier · sources : {{sourcesMetiers}}</p>
-    </section>
-
-    <section
-      class="scene scene-registre"
-      id="scene-registre"
-      role="group"
-      aria-roledescription="scène"
-      aria-label="3 sur 5"
-      hidden
-    >
-      <p class="surtitre">Notre réponse</p>
-      <h2 class="titre-scene">Un comparateur, <span class="degrade">métier par métier</span>.</h2>
-      <div class="registre">
-        <!-- @GRILLE -->
-        <p class="compteur">
-          <span class="compteur-valeur" aria-hidden="true">{{nbMetiers}}</span>
-          <span class="compteur-libelle"
-            ><span class="sr">{{nbMetiers}} </span>métiers dans {{nbFamilles}} familles</span
+    <div class="scenes">
+      <section
+        class="scene scene-echeance"
+        id="scene-echeance"
+        role="group"
+        aria-roledescription="scène"
+        aria-label="1 sur 5 : l’échéance"
+      >
+        <p class="surtitre">Facturation électronique</p>
+        <h2 class="titre-affiche">
+          <span class="titre-date degrade">{{dateEmission}}</span>
+          <span class="titre-suite"
+            >Émission électronique obligatoire pour les {{concernesEmission}}.</span
           >
-        </p>
-      </div>
-      <ul class="tuiles">
-        <li class="tuile">
-          <span class="tuile-chiffre">{{nbLogiciels}}</span>
-          <span class="tuile-libelle">logiciels comparés</span>
-        </li>
-        <li class="tuile">
-          <span class="tuile-chiffre">{{nbComparatifs}}</span>
-          <span class="tuile-libelle">comparatifs deux à deux</span>
-        </li>
-        <li class="tuile">
-          <span class="tuile-chiffre">{{nbSources}}</span>
-          <span class="tuile-libelle">sources .gouv.fr citées</span>
-        </li>
-      </ul>
-    </section>
-
-    <section
-      class="scene scene-independance"
-      id="scene-independance"
-      role="group"
-      aria-roledescription="scène"
-      aria-label="4 sur 5"
-      hidden
-    >
-      <p class="surtitre">Notre engagement</p>
-      <h2 class="titre-scene">Les commissions n’entrent ni dans l’ordre, ni dans les notes.</h2>
-      <div class="schema">
-        <ul class="entrees" aria-label="Ce qui fonde le classement">
-          <li class="entree">{{pictoProfil}}Votre métier</li>
-          <li class="entree">{{pictoLoupe}}Faits vérifiés</li>
-        </ul>
-        <span class="fleche" aria-hidden="true"></span>
-        <ol class="classement" aria-label="Ce que voit le lecteur">
-          <li>{{pictoMedaille}}Recommandation</li>
-          <li>Alternative</li>
-          <li>Alternative</li>
-        </ol>
-        <div class="couloir">
-          <div class="couloir-piste" aria-hidden="true">
-            <span class="jeton"><span class="jeton-disque">€</span></span>
+        </h2>
+        <div class="frise">
+          <div class="frise-rail" aria-hidden="true">
+            <span class="anneau"></span>
+            <span class="frise-point"></span>
           </div>
-          <p class="financement">
-            <span class="anneau" aria-hidden="true"></span>
-            <span class="sr">La commission va au </span>{{pictoBouclier}}Financement du site
+          <ol class="frise-jalons" aria-label="Calendrier de la réforme">
+            <li class="jalon jalon-depart">
+              <span class="jalon-date">{{dateReception}}</span>
+              <span class="jalon-libelle">Réception</span>
+              <span class="badge-ok">{{statutReception}}</span>
+            </li>
+            <li class="jalon jalon-arrivee">
+              <span class="jalon-date">{{dateEmission}}</span>
+              <span class="jalon-libelle">Émission</span>
+            </li>
+          </ol>
+        </div>
+        <p class="legende">Sources&nbsp;: {{sourcesEcheances}} · relevé du {{dateReleve}}</p>
+      </section>
+
+      <section
+        class="scene scene-metiers"
+        id="scene-metiers"
+        role="group"
+        aria-roledescription="scène"
+        aria-label="2 sur 5 : les métiers"
+        hidden
+      >
+        <p class="surtitre">Le constat</p>
+        <h2 class="titre-scene">Le bon logiciel dépend du <span class="degrade">métier</span>.</h2>
+        <!-- @CARTES -->
+        <p class="legende">Sources&nbsp;: {{sourcesMetiers}}</p>
+      </section>
+
+      <section
+        class="scene scene-registre"
+        id="scene-registre"
+        role="group"
+        aria-roledescription="scène"
+        aria-label="3 sur 5 : le comparateur"
+        hidden
+      >
+        <p class="surtitre">Notre réponse</p>
+        <h2 class="titre-scene">Un comparateur, <span class="degrade">métier par métier</span>.</h2>
+        <div class="registre">
+          <!-- @GRILLE -->
+          <p class="compteur">
+            <span class="compteur-valeur" aria-hidden="true">{{nbMetiers}}</span>
+            <span class="compteur-libelle"
+              ><span class="sr">{{nbMetiers}} </span>métiers dans {{nbFamilles}} familles</span
+            >
           </p>
         </div>
-      </div>
-      <p class="chapo">Les partenariats d’affiliation financent le site, pas les classements.</p>
-      <p class="legende">Méthode de notation publique · chaque lien affilié est signalé</p>
-    </section>
+        <ul class="tuiles">
+          <li class="tuile">
+            <span class="tuile-chiffre">{{nbLogiciels}}</span>
+            <span class="tuile-libelle">logiciels comparés</span>
+          </li>
+          <li class="tuile">
+            <span class="tuile-chiffre">{{nbComparatifs}}</span>
+            <span class="tuile-libelle">comparatifs deux à deux</span>
+          </li>
+          <li class="tuile">
+            <span class="tuile-chiffre">{{nbSources}}</span>
+            <span class="tuile-libelle">sources .gouv.fr citées</span>
+          </li>
+        </ul>
+      </section>
 
-    <section
-      class="scene scene-proposition"
-      id="scene-proposition"
-      role="group"
-      aria-roledescription="scène"
-      aria-label="5 sur 5"
-      hidden
-    >
-      <p class="surtitre">Notre proposition</p>
-      <h2 class="titre-scene">
-        Partenaire ou non, votre logiciel est présenté aux
-        <span class="degrade">métiers qu’il sert</span>.
-      </h2>
-      <p class="chapo">Le partenariat ajoute un lien suivi, signalé « lien affilié ».</p>
-      <!-- @LOGICIELS -->
-      <div class="actions">
-        <a class="btn-cta" href="{{urlCta}}" target="_blank" rel="noopener"
-          >Voir le comparateur<span class="sr"> (nouvel onglet)</span></a
-        >
-        <!-- @CONTACT -->
-      </div>
-    </section>
-  </div>
+      <section
+        class="scene scene-independance"
+        id="scene-independance"
+        role="group"
+        aria-roledescription="scène"
+        aria-label="4 sur 5 : l’indépendance"
+        hidden
+      >
+        <p class="surtitre">Notre engagement</p>
+        <h2 class="titre-scene">Les commissions n’entrent ni dans l’ordre, ni dans la notation.</h2>
+        <div class="schema">
+          <ul class="entrees" aria-label="Ce qui fonde le classement">
+            <li class="entree">{{pictoProfil}}Métier du lecteur</li>
+            <li class="entree">{{pictoLoupe}}Faits sourcés</li>
+          </ul>
+          <span class="fleche" aria-hidden="true"></span>
+          <ol class="classement" aria-label="Ce que voit le lecteur">
+            <li>{{pictoMedaille}}Recommandation</li>
+            <li>Alternative</li>
+            <li>Alternative</li>
+          </ol>
+          <div class="couloir">
+            <span class="couloir-depart"
+              >Commission<span class="sr"> {{verbeCommission}} au</span></span
+            >
+            <div class="couloir-piste" aria-hidden="true">
+              <span class="couloir-trace"></span>
+              <span class="jeton"><span class="jeton-disque">€</span></span>
+            </div>
+            <p class="financement">
+              <span class="anneau" aria-hidden="true"></span>{{pictoBouclier}}Financement du site
+            </p>
+          </div>
+        </div>
+        <p class="legende">
+          Méthode de notation publique · aucune note avant test réel · à égalité, ordre alphabétique
+        </p>
+      </section>
+
+      <section
+        class="scene scene-proposition"
+        id="scene-proposition"
+        role="group"
+        aria-roledescription="scène"
+        aria-label="5 sur 5 : la proposition"
+        hidden
+      >
+        <p class="surtitre">Notre proposition</p>
+        <h2 class="titre-scene">
+          Partenaire ou non, votre logiciel garde <span class="degrade">la même place</span>.
+        </h2>
+        <p class="chapo">
+          Le partenariat ne change que la destination du bouton&nbsp;: un lien d’affiliation,
+          signalé «&nbsp;lien affilié&nbsp;».
+        </p>
+        <!-- @LOGICIELS -->
+        <div class="actions">
+          <a class="btn-cta" href="{{urlCta}}" target="_blank" rel="noopener"
+            >Voir le comparateur<svg
+              class="icone-externe"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" /></svg
+            ><span class="sr"> (nouvel onglet)</span></a
+          >
+          <!-- @CONTACT -->
+        </div>
+      </section>
+    </div>
+  </section>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@{{versionGsap}}/dist/gsap.min.js"></script>

@@ -7,6 +7,7 @@ import {
   cleSourceGouv,
   compterSourcesGouv,
   echapperHtml,
+  espacesFautives,
   extraireTaux,
   extraireUrls,
   hotesGouv,
@@ -36,8 +37,8 @@ describe('cleSourceGouv', () => {
     ).toBe(cleSourceGouv('https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006309516'));
   });
 
-  it('identifie un document BOFiP par son BOI, quelle que soit sa date ou sa forme', () => {
-    const attendu = 'bofip.impots.gouv.fr/BOI-TVA-LIQ-30-20-100';
+  it('identifie un document BOFiP par son numéro permanent, quels que soient date et BOI', () => {
+    const attendu = 'bofip.impots.gouv.fr/1013-PGP';
     expect(
       cleSourceGouv(
         'https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20230823',
@@ -48,6 +49,24 @@ describe('cleSourceGouv', () => {
         'https://bofip.impots.gouv.fr/bofip/1013-PGP.html?identifiant=BOI-TVA-LIQ-30-20-100',
       ),
     ).toBe(attendu);
+    expect(
+      cleSourceGouv('https://bofip.impots.gouv.fr/bofip/12016-PGP.html/identifiant=BOI-RES-000056'),
+    ).toBe(
+      cleSourceGouv(
+        'https://bofip.impots.gouv.fr/bofip/12016-PGP.html/identifiant=BOI-RES-TVA-000056',
+      ),
+    );
+  });
+
+  it('identifie un texte Légifrance par son dernier identifiant, quel que soit le chemin', () => {
+    expect(cleSourceGouv('https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033935513')).toBe(
+      cleSourceGouv('https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000033935513/'),
+    );
+    expect(
+      cleSourceGouv(
+        'https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069577/LEGISCTA000006163056/',
+      ),
+    ).toBe(cleSourceGouv('https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006163056'));
   });
 
   it('conserve une requête qui désigne une page', () => {
@@ -153,6 +172,14 @@ describe('remplissage', () => {
       '&lt;a href=&quot;x&quot;&gt;l’été &amp; co&lt;/a&gt;',
     );
     expect(insecables('« 5,5 % : oui ! »')).toBe('«\u00a05,5\u00a0%\u00a0: oui\u00a0!\u00a0»');
+    expect(insecables('relevé du 4 octobre 2026')).toBe('relevé du 4\u00a0octobre 2026');
+    expect(insecables('le 1er septembre 2027')).toBe('le 1er\u00a0septembre 2027');
+  });
+
+  it('repère les espaces ordinaires qui couperaient une ponctuation française', () => {
+    expect(espacesFautives('Sources : x')).toHaveLength(1);
+    expect(espacesFautives('signalé « lien »')).toHaveLength(2);
+    expect(espacesFautives('Sources\u00a0: «\u00a0x\u00a0»')).toEqual([]);
   });
 
   it('écarte les valeurs de configuration non renseignées', () => {
