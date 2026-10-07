@@ -37,9 +37,6 @@ export interface QuizResultat {
   alternatives: Recommandation[];
 }
 
-/** Ordre stable de la spécification — départage déterministe des ex æquo. */
-const ORDRE: readonly string[] = ['tiime', 'qonto', 'pennylane', 'abby', 'indy', 'shine'];
-
 function justifier(o: OutilFacts, r: QuizReponses, parMetier: boolean): string {
   const atouts: string[] = [];
   if (r.besoinComptePro && o.comptePro === true)
@@ -84,9 +81,9 @@ export function recommander(
     return { o, score };
   });
 
-  const tries = scores.sort(
-    (a, b) => b.score - a.score || ORDRE.indexOf(a.o.slug) - ORDRE.indexOf(b.o.slug),
-  );
+  // À égalité de score, l'ordre alphabétique départage : une règle publique
+  // (page méthode), qui ne code aucune préférence entre éditeurs.
+  const tries = scores.sort((a, b) => b.score - a.score || a.o.nom.localeCompare(b.o.nom, 'fr'));
 
   const [premier, ...reste] = tries;
   if (!premier || reste.length < 2) {

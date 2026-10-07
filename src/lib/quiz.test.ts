@@ -116,7 +116,8 @@ describe('recommander — priorité au métier reconnu', () => {
 
 describe('recommander — besoin de compte professionnel', () => {
   it('9. favorise un outil à compte pro vérifié', () => {
-    expect(slugs({ besoinComptePro: true })[0]).toBe('qonto');
+    // Indy, Qonto et Shine ont un compte pro vérifié : ex æquo, l'ordre alphabétique départage.
+    expect(slugs({ besoinComptePro: true })).toEqual(['indy', 'qonto', 'shine']);
   });
 
   it('10. peut renverser la tête du trio métier quand le besoin est fort', () => {
@@ -162,8 +163,9 @@ describe('recommander — volume et déterminisme', () => {
     expect(['tiime', 'pennylane', 'indy']).toContain(res.recommande.slug);
   });
 
-  it('18. sans aucun signal, le départage suit l’ordre stable de la spécification', () => {
-    expect(slugs({})).toEqual(['tiime', 'qonto', 'pennylane']);
+  it('18. sans aucun signal, l’ordre alphabétique départage les ex æquo', () => {
+    // Règle publique (page méthode) : aucun ordre de préférence entre éditeurs n'est codé.
+    expect(slugs({})).toEqual(['abby', 'indy', 'pennylane']);
   });
 
   it('19. deux appels identiques donnent le même résultat (fonction pure)', () => {

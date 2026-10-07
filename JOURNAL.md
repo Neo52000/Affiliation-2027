@@ -179,3 +179,11 @@ Le gabarit de guide avait été écrit sans aucun contenu pour l'éprouver : il 
 Les guides étaient orphelins comme l'avaient été les comparatifs : aucune page d'index, aucune entrée de menu. L'index `/guides` existe, et la navigation principale y mène — le commentaire du gabarit d'en-tête annonçait cet ajout « en Phase 5 », il est fait.
 `check-seo` a rejeté ma propre description d'index à 166 caractères : le garde-fou sert aussi à son auteur.
 Garde-fous : 153 pages, similarité maximale 20,8 % (seuil 50 %), check-seo 150 pages indexables, check-liens 5 345 liens sans cible manquante, 77 tests + 6 parcours e2e verts, Lighthouse 100/100/100/100 et CLS 0 sur un guide.
+
+## Pitch partenaires en motion design (2026-10-07)
+
+Présentation animée de 30 s pour les éditeurs et leurs programmes d'affiliation (TODO #6), publiée en page autonome sans nom de marque : https://claude.ai/artifact/3BxhNJrafSYbS74YiwHN1J (privée, à partager depuis son menu Partager). Elle est **générée depuis les données** : dates d'`echeances.json`, extraits exacts des fiches métier, comptes de métiers, d'outils, de comparatifs et de sources. Le build échoue sur un placeholder, un extrait infidèle, un nombre affiché sans origine ou une espace fautive devant une ponctuation.
+Revue adversariale à trois dimensions, chaque constat contre-vérifié : 38 constats, 36 confirmés, tous traités. Les plus graves : la phrase « le partenariat ajoute un lien suivi » était fausse (il remplace un lien suivi par un lien `sponsored`, et rien d'autre ne change), et en 844×390 le jeton € sortait de son couloir pour se poser sur « Recommandation » — exactement le message que le site s'interdit.
+Effet sur le site : le quiz départageait les ex æquo selon l'ordre de la liste des programmes d'affiliation visés, ce qui tranchait une recommandation sur cinq. Il départage désormais par ordre alphabétique, règle publiée sur les pages Méthode et Quiz.
+Le comptage des sources a été resserré (une clé par document Légifrance ou BOFiP, quel que soit le chemin) : 367 documents .gouv.fr distincts, et non 371.
+Banc Playwright : 8 tailles d'écran dont le zoom 200 % et 320 px, 2 thèmes, contrastes forcés, mouvement réduit, CDN coupé, polices bloquées, pause en pleine transition, clavier sans raccourci global — 0 anomalie.
