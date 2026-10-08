@@ -3,12 +3,18 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Quiz from '../components/islands/Quiz.tsx';
 import Picto, { type NomPicto } from '../components/Picto.astro';
-import HeroIllustration from '../components/HeroIllustration.astro';
+import HeroFlux from '../components/HeroFlux.astro';
+import Ticker from '../components/Ticker.astro';
+import StatTile from '../components/StatTile.astro';
+import BandeauTransparence from '../components/BandeauTransparence.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
+import { formatDateFr } from '../lib/dates';
+import { compterSourcesGouv } from '../lib/presentation';
+import { libelleStatutTest } from '../lib/statut-test';
 import { FAMILLE_LABELS, type Famille } from '../lib/familles';
 import hubs from '../data/hubs.json';
-import registre from '../data/plateformes-agreees.json';
+import echeances from '../data/echeances.json';
 
 const title = pageTitle('Facturation électronique par métier', SITE.name);
 
@@ -33,16 +39,37 @@ const outilsQuiz = outilsColl.map((o) => ({
   lienExpertComptable: o.data.fonctionnalites.lien_expert_comptable,
   cibles: o.data.cible.map((c) => c.toLowerCase()),
   urlOfficielle: o.data.url_officielle,
+  libelleTest: libelleStatutTest(o.data.statut_test),
 }));
 
-// Chiffres réels, calculés depuis les données du site — jamais inventés
+// Badge du hero : dérivé d'echeances.json, seule source des dates de la réforme.
+const premiereEcheance = [...echeances.echeances].sort((a, b) => a.date.localeCompare(b.date))[0];
+if (!premiereEcheance) throw new Error('echeances.json : aucune échéance');
+const badgeReforme =
+  premiereEcheance.statut === 'en_vigueur'
+    ? `Réforme en vigueur depuis le ${formatDateFr(premiereEcheance.date)}`
+    : `Réforme applicable le ${formatDateFr(premiereEcheance.date)}`;
+
+// Documents .gouv.fr distincts cités par le site : même calcul, sur les mêmes
+// fichiers, que la présentation partenaires (scripts/build-presentation.ts).
+const textesSources = Object.values(
+  import.meta.glob<string>(['/src/content/**/*.{json,md,mdx}', '/src/data/**/*.json'], {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  }),
+);
+
+// Chiffres réels, calculés depuis les données du site — jamais inventés. Le
+// registre des plateformes n'y figure pas : sa copie, tierce, compte aussi des
+// dossiers en attente (TODO #8-10).
 const stats = [
   {
     valeur: metiersColl.length,
     label: metiersColl.length > 1 ? 'métiers couverts' : 'métier couvert',
   },
-  { valeur: registre.plateformes.length, label: 'plateformes agréées référencées' },
-  { valeur: outilsColl.length, label: 'logiciels passés au crible' },
+  { valeur: compterSourcesGouv(textesSources), label: 'documents officiels (.gouv.fr) cités' },
+  { valeur: outilsColl.length, label: 'logiciels comparés' },
 ];
 
 const famillesActives = (Object.keys(FAMILLE_LABELS) as Famille[])
@@ -69,7 +96,7 @@ const PREUVES: { titre: string; texte: string; href: string; picto: NomPicto }[]
   },
   {
     titre: 'Tests réels documentés',
-    texte: 'Aucune note avant un test réel : « Test en cours » est assumé.',
+    texte: 'Aucune note avant un test réel : « Test à venir » est assumé.',
     href: '/methode',
     picto: 'loupe',
   },
@@ -98,14 +125,21 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
 ---
 
 <Base title={title} description={SITE.description}>
+  <BandeauTransparence outils={outilsQuiz.map((o) => o.slug)} />
   <section class="hero pt-4">
     <div class="grid grid-cols-[minmax(0,1fr)] items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto]">
       <div class="max-w-3xl">
-        <p class="badge-ok">Réforme en vigueur — vérifié sur sources officielles</p>
-        <h1 class="display-title mt-4">
-          <span class="text-gradient">Le bon logiciel de facturation électronique</span>
-          <br />
-          pour votre métier
+        <p class="badge-ok badge-icone">
+          <span class="m-point" aria-hidden="true"></span>
+          {badgeReforme}
+        </p>
+        <h1 class="display-title m-mots mt-4">
+          <span class="m-word">Le</span> <span class="m-word">bon</span>{' '}
+          <span class="m-word">logiciel</span> <span class="m-word">de</span>{' '}
+          <span class="m-word">facturation</span> <span class="m-word">électronique</span> <br />
+          <span class="m-word">
+            <span class="text-gradient m-reflet">pour votre métier</span>
+          </span>
         </h1>
         <p class="prose-measure mt-5 text-lg">
           Plombier, infirmière libérale, développeur freelance… chaque métier facture différemment.
@@ -114,7 +148,7 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
         </p>
         <div class="mt-6 flex flex-wrap items-center gap-4">
           <a href="/outils/quiz" class="btn-cta text-lg">
-            Trouver mon logiciel en 1 min
+            Trouver mon logiciel en 5 questions
           </a>
           <a href="/outils/echeance" class="btn-ghost">
             Voir mes échéances
@@ -122,20 +156,23 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
         </div>
       </div>
 
-      <div class="hidden w-[400px] lg:block">
-        <HeroIllustration />
+      <div class="hidden lg:block">
+        <HeroFlux />
       </div>
     </div>
 
     <ul class="mt-10 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
       {stats.map((s) => (
-        <li class="stat-tile">
-          <p class="stat-valeur text-gradient">{s.valeur}</p>
-          <p class="text-sm text-ink-soft">{s.label}</p>
-        </li>
+        <StatTile valeur={s.valeur} libelle={s.label} />
       ))}
     </ul>
   </section>
+
+  {famillesActives.length > 0 && (
+    <div class="mt-10">
+      <Ticker familles={famillesActives.map((f) => f.famille)} />
+    </div>
+  )}
 
   <section
     aria-labelledby="quiz-accueil"
@@ -153,14 +190,17 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
     <h2 id="etapes" class="sr-only">
       Comment ça marche
     </h2>
-    <ol class="grid gap-4 sm:grid-cols-3">
+    <ol class="m-etapes reveal grid gap-4 sm:grid-cols-3">
       {ETAPES.map((e) => (
         <li class="rounded-md border border-border p-4">
           <span class="picto-carre">
             <Picto nom={e.picto} />
           </span>
           <p class="mt-3 font-bold">
-            <span class="text-gradient">{e.n}.</span> {e.titre}
+            <span class="text-gradient" aria-hidden="true">
+              {e.n}.
+            </span>{' '}
+            {e.titre}
           </p>
           <p class="mt-1 text-sm text-ink-soft">{e.texte}</p>
         </li>
@@ -174,8 +214,8 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
     </h2>
     <ul class="mt-4 grid gap-4 sm:grid-cols-3">
       {PREUVES.map((p) => (
-        <li class="card-reco rounded-md border border-border p-4">
-          <span class="picto-carre">
+        <li class="m-lift reveal rounded-md border border-border bg-paper p-4">
+          <span class="picto-carre m-pop-icon">
             <Picto nom={p.picto} />
           </span>
           <p class="mt-3 font-bold">{p.titre}</p>
@@ -195,12 +235,18 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
       </h2>
       <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {famillesActives.map((f) => (
-          <li class="card-reco flex items-center gap-3 rounded-md border border-border p-3">
-            <span class="picto-carre picto-carre-sm">
+          <li class="m-fam flex items-center gap-3 rounded-md border border-border p-3">
+            <span class="picto-carre picto-carre-sm m-pop-icon">
               <Picto nom={f.famille} taille={20} />
             </span>
             <span>
-              {f.hub ? <a href={`/metiers/${f.famille}`}>{f.label}</a> : <span>{f.label}</span>}{' '}
+              {f.hub ? (
+                <a href={`/metiers/${f.famille}`} class="lien-carte">
+                  {f.label}
+                </a>
+              ) : (
+                <span>{f.label}</span>
+              )}{' '}
               <span class="text-sm text-ink-soft">
                 · {f.nb} métier{f.nb > 1 ? 's' : ''}
               </span>
@@ -244,7 +290,7 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
   <section class="card-top mt-14 rounded-lg border border-border bg-paper-soft p-6 text-center">
     <h2 class="text-2xl font-bold">Prêt pour la facturation électronique ?</h2>
     <p class="mx-auto mt-2 max-w-xl text-ink-soft">
-      Deux minutes pour connaître vos échéances et l'outil adapté à votre métier.
+      Cinq questions pour trouver l'outil adapté à votre métier, deux pour connaître vos échéances.
     </p>
     <div class="mt-4 flex flex-wrap items-center justify-center gap-4">
       <a href="/outils/quiz" class="btn-cta">

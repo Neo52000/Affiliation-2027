@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+/* Couche de mouvement : importée ici, et non en fin de fichier, pour que Tailwind
+   conserve les variables de thème qu'elle référence. */
+@import './motion.css';
 
 /*
  * Design system v2 — section 10 de la spécification, étendue par le
@@ -97,6 +100,10 @@
 /* Corps de texte 18 px (112,5 %) — lisibilité cible lecteur pressé, non technique */
 html {
   font-size: 112.5%;
+  /* Gouttière de défilement réservée : quand un premier rendu partiel est plus
+     court que l'écran, l'arrivée de la barre ne décale plus toute la page
+     (CLS 0,005 mesuré sur le quiz, Lighthouse desktop). */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -143,19 +150,32 @@ h2 {
 /* Hero : halo décoratif en fond, sans incidence sur la mise en page */
 .hero {
   position: relative;
+  /* Le halo déborde de 1rem et dérive (motion.css) : il ne doit jamais
+     élargir la page sur un écran de 360 px. */
+  overflow-x: clip;
+  overflow-clip-margin: 1rem;
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  inset: -3rem -1rem 0;
+  inset: -3rem -1rem -3rem;
   background: var(--hero-glow);
+  /* Fondu sur les quatre bords : découpé au bord du hero (ou d'un en-tête
+     court, sur les hubs et les fiches), le halo ne dessine jamais d'arête. */
+  mask-image:
+    linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent),
+    linear-gradient(transparent, #000 20%, #000 50%, transparent);
+  mask-composite: intersect;
   pointer-events: none;
   z-index: -1;
 }
 
 /* Bouton d'action principal (CTA) : dégradé, élévation, texte gras blanc */
 .btn-cta {
+  position: relative;
+  /* Le reflet du survol ne sort jamais du bouton. */
+  overflow: clip;
   display: inline-block;
   background: var(--gradient-accent);
   color: #ffffff;
@@ -179,6 +199,26 @@ h2 {
 
 .btn-cta:active {
   transform: translateY(0);
+}
+
+/* Reflet lumineux qui traverse le bouton au survol */
+.btn-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgb(255 255 255 / 0.32) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.btn-cta:hover::after {
+  transform: translateX(120%);
+  transition: transform 800ms var(--ease-out);
 }
 
 /* Bouton secondaire discret */
@@ -373,7 +413,7 @@ a:hover {
   right: 0;
   bottom: 0;
   height: 2px;
-  background: var(--color-accent);
+  background: linear-gradient(90deg, var(--gradient-text-from), var(--gradient-text-to));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--duration-base) var(--ease-out);
@@ -421,7 +461,7 @@ a:hover {
   background: var(--color-accent-soft);
 }
 
-/* Pastille d'état neutre (« Test en cours ») — l'accent reste réservé aux actions */
+/* Pastille d'état neutre (« Test à venir ») — l'accent reste réservé aux actions */
 .pill {
   display: inline-block;
   font-size: 0.75rem;
@@ -457,7 +497,9 @@ a:hover {
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
   }
 }
 

@@ -208,3 +208,50 @@ Banc Playwright : 8 tailles d'écran dont le zoom 200 % et 320 px, 2 thèmes, co
 
 **Résultat avec la nouvelle politique :** 0 violation sur les 5 pages et quiz hydraté. 7 empreintes couvrent les 316 scripts en ligne des 153 pages.
 **Correctif annexe :** `pageTitle` gardait un titre complet de 60 caractères, que `check-seo` rejette (borne stricte). Les deux bornes sont désormais alignées, avec un test.
+
+## Motion design sur données réelles (2026-10-08)
+
+**Point de départ.** Un designer a livré un lot « motion » écrit sans accès au dépôt : CSS, illustration du hero, téléscripteur, compteurs, sélecteur de métier, gabarits de hub et de fiche outil. Le rendu est repris, **appliqué aux données réelles**. Ce qui ne l'était pas a été écarté :
+
+- une facture d'exemple à montant inventé ;
+- une frise de test « en cours » sans test ;
+- des points « [SOURCE À CITER] » et des listes d'outils écrites en dur ;
+- une tuile de 165 plateformes, dont 16 dossiers en attente issus d'une copie tierce ;
+- une mention « lien affilié » visible seulement au survol ;
+- du texte blanc à 2,5:1 en sombre ;
+- des boucles infinies sans pause ;
+- l'opacité d'entrée sur le titre LCP.
+
+**Règles du mouvement** (`src/styles/motion.css`) :
+
+- l'état de base est l'état final ;
+- les entrées n'existent qu'en `prefers-reduced-motion: no-preference` ;
+- les boucles exigent en plus `html.anim-on`, posée avant le premier rendu par un script de tête autorisé par empreinte CSP. Sans JavaScript, rien ne boucle.
+
+Un **bouton pause** dans l'en-tête arrête toutes les boucles (WCAG 2.2.2). Il expose `aria-pressed` et son choix est mémorisé localement, ce que mentionne la page confidentialité.
+
+**Sur les pages :**
+
+- **Accueil** : titre animé par translation seule, badge de la réforme dérivé d'`echeances.json`, illustration sans montant, téléscripteur des familles (liste statique par défaut, doublon `inert`). Les compteurs montrent 100 métiers, 367 documents .gouv.fr (même calcul que la présentation) et 6 logiciels.
+- **Hub** : titre grammatical pour les 10 familles (« pour l’artisanat »), sélecteur à boutons radio natifs qui reprend la recommandation publiée sur la fiche du métier, outils retenus avec leur nombre de fiches (ex æquo départagés par l'ordre alphabétique), panneau vers le quiz.
+- **Fiche outil** : essentiel tiré des données, frise du protocole lue dans la collection `tests` (aucune étape réalisée), 5 comparatifs.
+- **Quiz** : préremplissage `?metier=` (slug inconnu ignoré), focus déplacé sur le résultat, anneau de validation.
+- **Libellés** : « Test en cours » devient « Test à venir » partout. Aucun test n'a commencé, et le schéma interdit une date de test.
+
+**Pièges trouvés et corrigés :**
+
+- LightningCSS fusionnait `animation-timeline` dans le raccourci `animation`, une forme que Chrome rejette : la barre de lecture restait pleine.
+- `.badge-ok`, hors couche, écrasait `inline-flex`.
+- Le halo du hero formait un rectangle à arêtes nettes.
+- Le CLS du quiz desktop valait 0,005 (corrigé par `scrollbar-gutter: stable`).
+- Prettier insérait un espace après l'élision.
+
+**Nouveau garde `check-placeholders` :** aucun marqueur de gabarit en capitales ne peut atteindre `dist`.
+
+**Résultats :**
+
+- 118 tests et 11 parcours e2e verts ;
+- banc Playwright sans anomalie (5 tailles, 2 thèmes, pause, mouvement réduit, sans JS, contrastes forcés, axe WCAG 2.2 AA) ;
+- Lighthouse 100/100/100/100 en desktop et en mobile sur 6 types de page, sous la vraie CSP avec compression.
+
+Les 40 points de facturation par famille arrivent dans une PR séparée, après leur vérification contradictoire.

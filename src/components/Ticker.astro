@@ -1,0 +1,49 @@
+---
+/**
+ * Téléscripteur des familles de métiers : chaque nom mène à son hub.
+ * Par défaut, liste statique sur plusieurs lignes. Le défilement n'existe que
+ * sous html.anim-on (motion.css) : il se met en pause au survol, s'arrête au
+ * focus et disparaît avec le bouton pause ou prefers-reduced-motion. Le second
+ * groupe n'est qu'un doublon visuel de la boucle : masqué aux technologies
+ * d'assistance et hors de l'ordre de tabulation (inert).
+ */
+import { FAMILLE_LABELS, type Famille } from '../lib/familles';
+
+interface Props {
+  familles: Famille[];
+}
+
+const { familles } = Astro.props;
+const items = familles.map((f) => ({ href: `/metiers/${f}`, label: FAMILLE_LABELS[f] }));
+---
+
+<section class="m-defile" aria-label="Les familles de métiers couvertes" data-defile>
+  <div class="m-defile-piste">
+    <ul class="m-defile-groupe">
+      {items.map((i) => (
+        <li>
+          <a href={i.href}>{i.label}</a>
+        </li>
+      ))}
+    </ul>
+    <ul class="m-defile-groupe" aria-hidden="true" inert>
+      {items.map((i) => (
+        <li>
+          <a href={i.href} tabindex="-1">
+            {i.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<script>
+  // Le focus clavier fait défiler le bandeau jusqu'au lien ; au départ du focus,
+  // on le ramène au début pour que la boucle reprenne sans trou.
+  for (const defile of document.querySelectorAll<HTMLElement>('[data-defile]')) {
+    defile.addEventListener('focusout', (e) => {
+      if (!defile.contains(e.relatedTarget as Node | null)) defile.scrollLeft = 0;
+    });
+  }
+</script>

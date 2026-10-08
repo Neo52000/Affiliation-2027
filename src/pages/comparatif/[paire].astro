@@ -4,6 +4,8 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
 import ComparatifCourt from '../../components/ComparatifCourt.astro';
+import BandeauTransparence from '../../components/BandeauTransparence.astro';
+import { toutesLesPaires } from '../../lib/comparatifs';
 import { formatDateFr } from '../../lib/dates';
 import { pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
@@ -11,16 +13,12 @@ import { SITE } from '../../config';
 export async function getStaticPaths() {
   // Toutes les paires des 6 outils principaux (C(6,2) = 15), dans l'ordre de la
   // spécification — stable pour les URLs (dont le pilote tiime-vs-qonto).
-  const ORDRE = ['tiime', 'qonto', 'pennylane', 'abby', 'indy', 'shine'];
   const outils = await getCollection('outils');
   const paths = [];
-  for (let i = 0; i < ORDRE.length; i++) {
-    for (let j = i + 1; j < ORDRE.length; j++) {
-      const oa = outils.find((o) => o.data.slug === ORDRE[i]);
-      const ob = outils.find((o) => o.data.slug === ORDRE[j]);
-      if (oa && ob)
-        paths.push({ params: { paire: `${ORDRE[i]}-vs-${ORDRE[j]}` }, props: { oa, ob } });
-    }
+  for (const [sa, sb] of toutesLesPaires()) {
+    const oa = outils.find((o) => o.data.slug === sa);
+    const ob = outils.find((o) => o.data.slug === sb);
+    if (oa && ob) paths.push({ params: { paire: `${sa}-vs-${sb}` }, props: { oa, ob } });
   }
   return paths;
 }
@@ -55,6 +53,7 @@ const profils = [
   title={pageTitle(`${a.nom} ou ${b.nom} : que choisir ?`, SITE.name)}
   description={`${a.nom} contre ${b.nom} pour la facturation électronique : statut de plateforme agréée, périmètre, cible — comparaison sur données vérifiées et datées.`}
 >
+  <BandeauTransparence outils={[a.slug, b.slug]} />
   <Breadcrumb items={[{ label: 'Comparatifs' }, { label: `${a.nom} vs ${b.nom}` }]} />
 
   <article class="mt-4">

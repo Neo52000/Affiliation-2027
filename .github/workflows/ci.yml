@@ -48,6 +48,9 @@ jobs:
       - name: CSP (chaque script en ligne autorisé par empreinte)
         run: pnpm check:csp
 
+      - name: Gabarits à compléter (aucun marqueur dans le site publié)
+        run: pnpm check:placeholders
+
       - name: Présentation partenaires (générée depuis les données)
         run: pnpm build:presentation
 

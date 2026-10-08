@@ -4,6 +4,8 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Quiz from '../../components/islands/Quiz.tsx';
 import Picto from '../../components/Picto.astro';
+import BandeauTransparence from '../../components/BandeauTransparence.astro';
+import { libelleStatutTest } from '../../lib/statut-test';
 import { SITE } from '../../config';
 import { pageTitle } from '../../lib/seo';
 
@@ -26,6 +28,7 @@ const outils = outilsColl.map((o) => ({
   lienExpertComptable: o.data.fonctionnalites.lien_expert_comptable,
   cibles: o.data.cible.map((c) => c.toLowerCase()),
   urlOfficielle: o.data.url_officielle,
+  libelleTest: libelleStatutTest(o.data.statut_test),
 }));
 ---
 
@@ -33,6 +36,7 @@ const outils = outilsColl.map((o) => ({
   title={pageTitle('Quiz : quel logiciel pour vous ?', SITE.name)}
   description="5 questions — métier, statut, volume, compte pro, expert-comptable — pour trouver votre logiciel de facturation électronique, avec deux alternatives."
 >
+  <BandeauTransparence outils={outils.map((o) => o.slug)} />
   <Breadcrumb items={[{ label: 'Outils' }, { label: 'Quiz' }]} />
   <div class="mt-4 flex items-center gap-4">
     <span class="picto-carre">
