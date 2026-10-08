@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { cleSourceGouv } from './presentation';
-import { metierSchema, pointsFamillesSchema } from './schemas';
+import { FAMILLES, metierSchema, pointsFamillesSchema } from './schemas';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const lire = (p: string) => JSON.parse(readFileSync(join(ROOT, p), 'utf8')) as unknown;
@@ -18,6 +18,10 @@ const metiers = new Map(
 const familles = Object.entries(points.familles);
 
 describe('src/data/points-familles.json', () => {
+  it('les 10 familles sont publiées', () => {
+    expect(Object.keys(points.familles).sort()).toEqual([...FAMILLES].sort());
+  });
+
   it('chaque famille publiée a exactement 4 points', () => {
     expect(familles.length).toBeGreaterThan(0);
     for (const [famille, liste] of familles) expect(liste, famille).toHaveLength(4);
