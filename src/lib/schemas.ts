@@ -214,5 +214,6 @@ export const pointFamilleSchema = z.object({
 export const pointsFamillesSchema = z.object({
   date_releve: dateIso,
   methode: z.string().min(1),
-  familles: z.record(z.enum(FAMILLES), z.array(pointFamilleSchema).length(4)),
+  /** Seules les familles dont les 4 points ont passé la vérification sont publiées. */
+  familles: z.partialRecord(z.enum(FAMILLES), z.array(pointFamilleSchema).length(4)),
 });

@@ -16,7 +16,11 @@ test('1. accueil → hub bâtiment → page métier plombier', async ({ page }) 
     .getByRole('region', { name: 'Trouver votre métier' })
     .getByRole('link', { name: 'Bâtiment' })
     .click();
-  await page.getByRole('link', { name: /plombier/i }).click();
+  // Les points de facturation du hub citent aussi le plombier : on vise la liste des métiers.
+  await page
+    .getByRole('region', { name: 'Choisir votre métier' })
+    .getByRole('link', { name: /plombier/i })
+    .click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/plombier/i);
   await expect(page.getByText("L'essentiel en 3 lignes")).toBeVisible();
 });
