@@ -38,6 +38,12 @@ restauration, santé, professions libérales, numérique, services, agriculture,
 
 Mesures locales sur le build de production, préréglage desktop.
 
+> Limite découverte le 2026-10-08 : ces mesures tournaient sur `astro preview`, qui n'applique pas les
+> en-têtes Netlify. La CSP de production bloquait alors les scripts en ligne d'Astro et les îlots
+> (quiz, simulateur, vérificateur) ne s'hydrataient pas. C'est corrigé : la CSP est générée par
+> empreintes dans `dist/_headers` et contrôlée par `check-csp`. Les prochaines mesures se font avec
+> ces en-têtes.
+
 | Page                     | Performance | Accessibilité | Bonnes pratiques | SEO    | CLS | LCP   |
 | ------------------------ | ----------- | ------------- | ---------------- | ------ | --- | ----- |
 | Accueil                  | 100         | 100           | 100              | 100    | 0   | 0,4 s |

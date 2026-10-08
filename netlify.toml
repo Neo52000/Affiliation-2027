@@ -12,8 +12,10 @@
   directory = "netlify/functions"
 
 # En-têtes de sécurité sur tout le site.
-# CSP : style-src 'unsafe-inline' requis (Astro inline les petites feuilles de style) ;
-# script-src 'self' suffira tant que les îlots (Phase 6) chargent des modules externes.
+# La CSP n'est PAS ici : Astro place en ligne de petits scripts (amorce des îlots,
+# directives client:*), qu'un script-src 'self' bloquerait. Elle est générée après
+# le build dans dist/_headers, avec l'empreinte sha256 de chaque script en ligne
+# (scripts/generate-csp.ts, contrôlée par scripts/check-csp.ts).
 [[headers]]
   for = "/*"
   [headers.values]
@@ -22,7 +24,6 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
 
 # Assets fingerprintés par Astro : cache long immuable.
 [[headers]]

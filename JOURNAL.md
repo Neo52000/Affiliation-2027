@@ -187,3 +187,24 @@ Revue adversariale à trois dimensions, chaque constat contre-vérifié : 38 con
 Effet sur le site : le quiz départageait les ex æquo selon l'ordre de la liste des programmes d'affiliation visés, ce qui tranchait une recommandation sur cinq. Il départage désormais par ordre alphabétique, règle publiée sur les pages Méthode et Quiz.
 Le comptage des sources a été resserré (une clé par document Légifrance ou BOFiP, quel que soit le chemin) : 367 documents .gouv.fr distincts, et non 371.
 Banc Playwright : 8 tailles d'écran dont le zoom 200 % et 320 px, 2 thèmes, contrastes forcés, mouvement réduit, CDN coupé, polices bloquées, pause en pleine transition, clavier sans raccourci global — 0 anomalie.
+
+## Correctif CSP de production (2026-10-08)
+
+**Bug critique trouvé en préparant l'intégration motion.** `netlify.toml` imposait `script-src 'self'`. Or Astro place en ligne l'amorce des îlots (4 380 o), les directives `client:*` et les scripts de composants. En production, ces scripts étaient bloqués et **le quiz, le simulateur et le vérificateur ne s'hydrataient pas**.
+**Mesure avec l'ancienne politique**, injectée dans un navigateur réel :
+
+- accueil : 4 violations ;
+- quiz : 4 violations, quiz non hydraté ;
+- simulateur : 5 violations ;
+- vérificateur : 4 violations ;
+- page métier : 2 violations.
+
+**Pourquoi Lighthouse ne l'a pas vu :** les mesures à 100 tournaient sur `astro preview`, qui ignore les en-têtes Netlify.
+**Correctif :**
+
+- après le build, `scripts/generate-csp.ts` calcule l'empreinte sha256 de chaque script en ligne exécutable de `dist` (sans le JSON-LD) et écrit la politique dans `dist/_headers` ;
+- la CSP est retirée de `netlify.toml`, car deux politiques s'intersectent ;
+- un nouveau garde, `check-csp`, tourne dans `verify` et la CI. Il échoue si un script en ligne manque à `_headers` ou si `netlify.toml` redéclare une CSP.
+
+**Résultat avec la nouvelle politique :** 0 violation sur les 5 pages et quiz hydraté. 7 empreintes couvrent les 316 scripts en ligne des 153 pages.
+**Correctif annexe :** `pageTitle` gardait un titre complet de 60 caractères, que `check-seo` rejette (borne stricte). Les deux bornes sont désormais alignées, avec un test.

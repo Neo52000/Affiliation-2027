@@ -8,7 +8,8 @@ export const DESCRIPTION_MAX = 155;
 /** Compose un title « Page | Site ». Si le résultat dépasse TITLE_MAX, retourne la page seule. */
 export function pageTitle(page: string, siteName: string): string {
   const full = `${page} | ${siteName}`;
-  return full.length <= TITLE_MAX ? full : page;
+  // Même borne que validateSeo et check-seo : strictement moins de TITLE_MAX.
+  return full.length < TITLE_MAX ? full : page;
 }
 
 /** Retourne la liste des violations des longueurs imposées (vide = conforme). */

@@ -70,3 +70,11 @@ describe('familleTitle', () => {
     }
   });
 });
+
+describe('pageTitle — borne alignée sur check-seo', () => {
+  it('un title composé de exactement 60 caractères retombe sur la page seule', () => {
+    const page = 'p'.repeat(60 - ' | Site'.length);
+    expect(`${page} | Site`).toHaveLength(60);
+    expect(pageTitle(page, 'Site')).toBe(page);
+  });
+});

@@ -45,6 +45,9 @@ jobs:
       - name: Liens internes (toute cible existe)
         run: pnpm check:liens
 
+      - name: CSP (chaque script en ligne autorisé par empreinte)
+        run: pnpm check:csp
+
       - name: Présentation partenaires (générée depuis les données)
         run: pnpm build:presentation
 
