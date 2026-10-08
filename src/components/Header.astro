@@ -14,27 +14,78 @@ const nav: { label: string; href: string }[] = [
     <a href="/" class="min-w-0 truncate font-bold text-ink no-underline hover:text-accent">
       {SITE.name}
     </a>
-    <nav aria-label="Navigation principale" class="flex shrink-0 items-center gap-6">
-      <ul class="hidden items-center gap-6 sm:flex">
-        {nav.map((item) => (
-          <li>
-            <a href={item.href} class="nav-link text-ink-soft no-underline hover:text-accent">
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <a href="/outils/quiz" class="btn-cta text-sm">
-        Trouver mon logiciel
-      </a>
-    </nav>
+    <div class="flex shrink-0 items-center gap-2 sm:gap-4">
+      <nav aria-label="Navigation principale" class="flex items-center gap-6">
+        <ul class="hidden items-center gap-6 sm:flex">
+          {nav.map((item) => (
+            <li>
+              <a href={item.href} class="nav-link text-ink-soft no-underline hover:text-accent">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a href="/outils/quiz" class="btn-cta text-sm">
+          Trouver mon logiciel
+        </a>
+      </nav>
+      {/* WCAG 2.2.2 : met en pause toutes les boucles du site, choix mémorisé. */}
+      <button type="button" class="btn-pause" aria-pressed="false" data-bascule-animations>
+        <span class="sr-only">Mettre les animations en pause</span>
+        <svg
+          class="icone-pause"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <rect x="6" y="5" width="4" height="14" rx="1"></rect>
+          <rect x="14" y="5" width="4" height="14" rx="1"></rect>
+        </svg>
+        <svg
+          class="icone-lecture"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5Z"></path>
+        </svg>
+      </button>
+    </div>
   </div>
+  <span class="m-prog" aria-hidden="true"></span>
 </header>
 
 <script>
+  import { CLE_ANIMATIONS, VALEUR_PAUSE, basculer, classeHtml } from '../lib/animations';
+
   // L'ombre du header collant n'apparaît qu'au défilement (design system, Mouvement).
   const header = document.querySelector('.site-header');
   const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 4);
   onScroll();
   addEventListener('scroll', onScroll, { passive: true });
+
+  // Bouton pause : l'état part de la classe posée par le script de tête.
+  const racine = document.documentElement;
+  const bouton = document.querySelector<HTMLButtonElement>('[data-bascule-animations]');
+  let etat: 'on' | 'pause' = racine.classList.contains('anim-pause') ? 'pause' : 'on';
+  const appliquer = () => {
+    racine.classList.remove('anim-on', 'anim-pause');
+    racine.classList.add(classeHtml(etat));
+    bouton?.setAttribute('aria-pressed', String(etat === 'pause'));
+  };
+  appliquer();
+  bouton?.addEventListener('click', () => {
+    etat = basculer(etat);
+    appliquer();
+    try {
+      if (etat === 'pause') localStorage.setItem(CLE_ANIMATIONS, VALEUR_PAUSE);
+      else localStorage.removeItem(CLE_ANIMATIONS);
+    } catch {
+      // Stockage indisponible (navigation privée stricte) : la pause vaut pour la page.
+    }
+  });
 </script>

@@ -4,6 +4,10 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
 import Statut from '../../components/Statut.astro';
+import StatutPlateforme from '../../components/StatutPlateforme.astro';
+import BandeauTransparence from '../../components/BandeauTransparence.astro';
+import { ORDRE_COMPARATIFS, urlComparatif } from '../../lib/comparatifs';
+import { libelleStatutTest } from '../../lib/statut-test';
 import { formatDateFr } from '../../lib/dates';
 import { pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
@@ -30,6 +34,33 @@ const FONCTIONNALITES: { cle: keyof typeof d.fonctionnalites; label: string }[] 
 ];
 
 const pageTarifs = d.sources.find((s) => s.objet.toLowerCase().includes('tarif'));
+const libelleTest = libelleStatutTest(d.statut_test);
+
+// Le premier point fort (statut de plateforme agréée) est identique pour les six
+// outils et déjà rendu par StatutPlateforme : l'essentiel retient le suivant.
+const pointFortDistinctif = d.points_forts.find((p) => !/plateforme agréée/i.test(p));
+
+// Les 5 comparatifs de l'outil, dans l'ordre stable des URL.
+const outilsColl = await getCollection('outils');
+const comparatifs = (ORDRE_COMPARATIFS as readonly string[])
+  .filter((slug) => slug !== d.slug)
+  .flatMap((slug) => {
+    const autre = outilsColl.find((o) => o.data.slug === slug);
+    return autre ? [{ url: urlComparatif(d.slug, slug), nom: autre.data.nom }] : [];
+  });
+
+// Protocole du test réel (collection tests) : aucune étape n'est marquée faite
+// tant que le test n'a pas été mené et publié.
+const test = (await getCollection('tests')).find((t) => t.data.outil_slug === d.slug);
+// Un seul prédicat pour la phrase et la frise (la concordance des deux fiches
+// est vérifiée par src/lib/data.test.ts, la date par le schéma).
+const teste =
+  d.statut_test === 'teste' && test?.data.statut === 'teste' && test.data.date_test !== null;
+const plansRenseignes = d.plans.filter(
+  (p) => p.prix_ht_mensuel !== null && p.date_releve !== null && p.url_source !== null,
+);
+// Une offre déclarée mais pas encore relevée est nommée, jamais omise.
+const plansARelever = d.plans.filter((p) => !plansRenseignes.includes(p));
 
 // JSON-LD SoftwareApplication, sans AggregateRating ni prix inventés (section 9).
 const appJsonLd = {
@@ -47,36 +78,33 @@ const appJsonLd = {
   description={`${d.nom} pour la facturation électronique : statut de plateforme agréée, fonctionnalités vérifiées, pour qui — données datées et sourcées.`}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(appJsonLd)} />
+  <BandeauTransparence outils={[d.slug]} />
   <Breadcrumb items={[{ label: 'Logiciels' }, { label: d.nom }]} />
 
   <div class="layout-article mt-4">
     <article>
-      <div class="flex items-center gap-4">
-        <span class="duel-monogramme">{d.nom.slice(0, 1)}</span>
-        <h1 class="prose-measure text-3xl font-bold">{d.nom} : facturation électronique</h1>
+      <div class="hero flex items-center gap-5 pt-2">
+        <span class="m-mono" aria-hidden="true">
+          {d.nom.slice(0, 1)}
+        </span>
+        <div>
+          <h1 class="prose-measure text-3xl font-bold">{d.nom} : facturation électronique</h1>
+          <p class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-soft">
+            <span class="pill">{libelleTest}</span>
+            <span>Mis à jour le {formatDateFr(d.date_maj)}</span>
+          </p>
+        </div>
       </div>
-      <p class="mt-2 text-sm text-ink-soft">
-        Mis à jour le {formatDateFr(d.date_maj)} · Note : <strong>Test en cours</strong>
-      </p>
 
-      <section class="encadre-essentiel prose-measure mt-6 p-4">
-        {d.est_plateforme_agreee.valeur && (
-          <p class="badge-ok mb-2">Plateforme agréée — registre DGFiP</p>
-        )}
-        <p>
-          {d.est_plateforme_agreee.valeur ? (
-            <>
-              Émission, réception et e-reporting sans plateforme intermédiaire, d'après le{' '}
-              <a href={d.est_plateforme_agreee.source} rel="noopener">
-                registre DGFiP
-              </a>
-              .
-            </>
-          ) : (
-            <>{d.nom} n'est pas lui-même une plateforme agréée.</>
-          )}
-        </p>
-        <p class="mt-2">Cible revendiquée par l'éditeur : {d.cible.join(', ')}.</p>
+      <section aria-labelledby="essentiel-outil" class="encadre-essentiel prose-measure mt-6 p-4">
+        <h2 id="essentiel-outil" class="text-lg font-bold">
+          L'essentiel
+        </h2>
+        <ul class="mt-2 list-disc space-y-1 pl-5">
+          <li>Cible revendiquée par l'éditeur : {d.cible.join(', ')}.</li>
+          {pointFortDistinctif && <li>{pointFortDistinctif.replace(/\.$/, '')}.</li>}
+        </ul>
+        <StatutPlateforme statut={d.est_plateforme_agreee} nom={d.nom} variante="complet" />
       </section>
 
       <section aria-labelledby="fonctionnalites" class="mt-8">
@@ -108,9 +136,50 @@ const appJsonLd = {
         <h2 id="tarifs" class="titre-section text-2xl font-bold">
           Tarifs
         </h2>
-        {d.plans.length === 0 ? (
+        {plansRenseignes.length > 0 && (
+          <div class="table-scroll mt-3">
+            <table class="table-chiffres w-full border-collapse text-sm">
+              <thead>
+                <tr class="border-b border-border">
+                  <th scope="col" class="designation py-2 pr-3 text-left">
+                    Offre
+                  </th>
+                  <th scope="col" class="nombre py-2 pr-3">
+                    Prix HT par mois
+                  </th>
+                  <th scope="col" class="py-2 text-left">
+                    Relevé
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {plansRenseignes.map((p) => (
+                  <tr class="border-b border-border">
+                    <th scope="row" class="designation py-2 pr-3 text-left font-normal">
+                      {p.nom}
+                    </th>
+                    <td class="nombre py-2 pr-3">
+                      {new Intl.NumberFormat('fr-FR', {
+                        style: 'currency',
+                        currency: 'EUR',
+                      }).format(p.prix_ht_mensuel ?? 0)}
+                    </td>
+                    <td class="py-2">
+                      <a href={p.url_source ?? undefined} rel="noopener">
+                        le {formatDateFr(p.date_releve ?? '')}
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        {plansRenseignes.length === 0 || plansARelever.length > 0 ? (
           <p class="mt-3">
-            Les prix sont en cours de relevé, avec date et source pour chaque donnée.
+            {plansRenseignes.length === 0
+              ? 'Les prix sont en cours de relevé, avec date et source pour chaque donnée.'
+              : `Prix en cours de relevé pour : ${plansARelever.map((p) => p.nom).join(', ')}.`}
             {pageTarifs && (
               <>
                 {' '}
@@ -141,6 +210,47 @@ const appJsonLd = {
           test réel documenté.
         </p>
       </section>
+
+      {comparatifs.length > 0 && (
+        <section aria-labelledby="comparer-outil" class="mt-8">
+          <h2 id="comparer-outil" class="titre-section text-2xl font-bold">
+            Comparer {d.nom}
+          </h2>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            {comparatifs.map((c) => (
+              <li>
+                <a href={c.url} class="puce-famille">
+                  {d.nom} ou {c.nom}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {test && (
+        <section aria-labelledby="protocole-outil" class="prose-measure mt-8">
+          <h2 id="protocole-outil" class="titre-section text-2xl font-bold">
+            Notre test, étape par étape
+          </h2>
+          <p class="mt-2 text-sm text-ink-soft">
+            {teste && test.data.date_test
+              ? `Test mené le ${formatDateFr(test.data.date_test)} : ${test.data.protocole.length} étapes sur ${test.data.protocole.length}.`
+              : `${libelleStatutTest('a_tester')} : aucune des ${test.data.protocole.length} étapes n'est encore réalisée. Aucune note n'est publiée avant.`}
+          </p>
+          <ol class:list={['m-frise reveal mt-4', teste && 'est-teste']}>
+            {test.data.protocole.map((etape, i) => (
+              <li>
+                <span class="m-noeud">
+                  <span class="sr-only">Étape </span>
+                  {i + 1}
+                </span>
+                <p class="pt-2">{etape}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
 
       <section aria-labelledby="sources-outil" class="prose-measure mt-8">
         <h2 id="sources-outil" class="titre-section text-2xl font-bold">

@@ -140,6 +140,9 @@ export const ficheTestSchema = z
   })
   .refine((t) => t.statut !== 'a_tester' || (t.resultats === null && t.date_test === null), {
     message: 'Une fiche a_tester ne porte ni résultats ni date de test',
+  })
+  .refine((t) => t.statut !== 'teste' || t.date_test !== null, {
+    message: 'Une fiche teste porte sa date de test',
   });
 
 export const guideSchema = z.object({
@@ -194,4 +197,22 @@ export const affiliationSchema = z.object({
   date_maj: dateIso,
   note: z.string(),
   liens: z.record(z.string().regex(/^[a-z0-9-]+$/), url.nullable()),
+});
+
+/**
+ * Points de facturation communs à une famille de métiers (hubs). Chaque point
+ * généralise ce que disent déjà au moins deux fiches métier de la famille, et
+ * cite une source officielle que ces fiches citent déjà.
+ */
+export const pointFamilleSchema = z.object({
+  titre: z.string().min(1).max(70),
+  texte: z.string().min(1).max(280),
+  metiers_concernes: z.array(z.string().regex(/^[a-z0-9-]+$/)).min(2),
+  sources: z.array(z.object({ titre: z.string().min(1), url })).min(1),
+});
+
+export const pointsFamillesSchema = z.object({
+  date_releve: dateIso,
+  methode: z.string().min(1),
+  familles: z.record(z.enum(FAMILLES), z.array(pointFamilleSchema).length(4)),
 });

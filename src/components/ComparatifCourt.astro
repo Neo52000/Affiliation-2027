@@ -2,6 +2,7 @@
 import type { z } from 'astro/zod';
 import type { outilSchema } from '../lib/schemas';
 import Statut from './Statut.astro';
+import { libelleStatutTest } from '../lib/statut-test';
 
 type Outil = z.infer<typeof outilSchema>;
 
@@ -29,7 +30,10 @@ const lignes: Ligne[] = [
   {
     label: 'Note',
     type: 'note',
-    valeur: (o) => (o.statut_test === 'a_tester' ? 'Test en cours' : String(o.notes.finale ?? '—')),
+    valeur: (o) =>
+      o.statut_test === 'a_tester'
+        ? libelleStatutTest(o.statut_test)
+        : String(o.notes.finale ?? '—'),
   },
 ];
 ---

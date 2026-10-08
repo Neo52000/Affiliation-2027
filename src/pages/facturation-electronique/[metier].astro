@@ -7,10 +7,12 @@ import ExempleFacture from '../../components/ExempleFacture.astro';
 import ComparatifCourt from '../../components/ComparatifCourt.astro';
 import Picto from '../../components/Picto.astro';
 import StatutPlateforme from '../../components/StatutPlateforme.astro';
+import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { FAMILLE_LABELS } from '../../lib/familles';
 import { formatDateFr } from '../../lib/dates';
 import { metierDescription, metierTitle } from '../../lib/seo';
-import { hasAffiliate } from '../../lib/affiliate';
+import { paireOrdonnee, urlComparatif } from '../../lib/comparatifs';
+import { libelleStatutTest } from '../../lib/statut-test';
 import { SITE } from '../../config';
 import echeances from '../../data/echeances.json';
 
@@ -51,17 +53,14 @@ const reception = echeances.echeances.find((e) => e.id === 'reception-toutes-ent
 const emissionTpe = echeances.echeances.find((e) => e.id === 'emission-pme-tpe-micro');
 if (!reception || !emissionTpe) throw new Error('echeances.json : échéances clés manquantes');
 
-const avecAffiliation = hasAffiliate(recommandes.map((r) => r.outil.data.slug));
-
 // Comparaisons deux à deux des outils recommandés : les 15 pages /comparatif/
 // existaient sans qu'aucun lien du site n'y mène.
-const ORDRE_COMPARATIFS = ['tiime', 'qonto', 'pennylane', 'abby', 'indy', 'shine'];
 const paires = recommandes.flatMap((a, i) =>
   recommandes.slice(i + 1).map((b) => {
-    const [x, y] = [a.outil.data, b.outil.data].sort(
-      (p, q) => ORDRE_COMPARATIFS.indexOf(p.slug) - ORDRE_COMPARATIFS.indexOf(q.slug),
-    );
-    return { url: `/comparatif/${x!.slug}-vs-${y!.slug}`, label: `${x!.nom} ou ${y!.nom}` };
+    const [sx] = paireOrdonnee(a.outil.data.slug, b.outil.data.slug);
+    const [x, y] =
+      sx === a.outil.data.slug ? [a.outil.data, b.outil.data] : [b.outil.data, a.outil.data];
+    return { url: urlComparatif(x.slug, y.slug), label: `${x.nom} ou ${y.nom}` };
   }),
 );
 const familleLabel = FAMILLE_LABELS[d.famille];
@@ -91,12 +90,7 @@ const faqJsonLd = {
 
 <Base title={metierTitle(d.nom)} description={metierDescription(d.nom)}>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
-  {avecAffiliation && (
-    <p class="mb-6 rounded-md border border-border bg-paper-soft px-4 py-2 text-sm text-ink-soft">
-      Cette page contient des liens affiliés, signalés individuellement. Ils ne modifient ni l'ordre
-      ni les recommandations. <a href="/transparence">Comment le site gagne de l'argent</a>
-    </p>
-  )}
+  <BandeauTransparence outils={recommandes.map((r) => r.outil.data.slug)} />
 
   <Breadcrumb items={[{ label: familleLabel, href: `/metiers/${d.famille}` }, { label: d.nom }]} />
 
@@ -191,7 +185,9 @@ const faqJsonLd = {
               {i === 0 && <p class="badge-ok mb-2">Notre recommandation</p>}
               <p class="font-bold">
                 {i + 1}. <a href={`/logiciels/${outil.data.slug}`}>{outil.data.nom}</a>
-                <span class="pill ml-2 align-middle font-normal">Test en cours</span>
+                <span class="pill ml-2 align-middle font-normal">
+                  {libelleStatutTest(outil.data.statut_test)}
+                </span>
               </p>
               <p class="prose-measure mt-1">{justification}</p>
               <StatutPlateforme statut={outil.data.est_plateforme_agreee} nom={outil.data.nom} />

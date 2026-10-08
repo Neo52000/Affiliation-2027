@@ -11,7 +11,11 @@ async function attendreHydratation(page: Page, element: Locator) {
 
 test('1. accueil → hub bâtiment → page métier plombier', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('link', { name: 'Bâtiment' }).click();
+  // Le téléscripteur mène aussi aux hubs : on vise la section des familles.
+  await page
+    .getByRole('region', { name: 'Trouver votre métier' })
+    .getByRole('link', { name: 'Bâtiment' })
+    .click();
   await page.getByRole('link', { name: /plombier/i }).click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/plombier/i);
   await expect(page.getByText("L'essentiel en 3 lignes")).toBeVisible();
@@ -66,9 +70,9 @@ test('5. vérificateur de facture : mentions manquantes listées avec leur sourc
   await expect(page.getByRole('link', { name: 'Source officielle' }).first()).toBeVisible();
 });
 
-test('6. fiche outil : note « Test en cours » et sources datées', async ({ page }) => {
+test('6. fiche outil : « Test à venir » et sources datées', async ({ page }) => {
   await page.goto('/logiciels/tiime');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Tiime');
-  await expect(page.getByText('Test en cours').first()).toBeVisible();
+  await expect(page.getByText('Test à venir').first()).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Sources' })).toBeVisible();
 });

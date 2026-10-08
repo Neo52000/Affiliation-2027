@@ -3,7 +3,10 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picto from '../../components/Picto.astro';
-import { FAMILLE_LABELS, type Famille } from '../../lib/familles';
+import MetierPicker from '../../components/islands/MetierPicker.tsx';
+import { FAMILLE_FORMES, FAMILLE_LABELS, estElide, type Famille } from '../../lib/familles';
+import { outilsRetenus } from '../../lib/hub';
+import { pointsFamillesSchema } from '../../lib/schemas';
 import { familleTitle, pageTitle } from '../../lib/seo';
 import { formatDateFr } from '../../lib/dates';
 import { SITE } from '../../config';
@@ -22,10 +25,17 @@ export async function getStaticPaths() {
 const { intro } = Astro.props;
 const famille = Astro.params.famille as Famille;
 const label = FAMILLE_LABELS[famille];
+const formes = FAMILLE_FORMES[famille];
+// « pour le » suivi d'un espace, « pour l’ » collé au nom : une seule unité animée,
+// pour que le formatage du gabarit ne puisse jamais insérer d'espace après l’élision.
+const debutTitre = estElide(formes.pour) ? formes.pour : `${formes.pour} `;
 const tous = await getCollection('metiers');
 const metiers = tous
   .filter((m) => m.data.famille === famille)
   .sort((a, b) => a.data.nom.localeCompare(b.data.nom, 'fr'));
+const outils = await getCollection('outils');
+const nomsOutils = Object.fromEntries(outils.map((o) => [o.data.slug, o.data.nom]));
+const nomsMetiers = Object.fromEntries(tous.map((m) => [m.data.slug, m.data.nom]));
 
 // La spécification vise 10 métiers par famille : la phrase d'attente ne
 // s'affiche que tant que la famille est incomplète, jamais par habitude.
@@ -37,6 +47,31 @@ const LIBELLE_CLIENTS: Record<string, string> = {
   B2C: 'Clients particuliers',
   mixte: 'Pros et particuliers',
 };
+
+// Sélecteur : la recommandation de chaque fiche, dans son ordre publié.
+const choixMetiers = metiers.map((m) => ({
+  slug: m.data.slug,
+  nom: m.data.nom,
+  outils: m.data.outils_recommandes.flatMap((o) => {
+    const nom = nomsOutils[o.slug];
+    return nom ? [{ slug: o.slug, nom }] : [];
+  }),
+}));
+
+const retenus = outilsRetenus(
+  metiers.map((m) => m.data),
+  nomsOutils,
+);
+
+// Points de facturation communs à la famille : affichés seulement s'ils sont
+// rédigés et sourcés (src/data/points-familles.json, validé ici au build).
+const fichiersPoints = import.meta.glob<unknown>('../../data/points-familles.json', {
+  import: 'default',
+  eager: true,
+});
+const donneesPoints = Object.values(fichiersPoints)[0];
+const pointsFamilles = donneesPoints ? pointsFamillesSchema.parse(donneesPoints) : null;
+const points = pointsFamilles?.familles[famille] ?? [];
 
 // Les autres familles, pour qu'un lecteur arrivé sur le mauvais hub reparte
 // d'ici plutôt que de la page d'accueil.
@@ -58,13 +93,17 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
 
   <div class="layout-article mt-4">
     <div>
-      <div class="flex items-center gap-4">
+      <div class="hero flex items-center gap-4 pt-2">
         <span class="picto-carre shrink-0">
           <Picto nom={famille} taille={26} />
         </span>
         <div>
-          <h1 class="prose-measure text-3xl font-bold">
-            Facturation électronique : {label.toLowerCase()}
+          <h1 class="m-mots text-3xl font-extrabold sm:text-4xl">
+            <span class="m-word">Facturation</span> <span class="m-word">électronique</span>{' '}
+            <span class="m-word">
+              {debutTitre}
+              <span class="text-gradient m-reflet">{formes.objet}</span>
+            </span>
           </h1>
           <p class="mt-1 text-sm text-ink-soft">
             {metiers.length} métier{metiers.length > 1 ? 's' : ''} documenté
@@ -79,7 +118,50 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
         ))}
       </section>
 
-      <section aria-labelledby="liste-metiers" class="mt-8">
+      <MetierPicker client:idle metiers={choixMetiers} />
+
+      {points.length > 0 && pointsFamilles && (
+        <section aria-labelledby="points-famille" class="mt-10">
+          <h2 id="points-famille" class="titre-section text-2xl font-bold">
+            {points.length} points de facturation propres {formes.a}
+          </h2>
+          <ol class="mt-4 grid gap-4 sm:grid-cols-2">
+            {points.map((p, i) => (
+              <li class="m-lift reveal rounded-lg border border-border bg-paper p-4">
+                <span class="picto-carre m-pop-icon text-lg font-extrabold">{i + 1}</span>
+                <h3 class="mt-3 font-bold">{p.titre}</h3>
+                <p class="mt-1 text-sm">{p.texte}</p>
+                <p class="mt-2 text-sm text-ink-soft">
+                  Concerne notamment :{' '}
+                  {p.metiers_concernes.map((slug, j) => (
+                    <>
+                      {j > 0 && ', '}
+                      <a href={`/facturation-electronique/${slug}`}>{nomsMetiers[slug]}</a>
+                    </>
+                  ))}
+                </p>
+                <p class="mt-1 text-sm text-ink-soft">
+                  Source :{' '}
+                  {p.sources.map((s, j) => (
+                    <>
+                      {j > 0 && ' · '}
+                      <a href={s.url} rel="noopener">
+                        {s.titre}
+                      </a>
+                    </>
+                  ))}
+                </p>
+              </li>
+            ))}
+          </ol>
+          <p class="mt-2 text-xs text-ink-soft">
+            Points relevés le {formatDateFr(pointsFamilles.date_releve)} sur les sources citées.
+            Chaque fiche métier détaille ses propres règles.
+          </p>
+        </section>
+      )}
+
+      <section aria-labelledby="liste-metiers" class="mt-10">
         <h2 id="liste-metiers" class="titre-section text-2xl font-bold">
           Choisir votre métier
         </h2>
@@ -108,6 +190,51 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
             D'autres métiers de cette famille seront ajoutés progressivement.
           </p>
         )}
+      </section>
+
+      {retenus.length > 0 && (
+        <section aria-labelledby="outils-famille" class="mt-10">
+          <h2 id="outils-famille" class="titre-section text-2xl font-bold">
+            Les outils retenus pour ces métiers
+          </h2>
+          <p class="prose-measure mt-2 text-sm text-ink-soft">
+            Chaque fiche métier retient trois outils sur des faits vérifiés, jamais sur les
+            commissions. Ici, le nombre de fiches qui citent chacun ; à égalité, l'ordre
+            alphabétique.
+          </p>
+          <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {retenus.map((o) => (
+              <li class="m-lift reveal flex items-center gap-3 rounded-lg border border-border bg-paper p-3">
+                <span class="duel-monogramme m-pop-icon shrink-0" aria-hidden="true">
+                  {o.nom.slice(0, 1)}
+                </span>
+                <span>
+                  <a href={`/logiciels/${o.slug}`} class="lien-carte font-bold">
+                    {o.nom}
+                  </a>
+                  <span class="block text-sm text-ink-soft">
+                    Retenu sur {o.fiches} fiche{o.fiches > 1 ? 's' : ''} sur {metiers.length}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section aria-labelledby="quiz-famille" class="m-panneau reveal mt-10 p-6 sm:p-8">
+        <h2 id="quiz-famille" class="text-2xl font-bold">
+          Pas sûr de votre choix ?
+        </h2>
+        <p class="prose-measure mt-2">
+          Cinq questions sur votre activité suffisent pour une recommandation fondée sur des faits
+          vérifiés.
+        </p>
+        <p class="mt-5">
+          <a href="/outils/quiz" class="btn-clair">
+            Faire le quiz
+          </a>
+        </p>
       </section>
 
       {autresFamilles.length > 0 && (

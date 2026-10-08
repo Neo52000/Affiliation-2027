@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { recommander, type OutilFacts, type QuizReponses, type QuizResultat } from '../../lib/quiz';
 import { affiliateLink } from '../../lib/affiliate';
 
@@ -9,7 +9,7 @@ interface MetierOption {
 
 interface Props {
   metiers: MetierOption[];
-  outils: (OutilFacts & { urlOfficielle: string })[];
+  outils: (OutilFacts & { urlOfficielle: string; libelleTest: string })[];
   recosParMetier: Record<string, string[]>;
 }
 
@@ -20,6 +20,21 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
   const [comptePro, setComptePro] = useState(false);
   const [expert, setExpert] = useState(false);
   const [resultat, setResultat] = useState<QuizResultat | null>(null);
+  const titreResultat = useRef<HTMLHeadingElement>(null);
+
+  // Préremplissage depuis un hub de famille (?metier=slug). Un slug inconnu est
+  // ignoré : seul un métier de la collection peut remplir le champ.
+  useEffect(() => {
+    const slug = new URLSearchParams(window.location.search).get('metier');
+    const metier = metiers.find((m) => m.slug === slug);
+    if (metier) setMetierSaisi(metier.nom);
+  }, [metiers]);
+
+  // Le résultat apparaît sous le formulaire : le focus y est déplacé, et son
+  // titre est la première chose annoncée.
+  useEffect(() => {
+    if (resultat) titreResultat.current?.focus();
+  }, [resultat]);
 
   const trouverSlug = (saisie: string): string | null => {
     const s = saisie.trim().toLowerCase();
@@ -164,12 +179,28 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
       </form>
 
       {resultat && (
-        <section aria-live="polite" class="mt-8 space-y-4">
-          <h2 class="text-2xl font-bold">Notre recommandation</h2>
+        <section class="mt-8 space-y-4">
+          <div class="flex items-center gap-3">
+            <svg
+              class="m-anneau shrink-0"
+              width="40"
+              height="40"
+              viewBox="0 0 80 80"
+              aria-hidden="true"
+            >
+              <circle cx="40" cy="40" r="36"></circle>
+              <path d="M26 41l9 9 19-19"></path>
+            </svg>
+            <h2 ref={titreResultat} tabIndex={-1} class="text-2xl font-bold">
+              Notre recommandation
+            </h2>
+          </div>
           <div class="card-top carte-reco rounded-lg border border-border p-4">
             <p class="font-bold">
               <a href={`/logiciels/${resultat.recommande.slug}`}>{resultat.recommande.nom}</a>
-              <span class="ml-2 text-sm font-normal text-ink-soft">Test en cours</span>
+              <span class="pill ml-2 align-middle font-normal">
+                {outils.find((o) => o.slug === resultat.recommande.slug)?.libelleTest}
+              </span>
             </p>
             <p class="mt-1">{resultat.recommande.justification}</p>
             <div class="mt-3">

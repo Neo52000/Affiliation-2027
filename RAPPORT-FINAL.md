@@ -44,6 +44,15 @@ Mesures locales sur le build de production, préréglage desktop.
 > empreintes dans `dist/_headers` et contrôlée par `check-csp`. Les prochaines mesures se font avec
 > ces en-têtes.
 
+**Mesure du 2026-10-08, dans les conditions de production.** Le build a été servi avec la CSP de
+`dist/_headers` et la compression gzip, puis audité par Lighthouse 13.5 en préréglages desktop et
+mobile. L'accueil, un hub, une fiche outil, le quiz, une page métier et un comparatif obtiennent
+**100/100/100/100 en desktop comme en mobile**, avec CLS 0, aucune erreur console et un LCP mobile de
+1,4 à 1,5 s. Sans compression, la même grille donne 99 en mobile, et `main` aussi : c'est un artefact
+du serveur de test, pas une régression. Un CLS de 0,005 propre au quiz en desktop est corrigé : la
+barre de défilement apparaissait après un premier rendu partiel, et `scrollbar-gutter: stable` lui
+réserve désormais sa place.
+
 | Page                     | Performance | Accessibilité | Bonnes pratiques | SEO    | CLS | LCP   |
 | ------------------------ | ----------- | ------------- | ---------------- | ------ | --- | ----- |
 | Accueil                  | 100         | 100           | 100              | 100    | 0   | 0,4 s |

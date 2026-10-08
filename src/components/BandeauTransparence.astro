@@ -1,0 +1,22 @@
+---
+/**
+ * Bandeau de transparence : rendu seulement si la page contient au moins un
+ * lien affilié parmi les outils passés en props (section 8). Tant qu'aucun
+ * lien affilié n'est renseigné (src/data/affiliation.json), il n'apparaît nulle part.
+ */
+import { hasAffiliate } from '../lib/affiliate';
+
+interface Props {
+  /** Slugs des outils dont la page affiche un bouton. */
+  outils: string[];
+}
+
+const { outils } = Astro.props;
+---
+
+{hasAffiliate(outils) && (
+  <p class="mb-6 rounded-md border border-border bg-paper-soft px-4 py-2 text-sm text-ink-soft">
+    Cette page contient des liens affiliés, signalés individuellement. Ils ne modifient ni l'ordre
+    ni les recommandations. <a href="/transparence">Comment le site gagne de l'argent</a>
+  </p>
+)}

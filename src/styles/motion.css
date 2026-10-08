@@ -1,0 +1,951 @@
+/*
+ * Couche de mouvement (motion design), importée par global.css juste après
+ * Tailwind, hors couche, comme le reste des styles du site. Elle n'ajoute que
+ * des classes nouvelles : les composants existants gardent leurs règles.
+ *
+ * Trois règles, vérifiées par le banc Playwright :
+ * 1. L'état de base est l'état final. Une entrée n'a qu'un `from` et n'existe
+ *    que sous prefers-reduced-motion: no-preference.
+ * 2. Une boucle, ou un mouvement lié au défilement, n'existe que sous
+ *    no-preference ET html.anim-on. Cette classe est posée par le script de
+ *    tête de Base.astro, et retirée par le bouton pause de l'en-tête
+ *    (WCAG 2.2.2) : sans JavaScript ou en pause, rien ne boucle.
+ * 3. Une entrée et une boucle ne partagent jamais un élément : reprendre
+ *    après une pause ne rejoue aucune entrée.
+ *
+ * Contraste : tout texte blanc posé sur un dégradé utilise --gradient-accent,
+ * épinglé #2563eb → #7c3aed dans les deux thèmes (blanc ≥ 5,1:1).
+ */
+
+:root {
+  --m-ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ---------------------------------------------------------------------------
+   Bouton pause de l'en-tête : visible seulement si JavaScript tourne et si le
+   mouvement n'est pas déjà réduit par le système.
+   --------------------------------------------------------------------------- */
+.btn-pause {
+  display: none;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+html.js .btn-pause {
+  display: inline-flex;
+}
+
+.btn-pause:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn-pause .icone-lecture,
+.btn-pause[aria-pressed='true'] .icone-pause {
+  display: none;
+}
+
+.btn-pause[aria-pressed='true'] .icone-lecture {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .btn-pause {
+    display: none;
+  }
+}
+
+/* Barre de lecture, sous l'en-tête collant */
+.m-prog {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gradient-text-from), var(--gradient-text-to));
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Titres : mots qui montent (translation seule, jamais d'opacité ni de flou :
+   le titre reste l'élément LCP, peint dès la première image).
+   --------------------------------------------------------------------------- */
+.m-word {
+  display: inline-block;
+  /* Un mot plus large que l'écran (zoom 400 %) se coupe au lieu de déborder :
+     en inline-block, break-word ne le permettrait pas. */
+  overflow-wrap: anywhere;
+}
+
+.m-mots > .m-word:nth-of-type(2) {
+  --i: 1;
+}
+.m-mots > .m-word:nth-of-type(3) {
+  --i: 2;
+}
+.m-mots > .m-word:nth-of-type(4) {
+  --i: 3;
+}
+.m-mots > .m-word:nth-of-type(5) {
+  --i: 4;
+}
+.m-mots > .m-word:nth-of-type(6) {
+  --i: 5;
+}
+.m-mots > .m-word:nth-of-type(7) {
+  --i: 6;
+}
+.m-mots > .m-word:nth-of-type(n + 8) {
+  --i: 7;
+}
+
+/* Badge précédé d'une pastille ou d'une icône. Plus spécifique que .badge-ok
+   (global.css, hors couche), qui imposerait inline-block. */
+.badge-ok.badge-icone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* Pastille d'un badge d'état : le point peut pulser, le texte ne bouge pas */
+.m-point {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ---------------------------------------------------------------------------
+   Téléscripteur des familles : liste statique sur plusieurs lignes par défaut,
+   défilement continu seulement sous html.anim-on.
+   --------------------------------------------------------------------------- */
+.m-defile {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-paper-soft);
+  padding: 0.6rem 1rem;
+}
+
+.m-defile-piste {
+  display: flex;
+}
+
+.m-defile-groupe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Doublon visuel de la boucle : absent tant que rien ne défile */
+.m-defile-groupe + .m-defile-groupe {
+  display: none;
+}
+
+.m-defile li {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.m-defile li::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+}
+
+.m-defile a {
+  display: inline-block;
+  padding: 0.25rem 0;
+  font-weight: 700;
+  color: var(--color-ink-soft);
+  text-decoration-line: none;
+  white-space: nowrap;
+}
+
+.m-defile a:hover {
+  color: var(--color-accent);
+  text-decoration-line: underline;
+}
+
+/* ---------------------------------------------------------------------------
+   Chiffres clés : compteur. Le fantôme invisible réserve la largeur finale
+   (aucun décalage pendant le compte) ; la vraie valeur est lue en texte .sr-only.
+   --------------------------------------------------------------------------- */
+.m-compteur {
+  display: inline-grid;
+  font-variant-numeric: tabular-nums;
+}
+
+.m-compteur > * {
+  grid-area: 1 / 1;
+}
+
+.m-compteur-fantome {
+  visibility: hidden;
+}
+
+/* ---------------------------------------------------------------------------
+   Illustration du hero : une facture rejoint une plateforme agréée.
+   Décorative (aria-hidden), affichée à partir de lg, cadre fixe 400 × 360.
+   --------------------------------------------------------------------------- */
+.m-scene {
+  position: relative;
+  width: 400px;
+  height: 360px;
+}
+
+.m-flux {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.m-flux path {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-dasharray: 3 8;
+  stroke-linecap: round;
+}
+
+.m-jeton {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-accent) 25%, transparent);
+  offset-path: path('M 120 150 C 120 240 200 190 236 248');
+  offset-rotate: 0deg;
+}
+
+.m-carte {
+  position: absolute;
+}
+
+.m-carte-a {
+  left: 0;
+  top: 8px;
+  width: 240px;
+  rotate: -3deg;
+}
+
+.m-carte-b {
+  right: 0;
+  bottom: 8px;
+  width: 230px;
+}
+
+.m-carte-corps {
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-paper-soft);
+  box-shadow: var(--shadow-lg);
+}
+
+.m-barre {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+/* Marge par défaut dans une couche : un utilitaire (mt-4) la remplace. */
+@layer components {
+  .m-barre {
+    margin-top: 10px;
+  }
+}
+
+.m-barre::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-accent) 45%, transparent),
+    transparent
+  );
+  transform: translateX(-100%);
+}
+
+.m-tampon path {
+  stroke-dasharray: 24;
+}
+
+/* ---------------------------------------------------------------------------
+   Cartes : élévation au survol et au focus
+   --------------------------------------------------------------------------- */
+.m-lift {
+  position: relative;
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+.m-lift:hover,
+.m-lift:focus-within {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+
+/* .reveal-in (global.css) redéfinit transition : une carte révélée garde
+   aussi celles de l'élévation. */
+.m-lift.reveal-in {
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+.m-pop-icon {
+  transition: transform 400ms var(--ease-spring);
+}
+
+.m-lift:hover .m-pop-icon,
+.m-fam:hover .m-pop-icon {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+/* Le lien principal d'une carte couvre toute la carte (cible plus grande,
+   un seul lien dans l'ordre de tabulation). */
+.lien-carte::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+/* Carte de famille : le fond bascule sur le dégradé d'action, texte blanc */
+.m-fam {
+  position: relative;
+  isolation: isolate;
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+.m-fam::before {
+  content: '';
+  position: absolute;
+  /* Recouvre aussi la bordure, devenue transparente au survol */
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: opacity 350ms var(--ease-out);
+}
+
+.m-fam:hover,
+.m-fam:focus-within {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.m-fam:hover::before,
+.m-fam:focus-within::before {
+  opacity: 1;
+}
+
+.m-fam:hover,
+.m-fam:focus-within,
+.m-fam:hover :is(a, span, p),
+.m-fam:focus-within :is(a, span, p) {
+  color: #ffffff;
+}
+
+.m-fam:hover .picto-carre,
+.m-fam:focus-within .picto-carre {
+  background: rgb(255 255 255 / 0.18);
+}
+
+.m-fam a:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   Étapes « Comment ça marche » : un trait relie les pictogrammes et se trace
+   quand la liste apparaît (révélateur de Base.astro).
+   --------------------------------------------------------------------------- */
+.m-etapes {
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .m-etapes::before,
+  .m-etapes::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /* Du centre du premier pictogramme (padding 1rem + demi-carré 1,375rem)
+       au centre du dernier : trois colonnes égales séparées de 1rem. */
+    top: 2.375rem;
+    left: 2.375rem;
+    right: calc((100% - 2rem) / 3 - 2.375rem);
+    height: 2px;
+  }
+
+  .m-etapes::before {
+    background: var(--color-border);
+  }
+
+  .m-etapes::after {
+    background: linear-gradient(90deg, var(--gradient-text-from), var(--gradient-text-to));
+    transform-origin: 0 50%;
+  }
+
+  .m-etapes.reveal-ready:not(.reveal-in)::after {
+    transform: scaleX(0);
+  }
+
+  .m-etapes.reveal-in::after {
+    transition: transform 900ms var(--ease-out) 250ms;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Sélecteur de métier (îlot MetierPicker) : de vrais boutons radio, rendus en
+   pastilles. Le choix porte un repère non coloré (✓).
+   --------------------------------------------------------------------------- */
+.m-puces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.m-puce {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.m-puce input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.m-puce:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.m-puce:has(input:focus-visible) {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.m-puce-coche {
+  display: none;
+}
+
+.m-puce:has(input:checked) {
+  border-color: transparent;
+  background: var(--gradient-accent);
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.m-puce:has(input:checked) .m-puce-coche {
+  display: inline;
+}
+
+.m-choix-panneau {
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  background: var(--color-accent-soft);
+  padding: 1rem 1.25rem;
+}
+
+/* Sans JavaScript, le sélecteur ne servirait à rien : les cartes métier
+   juste en dessous mènent aux mêmes pages. */
+html:not(.js) .m-selecteur {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Quiz : anneau de validation à côté du titre du résultat
+   --------------------------------------------------------------------------- */
+.m-anneau circle {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 226;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.m-anneau path {
+  fill: none;
+  stroke: var(--color-ok);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 50;
+}
+
+/* ---------------------------------------------------------------------------
+   Fiche outil : monogramme et frise du protocole de test
+   --------------------------------------------------------------------------- */
+.m-mono {
+  position: relative;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-accent);
+  color: #ffffff;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: var(--shadow-lg);
+}
+
+.m-frise {
+  position: relative;
+  padding: 0;
+  list-style: none;
+}
+
+.m-frise::before,
+.m-frise::after {
+  content: '';
+  position: absolute;
+  left: calc(1.25rem - 1px);
+  top: 1.25rem;
+  bottom: 1.25rem;
+  width: 2px;
+}
+
+.m-frise::before {
+  background: var(--color-border);
+}
+
+/* Le trait d'avancement ne se remplit que pour un test réellement mené */
+.m-frise.est-teste::after {
+  background: linear-gradient(var(--color-ok), var(--color-accent));
+}
+
+.m-frise > li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.4rem 0 0.8rem;
+}
+
+.m-noeud {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid var(--color-border-strong);
+  border-radius: 50%;
+  background: var(--color-paper);
+  color: var(--color-ink-soft);
+  font-weight: 800;
+}
+
+.m-frise.est-teste .m-noeud {
+  border-color: var(--color-ok);
+  color: var(--color-ok);
+}
+
+/* ---------------------------------------------------------------------------
+   Panneau d'appel vers le quiz (hubs). Couleurs fixes dans les deux thèmes :
+   blanc sur #172554 → #4c1d95 (≥ 12:1), lien blanc sur fond sombre.
+   --------------------------------------------------------------------------- */
+.m-panneau {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #172554, #4c1d95);
+  color: #ffffff;
+}
+
+.m-panneau p {
+  color: #dbe4ff;
+}
+
+.m-panneau :focus-visible {
+  outline-color: #ffffff;
+}
+
+.btn-clair {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  color: #1e1b4b;
+  font-weight: 700;
+  text-decoration-line: none;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.btn-clair:hover {
+  color: #1e1b4b;
+  transform: translateY(-2px);
+}
+
+/* Contrastes forcés : le texte en dégradé redevient du texte plein */
+@media (forced-colors: active) {
+  .text-gradient {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .m-puce:has(input:checked) {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+
+/* ===========================================================================
+   Entrées : uniquement sous no-preference, keyframes `from` seules.
+   =========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .m-word {
+    animation: m-monte 220ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 25ms);
+  }
+
+  .m-tampon path {
+    animation: m-trace-24 600ms var(--ease-out) 900ms both;
+  }
+
+  .m-carte-a {
+    animation: m-arrive 700ms var(--ease-out) 200ms both;
+  }
+
+  .m-carte-b {
+    animation: m-arrive 700ms var(--ease-out) 450ms both;
+  }
+
+  .m-puce:has(input:checked) {
+    animation: m-presse 300ms var(--ease-spring);
+  }
+
+  .choix:has(input:checked) {
+    animation: m-presse 300ms var(--ease-spring);
+  }
+
+  .m-apparait {
+    animation: m-arrive 350ms var(--ease-out) both;
+  }
+
+  .m-anneau circle {
+    animation: m-trace-anneau 900ms var(--ease-out) 100ms both;
+  }
+
+  .m-anneau path {
+    animation: m-trace-coche 500ms var(--ease-out) 800ms both;
+  }
+
+  .m-mono {
+    animation: m-presse 600ms var(--ease-spring) both;
+  }
+}
+
+@keyframes m-monte {
+  from {
+    transform: translateY(0.3em);
+  }
+}
+
+@keyframes m-arrive {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+  }
+}
+
+@keyframes m-presse {
+  from {
+    scale: 0.92;
+  }
+}
+
+@keyframes m-trace-24 {
+  from {
+    stroke-dashoffset: 24;
+  }
+}
+
+@keyframes m-trace-anneau {
+  from {
+    stroke-dashoffset: 226;
+  }
+}
+
+@keyframes m-trace-coche {
+  from {
+    stroke-dashoffset: 50;
+  }
+}
+
+/* ===========================================================================
+   Boucles et défilement : no-preference ET html.anim-on (bouton pause).
+   =========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  html.anim-on .hero::before {
+    animation: m-halo-derive 20s var(--m-ease-io) infinite alternate;
+  }
+
+  html.anim-on .m-reflet {
+    background-image: linear-gradient(
+      100deg,
+      var(--gradient-text-from),
+      var(--gradient-text-to),
+      var(--gradient-text-from)
+    );
+    background-size: 200% 100%;
+    /* Borné à deux passages : background-position se repeint à chaque image,
+       une boucle infinie occuperait le fil principal tant que la page est ouverte. */
+    animation: m-reflet 8s linear 2;
+  }
+
+  html.anim-on .m-point::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: currentColor;
+    animation: m-ping 2s var(--ease-out) infinite;
+  }
+
+  /* Téléscripteur : une ligne qui défile ; pause au survol et au focus pointeur
+     (le clic atteint le nom visé), arrêt et défilement jusqu'au lien au focus
+     clavier, sans fondu (le lien focalisé reste entier : WCAG 2.4.11). */
+  html.anim-on .m-defile {
+    padding-inline: 0;
+    /* Les noms entrent et sortent en fondu plutôt que coupés net */
+    mask-image: linear-gradient(90deg, transparent, #000 2rem, #000 calc(100% - 2rem), transparent);
+  }
+
+  html.anim-on .m-defile-piste {
+    width: max-content;
+    animation: m-defile 48s linear infinite;
+  }
+
+  /* Deux groupes strictement identiques : translateX(-50%) vaut alors la
+     largeur d'un groupe, et la boucle reprend sans saut. */
+  html.anim-on .m-defile-groupe {
+    flex-wrap: nowrap;
+    padding-right: 1.5rem;
+  }
+
+  html.anim-on .m-defile-groupe + .m-defile-groupe {
+    display: flex;
+  }
+
+  html.anim-on .m-defile:hover .m-defile-piste {
+    animation-play-state: paused;
+  }
+
+  html.anim-on .m-defile:focus-within .m-defile-piste {
+    animation-play-state: paused;
+  }
+
+  html.anim-on .m-defile:has(:focus-visible) {
+    mask-image: none;
+  }
+
+  html.anim-on .m-defile:has(:focus-visible) .m-defile-piste {
+    animation: none;
+  }
+
+  /* Illustration du hero */
+  html.anim-on .m-flux path {
+    animation: m-tirets 1.2s linear infinite;
+  }
+
+  html.anim-on .m-carte-a .m-carte-corps {
+    animation: m-flotte 6s var(--m-ease-io) 1s infinite alternate;
+  }
+
+  html.anim-on .m-carte-b .m-carte-corps {
+    animation: m-flotte 7s var(--m-ease-io) 1.5s infinite alternate-reverse;
+  }
+
+  html.anim-on .m-barre::after {
+    animation: m-balaye 2.8s var(--m-ease-io) 1.2s infinite;
+  }
+
+  html.anim-on .m-barre:nth-of-type(2n)::after {
+    animation-delay: 1.5s;
+  }
+
+  html.anim-on .m-barre:nth-of-type(3n)::after {
+    animation-delay: 1.8s;
+  }
+
+  html.anim-on .m-mono::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 2px solid var(--color-accent);
+    border-radius: calc(var(--radius-lg) + 6px);
+    animation: m-halo 2.6s var(--ease-out) 1s infinite both;
+  }
+
+  @supports (offset-path: path('M 0 0')) {
+    html.anim-on .m-jeton {
+      display: block;
+      animation: m-trajet 3s var(--m-ease-io) 1.5s infinite both;
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    /* Base vide : une page sans défilement rend la timeline inactive, et la
+       barre ne doit pas y paraître « lue à 100 % ». */
+    html.anim-on .m-prog {
+      display: block;
+      transform: scaleX(0);
+      animation: m-lecture linear both;
+    }
+
+    /* Règle distincte, et plus spécifique : le minifieur fusionnerait sinon la
+       timeline dans le raccourci `animation`, forme que Chrome rejette en bloc
+       (la barre restait pleine). */
+    html.anim-on .site-header .m-prog {
+      animation-timeline: scroll(root);
+    }
+  }
+}
+
+@keyframes m-halo-derive {
+  to {
+    translate: 3% 2%;
+    scale: 1.06;
+  }
+}
+
+@keyframes m-reflet {
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes m-ping {
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@keyframes m-defile {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes m-tirets {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+@keyframes m-flotte {
+  to {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes m-balaye {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes m-halo {
+  from {
+    opacity: 0.8;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 1.25;
+  }
+}
+
+@keyframes m-trajet {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  12%,
+  88% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes m-lecture {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: none;
+  }
+}
