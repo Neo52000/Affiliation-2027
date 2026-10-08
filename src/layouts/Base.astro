@@ -68,10 +68,13 @@ const { title, description, updatedAt, noindex } = Astro.props;
       const compter = (el: HTMLElement) => {
         const fin = Number(el.dataset.compteur);
         if (!Number.isFinite(fin) || fin <= 0) return;
-        const debut = performance.now();
         const duree = 1200;
+        // Origine prise sur le premier horodatage d'image, qui peut précéder
+        // performance.now() : sinon p < 0 et le compteur affiche « -5 ».
+        let debut: number | undefined;
         const pas = (t: number) => {
-          const p = Math.min(1, (t - debut) / duree);
+          debut ??= t;
+          const p = Math.min(1, Math.max(0, (t - debut) / duree));
           el.textContent = format.format(Math.round(fin * (1 - (1 - p) ** 3)));
           if (p < 1) requestAnimationFrame(pas);
         };
@@ -89,8 +92,10 @@ const { title, description, updatedAt, noindex } = Astro.props;
             for (const entry of entries) {
               if (!entry.isIntersecting) continue;
               const el = entry.target as HTMLElement;
-              if (el.dataset.compteur !== undefined) compter(el);
-              else el.classList.add('reveal-in');
+              if (el.dataset.compteur !== undefined) {
+                // La pause a pu être demandée depuis le chargement.
+                if (!document.documentElement.classList.contains('anim-pause')) compter(el);
+              } else el.classList.add('reveal-in');
               io.unobserve(el);
             }
           },

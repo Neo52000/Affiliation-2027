@@ -52,10 +52,15 @@ const comparatifs = (ORDRE_COMPARATIFS as readonly string[])
 // Protocole du test réel (collection tests) : aucune étape n'est marquée faite
 // tant que le test n'a pas été mené et publié.
 const test = (await getCollection('tests')).find((t) => t.data.outil_slug === d.slug);
-const teste = test?.data.statut === 'teste';
+// Un seul prédicat pour la phrase et la frise (la concordance des deux fiches
+// est vérifiée par src/lib/data.test.ts, la date par le schéma).
+const teste =
+  d.statut_test === 'teste' && test?.data.statut === 'teste' && test.data.date_test !== null;
 const plansRenseignes = d.plans.filter(
   (p) => p.prix_ht_mensuel !== null && p.date_releve !== null && p.url_source !== null,
 );
+// Une offre déclarée mais pas encore relevée est nommée, jamais omise.
+const plansARelever = d.plans.filter((p) => !plansRenseignes.includes(p));
 
 // JSON-LD SoftwareApplication, sans AggregateRating ni prix inventés (section 9).
 const appJsonLd = {
@@ -170,9 +175,11 @@ const appJsonLd = {
             </table>
           </div>
         )}
-        {plansRenseignes.length === 0 ? (
+        {plansRenseignes.length === 0 || plansARelever.length > 0 ? (
           <p class="mt-3">
-            Les prix sont en cours de relevé, avec date et source pour chaque donnée.
+            {plansRenseignes.length === 0
+              ? 'Les prix sont en cours de relevé, avec date et source pour chaque donnée.'
+              : `Prix en cours de relevé pour : ${plansARelever.map((p) => p.nom).join(', ')}.`}
             {pageTarifs && (
               <>
                 {' '}
@@ -229,12 +236,13 @@ const appJsonLd = {
           <p class="mt-2 text-sm text-ink-soft">
             {teste && test.data.date_test
               ? `Test mené le ${formatDateFr(test.data.date_test)} : ${test.data.protocole.length} étapes sur ${test.data.protocole.length}.`
-              : `${libelleTest} : aucune des ${test.data.protocole.length} étapes n'est encore réalisée. Aucune note n'est publiée avant.`}
+              : `${libelleStatutTest('a_tester')} : aucune des ${test.data.protocole.length} étapes n'est encore réalisée. Aucune note n'est publiée avant.`}
           </p>
           <ol class:list={['m-frise reveal mt-4', teste && 'est-teste']}>
             {test.data.protocole.map((etape, i) => (
               <li>
-                <span class="m-noeud" aria-hidden="true">
+                <span class="m-noeud">
+                  <span class="sr-only">Étape </span>
                   {i + 1}
                 </span>
                 <p class="pt-2">{etape}</p>

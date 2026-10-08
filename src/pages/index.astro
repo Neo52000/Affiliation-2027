@@ -42,13 +42,16 @@ const outilsQuiz = outilsColl.map((o) => ({
   libelleTest: libelleStatutTest(o.data.statut_test),
 }));
 
-// Badge du hero : dérivé d'echeances.json, seule source des dates de la réforme.
-const premiereEcheance = [...echeances.echeances].sort((a, b) => a.date.localeCompare(b.date))[0];
-if (!premiereEcheance) throw new Error('echeances.json : aucune échéance');
+// Badge du hero : l'obligation qui concerne toutes les entreprises (réception),
+// datée et sourcée par echeances.json, seule source des dates de la réforme.
+const reception = echeances.echeances.find((e) => e.id === 'reception-toutes-entreprises');
+if (!reception) throw new Error('echeances.json : échéance de réception manquante');
 const badgeReforme =
-  premiereEcheance.statut === 'en_vigueur'
-    ? `Réforme en vigueur depuis le ${formatDateFr(premiereEcheance.date)}`
-    : `Réforme applicable le ${formatDateFr(premiereEcheance.date)}`;
+  reception.statut === 'en_vigueur'
+    ? `Réception des factures électroniques obligatoire depuis le ${formatDateFr(reception.date)}`
+    : `Réception des factures électroniques obligatoire à partir du ${formatDateFr(reception.date)}`;
+const sourceReception = reception.sources[0];
+if (!sourceReception) throw new Error('echeances.json : réception sans source');
 
 // Documents .gouv.fr distincts cités par le site : même calcul, sur les mêmes
 // fichiers, que la présentation partenaires (scripts/build-presentation.ts).
@@ -133,6 +136,12 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
           <span class="m-point" aria-hidden="true"></span>
           {badgeReforme}
         </p>
+        <p class="mt-1 text-xs text-ink-soft">
+          Source :{' '}
+          <a href={sourceReception} rel="noopener">
+            {new URL(sourceReception).hostname.replace(/^www\./, '')}
+          </a>
+        </p>
         <h1 class="display-title m-mots mt-4">
           <span class="m-word">Le</span> <span class="m-word">bon</span>{' '}
           <span class="m-word">logiciel</span> <span class="m-word">de</span>{' '}
@@ -197,10 +206,7 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
             <Picto nom={e.picto} />
           </span>
           <p class="mt-3 font-bold">
-            <span class="text-gradient" aria-hidden="true">
-              {e.n}.
-            </span>{' '}
-            {e.titre}
+            <span class="text-gradient">{e.n}.</span> {e.titre}
           </p>
           <p class="mt-1 text-sm text-ink-soft">{e.texte}</p>
         </li>
@@ -259,7 +265,7 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
 
   <section aria-labelledby="acces-outils" class="mt-12">
     <h2 id="acces-outils" class="titre-section text-2xl font-bold">
-      Les logiciels passés au crible
+      Les logiciels comparés
     </h2>
     <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
       {outilsColl
@@ -295,6 +301,9 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
     <div class="mt-4 flex flex-wrap items-center justify-center gap-4">
       <a href="/outils/quiz" class="btn-cta">
         Faire le quiz
+      </a>
+      <a href="/outils/echeance" class="btn-ghost">
+        Voir mes échéances
       </a>
       <a href="/outils/verificateur-facture" class="btn-ghost">
         Vérifier ma facture

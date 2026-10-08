@@ -120,4 +120,19 @@ describe('src/content/outils + src/content/tests', () => {
       expect(slugsTestes.has(data.slug), `pas de fiche de test pour ${data.slug}`).toBe(true);
     }
   });
+
+  it('le statut du test est le même sur la fiche outil et sur la fiche de test', () => {
+    // La pastille lit la fiche outil, la frise du protocole la fiche de test :
+    // une mise à jour faite d'un seul côté afficherait deux états contradictoires.
+    const testsDir = join(ROOT, 'src/content/tests');
+    const tests = readdirSync(testsDir)
+      .filter((f) => f.endsWith('.json'))
+      .map((f) => ficheTestSchema.parse(readJson(`src/content/tests/${f}`)));
+    for (const { data } of outils) {
+      const t = tests.find((x) => x.outil_slug === data.slug);
+      expect(t?.statut, `${data.slug} : statut_test et fiche de test divergent`).toBe(
+        data.statut_test,
+      );
+    }
+  });
 });

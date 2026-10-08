@@ -85,6 +85,9 @@ html.js .btn-pause {
    --------------------------------------------------------------------------- */
 .m-word {
   display: inline-block;
+  /* Un mot plus large que l'écran (zoom 400 %) se coupe au lieu de déborder :
+     en inline-block, break-word ne le permettrait pas. */
+  overflow-wrap: anywhere;
 }
 
 .m-mots > .m-word:nth-of-type(2) {
@@ -271,10 +274,16 @@ html.js .btn-pause {
 .m-barre {
   position: relative;
   height: 8px;
-  margin-top: 10px;
   border-radius: 4px;
   background: var(--color-border);
   overflow: hidden;
+}
+
+/* Marge par défaut dans une couche : un utilitaire (mt-4) la remplace. */
+@layer components {
+  .m-barre {
+    margin-top: 10px;
+  }
 }
 
 .m-barre::after {
@@ -310,6 +319,16 @@ html.js .btn-pause {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   border-color: var(--color-accent);
+}
+
+/* .reveal-in (global.css) redéfinit transition : une carte révélée garde
+   aussi celles de l'élévation. */
+.m-lift.reveal-in {
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
 }
 
 .m-pop-icon {
@@ -537,7 +556,6 @@ html:not(.js) .m-selecteur {
 
 .m-frise {
   position: relative;
-  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -739,7 +757,9 @@ html:not(.js) .m-selecteur {
       var(--gradient-text-from)
     );
     background-size: 200% 100%;
-    animation: m-reflet 8s linear infinite;
+    /* Borné à deux passages : background-position se repeint à chaque image,
+       une boucle infinie occuperait le fil principal tant que la page est ouverte. */
+    animation: m-reflet 8s linear 2;
   }
 
   html.anim-on .m-point::after {
@@ -751,8 +771,9 @@ html:not(.js) .m-selecteur {
     animation: m-ping 2s var(--ease-out) infinite;
   }
 
-  /* Téléscripteur : une ligne qui défile, pause au survol, arrêt au focus
-     (le lien focalisé reste visible : WCAG 2.4.11). */
+  /* Téléscripteur : une ligne qui défile ; pause au survol et au focus pointeur
+     (le clic atteint le nom visé), arrêt et défilement jusqu'au lien au focus
+     clavier, sans fondu (le lien focalisé reste entier : WCAG 2.4.11). */
   html.anim-on .m-defile {
     padding-inline: 0;
     /* Les noms entrent et sortent en fondu plutôt que coupés net */
@@ -764,18 +785,15 @@ html:not(.js) .m-selecteur {
     animation: m-defile 48s linear infinite;
   }
 
+  /* Deux groupes strictement identiques : translateX(-50%) vaut alors la
+     largeur d'un groupe, et la boucle reprend sans saut. */
   html.anim-on .m-defile-groupe {
     flex-wrap: nowrap;
     padding-right: 1.5rem;
   }
 
-  html.anim-on .m-defile-groupe:first-child {
-    padding-left: 1rem;
-  }
-
   html.anim-on .m-defile-groupe + .m-defile-groupe {
     display: flex;
-    padding-left: 0;
   }
 
   html.anim-on .m-defile:hover .m-defile-piste {
@@ -783,6 +801,14 @@ html:not(.js) .m-selecteur {
   }
 
   html.anim-on .m-defile:focus-within .m-defile-piste {
+    animation-play-state: paused;
+  }
+
+  html.anim-on .m-defile:has(:focus-visible) {
+    mask-image: none;
+  }
+
+  html.anim-on .m-defile:has(:focus-visible) .m-defile-piste {
     animation: none;
   }
 
@@ -828,8 +854,11 @@ html:not(.js) .m-selecteur {
   }
 
   @supports (animation-timeline: scroll()) {
+    /* Base vide : une page sans défilement rend la timeline inactive, et la
+       barre ne doit pas y paraître « lue à 100 % ». */
     html.anim-on .m-prog {
       display: block;
+      transform: scaleX(0);
       animation: m-lecture linear both;
     }
 
@@ -915,5 +944,8 @@ html:not(.js) .m-selecteur {
 @keyframes m-lecture {
   from {
     transform: scaleX(0);
+  }
+  to {
+    transform: none;
   }
 }

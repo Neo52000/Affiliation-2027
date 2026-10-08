@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 
 /**
  * Sélecteur de métier d'un hub de famille. De vrais boutons radio, rendus en
@@ -28,6 +28,14 @@ const listeFr = (noms: string[]) =>
 
 export default function MetierPicker({ metiers }: Props) {
   const [choix, setChoix] = useState<string | null>(null);
+  const racine = useRef<HTMLDivElement>(null);
+
+  // Un choix fait avant l'hydratation, ou restauré par le navigateur au retour
+  // arrière, reste coché dans le DOM : l'état s'y aligne au montage.
+  useEffect(() => {
+    const coche = racine.current?.querySelector<HTMLInputElement>('input:checked');
+    if (coche) setChoix(coche.value);
+  }, []);
   const metier = metiers.find((m) => m.slug === choix) ?? null;
   const [reco, ...alternatives] = metier?.outils ?? [];
 
@@ -39,7 +47,7 @@ export default function MetierPicker({ metiers }: Props) {
       : '';
 
   return (
-    <div class="m-selecteur mt-6">
+    <div class="m-selecteur mt-6" ref={racine}>
       <fieldset>
         <legend class="font-bold">Votre métier dans cette famille</legend>
         <div class="m-puces mt-3">

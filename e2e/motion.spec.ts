@@ -45,6 +45,63 @@ test.describe('mouvement', () => {
   });
 });
 
+test.describe('téléscripteur', () => {
+  test.use({ reducedMotion: 'no-preference', viewport: { width: 1366, height: 900 } });
+
+  /** Cale la boucle à `ms` et renvoie le centre d'un lien entièrement visible du bandeau. */
+  const lienVisible = (page: Page, ms: number) =>
+    page.evaluate((t) => {
+      const piste = document.querySelector<HTMLElement>('.m-defile-piste');
+      const anim = piste?.getAnimations()[0];
+      if (!anim) return null;
+      anim.currentTime = t;
+      anim.pause();
+      const cadre = document.querySelector('.m-defile')!.getBoundingClientRect();
+      const liens = [...document.querySelectorAll<HTMLAnchorElement>('.m-defile a')];
+      const groupe2 = liens.slice(liens.length / 2);
+      const vu = groupe2.find((a) => {
+        const r = a.getBoundingClientRect();
+        return r.left > cadre.left + 40 && r.right < cadre.right - 40;
+      });
+      if (!vu) return null;
+      const r = vu.getBoundingClientRect();
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2, href: vu.getAttribute('href') };
+    }, ms);
+
+  test('un clic en milieu de boucle, même sur le doublon, ouvre le hub visé', async ({ page }) => {
+    await page.goto('/');
+    await expect.poll(() => boucles(page)).toBeGreaterThan(0);
+    const cible = await lienVisible(page, 30_000);
+    expect(cible).not.toBeNull();
+    await page.mouse.click(cible!.x, cible!.y, { delay: 120 });
+    await expect(page).toHaveURL(new RegExp(`${cible!.href}$`));
+  });
+
+  test('au clavier, le lien focalisé reste entier dans le bandeau', async ({ page }) => {
+    await page.goto('/');
+    await expect.poll(() => boucles(page)).toBeGreaterThan(0);
+    const lien = page.locator('.m-defile-groupe').first().getByRole('link', { name: 'Transport' });
+    await lien.focus();
+    const [cadre, boite] = await Promise.all([
+      page.locator('.m-defile').boundingBox(),
+      lien.boundingBox(),
+    ]);
+    expect(boite!.x).toBeGreaterThanOrEqual(cadre!.x);
+    expect(boite!.x + boite!.width).toBeLessThanOrEqual(cadre!.x + cadre!.width);
+  });
+});
+
+test('hub : un choix fait avant l’hydratation est repris par le sélecteur', async ({ page }) => {
+  await page.route('**/MetierPicker*.js', async (route) => {
+    await new Promise((r) => setTimeout(r, 1500));
+    await route.continue();
+  });
+  await page.goto('/metiers/batiment');
+  await page.getByRole('radio', { name: 'Plombier' }).check();
+  await page.waitForFunction(() => document.querySelectorAll('astro-island[ssr]').length === 0);
+  await expect(page.getByRole('status')).toContainText('Plombier :');
+});
+
 test.describe('mouvement réduit', () => {
   test.use({ reducedMotion: 'reduce' });
 

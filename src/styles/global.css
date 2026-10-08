@@ -150,16 +150,19 @@ h2 {
 /* Hero : halo décoratif en fond, sans incidence sur la mise en page */
 .hero {
   position: relative;
-  /* Le halo déborde de 1rem et dérive (motion.css) : il ne doit jamais
-     élargir la page sur un écran de 360 px. */
+  /* Le halo dérive (motion.css) : il ne doit jamais élargir la page. Chromium
+     ignore overflow-clip-margin quand un seul axe est découpé : la boîte de
+     découpe est élargie de 1rem sur la gouttière de main, le contenu ne bouge
+     pas, et anneaux de focus et ombres du bord restent entiers. */
   overflow-x: clip;
-  overflow-clip-margin: 1rem;
+  margin-inline: -1rem;
+  padding-inline: 1rem;
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  inset: -3rem -1rem -3rem;
+  inset: -3rem 0 -3rem;
   background: var(--hero-glow);
   /* Fondu sur les quatre bords : découpé au bord du hero (ou d'un en-tête
      court, sur les hubs et les fiches), le halo ne dessine jamais d'arête. */
@@ -488,6 +491,18 @@ a:hover {
   transition:
     opacity var(--duration-slow) var(--ease-out),
     transform var(--duration-slow) var(--ease-out);
+}
+
+/* Impression : un bloc pas encore révélé doit s'imprimer lisible. */
+@media print {
+  .reveal-ready {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .m-etapes.reveal-ready::after {
+    transform: none !important;
+  }
 }
 
 /* Garde d'accessibilité du mouvement — obligatoire, non optionnelle */

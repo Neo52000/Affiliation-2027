@@ -254,4 +254,35 @@ Un **bouton pause** dans l'en-tête arrête toutes les boucles (WCAG 2.2.2). Il 
 - banc Playwright sans anomalie (5 tailles, 2 thèmes, pause, mouvement réduit, sans JS, contrastes forcés, axe WCAG 2.2 AA) ;
 - Lighthouse 100/100/100/100 en desktop et en mobile sur 6 types de page, sous la vraie CSP avec compression.
 
+**Revue contradictoire en 3 dimensions** (affirmations, mouvement, accessibilité ; 28 agents, chaque constat soumis à un sceptique) : 25 constats, **22 confirmés et tous corrigés**.
+
+Le téléscripteur concentrait le pire, avec un constat bloquant en accessibilité :
+
+- un clic en cours de boucle ne naviguait pas, car le focus au clic remettait la piste à zéro ;
+- le doublon `inert` était visible mais inerte au pointeur ;
+- au clavier, le lien focalisé était rogné sous le fondu (WCAG 2.4.11).
+
+Correctif : la pause au focus pointeur, l'arrêt et le défilement jusqu'au lien au seul focus clavier, et un doublon cliquable mais hors tabulation.
+
+Les autres corrections :
+
+- **Hero** : `overflow-clip-margin` est ignoré par Chromium quand un seul axe est découpé, ce qui rognait anneaux de focus et ombres. La boîte de découpe est désormais élargie.
+- **Compteur** : il affichait « -5 » sur une ou deux images (origine du temps).
+- **Barre de lecture** : elle paraissait pleine sur une page qui ne défile pas.
+- **Reflet des titres** : l'animation était infinie et non compositée ; elle est désormais bornée à 2 passages.
+- **Fiche outil** :
+  - marge de la frise annulée par motion.css ;
+  - pastille et frise du protocole lues dans deux collections, désormais un seul prédicat, avec un test de concordance et un schéma qui exige la date d'un test mené ;
+  - offre non relevée omise du tableau des tarifs.
+- **Accueil** :
+  - badge de la réforme non sourcé, désormais « Réception des factures électroniques obligatoire depuis le … », avec sa source impots.gouv.fr ;
+  - promesse « deux questions » sans lien vers le simulateur ;
+  - « passés au crible » remplacé par « comparés ».
+- **Sélecteur** : un choix fait avant l'hydratation était perdu.
+- **Impression** : les blocs non révélés sortaient blancs.
+- **Rangs des étapes** : ils étaient masqués à VoiceOver.
+
+**Réfutés** : 3 constats.
+**Tests de non-régression ajoutés** : clic en milieu de boucle (doublon compris), focus clavier entier, choix avant hydratation. Bilan : 14 parcours e2e et 119 tests verts.
+
 Les 40 points de facturation par famille arrivent dans une PR séparée, après leur vérification contradictoire.

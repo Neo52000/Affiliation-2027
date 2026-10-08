@@ -140,6 +140,9 @@ export const ficheTestSchema = z
   })
   .refine((t) => t.statut !== 'a_tester' || (t.resultats === null && t.date_test === null), {
     message: 'Une fiche a_tester ne porte ni résultats ni date de test',
+  })
+  .refine((t) => t.statut !== 'teste' || t.date_test !== null, {
+    message: 'Une fiche teste porte sa date de test',
   });
 
 export const guideSchema = z.object({
