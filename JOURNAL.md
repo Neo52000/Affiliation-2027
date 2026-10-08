@@ -286,3 +286,37 @@ Les autres corrections :
 **Tests de non-régression ajoutés** : clic en milieu de boucle (doublon compris), focus clavier entier, choix avant hydratation. Bilan : 14 parcours e2e et 119 tests verts.
 
 Les 40 points de facturation par famille arrivent dans une PR séparée, après leur vérification contradictoire.
+
+## Points de facturation par famille (2026-10-08)
+
+Les 10 hubs affichent désormais **4 points de facturation propres à leur famille**, soit 40 points (`src/data/points-familles.json`). Chaque point a suivi trois étapes :
+
+- **rédaction** à partir des 10 fiches de la famille : il généralise ce qu'établissent au moins 2 fiches, sans extrapoler ;
+- **vérification contradictoire** contre sa source officielle : l'extrait est retrouvé, recherche restreinte au domaine .gouv.fr ;
+- **correction** avant publication.
+
+Les vérificateurs ont fait corriger des affirmations trop larges. Exemples :
+
+- la facture d'acompte limitée aux clients professionnels et personnes morales, comme le prévoit le BOFiP ;
+- l'autoliquidation limitée au donneur d'ordre, jamais au client final ;
+- le taux de 5,5 % des produits préparés livrés à un revendeur.
+
+**Garde-fous** (`src/lib/points-familles.test.ts`) :
+
+- 10 familles de 4 points ;
+- au moins 2 métiers existants de la famille par point ;
+- chaque source est un document .gouv.fr **déjà cité par un métier concerné** ;
+- aucune année dans les textes.
+
+Le nombre de documents .gouv.fr cités reste à 367 : aucune source nouvelle et non vérifiée n'est entrée.
+
+**Reprise après la limite de session :** la reprise du workflow relançait aussi des corrections déjà faites, car l'ordre des appels varie avec le parallélisme et le cache ne couvre qu'un préfixe. Elle a été arrêtée, et les 2 corrections manquantes ont tourné à part, à partir des rédactions et vérifications du journal.
+
+**Effet de bord sur les fiches métier.** Les vérificateurs ont signalé des inexactitudes à reprendre dans une passe séparée :
+
+- maçon, couvreur, plombier, traiteur et chef à domicile généralisent la facture d'acompte aux particuliers ;
+- chef à domicile prête à l'option pour les débits un report d'exigibilité ;
+- carreleur, plaquiste et ferronnier citent une version antérieure du BOI-TVA-DECLA-10-10-20 ;
+- fleuriste parle de « vente à distance » sans préciser « intracommunautaire ».
+
+**Résultats :** 124 tests et 14 parcours e2e verts, banc motion sans anomalie, Lighthouse 100/100/100/100 sur deux hubs en desktop et en mobile.

@@ -1,0 +1,596 @@
+{
+  "date_releve": "2026-10-08",
+  "methode": "Chaque point généralise ce que disent au moins deux fiches métier de la famille. Il a été rédigé, puis vérifié contradictoirement contre sa source officielle (passage cité retrouvé, recherche restreinte au domaine .gouv.fr), puis corrigé avant publication.",
+  "familles": {
+    "batiment": [
+      {
+        "titre": "Situations de travaux : une facture et la TVA à chaque acompte",
+        "texte": "Sur un chantier facturé par acomptes ou situations, chaque acompte réglé avant l'achèvement par un client professionnel ou une personne morale appelle une facture. La TVA est exigible à l'encaissement de chaque acompte, sauf option pour le paiement d'après les débits.",
+        "metiers_concernes": ["macon", "couvreur", "plombier"],
+        "sources": [
+          {
+            "titre": "BOFiP — Obligation de délivrer une facture pour les acomptes (BOI-TVA-DECLA-30-20-10-10)",
+            "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+          },
+          {
+            "titre": "BOFiP — TVA, fait générateur et exigibilité des prestations de services : TVA exigible à l'encaissement des acomptes (BOI-TVA-BASE-20-20)",
+            "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+          }
+        ]
+      },
+      {
+        "titre": "Retenue de garantie : au plus 5 % de vos acomptes en marché privé",
+        "texte": "Si le contrat le prévoit, le paiement de vos acomptes peut être amputé d'une retenue de garantie de 5 % au plus. Elle vous est versée un an après la réception des travaux, sauf opposition motivée du maître d'ouvrage.",
+        "metiers_concernes": ["macon", "carreleur"],
+        "sources": [
+          {
+            "titre": "Légifrance — Loi n° 71-584 du 16 juillet 1971 réglementant les retenues de garantie dans les marchés privés de travaux",
+            "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000687670"
+          },
+          {
+            "titre": "Loi n° 71-584 du 16 juillet 1971, article 1 — Retenue de garantie dans les marchés privés de travaux",
+            "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039280616"
+          }
+        ]
+      },
+      {
+        "titre": "Autoliquidation : seulement vers votre donneur d'ordre",
+        "texte": "L'autoliquidation ne vaut que pour vos factures de sous-traitant adressées à votre donneur d'ordre, même sous-traitant lui-même, jamais pour le client final. Vous déclarez alors leur montant hors taxes sur la ligne « autres opérations non imposables » de votre déclaration.",
+        "metiers_concernes": ["carreleur", "plaquiste"],
+        "sources": [
+          {
+            "titre": "BOI-TVA-DECLA-10-10-20 — Autoliquidation de la TVA en sous-traitance de travaux de construction",
+            "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+          }
+        ]
+      },
+      {
+        "titre": "Matériel acheté par le client : il reste à 20 %",
+        "texte": "Dans un logement achevé depuis plus de deux ans, les fournitures que vous facturez avec vos travaux peuvent suivre leur taux réduit. Si le client achète lui-même le matériel, cet achat reste à 20 % : seule votre pose peut alors bénéficier du taux réduit.",
+        "metiers_concernes": ["carreleur", "menuisier", "plombier"],
+        "sources": [
+          {
+            "titre": "Impots.gouv.fr — Quel taux de TVA appliquer pour les travaux réalisés dans les logements ? (taux réduits, matériaux achetés par le client, équipements mobiliers exclus)",
+            "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+          },
+          {
+            "titre": "BOI-ANNX-000202 — Taux de TVA applicables aux matières premières et fournitures mises en œuvre dans des locaux d'habitation achevés depuis plus de deux ans",
+            "url": "https://bofip.impots.gouv.fr/bofip/1667-PGP.html/identifiant=BOI-ANNX-000202-20140929"
+          }
+        ]
+      }
+    ],
+    "sante": [
+      {
+        "titre": "Ostéopathe, psychologue, diététicien : l'exonération suit le titre",
+        "texte": "Vos soins ne sont exonérés que si vous faites légalement usage de votre titre professionnel. À défaut, vos actes relèvent de la TVA et vos notes d'honoraires ne peuvent pas porter la référence à l'article 261, 4, 1° du CGI.",
+        "metiers_concernes": ["osteopathe", "psychologue", "dieteticien"],
+        "sources": [
+          {
+            "titre": "BOFiP – TVA – Exonérations – Professions médicales et paramédicales (BOI-TVA-CHAMP-30-10-20-10)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+          },
+          {
+            "titre": "Légifrance – Code de la santé publique, articles L. 4371-1 à L. 4371-9 (exercice et protection du titre)",
+            "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072665/LEGISCTA000006171333/"
+          }
+        ]
+      },
+      {
+        "titre": "Prothèse dentaire, orthèse plantaire : exonérées si liées à vos soins",
+        "texte": "La prothèse dentaire faite sur mesure pour votre patient, ou l'orthèse plantaire que vous fabriquez et vendez à la personne soignée, suit l'exonération des soins. Détachée des soins (vente à une personne non soignée, aligneur fourni isolément), la fourniture est taxable.",
+        "metiers_concernes": ["chirurgien-dentiste", "pedicure-podologue"],
+        "sources": [
+          {
+            "titre": "BOFiP BOI-TVA-CHAMP-30-10-20-10 – exonération des soins des pédicures-podologues, extension aux orthèses fournies dans le prolongement direct des soins, exclusion des ventes à des personnes non soignées",
+            "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+          },
+          {
+            "titre": "BOFiP – Actualité – Précision sur le champ de l'exonération applicable à la fourniture de prothèses dentaires (ACTU-2023-00005)",
+            "url": "https://bofip.impots.gouv.fr/bofip/13795-PGP.html/ACTU-2023-00005"
+          }
+        ]
+      },
+      {
+        "titre": "Remplacement et collaboration : deux régimes de TVA distincts",
+        "texte": "Les honoraires que vous rétrocédez à votre remplaçant restent exonérés : ils rémunèrent des soins. La somme que vous conservez pour la mise à disposition du cabinet est taxable, sauf remplacement occasionnel, et la redevance facturée à un collaborateur l'est aussi.",
+        "metiers_concernes": ["infirmier-liberal", "kinesitherapeute"],
+        "sources": [
+          {
+            "titre": "BOFiP – Rescrit – Régime de TVA des rétrocessions d'honoraires entre deux professionnels de santé dans le cadre d'un contrat de remplacement (BOI-RES-TVA-000056)",
+            "url": "https://bofip.impots.gouv.fr/bofip/12016-PGP.html/identifiant=BOI-RES-TVA-000056-20210309"
+          },
+          {
+            "titre": "BOFiP — Exonération des soins dispensés par les professions paramédicales réglementées, dont les masseurs-kinésithérapeutes ; régime des contrats de collaboration et de remplacement (BOI-TVA-CHAMP-30-10-20-10)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+          }
+        ]
+      },
+      {
+        "titre": "Atelier, formation, supervision : une mention distincte de vos soins",
+        "texte": "Un atelier en entreprise, une formation ou une supervision sans finalité thérapeutique sort de l'exonération des soins. Si cette prestation est taxable, sa ligne porte sous franchise « TVA non applicable, article 293 B du CGI », jamais la référence à l'article 261, 4, 1° du CGI.",
+        "metiers_concernes": ["dieteticien", "osteopathe", "psychologue", "orthophoniste"],
+        "sources": [
+          {
+            "titre": "BOFiP BOI-TVA-CHAMP-30-10-20-10 – exonération des soins conditionnée, pour les psychologues et psychothérapeutes, à l'usage légal du titre ; actes sans finalité thérapeutique taxables",
+            "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
+          },
+          {
+            "titre": "BOFiP – TVA – Franchise en base et mention « TVA non applicable, article 293 B du CGI » (BOI-TVA-DECLA-40-10-20)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
+          }
+        ]
+      }
+    ],
+    "commerce": [
+      {
+        "titre": "Biens d'occasion à la marge : une facture sans TVA apparente",
+        "texte": "Un bijou ou un meuble d'occasion racheté à un particulier puis revendu sous le régime de la marge se facture sans aucune TVA apparente, même à un client professionnel, avec la mention « Régime particulier - Biens d'occasion ».",
+        "metiers_concernes": ["bijoutier", "brocanteur-antiquaire"],
+        "sources": [
+          {
+            "titre": "BOFiP — Mentions obligatoires générales des factures, dont « Régime particulier - Biens d'occasion » (BOI-TVA-DECLA-30-20-20-10)",
+            "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20131018"
+          },
+          {
+            "titre": "BOFiP — TVA sur la marge des biens d'occasion vendus par des assujettis-revendeurs (BOI-TVA-SECT-90-20-20)",
+            "url": "https://bofip.impots.gouv.fr/bofip/13268-PGP.html/identifiant=BOI-TVA-SECT-90-20-20-20250514"
+          }
+        ]
+      },
+      {
+        "titre": "Coffret vendu comme un tout : un seul taux pour tout le prix",
+        "texte": "Un coffret vendu comme un tout constitue en principe une opération unique : son prix ne se ventile pas entre ses produits. S'il contient une bouteille de vin non accessoire, tout le prix passe au taux normal ; pour appliquer à chaque produit son taux, vendez-les séparément.",
+        "metiers_concernes": ["caviste", "epicerie-fine"],
+        "sources": [
+          {
+            "titre": "BOFiP — Offres composites : traitement fiscal unique, exclusion de la ventilation de la base (BOI-TVA-CHAMP-60-30)",
+            "url": "https://bofip.impots.gouv.fr/bofip/13877-PGP.html/identifiant=BOI-TVA-CHAMP-60-30-20250514"
+          },
+          {
+            "titre": "BOFiP — Taux réduits, produits destinés à l'alimentation humaine (exclusion des boissons alcooliques, taux normal)",
+            "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
+          }
+        ]
+      },
+      {
+        "titre": "Alimentaire à 5,5 % : des exceptions au taux normal en rayon",
+        "texte": "Les produits destinés à l'alimentation humaine relèvent du taux réduit de 5,5 %, sauf exceptions au taux normal : boissons alcooliques, confiseries, certains chocolats, caviar, margarines et graisses végétales. Vérifiez le taux de chaque référence.",
+        "metiers_concernes": ["epicerie-fine", "boucher-charcutier"],
+        "sources": [
+          {
+            "titre": "BOFiP — Taux réduit de 5,5 % sur l'alimentation humaine et exceptions au taux normal (confiseries, certains chocolats, caviar, margarines, boissons alcooliques)",
+            "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
+          }
+        ]
+      },
+      {
+        "titre": "Client particulier : une facture seulement s'il la demande",
+        "texte": "Pour un bien vendu à un particulier en France, la facture n'est obligatoire que s'il la demande. Elle l'est d'office pour une vente à distance intracommunautaire, quand vous expédiez le bien à un particulier d'un autre État de l'Union européenne.",
+        "metiers_concernes": ["e-commercant", "fleuriste"],
+        "sources": [
+          {
+            "titre": "BOFiP BOI-TVA-DECLA-30-20-10-10 — Obligation de facturation : ventes à distance intracommunautaires (article 258 A du CGI), absence d'obligation pour une livraison interne à la France à un non-assujetti",
+            "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+          },
+          {
+            "titre": "economie.gouv.fr – Mentions obligatoires d'une facture : tout savoir (cas du client particulier)",
+            "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
+          }
+        ]
+      }
+    ],
+    "services": [
+      {
+        "titre": "Acomptes et forfaits payés d'avance : TVA due à l'encaissement",
+        "texte": "Acompte de réservation, cure payée d'avance, versements d'un reportage de mariage ou d'un événement : en prestation de services, la TVA est exigible à chaque encaissement, sans attendre la séance ou le jour J ; sur option pour les débits, dès la facturation.",
+        "metiers_concernes": ["estheticienne", "organisateur-evenements", "photographe"],
+        "sources": [
+          {
+            "titre": "BOFiP — Fait générateur et exigibilité de la TVA : prestations de services, encaissements et acomptes (BOI-TVA-BASE-20-20)",
+            "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+          }
+        ]
+      },
+      {
+        "titre": "Ménage chez un particulier : 10 % réservé aux structures déclarées",
+        "texte": "Le taux réduit de 10 % sur l'entretien de la maison et les travaux ménagers chez un particulier est réservé aux structures déclarées au titre des services à la personne. Sans cette déclaration, ces prestations sont exclues du taux réduit.",
+        "metiers_concernes": ["aide-a-domicile", "entreprise-nettoyage"],
+        "sources": [
+          {
+            "titre": "BOFiP — Taux réduits des services d'aide à la personne : déclaration, agrément ou autorisation (BOI-TVA-LIQ-30-20-80)",
+            "url": "https://bofip.impots.gouv.fr/bofip/780-PGP.html/identifiant=BOI-TVA-LIQ-30-20-80-20190515"
+          },
+          {
+            "titre": "DGCCRF — Services à la personne : quelle réglementation ? (déclaration, agrément, autorisation)",
+            "url": "https://economie.gouv.fr/dgccrf/services-a-personne-quelle-reglementation"
+          }
+        ]
+      },
+      {
+        "titre": "Garage, auto-école : une note au contenu propre à votre secteur",
+        "texte": "Au garage, la note remise au particulier indique le kilométrage au compteur et précise si chaque pièce est neuve, d'occasion ou en échange standard. À l'auto-école, la note d'un forfait énumère en détail les prestations qu'il comprend.",
+        "metiers_concernes": ["garagiste", "auto-ecole"],
+        "sources": [
+          {
+            "titre": "DGCCRF – Véhicule automobile : l'ordre de réparation décrit la nature des travaux à effectuer",
+            "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques-et-les-faq/vehicule-automobile-lordre-de-reparation-decrit-la-nature"
+          },
+          {
+            "titre": "Arrêté du 19 juin 1987 relatif à la publicité des prix des prestations d'enseignement de la conduite — Légifrance",
+            "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000495195"
+          }
+        ]
+      },
+      {
+        "titre": "Cession de droits, formation exonérée : une ligne à part",
+        "texte": "Le photographe facture la cession de ses droits d'auteur sur une ligne distincte de la prise de vue : seule cette ligne relève du taux réduit de 10 %, sauf en franchise en base. Le formateur sépare la formation exonérée sous attestation du conseil, qui reste taxable.",
+        "metiers_concernes": ["photographe", "formateur"],
+        "sources": [
+          {
+            "titre": "BOFiP – Taux réduit de 10 % sur les cessions de droits patrimoniaux des auteurs d'œuvres de l'esprit",
+            "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20250514"
+          },
+          {
+            "titre": "BOFiP — Exonérations de TVA : enseignement et formation professionnelle continue, attestation de l'autorité administrative et prise d'effet au jour de la réception de la demande (BOI-TVA-CHAMP-30-10-20-50)",
+            "url": "https://bofip.impots.gouv.fr/bofip/943-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-50-20191016"
+          },
+          {
+            "titre": "BOFiP – Franchise en base : facturation sans TVA et mention de l'article 293 B du CGI",
+            "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+          }
+        ]
+      }
+    ],
+    "liberal": [
+      {
+        "titre": "Débours hors base de TVA : conditions à respecter",
+        "texte": "Les sommes avancées sur mandat, au nom et pour le compte du client, sortent de la base de TVA si elles sont justifiées, font l'objet d'une reddition de comptes exacte et passent en comptes de passage. Vos autres frais refacturés, déplacements compris, restent taxables.",
+        "metiers_concernes": [
+          "avocat",
+          "commissaire-de-justice",
+          "expert-comptable",
+          "notaire",
+          "diagnostiqueur-immobilier"
+        ],
+        "sources": [
+          {
+            "titre": "Frais refacturés et débours : base d'imposition à la TVA (BOFiP, BOI-TVA-BASE-10-10-30)",
+            "url": "https://bofip.impots.gouv.fr/bofip/488-PGP.html/identifiant=BOI-TVA-BASE-10-10-30-20220511"
+          },
+          {
+            "titre": "BOFiP – TVA, base d'imposition : débours des professions libérales exclus de la base sous conditions, art. 267, II-2° du CGI (BOI-TVA-BASE-10-20-40-30)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1476-PGP.html/identifiant=BOI-TVA-BASE-10-20-40-30-20241009"
+          }
+        ]
+      },
+      {
+        "titre": "Émoluments tarifés : le tarif réglementé n'exonère pas",
+        "texte": "Le caractère réglementé d'un tarif n'emporte aucune exonération : émoluments et honoraires libres entrent dans la base de TVA, quelle que soit leur qualification, et relèvent du taux normal. Chaque ligne d'émolument de votre facture ou état de frais porte donc la TVA.",
+        "metiers_concernes": ["notaire", "commissaire-de-justice"],
+        "sources": [
+          {
+            "titre": "BOFiP — TVA, taux normal applicable aux prestations des professions libérales et officiers publics (BOI-TVA-LIQ-20-20)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+          },
+          {
+            "titre": "BOFiP — Base d'imposition, opérations réalisées par les membres de certaines professions libérales, dont les notaires (BOI-TVA-BASE-10-20-40-30)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1476-PGP.html/identifiant=BOI-TVA-BASE-10-20-40-30-20241009"
+          }
+        ]
+      },
+      {
+        "titre": "Études et diagnostics : pas de taux réduit des travaux",
+        "texte": "Un diagnostic reste toujours au taux normal, tout comme une étude facturée isolément, même pour un logement. Seul l'auteur d'études qui assure ensuite la maîtrise d'œuvre ou les travaux éligibles peut appliquer leur taux réduit à ses études, par facture rectificative.",
+        "metiers_concernes": ["architecte", "diagnostiqueur-immobilier", "geometre-expert"],
+        "sources": [
+          {
+            "titre": "Taux réduits limités à certains travaux sur locaux d'habitation (BOFiP, BOI-TVA-LIQ-30-20-90-30)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1733-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-30-20240731"
+          },
+          {
+            "titre": "BOFiP — TVA, taux normal applicable aux prestations des experts et professions libérales (BOI-TVA-LIQ-20-20)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+          }
+        ]
+      },
+      {
+        "titre": "Client assujetti dans l'UE : autoliquidation, sauf immeuble",
+        "texte": "Pour un client assujetti établi dans un autre État de l'UE, votre facture est émise sans TVA française et porte la mention « autoliquidation ». Exception : la mission d'architecte se rattachant à un immeuble est imposée où il se situe ; en France, elle porte la TVA française.",
+        "metiers_concernes": ["consultant", "expert-comptable", "traducteur", "architecte"],
+        "sources": [
+          {
+            "titre": "impots.gouv.fr — Prestations de services entre assujettis (autoliquidation intracommunautaire)",
+            "url": "https://www.impots.gouv.fr/professionnel/prestations-entre-assujettis"
+          },
+          {
+            "titre": "BOFiP — Lieu des prestations se rattachant à un immeuble, dont prestations d'architectes (BOI-TVA-CHAMP-20-50-30)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1490-PGP.html/identifiant=BOI-TVA-CHAMP-20-50-30-20201204"
+          }
+        ]
+      }
+    ],
+    "artisanat": [
+      {
+        "titre": "Acompte sur mesure ou restauration : TVA exigible à l'encaissement",
+        "texte": "Si vous facturez la TVA, l'acompte encaissé à la commande ou à la prise en charge la rend exigible à hauteur de son montant, que vous vendiez un ouvrage (livraison de bien) ou que vous posiez un ouvrage ou restauriez le meuble ou le siège d'un client (prestation de services).",
+        "metiers_concernes": ["ebeniste", "ferronnier", "tapissier"],
+        "sources": [
+          {
+            "titre": "Exigibilité de la TVA sur les acomptes perçus dans le cadre de livraisons de biens (BOFiP, actualité)",
+            "url": "https://bofip.impots.gouv.fr/bofip/13758-PGP.html/ACTU-2022-00148"
+          },
+          {
+            "titre": "BOFiP BOI-TVA-BASE-20-20 — Prestations de services : exigibilité de la TVA à l'encaissement des acomptes, du prix ou de la rémunération",
+            "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+          }
+        ]
+      },
+      {
+        "titre": "Pièce unique faite main : le taux des œuvres d'art reste l'exception",
+        "texte": "La liste fiscale des œuvres d'art est limitative : une céramique n'y entre qu'en exemplaire unique, entièrement exécuté et signé par l'artiste, et aucune catégorie ne couvre la bijouterie, expressément exclue des émaux sur cuivre. Le fait main ou la pièce unique ne suffisent pas.",
+        "metiers_concernes": ["ceramiste", "createur-bijoux"],
+        "sources": [
+          {
+            "titre": "Article 98 A de l'annexe III au Code général des impôts : liste limitative des œuvres d'art (Légifrance)",
+            "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006298775"
+          },
+          {
+            "titre": "BOFiP BOI-TVA-SECT-90-40 : dispositions particulières applicables aux œuvres d'art, objets de collection ou d'antiquité",
+            "url": "https://bofip.impots.gouv.fr/bofip/1285-PGP.html/identifiant=BOI-TVA-SECT-90-40-20250514"
+          }
+        ]
+      },
+      {
+        "titre": "Travaux dans un logement de plus de deux ans : 10 % sur certification",
+        "texte": "Pour vos travaux dans un logement achevé depuis plus de deux ans, le taux réduit de 10 % suppose en principe que le client certifie, sur le devis ou la facture, que les conditions sont remplies ; une tolérance existe pour les petits travaux d'entretien et de réparation.",
+        "metiers_concernes": ["ferronnier", "serrurier"],
+        "sources": [
+          {
+            "titre": "Quel taux de TVA appliquer pour les travaux réalisés dans les logements ? (impots.gouv.fr)",
+            "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+          },
+          {
+            "titre": "BOFiP BOI-TVA-LIQ-30-20-90-40 : travaux dans les locaux d'habitation de plus de deux ans, modalités d'application et certification sur devis ou facture",
+            "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20260909"
+          }
+        ]
+      },
+      {
+        "titre": "Pose sous-traitée : facture sans TVA et mention « Autoliquidation »",
+        "texte": "Si vous êtes redevable de la TVA et posez des ouvrages en sous-traitance sur un chantier pour une métallerie ou une entreprise générale assujettie, votre facture ne mentionne pas la TVA et porte la mention « Autoliquidation » : la taxe est due par votre donneur d'ordre.",
+        "metiers_concernes": ["ferronnier", "serrurier"],
+        "sources": [
+          {
+            "titre": "BOFiP BOI-TVA-DECLA-10-10-20 : autoliquidation de la TVA en sous-traitance de travaux de bâtiment, mention « Autoliquidation »",
+            "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20251022"
+          }
+        ]
+      }
+    ],
+    "numerique": [
+      {
+        "titre": "Création au taux normal, cession de droits d'auteur à 10 %",
+        "texte": "Si vous cédez vos droits d'auteur sur un visuel, un film ou un texte, la création reste au taux normal : seule la cession des droits patrimoniaux peut relever du taux réduit de 10 %. Valorisez-la sur sa propre ligne, avec son prix, pour justifier ce taux.",
+        "metiers_concernes": ["graphiste", "motion-designer", "redacteur-web", "community-manager"],
+        "sources": [
+          {
+            "titre": "BOFiP — Taux réduit de 10 % sur les cessions de droits patrimoniaux d'auteur (BOI-TVA-LIQ-30-20-100, version en vigueur)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20260415"
+          },
+          {
+            "titre": "BOFiP — Taux normal de TVA de 20 % applicable par défaut (BOI-TVA-LIQ-20-20)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+          }
+        ]
+      },
+      {
+        "titre": "Droits sur un logiciel : pas de taux réduit de 10 %",
+        "texte": "Le taux réduit de 10 % des cessions de droits d'auteur exclut les droits portant sur les logiciels : si vous cédez des droits sur un logiciel, facturez cette cession au taux normal.",
+        "metiers_concernes": ["ux-designer", "motion-designer", "graphiste"],
+        "sources": [
+          {
+            "titre": "BOFiP — Exclusion des droits portant sur les logiciels du taux réduit de 10 % (BOI-TVA-LIQ-30-20-100, version en vigueur)",
+            "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20260415"
+          }
+        ]
+      },
+      {
+        "titre": "Client professionnel hors UE : mention de l'article 259-1 du CGI",
+        "texte": "Pour un client assujetti établi hors de l'Union européenne, votre prestation n'est pas soumise à la TVA française : facturez hors taxe avec la mention « TVA non applicable – art. 259-1 du CGI ».",
+        "metiers_concernes": ["developpeur-freelance", "ux-designer"],
+        "sources": [
+          {
+            "titre": "impots.gouv.fr — Prestations de services entre assujettis : règles de territorialité et mention « TVA non applicable – art. 259-1 du CGI »",
+            "url": "https://www.impots.gouv.fr/professionnel/prestations-entre-assujettis"
+          }
+        ]
+      },
+      {
+        "titre": "Régie au TJM : jours, taux journalier et bon de commande",
+        "texte": "En régie, votre facture indique les jours travaillés en quantité, votre TJM en prix unitaire hors taxe, la date de la prestation et, lorsque votre client en a établi un, le numéro de son bon de commande.",
+        "metiers_concernes": ["data-analyst", "developpeur-freelance"],
+        "sources": [
+          {
+            "titre": "Economie.gouv.fr – Mentions obligatoires d'une facture : tout savoir",
+            "url": "https://www.economie.gouv.fr/entreprises/factures-mentions-obligatoires"
+          }
+        ]
+      }
+    ],
+    "transport": [
+      {
+        "titre": "Plateforme qui facture en votre nom : quelle mention ?",
+        "texte": "Sous mandat de facturation, la facture établie en votre nom par votre client, plateforme cliente comprise, porte la mention « Autofacturation » ; établie par un tiers mandaté qui n'est pas votre client, elle ne la porte pas. Vous restez responsable de son contenu.",
+        "metiers_concernes": ["coursier-velo", "vtc"],
+        "sources": [
+          {
+            "titre": "BOFiP — Délivrance des factures : mandat de facturation, facturation par un tiers et mention « Autofacturation »",
+            "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+          },
+          {
+            "titre": "BOFiP – Délivrance de factures : mandat de facturation et autofacturation (mention « Autofacturation » lorsque le client facture, mention recommandée « Facture établie par A au nom et pour le compte de B » pour le tiers mandaté, responsabilité du fournisseur, double de la facture)",
+            "url": "https://bofip.impots.gouv.fr/bofip/13244-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-30-20210813"
+          }
+        ]
+      },
+      {
+        "titre": "Transport ou location de véhicule : pas le même taux",
+        "texte": "Le taux réduit ne vaut que pour un véritable transport de voyageurs : une mise à disposition de véhicule qui s'analyse en location, faute de véritable contrat de transport, se facture au taux normal.",
+        "metiers_concernes": ["autocariste", "vtc"],
+        "sources": [
+          {
+            "titre": "BOFiP – TVA, taux réduit : transports de voyageurs (taxis, mise à disposition de véhicules avec chauffeur, suppléments bagages)",
+            "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+          }
+        ]
+      },
+      {
+        "titre": "Taxi, dépannage sur autoroute : des prix encadrés par arrêté",
+        "texte": "La course de taxi respecte des tarifs maximaux fixés par arrêté ; le dépannage des véhicules légers sur autoroute, un forfait fixé par arrêté et majoré la nuit, le week-end et les jours fériés. Le montant facturé applique ce tarif réglementé, jamais un prix libre.",
+        "metiers_concernes": ["taxi", "depanneur-auto"],
+        "sources": [
+          {
+            "titre": "Légifrance — Décret n° 2015-1252 du 7 octobre 2015 relatif aux tarifs des courses de taxi",
+            "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031285847"
+          },
+          {
+            "titre": "Véhicules : que faire en cas de panne sur autoroute ? (DGCCRF, economie.gouv.fr)",
+            "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/vehicules-que-faire-en-cas-de-panne-sur-autoroute"
+          }
+        ]
+      },
+      {
+        "titre": "VSL, taxi conventionné, TPMR : pas d'exonération de TVA",
+        "texte": "Faute de transporteur sanitaire agréé ou de véhicule spécialement aménagé, pas d'exonération : le VSL n'est pas un véhicule spécialement aménagé. Une course en VSL, en taxi conventionné ou en véhicule TPMR à rampe se facture au taux réduit, sans mention d'exonération.",
+        "metiers_concernes": ["ambulancier", "taxi", "tpmr"],
+        "sources": [
+          {
+            "titre": "BOFiP — Exonération des transports sanitaires en véhicules spécialement aménagés (article 261, 4-3° du CGI) et cas des VSL",
+            "url": "https://bofip.impots.gouv.fr/bofip/709-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-40-20120912"
+          },
+          {
+            "titre": "BOFiP — TVA, taux réduit : transports de voyageurs (BOI-TVA-LIQ-30-20-60)",
+            "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
+          }
+        ]
+      }
+    ],
+    "restauration": [
+      {
+        "titre": "Produits préparés livrés à un revendeur : 5,5 %, pas 10 %",
+        "texte": "Les sandwichs ou les glaces que vous livrez à un restaurant ou à un commerçant assujetti qui les revendra relèvent de 5,5 %, même prêts à être consommés : seule la vente au consommateur final peut relever de 10 %.",
+        "metiers_concernes": ["boulanger", "glacier"],
+        "sources": [
+          {
+            "titre": "BOFIP, rescrit BOI-RES-TVA-000205 : les livraisons de produits alimentaires préparés entre assujettis, en amont de la vente au consommateur final, relèvent de 5,5 % ; le taux de 10 % ne vise que la vente au consommateur final",
+            "url": "https://bofip.impots.gouv.fr/bofip/14665-PGP.html/identifiant=BOI-RES-TVA-000205-20251119"
+          }
+        ]
+      },
+      {
+        "titre": "Pain, viennoiseries, pâtisseries : 5,5 % même mangés aussitôt",
+        "texte": "Le pain, les viennoiseries et les pâtisseries sucrées vendus à emporter ou livrés restent à 5,5 %, quel que soit leur conditionnement et même s'ils sont mangés tout de suite. Servis sur place (salon de thé, service en réception), ils passent à 10 %.",
+        "metiers_concernes": ["boulanger", "patissier"],
+        "sources": [
+          {
+            "titre": "BOFIP, BOI-TVA-LIQ-30-10-10 : le pain, les viennoiseries et les pâtisseries sucrées ne sont pas des produits préparés en vue d'une consommation immédiate et relèvent du taux de 5,5 %",
+            "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+          },
+          {
+            "titre": "BOFIP, annexe BOI-ANNX-000495 : taux des ventes à emporter ou à livrer — produits pour consommation immédiate (10 %) ou conditionnés pour consommation différée (5,5 %)",
+            "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+          },
+          {
+            "titre": "BOFIP : TVA à 10 % sur les ventes à consommer sur place, à l'exclusion des boissons alcooliques",
+            "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20201014"
+          }
+        ]
+      },
+      {
+        "titre": "Note au client dès 25 € TTC pour une consommation sur place",
+        "texte": "Un repas, une boisson ou une coupe servis sur place constituent une prestation de services : vous devez remettre une note au client dès que le prix atteint 25 € TTC, et en dessous de ce montant s'il la demande.",
+        "metiers_concernes": ["bar-brasserie", "glacier", "food-truck", "pizzeria", "restaurateur"],
+        "sources": [
+          {
+            "titre": "Légifrance – Arrêté n° 83-50/A du 3 octobre 1983 relatif à la publicité des prix de tous les services (note obligatoire dès 25 € TTC, contenu, double exemplaire)",
+            "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+          },
+          {
+            "titre": "DGCCRF (economie.gouv.fr) – Cafés et bars : quelles obligations pour les professionnels ? (affichage extérieur et intérieur, note dès 25 € TTC)",
+            "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/cafes-et-bars-quelles-obligations-pour-les-professionnels"
+          }
+        ]
+      },
+      {
+        "titre": "Acompte d'un client professionnel : facture d'acompte et TVA",
+        "texte": "Pour une réception ou un repas à domicile commandé par une entreprise, chaque acompte encaissé avant la prestation appelle une facture d'acompte. Si vous facturez la TVA, elle est due dès l'encaissement de l'acompte, sur la somme reçue.",
+        "metiers_concernes": ["traiteur", "chef-a-domicile"],
+        "sources": [
+          {
+            "titre": "BOFiP — Règles relatives à l'établissement des factures, opérations donnant lieu à facturation (factures d'acompte)",
+            "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
+          },
+          {
+            "titre": "BOFiP – TVA : fait générateur et exigibilité, prestations de services (exigibilité à l'encaissement des acomptes et du prix, option pour le paiement d'après les débits)",
+            "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+          }
+        ]
+      }
+    ],
+    "agriculture": [
+      {
+        "titre": "Coopérative ou négociant qui facture pour vous : l'autofacturation",
+        "texte": "Si votre coopérative ou votre négociant établit les factures de vos livraisons, un mandat de facturation doit être conclu avant la première, et chaque facture porte la mention « Autofacturation ». Vous en restez responsable, TVA comprise : contrôlez chacune.",
+        "metiers_concernes": ["agriculteur", "arboriculteur"],
+        "sources": [
+          {
+            "titre": "BOFiP BOI-TVA-DECLA-30-20-10 – Délivrance des factures : autofacturation, mandat de facturation préalable et mention « Autofacturation »",
+            "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+          }
+        ]
+      },
+      {
+        "titre": "Non redevable : bulletin d'achat et attestation annuelle de l'acheteur",
+        "texte": "Si vous n'êtes pas redevable de la TVA, votre acheteur qui l'est vous remet un bulletin d'achat ou un bon de livraison à chaque paiement, acompte compris, puis une attestation annuelle d'achats, à joindre à votre déclaration n° 3520-SD de remboursement forfaitaire.",
+        "metiers_concernes": ["agriculteur", "maraicher"],
+        "sources": [
+          {
+            "titre": "BOFiP BOI-TVA-SECT-80-60-10-50 – Remboursement forfaitaire agricole : formalités (bulletins d'achat, attestations annuelles, déclaration 3520-SD)",
+            "url": "https://bofip.impots.gouv.fr/bofip/882-PGP.html/identifiant=BOI-TVA-SECT-80-60-10-50-20120912"
+          },
+          {
+            "titre": "impots.gouv.fr – Comment obtenir un remboursement forfaitaire agricole ?",
+            "url": "https://www.impots.gouv.fr/professionnel/questions/comment-obtenir-un-remboursement-forfaitaire-agricole"
+          }
+        ]
+      },
+      {
+        "titre": "Produits périssables : une échéance à trente jours au plus",
+        "texte": "Pour vos produits alimentaires périssables, le délai de paiement convenu, donc l'échéance de la facture, ne peut dépasser trente jours après la livraison ou, en facture périodique, trente jours après la fin de la décade, hors contrats d'intégration de fruits et légumes.",
+        "metiers_concernes": ["arboriculteur", "conchyliculteur"],
+        "sources": [
+          {
+            "titre": "Pour les produits alimentaires périssables, le délai de paiement convenu ne peut dépasser trente jours après la date de livraison, ou trente jours après la fin de la décade en cas de facturation périodique.",
+            "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038411642"
+          }
+        ]
+      },
+      {
+        "titre": "Semences et plants : 5,5 %, sauf l'ornement et le gazon à 10 %",
+        "texte": "Les semences et plants destinés à la production agricole (légumes, céréales, vigne, arbres fruitiers) relèvent du taux de 5,5 %. Par exception, les semences et plants d'ornement restent à 10 %, de même que les semences de gazon pour terrains de sport ou espaces verts.",
+        "metiers_concernes": ["agriculteur", "horticulteur"],
+        "sources": [
+          {
+            "titre": "BOFiP BOI-ANNX-000484 – Tableau des taux de TVA applicables aux produits d'origine agricole, de la pêche, de la pisciculture et de l'aviculture",
+            "url": "https://bofip.impots.gouv.fr/bofip/13565-PGP.html/identifiant=BOI-ANNX-000484-20250813"
+          },
+          {
+            "titre": "BOFiP BOI-TVA-LIQ-30-10-35 – Taux réduit de 10 % : produits de l'horticulture et de la floriculture d'ornement non transformés",
+            "url": "https://bofip.impots.gouv.fr/bofip/13623-PGP.html/identifiant=BOI-TVA-LIQ-30-10-35-20220629"
+          }
+        ]
+      }
+    ]
+  }
+}
