@@ -354,3 +354,17 @@ Les inexactitudes relevées en marge des 40 points ont été corrigées en deux 
 - chef à domicile : la mention du devis ; couvreur : le délai de L221-10 du Code de la consommation.
 
 **Résultats :** 125 tests, 14 parcours e2e, tous les gardes de `pnpm verify` verts.
+
+## Points laissés à relecture humaine : vague 3 (2026-10-09)
+
+Les points listés en fin de l'entrée précédente ont été repris par le même circuit (proposition, vérification contradictoire, application déterministe) : 37 modifications sur 12 fichiers, aucune rejetée.
+
+- **Note de restaurant** : un repas servi donne lieu à une note en fin de repas, quel que soit le montant (fiches DGCCRF « Restaurants » et « Ticket de caisse et de carte bancaire », qui traitent la restauration à part des services de 25 € et plus). Le seuil de 25 € reste celui des autres prestations de services (arrêté n° 83-50/A). Corrigé dans restaurateur, pizzeria (salle et vente à emporter distinguées), bar-brasserie, glacier, food-truck et le point restauration n° 3. Le texte de l'arrêté n° 25-361 de 1967 reste illisible depuis l'environnement : la règle repose sur les pages DGCCRF.
+- **Contrat signé au domicile** : délai de sept jours avant tout paiement (code de la consommation, article L221-10) ajouté à couvreur et menuisier.
+- **Plaquiste** : franchise en base exclue de l'autoliquidation dans faq[3] et besoins_prioritaires[2].
+- **Architecte** : BOI-TVA-LIQ-30-20-90-40 passé à sa version en vigueur ; BOI-TVA-LIQ-30-20-90-30 ajouté pour la facture rectificative.
+- **Chef à domicile** : devis et facture des services à la personne alignés sur l'arrêté du 17 mars 2015.
+- **Agriculture** : la phrase sur la paille et les fourrages corrigée ; L441-11 n'est cité nulle part ; 3520-SD repris en vague 3b.
+- **Service-Public** : le site a migré sur service-public.gouv.fr. Cinq pages retrouvées et vérifiées (F31808, F22387, A15073, F32973, R44572) : 31 URL migrées dans 27 fichiers, titres et mentions en texte compris. Six pages restent introuvables (F31410, F23897, F33177, F22215, F31199, F31554) : réaffectées en vague 3b.
+
+**Documents .gouv.fr cités : 373** (+6, dont les pages Service-Public désormais en .gouv.fr).

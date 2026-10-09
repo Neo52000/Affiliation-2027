@@ -10,7 +10,7 @@
     "L'encaissement des particuliers via un logiciel ou système de caisse impose un équipement sécurisé satisfaisant des conditions d'inaltérabilité, de sécurisation, de conservation et d'archivage des données, justifiées par certificat ou attestation. Les entreprises en franchise en base échappent à cette obligation précise, pas à la réforme de la facturation électronique.",
     "Les plateformes de livraison ajoutent un flux entrant : leurs commissions sont des factures de prestataires que vous devrez pouvoir recevoir au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise, puis rapprocher de vos encaissements.",
     "Les ventes aux particuliers, en salle comme en livraison, ne donnent pas lieu à facture électronique : elles alimentent l'e-reporting, sous forme de données agrégées par jour et ventilées par taux de TVA, sans donnée nominative. Les commandes passées par des entreprises (plateaux pour des bureaux) relèvent en revanche de la facture électronique.",
-    "La note remise en salle, obligatoire pour une prestation d'au moins 25 € TTC et, en dessous de ce montant, si le client la demande, reste un document distinct de la facture au sens de la réforme : elle ne remplace pas la facture électronique due à un client professionnel."
+    "En salle, une note doit être remise au client en fin de repas, quel que soit son montant : la règle vise le repas servi sur place, et non la pizza vendue à emporter au comptoir ou livrée. Cette note reste un document distinct de la facture au sens de la réforme : elle ne remplace pas la facture électronique due à un client professionnel."
   ],
   "mentions_obligatoires_specifiques": [
     "Ventilation de la TVA par taux sur toute facture mêlant pizzas livrées chaudes (10 %), boissons en contenants fermés (5,5 %) et boissons alcooliques (20 %) : montant HT et TVA détaillés par taux.",
@@ -139,6 +139,14 @@
     {
       "titre": "Légifrance — Arrêté n° 83-50/A du 3 octobre 1983 relatif à la publicité des prix de tous les services (note obligatoire dès 25 € TTC, remise sur demande en dessous)",
       "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
+    },
+    {
+      "titre": "DGCCRF (economie.gouv.fr) – Restaurants : droits et obligations des professionnels (note remise en fin de repas, date, nom et adresse, prix taxes comprises)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/restaurants-droits-et-obligations-des-professionnels"
+    },
+    {
+      "titre": "DGCCRF (economie.gouv.fr) – Ticket de caisse et de carte bancaire (note des prestations d'hôtels ou de restaurants, arrêté n° 25-361, à part des services d'au moins 25 €)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/ticket-de-caisse-et-de-carte-bancaire"
     }
   ],
   "date_maj": "2026-10-09"

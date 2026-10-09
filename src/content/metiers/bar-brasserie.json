@@ -11,14 +11,14 @@
     "Toute réduction de prix sur des boissons alcooliques pendant une période restreinte oblige à proposer, dans des conditions équivalentes et avec la même annonce, une réduction sur des boissons non alcooliques. Une opération de ce type déplace donc simultanément des recettes à 20 % et des recettes à 10 %.",
     "L'affichage des prix est double : à l'extérieur, la liste des boissons et denrées les plus courantes avec le volume servi et le prix toutes taxes et service compris ; à l'intérieur, le prix et le volume servi de la totalité des consommations, sur un document exposé à la vue du public et directement lisible.",
     "Faire figurer le volume servi dans la désignation de chaque boisson facturée n'est pas une mention obligatoire de la facture, mais cela aligne le document sur la carte affichée, où le volume est exigé, et évite les contestations sur une facture de soirée d'entreprise.",
-    "La remise d'une note est obligatoire dès que le prix atteint 25 € TTC, et sur demande du client en dessous de ce montant. Ce document relève de la relation avec un consommateur et ne se confond pas avec la facture électronique, qui vise les clients professionnels.",
+    "Pour un repas servi, une note doit être remise au client en fin de repas, quel que soit son montant ; pour les autres consommations, elle est obligatoire dès que le prix atteint 25 € TTC, et sur demande du client en dessous de ce montant. Ce document relève de la relation avec un consommateur et ne se confond pas avec la facture électronique, qui vise les clients professionnels.",
     "Les factures des fournisseurs de boissons arriveront par une plateforme agréée : la capacité à les recevoir constitue la première étape de la réforme, avant l'obligation d'émettre, à l'échéance applicable à votre entreprise.",
     "Les consommations payées au comptoir par des particuliers ne donnent lieu à aucune facture électronique : elles relèvent de la transmission à l'administration des données de transactions, suivant le même calendrier."
   ],
   "mentions_obligatoires_specifiques": [
     "Ventilation des montants HT et de la TVA par taux dès qu'une facture mêle boissons alcooliques (20 %) et restauration ou boissons sans alcool servies sur place (10 %).",
     "Dénomination précise de chaque consommation, assez explicite pour justifier le taux retenu (boisson alcoolique à 20 %, boisson sans alcool ou denrée servie sur place à 10 %).",
-    "Note remise au consommateur à partir de 25 € TTC, et sur simple demande en deçà, distincte de la facture adressée à un client professionnel.",
+    "Note remise au consommateur en fin de repas quel que soit le montant et, pour les autres consommations, à partir de 25 € TTC ou sur simple demande en deçà ; elle reste distincte de la facture adressée à un client professionnel.",
     "SIREN ou SIRET du client professionnel pour l'adressage de la facture électronique par une plateforme agréée.",
     "« TVA non applicable, article 293 B du CGI » si l'établissement relève de la franchise en base, auquel cas aucun taux ne doit figurer sur la facture."
   ],
@@ -103,7 +103,7 @@
     },
     {
       "question": "La note que je remets au client remplace-t-elle la facture électronique ?",
-      "reponse": "Non. La note est obligatoire dès 25 € TTC pour une prestation rendue à un consommateur, et sur simple demande en dessous de ce montant : c'est un document de la relation avec un particulier. Les ventes aux particuliers ne donnent pas lieu à facture électronique mais à une transmission de données de transactions. La facture électronique ne concerne que vos clients professionnels."
+      "reponse": "Non. Pour un repas servi, la note est remise en fin de repas quel que soit son montant ; pour les autres consommations, elle est obligatoire dès 25 € TTC, et sur simple demande en dessous de ce montant. C'est un document de la relation avec un particulier. Les ventes aux particuliers ne donnent pas lieu à facture électronique mais à une transmission de données de transactions. La facture électronique ne concerne que vos clients professionnels."
     }
   ],
   "sources": [
@@ -116,7 +116,7 @@
       "url": "https://www.economie.gouv.fr/particuliers/tva-taux-quotidien"
     },
     {
-      "titre": "DGCCRF (economie.gouv.fr) – Cafés et bars : quelles obligations pour les professionnels ? (affichage extérieur et intérieur, note dès 25 € TTC)",
+      "titre": "DGCCRF (economie.gouv.fr) – Cafés et bars : quelles obligations pour les professionnels ? (affichage extérieur et intérieur, note au-dessus de 25 €, et en dessous sur demande)",
       "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/cafes-et-bars-quelles-obligations-pour-les-professionnels"
     },
     {
@@ -124,8 +124,8 @@
       "url": "https://www.economie.gouv.fr/entreprises/obligations-affichage-prix"
     },
     {
-      "titre": "entreprendre.service-public.fr – Réglementation dans un bar ou un restaurant (licence obligatoire, enseigne indiquant le type de licence)",
-      "url": "https://entreprendre.service-public.fr/vosdroits/F22387"
+      "titre": "entreprendre.service-public.gouv.fr – Réglementation dans un bar ou un restaurant (licence obligatoire, enseigne indiquant le type de licence)",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F22387"
     },
     {
       "titre": "douane.gouv.fr – La douane ne gère plus les déclarations de profession relatives aux débits de boissons (démarches auprès des mairies, préfecture de police à Paris)",
@@ -150,7 +150,19 @@
     {
       "titre": "impots.gouv.fr – Clients entreprises et particuliers : facturation électronique et e-reporting",
       "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "DGCCRF (economie.gouv.fr) – Restaurants : droits et obligations des professionnels (note remise en fin de repas, date, nom et adresse, prix taxes comprises)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/restaurants-droits-et-obligations-des-professionnels"
+    },
+    {
+      "titre": "DGCCRF (economie.gouv.fr) – Ticket de caisse et de carte bancaire (note des prestations d'hôtels ou de restaurants, arrêté n° 25-361, à part des services d'au moins 25 €)",
+      "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/ticket-de-caisse-et-de-carte-bancaire"
+    },
+    {
+      "titre": "Légifrance – Arrêté n° 83-50/A du 3 octobre 1983 relatif à la publicité des prix de tous les services (note obligatoire dès 25 € TTC, remise sur demande en dessous, sauf dispositions particulières)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }
