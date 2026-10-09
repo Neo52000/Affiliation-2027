@@ -1,40 +1,35 @@
 /**
- * Génération des redirections 302 /go/{slug} de netlify.toml à partir
- * d'affiliation.json (section 8 de la spécification). Seules les entrées
- * non nulles produisent une redirection ; les autres outils basculent vers
- * leur URL officielle directement dans AffiliateButton.
+ * Redirections 302 /go/{slug} des liens affiliés (section 8 de la
+ * spécification), écrites dans dist/_redirects après le build : Netlify lit ce
+ * fichier à chaque déploiement, et le dépôt n'est plus modifié pendant le build.
+ * Seuls les liens actifs produisent une règle ; les autres outils pointent
+ * directement vers leur URL officielle (AffiliateButton).
  */
+import { estUrlSure } from './url-sure.ts';
 
-export const MARQUEUR_DEBUT =
-  '# --- debut:redirections-go (genere par scripts/generate-redirects.ts) ---';
-export const MARQUEUR_FIN = '# --- fin:redirections-go ---';
+export const ENTETE_REDIRECTIONS =
+  '# Généré par scripts/generate-redirects.ts depuis src/data/affiliation.json : ne pas éditer.';
 
-export function blocRedirections(liens: Record<string, string | null>): string {
-  const actifs = Object.entries(liens)
-    .filter((e): e is [string, string] => e[1] !== null)
-    .sort(([a], [b]) => a.localeCompare(b));
-
-  const regles = actifs.map(
-    ([slug, url]) => `[[redirects]]
-  from = "/go/${slug}"
-  to = "${url}"
-  status = 302
-  force = true`,
-  );
-
+export function fichierRedirections(actifs: Record<string, string>): string {
+  const lignes = Object.entries(actifs)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([slug, url]) => {
+      // Double sécurité : le schéma a déjà refusé toute URL capable de casser la ligne.
+      if (!/^[a-z0-9-]+$/.test(slug) || !estUrlSure(url)) {
+        throw new Error(`redirection /go/${slug} refusée : URL ou slug invalide`);
+      }
+      return `/go/${slug}  ${url}  302!`;
+    });
   return [
-    MARQUEUR_DEBUT,
-    ...(regles.length > 0 ? regles : ['# (aucun lien affilié renseigné — voir TODO.md #6)']),
-    MARQUEUR_FIN,
-  ].join('\n\n');
+    ENTETE_REDIRECTIONS,
+    ...(lignes.length > 0 ? lignes : ['# Aucun lien affilié actif.']),
+    '',
+  ].join('\n');
 }
 
-/** Remplace (ou ajoute en fin de fichier) le bloc généré dans netlify.toml. */
-export function injecterBloc(toml: string, bloc: string): string {
-  const debut = toml.indexOf(MARQUEUR_DEBUT);
-  const fin = toml.indexOf(MARQUEUR_FIN);
-  if (debut !== -1 && fin !== -1) {
-    return toml.slice(0, debut) + bloc + toml.slice(fin + MARQUEUR_FIN.length);
-  }
-  return `${toml.trimEnd()}\n\n${bloc}\n`;
+/** Slugs couverts par une règle /go/ d'un fichier _redirects. */
+export function slugsRediriges(fichier: string): Set<string> {
+  return new Set(
+    [...fichier.matchAll(/^\/go\/([a-z0-9-]+)\s+https:\/\/\S+\s+302!?\s*$/gm)].map((m) => m[1]!),
+  );
 }

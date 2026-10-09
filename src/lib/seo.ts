@@ -67,3 +67,18 @@ export function canonicalUrl(site: string, pathname: string): string {
   if (path !== '/' && path.endsWith('/')) path = path.slice(0, -1);
   return path === '/' ? `${base}/` : `${base}${path}`;
 }
+
+/**
+ * JSON-LD sûr pour `set:html` : JSON.stringify n'échappe pas « < », si bien
+ * qu'une donnée contenant « </script> » fermerait le bloc et ferait naître un
+ * script (que la CSP par empreintes autoriserait, puisqu'elle est calculée sur
+ * le site construit). On échappe donc <, >, & et les séparateurs U+2028/U+2029.
+ */
+export function jsonLdSur(valeur: unknown): string {
+  return JSON.stringify(valeur)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+}

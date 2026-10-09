@@ -7,6 +7,8 @@ import HeroFlux from '../components/HeroFlux.astro';
 import Ticker from '../components/Ticker.astro';
 import StatTile from '../components/StatTile.astro';
 import BandeauTransparence from '../components/BandeauTransparence.astro';
+import EspacePublicitaire from '../components/EspacePublicitaire.astro';
+import InscriptionNewsletter from '../components/InscriptionNewsletter.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import { formatDateFr } from '../lib/dates';
@@ -87,7 +89,7 @@ const famillesActives = (Object.keys(FAMILLE_LABELS) as Famille[])
 const PREUVES: { titre: string; texte: string; href: string; picto: NomPicto }[] = [
   {
     titre: 'Classement indépendant',
-    texte: 'Les commissions ne pèsent ni sur l’ordre ni sur les notes. Méthode publique.',
+    texte: 'Ni commissions ni publicité ne pèsent sur l’ordre ou les notes. Méthode publique.',
     href: '/methode',
     picto: 'medaille',
   },
@@ -153,7 +155,7 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
         <p class="prose-measure mt-5 text-lg">
           Plombier, infirmière libérale, développeur freelance… chaque métier facture différemment.
           Répondez à 5 questions et obtenez une recommandation fondée sur des faits vérifiés —
-          jamais sur les commissions.
+          jamais sur les commissions ni la publicité.
         </p>
         <div class="mt-6 flex flex-wrap items-center gap-4">
           <a href="/outils/quiz" class="btn-cta text-lg">
@@ -293,6 +295,12 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
     </section>
   )}
 
+  <InscriptionNewsletter
+    id="nl-accueil"
+    titre="Suivre la réforme par email"
+    class="prose-measure mt-12"
+  />
+
   <section class="card-top mt-14 rounded-lg border border-border bg-paper-soft p-6 text-center">
     <h2 class="text-2xl font-bold">Prêt pour la facturation électronique ?</h2>
     <p class="mx-auto mt-2 max-w-xl text-ink-soft">
@@ -310,4 +318,6 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
       </a>
     </div>
   </section>
+
+  <EspacePublicitaire emplacement="accueil" class="mt-12" />
 </Base>

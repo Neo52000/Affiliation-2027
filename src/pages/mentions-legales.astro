@@ -1,13 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import { SITE } from '../config';
+import { EDITEUR_IDENTIFIE, SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 
 // EDITEUR_LEGAL et EMAIL_CONTACT non renseignés (TODO.md #3 et #4) :
 // page construite avec placeholders explicites et maintenue hors index
 // tant qu'elle n'est pas conforme LCEN — bloquant avant communication publique.
-const placeholders = true;
+const placeholders = !EDITEUR_IDENTIFIE;
 ---
 
 <Base

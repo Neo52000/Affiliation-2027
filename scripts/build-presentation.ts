@@ -18,6 +18,7 @@ import { SITE } from '../src/config.ts';
 import { formatDateFr } from '../src/lib/dates.ts';
 import { situerEcheances } from '../src/lib/echeance.ts';
 import { ATTRIBUTS_SVG_PICTO, TRACES, type NomPicto } from '../src/lib/pictos.ts';
+import { liensActifs } from '../src/lib/liens-affilies.ts';
 import {
   EXTRAITS_METIERS,
   compterSourcesGouv,
@@ -168,13 +169,13 @@ if (existsSync(dossierComparatifs)) {
 // Partenariats réellement actifs (liens non null) : le pitch ne laisse jamais
 // croire que des partenaires existent déjà.
 const affiliation = affiliationSchema.parse(lireJson('src', 'data', 'affiliation.json'));
-const nbPartenaires = Object.values(affiliation.liens).filter((l) => l !== null).length;
+const nbPartenaires = Object.keys(liensActifs(affiliation)).length;
 const etatPartenariats = noter(
   'etatPartenariats',
   nbPartenaires === 0
     ? 'aucun partenariat actif à ce jour'
     : `${nbPartenaires} partenariat${nbPartenaires > 1 ? 's actifs' : ' actif'}`,
-  'src/data/affiliation.json#liens (entrées non null)',
+  'src/data/affiliation.json#liens (liens actifs avec URL)',
 );
 const logiciels = `<div class="bloc-logiciels">
         <p class="logiciels-libelle" id="titre-logiciels">Logiciels comparés · ${texte(etatPartenariats)}</p>

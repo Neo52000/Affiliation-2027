@@ -1,0 +1,63 @@
+---
+/**
+ * Back office (liens d'affiliation, espaces publicitaires). Page non indexée,
+ * hors sitemap, absente de la navigation. Elle ne contient aucun secret : sans
+ * jeton GitHub autorisé sur le dépôt, elle ne peut ni lire ni écrire.
+ */
+import type { ImageMetadata } from 'astro';
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import BackOffice from '../components/islands/BackOffice.tsx';
+import { ADMIN, SITE } from '../config';
+import { FAMILLE_LABELS } from '../lib/familles';
+import { FAMILLES, publicitesSchema } from '../lib/schemas';
+import publicites from '../data/publicites.json';
+import { pageTitle } from '../lib/seo';
+
+const outils = (await getCollection('outils'))
+  .map((o) => ({ slug: o.data.slug, nom: o.data.nom, urlOfficielle: o.data.url_officielle }))
+  .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+const familles = FAMILLES.map((f) => ({ slug: f, label: FAMILLE_LABELS[f] }));
+
+// Garde de build : toute image d'annonce, même programmée, est lue ici et
+// contrôlée (format réel, 640 × 360 px au moins) : une image défectueuse fait
+// échouer la pull request du back office, pas le build de la nuit.
+const images = import.meta.glob<ImageMetadata>('../assets/publicites/*.{webp,png,jpg,jpeg,avif}', {
+  eager: true,
+  import: 'default',
+});
+for (const c of publicitesSchema.parse(publicites).campagnes) {
+  if (!c.image) continue;
+  const img = images[`../assets/publicites/${c.image.fichier}`];
+  if (!img) throw new Error(`publicité ${c.id} : image ${c.image.fichier} absente`);
+  if (img.width < 640 || img.height < 360) {
+    throw new Error(
+      `publicité ${c.id} : image ${img.width} × ${img.height} px (640 × 360 au moins)`,
+    );
+  }
+}
+---
+
+<Base
+  title={pageTitle('Back office', SITE.name)}
+  description="Back office réservé à l'éditeur : liens d'affiliation et espaces publicitaires."
+  noindex
+>
+  <h1 class="text-3xl font-bold">Back office</h1>
+  <p class="prose-measure mt-2 text-ink-soft">
+    Réservé à l’éditeur du site. Chaque publication passe par les vérifications automatiques du
+    dépôt avant sa mise en ligne.
+  </p>
+  <noscript>
+    <p class="mt-6">Le back office nécessite JavaScript.</p>
+  </noscript>
+  <div class="mt-8">
+    <BackOffice
+      client:only="preact"
+      depot={ADMIN.depot}
+      previsualisation={ADMIN.previsualisation}
+      outils={outils}
+      familles={familles}
+    />
+  </div>
+</Base>

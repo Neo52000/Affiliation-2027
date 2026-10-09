@@ -1,0 +1,57 @@
+---
+/**
+ * Pages d'état de l'inscription (redirections 303 de /api/newsletter, et lien
+ * de confirmation du double opt-in). Non indexées, hors sitemap.
+ */
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../config';
+import { pageTitle } from '../../lib/seo';
+
+export function getStaticPaths() {
+  // getStaticPaths est isolé du reste du module : les états vivent ici.
+  const ETATS: Record<string, { titre: string; texte: [string, ...string[]] }> = {
+    'verifiez-vos-emails': {
+      titre: 'Vérifiez vos emails',
+      texte: [
+        'Un email de confirmation vient de vous être envoyé. Cliquez sur son lien pour valider votre inscription : sans ce clic, vous ne recevrez rien.',
+        'Rien reçu d’ici quelques minutes ? Regardez dans vos courriers indésirables, ou réinscrivez-vous en vérifiant l’adresse.',
+      ],
+    },
+    confirmee: {
+      titre: 'Inscription confirmée',
+      texte: [
+        'Merci : votre inscription à la newsletter est confirmée.',
+        'Vous pouvez vous désinscrire à tout moment par le lien présent dans chaque envoi.',
+      ],
+    },
+    erreur: {
+      titre: 'L’inscription n’a pas abouti',
+      texte: [
+        'Vérifiez l’adresse email et cochez la case de consentement, puis réessayez.',
+        'Si le problème persiste, le service d’envoi est peut-être momentanément indisponible : réessayez plus tard.',
+      ],
+    },
+    indisponible: {
+      titre: 'Newsletter pas encore ouverte',
+      texte: [
+        'Les inscriptions à la newsletter ne sont pas encore ouvertes. Aucune donnée n’a été enregistrée.',
+      ],
+    },
+  };
+  return Object.entries(ETATS).map(([etat, page]) => ({ params: { etat }, props: page }));
+}
+
+const page = Astro.props;
+---
+
+<Base title={pageTitle(page.titre, SITE.name)} description={page.texte[0]} noindex>
+  <div class="prose-measure mt-4">
+    <h1 class="text-3xl font-bold">{page.titre}</h1>
+    {page.texte.map((t) => (
+      <p class="mt-3">{t}</p>
+    ))}
+    <p class="mt-6">
+      <a href="/newsletter">Page de la newsletter</a> · <a href="/">Retour à l’accueil</a>
+    </p>
+  </div>
+</Base>

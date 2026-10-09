@@ -10,7 +10,7 @@ import StatutPlateforme from '../../components/StatutPlateforme.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { FAMILLE_LABELS } from '../../lib/familles';
 import { formatDateFr } from '../../lib/dates';
-import { metierDescription, metierTitle } from '../../lib/seo';
+import { jsonLdSur, metierDescription, metierTitle } from '../../lib/seo';
 import { paireOrdonnee, urlComparatif } from '../../lib/comparatifs';
 import { libelleStatutTest } from '../../lib/statut-test';
 import { SITE } from '../../config';
@@ -89,7 +89,7 @@ const faqJsonLd = {
 ---
 
 <Base title={metierTitle(d.nom)} description={metierDescription(d.nom)}>
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
+  <script type="application/ld+json" is:inline set:html={jsonLdSur(faqJsonLd)} />
   <BandeauTransparence outils={recommandes.map((r) => r.outil.data.slug)} />
 
   <Breadcrumb items={[{ label: familleLabel, href: `/metiers/${d.famille}` }, { label: d.nom }]} />

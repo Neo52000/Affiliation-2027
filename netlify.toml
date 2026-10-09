@@ -25,19 +25,31 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
 
+# Pages hors index : back office et pages d'état de la newsletter. L'en-tête
+# double la balise meta noindex (robots.txt ne les bloque pas, pour qu'elle soit lue).
+[[headers]]
+  for = "/admin"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/admin.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/newsletter/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 # Assets fingerprintés par Astro : cache long immuable.
 [[headers]]
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# ---------------------------------------------------------------------------
-# Redirections affiliées /go/{slug} (Phase 7) : générées depuis
-# src/data/affiliation.json — redirection 302, exclues de robots.txt.
-# ---------------------------------------------------------------------------
-
-# --- debut:redirections-go (genere par scripts/generate-redirects.ts) ---
-
-# (aucun lien affilié renseigné — voir TODO.md #6)
-
-# --- fin:redirections-go ---
+# Redirections affiliées /go/{slug} : écrites dans dist/_redirects au postbuild
+# (scripts/generate-redirects.ts) depuis src/data/affiliation.json, que le
+# back office /admin édite. 302, exclues de robots.txt.

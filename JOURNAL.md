@@ -368,3 +368,50 @@ Les points listés en fin de l'entrée précédente ont été repris par le mêm
 - **Service-Public** : le site a migré sur service-public.gouv.fr. Cinq pages retrouvées et vérifiées (F31808, F22387, A15073, F32973, R44572) : 31 URL migrées dans 27 fichiers, titres et mentions en texte compris. Six pages restent introuvables (F31410, F23897, F33177, F22215, F31199, F31554) : réaffectées en vague 3b.
 
 **Documents .gouv.fr cités : 373** (+6, dont les pages Service-Public désormais en .gouv.fr).
+
+## Back office, espaces publicitaires et newsletter (2026-10-09)
+
+Trois briques de monétisation, conçues puis soumises à une contre-expertise en quatre angles (sécurité, conformité, intégration Netlify, produit), et enfin à une revue contradictoire du code.
+
+**Back office `/admin`** (liens d'affiliation et annonces) :
+
+- Les données restent des fichiers du dépôt (`src/data/affiliation.json`, `src/data/publicites.json`), validés par Zod au build, en CI et dans le formulaire.
+- Une publication crée un commit unique et une pull request. « Mettre en ligne » ne s'active que si la CI du dépôt est verte sur ce commit, si la demande ne contient que des données du back office et si la branche est à jour. La publication est aussi refusée tant que `main` n'est pas protégée par un ruleset.
+- **Jeton GitHub à portée fine** : il ne vit qu'en mémoire. Il est effacé en quittant la page, après 30 minutes d'inactivité ou sur un refus de GitHub. Le jeton est refusé s'il est classique, sans expiration ou valable plus de 90 jours.
+- **Relais same-origin** : les appels passent par la fonction `/admin/gh/*`, limitée au dépôt. La CSP garde ainsi `connect-src 'self'`, que `check:csp` impose désormais.
+- **URL saisies** : https uniquement, en ASCII visible, sans port ni fragment, et jamais vers le site lui-même. Les textes ne peuvent contenir aucun caractère invisible.
+- **Images** : signature binaire contrôlée, 640 × 360 px au moins et 300 Ko au plus. Le contrôle est refait au build.
+- **Redirections `/go/`** : elles sont désormais écrites dans `dist/_redirects` au postbuild, au lieu de modifier `netlify.toml`. `check:liens` vérifie que chaque lien `/go/` a sa règle.
+
+**Espaces publicitaires** (vente directe, sans régie, sans traceur) :
+
+- Trois emplacements, tous en fin de page : accueil, guides, pages famille. Un test interdit tout autre emplacement. Aucune annonce sur les fiches métier, qui portent « Notre recommandation ».
+- Mention « Publicité » et nom de l'annonceur visibles. Raison sociale et SIREN publiés sur `/transparence`. Paramètres `utm_*` ajoutés au lien.
+- Un éditeur comparé ne peut annoncer que sur l'accueil et les guides, et son annonce le signale.
+- Formulations refusées dans les annonces : recommandation, classement, note, avis, agrément.
+- Reconstruction nocturne à 0 h 05 (Paris), seulement les jours où la sélection d'annonces change.
+
+**Newsletter** :
+
+- Formulaire HTML sans JavaScript, double opt-in Brevo par une fonction Netlify.
+- Liste et modèle de confirmation distincts de ceux du rappel d'échéance.
+- Champ piège, contrôle d'origine, limite de 5 envois par minute et par IP.
+
+**Pages réécrites** :
+
+- `/transparence` déclare que les 6 logiciels ont été retenus, au lancement, parmi des éditeurs qui ont un programme d'affiliation (PLAN.md, section 5). Elle publie le tableau des relations de chaque éditeur avec le site.
+- Les promesses de neutralité couvrent désormais aussi les achats d'espace.
+- `/confidentialite` nomme les sous-traitants (prestataire d'emailing, Netlify), le transfert hors UE, la liste d'opposition et l'ensemble des droits.
+- Nouvelle page `/publicite` : offre aux annonceurs, tarif sur devis, aucun prix inventé.
+
+**Tant que l'éditeur n'est pas identifié** (`EDITEUR_IDENTIFIE`, mentions légales) : aucun formulaire email et aucune annonce ne sont publiés (RGPD, art. 13 ; LCEN).
+
+**Régression évitée** : la première version faisait embarquer Zod par l'îlot du quiz, sur l'accueil et `/outils/quiz`. `check:csp` échoue désormais si une page publique charge Zod.
+
+**Gardes ajoutées** :
+
+- `check-seo` : cohérence entre le sitemap et le noindex. Elle a révélé que `/a-propos`, en noindex, figurait au sitemap.
+- JSON-LD échappé (`jsonLdSur`), et `set:html` limité aux contenus maîtrisés.
+- CI en `permissions: contents: read`.
+
+**Actions humaines** : `TODO.md`, points 19 à 27. Parmi eux : ruleset de `main`, jeton, variables Netlify limitées à la Production, Brevo sans suivi des ouvertures, build hook avec alerte d'échec, conditions de vente, questions juridiques avant la première vente.

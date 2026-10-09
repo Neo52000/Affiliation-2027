@@ -1,6 +1,6 @@
 ---
 import { SITE } from '../config';
-import { canonicalUrl, validateMeta } from '../lib/seo';
+import { canonicalUrl, jsonLdSur, validateMeta } from '../lib/seo';
 
 interface Props {
   title: string;
@@ -47,7 +47,7 @@ if (import.meta.env.DEV) {
 <script
   type="application/ld+json"
   is:inline
-  set:html={JSON.stringify([
+  set:html={jsonLdSur([
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',

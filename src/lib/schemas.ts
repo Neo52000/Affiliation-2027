@@ -1,4 +1,10 @@
 import { z } from 'astro/zod';
+import { chevauchements } from './publicites.ts';
+import { estUrlSure, INVISIBLES, MESSAGE_URL_SURE } from './url-sure.ts';
+
+// Zod sonde Function("") pour compiler ses validateurs ; la CSP du site interdit
+// eval : le mode sans compilation évite cette sonde (et sa violation CSP dans /admin).
+z.config({ jitless: true });
 
 /**
  * Schémas de données (section 5 de la spécification).
@@ -193,11 +199,155 @@ export const plateformesAgreeesSchema = z.object({
     .min(1),
 });
 
-export const affiliationSchema = z.object({
+const slug = z.string().regex(/^[a-z0-9-]+$/);
+/** URL saisie au back office : https, sans caractère capable de casser _redirects ou un href. */
+const urlSure = z.string().refine(estUrlSure, MESSAGE_URL_SURE);
+/** Texte saisi au back office : sans caractère de contrôle ni invisible (inversion bidi, etc.). */
+const texteSur = (min: number, max: number) =>
+  z
+    .string()
+    .trim()
+    .min(min)
+    .max(max)
+    .refine((t) => !INVISIBLES.test(t), 'caractère de contrôle ou invisible interdit');
+
+/**
+ * Lien affilié d'un outil, édité dans le back office (/admin). Aucun champ de
+ * commission : le schéma strict refuse toute clé inconnue, pour qu'aucun
+ * montant ne puisse entrer dans les données du site.
+ */
+export const lienAffiliationSchema = z
+  .strictObject({
+    /** URL fournie par le programme d'affiliation ; null = aucun partenariat. */
+    url: urlSure.nullable(),
+    /** Réseau ou programme (ex. « Affilae », « programme direct ») : mémo pour l'éditeur. */
+    reseau: texteSur(1, 60).nullable(),
+    /** false = lien conservé mais suspendu : le bouton revient à l'URL officielle. */
+    actif: z.boolean(),
+    maj: dateIso,
+  })
+  .refine((l) => !l.actif || l.url !== null, {
+    message: 'un lien actif exige une URL',
+    path: ['url'],
+  });
+
+export const affiliationSchema = z.strictObject({
   date_maj: dateIso,
-  note: z.string(),
-  liens: z.record(z.string().regex(/^[a-z0-9-]+$/), url.nullable()),
+  liens: z.record(slug, lienAffiliationSchema),
 });
+
+export type Affiliation = z.infer<typeof affiliationSchema>;
+
+/**
+ * Emplacements publicitaires, toujours en fin de page et hors des blocs de
+ * classement ou de recommandation : accueil (après l'appel final), guides (après
+ * « À lire ensuite »), pages famille /metiers/… (en fin de page). Jamais sur les
+ * fiches métier, fiches logiciel, comparatifs, outils, méthode ou transparence.
+ */
+export const EMPLACEMENTS_PUB = ['accueil', 'guides', 'familles'] as const;
+
+/** Formulations qui feraient passer une annonce pour un avis ou un classement du site. */
+export const TEXTE_PUB_INTERDIT =
+  /recommand|classement|class[ée]|comparatif|compar[ée]|n°\s*1|num[ée]ro\s*(1|un)\b|meilleur|[ée]lu\b|not[ée]\b|\bavis\b|plateforme agr[ée][ée]e/i;
+
+/** Libellés de bouton que Lighthouse juge non descriptifs (audit « link-text »). */
+const CTA_GENERIQUES = new Set([
+  'ici',
+  'cliquez ici',
+  'en savoir plus',
+  'lire la suite',
+  'plus',
+  'suite',
+  'voir',
+  'continuer',
+]);
+
+const textePub = (min: number, max: number) =>
+  texteSur(min, max).refine(
+    (t) => !TEXTE_PUB_INTERDIT.test(t),
+    'formulation réservée au contenu éditorial (recommandation, classement, note, avis, agrément)',
+  );
+
+export const campagneSchema = z
+  .strictObject({
+    id: z.string().regex(/^[a-z0-9-]{3,60}$/, 'identifiant : 3 à 60 caractères a-z, 0-9, tiret'),
+    /** Nom commercial affiché sur l'annonce. */
+    annonceur: texteSur(2, 80),
+    /**
+     * Personne pour le compte de laquelle la publicité est faite (LCEN, art. 20) :
+     * raison sociale et SIREN, publiés sur /transparence.
+     */
+    annonceur_legal: texteSur(2, 120),
+    /** Slug d'un logiciel comparé quand l'annonceur l'édite ; null sinon. */
+    outil: z
+      .string()
+      .regex(/^[a-z0-9-]+$/)
+      .nullable(),
+    emplacement: z.enum(EMPLACEMENTS_PUB),
+    /** Ciblage des pages famille ; vide = toutes les familles. */
+    familles: z.array(z.enum(FAMILLES)).max(FAMILLES.length),
+    titre: textePub(5, 70),
+    texte: textePub(10, 160),
+    cta: textePub(2, 30).refine(
+      (c) => !CTA_GENERIQUES.has(c.toLowerCase()),
+      'libellé de bouton trop vague',
+    ),
+    url: urlSure,
+    image: z
+      .strictObject({
+        fichier: z.string().regex(/^[a-z0-9-]{1,80}\.(webp|png|jpe?g|avif)$/),
+        /** Texte alternatif ; vide si l'image est décorative (le texte de l'annonce suffit). */
+        alt: z
+          .string()
+          .trim()
+          .max(150)
+          .refine((t) => !INVISIBLES.test(t), 'caractère invisible'),
+      })
+      .nullable(),
+    debut: dateIso,
+    fin: dateIso,
+    active: z.boolean(),
+  })
+  .refine((c) => c.debut <= c.fin, { message: 'la fin précède le début', path: ['fin'] })
+  .refine((c) => c.emplacement === 'familles' || c.familles.length === 0, {
+    message: 'le ciblage par famille ne vaut que pour les pages famille',
+    path: ['familles'],
+  })
+  // Un éditeur comparé n'achète jamais d'espace à côté des outils retenus d'une famille.
+  .refine((c) => c.outil === null || c.emplacement !== 'familles', {
+    message: 'un éditeur comparé ne peut annoncer que sur l’accueil ou les guides',
+    path: ['emplacement'],
+  });
+
+export type Campagne = z.infer<typeof campagneSchema>;
+
+export const publicitesSchema = z
+  .strictObject({
+    date_maj: dateIso,
+    campagnes: z.array(campagneSchema),
+  })
+  .superRefine((d, ctx) => {
+    const ids = new Set<string>();
+    d.campagnes.forEach((c, i) => {
+      if (ids.has(c.id)) {
+        ctx.addIssue({
+          code: 'custom',
+          message: `identifiant en double : ${c.id}`,
+          path: ['campagnes', i, 'id'],
+        });
+      }
+      ids.add(c.id);
+    });
+    for (const [a, b] of chevauchements(d.campagnes)) {
+      ctx.addIssue({
+        code: 'custom',
+        message: `« ${a.id} » et « ${b.id} » occupent le même emplacement aux mêmes dates`,
+        path: ['campagnes'],
+      });
+    }
+  });
+
+export type Publicites = z.infer<typeof publicitesSchema>;
 
 /**
  * Points de facturation communs à une famille de métiers (hubs). Chaque point

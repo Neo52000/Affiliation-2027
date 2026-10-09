@@ -25,6 +25,9 @@
   --color-ok: #047857;
   --color-ok-soft: #ecfdf3;
 
+  /* Erreur de saisie (back office) — AA sur paper */
+  --color-erreur: #b42318;
+
   /* Encres et fonds */
   --color-ink: #1f2328;
   --color-ink-soft: #57606a;
@@ -76,6 +79,7 @@
     --color-on-accent: #0b1220;
     --color-ok: #34d399;
     --color-ok-soft: #0b2e22;
+    --color-erreur: #fda29b;
     --color-ink: #e6e9ef;
     --color-ink-soft: #9aa4b2;
     --color-paper: #0e1116;
@@ -241,6 +245,56 @@ h2 {
 .btn-ghost:hover {
   border-color: var(--color-accent);
   background: var(--color-accent-soft);
+}
+
+/* Espace publicitaire : cadre neutre, mention « Publicité » en tête, jamais
+   confondu avec une recommandation (pas de dégradé, pas de badge, pas de note). */
+.espace-pub {
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  background: var(--color-paper);
+}
+
+.espace-pub-mention {
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+.espace-pub-corps {
+  display: grid;
+  gap: 1rem;
+}
+
+.espace-pub-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+/* Back office : erreurs de saisie, signalées par le texte et la bordure */
+.admin-erreur {
+  color: var(--color-erreur);
+  font-weight: 600;
+}
+
+.admin-erreurs {
+  border: 2px solid var(--color-erreur);
+  border-radius: var(--radius-md);
+}
+
+.champ[aria-invalid='true'] {
+  border-color: var(--color-erreur);
+}
+
+/* Champ piège anti-robot de la newsletter : hors écran, jamais atteint au clavier */
+.piege {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 /* Tuile de chiffre clé */

@@ -1,6 +1,9 @@
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { FAMILLE_LABELS } from './familles';
-import { TITLE_MAX, canonicalUrl, familleTitle, pageTitle, validateMeta } from './seo';
+import { TITLE_MAX, canonicalUrl, familleTitle, jsonLdSur, pageTitle, validateMeta } from './seo';
 
 describe('pageTitle', () => {
   it('compose « Page | Site » quand la longueur le permet', () => {
@@ -76,5 +79,30 @@ describe('pageTitle — borne alignée sur check-seo', () => {
     const page = 'p'.repeat(60 - ' | Site'.length);
     expect(`${page} | Site`).toHaveLength(60);
     expect(pageTitle(page, 'Site')).toBe(page);
+  });
+});
+
+describe('jsonLdSur', () => {
+  it('ne laisse aucune séquence capable de fermer le bloc script', () => {
+    const sortie = jsonLdSur({ nom: '</script><script>alert(1)</script>', b: 'a & b \u2028' });
+    expect(sortie).not.toMatch(/[<>&\u2028\u2029]/);
+    expect(JSON.parse(sortie)).toEqual({
+      nom: '</script><script>alert(1)</script>',
+      b: 'a & b \u2028',
+    });
+  });
+
+  it('seuls des contenus maîtrisés passent par set:html dans le site', () => {
+    const racine = fileURLToPath(new URL('..', import.meta.url));
+    const fichiers = readdirSync(racine, { recursive: true })
+      .map(String)
+      .filter((f) => /\.(astro|tsx)$/.test(f));
+    for (const f of fichiers) {
+      const source = readFileSync(join(racine, f), 'utf8');
+      for (const m of source.matchAll(/set:html=\{([^([]+)/g)) {
+        expect(['jsonLdSur', 'TRACES'], `${f} : set:html={${m[1]}…}`).toContain(m[1]!.trim());
+      }
+      expect(source.includes('dangerouslySetInnerHTML'), f).toBe(false);
+    }
   });
 });

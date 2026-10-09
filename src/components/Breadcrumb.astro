@@ -1,4 +1,5 @@
 ---
+import { jsonLdSur } from '../lib/seo';
 import { SITE } from '../config';
 
 interface Crumb {
@@ -28,7 +29,7 @@ const jsonLd = {
 };
 ---
 
-<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+<script type="application/ld+json" is:inline set:html={jsonLdSur(jsonLd)} />
 <nav aria-label="Fil d'Ariane" class="text-sm text-ink-soft">
   <ol class="flex flex-wrap items-center gap-1">
     <li>

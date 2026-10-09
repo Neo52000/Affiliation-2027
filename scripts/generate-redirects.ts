@@ -1,25 +1,25 @@
 /**
- * Régénère le bloc de redirections /go/ de netlify.toml depuis
- * src/data/affiliation.json (lancé par le prebuild — local, CI et Netlify).
+ * Écrit dist/_redirects (règles /go/{slug} des liens affiliés actifs) depuis
+ * src/data/affiliation.json. Lancé par le postbuild — local, CI et Netlify.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { blocRedirections, injecterBloc } from '../src/lib/redirects.ts';
+import { liensActifs } from '../src/lib/liens-affilies.ts';
+import { fichierRedirections } from '../src/lib/redirects.ts';
+import { affiliationSchema } from '../src/lib/schemas.ts';
 
 const racine = process.cwd();
-const cheminToml = join(racine, 'netlify.toml');
-const affiliation = JSON.parse(readFileSync(join(racine, 'src/data/affiliation.json'), 'utf8')) as {
-  liens: Record<string, string | null>;
-};
-
-const avant = readFileSync(cheminToml, 'utf8');
-const apres = injecterBloc(avant, blocRedirections(affiliation.liens));
-
-if (apres !== avant) {
-  writeFileSync(cheminToml, apres);
-  console.log('generate-redirects : netlify.toml mis à jour.');
-} else {
-  console.log('generate-redirects : netlify.toml déjà à jour.');
+// Un public/_redirects serait copié dans dist puis écrasé ici sans bruit : interdit.
+if (existsSync(join(racine, 'public', '_redirects'))) {
+  console.error('generate-redirects : public/_redirects existe ; ajoutez ses règles ici plutôt.');
+  process.exit(1);
 }
-const actifs = Object.values(affiliation.liens).filter((v) => v !== null).length;
-console.log(`generate-redirects : ${actifs} redirection(s) /go/ active(s).`);
+const affiliation = affiliationSchema.parse(
+  JSON.parse(readFileSync(join(racine, 'src/data/affiliation.json'), 'utf8')),
+);
+const actifs = liensActifs(affiliation);
+
+writeFileSync(join(racine, 'dist', '_redirects'), fichierRedirections(actifs));
+console.log(
+  `generate-redirects : ${Object.keys(actifs).length} redirection(s) /go/ dans dist/_redirects.`,
+);
