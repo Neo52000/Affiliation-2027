@@ -13,7 +13,7 @@
   "specificites_facturation": [
     "Le taux de TVA dépend de la prestation, du public et du régime de votre structure, pas du métier : 5,5 % pour l'assistance aux personnes âgées dépendantes ou handicapées dans les gestes essentiels du quotidien, à condition que votre organisme soit déclaré et, pour ces activités, agréé ou autorisé — le taux réduit ne s'applique qu'à compter de la date de la déclaration, de l'agrément ou de l'autorisation ; 10 % pour l'entretien de la maison et les travaux ménagers rendus par une structure déclarée ; 20 % à défaut, et notamment si votre structure n'est ni déclarée, ni agréée, ni autorisée. Le ménage reste à 10 % même chez une personne dépendante : l'administration a précisé qu'il ne constitue pas un acte essentiel ouvrant droit au 5,5 %. Une même facture mensuelle peut donc ventiler plusieurs taux.",
     "L'avance immédiate de crédit d'impôt, service optionnel et gratuit de l'Urssaf, change votre circuit d'encaissement : votre client ne règle que le reste à charge après déduction immédiate de son crédit d'impôt de 50 %, l'Urssaf vous versant le complément. L'activation relève du client et reste soumise aux conditions d'éligibilité fixées par l'Urssaf ; une partie de votre clientèle peut donc continuer à régler la totalité de la facture. Prévoyez les deux circuits d'encaissement dans votre suivi de règlements. Vos demandes de paiement doivent reprendre fidèlement le détail facturé.",
-    "Avant le 31 mars de l'année suivant celle du paiement des prestations (article D. 7233-4 du code du travail), vous devez délivrer à chaque client une attestation fiscale annuelle récapitulant les interventions de l'année (intervenants, dates, durées, taux horaire, sommes effectivement acquittées) : sans historique de facturation propre et détaillé, ce document devient impossible à produire.",
+    "Avant le 31 mars de l'année suivant celle du paiement des prestations, vous devez délivrer à chaque client l'attestation fiscale annuelle prévue par l'article D. 7233-4 du code du travail, récapitulant les interventions de l'année (intervenants, dates, durées, taux horaire, sommes effectivement acquittées) : sans historique de facturation propre et détaillé, ce document devient impossible à produire.",
     "Le devis est gratuit et obligatoire dès que la prestation atteint 100 € TTC par mois ; en dessous, il doit être fourni si le client le demande. Pour toute prestation d'au moins 25 € TTC, une note détaillée est remise au client avant paiement.",
     "Beaucoup d'intervenants exercent en micro-entreprise sous franchise en base : la facture porte alors la mention « TVA non applicable, article 293 B du CGI », sans aucune TVA. La franchise n'exonère pas de la réforme : réception de factures électroniques des fournisseurs et transmission des données de ventes aux particuliers (e-reporting), à l'échéance applicable à votre entreprise."
   ],
@@ -77,7 +77,7 @@
     },
     {
       "question": "Quand dois-je remettre l'attestation fiscale annuelle et que doit-elle contenir ?",
-      "reponse": "Avant le 31 mars de l'année suivant celle du paiement des prestations (article D. 7233-4 du code du travail). Elle mentionne notamment l'identification de votre organisme, le numéro et la date d'enregistrement de votre déclaration, le récapitulatif des interventions (intervenant, date, durée), le taux horaire ou forfaitaire et les sommes effectivement acquittées par le client. Sans elle, votre client ne peut pas justifier son avantage fiscal."
+      "reponse": "Avant le 31 mars de l'année suivant celle du paiement des prestations. Prévue par l'article D. 7233-4 du code du travail, elle mentionne notamment l'identification de votre organisme, le numéro et la date d'enregistrement de votre déclaration, le récapitulatif des interventions (intervenant, date, durée), le taux horaire ou forfaitaire et les sommes effectivement acquittées par le client. Sans elle, votre client ne peut pas justifier son avantage fiscal."
     },
     {
       "question": "Quel taux de TVA pour le ménage effectué chez une personne âgée dépendante ?",
@@ -102,8 +102,8 @@
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033747494"
     },
     {
-      "titre": "service-public.fr (professionnels) — Avantages fiscaux d'une entreprise de services à la personne",
-      "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F31554"
+      "titre": "Modèle d'attestation fiscale annuelle pour les services à la personne",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/R32522"
     },
     {
       "titre": "impots.gouv.fr — Bénéficier du crédit d'impôt pour l'emploi d'un salarié à domicile",
@@ -146,5 +146,5 @@
       "url": "https://economie.gouv.fr/dgccrf/services-a-personne-quelle-reglementation"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

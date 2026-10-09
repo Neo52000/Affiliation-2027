@@ -95,7 +95,7 @@
     },
     {
       "question": "Faut-il un numéro de déclaration d'activité pour vendre mes formations ?",
-      "reponse": "La déclaration d'activité vise les prestataires qui réalisent des actions de formation professionnelle ; elle se dépose auprès de l'administration via le bulletin dédié (Cerfa 10782), qui demande notamment la date de la première convention ou du premier contrat de formation. Ce numéro ne vaut pas exonération de TVA : l'attestation fiscale est une démarche distincte. Pour la vente de contenus hors de ce cadre, vérifiez votre situation sur les pages officielles."
+      "reponse": "La déclaration d'activité vise les prestataires qui réalisent des actions de formation professionnelle ; elle se dépose en ligne ou via le bulletin dédié (Cerfa 10782), dans les 3 mois qui suivent la signature de la première convention ou du premier contrat de formation. Ce numéro ne vaut pas exonération de TVA : l'attestation fiscale est une démarche distincte. Pour la vente de contenus hors de ce cadre, vérifiez votre situation sur les pages officielles."
     }
   ],
   "sources": [
@@ -120,8 +120,8 @@
       "url": "https://www.impots.gouv.fr/portail/professionnel/je-minscris-au-service-du-guichet-unique-de-tva"
     },
     {
-      "titre": "entreprendre.service-public.fr — Déclaration d'activité d'un organisme de formation professionnelle (bulletin Cerfa 10782)",
-      "url": "https://entreprendre.service-public.fr/vosdroits/F23897"
+      "titre": "entreprendre.service-public.gouv.fr — Déclaration d'activité des formateurs et organismes de formation",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F19087"
     },
     {
       "titre": "BOFiP — Le taux normal de 20 % s'applique aux opérations sans taux réduit prévu (BOI-TVA-LIQ-20-20)",
@@ -140,8 +140,8 @@
       "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
     },
     {
-      "titre": "service-public.fr — Les mentions qu'une facture doit comporter, dont la référence d'une exonération (fiche F31410)",
-      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+      "titre": "entreprendre.service-public.gouv.fr — Mentions obligatoires sur une facture",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "titre": "impots.gouv.fr — Découvrir la facturation électronique (plateformes agréées, réception et émission)",
@@ -152,5 +152,5 @@
       "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

@@ -95,10 +95,6 @@
   ],
   "sources": [
     {
-      "titre": "Tout savoir sur la facturation (mentions, décompte détaillé) — service-public.fr",
-      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
-    },
-    {
       "titre": "Mentions obligatoires sur une facture (bon de commande, escompte) — entreprendre.service-public.gouv.fr",
       "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
@@ -135,5 +131,5 @@
       "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

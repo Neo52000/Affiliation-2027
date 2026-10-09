@@ -12,7 +12,7 @@
   "clients_types": "mixte",
   "specificites_facturation": [
     "La création elle-même (logo, charte graphique, affiche) est une prestation de services taxée au taux normal de 20 %. La cession des droits patrimoniaux d'auteur sur l'œuvre relève du taux réduit de 10 % (CGI, art. 279, g), à condition que l'opération ait bien la nature d'une cession de droits. En pratique, ventilez la cession sur une ligne propre, avec son prix : cette ventilation n'est pas exigée par le texte, mais elle vous permet de justifier le taux appliqué en cas de contrôle. Les droits portant sur des logiciels et sur des œuvres d'architecture sont exclus du taux réduit.",
-    "Toute somme encaissée avant la livraison de la création (acompte à la signature du devis) doit donner lieu à une facture d'acompte. Un simple reçu ne suffit pas.",
+    "Lorsque votre client est un professionnel assujetti ou une personne morale, toute somme encaissée avant la livraison de la création (acompte à la signature du devis) doit donner lieu à une facture d'acompte. Un simple reçu ne suffit pas.",
     "Une facture de cession de droits précise l'étendue de la cession : supports, durée et territoire. Sans ces trois éléments, la ligne de cession est difficile à justifier au taux réduit.",
     "Les frais techniques que vous refacturez (polices sous licence, banque d'images, impression) ne sont pas des honoraires de création : faites-les figurer sur des lignes distinctes, avec leur dénomination précise, leur quantité et leur prix unitaire hors taxe, en les rattachant à la prestation qu'ils complètent.",
     "Vos revenus de graphiste indépendant relèvent des BNC. En micro-BNC, le bénéfice imposable est calculé après un abattement forfaitaire de 34 % sur les recettes ; vos frais réels ne sont pas déduits."
@@ -87,7 +87,7 @@
     },
     {
       "question": "Mon client verse 30 % à la signature du devis : dois-je émettre une facture pour cet acompte ?",
-      "reponse": "Oui. Toute somme encaissée avant la réalisation de la prestation doit donner lieu à une facture d'acompte. La facture de solde émise à la livraison mentionne ensuite l'acompte déjà facturé et déduit son montant du net à payer. Ce découpage s'applique aussi en franchise en base, sans TVA."
+      "reponse": "Oui, si votre client est un professionnel assujetti ou une personne morale : toute somme encaissée avant la réalisation de la prestation doit alors donner lieu à une facture d'acompte. La facture de solde émise à la livraison mentionne ensuite l'acompte déjà facturé et déduit son montant du net à payer. Ce découpage s'applique aussi en franchise en base, sans TVA."
     },
     {
       "question": "Comment présenter la cession de droits sur ma facture pour sécuriser le taux de 10 % ?",
@@ -132,8 +132,8 @@
       "url": "https://www.urssaf.fr/accueil/artiste-auteur-diffuseur/artiste-auteur/verification-regime-activite-aa.html"
     },
     {
-      "titre": "service-public.fr — Mentions obligatoires sur une facture entre professionnels",
-      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+      "titre": "entreprendre.service-public.gouv.fr — Mentions obligatoires sur une facture",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "titre": "DGCCRF — Délais de paiement, pénalités de retard et indemnité forfaitaire de 40 €",
@@ -148,5 +148,5 @@
       "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

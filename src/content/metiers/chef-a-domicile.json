@@ -50,7 +50,7 @@
     "mentions_specifiques": [
       "Aucune colonne de taux ni de montant de TVA ne doit apparaître : la facture porte la seule mention « TVA non applicable, article 293 B du CGI » et des prix nets de taxe. Faire figurer un taux, fût-il de 0 %, rendrait l'entreprise redevable de la taxe.",
       "Séparation de la prestation relevant des services à la personne et du coût des denrées, exclu de ce champ",
-      "Référence au devis accepté et rappel de l'acompte déjà encaissé, déduit du montant à régler",
+      "Référence conseillée au devis accepté et rappel de l'acompte déjà encaissé, déduit du montant à régler",
       "Date et adresse d'exécution de la prestation, conditions et délais de paiement",
       "Exemple illustratif : les quantités et les prix sont fictifs ; l'absence de taux découle du régime de franchise retenu pour l'exemple"
     ]
@@ -83,11 +83,11 @@
     },
     {
       "question": "Un devis est-il obligatoire avant d'intervenir chez un particulier ?",
-      "reponse": "Un devis personnalisé gratuit est obligatoire dès que le prix de la prestation ou de l'ensemble de prestations atteint 100 € TTC par mois. En dessous de ce montant, vous devez l'établir gratuitement si le client le demande. Il comporte notamment sa date de rédaction et sa durée de validité, votre dénomination et votre adresse, votre numéro de déclaration le cas échéant, le nom et l'adresse du client et le lieu d'intervention. Le devis ne remplace pas la facture, qui reste à établir."
+      "reponse": "Un devis personnalisé gratuit est obligatoire dès que le prix de la prestation ou de l'ensemble de prestations atteint 100 € TTC par mois. En dessous de ce montant, vous devez l'établir gratuitement si le client le demande. Il comporte notamment sa date de rédaction et sa durée de validité, votre dénomination et votre adresse, votre numéro de déclaration le cas échéant, le nom et l'adresse du client et le lieu d'intervention. Le devis ne remplace pas la facture, qui reste à établir et doit être délivrée gratuitement au client avant paiement."
     },
     {
       "question": "Je demande un acompte à la réservation : quand la TVA devient-elle exigible ?",
-      "reponse": "Pour une prestation de services, la TVA est exigible à l'encaissement : chaque acompte perçu la rend exigible à hauteur de son montant, avant l'exécution de la prestation. Si votre client est un professionnel assujetti ou une personne morale, vous établissez une facture d'acompte, puis une facture de solde qui rappelle la somme déjà réglée ; avec un client particulier, la facture d'acompte n'est pas exigée par cette règle fiscale, mais si votre activité est déclarée au titre des services à la personne, la facture prévue par le code du travail pour ces services doit lui être délivrée avant paiement, et gratuitement. Si vous relevez de la franchise en base, aucune TVA n'est due ni facturée. Cette règle d'exigibilité est celle du droit commun : un prestataire peut opter pour le paiement de la taxe d'après les débits, auquel cas la taxe devient exigible dès la facturation, sans attendre l'encaissement ; l'option se mentionne alors sur les factures et se vérifie avec votre expert-comptable."
+      "reponse": "Pour une prestation de services, la TVA est exigible à l'encaissement : chaque acompte perçu la rend exigible à hauteur de son montant, avant l'exécution de la prestation. Si votre client est un professionnel assujetti ou une personne morale, vous établissez une facture d'acompte, puis une facture de solde qui rappelle la somme déjà réglée ; avec un client particulier, la facture d'acompte n'est pas exigée par cette règle fiscale, mais la facture prévue par le code du travail pour les services à la personne doit lui être délivrée avant paiement, et gratuitement. Si vous relevez de la franchise en base, aucune TVA n'est due ni facturée. Cette règle d'exigibilité est celle du droit commun : un prestataire peut opter pour le paiement de la taxe d'après les débits, auquel cas la taxe devient exigible dès la facturation, sans attendre l'encaissement ; l'option se mentionne alors sur les factures et se vérifie avec votre expert-comptable."
     },
     {
       "question": "Je suis en franchise en base : comment présenter l'acompte demandé à la réservation ?",
@@ -95,7 +95,7 @@
     },
     {
       "question": "Un séminaire d'entreprise et un dîner chez un particulier : la facture est-elle la même ?",
-      "reponse": "Le détail des lignes ne change pas, la prestation et les denrées restent séparées dans les deux cas. Le circuit, lui, diffère. Pour l'entreprise, la facture devra être émise au format électronique par une plateforme agréée, à l'échéance applicable à votre entreprise, ce qui suppose de demander son SIREN ou son SIRET dès la commande et non le jour de la prestation. Pour le particulier, la facture reste remise de la main à la main ou par courriel, et c'est la transmission des données de transactions à l'administration qui s'applique. Point d'attention propre à votre activité : seul le client particulier peut valoriser la part relevant des services à la personne, raison de plus pour que la ligne « denrées » reste distincte de la ligne « prestation »."
+      "reponse": "Le détail des lignes ne change pas, la prestation et les denrées restent séparées dans les deux cas. Le circuit, lui, diffère. Pour l'entreprise, la facture devra être émise au format électronique par une plateforme agréée, à l'échéance applicable à votre entreprise, ce qui suppose de demander son SIREN ou son SIRET dès la commande et non le jour de la prestation. Pour le particulier, la facture reste remise de la main à la main ou par courriel, avant paiement, et c'est la transmission des données de transactions à l'administration qui s'applique. Point d'attention propre à votre activité : seul le client particulier peut valoriser la part relevant des services à la personne, raison de plus pour que la ligne « denrées » reste distincte de la ligne « prestation »."
     }
   ],
   "sources": [
@@ -154,6 +154,10 @@
     {
       "titre": "BOFiP – Mentions obligatoires sur les factures : numérotation des factures d'acompte et référence à ces factures sur la facture définitive (BOI-TVA-DECLA-30-20-20-10)",
       "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20131018"
+    },
+    {
+      "titre": "Légifrance – Code du travail, article D7233-1 : facture des prestations de services à la personne fournies aux personnes physiques (mentions, numéro de déclaration si celle-ci a été demandée)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033747505"
     }
   ],
   "date_maj": "2026-10-09"

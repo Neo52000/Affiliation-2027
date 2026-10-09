@@ -135,8 +135,8 @@
       "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
     },
     {
-      "titre": "entreprendre.service-public.fr — Mentions obligatoires d'une facture entre professionnels (fiche F31410)",
-      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+      "titre": "entreprendre.service-public.gouv.fr — Mentions obligatoires sur une facture",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "titre": "impots.gouv.fr — Je découvre la facturation électronique (réception et émission via plateforme agréée)",
@@ -151,5 +151,5 @@
       "url": "https://www.urssaf.fr/accueil/artiste-auteur-diffuseur/artiste-auteur.html"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

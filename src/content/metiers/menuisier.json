@@ -3,7 +3,7 @@
   "slug": "menuisier",
   "famille": "batiment",
   "statuts_frequents": ["Entreprise individuelle (artisan)", "EURL", "SASU", "Micro-entrepreneur"],
-  "volume_factures_typique": "5 à 20 factures par mois : des chantiers moins nombreux que dans d'autres corps d'état, mais à montant unitaire élevé, presque toujours découpés en facture d'acompte à la commande puis facture de solde à la pose.",
+  "volume_factures_typique": "5 à 20 factures par mois : des chantiers moins nombreux que dans d'autres corps d'état, mais à montant unitaire élevé, souvent découpés en facture d'acompte à la commande puis facture de solde à la pose.",
   "clients_types": "mixte",
   "specificites_facturation": [
     "Le taux de TVA dépend de la menuiserie posée, dans un logement achevé depuis plus de deux ans : 5,5 % pour l'isolation thermique des parois vitrées (fenêtres, portes-fenêtres, fenêtres de toit), les volets isolants et les portes d'entrée donnant sur l'extérieur, sous conditions de performance ; 10 % pour les autres menuiseries ; 20 % dès que l'une des conditions manque.",
@@ -16,7 +16,7 @@
   "mentions_obligatoires_specifiques": [
     "Certification du client inscrite sur le devis ou la facture : le logement est achevé depuis plus de deux ans et les conditions du 5,5 % (menuiseries isolantes) ou du 10 % sont réunies.",
     "Ventilation de la TVA par ligne lorsque plusieurs taux coexistent sur la même facture (5,5 %, 10 %, 20 %), chaque ligne portant le taux qui lui est propre.",
-    "Facture d'acompte pour tout versement encaissé avant la livraison ou la pose.",
+    "Facture d'acompte pour tout versement encaissé avant la livraison ou la pose, lorsque le client est un professionnel ou une personne morale.",
     "Mention de l'assurance professionnelle obligatoire (responsabilité décennale pour les travaux de pose), coordonnées de l'assureur ou du garant et couverture géographique du contrat."
   ],
   "exemple_facture": {
@@ -68,7 +68,7 @@
   "outils_recommandes": [
     {
       "slug": "qonto",
-      "justification": "Pratique pour suivre l'encaissement des acomptes à la commande, systématiques dans le sur-mesure."
+      "justification": "Pratique pour suivre l'encaissement des acomptes à la commande, fréquents dans le sur-mesure."
     },
     {
       "slug": "shine",

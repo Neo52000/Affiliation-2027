@@ -197,7 +197,7 @@ describe('src/content/metiers : facture d’acompte', () => {
   // Une fiche dont la clientèle compte des particuliers ne peut donc pas l'imposer
   // pour « tout acompte » sans cette réserve (erreur corrigée sur 5 fiches).
   const OBLIGATION =
-    /(tout (versement d['’])?acompte|chaque acompte)[^.]*(donne lieu|doit donner lieu|doit faire l['’]objet|doivent chacun faire l['’]objet)[^.]*facture/i;
+    /(tout (versement d['’])?acompte|chaque acompte)[^.]*(donne lieu|doit donner lieu|doit faire l['’]objet|doivent chacun faire l['’]objet)[^.]*facture|facture d['’]acompte pour (tout|chaque) (versement|acompte|encaissement)/i;
   const RESERVE = /professionnel|personne morale|assujetti/i;
   const textes = (o: unknown): string[] =>
     typeof o === 'string'
@@ -228,6 +228,23 @@ describe('src/content/metiers : facture d’acompte', () => {
       for (const t of champs.flatMap((x) => x.split(/(?<=[.!?])\s+/))) {
         if (OBLIGATION.test(t)) expect(t, `${f} : ${t}`).toMatch(RESERVE);
       }
+    }
+  });
+});
+
+describe('sources Service-Public', () => {
+  // Service-Public a migré sur service-public.gouv.fr : l'ancien domaine n'est
+  // pas un domaine .gouv.fr et ne doit plus être cité.
+  it('aucune source sur l’ancien domaine service-public.fr', () => {
+    const fichiers = [
+      ...readdirSync(join(ROOT, 'src/content'), { recursive: true }).map(
+        (f) => `src/content/${String(f)}`,
+      ),
+      ...readdirSync(join(ROOT, 'src/data')).map((f) => `src/data/${f}`),
+    ].filter((f) => /\.(json|mdx?)$/.test(f));
+    for (const f of fichiers) {
+      const texte = readFileSync(join(ROOT, f), 'utf8');
+      expect(texte, f).not.toMatch(/https?:\/\/([a-z]+\.)?service-public\.fr\//);
     }
   });
 });
