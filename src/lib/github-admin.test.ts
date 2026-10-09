@@ -14,6 +14,7 @@ const depot = { proprietaire: 'Proprio', nom: 'Depot', branche: 'main' };
 const BASE = '/admin/gh/repos/Proprio/Depot';
 const MAINTENANT = new Date('2026-11-02T08:00:00Z');
 const toujours = () => true;
+const BRANCHE = 'back-office/20261102-080000-a1b2';
 
 type Route = (corps: unknown) => [number, unknown, Record<string, string>?];
 
@@ -223,11 +224,59 @@ describe('publier', () => {
   });
 });
 
+describe('chemins et publications ouvertes', () => {
+  it.each([
+    'src/%2e%2e/%2e%2e/x.json',
+    'src/../x.json',
+    'src/./x.json',
+    'src//x.json',
+    'https://exemple.fr/x.json',
+    'src/x.json#a',
+  ])('refuse le chemin %s sans aucun appel', async (chemin) => {
+    const { c, appels } = client({});
+    await expect(c.lireFichier(chemin)).rejects.toThrow(/chemin refusé/);
+    expect(appels).toHaveLength(0);
+  });
+
+  it('ne garde que les demandes back-office/… issues de ce dépôt', async () => {
+    const demande = (numero: number, ref: string, depotTete: string | null) => ({
+      number: numero,
+      html_url: `https://github.com/Proprio/Depot/pull/${numero}`,
+      title: `n° ${numero}`,
+      head: { ref, sha: `sha${numero}`, repo: depotTete ? { full_name: depotTete } : null },
+    });
+    const { c } = client({
+      'GET /pulls?state=open&per_page=30': () => [
+        200,
+        [
+          demande(1, BRANCHE, 'Proprio/Depot'),
+          demande(2, BRANCHE, 'Tiers/Depot'),
+          demande(3, 'back-office/%2e%2e/%2e%2e/tags/v1.0', 'Proprio/Depot'),
+          demande(4, 'back-office/%2e%2e/%2e%2e/tags/v1.0', 'Tiers/Depot'),
+          demande(5, 'back-office/x', 'Proprio/Depot'),
+          demande(6, BRANCHE, null),
+          demande(7, 'claude/autre', 'Proprio/Depot'),
+        ],
+      ],
+    });
+    expect(await c.publicationsOuvertes()).toEqual([
+      {
+        numero: 1,
+        url: 'https://github.com/Proprio/Depot/pull/1',
+        branche: BRANCHE,
+        sha: 'sha1',
+        titre: 'n° 1',
+        chemins: null,
+      },
+    ]);
+  });
+});
+
 describe('etat et mise en ligne', () => {
   const pub: Publication = {
     numero: 7,
     url: '',
-    branche: 'back-office/x',
+    branche: BRANCHE,
     sha: 'c0ffee',
     titre: '',
     chemins: ['src/data/affiliation.json'],
@@ -242,7 +291,7 @@ describe('etat et mise en ligne', () => {
         mergeable: true,
         mergeable_state: 'clean',
         base: { ref: 'main' },
-        head: { ref: 'back-office/x', sha: 'c0ffee', repo: { full_name: 'Proprio/Depot' } },
+        head: { ref: BRANCHE, sha: 'c0ffee', repo: { full_name: 'Proprio/Depot' } },
         ...p,
       },
     ];
@@ -250,7 +299,7 @@ describe('etat et mise en ligne', () => {
     status: 'completed',
     conclusion: 'success',
     path: '.github/workflows/ci.yml',
-    head_branch: 'back-office/x',
+    head_branch: BRANCHE,
     head_sha: 'c0ffee',
     ...p,
   });
@@ -282,9 +331,7 @@ describe('etat et mise en ligne', () => {
   it.each([
     [
       'commit ajouté',
-      routes(
-        pr({ head: { ref: 'back-office/x', sha: 'autre', repo: { full_name: 'Proprio/Depot' } } }),
-      ),
+      routes(pr({ head: { ref: BRANCHE, sha: 'autre', repo: { full_name: 'Proprio/Depot' } } })),
       /autre commit/,
     ],
     [
@@ -310,11 +357,47 @@ describe('etat et mise en ligne', () => {
   it('met en ligne avec le sha créé, en squash, puis supprime la branche', async () => {
     const { c, appels } = client({
       'PUT /pulls/7/merge': () => [200, { merged: true }],
-      'DELETE /git/refs/heads/back-office/x': () => [204, null],
+      [`DELETE /git/refs/heads/${BRANCHE}`]: () => [204, null],
     });
     await c.mettreEnLigne(pub);
     expect(appels[0]!.corps).toEqual({ sha: 'c0ffee', merge_method: 'squash' });
     expect(appels[1]!.methode).toBe('DELETE');
+    expect(appels[1]!.url).toBe(`${BASE}/git/refs/heads/${BRANCHE}`);
+  });
+
+  it('ne supprime jamais une branche hors du format back-office', async () => {
+    const { c, appels } = client({ 'PUT /pulls/7/merge': () => [200, { merged: true }] });
+    await c.mettreEnLigne({ ...pub, branche: 'back-office/%2e%2e/%2e%2e/tags/v1.0' });
+    expect(appels.map((a) => a.methode)).toEqual(['PUT']);
+  });
+
+  it('abandon : ferme la demande puis supprime sa branche, confirmée par GitHub', async () => {
+    const { c, appels } = client({
+      'PATCH /pulls/7': () => [
+        200,
+        { head: { ref: BRANCHE, repo: { full_name: 'Proprio/Depot' } } },
+      ],
+      [`DELETE /git/refs/heads/${BRANCHE}`]: () => [204, null],
+    });
+    await c.abandonner(pub);
+    expect(appels[0]!.corps).toEqual({ state: 'closed' });
+    expect(appels.map((a) => `${a.methode} ${a.url.replace(BASE, '')}`)).toEqual([
+      'PATCH /pulls/7',
+      `DELETE /git/refs/heads/${BRANCHE}`,
+    ]);
+  });
+
+  it.each([
+    ['depuis un fork', { ref: BRANCHE, repo: { full_name: 'Tiers/Depot' } }],
+    ['fork supprimé', { ref: BRANCHE, repo: null }],
+    [
+      'autre branche',
+      { ref: 'back-office/20261102-080000-ffff', repo: { full_name: 'Proprio/Depot' } },
+    ],
+  ])('abandon %s : demande fermée, aucune branche supprimée', async (_, head) => {
+    const { c, appels } = client({ 'PATCH /pulls/7': () => [200, { head }] });
+    await c.abandonner(pub);
+    expect(appels.map((a) => a.methode)).toEqual(['PATCH']);
   });
 
   it('remonte le message d’erreur et la permission attendue', async () => {

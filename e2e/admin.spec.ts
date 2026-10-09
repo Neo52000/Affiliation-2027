@@ -85,7 +85,19 @@ async function simulerGitHub(page: Page, options: Options = {}) {
     if (cle === 'GET /contents/src/assets/publicites?ref=main') {
       return repondre(route, 200, [{ name: 'LISEZMOI.md', type: 'file' }]);
     }
-    if (cle === 'GET /pulls?state=open&per_page=30') return repondre(route, 200, []);
+    if (cle === 'GET /pulls?state=open&per_page=30') {
+      // Demandes piégées ouvertes par un tiers : le back office doit les ignorer.
+      const piege = (numero: number, ref: string, depot: string) => ({
+        number: numero,
+        html_url: `https://github.com/Neo52000/Affiliation-2027/pull/${numero}`,
+        title: 'Piège',
+        head: { ref, sha: 'piege', repo: { full_name: depot } },
+      });
+      return repondre(route, 200, [
+        piege(98, 'back-office/%2e%2e/%2e%2e/tags/v1.0', 'Tiers/Affiliation-2027'),
+        piege(99, 'back-office/20261009-120000-abcd', 'Tiers/Affiliation-2027'),
+      ]);
+    }
     if (cle === 'GET /git/ref/heads/main')
       return repondre(route, 200, { object: { sha: 'parent' } });
     if (cle === 'GET /git/commits/parent') return repondre(route, 200, { tree: { sha: 'arbre0' } });
@@ -206,6 +218,7 @@ test('lien affilié : saisie, publication vérifiée par la CI, mise en ligne', 
   await expect(tiime.getByText('Domaine de destination : www.tiime.fr')).toBeVisible();
   await expect(page.getByText('Lien affilié tiime : actif (Affilae)')).toBeVisible();
 
+  await expect(page.getByText(/Demande n° 9[89]/)).toHaveCount(0);
   await publier.click();
   await expect(page.getByText('Demande n° 7')).toBeVisible();
   await expect(page.getByText('vérifications réussies')).toBeVisible();
@@ -223,6 +236,7 @@ test('lien affilié : saisie, publication vérifiée par la CI, mise en ligne', 
   };
   expect(arbre.tree.map((t) => t.path)).toEqual(['src/data/affiliation.json']);
   expect(appels.every((a) => a.auth === `Bearer ${JETON}`)).toBe(true);
+  expect(appels.filter((a) => a.chemin.includes('/pulls/9'))).toHaveLength(0);
 
   await page.getByRole('button', { name: 'Mettre en ligne' }).click();
   await expect(page.getByText('mise en ligne : Netlify déploie le site')).toBeAttached();

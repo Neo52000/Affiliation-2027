@@ -51,7 +51,7 @@ describe('relayer', () => {
       'github-authentication-token-expiration': '2026-12-01',
     });
     const r = await relayer(
-      requete(`/admin/gh/repos/${DEPOT}/git/blobs?x=1`, {
+      requete(`/admin/gh/repos/${DEPOT}/git/blobs`, {
         method: 'POST',
         body: '{"content":"YQ=="}',
         headers: { origin: 'https://site.example', cookie: 'session=1' },
@@ -60,7 +60,7 @@ describe('relayer', () => {
       f,
     );
     expect(r.status).toBe(201);
-    expect(appels[0]!.url).toBe(`https://api.github.com/repos/${DEPOT}/git/blobs?x=1`);
+    expect(appels[0]!.url).toBe(`https://api.github.com/repos/${DEPOT}/git/blobs`);
     const h = appels[0]!.init.headers as Record<string, string>;
     expect(h['authorization']).toBe(`Bearer ${JETON}`);
     expect(h['cookie']).toBeUndefined();
@@ -95,6 +95,69 @@ describe('relayer', () => {
     expect(
       (await relayer(requete(`/admin/gh/repos/${DEPOT}`, { method: 'HEAD' }), DEPOT, f)).status,
     ).toBe(405);
+    expect(appels).toHaveLength(0);
+  });
+
+  it('transmet la query string des lectures', async () => {
+    const { f, appels } = fauxGitHub();
+    const r = await relayer(requete(`/admin/gh/repos/${DEPOT}/pulls?state=open`), DEPOT, f);
+    expect(r.status).toBe(200);
+    expect(appels[0]!.url).toBe(`https://api.github.com/repos/${DEPOT}/pulls?state=open`);
+  });
+});
+
+describe('relayer : écritures', () => {
+  const BRANCHE = 'back-office/20261102-080000-a1b2';
+  const ecrire = (methode: string, route: string, corps?: unknown) =>
+    requete(`/admin/gh/repos/${DEPOT}${route}`, {
+      method: methode,
+      ...(corps === undefined ? {} : { body: JSON.stringify(corps) }),
+    });
+
+  it.each([
+    ['POST', '/git/blobs', { content: 'YQ==', encoding: 'base64' }],
+    ['POST', '/git/trees', { tree: [] }],
+    ['POST', '/git/commits', { message: 'm', tree: 't', parents: [] }],
+    ['POST', '/git/refs', { ref: `refs/heads/${BRANCHE}`, sha: 'c0ffee' }],
+    ['POST', '/pulls', { title: 't', head: BRANCHE, base: 'main', body: '' }],
+    ['PATCH', '/pulls/7', { state: 'closed' }],
+    ['PUT', '/pulls/7/merge', { sha: 'c0ffee', merge_method: 'squash' }],
+    ['DELETE', `/git/refs/heads/${BRANCHE}`, undefined],
+  ])('relaie %s %s', async (methode, route, corps) => {
+    const { f, appels } = fauxGitHub();
+    expect((await relayer(ecrire(methode, route, corps), DEPOT, f)).status).toBe(200);
+    expect(appels).toHaveLength(1);
+  });
+
+  it.each([
+    ['DELETE', '/git/refs/tags/v1.0', undefined],
+    ['DELETE', '/git/refs/heads/main', undefined],
+    ['DELETE', '/git/refs/heads/back-office/x', undefined],
+    ['DELETE', '/releases/1', undefined],
+    ['DELETE', '', undefined],
+    ['PUT', '/contents/src/data/affiliation.json', { content: 'YQ==' }],
+    ['PATCH', '/git/refs/heads/main', { sha: 'c0ffee', force: true }],
+    ['PATCH', '', { private: false }],
+    ['PATCH', '/pulls/7', { state: 'closed', base: 'autre' }],
+    ['PATCH', '/pulls/7', { title: 'autre' }],
+    ['POST', '/git/refs', { ref: 'refs/heads/main', sha: 'c0ffee' }],
+    ['POST', '/git/refs', { ref: 'refs/tags/v9', sha: 'c0ffee' }],
+    ['POST', '/git/refs', { ref: `refs/heads/${BRANCHE}/../main`, sha: 'c0ffee' }],
+    ['POST', '/pulls', { title: 't', head: 'main', base: 'autre' }],
+    ['POST', '/releases', { tag_name: 'v9' }],
+    ['POST', '/dispatches', { event_type: 'x' }],
+    ['POST', `/git/blobs?x=1`, { content: 'YQ==' }],
+  ])('refuse %s %s', async (methode, route, corps) => {
+    const { f, appels } = fauxGitHub();
+    expect((await relayer(ecrire(methode, route, corps), DEPOT, f)).status).toBe(403);
+    expect(appels).toHaveLength(0);
+  });
+
+  it('refuse un nom de branche piégé que le navigateur normalise (%2e%2e)', async () => {
+    const { f, appels } = fauxGitHub();
+    const piege = ecrire('DELETE', '/git/refs/heads/back-office/%2e%2e/%2e%2e/tags/v1.0');
+    expect(new URL(piege.url).pathname).toBe(`/admin/gh/repos/${DEPOT}/git/refs/tags/v1.0`);
+    expect((await relayer(piege, DEPOT, f)).status).toBe(403);
     expect(appels).toHaveLength(0);
   });
 });
