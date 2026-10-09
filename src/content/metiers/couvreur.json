@@ -3,11 +3,11 @@
   "slug": "couvreur",
   "famille": "batiment",
   "statuts_frequents": ["Entreprise individuelle (artisan)", "EURL", "Micro-entrepreneur", "SARL"],
-  "volume_factures_typique": "5 à 25 factures par mois, avec une forte saisonnalité : les chantiers de couverture se concentrent à la belle saison et chaque chantier génère au moins une facture d'acompte puis une facture de solde.",
+  "volume_factures_typique": "5 à 25 factures par mois, avec une forte saisonnalité : les chantiers de couverture se concentrent à la belle saison et un chantier donne souvent lieu à une facture d'acompte puis à une facture de solde.",
   "clients_types": "mixte",
   "specificites_facturation": [
     "Une même facture de toiture mélange souvent deux taux réduits : 10 % pour la réfection de la couverture d'un logement achevé depuis plus de deux ans, 5,5 % pour l'isolation de la toiture (travaux d'amélioration de la qualité énergétique) et les travaux qui leur sont indissociablement liés. Chaque taux exige ses propres lignes et la certification du client sur le devis ou la facture.",
-    "Les acomptes encaissés avant le début du chantier (échafaudage, approvisionnement en tuiles ou en ardoises) doivent chacun faire l'objet d'une facture lorsque le client est un professionnel ou une personne morale ; la TVA sur les prestations de services est exigible dès leur encaissement, voire dès leur facturation si l'entreprise a opté pour le paiement de la TVA d'après les débits.",
+    "Les acomptes encaissés avant le début du chantier (échafaudage, approvisionnement en tuiles ou en ardoises) doivent chacun faire l'objet d'une facture lorsque le client est un professionnel ou une personne morale ; si vous facturez la TVA, celle-ci est exigible sur les prestations de services dès leur encaissement, voire dès leur facturation si l'entreprise a opté pour le paiement de la TVA d'après les débits.",
     "La météo désorganise les plannings et révèle des surprises en cours de chantier (volige pourrie, chevrons à reprendre, zinguerie à remplacer). Tout travail supplémentaire doit être chiffré et accepté par écrit avant exécution, puis repris dans la facture finale.",
     "Les réparations d'urgence après tempête relèvent du dépannage : un devis détaillé (nature des travaux, quantités, prix unitaires, main-d'œuvre, déplacement) doit être remis avant toute intervention.",
     "Les devis de rénovation de toiture comportent les informations sur les déchets déposés (tuiles, ardoises, bois de charpente) : estimation des quantités, modalités d'enlèvement, installations de collecte et coûts associés."
@@ -15,7 +15,7 @@
   "mentions_obligatoires_specifiques": [
     "Pour une facture combinant 10 % sur la couverture et 5,5 % sur l'isolation d'un logement de plus de deux ans : mention certifiée par le client, portée sur le devis ou la facture, couvrant les conditions de chaque taux réduit appliqué.",
     "Coordonnées de l'assureur ou du garant et couverture géographique du contrat d'assurance obligatoire, dont la responsabilité décennale — essentielle pour des travaux de couverture —, sur les devis comme sur les factures.",
-    "Mention « Autoliquidation » et facture émise sans TVA lorsque le couvreur intervient comme sous-traitant d'une entreprise générale ou d'un constructeur.",
+    "Mention « Autoliquidation » et facture émise sans TVA lorsque le couvreur intervient comme sous-traitant d'une entreprise générale ou d'un constructeur ; en franchise en base, l'autoliquidation ne s'applique pas et la facture porte à la place la mention « TVA non applicable, article 293 B du CGI ».",
     "Sur les devis : informations relatives à l'enlèvement et à la gestion des déchets de dépose, avec les points de collecte envisagés et l'estimation des coûts correspondants."
   ],
   "exemple_facture": {
@@ -76,7 +76,7 @@
     },
     {
       "question": "Puis-je encaisser un acompte avant de monter l'échafaudage, et dois-je l'accompagner d'une facture ?",
-      "reponse": "Oui pour l'encaissement. Pour la facture, tout dépend du client : si c'est un professionnel ou une personne morale, tout acompte versé avant la réalisation de la prestation doit donner lieu à une facture. Pour les prestations de services, la TVA est exigible dès l'encaissement de l'acompte, pas seulement au solde. La facture finale déduit ensuite les acomptes déjà facturés."
+      "reponse": "Oui pour l'encaissement. Pour la facture, tout dépend du client : si c'est un professionnel ou une personne morale, tout acompte versé avant la réalisation de la prestation doit donner lieu à une facture. Si vous facturez la TVA, elle est exigible pour les prestations de services dès l'encaissement de l'acompte, voire dès sa facturation si votre entreprise a opté pour le paiement de la TVA d'après les débits, et pas seulement au solde. La facture finale déduit ensuite les acomptes déjà facturés."
     },
     {
       "question": "En déposant les tuiles, je découvre une volige pourrie : comment facturer ce travail imprévu ?",
@@ -122,11 +122,15 @@
     },
     {
       "titre": "BOFiP — Autoliquidation de la TVA dans la sous-traitance de travaux de construction (BOI-TVA-DECLA-10-10-20)",
-      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20260909"
     },
     {
       "titre": "impots.gouv.fr — Je découvre la facturation électronique (réception puis émission via plateforme agréée)",
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "BOFiP — Rescrit BOI-RES-TVA-000269 : autoliquidation des travaux de construction sous-traités, exclusion du sous-traitant en franchise en base et mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
   "date_maj": "2026-10-09"

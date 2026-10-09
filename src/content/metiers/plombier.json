@@ -3,20 +3,20 @@
   "slug": "plombier",
   "famille": "batiment",
   "statuts_frequents": ["Micro-entreprise", "Entreprise individuelle (EI)", "EURL", "SARL", "SASU"],
-  "volume_factures_typique": "Variable selon l'activité : un plombier orienté dépannage émet souvent plusieurs dizaines de petites factures par mois, tandis qu'une activité centrée sur les chantiers de rénovation en génère moins, mais avec devis, factures d'acompte et factures de solde pour chaque chantier.",
+  "volume_factures_typique": "Variable selon l'activité : un plombier orienté dépannage émet souvent plusieurs dizaines de petites factures par mois, tandis qu'une activité centrée sur les chantiers de rénovation en génère moins, mais souvent avec devis, factures d'acompte et factures de solde pour un même chantier.",
   "clients_types": "mixte",
   "specificites_facturation": [
     "Plusieurs taux de TVA coexistent selon le chantier : 20 % pour le neuf, 10 % pour les travaux d'amélioration, de transformation, d'aménagement et d'entretien dans les logements achevés depuis plus de deux ans, 5,5 % pour les travaux de rénovation énergétique éligibles.",
     "Le taux réduit ne s'applique qu'aux travaux facturés par l'entreprise : si le client achète lui-même le matériel, cette fourniture reste à 20 % et seule la prestation de pose bénéficie du taux réduit.",
     "L'attestation TVA que le client devait remettre est remplacée par une mention portée sur le devis ou la facture, certifiant que les conditions d'application du taux réduit sont remplies.",
     "Pour les prestations de dépannage, de réparation et d'entretien, un devis doit être remis au client et accepté avant l'exécution des travaux, quel que soit leur montant, la plomberie et les installations sanitaires étant expressément concernées (arrêté du 24 janvier 2017).",
-    "En sous-traitance pour une autre entreprise du bâtiment, la TVA est autoliquidée : le sous-traitant facture hors taxe avec la mention « Autoliquidation », la TVA étant due par l'entreprise principale.",
-    "Les chantiers s'étalent dans le temps : chaque acompte encaissé rend la TVA exigible à concurrence du montant encaissé, voire dès sa facturation si l'entreprise a opté pour le paiement de la TVA d'après les débits. Lorsque le client est un professionnel ou une personne morale, chaque acompte doit en outre donner lieu à une facture d'acompte."
+    "En sous-traitance pour une autre entreprise du bâtiment, la TVA est autoliquidée : le sous-traitant facture hors taxe avec la mention « Autoliquidation », la TVA étant due par l'entreprise principale. Si vous êtes en franchise en base, l'autoliquidation ne s'applique pas : la facture porte la mention « TVA non applicable, art. 293 B du CGI ».",
+    "Les chantiers s'étalent dans le temps : si vous facturez la TVA, chaque acompte encaissé la rend exigible à concurrence du montant encaissé, voire dès sa facturation si l'entreprise a opté pour le paiement de la TVA d'après les débits. Lorsque le client est un professionnel ou une personne morale, chaque acompte doit en outre donner lieu à une facture d'acompte."
   ],
   "mentions_obligatoires_specifiques": [
-    "Mention sur le devis ou la facture certifiant que les conditions d'application du taux réduit de TVA (10 % ou 5,5 %) sont remplies : local affecté à l'habitation, achevé depuis plus de deux ans, nature des travaux éligible.",
+    "Mention sur le devis ou la facture certifiant que les conditions d'application du taux réduit de TVA (10 % ou 5,5 %) sont remplies : local affecté à l'habitation, achevé depuis plus de deux ans, nature des travaux éligible. Pour les travaux de réparation et d'entretien de moins de 1 000 € TTC, elle peut être omise si le devis ou la facture indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans.",
     "Assurance professionnelle obligatoire (responsabilité décennale) sur chaque devis et chaque facture : assurance souscrite, coordonnées de l'assureur ou du garant et couverture géographique du contrat.",
-    "Mention « Autoliquidation » sur les factures de sous-traitance de travaux immobiliers, émises sans TVA, en faisant apparaître que la taxe est due par le preneur.",
+    "Mention « Autoliquidation » sur les factures de sous-traitance de travaux immobiliers, émises sans TVA, en faisant apparaître que la taxe est due par le preneur ; en franchise en base, l'autoliquidation ne s'applique pas et c'est la mention « TVA non applicable, art. 293 B du CGI » qui figure sur la facture.",
     "Mention « TVA non applicable, art. 293 B du CGI » pour les plombiers en franchise en base de TVA, notamment en micro-entreprise."
   ],
   "exemple_facture": {
@@ -81,7 +81,7 @@
   "faq": [
     {
       "question": "Mes factures de dépannage à TVA 10 % passeront-elles telles quelles en facturation électronique ?",
-      "reponse": "Oui, la réforme ne change pas les règles de TVA applicables à vos travaux. Le taux de 10 % reste réservé aux travaux d'amélioration, de transformation, d'aménagement et d'entretien dans les logements achevés depuis plus de deux ans, et le 5,5 % aux travaux de rénovation énergétique éligibles. Votre outil de facturation doit simplement savoir porter plusieurs taux sur une même facture et inclure la mention certifiant que les conditions du taux réduit sont remplies."
+      "reponse": "Oui, la réforme ne change pas les règles de TVA applicables à vos travaux. Le taux de 10 % reste réservé aux travaux d'amélioration, de transformation, d'aménagement et d'entretien dans les logements achevés depuis plus de deux ans, et le 5,5 % aux travaux de rénovation énergétique éligibles. Votre outil de facturation doit simplement savoir porter plusieurs taux sur une même facture et inclure la mention certifiant que les conditions du taux réduit sont remplies. Pour une réparation ou un entretien de moins de 1 000 € TTC, elle peut être omise si le devis ou la facture indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans."
     },
     {
       "question": "Je travaille surtout pour des particuliers : la réforme me concerne-t-elle vraiment ?",
@@ -89,11 +89,11 @@
     },
     {
       "question": "Comment l'autoliquidation en sous-traitance se traite-t-elle avec la facturation électronique ?",
-      "reponse": "Le principe reste identique : en sous-traitance de travaux immobiliers, vous facturez hors taxe avec la mention « Autoliquidation », la TVA étant due par l'entreprise principale. Cette facture adressée à un professionnel est une facture inter-entreprises : à l'échéance applicable à votre entreprise, elle devra être émise via une plateforme agréée. Vérifiez que votre outil gère ce cas sans faire apparaître de TVA collectée."
+      "reponse": "Le principe reste identique : en sous-traitance de travaux immobiliers, vous facturez hors taxe avec la mention « Autoliquidation », la TVA étant due par l'entreprise principale. Si vous êtes en franchise en base, l'autoliquidation ne s'applique pas : votre facture porte la mention « TVA non applicable, art. 293 B du CGI ». Cette facture adressée à un professionnel est une facture inter-entreprises : à l'échéance applicable à votre entreprise, elle devra être émise via une plateforme agréée. Vérifiez que votre outil gère ce cas sans faire apparaître de TVA collectée."
     },
     {
       "question": "Que deviennent mes devis signés et mes factures d'acompte ?",
-      "reponse": "Le devis préalable reste obligatoire pour le dépannage, la réparation et l'entretien, quel que soit le montant de l'intervention. Chaque acompte encaissé rend la TVA exigible à concurrence du montant perçu et, si votre client est un professionnel ou une personne morale, doit donner lieu à une facture. Un bon outil doit donc chaîner devis, facture d'acompte et facture de solde, y compris dans le format électronique."
+      "reponse": "Le devis préalable reste obligatoire pour le dépannage, la réparation et l'entretien, quel que soit le montant de l'intervention. Si vous facturez la TVA, chaque acompte encaissé la rend exigible à concurrence du montant perçu, voire dès sa facturation si votre entreprise a opté pour le paiement de la TVA d'après les débits. Si votre client est un professionnel ou une personne morale, chaque acompte doit en outre donner lieu à une facture. Un bon outil doit donc chaîner devis, facture d'acompte et facture de solde, y compris dans le format électronique."
     },
     {
       "question": "Je suis plombier en micro-entreprise, en franchise de TVA : suis-je dispensé de la facturation électronique ?",
@@ -114,8 +114,8 @@
       "url": "https://bofip.impots.gouv.fr/bofip/9417-PGP.html/identifiant=BOI-TVA-LIQ-30-20-95-20260909"
     },
     {
-      "titre": "BOFiP — BOI-TVA-LIQ-30-20-90-40 : modalités d'application des taux réduits aux travaux (mention certifiante sur devis ou facture)",
-      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20251022"
+      "titre": "BOFiP — BOI-TVA-LIQ-30-20-90-40 : modalités d'application des taux réduits aux travaux (mention certifiante sur devis ou facture, tolérance pour la réparation et l'entretien de moins de 1 000 € TTC)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20260909"
     },
     {
       "titre": "economie.gouv.fr (DGCCRF) — Plomberie, serrurerie, chauffage… choisir le bon professionnel pour un dépannage à domicile (devis obligatoire avant intervention)",
@@ -127,7 +127,7 @@
     },
     {
       "titre": "BOFiP — BOI-TVA-DECLA-10-10-20 : autoliquidation de la TVA en sous-traitance de travaux immobiliers (mention « Autoliquidation »)",
-      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20260909"
     },
     {
       "titre": "Légifrance — Code de l'artisanat, article L132-1 : mention de l'assurance professionnelle obligatoire sur devis et factures",
@@ -142,10 +142,6 @@
       "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
     },
     {
-      "titre": "BOFiP — BOI-TVA-BASE-20-40 : exigibilité de la TVA dès l'encaissement des acomptes",
-      "url": "https://bofip.impots.gouv.fr/bofip/127-PGP.html/identifiant=BOI-TVA-BASE-20-40-20190807"
-    },
-    {
       "titre": "impots.gouv.fr — Je découvre la facturation électronique (réception, émission via plateforme agréée, liste des plateformes)",
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     },
@@ -156,6 +152,10 @@
     {
       "titre": "BOFiP — BOI-TVA-BASE-20-20 : exigibilité de la TVA des prestations de services (encaissement des acomptes ou, sur option, débits)",
       "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+    },
+    {
+      "titre": "BOFiP — Rescrit BOI-RES-TVA-000269 : autoliquidation des travaux de construction sous-traités, exclusion du sous-traitant en franchise en base et mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
   "date_maj": "2026-10-09"

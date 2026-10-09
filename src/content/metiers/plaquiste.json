@@ -10,12 +10,12 @@
     "Aucune TVA n'est encaissée sur ces chantiers : le paramétrage de l'outil doit produire des factures hors taxe portant la mention réglementaire, sans jamais afficher « exonération » ni « TVA 0 % ».",
     "La facturation au m² de plaques posées, par situations mensuelles validées par le conducteur de travaux, impose un suivi des quantités chantier par chantier.",
     "En clientèle directe, le doublage isolant d'un mur donnant sur l'extérieur ou d'un plafond de combles peut relever de 5,5 % si les matériaux atteignent les performances minimales requises ; une cloison de distribution ou un plafond sans fonction d'isolation dans un logement de plus de deux ans relève de 10 %.",
-    "Quand un taux réduit est appliqué à un particulier, celui-ci certifie l'ancienneté du logement et la nature des travaux directement sur le devis ou la facture, sans formulaire séparé."
+    "Quand un taux réduit est appliqué à un particulier, celui-ci certifie en principe l'ancienneté du logement et la nature des travaux directement sur le devis ou la facture, sans formulaire séparé. Pour des travaux de réparation et d'entretien de moins de 1 000 € TTC, cette certification peut être omise si le document indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans ; un bailleur ou gestionnaire qui vous confie plusieurs interventions de maintenance, d'entretien ou de réparation peut vous remettre une attestation valable pour l'année."
   ],
   "mentions_obligatoires_specifiques": [
     "Mention « Autoliquidation » sur chaque facture de sous-traitance, en application du 13 du I de l'article 242 nonies A de l'annexe II au CGI ; la facture fait apparaître que la TVA est due par le preneur et ne mentionne aucune TVA exigible. Si vous êtes en franchise en base, l'autoliquidation ne s'applique pas et c'est la mention « TVA non applicable, article 293 B du CGI » qui figure sur la facture.",
     "Mention de l'assurance professionnelle obligatoire au titre des ouvrages de plâtrerie (responsabilité décennale), avec les coordonnées de l'assureur et la couverture géographique du contrat.",
-    "Mention certifiée par le client particulier, sur le devis ou la facture, pour l'application du taux de 10 % ou de 5,5 %.",
+    "Mention certifiée par le client particulier, sur le devis ou la facture, pour l'application du taux de 10 % ou de 5,5 % ; pour des travaux de réparation et d'entretien de moins de 1 000 € TTC, elle peut être omise si le document indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans, et l'attestation annuelle d'un bailleur ou gestionnaire vaut certification pour les interventions qu'il vous confie dans l'année.",
     "Devis détaillé avant toute intervention de réparation ou d'entretien chez un consommateur (nature des travaux, quantités, prix unitaires, main-d'œuvre, déplacement)."
   ],
   "exemple_facture": {
@@ -58,7 +58,7 @@
     ]
   },
   "besoins_prioritaires": [
-    "Émettre en série des factures de sous-traitance sans TVA portant systématiquement la mention « Autoliquidation », sans oubli possible.",
+    "Émettre en série des factures de sous-traitance sans TVA portant systématiquement la mention « Autoliquidation », sans oubli possible, ou la mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base.",
     "Suivre les situations mensuelles et les quantités validées, chantier par chantier et donneur d'ordre par donneur d'ordre.",
     "Gérer l'exception de la clientèle directe : repasser en TVA collectée à 5,5 %, 10 % ou 20 % selon le local et la nature des travaux.",
     "Transmettre les factures aux donneurs d'ordre en format structuré via une plateforme agréée, à l'échéance applicable à votre entreprise."
@@ -88,7 +88,7 @@
     },
     {
       "question": "Je pose un doublage isolant chez un particulier : 5,5 % ou 10 % ?",
-      "reponse": "Le taux de 5,5 % vise l'isolation thermique des parois opaques (murs donnant sur l'extérieur, plafonds de combles, toitures) d'un logement achevé depuis plus de deux ans, quand les matériaux respectent les caractéristiques et niveaux de performance fixés par les articles 30-0 D et suivants de l'annexe IV au CGI, issus de l'arrêté du 4 décembre 2024 pris pour l'application de l'article 278-0 bis A du CGI. Une cloison de distribution ou un plafond sans fonction d'isolation relève du taux de 10 % dans un logement ancien. Le client certifie les conditions sur le devis ou la facture."
+      "reponse": "Le taux de 5,5 % vise l'isolation thermique des parois opaques (murs donnant sur l'extérieur, plafonds de combles, toitures) d'un logement achevé depuis plus de deux ans, quand les matériaux respectent les caractéristiques et niveaux de performance fixés par les articles 30-0 D et suivants de l'annexe IV au CGI, issus de l'arrêté du 4 décembre 2024 pris pour l'application de l'article 278-0 bis A du CGI. Une cloison de distribution ou un plafond sans fonction d'isolation relève du taux de 10 % dans un logement ancien. Le client certifie les conditions sur le devis ou la facture, sauf attestation annuelle remise par un bailleur ou gestionnaire, ou travaux de réparation et d'entretien de moins de 1 000 € TTC dont le document indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans."
     },
     {
       "question": "L'autoliquidation s'applique-t-elle quand je facture directement un particulier ?",
@@ -96,7 +96,7 @@
     },
     {
       "question": "La facturation électronique change-t-elle mes factures d'autoliquidation ?",
-      "reponse": "Le régime fiscal ne change pas : vos situations mensuelles restent sans TVA exigible, avec la mention « Autoliquidation ». Ce qui évolue est le canal : à l'échéance applicable à votre entreprise, les factures de situation adressées à vos entreprises générales devront être émises en format structuré via une plateforme agréée. Vérifiez que votre outil reporte la mention, le montant hors taxes et le détail des quantités validées (m² de cloisons et doublages) sur chaque situation transmise."
+      "reponse": "Le régime fiscal ne change pas : vos situations mensuelles restent sans TVA exigible, avec la mention « Autoliquidation » (ou « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base, l'autoliquidation ne s'appliquant pas). Ce qui évolue est le canal : à l'échéance applicable à votre entreprise, les factures de situation adressées à vos entreprises générales devront être émises en format structuré via une plateforme agréée. Vérifiez que votre outil reporte la mention, le montant hors taxes et le détail des quantités validées (m² de cloisons et doublages) sur chaque situation transmise."
     }
   ],
   "sources": [
@@ -127,6 +127,10 @@
     {
       "titre": "BOI-RES-TVA-000269 — Rescrit : autoliquidation des travaux de construction sous-traités, cas du sous-traitant en franchise en base (question 10)",
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
+    },
+    {
+      "titre": "BOI-TVA-LIQ-30-20-90-40 — Travaux dans les locaux d'habitation achevés depuis plus de deux ans : certification sur devis ou facture, tolérance pour les travaux de réparation et d'entretien de moins de 1 000 € TTC, attestation annuelle des bailleurs ou gestionnaires",
+      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20260909"
     }
   ],
   "date_maj": "2026-10-09"

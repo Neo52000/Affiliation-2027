@@ -15,12 +15,12 @@
     "La fourniture ou l'installation d'une chaudière susceptible d'utiliser des combustibles fossiles (gaz, fioul) est exclue des taux réduits et relève du taux normal de 20 %. L'entretien et la maintenance de ces chaudières restent au taux de 10 %.",
     "L'entretien annuel des chaudières de 4 à 400 kW est une obligation réglementaire distincte de la facturation : l'attestation d'entretien est établie dans les quinze jours suivant la visite et le client la conserve au moins deux ans. Elle complète la facture, elle ne la remplace pas.",
     "Pour appliquer le 5,5 % ou le 10 %, le client certifie directement sur le devis ou la facture que le logement est achevé depuis plus de deux ans et que les conditions du taux sont remplies. Aucun formulaire séparé n'est exigé.",
-    "En sous-traitance de travaux de construction pour une entreprise principale, la facture est émise sans TVA avec la mention « Autoliquidation » : la taxe est déclarée par le preneur des travaux.",
+    "En sous-traitance de travaux de construction pour une entreprise principale, la facture est émise sans TVA avec la mention « Autoliquidation » : la taxe est déclarée par le preneur des travaux. Si vous êtes en franchise en base, l'autoliquidation ne s'applique pas : la facture porte la mention « TVA non applicable, article 293 B du CGI ».",
     "Les primes des certificats d'économies d'énergie (CEE) se préparent avant la signature du devis, auprès d'un fournisseur d'énergie. Une facture détaillant référence, caractéristiques et performance des équipements posés facilite le dossier du client."
   ],
   "mentions_obligatoires_specifiques": [
     "Mention certifiée par le client, portée directement sur le devis ou la facture : logement achevé depuis plus de deux ans et conditions d'application du taux de 5,5 % ou de 10 % remplies.",
-    "Mention « Autoliquidation », sans TVA, sur les factures adressées à l'entreprise principale en cas de sous-traitance de travaux de construction.",
+    "Mention « Autoliquidation », sans TVA, sur les factures adressées à l'entreprise principale en cas de sous-traitance de travaux de construction ; en franchise en base, l'autoliquidation ne s'applique pas et la facture porte à la place la mention « TVA non applicable, article 293 B du CGI ».",
     "Mention de l'assurance professionnelle obligatoire au titre de l'activité (dont la responsabilité décennale), avec les coordonnées de l'assureur ou du garant et la couverture géographique du contrat.",
     "Pour le dépannage, la réparation et l'entretien : devis détaillé remis avant toute prestation (nature des travaux, décompte en quantité et prix unitaire, main-d'œuvre, frais de déplacement)."
   ],
@@ -98,7 +98,7 @@
     },
     {
       "question": "J'interviens en sous-traitance sur un chantier neuf pour une entreprise générale : qui déclare la TVA ?",
-      "reponse": "L'entreprise principale, preneuse des travaux. En sous-traitance de travaux de construction, vous facturez sans TVA et portez la mention « Autoliquidation » sur la facture. Ce régime ne s'applique jamais à vos factures adressées directement au client final."
+      "reponse": "L'entreprise principale, preneuse des travaux. En sous-traitance de travaux de construction, vous facturez sans TVA et portez la mention « Autoliquidation » sur la facture. Ce régime ne s'applique jamais à vos factures adressées directement au client final. Il ne s'applique pas non plus si vous êtes en franchise en base : votre facture porte alors la mention « TVA non applicable, article 293 B du CGI »."
     },
     {
       "question": "Que dois-je anticiper pour la prime CEE de mon client ?",
@@ -144,7 +144,7 @@
     },
     {
       "titre": "BOFiP — BOI-TVA-DECLA-10-10-20 : autoliquidation en sous-traitance de travaux de construction",
-      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20260909"
     },
     {
       "titre": "Légifrance — Mention de l'assurance professionnelle sur devis et factures des artisans",
@@ -153,7 +153,11 @@
     {
       "titre": "Légifrance — Arrêté du 24 janvier 2017 : devis détaillé préalable (dépannage, réparation, entretien dans le bâtiment)",
       "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033935513/"
+    },
+    {
+      "titre": "BOFiP — Rescrit BOI-RES-TVA-000269 : autoliquidation des travaux de construction sous-traités, exclusion du sous-traitant en franchise en base et mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

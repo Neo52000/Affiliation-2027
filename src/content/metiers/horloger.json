@@ -9,7 +9,7 @@
     "Vos factures mêlent vente de pièces et main-d'œuvre : chaque pièce remplacée (ressort de barillet, verre, joint, couronne) et chaque opération de révision doivent être détaillées et décomptées en quantité et en prix.",
     "Le coût réel d'une réparation n'apparaît souvent qu'après ouverture du mouvement : pour toute prestation dont le prix ne peut pas être déterminé à l'avance, un devis suffisamment détaillé est dû au consommateur qui le demande, à faire accepter avant d'intervenir.",
     "Pour une montre de valeur confiée, reportez son identification (marque, modèle, numéro de série) dans le détail de la prestation : le devis puis la facture tracent l'objet reçu et restitué.",
-    "Un changement de pile reste souvent sous 25 € TTC : la note n'est alors due que si le client la demande ; au-delà de ce montant, elle est obligatoire et remise avant le paiement.",
+    "Un changement de pile reste souvent sous 25 € TTC : la note n'est alors due que si le client la demande ; à partir de ce montant, elle est obligatoire et remise avant le paiement.",
     "Si vous rachetez des montres d'occasion à des particuliers pour les revendre, la TVA se calcule selon le régime de la marge : la base imposable est la différence entre le prix de vente toutes taxes comprises et le prix d'achat, ramenée hors taxe. Concrètement, une montre achetée 600 € et revendue 900 € dégage une marge de 300 € TTC, soit 250 € de base et 50 € de TVA. Vous ne déduisez aucune TVA sur l'achat."
   ],
   "mentions_obligatoires_specifiques": [
@@ -85,7 +85,7 @@
     },
     {
       "question": "Un simple changement de pile impose-t-il de remettre une note ?",
-      "reponse": "La note est obligatoire pour toute prestation de services d'un montant égal ou supérieur à 25 € TTC, en cas de vente à distance, ou dès que le client la demande. Un changement de pile seul passe souvent sous ce seuil : la note n'est alors due que sur demande. Mais dès que vous y ajoutez un joint, un contrôle d'étanchéité ou un nettoyage de boîtier, le total franchit généralement le seuil et la note devient obligatoire, à remettre avant le paiement. Dans le doute, éditez-la systématiquement : elle vous sert aussi de trace de l'intervention sur la montre confiée."
+      "reponse": "La note est obligatoire pour toute prestation de services d'un montant égal ou supérieur à 25 € TTC, ou dès que le client la demande. Un changement de pile seul passe souvent sous ce seuil : la note n'est alors due que sur demande. Mais dès que vous y ajoutez un joint, un contrôle d'étanchéité ou un nettoyage de boîtier, le total franchit généralement le seuil et la note devient obligatoire, à remettre avant le paiement. Dans le doute, éditez-la systématiquement : elle vous sert aussi de trace de l'intervention sur la montre confiée."
     },
     {
       "question": "Mes clients sont surtout des particuliers : que change la réforme pour mon atelier ?",
@@ -128,7 +128,11 @@
     {
       "titre": "Franchise en base de TVA : mention « TVA non applicable, article 293 B du CGI » (impots.gouv.fr)",
       "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "Arrêté n° 83-50/A du 3 octobre 1983 relatif à la publicité des prix de tous les services, article 1 : note dès 25 € TTC, sur demande en dessous (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

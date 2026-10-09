@@ -13,7 +13,7 @@
   "clients_types": "B2B",
   "specificites_facturation": [
     "Les céréales, graines oléagineuses et protéagineux livrés en l'état relèvent du taux réduit de 5,5 %. Depuis le 1er janvier 2023, les produits d'origine agricole n'ayant subi aucune transformation relèvent de ce taux dès lors qu'ils sont d'un type normalement destiné à être utilisé dans la préparation de denrées alimentaires, dans l'alimentation animale ou dans la production agricole. Le blé, l'orge et le colza entrent dans ce cas, au même titre que les semences et les plants.",
-    "Toutes vos ventes ne relèvent pas pour autant du même taux. Les grains, les semences, les plants et les pommes de terre de consommation sont à 5,5 %, mais un produit agricole non transformé dont la destination normale n'est ni alimentaire ni agricole reste à 10 % : c'est le cas des semences de gazon et du gazon en plaque destinés à l'aménagement d'espaces verts, ou des productions d'ornement. Le taux suit la destination normale du produit ; lorsqu'un produit a plusieurs destinations normales, c'est le taux le plus bas qui est retenu.",
+    "Toutes vos ventes ne relèvent pas pour autant du même taux. Les grains, les semences, les plants et les pommes de terre de consommation sont à 5,5 %, mais les produits de l'horticulture et de la floriculture d'ornement n'ayant subi aucune transformation restent à 10 %, de même que les semences de gazon et le gazon en plaque destinés à l'aménagement d'espaces verts. En revanche, le lin et le chanvre destinés à l'industrie textile, ainsi que les sous-produits animaux qui ne sont destinés ni à l'alimentation humaine ou animale ni à la production agricole (cuirs, laine, suifs, os, plumes), relèvent de 20 %. Le taux suit la destination normale du produit ; lorsqu'un produit a plusieurs destinations normales, c'est le taux le plus bas qui est retenu.",
     "La paille et les fourrages destinés à l'alimentation animale ou à un usage agricole relèvent du même taux réduit de 5,5 % que les grains depuis le 1er janvier 2023. Seuls la paille et le foin ayant subi une transformation ou un conditionnement spécifique, notamment pour l'alimentation des animaux de compagnie, suivent un autre régime : vérifiez ce point sur BOI-ANNX-000484 dans sa version en vigueur avant d'éditer la facture.",
     "Les livraisons à une coopérative ou à un négociant sont fréquemment facturées par l'acheteur lui-même. Cette autofacturation suppose un mandat de facturation conclu avant la première facture émise, et la mention « Autofacturation » doit figurer sur le document. Vous restez responsable du contenu de la facture et de vos obligations de TVA.",
     "Si vous n'êtes pas redevable de la TVA, aucune taxe ne figure sur vos documents. Vos acheteurs assujettis vous remettent un bulletin d'achat ou un bon de livraison à chaque paiement ou acompte, puis une attestation annuelle d'achats en début d'année civile, que vous joignez à la déclaration n° 3520-SD.",
@@ -24,7 +24,7 @@
   "mentions_obligatoires_specifiques": [
     "Numéro individuel d'identification à la TVA du vendeur, sauf facture d'un montant total hors taxes inférieur ou égal à 150 €, date d'échéance du règlement et taux des pénalités de retard.",
     "Facture établie par la coopérative ou le négociant en votre nom et pour votre compte : mention « Autofacturation », après conclusion d'un mandat de facturation antérieur à la première facture.",
-    "Exploitant redevable : taux de 5,5 % sur les lignes de céréales, oléagineux, protéagineux, semences et plants livrés en l'état, comme sur les produits directement destinés à l'alimentation humaine ; taux de 10 % réservé aux produits agricoles non transformés dont la destination normale n'est ni alimentaire ni agricole.",
+    "Exploitant redevable : taux de 5,5 % sur les lignes de céréales, oléagineux, protéagineux, semences et plants livrés en l'état, comme sur les produits directement destinés à l'alimentation humaine ; taux de 10 % sur les produits de l'horticulture et de la floriculture d'ornement n'ayant subi aucune transformation, le gazon en plaque et les semences de gazon destinées à l'aménagement d'espaces verts.",
     "Exploitant non redevable relevant du remboursement forfaitaire : aucune TVA sur la facture ; bulletin d'achat ou bon de livraison remis par l'acheteur à chaque paiement, puis attestation annuelle d'achats en début d'année civile.",
     "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel, adresse de livraison des biens si elle diffère de celle du client, nature des opérations facturées et, le cas échéant, mention « Option pour le paiement de la taxe d'après les débits »."
   ],
@@ -69,13 +69,13 @@
     ],
     "mentions_specifiques": [
       "TVA à 5,5 % : produits d'origine agricole non transformés d'un type normalement destiné à l'alimentation humaine, à l'alimentation animale ou à la production agricole (grains, plants, pommes de terre de consommation)",
-      "TVA à 10 % : produit agricole non transformé dont la destination normale n'est ni alimentaire ni agricole (semences de gazon pour espaces verts)",
+      "TVA à 10 % : semences de gazon destinées à l'aménagement d'espaces verts",
       "Bases et montants de TVA ventilés par taux ; chaque ligne porte le taux qui lui est propre",
       "Numéros des bons de livraison silo rattachés à chaque lot"
     ]
   },
   "besoins_prioritaires": [
-    "Appliquer sur une même facture le taux de 5,5 % aux grains, semences, plants et produits alimentaires et, le cas échéant, le taux de 10 % aux productions non alimentaires et non destinées à la production agricole, puis ventiler automatiquement les bases et les montants de TVA par taux.",
+    "Appliquer sur une même facture le taux de 5,5 % aux grains, semences, plants et produits alimentaires et, le cas échéant, le taux de 10 % aux productions d'ornement et aux semences de gazon destinées aux espaces verts, puis ventiler automatiquement les bases et les montants de TVA par taux.",
     "Recevoir, contrôler et archiver les autofactures établies par la coopérative ou le négociant, et les rapprocher des bons de livraison au silo.",
     "Suivre, sur une même récolte, l'acompte versé à la livraison puis le solde de campagne, sans perdre le lien avec l'opération d'origine.",
     "Travailler en unités de pesée (tonne, quintal) avec des prix au poids et des réfactions de qualité (humidité, impuretés, protéines).",
@@ -102,7 +102,7 @@
     },
     {
       "question": "Mon blé et mes pommes de terre de consommation sont-ils au même taux de TVA ?",
-      "reponse": "Oui, depuis le 1er janvier 2023. Les produits d'origine agricole n'ayant subi aucune transformation relèvent du taux réduit de 5,5 % dès lors qu'ils sont d'un type normalement destiné à l'alimentation humaine, à l'alimentation animale ou à la production agricole : c'est le cas du blé, de l'orge et du colza comme des pommes de terre de consommation, et aussi des semences et des plants, y compris le plant de pomme de terre. Le taux de 10 % ne subsiste que pour les produits agricoles non transformés dont la destination normale n'est ni alimentaire ni agricole, par exemple les produits de l'horticulture et de la floriculture d'ornement, le gazon en plaque ou les semences de gazon destinées à l'aménagement d'espaces verts. Lorsqu'un produit a plusieurs destinations normales, c'est le taux le plus bas qui est retenu."
+      "reponse": "Oui, depuis le 1er janvier 2023. Les produits d'origine agricole n'ayant subi aucune transformation relèvent du taux réduit de 5,5 % dès lors qu'ils sont d'un type normalement destiné à l'alimentation humaine, à l'alimentation animale ou à la production agricole : c'est le cas du blé, de l'orge et du colza comme des pommes de terre de consommation, et aussi des semences et des plants, y compris le plant de pomme de terre. Le taux de 10 % s'applique notamment aux produits de l'horticulture et de la floriculture d'ornement n'ayant subi aucune transformation, au gazon en plaque et aux semences de gazon destinées à l'aménagement d'espaces verts. Lorsqu'un produit a plusieurs destinations normales, c'est le taux le plus bas qui est retenu."
     },
     {
       "question": "Je ne suis pas redevable de la TVA et je vends toute ma récolte à un négociant. Que dois-je lui réclamer chaque année ?",
@@ -131,16 +131,16 @@
       "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
     },
     {
-      "titre": "BOFiP BOI-TVA-LIQ-30-10-30 – Taux réduits : produits destinés à l'alimentation animale et produits à usage agricole",
-      "url": "https://bofip.impots.gouv.fr/bofip/944-PGP.html/identifiant=BOI-TVA-LIQ-30-10-30-20230802"
+      "titre": "BOFiP BOI-TVA-LIQ-30-10-30 – Taux réduits : produits à usage agricole",
+      "url": "https://bofip.impots.gouv.fr/bofip/944-PGP.html/identifiant=BOI-TVA-LIQ-30-10-30-20250813"
     },
     {
       "titre": "BOFiP BOI-TVA-LIQ-30-10-35 – Taux réduit de 10 % : produits de l'horticulture et de la floriculture d'ornement non transformés",
       "url": "https://bofip.impots.gouv.fr/bofip/13623-PGP.html/identifiant=BOI-TVA-LIQ-30-10-35-20220629"
     },
     {
-      "titre": "BOFiP BOI-TVA-DECLA-30-20-10 – Délivrance des factures : autofacturation, mandat de facturation préalable et mention « Autofacturation »",
-      "url": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-10-30 – Délivrance des factures : autofacturation, mandat de facturation préalable et mention « Autofacturation »",
+      "url": "https://bofip.impots.gouv.fr/bofip/13244-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-30-20220629"
     },
     {
       "titre": "BOFiP BOI-TVA-SECT-80-60-10-10 – Remboursement forfaitaire agricole : champ d'application",
