@@ -16,7 +16,7 @@ export default async function handler(requete: Request): Promise<Response> {
 }
 
 // Limite anti-abus : 5 envois par minute et par adresse IP.
-export const config = {
+export const config: Config = {
   path: '/api/newsletter',
   method: 'POST',
   rateLimit: {
@@ -25,4 +25,4 @@ export const config = {
     windowSize: 60,
     windowLimit: 5,
   },
-} satisfies Config;
+};

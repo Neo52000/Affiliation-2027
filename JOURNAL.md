@@ -436,3 +436,16 @@ Même circuit : 82 modifications sur 27 fichiers, aucune rejetée, plus trois co
 - Aide à domicile : l'avance immédiate repose encore sur urssaf.fr, organisme officiel mais hors .gouv.fr.
 - Couturière (contenu exact de la note, article 3 de l'arrêté 83-50/A) ; chef à domicile (séparation prestation et denrées hors déclaration) ; menuisier (note des travaux immobiliers chez un particulier).
 - Arrêté n° 25-361 de 1967 (note de restaurant) : toujours illisible depuis l'environnement.
+
+## Fonctions Netlify : configuration enfin lue (2026-10-09)
+
+La revue du build a établi que les trois fonctions ajoutées pour la monétisation étaient déployées **sans leur configuration**. Netlify lit `path`, `method`, `schedule` et `rateLimit` par analyse statique, et seulement quand `export const config` reçoit directement un objet littéral : la forme `{ … } satisfies Config` était ignorée sans erreur.
+
+- **Conséquences en production** :
+  - le relais `/admin/gh/*` n'existait pas, si bien que le back office ne pouvait ni se connecter ni publier ;
+  - `/api/newsletter` renvoyait une 404 ;
+  - la reconstruction nocturne n'était pas planifiée ;
+  - aucune limite de débit ne s'appliquait, et les fonctions restaient appelables sur `/.netlify/functions/…`.
+- **Preuve** : le bundler officiel de Netlify (`@netlify/zip-it-and-ship-it` 16.3.0) produisait un manifeste sans route, sans planification ni règle de trafic. Après correction, il contient les routes `/admin/gh/*` et `/api/newsletter` (POST), la planification `5 22,23 * * *` et les limites 120/min et 5/min.
+- **Correction** : `export const config: Config = { … }`.
+- **Garde** : `src/lib/fonctions-netlify.test.ts` refuse `satisfies Config` et `as Config`, et vérifie les routes, la méthode, la planification et les limites. Il échoue sur l'ancienne forme.

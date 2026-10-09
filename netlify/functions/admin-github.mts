@@ -13,7 +13,7 @@ export default async function handler(requete: Request): Promise<Response> {
   return relayer(requete, DEPOT);
 }
 
-export const config = {
+export const config: Config = {
   path: '/admin/gh/*',
   // Une session d'édition fait quelques dizaines d'appels ; au-delà, abus.
   rateLimit: {
@@ -22,4 +22,4 @@ export const config = {
     windowSize: 60,
     windowLimit: 120,
   },
-} satisfies Config;
+};
