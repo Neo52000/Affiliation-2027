@@ -13,14 +13,14 @@
   "clients_types": "mixte",
   "specificites_facturation": [
     "Trois taux de TVA coexistent dans l'activité, parfois sur une même note : 10 % pour la consommation sur place et la vente à emporter destinée à une consommation immédiate, 5,5 % pour certains produits à emporter pouvant se conserver, 20 % pour les boissons alcoolisées.",
-    "Pour toute prestation d'un montant de 25 € TTC ou plus, une note détaillée doit être remise au client avant le paiement, établie en double exemplaire dont le professionnel conserve le duplicata.",
+    "Pour toute prestation d'un montant de 25 € TTC ou plus, une note détaillée doit être remise au client avant le paiement, établie en double exemplaire dont le professionnel conserve le duplicata. En dessous de ce montant, elle doit aussi être remise au client qui la demande.",
     "La note remise en fin de repas doit comporter la date, le nom et l'adresse de l'établissement et le prix TTC de chaque prestation servie ; dans les établissements pratiquant un prix service compris, la mention « prix service compris » s'impose.",
     "L'essentiel des encaissements provient de particuliers : ces ventes ne donnent pas lieu à facture électronique mais relèvent du e-reporting, c'est-à-dire la transmission de données de transactions, sans donnée nominative sur le client.",
     "Quand un client professionnel demande une facture (repas d'affaires), celle-ci doit être émise au format électronique via une plateforme agréée, ce qui suppose de recueillir au minimum le SIREN ou le SIRET du client.",
     "L'enregistrement des règlements via un logiciel ou système de caisse impose un équipement respectant des conditions d'inaltérabilité, de sécurisation, de conservation et d'archivage des données, justifiées par un certificat d'organisme accrédité ou une attestation de l'éditeur."
   ],
   "mentions_obligatoires_specifiques": [
-    "Sur la note (prestation de 25 € TTC ou plus) : date de rédaction, nom et adresse de l'établissement, nom du client sauf opposition de sa part, décompte détaillé en quantité et prix de chaque prestation.",
+    "Sur la note (prestation de 25 € TTC ou plus, ou note demandée par le client en dessous de ce montant) : date de rédaction, nom et adresse de l'établissement, nom du client sauf opposition de sa part, décompte détaillé en quantité et prix de chaque prestation.",
     "« Prix service compris » dans les établissements pratiquant un prix service compris (affichage et note).",
     "Ventilation des montants et de la TVA par taux appliqué (10 %, 5,5 %, 20 %) lorsque plusieurs taux coexistent sur la même facture.",
     "« TVA non applicable, art. 293 B du CGI » pour les rares restaurateurs relevant de la franchise en base de TVA (aucune TVA ne doit alors être facturée).",
@@ -154,5 +154,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20131018"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

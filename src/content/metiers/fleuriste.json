@@ -9,7 +9,7 @@
     "Les fleurs fraîches ou séchées et les plantes vivantes vendues sans transformation relèvent du taux réduit de TVA de 10 % (article 278 bis du CGI).",
     "Les compositions florales, les fleurs stabilisées, teintées ou lyophilisées, les fleurs artificielles et la décoration de lieux de cérémonie relèvent du taux normal de 20 %, ce qui impose de distinguer les produits dès la saisie en caisse ou sur facture.",
     "Un bouquet assemblé reste au taux réduit tant que les éléments non floraux gardent un caractère accessoire ; l'administration admet le taux de 10 % sur le tout lorsque le prix d'achat hors taxe de ces éléments n'excède pas 25 % de celui des végétaux.",
-    "La facture n'est pas obligatoire pour une vente à un particulier, sauf s'il la demande, en cas de vente à distance ou de livraison intracommunautaire exonérée de TVA, mais les encaissements B2C devront être transmis à l'administration via l'e-reporting, sous forme de montants journaliers ventilés par taux de TVA.",
+    "La facture n'est pas obligatoire pour une vente à un particulier, sauf s'il la demande, en cas de vente à distance intracommunautaire (commande expédiée vers un autre État membre de l'Union européenne) ou de livraison intracommunautaire exonérée de TVA, mais les encaissements B2C devront être transmis à l'administration via l'e-reporting, sous forme de montants journaliers ventilés par taux de TVA.",
     "Les prestations pour clients professionnels (deuil avec des pompes funèbres, mariages avec des traiteurs ou lieux de réception, abonnements floraux d'entreprise) sont des factures B2B soumises à la facturation électronique à l'échéance applicable à votre entreprise.",
     "Les commandes exécutées pour le compte d'un confrère via les réseaux de transmission florale génèrent des flux de facturation distincts des ventes directes, à suivre séparément en comptabilité."
   ],
@@ -82,7 +82,7 @@
     },
     {
       "question": "Mes tickets de caisse vont-ils devenir des factures électroniques ?",
-      "reponse": "Non. Pour un client particulier, la facture reste non obligatoire sauf s'il la demande ou en cas de vente à distance. En revanche, vos encaissements B2C devront être déclarés via l'e-reporting, sous forme de montants journaliers ventilés par taux de TVA : 10 % pour les fleurs et plantes non transformées, 20 % pour les compositions et prestations. Aucune donnée personnelle de vos clients n'est transmise."
+      "reponse": "Non. Pour un client particulier, la facture reste non obligatoire sauf s'il la demande ou en cas de vente à distance intracommunautaire, c'est-à-dire une commande expédiée vers un autre État membre de l'Union européenne : un bouquet commandé en ligne ou par téléphone et livré en France ne vous oblige donc à facturer que si le client le demande. En revanche, vos encaissements B2C devront être déclarés via l'e-reporting, sous forme de montants journaliers ventilés par taux de TVA : 10 % pour les fleurs et plantes non transformées, 20 % pour les compositions et prestations. Aucune donnée personnelle de vos clients n'est transmise."
     },
     {
       "question": "Comment mes deux taux de TVA (fleurs à 10 %, compositions à 20 %) passent-ils dans la facturation électronique ?",
@@ -133,7 +133,11 @@
     {
       "titre": "BOFiP – Rescrit BOI-RES-TVA-000253 : dispositions transitoires liées à la recodification de la TVA dans le CIBS",
       "url": "https://bofip.impots.gouv.fr/bofip/14901-PGP.html/identifiant=BOI-RES-TVA-000253-20260218"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-10-10 — Obligation de facturation : ventes à distance intracommunautaires (article 258 A du CGI), absence d'obligation pour une livraison interne à la France à un non-assujetti",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

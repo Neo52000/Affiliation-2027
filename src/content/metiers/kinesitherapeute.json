@@ -14,7 +14,7 @@
     "Vos séances de rééducation, soins à finalité thérapeutique d'une profession paramédicale réglementée, sont exonérées de TVA en application de l'article 261, 4, 1° du CGI. Chaque note d'honoraires porte la référence à cette exonération.",
     "En tiers payant, la part Assurance Maladie est réglée sur la base de la feuille de soins, électronique (SESAM-Vitale) ou papier, adressée à la caisse. Ce circuit conventionnel est distinct de la facturation électronique entre entreprises.",
     "La redevance de collaboration que vous facturez à votre assistant rémunère la mise à disposition du cabinet, du plateau technique et de la patientèle. Le BOFiP la soumet à la TVA : taux normal de 20 %, ou mention « TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base.",
-    "Les flux d'un remplacement suivent un autre régime : les honoraires que vous rétrocédez à votre remplaçant sont exonérés de TVA, car ils rémunèrent des soins dispensés aux patients. La somme que vous conservez en contrepartie de la mise à disposition de vos installations est en revanche en principe imposable ; l'administration admet de ne pas la soumettre à la TVA lorsque le remplacement a un caractère occasionnel (rescrit BOI-RES-000056). Ne confondez pas cette redevance de remplacement et la redevance de collaboration, toujours imposable.",
+    "Les flux d'un remplacement suivent un autre régime : les honoraires que vous rétrocédez à votre remplaçant sont exonérés de TVA, car ils rémunèrent des soins dispensés aux patients. La somme que vous conservez en contrepartie de la mise à disposition de vos installations est en revanche en principe imposable ; l'administration admet de ne pas la soumettre à la TVA lorsque le remplacement a un caractère occasionnel (rescrit BOI-RES-TVA-000056). Ne confondez pas cette redevance de remplacement et la redevance de collaboration, toujours imposable.",
     "Vos actes sans prescription ni finalité thérapeutique (massages de confort, prestations de bien-être) sont exclus de l'exonération et taxables.",
     "Vos opérations exonérées sont dispensées d'émission de factures électroniques, mais vous devrez pouvoir recevoir celles de vos fournisseurs (matériel de rééducation, électrothérapie, consommables, loyer) à l'échéance applicable à votre entreprise."
   ],
@@ -78,7 +78,7 @@
     },
     {
       "question": "Les honoraires rétrocédés à mon remplaçant pendant mes congés suivent-ils le même régime que la redevance d'assistant ?",
-      "reponse": "Non. Les honoraires que vous rétrocédez à votre remplaçant sont exonérés de TVA, car ils rémunèrent des soins dispensés aux patients (rescrit BOI-RES-000056). La somme que vous conservez en contrepartie de la mise à disposition de vos installations est, elle, en principe imposable : l'administration admet seulement de ne pas la soumettre à la TVA lorsque le remplacement a un caractère occasionnel. La redevance de collaboration de votre assistant reste imposable dans tous les cas. Distinguez les deux contrats dans votre facturation et vos libellés."
+      "reponse": "Non. Les honoraires que vous rétrocédez à votre remplaçant sont exonérés de TVA, car ils rémunèrent des soins dispensés aux patients (rescrit BOI-RES-TVA-000056). La somme que vous conservez en contrepartie de la mise à disposition de vos installations est, elle, en principe imposable : l'administration admet seulement de ne pas la soumettre à la TVA lorsque le remplacement a un caractère occasionnel. La redevance de collaboration de votre assistant reste imposable dans tous les cas. Distinguez les deux contrats dans votre facturation et vos libellés."
     },
     {
       "question": "En tiers payant, dois-je adresser une facture électronique à la caisse ?",
@@ -95,8 +95,8 @@
       "url": "https://bofip.impots.gouv.fr/bofip/1139-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-10-20250409"
     },
     {
-      "titre": "BOFiP — Rescrit : TVA applicable aux rétrocessions d'honoraires entre deux professionnels de santé dans le cadre d'un contrat de remplacement (BOI-RES-000056)",
-      "url": "https://bofip.impots.gouv.fr/bofip/12016-PGP.html/identifiant=BOI-RES-000056-20200617"
+      "titre": "BOFiP — Rescrit : TVA applicable aux rétrocessions d'honoraires entre deux professionnels de santé dans le cadre d'un contrat de remplacement (BOI-RES-TVA-000056)",
+      "url": "https://bofip.impots.gouv.fr/bofip/12016-PGP.html/identifiant=BOI-RES-TVA-000056-20210309"
     },
     {
       "titre": "BOFiP — Référence d'exonération à porter sur les factures et notes d'honoraires (BOI-TVA-DECLA-30-20-10)",
@@ -119,5 +119,5 @@
       "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

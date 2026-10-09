@@ -112,11 +112,11 @@
   "sources": [
     {
       "titre": "Prestations d'experts au taux normal de TVA de 20 % (BOFiP, BOI-TVA-LIQ-20-20)",
-      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
     },
     {
       "titre": "Taux réduits limités à certains travaux sur locaux d'habitation (BOFiP, BOI-TVA-LIQ-30-20-90-30)",
-      "url": "https://bofip.impots.gouv.fr/bofip/1733-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-30-20240731"
+      "url": "https://bofip.impots.gouv.fr/bofip/1733-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-30-20251022"
     },
     {
       "titre": "Compétences, assurance et impartialité du diagnostiqueur, article L. 271-6 du code de la construction et de l'habitation (Légifrance)",
@@ -163,5 +163,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

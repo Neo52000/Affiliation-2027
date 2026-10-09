@@ -136,3 +136,44 @@ describe('src/content/outils + src/content/tests', () => {
     }
   });
 });
+
+describe('src/content/metiers : facture d’acompte', () => {
+  // BOI-TVA-DECLA-30-20-10-10 : une facture d'acompte n'est obligatoire que pour une
+  // opération elle-même soumise à facturation (client assujetti ou personne morale).
+  // Une fiche dont la clientèle compte des particuliers ne peut donc pas l'imposer
+  // pour « tout acompte » sans cette réserve (erreur corrigée sur 5 fiches).
+  const OBLIGATION =
+    /(tout (versement d['’])?acompte|chaque acompte)[^.]*(donne lieu|doit donner lieu|doit faire l['’]objet|doivent chacun faire l['’]objet)[^.]*facture/i;
+  const RESERVE = /professionnel|personne morale|assujetti/i;
+  const textes = (o: unknown): string[] =>
+    typeof o === 'string'
+      ? [o]
+      : Array.isArray(o)
+        ? o.flatMap(textes)
+        : o && typeof o === 'object'
+          ? Object.values(o).flatMap(textes)
+          : [];
+
+  it('aucune obligation générale de facturer un acompte quand la clientèle compte des particuliers', () => {
+    const dir = join(ROOT, 'src/content/metiers');
+    for (const f of readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+      const m = readJson(`src/content/metiers/${f}`) as {
+        clients_types: string;
+        specificites_facturation: string[];
+        mentions_obligatoires_specifiques: string[];
+        faq: unknown[];
+        besoins_prioritaires: string[];
+      };
+      if (m.clients_types === 'B2B') continue;
+      const champs = textes([
+        m.specificites_facturation,
+        m.mentions_obligatoires_specifiques,
+        m.faq,
+        m.besoins_prioritaires,
+      ]);
+      for (const t of champs.flatMap((x) => x.split(/(?<=[.!?])\s+/))) {
+        if (OBLIGATION.test(t)) expect(t, `${f} : ${t}`).toMatch(RESERVE);
+      }
+    }
+  });
+});

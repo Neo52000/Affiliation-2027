@@ -6,7 +6,7 @@
   "volume_factures_typique": "5 à 20 factures par mois : peu de documents mais des montants élevés, avec des situations de travaux et des demandes d'acomptes échelonnées sur plusieurs mois pour un même chantier.",
   "clients_types": "mixte",
   "specificites_facturation": [
-    "Les chantiers longs se facturent par acomptes successifs calés sur l'avancement (« situations de travaux »). Chaque acompte versé doit donner lieu à une facture, et pour les prestations de services la TVA devient exigible à l'encaissement de chaque acompte, sauf si l'entreprise a opté pour le paiement de la TVA d'après les débits.",
+    "Les chantiers longs se facturent par acomptes successifs calés sur l'avancement (« situations de travaux »). Lorsque le client est un professionnel ou une personne morale, chaque acompte versé doit donner lieu à une facture. Pour les prestations de services, la TVA devient exigible à l'encaissement de chaque acompte, sauf si l'entreprise a opté pour le paiement de la TVA d'après les débits.",
     "Sur les marchés privés, le maître d'ouvrage peut retenir au plus 5 % du montant des acomptes au titre de la retenue de garantie, si le contrat le prévoit. Vous facturez le montant total : la retenue joue sur le paiement, pas sur la facture. Elle est libérée à l'expiration d'un délai d'un an après la réception, sauf opposition motivée, et peut être remplacée par une caution d'un établissement financier.",
     "Le taux de TVA dépend de la nature de l'opération : 20 % pour la construction neuve et les locaux achevés depuis moins de deux ans, 10 % pour les travaux de transformation ou d'aménagement d'un logement de plus de deux ans, avec certification du client sur le devis ou la facture. Des travaux qui aboutissent à un immeuble neuf restent à 20 % même sur du bâti ancien.",
     "En sous-traitance du gros œuvre pour une entreprise générale ou un constructeur, la facture part sans TVA avec la mention « Autoliquidation » ; la taxe est déclarée par le preneur.",
@@ -73,7 +73,7 @@
   "faq": [
     {
       "question": "Dois-je émettre une vraie facture pour chaque situation de travaux ?",
-      "reponse": "Oui. Tout acompte versé avant l'achèvement de la prestation doit donner lieu à une facture. Pour les prestations de services, la TVA est exigible à l'encaissement de chaque acompte (sauf si votre entreprise a opté pour le paiement de la TVA d'après les débits) : chaque situation payée déclenche donc la TVA correspondante. La facture de solde récapitule et déduit les acomptes déjà facturés."
+      "reponse": "Oui, si votre client est un professionnel ou une personne morale : tout acompte versé avant l'achèvement de la prestation doit alors donner lieu à une facture. Pour les prestations de services, la TVA est exigible à l'encaissement de chaque acompte (sauf si votre entreprise a opté pour le paiement de la TVA d'après les débits) : chaque situation payée déclenche donc la TVA correspondante. La facture de solde récapitule et déduit les acomptes déjà facturés."
     },
     {
       "question": "Le maître d'ouvrage retient 5 % sur chacun de mes paiements : en a-t-il le droit ?",
@@ -130,5 +130,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

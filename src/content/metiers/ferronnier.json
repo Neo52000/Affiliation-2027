@@ -7,14 +7,14 @@
   "clients_types": "mixte",
   "specificites_facturation": [
     "Deux taux de TVA cohabitent dans vos dossiers : 20 % pour un ouvrage vendu départ atelier, 10 % possible pour la fourniture et la pose au titre des travaux d'amélioration d'un logement achevé depuis plus de deux ans, à condition que le client certifie sur le devis ou la facture que les conditions du taux réduit sont remplies.",
-    "Le sur-mesure impose des acomptes à la commande. Que le dossier soit une prestation de pose ou la vente d'un ouvrage départ atelier, l'encaissement d'un acompte rend la TVA exigible à hauteur du montant perçu : pour les travaux, parce que la TVA des prestations de services est exigible à l'encaissement ; pour un ouvrage vendu seul, parce que les acomptes sur livraisons de biens rendent eux aussi la taxe exigible. Chaque acompte donne lieu à une facture d'acompte comportant toutes les mentions obligatoires, et la facture définitive doit faire référence aux factures d'acompte émises.",
-    "En pose sous-traitée pour un donneur d'ordre assujetti (métallerie, entreprise générale), vous facturez hors taxe avec la mention « Autoliquidation » : c'est le preneur qui déclare la TVA sur vos travaux immobiliers.",
+    "Le sur-mesure impose des acomptes à la commande. Que le dossier soit une prestation de pose ou la vente d'un ouvrage départ atelier, l'encaissement d'un acompte rend la TVA exigible à hauteur du montant perçu : pour les travaux, parce que la TVA des prestations de services est exigible à l'encaissement ; pour un ouvrage vendu seul, parce que les acomptes sur livraisons de biens rendent eux aussi la taxe exigible. Lorsque le client est un professionnel ou une personne morale, chaque acompte donne lieu à une facture d'acompte comportant toutes les mentions obligatoires, et la facture définitive doit faire référence aux factures d'acompte émises.",
+    "En pose sous-traitée pour un donneur d'ordre assujetti (métallerie, entreprise générale), vous facturez hors taxe avec la mention « Autoliquidation » : c'est le preneur qui déclare la TVA sur vos travaux immobiliers. Si votre atelier est en franchise en base, l'autoliquidation ne s'applique pas : la facture garde la mention « TVA non applicable, article 293 B du CGI ».",
     "Vos devis et factures doivent indiquer l'assurance professionnelle obligatoire souscrite au titre de votre activité (décennale pour la pose), les coordonnées de l'assureur et la couverture géographique du contrat.",
     "Pour un portail ou un escalier dont le prix dépend des relevés sur site, vous devez fournir un devis suffisamment détaillé au consommateur qui le demande, avant d'engager la fabrication."
   ],
   "mentions_obligatoires_specifiques": [
-    "Mention certifiée par le client, portée sur le devis ou la facture, attestant que les conditions d'application du taux réduit de 10 % sont remplies (logement achevé depuis plus de deux ans, travaux éligibles)",
-    "« Autoliquidation » sur les factures de travaux immobiliers sous-traités pour un preneur assujetti, sans TVA facturée",
+    "Mention certifiée par le client, portée sur le devis ou la facture, attestant que les conditions d'application du taux réduit de 10 % sont remplies (logement achevé depuis plus de deux ans, travaux éligibles) ; pour des travaux de réparation et d'entretien de moins de 1 000 € TTC, elle peut être omise si le devis ou la facture indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans ; un bailleur ou gestionnaire qui vous confie plusieurs interventions peut aussi la remplacer par une attestation annuelle",
+    "« Autoliquidation » sur les factures de travaux immobiliers sous-traités pour un preneur assujetti, sans TVA facturée, sauf si l'atelier bénéficie de la franchise en base",
     "Assurance professionnelle obligatoire : contrat souscrit, coordonnées de l'assureur et couverture géographique, sur chaque devis et chaque facture",
     "« TVA non applicable, article 293 B du CGI » si l'atelier bénéficie de la franchise en base"
   ],
@@ -80,7 +80,7 @@
     },
     {
       "question": "Je pose des ouvrages en sous-traitance pour une entreprise générale : qui déclare la TVA ?",
-      "reponse": "Pour des travaux immobiliers sous-traités au profit d'un preneur assujetti, la TVA est autoliquidée par ce dernier. Vous facturez hors taxe et portez la mention « Autoliquidation » sur la facture. Ce régime ne s'applique pas à la simple vente d'un ouvrage sans pose."
+      "reponse": "Pour des travaux immobiliers sous-traités au profit d'un preneur assujetti, la TVA est autoliquidée par ce dernier. Vous facturez hors taxe et portez la mention « Autoliquidation » sur la facture. Ce régime ne s'applique pas à la simple vente d'un ouvrage sans pose. Il ne s'applique pas non plus si votre atelier est en franchise en base : la facture porte alors la mention « TVA non applicable, article 293 B du CGI »."
     },
     {
       "question": "Dois-je indiquer mon assurance décennale sur mes devis et factures ?",
@@ -102,7 +102,7 @@
     },
     {
       "titre": "BOFiP BOI-TVA-LIQ-30-20-90-40 — Travaux dans les logements achevés depuis plus de deux ans : modalités d'application et mention certifiée par le client sur le devis ou la facture",
-      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20251022"
+      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20260909"
     },
     {
       "titre": "BOFiP — Exigibilité de la TVA sur les acomptes perçus dans le cadre de livraisons de biens",
@@ -118,7 +118,7 @@
     },
     {
       "titre": "BOFiP BOI-TVA-DECLA-10-10-20 — Autoliquidation de la TVA pour les travaux immobiliers sous-traités et mention « Autoliquidation »",
-      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20260909"
     },
     {
       "titre": "Article 22-2 de la loi n° 96-603 du 5 juillet 1996 — Mention de l'assurance professionnelle, des coordonnées de l'assureur ou du garant et de la couverture géographique sur les devis et factures des artisans (Légifrance, version en vigueur)",
@@ -143,7 +143,11 @@
     {
       "titre": "Micro-entrepreneur et TVA : franchise en base et mention de l'article 293 B du CGI (impots.gouv.fr)",
       "url": "https://www.impots.gouv.fr/professionnel/questions/en-tant-que-micro-entrepreneur-puis-je-etre-redevable-de-la-tva"
+    },
+    {
+      "titre": "BOFiP BOI-RES-TVA-000269 — Rescrit : autoliquidation des travaux immobiliers sous-traités, exclusion du sous-traitant en franchise en base et mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

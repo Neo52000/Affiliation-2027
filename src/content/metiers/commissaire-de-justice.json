@@ -106,7 +106,7 @@
   "sources": [
     {
       "titre": "BOFiP — TVA, taux normal applicable aux prestations des professions libérales et officiers publics (BOI-TVA-LIQ-20-20)",
-      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
     },
     {
       "titre": "BOFiP — TVA, base d'imposition : débours exclus sous conditions (BOI-TVA-BASE-10-10-30)",
@@ -153,5 +153,5 @@
       "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }
