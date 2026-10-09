@@ -12,7 +12,7 @@
  * Contents R (contents, git/ref), Contents W (git/blobs, trees, commits, refs,
  * fusion), Pull requests R/W (lecture, création, fermeture), Actions R (runs).
  */
-import { PREFIXE_RELAIS } from './admin-proxy.ts';
+import { BRANCHE_BACK_OFFICE, PREFIXE_RELAIS } from './admin-proxy.ts';
 
 export interface Depot {
   proprietaire: string;
@@ -121,8 +121,17 @@ export function clientGitHub(
   const base = `${PREFIXE_RELAIS}/repos/${nomComplet}`;
 
   async function brut(chemin: string, init: RequestInit = {}): Promise<Response> {
-    // Uniquement des chemins relatifs au dépôt : jamais d'URL absolue fournie par l'API.
-    if (!/^(\/[A-Za-z0-9._~?=&%,-]*)*$/.test(chemin)) {
+    // Uniquement des chemins relatifs au dépôt, à segments simples : ni URL
+    // absolue, ni « % » (le navigateur normaliserait %2e%2e en « .. »), ni « . »
+    // ou « .. ». Seule la query string, construite ici, accepte « % ».
+    const i = chemin.indexOf('?');
+    const partie = i < 0 ? chemin : chemin.slice(0, i);
+    const requete = i < 0 ? '' : chemin.slice(i + 1);
+    if (
+      !/^(\/[A-Za-z0-9._~,-]+)*$/.test(partie) ||
+      partie.split('/').some((s) => s === '.' || s === '..') ||
+      !/^[A-Za-z0-9._~=&%,-]*$/.test(requete)
+    ) {
       throw new ErreurGitHub(400, `chemin refusé : ${chemin}`);
     }
     const reponse = await f(`${base}${chemin}`, {
@@ -165,6 +174,16 @@ export function clientGitHub(
   });
 
   const ref = encodeURIComponent(depot.branche);
+
+  /** Supprime une branche back-office/… (jamais une autre référence). */
+  async function supprimerBranche(branche: string): Promise<void> {
+    if (!BRANCHE_BACK_OFFICE.test(branche)) return;
+    try {
+      await appel(`/git/refs/heads/${branche}`, { method: 'DELETE' });
+    } catch {
+      // branche déjà supprimée : sans effet sur la publication
+    }
+  }
 
   return {
     /**
@@ -302,13 +321,24 @@ export function clientGitHub(
       };
     },
 
-    /** Publications du back office encore ouvertes (pull requests back-office/…). */
+    /**
+     * Publications du back office encore ouvertes : pull requests issues d'une
+     * branche back-office/AAAAMMJJ-HHMMSS-xxxx de CE dépôt. Une demande ouverte
+     * depuis un fork (nom de branche libre, choisi par un tiers) est ignorée.
+     */
     async publicationsOuvertes(): Promise<Publication[]> {
       const prs = await appel<
-        { number: number; html_url: string; title: string; head: { ref: string; sha: string } }[]
+        {
+          number: number;
+          html_url: string;
+          title: string;
+          head: { ref: string; sha: string; repo: { full_name: string } | null };
+        }[]
       >('/pulls?state=open&per_page=30');
       return prs
-        .filter((p) => p.head.ref.startsWith('back-office/'))
+        .filter(
+          (p) => p.head.repo?.full_name === nomComplet && BRANCHE_BACK_OFFICE.test(p.head.ref),
+        )
         .map((p) => ({
           numero: p.number,
           url: p.html_url,
@@ -398,20 +428,20 @@ export function clientGitHub(
      */
     async mettreEnLigne(p: Publication): Promise<void> {
       await appel(`/pulls/${p.numero}/merge`, json('PUT', { sha: p.sha, merge_method: 'squash' }));
-      try {
-        await appel(`/git/refs/heads/${p.branche}`, { method: 'DELETE' });
-      } catch {
-        // branche déjà supprimée : sans effet sur la mise en ligne
-      }
+      await supprimerBranche(p.branche);
     },
 
-    /** Abandon d'une publication : pull request fermée et branche supprimée. */
+    /**
+     * Abandon d'une publication : pull request fermée, puis branche supprimée
+     * seulement si GitHub confirme qu'elle appartient à ce dépôt.
+     */
     async abandonner(p: Publication): Promise<void> {
-      await appel(`/pulls/${p.numero}`, json('PATCH', { state: 'closed' }));
-      try {
-        await appel(`/git/refs/heads/${p.branche}`, { method: 'DELETE' });
-      } catch {
-        // déjà supprimée
+      const pr = await appel<{ head: { ref: string; repo: { full_name: string } | null } }>(
+        `/pulls/${p.numero}`,
+        json('PATCH', { state: 'closed' }),
+      );
+      if (pr.head.repo?.full_name === nomComplet && pr.head.ref === p.branche) {
+        await supprimerBranche(p.branche);
       }
     },
   };
