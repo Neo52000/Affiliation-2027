@@ -37,6 +37,6 @@ export default async function handler(): Promise<Response> {
   return new Response(null, { status: reponse.ok ? 204 : 502 });
 }
 
-export const config = {
+export const config: Config = {
   schedule: '5 22,23 * * *',
-} satisfies Config;
+};
