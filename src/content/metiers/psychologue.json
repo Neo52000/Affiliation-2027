@@ -14,12 +14,12 @@
     "Votre exonération de TVA n'est pas automatique : elle est subordonnée à l'autorisation de faire légalement usage du titre de psychologue. Avec le titre, vos soins psychologiques à finalité thérapeutique relèvent de l'article 261, 4, 1° du CGI ; sans cette condition, vos actes sont soumis à la TVA.",
     "Dans le dispositif Mon soutien psy, le psychologue conventionné facture au tarif unique de 50 € la séance, dépassement d'honoraires interdit, dans la limite de 12 séances par an (une séance d'évaluation puis jusqu'à 11 séances de suivi). Le patient peut vous consulter directement, sans adressage préalable obligatoire.",
     "Deux circuits coexistent pour ces séances conventionnées : sans tiers payant, le patient vous règle et vous lui remettez la feuille de soins ; avec tiers payant, vous adressez la feuille de soins complétée et signée à son organisme d'assurance maladie. Le tiers payant est obligatoire pour certains publics (Complémentaire santé solidaire, ALD, maternité à partir du sixième mois notamment).",
-    "Vos prestations sans finalité thérapeutique — supervision d'équipes, analyse de pratiques, formation, recrutement, expertises — sont exclues de l'exonération des soins et taxables. Facturées sous franchise en base, elles portent la mention « TVA non applicable, article 293 B du CGI ».",
+    "Vos prestations sans finalité thérapeutique — supervision d'équipes, analyse de pratiques, formation, recrutement, expertises — sont exclues de l'exonération des soins et, en principe, taxables. Une formation professionnelle continue peut toutefois être exonérée (article 261, 4, 4° a du CGI) si vous êtes titulaire d'une attestation délivrée par l'autorité administrative compétente. Les prestations taxables facturées sous franchise en base portent la mention « TVA non applicable, article 293 B du CGI ».",
     "Ces prestations taxables facturées à des clients professionnels entrent dans le circuit d'émission de factures électroniques, à l'échéance applicable à votre entreprise. Vos séances exonérées en sont dispensées, mais l'obligation de recevoir les factures électroniques de vos fournisseurs vous concerne comme tout professionnel."
   ],
   "mentions_obligatoires_specifiques": [
     "Sur les notes d'honoraires de séances exonérées : la référence à l'exonération, par exemple « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts », réservée aux praticiens autorisés à faire usage du titre de psychologue.",
-    "Sur les prestations taxables (supervision, formation, expertise) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Ne mélangez jamais cette mention avec la référence d'exonération des soins sur une même ligne."
+    "Sur les prestations taxables (supervision, formation non exonérée, expertise) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Ne mélangez jamais cette mention avec la référence d'exonération des soins sur une même ligne."
   ],
   "exemple_facture": {
     "intitule": "Note d'honoraires – accompagnement psychologique dans le dispositif Mon soutien psy",
@@ -80,11 +80,11 @@
     },
     {
       "question": "Mes supervisions d'équipes et formations en entreprise sont-elles exonérées comme mes séances ?",
-      "reponse": "Non. Ces prestations n'ont pas de finalité thérapeutique : elles sont exclues de l'exonération des soins et taxables. Facturées à des clients assujettis, elles relèveront du circuit d'émission de factures électroniques à l'échéance applicable à votre entreprise."
+      "reponse": "Non. Ces prestations n'ont pas de finalité thérapeutique : elles sont exclues de l'exonération des soins et, en principe, taxables. Une formation professionnelle continue peut toutefois être exonérée (article 261, 4, 4° a du CGI) si vous êtes titulaire d'une attestation délivrée par l'autorité administrative compétente. Taxables et facturées à des clients assujettis, ces prestations relèveront du circuit d'émission de factures électroniques à l'échéance applicable à votre entreprise."
     },
     {
       "question": "Dois-je émettre des factures électroniques pour mes patients particuliers ?",
-      "reponse": "Non. Vos patients sont des particuliers et la réforme ne vise que les factures entre assujettis ; vos séances exonérées — y compris les séances Mon soutien psy, qui donnent lieu à une feuille de soins et non à une facture électronique — sont en outre dispensées d'émission au format électronique. Seules vos prestations taxables facturées à des entreprises ou institutions (supervision, analyse de pratiques, formation) entreront dans le circuit d'émission, et vous devrez recevoir les factures électroniques de vos fournisseurs (loyer, tests psychométriques) à l'échéance applicable à votre entreprise."
+      "reponse": "Non. Vos patients sont des particuliers et la réforme ne vise que les factures entre assujettis ; vos séances exonérées — y compris les séances Mon soutien psy, qui donnent lieu à une feuille de soins et non à une facture électronique — sont en outre dispensées d'émission au format électronique. Seules vos prestations taxables facturées à des entreprises ou institutions (supervision, analyse de pratiques, formation non exonérée) entreront dans le circuit d'émission, et vous devrez recevoir les factures électroniques de vos fournisseurs (loyer, tests psychométriques) à l'échéance applicable à votre entreprise."
     }
   ],
   "sources": [
@@ -119,7 +119,11 @@
     {
       "titre": "impots.gouv.fr – réforme de la facturation électronique : champ des opérations, dispense d'émission des opérations exonérées, obligation de réception",
       "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-CHAMP-30-10-20-50 – exonération de la formation professionnelle continue (article 261, 4, 4° a du CGI) sous condition d'attestation de l'autorité administrative",
+      "url": "https://bofip.impots.gouv.fr/bofip/943-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-50-20191016"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

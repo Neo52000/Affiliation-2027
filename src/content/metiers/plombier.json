@@ -11,7 +11,7 @@
     "L'attestation TVA que le client devait remettre est remplacée par une mention portée sur le devis ou la facture, certifiant que les conditions d'application du taux réduit sont remplies.",
     "Pour les prestations de dépannage, de réparation et d'entretien, un devis doit être remis au client et accepté avant l'exécution des travaux, quel que soit leur montant, la plomberie et les installations sanitaires étant expressément concernées (arrêté du 24 janvier 2017).",
     "En sous-traitance pour une autre entreprise du bâtiment, la TVA est autoliquidée : le sous-traitant facture hors taxe avec la mention « Autoliquidation », la TVA étant due par l'entreprise principale.",
-    "Les chantiers s'étalent dans le temps : chaque acompte encaissé doit donner lieu à une facture d'acompte et rend la TVA exigible à concurrence du montant encaissé."
+    "Les chantiers s'étalent dans le temps : chaque acompte encaissé rend la TVA exigible à concurrence du montant encaissé, voire dès sa facturation si l'entreprise a opté pour le paiement de la TVA d'après les débits. Lorsque le client est un professionnel ou une personne morale, chaque acompte doit en outre donner lieu à une facture d'acompte."
   ],
   "mentions_obligatoires_specifiques": [
     "Mention sur le devis ou la facture certifiant que les conditions d'application du taux réduit de TVA (10 % ou 5,5 %) sont remplies : local affecté à l'habitation, achevé depuis plus de deux ans, nature des travaux éligible.",
@@ -93,7 +93,7 @@
     },
     {
       "question": "Que deviennent mes devis signés et mes factures d'acompte ?",
-      "reponse": "Le devis préalable reste obligatoire pour le dépannage, la réparation et l'entretien, quel que soit le montant de l'intervention. Chaque acompte encaissé doit donner lieu à une facture et rend la TVA exigible à concurrence du montant perçu. Un bon outil doit donc chaîner devis, facture d'acompte et facture de solde, y compris dans le format électronique."
+      "reponse": "Le devis préalable reste obligatoire pour le dépannage, la réparation et l'entretien, quel que soit le montant de l'intervention. Chaque acompte encaissé rend la TVA exigible à concurrence du montant perçu et, si votre client est un professionnel ou une personne morale, doit donner lieu à une facture. Un bon outil doit donc chaîner devis, facture d'acompte et facture de solde, y compris dans le format électronique."
     },
     {
       "question": "Je suis plombier en micro-entreprise, en franchise de TVA : suis-je dispensé de la facturation électronique ?",
@@ -152,7 +152,11 @@
     {
       "titre": "impots.gouv.fr — Mes clients sont à la fois des entreprises et des particuliers : facturation électronique et e-reporting",
       "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "BOFiP — BOI-TVA-BASE-20-20 : exigibilité de la TVA des prestations de services (encaissement des acomptes ou, sur option, débits)",
+      "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

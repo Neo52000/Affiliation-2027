@@ -9,7 +9,7 @@
     "La préparation de repas à domicile, y compris le temps passé aux commissions, figure parmi les activités de services à la personne. Lorsque l'entreprise est déclarée au titre des services à la personne, la facture doit permettre d'identifier cette prestation séparément des autres activités exercées. Sans déclaration, cette séparation n'est pas imposée, mais elle reste utile au client.",
     "Le coût des denrées alimentaires n'entre pas dans le champ des services à la personne : il se facture sur une ligne distincte de la prestation, sans quoi la part relevant de ce champ n'est plus identifiable pour le client.",
     "Un devis personnalisé gratuit est obligatoire dès que le prix de la prestation ou de l'ensemble de prestations atteint 100 € TTC par mois, et doit être établi gratuitement sur demande du client en dessous de ce montant. Le devis mentionne notamment sa date de rédaction et sa durée de validité, la dénomination et l'adresse du prestataire, le numéro de déclaration ou d'agrément le cas échéant, le nom et l'adresse du client et le lieu d'intervention.",
-    "Pour une prestation de services, la TVA est exigible lors de l'encaissement : un acompte versé à la réservation rend la taxe exigible à hauteur de la somme reçue, avant même l'exécution. Cela suppose une facture d'acompte, puis une facture de solde rappelant le montant déjà réglé. Cette règle est celle du droit commun. Un prestataire peut opter pour le paiement de la taxe d'après les débits, auquel cas l'exigibilité est reportée à la facturation ; l'option se mentionne alors sur les factures et se vérifie avec l'expert-comptable.",
+    "Pour une prestation de services, la TVA est exigible lors de l'encaissement : un acompte versé à la réservation rend la taxe exigible à hauteur de la somme reçue, avant même l'exécution. Si le client est un professionnel assujetti ou une personne morale, chaque acompte appelle une facture d'acompte, puis une facture de solde rappelant le montant déjà réglé. Cette règle d'exigibilité est celle du droit commun. Un prestataire peut opter pour le paiement de la taxe d'après les débits, auquel cas la taxe devient exigible dès la facturation, sans attendre l'encaissement ; l'option se mentionne alors sur les factures et se vérifie avec l'expert-comptable.",
     "La franchise en base de TVA est fréquente dans cette activité : la facture ne porte alors aucun taux mais la mention « TVA non applicable, article 293 B du CGI ». Facturer la TVA à tort rendrait l'entreprise redevable de la taxe.",
     "Lorsque l'entreprise est assujettie, le repas préparé et servi chez le client relève des ventes à consommer sur place, au taux réduit de 10 %, à l'exclusion des boissons alcooliques qui restent à 20 %.",
     "Deux régimes coexistent selon le client : une prestation commandée par une entreprise donnera lieu à une facture électronique transmise par une plateforme agréée, tandis qu'une prestation réalisée pour un particulier relève de la transmission des données de transactions à l'administration."
@@ -87,7 +87,7 @@
     },
     {
       "question": "Je demande un acompte à la réservation : quand la TVA devient-elle exigible ?",
-      "reponse": "Pour une prestation de services, la TVA est exigible à l'encaissement : chaque acompte perçu la rend exigible à hauteur de son montant, avant l'exécution de la prestation. Si vous êtes assujetti, vous établissez donc une facture d'acompte, puis une facture de solde qui rappelle la somme déjà réglée. Si vous relevez de la franchise en base, aucune TVA n'est due ni facturée, mais la facture d'acompte garde son intérêt pour la traçabilité du règlement. Cette règle est celle du droit commun : un prestataire peut opter pour le paiement de la taxe d'après les débits, auquel cas l'exigibilité est reportée à la facturation ; l'option se mentionne alors sur les factures et se vérifie avec votre expert-comptable."
+      "reponse": "Pour une prestation de services, la TVA est exigible à l'encaissement : chaque acompte perçu la rend exigible à hauteur de son montant, avant l'exécution de la prestation. Si votre client est un professionnel assujetti ou une personne morale, vous établissez une facture d'acompte, puis une facture de solde qui rappelle la somme déjà réglée ; avec un client particulier, la facture d'acompte garde son intérêt pour la traçabilité du règlement. Si vous relevez de la franchise en base, aucune TVA n'est due ni facturée. Cette règle d'exigibilité est celle du droit commun : un prestataire peut opter pour le paiement de la taxe d'après les débits, auquel cas la taxe devient exigible dès la facturation, sans attendre l'encaissement ; l'option se mentionne alors sur les factures et se vérifie avec votre expert-comptable."
     },
     {
       "question": "Je suis en franchise en base : comment présenter l'acompte demandé à la réservation ?",
@@ -146,7 +146,11 @@
     {
       "titre": "impots.gouv.fr – Clients entreprises et particuliers : facturation électronique et e-reporting",
       "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "BOFiP – Règles relatives à l'établissement des factures, opérations donnant lieu à facturation (factures d'acompte)",
+      "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

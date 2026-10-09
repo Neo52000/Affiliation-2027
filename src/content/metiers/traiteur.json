@@ -12,7 +12,7 @@
   "volume_factures_typique": "Peu de factures isolées, mais des dossiers d'événement qui en génèrent chacun plusieurs : devis détaillé, facture d'acompte à la commande, facture de solde après la réception. Le rythme est très saisonnier : mariages au printemps et en été, réceptions d'entreprise en fin d'année.",
   "clients_types": "mixte",
   "specificites_facturation": [
-    "Un même événement produit une chaîne de documents : devis détaillé, facture d'acompte à la commande, facture de solde après la réception. Tout acompte encaissé avant la prestation doit donner lieu à une facture d'acompte, et la TVA correspondante est exigible dès l'encaissement, à hauteur du montant encaissé : c'est la règle applicable aux prestations de services, comme une réception servie à table, et elle vaut désormais aussi pour les acomptes portant sur des livraisons de biens (plateaux, buffets livrés).",
+    "Un même événement produit une chaîne de documents : devis détaillé, facture d'acompte à la commande, facture de solde après la réception. Pour un client professionnel assujetti ou une personne morale, tout acompte encaissé avant la prestation doit donner lieu à une facture d'acompte. Quel que soit le client, la TVA correspondante est exigible dès l'encaissement, à hauteur du montant encaissé : c'est la règle applicable aux prestations de services, comme une réception servie à table, et elle vaut désormais aussi pour les acomptes portant sur des livraisons de biens (plateaux, buffets livrés).",
     "Le taux de TVA dépend du format vendu, pas du produit seul : une réception avec service à table relève des ventes à consommer sur place à 10 % ; la livraison de plats conditionnés pour une consommation différée relève de 5,5 % ; les boissons alcooliques servies restent à 20 %. Une facture d'événement ventile donc souvent trois taux.",
     "Dans une vente à consommer sur place, le matériel nécessaire à la consommation du repas (vaisselle, tables, chaises, nappage, équipements de réchauffage) relève du taux de 10 %, même facturé sur une ligne distincte du prix par convive. Le taux normal ne s'applique que dans deux cas : la livraison de repas sans service, où vous pouvez facturer séparément la nourriture à son taux et la location de matériel au taux normal, à condition de distinguer les deux prix en comptabilité ; et les mises à disposition d'hôtesses, de vestiaire, de voiturier ou de chauffeur, exclues du taux réduit.",
     "Les clients professionnels (entreprises, agences événementielles, comités sociaux) imposent les mentions entre professionnels : délai de paiement, taux des pénalités de retard et indemnité forfaitaire pour frais de recouvrement de 40 €. Ces factures devront être émises au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise.",
@@ -23,7 +23,7 @@
     "Date et lieu de la prestation (réception servie ou livraison du buffet), en plus de la date d'émission de la facture.",
     "Ventilation de la TVA par taux lorsque l'événement combine service à table (10 %), plateaux livrés pour consommation différée (5,5 %) et boissons alcooliques (20 %), avec le taux applicable ligne par ligne.",
     "Sur les factures de séminaires, cocktails et réceptions d'entreprise, les mentions entre professionnels s'ajoutent : conditions et délai de paiement, taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € — à porter aussi sur la facture d'acompte, et pas seulement sur la facture de solde.",
-    "Une facture d'acompte pour chaque acompte encaissé avant la réalisation de la prestation."
+    "Pour un client professionnel assujetti ou une personne morale, une facture d'acompte pour chaque acompte encaissé avant la réalisation de la prestation."
   ],
   "exemple_facture": {
     "intitule": "Facture de solde — cocktail dînatoire d'entreprise, 40 convives, service à table dans les locaux du client",
@@ -80,7 +80,7 @@
   "faq": [
     {
       "question": "Dois-je émettre une facture quand j'encaisse un acompte sur un mariage ou un séminaire ?",
-      "reponse": "Oui. Tout acompte perçu avant la réalisation de l'opération doit donner lieu à une facture d'acompte. La TVA correspondante est exigible dès l'encaissement de l'acompte, à hauteur du montant encaissé, aussi bien pour une réception servie (prestation de services) que pour des plateaux ou buffets livrés (livraison de biens). La facture de solde vient ensuite clore le dossier."
+      "reponse": "Pour un séminaire, oui. L'obligation de facture d'acompte vise tout acompte perçu avant la réalisation de l'opération auprès d'un client professionnel assujetti ou d'une personne morale : c'est le cas d'un séminaire commandé par une entreprise, pas d'un mariage facturé à des particuliers. Dans les deux cas, la TVA correspondante est exigible dès l'encaissement de l'acompte, à hauteur du montant encaissé, aussi bien pour une réception servie (prestation de services) que pour des plateaux ou buffets livrés (livraison de biens). La facture de solde vient ensuite clore le dossier."
     },
     {
       "question": "Je livre des buffets froids et j'assure aussi des réceptions avec service : quel taux de TVA appliquer ?",
@@ -149,5 +149,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

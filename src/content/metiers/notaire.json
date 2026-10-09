@@ -100,7 +100,7 @@
   "sources": [
     {
       "titre": "BOFiP — Prestations de services imposables au taux normal, dont notaires (BOI-TVA-LIQ-20-20)",
-      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+      "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
     },
     {
       "titre": "Légifrance — Arrêté du 28 février 2020 fixant les tarifs réglementés des notaires",
@@ -147,5 +147,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

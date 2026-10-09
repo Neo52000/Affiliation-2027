@@ -8,16 +8,16 @@
   "specificites_facturation": [
     "En dépannage à domicile chez un particulier, vous devez informer le client des prix (taux horaire TTC, forfaits, frais de déplacement, caractère payant ou gratuit du devis) et lui remettre un devis avant l'intervention, même en urgence : la serrurerie est expressément visée par cette réglementation.",
     "Les travaux d'amélioration, de transformation, d'aménagement et d'entretien dans des logements achevés depuis plus de deux ans relèvent en principe de la TVA à 10 % (art. 279-0 bis du CGI), tandis que les locaux professionnels et les logements récents restent à 20 % : une même tournée mélange donc souvent les deux taux.",
-    "Pour appliquer le taux réduit, le client certifie par une mention portée sur le devis ou la facture que les conditions sont remplies (logement de plus de deux ans affecté à l'habitation) : cette mention remplace l'ancienne attestation.",
+    "Pour appliquer le taux réduit, le client certifie par une mention portée sur le devis ou la facture que les conditions sont remplies (logement de plus de deux ans affecté à l'habitation) : cette mention remplace l'ancienne attestation. Pour les travaux de réparation et d'entretien de moins de 1 000 € TTC, elle peut manquer si le devis ou la facture indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans ; un bailleur ou gestionnaire qui vous confie plusieurs interventions peut vous remettre une attestation annuelle.",
     "En tant qu'artisan tenu à une assurance professionnelle obligatoire (notamment la garantie décennale pour les travaux qui y sont soumis), vous devez indiquer sur chaque devis et facture l'assurance souscrite, les coordonnées de l'assureur et la couverture géographique du contrat.",
-    "En sous-traitance de travaux de bâtiment pour un donneur d'ordre assujetti (métallerie, pose sur chantier), vous facturez sans TVA avec la mention « Autoliquidation », la taxe étant due par le preneur.",
+    "En sous-traitance de travaux de bâtiment pour un donneur d'ordre assujetti (métallerie, pose sur chantier), vous facturez sans TVA avec la mention « Autoliquidation », la taxe étant due par le preneur. Si vous bénéficiez de la franchise en base, l'autoliquidation ne s'applique pas : votre facture porte la mention « TVA non applicable, article 293 B du CGI ».",
     "Votre clientèle mixte (particuliers, syndics, bailleurs, commerces) vous place à la fois dans le champ de la facture électronique entre assujettis, transmise via une plateforme agréée, et dans celui du e-reporting pour les ventes aux particuliers."
   ],
   "mentions_obligatoires_specifiques": [
-    "Mention portée sur le devis ou la facture par laquelle le client certifie que les conditions du taux réduit de TVA sont remplies (logement achevé depuis plus de deux ans, affecté à l'habitation), pour les travaux éligibles au taux de 10 %.",
+    "Mention portée sur le devis ou la facture par laquelle le client certifie que les conditions du taux réduit de TVA sont remplies (logement achevé depuis plus de deux ans, affecté à l'habitation), pour les travaux éligibles au taux de 10 %. Pour les travaux de réparation et d'entretien de moins de 1 000 € TTC, elle peut être omise si le document indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans ; l'attestation annuelle d'un bailleur ou gestionnaire vaut certification pour les interventions de l'année.",
     "Assurance professionnelle obligatoire de l'artisan (notamment garantie décennale pour les travaux concernés) : assurance souscrite au titre de l'activité, coordonnées de l'assureur ou du garant et couverture géographique du contrat, sur chaque devis et facture.",
     "« TVA non applicable, article 293 B du CGI » pour les serruriers bénéficiant de la franchise en base de TVA.",
-    "« Autoliquidation » sur les factures de sous-traitance de travaux de bâtiment adressées à un preneur assujetti, sans TVA facturée."
+    "« Autoliquidation » sur les factures de sous-traitance de travaux de bâtiment adressées à un preneur assujetti, sans TVA facturée, sauf pour les serruriers bénéficiant de la franchise en base, qui conservent la mention « TVA non applicable, article 293 B du CGI »."
   ],
   "exemple_facture": {
     "intitule": "Dépannage serrurerie : ouverture de porte claquée et remplacement de cylindre, logement de plus de deux ans",
@@ -45,7 +45,7 @@
       }
     ],
     "mentions_specifiques": [
-      "Le client certifie que les travaux portent sur un local achevé depuis plus de deux ans et affecté à l'habitation, et que les conditions d'application du taux réduit de 10 % (art. 279-0 bis du CGI) sont remplies.",
+      "Travaux de réparation et d'entretien de moins de 1 000 € TTC : mention de certification du client non exigée. Client : [nom], [adresse] ; immeuble : [adresse], achevé depuis plus de deux ans ; nature des travaux : ouverture de porte claquée et remplacement de cylindre.",
       "Assurance professionnelle : [compagnie], contrat n° [référence], couverture géographique : [zone couverte].",
       "Devis remis au client et accepté avant le début de l'intervention."
     ]
@@ -78,11 +78,11 @@
     },
     {
       "question": "Comment facturer un syndic, un bailleur ou un commerçant après la réforme ?",
-      "reponse": "Un syndic professionnel, un bailleur assujetti ou un commerçant sont des clients assujettis : vos factures devront leur parvenir au format électronique via une plateforme agréée, qui transmet aussi les données à l'administration. Le PDF envoyé par e-mail ne suffira plus pour ces clients, à l'échéance applicable à votre entreprise. Vos mentions métier (assurance professionnelle, certification du taux réduit) restent exigées sur ces factures."
+      "reponse": "Un syndic professionnel, un bailleur assujetti ou un commerçant sont des clients assujettis : vos factures devront leur parvenir au format électronique via une plateforme agréée, qui transmet aussi les données à l'administration. Le PDF envoyé par e-mail ne suffira plus pour ces clients, à l'échéance applicable à votre entreprise. Vos mentions métier (assurance professionnelle, certification du taux réduit lorsqu'elle est requise) restent exigées sur ces factures ; un bailleur ou gestionnaire qui vous confie plusieurs interventions peut toutefois vous remettre une attestation annuelle qui vaut certification."
     },
     {
       "question": "La TVA à 10 % sur mes interventions en logement est-elle compatible avec la facture électronique ?",
-      "reponse": "Oui. Le taux réduit de 10 % continue de s'appliquer aux travaux éligibles dans les logements achevés depuis plus de deux ans, et la facture électronique porte le détail des taux appliqués. La mention par laquelle le client certifie que les conditions du taux réduit sont remplies doit figurer sur le devis ou la facture. Vérifiez que votre logiciel gère plusieurs taux de TVA sur une même facture et ces mentions."
+      "reponse": "Oui. Le taux réduit de 10 % continue de s'appliquer aux travaux éligibles dans les logements achevés depuis plus de deux ans, et la facture électronique porte le détail des taux appliqués. La mention par laquelle le client certifie que les conditions du taux réduit sont remplies doit figurer sur le devis ou la facture, sauf si un bailleur ou gestionnaire vous a remis une attestation annuelle, ou pour les travaux de réparation et d'entretien de moins de 1 000 € TTC, où le document indique alors le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans. Vérifiez que votre logiciel gère plusieurs taux de TVA sur une même facture et ces mentions."
     },
     {
       "question": "Je suis en micro-entreprise avec la mention « TVA non applicable, art. 293 B du CGI » : la réforme me concerne-t-elle ?",
@@ -128,7 +128,7 @@
     },
     {
       "titre": "BOFiP BOI-TVA-DECLA-10-10-20 : autoliquidation de la TVA en sous-traitance de travaux de bâtiment, mention « Autoliquidation »",
-      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20251022"
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20260909"
     },
     {
       "titre": "Je découvre la facturation électronique (impots.gouv.fr)",
@@ -137,7 +137,11 @@
     {
       "titre": "Tout savoir sur la facturation électronique pour les entreprises (economie.gouv.fr)",
       "url": "https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises"
+    },
+    {
+      "titre": "BOFiP BOI-RES-TVA-000269 : rescrit sur l'autoliquidation en sous-traitance de travaux, exclusion du sous-traitant en franchise en base (question 10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

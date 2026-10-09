@@ -9,13 +9,13 @@
     "Sur un même carnet de commandes, la pose de carrelage change de taux selon le local : 10 % dans un logement à usage d'habitation achevé depuis plus de deux ans, 20 % en construction neuve ou dans un local de moins de deux ans. Chaque ligne de facture doit porter le taux correspondant à la situation du chantier.",
     "Le carrelage fourni et facturé par votre entreprise suit le taux réduit de la prestation : il figure parmi les matières premières admises au taux de 10 % dans un logement ancien. Si le client achète lui-même le carrelage, cet achat reste à 20 % et seule votre pose bénéficie du taux réduit.",
     "La dépose d'un ancien revêtement en vue de son remplacement relève du même taux réduit que la pose : inutile de l'isoler à 20 % sur la facture.",
-    "En sous-traitance pour une entreprise générale, la facture part sans TVA avec la mention « Autoliquidation » ; c'est le donneur d'ordre qui déclare la taxe.",
+    "En sous-traitance pour une entreprise générale, la facture part sans TVA avec la mention « Autoliquidation » ; c'est le donneur d'ordre qui déclare la taxe. Si vous êtes en franchise en base, l'autoliquidation ne s'applique pas : la facture porte la mention « TVA non applicable, article 293 B du CGI ».",
     "Les chantiers de carrelage de plusieurs semaines (logements complets, halls d'immeuble, locaux commerciaux) se facturent par acomptes puis situations d'avancement établies sur les surfaces posées ; en marché privé de travaux, les paiements peuvent être minorés d'une retenue de garantie plafonnée à 5 %.",
     "Pour tout taux réduit, le client certifie directement sur le devis ou la facture que le logement est achevé depuis plus de deux ans et que les travaux remplissent les conditions ; l'attestation séparée n'est plus exigée."
   ],
   "mentions_obligatoires_specifiques": [
     "Mention de l'assurance professionnelle souscrite au titre de l'activité de pose de carrelage (responsabilité décennale), coordonnées de l'assureur ou du garant et couverture géographique du contrat, sur les devis et les factures.",
-    "Mention « Autoliquidation » sur les factures de sous-traitance, qui ne font apparaître aucune TVA exigible.",
+    "Mention « Autoliquidation » sur les factures de sous-traitance, qui ne font apparaître aucune TVA exigible ; en franchise en base, l'autoliquidation ne s'applique pas et la facture porte à la place la mention « TVA non applicable, article 293 B du CGI ».",
     "Mention certifiée par le client, portée sur le devis ou la facture, attestant l'ancienneté du logement et les conditions du taux de 10 % ou de 5,5 %.",
     "Devis détaillé remis avant toute prestation de dépannage, de réparation ou d'entretien : nature des travaux, décompte en quantité et prix unitaire, main-d'œuvre, frais de déplacement."
   ],
@@ -99,7 +99,7 @@
     },
     {
       "question": "Comment facturer un chantier réalisé en sous-traitance d'une entreprise générale ?",
-      "reponse": "Vous émettez la facture sans TVA, avec la mention « Autoliquidation » : la taxe est déclarée par l'entreprise principale preneuse des travaux. Vous reportez le montant hors taxes sur la ligne « autres opérations non imposables » de votre déclaration de chiffre d'affaires. Ce régime ne s'applique jamais aux factures adressées directement au client final."
+      "reponse": "Vous émettez la facture sans TVA, avec la mention « Autoliquidation » : la taxe est déclarée par l'entreprise principale preneuse des travaux. Vous reportez le montant hors taxes sur la ligne « autres opérations non imposables » de votre déclaration de chiffre d'affaires. Ce régime ne s'applique jamais aux factures adressées directement au client final. Il ne s'applique pas non plus si vous êtes en franchise en base : votre facture porte alors la mention « TVA non applicable, article 293 B du CGI »."
     },
     {
       "question": "Puis-je facturer un gros chantier de carrelage en plusieurs fois ?",
@@ -121,7 +121,7 @@
     },
     {
       "titre": "BOI-TVA-DECLA-10-10-20 — Autoliquidation de la TVA en sous-traitance de travaux de construction",
-      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+      "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20260909"
     },
     {
       "titre": "Loi n° 71-584 du 16 juillet 1971, article 1 — Retenue de garantie dans les marchés privés de travaux",
@@ -138,7 +138,11 @@
     {
       "titre": "TVA à taux réduit : pour quels travaux ? — economie.gouv.fr",
       "url": "https://www.economie.gouv.fr/particuliers/tva-taux-reduits-travaux"
+    },
+    {
+      "titre": "BOI-RES-TVA-000269 — Rescrit : autoliquidation des travaux de construction sous-traités, exclusion du sous-traitant en franchise en base (question 10)",
+      "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

@@ -7,7 +7,7 @@
   "clients_types": "mixte",
   "specificites_facturation": [
     "Une même facture de toiture mélange souvent deux taux réduits : 10 % pour la réfection de la couverture d'un logement achevé depuis plus de deux ans, 5,5 % pour l'isolation de la toiture (travaux d'amélioration de la qualité énergétique) et les travaux qui leur sont indissociablement liés. Chaque taux exige ses propres lignes et la certification du client sur le devis ou la facture.",
-    "Les acomptes encaissés avant le début du chantier (échafaudage, approvisionnement en tuiles ou en ardoises) doivent chacun faire l'objet d'une facture ; la TVA sur les prestations de services est exigible dès leur encaissement.",
+    "Les acomptes encaissés avant le début du chantier (échafaudage, approvisionnement en tuiles ou en ardoises) doivent chacun faire l'objet d'une facture lorsque le client est un professionnel ou une personne morale ; la TVA sur les prestations de services est exigible dès leur encaissement, voire dès leur facturation si l'entreprise a opté pour le paiement de la TVA d'après les débits.",
     "La météo désorganise les plannings et révèle des surprises en cours de chantier (volige pourrie, chevrons à reprendre, zinguerie à remplacer). Tout travail supplémentaire doit être chiffré et accepté par écrit avant exécution, puis repris dans la facture finale.",
     "Les réparations d'urgence après tempête relèvent du dépannage : un devis détaillé (nature des travaux, quantités, prix unitaires, main-d'œuvre, déplacement) doit être remis avant toute intervention.",
     "Les devis de rénovation de toiture comportent les informations sur les déchets déposés (tuiles, ardoises, bois de charpente) : estimation des quantités, modalités d'enlèvement, installations de collecte et coûts associés."
@@ -76,7 +76,7 @@
     },
     {
       "question": "Puis-je encaisser un acompte avant de monter l'échafaudage, et dois-je l'accompagner d'une facture ?",
-      "reponse": "Oui. Tout acompte versé avant la réalisation de la prestation doit donner lieu à une facture. Pour les prestations de services, la TVA est exigible dès l'encaissement de l'acompte, pas seulement au solde. La facture finale déduit ensuite les acomptes déjà facturés."
+      "reponse": "Oui pour l'encaissement. Pour la facture, tout dépend du client : si c'est un professionnel ou une personne morale, tout acompte versé avant la réalisation de la prestation doit donner lieu à une facture. Pour les prestations de services, la TVA est exigible dès l'encaissement de l'acompte, pas seulement au solde. La facture finale déduit ensuite les acomptes déjà facturés."
     },
     {
       "question": "En déposant les tuiles, je découvre une volige pourrie : comment facturer ce travail imprévu ?",
@@ -88,7 +88,7 @@
     },
     {
       "question": "Avec la facturation électronique, mes factures de solde avec acomptes déduits resteront-elles possibles ?",
-      "reponse": "Oui. L'obligation de facturer chaque acompte et la déduction des acomptes sur le solde ne changent pas. Ce qui change, c'est le support : au calendrier propre à votre entreprise, la réception puis l'émission de vos factures passeront par une plateforme agréée. Pour un couvreur, le point à vérifier est double : que l'outil rattache les factures d'acompte et la facture de solde d'un même chantier, et qu'il porte ligne à ligne les taux de 5,5 % et de 10 % avec la certification du client correspondante."
+      "reponse": "Oui. L'obligation de facturer chaque acompte d'un client professionnel ou d'une personne morale et la déduction des acomptes sur le solde ne changent pas. Ce qui change, c'est le support : au calendrier propre à votre entreprise, la réception puis l'émission de vos factures passeront par une plateforme agréée. Pour un couvreur, le point à vérifier est double : que l'outil rattache les factures d'acompte et la facture de solde d'un même chantier, et qu'il porte ligne à ligne les taux de 5,5 % et de 10 % avec la certification du client correspondante."
     }
   ],
   "sources": [
@@ -129,5 +129,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

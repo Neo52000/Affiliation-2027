@@ -19,7 +19,7 @@
   ],
   "mentions_obligatoires_specifiques": [
     "Sur toute note d'honoraires de soins : la référence à l'exonération, par exemple « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts ».",
-    "Sur les recettes taxables éventuelles (par exemple une formation facturée hors soins) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Cette mention ne remplace jamais la référence à l'exonération des soins, et inversement."
+    "Sur les recettes taxables éventuelles (par exemple une formation facturée hors soins et non exonérée) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Cette mention ne remplace jamais la référence à l'exonération des soins, et inversement."
   ],
   "exemple_facture": {
     "intitule": "Note d'honoraires – bilan orthophonique et rééducation du langage oral (montants illustratifs)",
@@ -84,7 +84,7 @@
     },
     {
       "question": "Je facture une formation à des étudiants ou une supervision à une consœur : quelle TVA ?",
-      "reponse": "Ces recettes ne se rattachent pas aux soins dispensés à vos patients : elles sont exclues de l'exonération des soins et taxables. Si vous relevez de la franchise en base, portez la mention « TVA non applicable, article 293 B du CGI » sur ces lignes. Facturées à un professionnel assujetti, elles entreront dans le circuit d'émission électronique à l'échéance applicable à votre entreprise."
+      "reponse": "Ces recettes ne se rattachent pas aux soins dispensés à vos patients : elles sont exclues de l'exonération des soins et, en principe, taxables. Une formation peut toutefois être exonérée à un autre titre : formation professionnelle continue, si vous êtes titulaire d'une attestation délivrée par l'autorité administrative compétente (article 261, 4, 4° a du CGI), ou cours que vous dispensez personnellement, sans le concours de salariés, à des élèves qui vous rémunèrent directement (article 261, 4, 4° b du CGI). Si vous relevez de la franchise en base, portez la mention « TVA non applicable, article 293 B du CGI » sur les lignes taxables. Taxables et facturées à un professionnel assujetti, elles entreront dans le circuit d'émission électronique à l'échéance applicable à votre entreprise."
     }
   ],
   "sources": [
@@ -119,7 +119,11 @@
     {
       "titre": "ameli.fr orthophoniste – le retour NOEMIE (suivi des paiements des caisses)",
       "url": "https://www.ameli.fr/orthophoniste/exercice-liberal/facturation-remuneration/teletransmission-et-retour-noemie/retour-noemie"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-CHAMP-30-10-20-50 – exonération de la formation professionnelle continue (article 261, 4, 4° a du CGI) sous condition d'attestation de l'autorité administrative",
+      "url": "https://bofip.impots.gouv.fr/bofip/943-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-50-20191016"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }
