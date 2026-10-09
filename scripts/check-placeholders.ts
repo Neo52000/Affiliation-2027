@@ -18,12 +18,16 @@ const MARQUEURS =
 const VARIABLES_LANCEMENT = /TODO_[A-Z_]+|todo-domaine/;
 
 const dist = join(process.cwd(), 'dist');
-const pages = readdirSync(dist, { recursive: true })
-  .map(String)
-  .filter((f) => f.endsWith('.html'));
+const fichiers = readdirSync(dist, { recursive: true }).map(String);
+const pages = fichiers.filter((f) => f.endsWith('.html'));
+// Une fois l'éditeur identifié, les fichiers servis hors HTML sont aussi lus
+// (robots.txt, sitemaps, en-têtes et redirections générés).
+const autres = EDITEUR_IDENTIFIE
+  ? fichiers.filter((f) => /\.(txt|xml)$|(^|\/)_(headers|redirects)$/.test(f))
+  : [];
 
 const erreurs: string[] = [];
-for (const page of pages) {
+for (const page of [...pages, ...autres]) {
   const html = readFileSync(join(dist, page), 'utf8');
   const m = html.match(MARQUEURS) ?? (EDITEUR_IDENTIFIE ? html.match(VARIABLES_LANCEMENT) : null);
   if (m) erreurs.push(`${page} : « ${html.slice(m.index ?? 0, (m.index ?? 0) + 40)}… »`);

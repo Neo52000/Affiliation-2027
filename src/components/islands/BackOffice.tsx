@@ -154,6 +154,8 @@ function Champ(p: {
   aide?: string;
   /** Erreur annoncée dès son apparition (champ validé à l'envoi, pas à la frappe). */
   alerte?: boolean;
+  /** Change à chaque essai : l'erreur est recréée, donc réannoncée même identique. */
+  cleErreur?: number;
   children: (attrs: Record<string, unknown>) => preact.ComponentChildren;
 }) {
   const decrit = [p.aide ? `${p.id}-aide` : '', p.erreur ? `${p.id}-erreur` : '']
@@ -177,6 +179,7 @@ function Champ(p: {
       })}
       {p.erreur && (
         <p
+          key={p.cleErreur}
           id={`${p.id}-erreur`}
           class="admin-erreur mt-1 text-sm"
           role={p.alerte ? 'alert' : undefined}
@@ -210,6 +213,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
   const [annonce, setAnnonce] = useState('');
   const [erreurPublication, setErreurPublication] = useState('');
   const [avertir, setAvertir] = useState(false);
+  const [essaisConnexion, setEssaisConnexion] = useState(0);
   const [occupe, setOccupe] = useState(false);
   const titreDonnees = useRef<HTMLHeadingElement>(null);
   const titreConnexion = useRef<HTMLHeadingElement>(null);
@@ -217,6 +221,10 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
   const titreCampagne = useRef<HTMLHeadingElement>(null);
   const titrePublication = useRef<HTMLHeadingElement>(null);
   const boutonNouvelle = useRef<HTMLButtonElement>(null);
+  const preavis = useRef<HTMLDivElement>(null);
+  const boutonRester = useRef<HTMLButtonElement>(null);
+  /** Élément qui avait le focus quand le préavis est apparu (rendu après « Rester connecté »). */
+  const avantPreavis = useRef<Element | null>(null);
   const resumeErreurs = useRef<HTMLDivElement>(null);
   /** Élément à focaliser après le prochain rendu (l'élément qui avait le focus a disparu). */
   const aFocaliser = useRef<{ current: HTMLElement | null } | (() => HTMLElement | null) | null>(
@@ -263,6 +271,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     setJetonSaisi('');
     setErreurConnexion('');
     setAnnonce('');
+    setEssaisConnexion((n) => n + 1);
     if (!jeton.startsWith('github_pat_')) {
       setErreurConnexion('Jeton à portée fine attendu (il commence par github_pat_).');
       return;
@@ -306,6 +315,33 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     setErreurPublication(messageErreur(e));
   };
 
+  /**
+   * Demandes fusionnées ou fermées hors du flux normal (sur GitHub, ou réponse
+   * de fusion perdue) : seules celles-ci quittent l'écran. Si l'une a été
+   * fusionnée, les données sont rechargées ; sinon le brouillon est conservé.
+   */
+  const clore = (c: ClientGitHub, closes: { numero: number; fusionnee: boolean }[]) => {
+    const numeros = new Set(closes.map((x) => x.numero));
+    if (document.activeElement?.closest('[data-demande]')) focaliserApres(titrePublication);
+    setPublications((avant) => avant.filter((x) => !numeros.has(x.numero)));
+    setEtats((avant) =>
+      Object.fromEntries(Object.entries(avant).filter(([n]) => !numeros.has(Number(n)))),
+    );
+    if (!closes.some((x) => x.fusionnee)) {
+      setAnnonce('Demande fermée sur GitHub : votre brouillon est conservé.');
+      return;
+    }
+    void charger(c)
+      .then(() => setAnnonce('Demande déjà mise en ligne : données rechargées depuis le site.'))
+      .catch((e: unknown) => {
+        if (e instanceof ErreurGitHub && e.statut === 401) signaler(e);
+        else
+          setErreurPublication(
+            'Demande mise en ligne, mais les données n’ont pas pu être rechargées : rechargez la page.',
+          );
+      });
+  };
+
   // Focus : sur les données à la connexion, sur le titre « Connexion » après une déconnexion.
   useEffect(() => {
     if (client) {
@@ -329,22 +365,31 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     if (!client) return;
     let alerte: ReturnType<typeof setTimeout> | undefined;
     let fin: ReturnType<typeof setTimeout> | undefined;
-    const relancer = () => {
+    const relancer = (e?: Event) => {
+      // Activité dans le préavis lui-même (focus posé sur « Rester connecté »,
+      // Tab, clic) : le préavis reste affiché jusqu'au choix de l'utilisateur.
+      if (e?.target instanceof Node && preavis.current?.contains(e.target)) return;
       clearTimeout(alerte);
       clearTimeout(fin);
       setAvertir(false);
-      alerte = setTimeout(() => setAvertir(true), INACTIVITE_MAX - PREAVIS);
+      alerte = setTimeout(() => {
+        avantPreavis.current = document.activeElement;
+        setAvertir(true);
+        focaliserApres(boutonRester);
+      }, INACTIVITE_MAX - PREAVIS);
       fin = setTimeout(
         () => seDeconnecter('Session expirée après 30 minutes d’inactivité.'),
         INACTIVITE_MAX,
       );
     };
-    prolonger.current = relancer;
+    prolonger.current = () => relancer();
     relancer();
     const quitter = () => seDeconnecter();
-    const activite = ['keydown', 'pointerdown', 'focusin', 'input'] as const;
+    // Gestes de l'utilisateur seulement : un défilement programmatique (focus,
+    // ancre) n'est pas une activité, d'où « wheel » et non « scroll ».
+    const activite = ['keydown', 'pointerdown', 'focusin', 'input', 'wheel'] as const;
     window.addEventListener('pagehide', quitter);
-    for (const t of activite) window.addEventListener(t, relancer);
+    for (const t of activite) window.addEventListener(t, relancer, { passive: true });
     return () => {
       clearTimeout(alerte);
       clearTimeout(fin);
@@ -374,21 +419,13 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
       }
       if (!actif) return;
       setEtats((avant) => ({ ...avant, ...nouveaux }));
-      // Demande fusionnée ou fermée sur GitHub, hors de ce back office.
-      const close = Object.values(nouveaux).find((e) => !e.ouverte);
-      if (close) {
-        if (close.fusionnee) {
-          void charger(client)
-            .then(() => {
-              setEtats({});
-              setAnnonce('Demande déjà mise en ligne : données rechargées depuis le site.');
-            })
-            .catch(signaler);
-        } else {
-          setPublications([]);
-          setEtats({});
-          setAnnonce('Demande fermée sur GitHub : votre brouillon est conservé.');
-        }
+      // Demandes fusionnées ou fermées sur GitHub, hors de ce back office.
+      const closes = publications.flatMap((p) => {
+        const e = nouveaux[p.numero];
+        return e && !e.ouverte ? [{ numero: p.numero, fusionnee: e.fusionnee }] : [];
+      });
+      if (closes.length > 0) {
+        clore(client, closes);
         return;
       }
       const enCours = Object.values(nouveaux).some(
@@ -470,7 +507,13 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
                 />
               )}
             </Champ>
-            <Champ id="jeton" label="Jeton GitHub" erreur={erreurConnexion || undefined} alerte>
+            <Champ
+              id="jeton"
+              label="Jeton GitHub"
+              erreur={erreurConnexion || undefined}
+              alerte
+              cleErreur={essaisConnexion}
+            >
               {(a) => (
                 <input
                   {...a}
@@ -684,6 +727,11 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     try {
       // Dernière lecture juste avant la fusion : rien ne doit avoir bougé.
       const etat = await client.etat(p, estCheminPublie);
+      if (!etat.ouverte) {
+        clore(client, [{ numero: p.numero, fusionnee: etat.fusionnee }]);
+        setOccupe(false);
+        return;
+      }
       if (etat.blocages.length > 0) {
         setEtats((avant) => ({ ...avant, [p.numero]: etat }));
         setErreurPublication(`Mise en ligne refusée : ${etat.blocages.join(' ; ')}.`);
@@ -697,7 +745,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
       return;
     }
     // La fusion est faite : la demande n'est plus ouverte, même si le rechargement échoue.
-    setPublications([]);
+    setPublications((avant) => avant.filter((x) => x.numero !== p.numero));
     setEtats({});
     setAnnonce(
       `Publication n° ${p.numero} mise en ligne : Netlify déploie le site (quelques minutes).`,
@@ -759,12 +807,29 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
         </button>
       </div>
       {avertir && (
-        <div role="alert" class="admin-erreurs mt-4 p-3">
+        <div
+          ref={preavis}
+          role="alert"
+          class="admin-erreurs fixed inset-x-4 bottom-4 z-50 bg-paper p-3 shadow-lg"
+        >
           <p>
             Sans activité, la session sera fermée dans 2 minutes et le brouillon non publié sera
             perdu.
           </p>
-          <button type="button" class="btn-cta mt-2" onClick={() => prolonger.current()}>
+          <button
+            type="button"
+            ref={boutonRester}
+            class="btn-cta mt-2"
+            onClick={() => {
+              prolonger.current();
+              const avant = avantPreavis.current;
+              focaliserApres(() =>
+                avant instanceof HTMLElement && avant.isConnected && avant !== document.body
+                  ? avant
+                  : titreDonnees.current,
+              );
+            }}
+          >
             Rester connecté
           </button>
         </div>
@@ -1298,7 +1363,11 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
           const pret =
             e?.ouverte === true && e.blocages.length === 0 && reglesManquantes.length === 0;
           return (
-            <div class="card-top mt-4 rounded-md border border-border p-4" key={p.numero}>
+            <div
+              class="card-top mt-4 rounded-md border border-border p-4"
+              key={p.numero}
+              data-demande={p.numero}
+            >
               <p class="font-bold">
                 Demande n° {p.numero} : {p.titre}
               </p>
@@ -1322,7 +1391,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
               </p>
               <p class="mt-2 flex flex-wrap gap-3 text-sm">
                 <a href={p.url} rel="noopener">
-                  Voir la demande<span class="sr-only"> n° {p.numero}</span> sur GitHub
+                  Voir la demande sur GitHub<span class="sr-only"> (demande n° {p.numero})</span>
                 </a>
                 <a href={previsualisation.replace('{n}', String(p.numero))} rel="noopener">
                   Prévisualiser le site modifié
