@@ -138,7 +138,8 @@ export function doitReconstruire<C extends CampagneSelection>(
 
 const hoteSansWww = (u: string): string => {
   try {
-    return new URL(u).hostname.replace(/^www\./, '');
+    // Point final (« abby.fr. », nom complètement qualifié) : même hôte.
+    return new URL(u).hostname.replace(/\.$/, '').replace(/^www\./, '');
   } catch {
     return '';
   }

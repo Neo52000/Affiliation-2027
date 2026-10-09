@@ -30,8 +30,10 @@ const placeholders = !EDITEUR_IDENTIFIE;
     <h2 class="mt-8 text-2xl font-bold">Éditeur du site</h2>
     <ul class="mt-3 list-disc space-y-1 pl-5">
       <li>
-        Raison sociale, SIRET, siège social et directeur de la publication : {SITE.editeurLegal}
+        Raison sociale et forme, capital social, numéro RCS ou SIRET, siège social et directeur de
+        la publication : {SITE.editeurLegal}
       </li>
+      <li>Téléphone : {SITE.telephone}</li>
       <li>
         Contact :{' '}
         {placeholders ? (
@@ -44,7 +46,8 @@ const placeholders = !EDITEUR_IDENTIFIE;
 
     <h2 class="mt-8 text-2xl font-bold">Hébergement</h2>
     <p class="mt-3">
-      Netlify, Inc. — 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis —
+      Netlify, Inc. — 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis — téléphone :
+      {SITE.telephoneHebergeur} —
       <a href="https://www.netlify.com" rel="noopener">
         www.netlify.com
       </a>

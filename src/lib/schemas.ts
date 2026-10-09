@@ -250,7 +250,7 @@ export const EMPLACEMENTS_PUB = ['accueil', 'guides', 'familles'] as const;
 
 /** Formulations qui feraient passer une annonce pour un avis ou un classement du site. */
 export const TEXTE_PUB_INTERDIT =
-  /recommand|classement|class[ée]|comparatif|compar[ée]|n°\s*1|num[ée]ro\s*(1|un)(?![\p{L}\d])|meilleur|(?<!\p{L})[ée]lu(e|s|es)?(?!\p{L})|(?<!\p{L})not(é|ée|és|ées)(?!\p{L})|(?<!\p{L})notes?\s*(de\s*)?\d|(?<!\p{L})avis(?!\p{L})|plateforme agr[ée][ée]e/iu;
+  /recommand|classement|class[ée]|comparatif|compar[ée]|n°\s*1|num[ée]ro\s*(1|un)(?![\p{L}\d])|meilleur|(?<!\p{L})[ée]lu(e|s|es)?(?!\p{L})|(?<!\p{L})not(é|ée|és|ées)(?!\p{L})|(?<!\p{L})notes?(?!\p{L})(?!\s+de\s+frais)|(?<!\p{L})avis(?!\p{L})|plateforme agr[ée][ée]e/iu;
 
 /** Libellés de bouton que Lighthouse juge non descriptifs (audit « link-text »). */
 const CTA_GENERIQUES = new Set([
@@ -266,7 +266,8 @@ const CTA_GENERIQUES = new Set([
 
 const textePub = (min: number, max: number) =>
   texteSur(min, max).refine(
-    (t) => !TEXTE_PUB_INTERDIT.test(t),
+    // NFC : un « é » décomposé (e + accent combinant, texte collé d'un PDF) reste reconnu.
+    (t) => !TEXTE_PUB_INTERDIT.test(t.normalize('NFC')),
     'formulation réservée au contenu éditorial (recommandation, classement, note, avis, agrément)',
   );
 

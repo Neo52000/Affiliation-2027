@@ -67,7 +67,7 @@ Liens d'affiliation et espaces publicitaires, sans toucher au code. Prérequis :
    remplir). Il reste en mémoire seulement : quitter la page, 30 minutes
    d'inactivité ou un refus de GitHub l'effacent.
 2. **Liens d'affiliation** : URL fournie par le programme (https, ASCII ; un
-   domaine accentué se saisit en `xn--`), réseau en mémo, case « actif ». Un
+   domaine accentué se saisit en `xn--`), réseau (publié sur `/transparence`), case « actif ». Un
    lien suspendu garde son URL mais le bouton revient au site officiel.
 3. **Annonces** : annonceur et sa raison sociale avec SIREN (publiés sur
    `/transparence`), logiciel comparé s'il y a lieu (annonce limitée à l'accueil
@@ -94,3 +94,6 @@ Liens d'affiliation et espaces publicitaires, sans toucher au code. Prérequis :
   de collecte) ; liens vers les pages du site seulement.
 - Pied de chaque envoi : identité de l'éditeur et lien de désinscription.
 - Suivi des ouvertures et des clics désactivé dans Brevo (`TODO.md` #23).
+- Une fois par an : supprimer dans Brevo les contacts désinscrits depuis plus de
+  3 ans (durée de la liste d'opposition annoncée sur `/confidentialite`), pour la
+  newsletter comme pour le rappel.

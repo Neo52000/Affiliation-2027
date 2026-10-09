@@ -11,6 +11,9 @@ describe('TEXTE_PUB_INTERDIT', () => {
     'Élu meilleur outil',
     'Note de 4,8 sur 5',
     'notes 5/5',
+    'Note : 4,8/5 sur Capterra',
+    'Note moyenne 4,8/5',
+    'Excellente note des clients',
     'Recommandé par les experts',
     'Classement 2026',
     'Le n° 1 de la facturation',
@@ -23,6 +26,7 @@ describe('TEXTE_PUB_INTERDIT', () => {
 
   it.each([
     'Note de frais incluse',
+    'Notes de frais en 1 clic',
     'Votre notaire vous conseille',
     'Notamment pour les artisans',
     'Élucidez vos factures',
@@ -31,6 +35,32 @@ describe('TEXTE_PUB_INTERDIT', () => {
     'Factures conformes en 3 clics',
   ])('accepte « %s »', (texte) => {
     expect(TEXTE_PUB_INTERDIT.test(texte)).toBe(false);
+  });
+});
+
+describe('campagneSchema : texte d’annonce normalisé', () => {
+  it('« noté » en forme décomposée (e + accent combinant) est refusé comme « noté »', () => {
+    const base = {
+      id: 'annonce-test',
+      annonceur: 'Exemple',
+      annonceur_legal: 'Exemple SAS, SIREN 123 456 789',
+      outil: null,
+      emplacement: 'accueil',
+      familles: [],
+      titre: 'Un titre correct',
+      cta: 'Voir l’offre',
+      url: 'https://exemple.fr/',
+      image: null,
+      debut: '2026-11-01',
+      fin: '2026-11-30',
+      active: true,
+    };
+    const decompose = 'Logiciel note\u0301 5/5 par ses clients';
+    expect(decompose).not.toBe(decompose.normalize('NFC'));
+    expect(campagneSchema.safeParse({ ...base, texte: decompose }).success).toBe(false);
+    expect(
+      campagneSchema.safeParse({ ...base, texte: 'Factures conformes en 3 clics' }).success,
+    ).toBe(true);
   });
 });
 

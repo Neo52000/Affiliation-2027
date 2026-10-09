@@ -140,6 +140,8 @@ describe('memeEditeur', () => {
     ['https://www.abby.fr/offre', 'https://abby.fr/', true],
     ['https://lp.abby.fr/offre', 'https://www.abby.fr/', true],
     ['https://go.qonto.com/x', 'https://qonto.com/fr', true],
+    ['https://abby.fr./offre', 'https://abby.fr/', true],
+    ['https://lp.abby.fr./offre', 'https://abby.fr/', true],
     ['https://fauxabby.fr/', 'https://abby.fr/', false],
     ['https://abby.fr.evil.com/', 'https://abby.fr/', false],
     ['https://exemple.fr/', 'pas une url', false],

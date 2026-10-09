@@ -484,3 +484,23 @@ Revue contradictoire sur 4 dimensions (correction, accessibilité, conformité, 
 - `/confidentialite` indique la base du transfert vers Netlify (clauses contractuelles types de son accord de traitement) et la durée de la liste d'opposition (3 ans). Le point de collecte nomme les sous-traitants. Deux points sont à confirmer par le propriétaire (TODO.md #28).
 - Une adresse refusée a sa propre page d'état. Le champ email bloque, dès le navigateur, les adresses sans extension.
 - `/transparence` ne dit plus qu'« une partie des outils » est sans partenariat quand tous ont un lien. `/publicite` ne décrit plus le lectorat, qui n'est pas mesuré.
+
+## Corrections de la revue : second passage (2026-10-09)
+
+Le diff précédent (#35) a lui-même été soumis à une revue contradictoire : 14 constats, dont 12 confirmés et 2 plausibles. Tous sont traités.
+
+- **Règles des annonces** : le nom « note » est de nouveau refusé (« Note : 4,8/5 », « Excellente note »), sauf « note(s) de frais ». Le texte est normalisé en NFC, si bien qu'un « noté » décomposé, collé depuis un PDF, est reconnu. Un hôte terminé par un point (`abby.fr.`) est reconnu comme l'éditeur.
+- **Préavis d'inactivité** :
+  - bandeau fixe, toujours visible ;
+  - le focus va sur « Rester connecté », qui le rend ensuite à l'élément d'origine ;
+  - le défilement à la molette compte comme une activité ;
+  - le scénario est testé avec une horloge simulée.
+- **Demandes closes hors du back office** : seules elles quittent l'écran, et les autres demandes ouvertes restent. Une demande fusionnée sur GitHub ne produit plus de « Mise en ligne refusée » : les données sont rechargées. Le focus est replacé.
+- **Accessibilité** :
+  - le nom accessible du lien GitHub commence par son libellé visible (2.5.3) ;
+  - une erreur de jeton identique est réannoncée à chaque essai.
+- **Mentions légales** :
+  - le téléphone de l'éditeur et celui de l'hébergeur sont exigés (LCEN, art. 6) et entrent dans le calcul de `EDITEUR_IDENTIFIE` ;
+  - le libellé cite aussi la forme, le capital et le RCS.
+- **`robots.txt`** est généré depuis le domaine configuré. Une fois l'éditeur identifié, `check:placeholders` lit aussi les fichiers `.txt`, `.xml`, `_headers` et `_redirects`.
+- **Liste d'opposition** : la durée de 3 ans est tenue par une purge annuelle dans Brevo (`MAINTENANCE.md` §8).

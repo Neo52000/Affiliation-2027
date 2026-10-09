@@ -22,12 +22,15 @@ interface Options {
   regles?: string[];
   /** Statut renvoyé par la création de la pull request (201 par défaut). */
   creationPr?: number;
+  /** La demande est fusionnée sur GitHub, hors du back office, après sa première lecture. */
+  fusionExterne?: boolean;
 }
 
 async function simulerGitHub(page: Page, options: Options = {}) {
   const appels: Appel[] = [];
   let fusionnee = false;
   let branche = '';
+  let lecturesPr = 0;
   const repondre = (route: Route, statut: number, corps: unknown, entetes = {}) =>
     route.fulfill({
       status: statut,
@@ -121,6 +124,7 @@ async function simulerGitHub(page: Page, options: Options = {}) {
       });
     }
     if (cle === 'GET /pulls/7') {
+      if (options.fusionExterne && ++lecturesPr > 1) fusionnee = true;
       return repondre(route, 200, {
         state: fusionnee ? 'closed' : 'open',
         merged: fusionnee,
@@ -309,4 +313,49 @@ test('jeton refusé : l’erreur est annoncée (role=alert)', async ({ page }) =
   await expect(
     page.getByRole('alert').filter({ hasText: 'Jeton refusé par GitHub' }),
   ).toBeVisible();
+});
+
+test('inactivité : préavis visible et atteignable, « Rester connecté » rend le focus', async ({
+  page,
+}) => {
+  await page.clock.install();
+  await simulerGitHub(page);
+  await seConnecter(page);
+  const url = page.getByRole('group', { name: 'Tiime' }).getByLabel('URL affiliée');
+  await url.fill('https://www.tiime.fr/?via=partenaire');
+
+  await page.clock.runFor('28:01');
+  const preavis = page.getByRole('alert').filter({ hasText: 'session sera fermée' });
+  await expect(preavis).toBeInViewport();
+  const rester = preavis.getByRole('button', { name: 'Rester connecté' });
+  await expect(rester).toBeFocused();
+
+  await page.keyboard.press('Enter');
+  await expect(preavis).toHaveCount(0);
+  await expect(url).toBeFocused();
+  await expect(url).toHaveValue('https://www.tiime.fr/?via=partenaire');
+
+  // Prolongée : toujours connecté 28 minutes plus tard (nouveau préavis), pas avant.
+  await page.clock.runFor('27:00');
+  await expect(page.getByRole('heading', { name: 'Données du site' })).toBeVisible();
+  await expect(preavis).toHaveCount(0);
+});
+
+test('demande fusionnée sur GitHub : l’écran se libère, aucune seconde fusion', async ({
+  page,
+}) => {
+  const appels = await simulerGitHub(page, { fusionExterne: true });
+  await seConnecter(page);
+  await page
+    .getByRole('group', { name: 'Tiime' })
+    .getByLabel('URL affiliée')
+    .fill('https://www.tiime.fr/?via=partenaire');
+  await page.getByRole('button', { name: 'Créer la demande de publication' }).click();
+  await expect(page.getByText('vérifications réussies')).toBeVisible();
+
+  await page.getByRole('button', { name: 'Mettre en ligne la demande n° 7' }).click();
+  await expect(page.getByText(/^Demande n° 7 :/)).toHaveCount(0);
+  await expect(page.getByText('Demande déjà mise en ligne')).toBeAttached();
+  await expect(page.getByText('Mise en ligne refusée')).toHaveCount(0);
+  expect(appels.some((a) => a.methode === 'PUT')).toBe(false);
 });
