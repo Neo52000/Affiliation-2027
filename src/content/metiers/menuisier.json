@@ -90,7 +90,7 @@
     },
     {
       "question": "Dois-je émettre une facture pour l'acompte encaissé à la commande d'un ouvrage sur mesure ?",
-      "reponse": "Oui. Tout versement d'acompte donne lieu à une facture d'acompte. Pour les livraisons de biens, la TVA est en outre exigible dès l'encaissement de l'acompte, en application de la loi de finances pour 2022. La facture de solde déduit ensuite les acomptes déjà facturés."
+      "reponse": "Oui si votre client est un professionnel ou une personne morale : tout versement d'acompte donne alors lieu à une facture d'acompte. Pour les livraisons de biens, la TVA est en outre exigible dès l'encaissement de l'acompte, en application de la loi de finances pour 2022. La facture de solde déduit ensuite les acomptes déjà facturés."
     },
     {
       "question": "Je vends un escalier départ atelier, sans pose : puis-je facturer à 10 % ?",
@@ -131,5 +131,5 @@
       "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044056690/2026-06-12"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }
