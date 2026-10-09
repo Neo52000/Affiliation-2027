@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picto from '../../components/Picto.astro';
 import MetierPicker from '../../components/islands/MetierPicker.tsx';
+import EspacePublicitaire from '../../components/EspacePublicitaire.astro';
 import { FAMILLE_FORMES, FAMILLE_LABELS, estElide, type Famille } from '../../lib/familles';
 import { outilsRetenus } from '../../lib/hub';
 import { pointsFamillesSchema } from '../../lib/schemas';
@@ -236,6 +237,8 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
           </a>
         </p>
       </section>
+
+      <EspacePublicitaire emplacement="familles" famille={famille} class="mt-10" />
 
       {autresFamilles.length > 0 && (
         <section aria-labelledby="autres-familles" class="mt-10">

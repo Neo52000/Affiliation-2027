@@ -1,7 +1,10 @@
 ---
+import { jsonLdSur } from '../../lib/seo';
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import EspacePublicitaire from '../../components/EspacePublicitaire.astro';
+import InscriptionNewsletter from '../../components/InscriptionNewsletter.astro';
 import Picto from '../../components/Picto.astro';
 import { SITE } from '../../config';
 import { formatDateFr } from '../../lib/dates';
@@ -41,7 +44,7 @@ const articleJsonLd = {
 ---
 
 <Base title={d.title} description={d.description}>
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(articleJsonLd)} />
+  <script type="application/ld+json" is:inline set:html={jsonLdSur(articleJsonLd)} />
   <Breadcrumb items={[{ label: 'Guides' }, { label: d.title }]} />
 
   <div class="layout-article mt-4">
@@ -98,6 +101,12 @@ const articleJsonLd = {
         Information générale : ce guide ne remplace pas l'avis de votre expert-comptable.
       </p>
 
+      <InscriptionNewsletter
+        id="nl-guide"
+        titre="Recevoir les prochains guides"
+        class="prose-measure mt-8"
+      />
+
       {autresGuides.length > 0 && (
         <section aria-labelledby="autres-guides" class="mt-10">
           <h2 id="autres-guides" class="titre-section text-2xl font-bold">
@@ -115,6 +124,8 @@ const articleJsonLd = {
           </ul>
         </section>
       )}
+
+      <EspacePublicitaire emplacement="guides" class="prose-measure mt-10" />
     </article>
 
     <aside class="colonne-appui" aria-label="Sommaire et accès rapides">

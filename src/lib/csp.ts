@@ -42,6 +42,7 @@ export function politique(empreintes: Iterable<string>): string {
     "style-src 'self' 'unsafe-inline'",
     ['script-src', "'self'", ...triees].join(' '),
     "font-src 'self'",
+    // Le back office joint GitHub par son relais same-origin (/admin/gh/*).
     "connect-src 'self'",
     "base-uri 'self'",
     "form-action 'self'",

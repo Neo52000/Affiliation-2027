@@ -1,12 +1,41 @@
 {
-  "date_maj": "2026-10-04",
-  "note": "LIENS_AFFILIES non renseignés (TODO.md #6). Tant qu'une URL vaut null, le bouton de l'outil pointe vers son URL officielle, sans mention d'affiliation (règle section 8 de la spécification). Les redirections /go/ de netlify.toml sont générées uniquement pour les entrées non null.",
+  "date_maj": "2026-10-09",
   "liens": {
-    "tiime": null,
-    "qonto": null,
-    "pennylane": null,
-    "abby": null,
-    "indy": null,
-    "shine": null
+    "abby": {
+      "url": null,
+      "reseau": null,
+      "actif": false,
+      "maj": "2026-10-09"
+    },
+    "indy": {
+      "url": null,
+      "reseau": null,
+      "actif": false,
+      "maj": "2026-10-09"
+    },
+    "pennylane": {
+      "url": null,
+      "reseau": null,
+      "actif": false,
+      "maj": "2026-10-09"
+    },
+    "qonto": {
+      "url": null,
+      "reseau": null,
+      "actif": false,
+      "maj": "2026-10-09"
+    },
+    "shine": {
+      "url": null,
+      "reseau": null,
+      "actif": false,
+      "maj": "2026-10-09"
+    },
+    "tiime": {
+      "url": null,
+      "reseau": null,
+      "actif": false,
+      "maj": "2026-10-09"
+    }
   }
 }

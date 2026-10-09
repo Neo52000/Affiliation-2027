@@ -1,0 +1,86 @@
+---
+/**
+ * Espace publicitaire vendu en direct (src/data/publicites.json, édité dans le
+ * back office /admin). Rendu au build, sans script, sans pixel ni cookie. La
+ * mention « Publicité » et l'annonceur sont visibles avant le contenu (LCEN,
+ * art. 20). Toujours en fin de page, hors des blocs de classement : les pages
+ * autorisées sont fixées par un test (src/lib/data.test.ts). Rien n'est rendu
+ * tant que l'éditeur du site n'est pas identifié (mentions légales).
+ */
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import donnees from '../data/publicites.json';
+import { EDITEUR_IDENTIFIE, SITE } from '../config';
+import { campagneActive, jourParis, urlAvecUtm } from '../lib/publicites';
+import { publicitesSchema, type EMPLACEMENTS_PUB, type FAMILLES } from '../lib/schemas';
+
+interface Props {
+  emplacement: (typeof EMPLACEMENTS_PUB)[number];
+  /** Famille de la page, pour le ciblage des pages famille. */
+  famille?: (typeof FAMILLES)[number];
+  /** Classes du cadre (marges) : rien n'est rendu, marges comprises, sans campagne. */
+  class?: string;
+}
+
+const { emplacement, famille, class: classes } = Astro.props;
+const { campagnes } = publicitesSchema.parse(donnees);
+const campagne = EDITEUR_IDENTIFIE
+  ? campagneActive(campagnes, emplacement, jourParis(), famille)
+  : null;
+
+const images = import.meta.glob<ImageMetadata>('../assets/publicites/*.{webp,png,jpg,jpeg,avif}', {
+  eager: true,
+  import: 'default',
+});
+const image = campagne?.image
+  ? images[`../assets/publicites/${campagne.image.fichier}`]
+  : undefined;
+if (campagne?.image && !image) {
+  throw new Error(`publicité ${campagne.id} : image ${campagne.image.fichier} introuvable`);
+}
+const outil = campagne?.outil
+  ? (await getCollection('outils')).find((o) => o.data.slug === campagne.outil)
+  : undefined;
+if (campagne?.outil && !outil) {
+  throw new Error(`publicité ${campagne.id} : outil ${campagne.outil} inconnu`);
+}
+const href = campagne ? urlAvecUtm(campagne.url, campagne.id, new URL(SITE.url).hostname) : '';
+---
+
+{campagne && (
+  <section aria-label="Publicité" class:list={['espace-pub', classes]} data-campagne={campagne.id}>
+    <p class="espace-pub-mention">
+      <span class="font-bold">Publicité</span> · Annonceur : {campagne.annonceur}
+    </p>
+    <div class="espace-pub-corps">
+      {image && campagne.image && (
+        <Image
+          src={image}
+          alt={campagne.image.alt}
+          width={640}
+          class="espace-pub-image"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+      <div>
+        <p class="text-lg font-bold">{campagne.titre}</p>
+        <p class="mt-1 text-sm">{campagne.texte}</p>
+        <p class="mt-3">
+          <a href={href} rel="sponsored noopener" class="btn-ghost">
+            {campagne.cta}
+            <span class="sr-only"> (publicité de {campagne.annonceur})</span>
+          </a>
+        </p>
+      </div>
+    </div>
+    {outil && (
+      <p class="espace-pub-mention mt-3">
+        {campagne.annonceur} édite {outil.data.nom}, logiciel comparé sur ce site : cette publicité
+        ne modifie ni sa note, ni son rang, ni nos recommandations.{' '}
+        <a href="/transparence#publicite">Notre règle</a>
+      </p>
+    )}
+  </section>
+)}

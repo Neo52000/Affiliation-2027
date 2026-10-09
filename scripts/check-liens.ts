@@ -10,6 +10,7 @@
  */
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { slugsRediriges } from '../src/lib/redirects.ts';
 
 const DIST = join(process.cwd(), 'dist');
 
@@ -40,10 +41,17 @@ for (const chemin of servis) {
 }
 
 /**
- * Les liens affiliés passent par /go/… : ce sont des redirections servies par
- * l'hébergeur (netlify.toml), sans fichier correspondant dans dist/.
+ * Les liens affiliés passent par /go/{slug} : des redirections de
+ * dist/_redirects (scripts/generate-redirects.ts), sans fichier dans dist/.
+ * Chaque lien /go/ des pages doit y avoir sa règle.
  */
-const REDIRECTIONS = /^\/go\//;
+const REDIRECTIONS = /^\/go\/([a-z0-9-]+)$/;
+const cheminRedirections = join(DIST, '_redirects');
+if (!existsSync(cheminRedirections)) {
+  console.error('check-liens : dist/_redirects absent (postbuild generate-redirects non lancé).');
+  process.exit(1);
+}
+const rediriges = slugsRediriges(readFileSync(cheminRedirections, 'utf8'));
 
 const casses = new Map<string, Set<string>>();
 let analyses = 0;
@@ -54,7 +62,8 @@ for (const fichier of tous.filter((f) => f.endsWith('.html'))) {
   for (const m of html.matchAll(/href="(\/[^"#?]*)(?:[#?][^"]*)?"/g)) {
     const href = m[1]!;
     analyses++;
-    if (REDIRECTIONS.test(href) || routes.has(href) || servis.has(href)) continue;
+    const go = REDIRECTIONS.exec(href);
+    if ((go && rediriges.has(go[1]!)) || routes.has(href) || servis.has(href)) continue;
     const sans = href.endsWith('/') && href !== '/' ? href.slice(0, -1) : href;
     if (routes.has(sans)) continue;
     if (!casses.has(href)) casses.set(href, new Set());

@@ -1,7 +1,7 @@
 /**
- * Validation de la demande de rappel par email (section 12 de la spécification).
- * Un seul formulaire : « Recevoir un rappel avant mon échéance ».
- * Double opt-in côté fournisseur ; consentement explicite exigé ici.
+ * Validation des inscriptions par email : rappel d'échéance (section 12 de la
+ * spécification) et newsletter. Double opt-in côté fournisseur ; consentement
+ * explicite exigé ici, case jamais précochée côté formulaire.
  */
 
 export interface DemandeRappel {
@@ -37,4 +37,23 @@ export function validerDemandeRappel(brut: unknown): ValidationRappel {
     metier = slug;
   }
   return { ok: true, demande: { email, metier, consentement: true } };
+}
+
+/** Issue d'un formulaire de newsletter, ou motif de refus (motif « robot » : piège rempli). */
+export type ValidationNewsletter =
+  { ok: true; email: string } | { ok: false; motif: 'robot' | 'consentement' | 'email' };
+
+/** Nom du champ piège, invisible pour un humain et laissé vide. */
+export const CHAMP_PIEGE = 'site_web';
+
+/**
+ * Formulaire HTML de la newsletter (application/x-www-form-urlencoded) :
+ * email, case de consentement (valeur « oui ») et champ piège vide.
+ */
+export function validerNewsletter(champs: URLSearchParams): ValidationNewsletter {
+  if ((champs.get(CHAMP_PIEGE) ?? '') !== '') return { ok: false, motif: 'robot' };
+  if (champs.get('consentement') !== 'oui') return { ok: false, motif: 'consentement' };
+  const email = (champs.get('email') ?? '').trim().toLowerCase();
+  if (!EMAIL_RE.test(email) || email.length > 254) return { ok: false, motif: 'email' };
+  return { ok: true, email };
 }

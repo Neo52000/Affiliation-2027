@@ -7,7 +7,7 @@ import { pageTitle } from '../lib/seo';
 
 <Base
   title={pageTitle('Politique de confidentialité', SITE.name)}
-  description="Vos données sur ce site : aucun cookie soumis à consentement, aucun traceur publicitaire, un seul formulaire (rappel d'échéance) en double opt-in."
+  description="Vos données sur ce site : aucun cookie soumis à consentement, aucun traceur publicitaire, deux inscriptions par email en double opt-in."
 >
   <Breadcrumb items={[{ label: 'Confidentialité' }]} />
   <article class="prose-measure mt-4">
@@ -28,28 +28,52 @@ import { pageTitle } from '../lib/seo';
     </ul>
 
     <h2 class="mt-8 text-2xl font-bold">
-      La seule donnée collectée : votre email, si vous le demandez
+      Seule donnée collectée : votre email, si vous le demandez
     </h2>
     <p class="mt-3">
-      Le formulaire « Recevoir un rappel avant mon échéance » collecte votre adresse email et, si
-      vous le souhaitez, votre métier. Base légale : votre consentement (case à cocher, jamais
-      précochée), confirmé par un email de validation (double opt-in).
+      Deux formulaires collectent votre adresse email, chacun pour une liste distincte. Base légale
+      : votre consentement (case à cocher, jamais précochée), confirmé par un email de validation
+      (double opt-in) : sans clic sur ce lien, vous n'êtes inscrit à rien.
     </p>
     <ul class="mt-3 list-disc space-y-2 pl-5">
-      <li>Finalité : vous envoyer un rappel avant votre échéance de facturation électronique.</li>
       <li>
-        Désinscription : lien présent dans chaque email ; vos données sont alors supprimées de la
-        liste.
+        « Recevoir un rappel avant mon échéance » (simulateur d'échéance) : votre email et, si vous
+        le souhaitez, votre métier, pour vous envoyer un rappel avant votre échéance de facturation
+        électronique.
+      </li>
+      <li id="newsletter">
+        Newsletter (accueil, guides, page Newsletter) : votre email seul, pour vous envoyer les
+        évolutions de la réforme et les nouveaux contenus du site.
       </li>
       <li>
-        Destinataire : notre prestataire d'emailing, agissant comme sous-traitant ; aucune autre
-        transmission.
+        Responsable du traitement : {SITE.editeurLegal} (voir les
+        <a href="/mentions-legales">mentions légales</a>).
+      </li>
+      <li>
+        Durée : jusqu'à votre désinscription, par le lien présent dans chaque email ou sur simple
+        demande. Votre adresse est alors retirée de la liste et conservée seulement dans une liste
+        d'opposition, pour ne plus vous écrire.
+      </li>
+      <li>
+        Sous-traitants : notre prestataire d'envoi d'emails, et Netlify (hébergement du site et
+        traitement du formulaire, dont l'adresse IP utilisée pour limiter les abus). Netlify, Inc.
+        est établie aux États-Unis : ces données peuvent donc être traitées hors de l'Union
+        européenne. Aucune transmission aux annonceurs ni aux éditeurs comparés.
+      </li>
+      <li>
+        Les deux listes restent distinctes : une inscription à l'une ne vous inscrit jamais à
+        l'autre.
       </li>
     </ul>
+    <p class="mt-3">
+      Tant que l'éditeur du site n'est pas identifié dans les mentions légales, ces deux formulaires
+      restent fermés et aucune adresse n'est collectée.
+    </p>
 
     <h2 class="mt-8 text-2xl font-bold">Vos droits</h2>
     <p class="mt-3">
-      Vous disposez des droits d'accès, de rectification, d'effacement et d'opposition (RGPD, loi
+      Vous disposez des droits d'accès, de rectification, d'effacement, de limitation, de
+      portabilité et d'opposition, et pouvez retirer votre consentement à tout moment (RGPD, loi
       Informatique et libertés). Pour les exercer : {SITE.emailContact}. Vous pouvez aussi saisir la
       CNIL (
       <a href="https://www.cnil.fr" rel="noopener">

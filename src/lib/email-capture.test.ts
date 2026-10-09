@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { validerDemandeRappel } from './email-capture';
+import { CHAMP_PIEGE, validerDemandeRappel, validerNewsletter } from './email-capture';
 
 describe('validerDemandeRappel', () => {
   it('accepte une demande complète avec consentement explicite', () => {
@@ -34,5 +34,37 @@ describe('validerDemandeRappel', () => {
     expect(
       validerDemandeRappel({ email: 'a@b.fr', metier: '<script>', consentement: true }).ok,
     ).toBe(false);
+  });
+});
+
+describe('validerNewsletter', () => {
+  const champs = (o: Record<string, string>) => new URLSearchParams(o);
+
+  it('accepte email et consentement, normalise l’adresse', () => {
+    expect(validerNewsletter(champs({ email: ' Pro@Exemple.fr', consentement: 'oui' }))).toEqual({
+      ok: true,
+      email: 'pro@exemple.fr',
+    });
+  });
+
+  it('refuse sans consentement explicite', () => {
+    expect(validerNewsletter(champs({ email: 'a@b.fr' }))).toEqual({
+      ok: false,
+      motif: 'consentement',
+    });
+    expect(validerNewsletter(champs({ email: 'a@b.fr', consentement: 'on' })).ok).toBe(false);
+  });
+
+  it('refuse un email invalide', () => {
+    expect(validerNewsletter(champs({ email: 'a@b', consentement: 'oui' }))).toEqual({
+      ok: false,
+      motif: 'email',
+    });
+  });
+
+  it('repère un robot qui remplit le champ piège, avant toute autre vérification', () => {
+    expect(
+      validerNewsletter(champs({ email: 'a@b.fr', consentement: 'oui', [CHAMP_PIEGE]: 'x' })),
+    ).toEqual({ ok: false, motif: 'robot' });
   });
 });

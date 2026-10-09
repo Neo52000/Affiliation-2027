@@ -24,6 +24,10 @@ function htmlFiles(dir: string): string[] {
 }
 
 const erreurs: string[] = [];
+const indexables = new Set<string>();
+const horsIndex = new Set<string>();
+const route = (page: string) =>
+  `/${page.split('\\').join('/')}`.replace(/index\.html$/, '').replace(/\.html$/, '') || '/';
 const titles = new Map<string, string>();
 const descriptions = new Map<string, string>();
 
@@ -31,7 +35,11 @@ for (const file of htmlFiles(DIST)) {
   const page = relative(DIST, file);
   const html = readFileSync(file, 'utf8');
   const noindex = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html);
-  if (noindex) continue; // 404 et pages exclues de l'index
+  if (noindex) {
+    horsIndex.add(route(page)); // 404 et pages exclues de l'index
+    continue;
+  }
+  indexables.add(route(page));
 
   const title = /<title>([\s\S]*?)<\/title>/i.exec(html)?.[1]?.trim();
   const desc = /<meta\s+name="description"\s+content="([^"]*)"/i.exec(html)?.[1]?.trim();
@@ -60,10 +68,30 @@ for (const file of htmlFiles(DIST)) {
   if (!canonical) erreurs.push(`${page} : canonical manquant`);
 }
 
+// Sitemap et noindex doivent dire la même chose : aucune page non indexée dans
+// le sitemap, aucune page indexable oubliée.
+const sitemaps = readdirSync(DIST).filter((f) => /^sitemap-\d+\.xml$/.test(f));
+const dansSitemap = new Set(
+  sitemaps.flatMap((f) =>
+    [...readFileSync(join(DIST, f), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+      (m) => new URL(m[1]!).pathname,
+    ),
+  ),
+);
+if (sitemaps.length === 0) erreurs.push('aucun sitemap-N.xml dans dist/');
+for (const r of horsIndex) {
+  if (dansSitemap.has(r)) erreurs.push(`${r} : page noindex présente dans le sitemap`);
+}
+for (const r of indexables) {
+  if (!dansSitemap.has(r)) erreurs.push(`${r} : page indexable absente du sitemap`);
+}
+
 console.log(`check-seo : ${titles.size} pages indexables contrôlées.`);
 if (erreurs.length > 0) {
   console.error(`ÉCHEC : ${erreurs.length} problème(s) :`);
   for (const e of erreurs) console.error(`  - ${e}`);
   process.exit(1);
 }
-console.log('OK : titles et descriptions uniques et bornés, canonicals présents.');
+console.log(
+  'OK : titles et descriptions uniques et bornés, canonicals présents, sitemap cohérent avec noindex.',
+);

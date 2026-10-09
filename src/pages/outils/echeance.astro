@@ -5,7 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import EcheanceSimulateur from '../../components/islands/EcheanceSimulateur.tsx';
 import Picto from '../../components/Picto.astro';
 import RappelEmail from '../../components/islands/RappelEmail.tsx';
-import { SITE } from '../../config';
+import { EDITEUR_IDENTIFIE, SITE } from '../../config';
 import { pageTitle } from '../../lib/seo';
 import { formatDateFr } from '../../lib/dates';
 import echeancesData from '../../data/echeances.json';
@@ -45,9 +45,21 @@ const metiersRappel = (await getCollection('metiers'))
       Un seul email utile, avant votre échéance. Inscription en double opt-in, désinscription en un
       clic, aucune donnée revendue.
     </p>
-    <div class="mt-4">
-      <RappelEmail client:visible metiers={metiersRappel} />
-    </div>
+    {EDITEUR_IDENTIFIE ? (
+      <>
+        <div class="mt-4">
+          <RappelEmail client:visible metiers={metiersRappel} />
+        </div>
+        <p class="mt-3 text-xs text-ink-soft">
+          Responsable du traitement : {SITE.editeurLegal}.{' '}
+          <a href="/confidentialite">Vos données et vos droits</a>
+        </p>
+      </>
+    ) : (
+      <p class="mt-4">
+        Le rappel par email n'est pas encore ouvert : aucune adresse n'est collectée pour l'instant.
+      </p>
+    )}
   </section>
 
   <section aria-labelledby="calendrier-complet" class="prose-measure mt-12">

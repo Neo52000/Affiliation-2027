@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
@@ -8,6 +8,7 @@ import {
   ficheTestSchema,
   outilSchema,
   plateformesAgreeesSchema,
+  publicitesSchema,
 } from './schemas';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
@@ -72,6 +73,59 @@ describe('src/data/affiliation.json', () => {
       'shine',
       'tiime',
     ]);
+  });
+});
+
+describe('src/data/publicites.json', () => {
+  const data = publicitesSchema.parse(readJson('src/data/publicites.json'));
+
+  it('chaque image d’annonce existe dans src/assets/publicites et pèse 300 Ko au plus', () => {
+    for (const c of data.campagnes) {
+      if (!c.image) continue;
+      const chemin = join(ROOT, 'src/assets/publicites', c.image.fichier);
+      expect(existsSync(chemin), `${c.id} : image ${c.image.fichier} absente`).toBe(true);
+      expect(statSync(chemin).size, `${c.id} : image trop lourde`).toBeLessThanOrEqual(300 * 1024);
+    }
+  });
+});
+
+describe('publicités : annonceurs et pages autorisées', () => {
+  const data = publicitesSchema.parse(readJson('src/data/publicites.json'));
+  const outils = readdirSync(join(ROOT, 'src/content/outils'))
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => outilSchema.parse(readJson(`src/content/outils/${f}`)));
+  const hote = (u: string) => new URL(u).hostname.replace(/^www\./, '');
+
+  it('une annonce vers le site d’un logiciel comparé déclare cet outil', () => {
+    for (const c of data.campagnes) {
+      const edite = outils.find((o) => hote(o.url_officielle) === hote(c.url));
+      if (edite) expect(c.outil, `${c.id} mène chez ${edite.nom}`).toBe(edite.slug);
+      if (c.outil) expect(outils.map((o) => o.slug)).toContain(c.outil);
+    }
+  });
+
+  it('le composant d’annonce n’est inséré que sur l’accueil, les guides et les pages famille', () => {
+    const pages = readdirSync(join(ROOT, 'src/pages'), { recursive: true })
+      .map(String)
+      .filter((f) => f.endsWith('.astro'));
+    const avecPub = pages
+      .filter((f) =>
+        readFileSync(join(ROOT, 'src/pages', f), 'utf8').includes('EspacePublicitaire'),
+      )
+      .sort();
+    expect(avecPub).toEqual(['guides/[slug].astro', 'index.astro', 'metiers/[famille].astro']);
+  });
+});
+
+describe('indépendance du classement', () => {
+  // Règle du site : ni les commissions ni la publicité n'entrent dans les notes,
+  // l'ordre ou les recommandations. Les modules qui classent n'importent donc
+  // jamais les données d'affiliation ni celles des annonces.
+  const CLASSEMENT = ['quiz.ts', 'hub.ts', 'comparatifs.ts', 'familles.ts', 'facture-check.ts'];
+
+  it.each(CLASSEMENT)('%s n’importe ni affiliation ni publicités', (fichier) => {
+    const source = readFileSync(join(ROOT, 'src/lib', fichier), 'utf8');
+    expect(source).not.toMatch(/affiliation|affiliate|liens-affilies|publicites/);
   });
 });
 

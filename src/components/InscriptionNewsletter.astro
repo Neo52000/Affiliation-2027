@@ -1,0 +1,88 @@
+---
+/**
+ * Formulaire d'inscription à la newsletter : HTML pur, sans JavaScript, posté à
+ * la fonction /api/newsletter (double opt-in). Case de consentement jamais
+ * précochée ; champ piège invisible pour les humains, laissé vide.
+ *
+ * Tant que l'éditeur n'est pas identifié (mentions légales), aucune adresse
+ * n'est collectée : le formulaire n'est pas rendu (RGPD, art. 13).
+ */
+import { EDITEUR_IDENTIFIE, SITE } from '../config';
+import { CHAMP_PIEGE } from '../lib/email-capture';
+
+interface Props {
+  /** Préfixe des identifiants, unique dans la page. */
+  id: string;
+  /** Titre de niveau 2 affiché au-dessus du formulaire (omis sur la page dédiée). */
+  titre?: string;
+  /** Inscriptions fermées : annoncer (page dédiée) ou ne rien afficher (accueil, guides). */
+  siFerme?: 'annoncer' | 'masquer';
+  class?: string;
+}
+
+const { id, titre, siFerme = 'masquer', class: classes } = Astro.props;
+---
+
+{EDITEUR_IDENTIFIE ? (
+  <section
+    class:list={['newsletter rounded-lg border border-border p-5', classes]}
+    aria-labelledby={titre ? `${id}-titre` : undefined}
+    aria-label={titre ? undefined : 'Inscription à la newsletter'}
+  >
+    {titre && (
+      <h2 id={`${id}-titre`} class="text-xl font-bold">
+        {titre}
+      </h2>
+    )}
+    <form method="post" action="/api/newsletter" class="mt-3 space-y-3">
+      <div>
+        <label for={`${id}-email`} class="font-bold">
+          Votre adresse email
+        </label>
+        <input
+          id={`${id}-email`}
+          name="email"
+          type="email"
+          required
+          maxlength="254"
+          autocomplete="email"
+          class="champ mt-1"
+        />
+      </div>
+      <div class="piege" aria-hidden="true">
+        <label for={`${id}-${CHAMP_PIEGE}`}>Ne pas remplir ce champ</label>
+        <input
+          id={`${id}-${CHAMP_PIEGE}`}
+          name={CHAMP_PIEGE}
+          type="text"
+          tabindex="-1"
+          autocomplete="off"
+        />
+      </div>
+      <label class="flex items-start gap-2">
+        <input type="checkbox" name="consentement" value="oui" required class="mt-1" />
+        <span class="text-sm">
+          J'accepte de recevoir par email la lettre d'information de {SITE.name} : évolutions de la
+          facturation électronique et nouveaux contenus du site, au plus une fois par mois, sans
+          publicité ni lien affilié. Un email de confirmation me sera envoyé (double opt-in) ;
+          désinscription en un clic dans chaque envoi.
+        </span>
+      </label>
+      <button type="submit" class="btn-cta">
+        S'inscrire à la newsletter
+      </button>
+      <p class="text-xs text-ink-soft">
+        Responsable du traitement : {SITE.editeurLegal}. Votre adresse n'est transmise qu'à notre
+        prestataire d'envoi, jamais à un annonceur ni à un éditeur comparé.{' '}
+        <a href="/confidentialite#newsletter">Vos données et vos droits</a>
+      </p>
+    </form>
+  </section>
+) : (
+  siFerme === 'annoncer' && (
+    <p class:list={['rounded-lg border border-border p-5', classes]}>
+      Les inscriptions à la newsletter ne sont pas encore ouvertes : aucune adresse n'est collectée
+      pour l'instant.
+    </p>
+  )
+)}
