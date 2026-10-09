@@ -320,3 +320,37 @@ Le nombre de documents .gouv.fr cités reste à 367 : aucune source nouvelle et 
 - fleuriste parle de « vente à distance » sans préciser « intracommunautaire ».
 
 **Résultats :** 124 tests et 14 parcours e2e verts, banc motion sans anomalie, Lighthouse 100/100/100/100 sur deux hubs en desktop et en mobile.
+
+## Correction des fiches métier signalées par la vérification des points (2026-10-09)
+
+Les inexactitudes relevées en marge des 40 points ont été corrigées en deux vagues (PR #28, puis celle-ci). Chaque modification a suivi le même circuit :
+
+- **proposition** par un agent par thème, après recontrôle de la règle sur sa source .gouv.fr, sans écrire sur disque ;
+- **vérification contradictoire** par un sceptique par thème : verdict accepte, amende ou rejette, avec l'extrait officiel ;
+- **application déterministe** : l'ancien texte doit correspondre exactement au contenu publié, sinon arrêt.
+
+**Bilan :** vague 1, 79 modifications sur 24 fichiers ; vague 2, 111 modifications sur 24 fichiers, aucune rejetée.
+
+**Corrections de fond :**
+
+- facture d'acompte obligatoire seulement pour un client professionnel ou une personne morale (BOI-TVA-DECLA-30-20-10-10) ; exigibilité à l'encaissement réservée à qui facture la TVA ;
+- autoliquidation en sous-traitance : le sous-traitant en franchise en base en est exclu et garde la mention 293 B (rescrit BOI-RES-TVA-000269), y compris dans le point bâtiment n° 3 ;
+- tolérance BOI-TVA-LIQ-30-20-90-40 pour la réparation et l'entretien sous 1 000 € TTC (plombier, carreleur, plaquiste) ;
+- note de prestation : mentions complètes de l'arrêté n° 83-50/A (restaurateur, fleuriste, couturière, céramiste, horloger) ;
+- hub agriculture : 5,5 % pour les produits destinés à l'alimentation ou à la production agricole, 10 % pour l'ornement (le texte publié annonçait 10 % à tort) ;
+- URL BOFiP passées aux versions en vigueur, numéro PGP inchangé.
+
+**Garde-fou ajouté** (`src/lib/data.test.ts`) : aucune fiche destinée aux particuliers n'impose une facture pour tout acompte sans réserver l'obligation au professionnel, à la personne morale ou à l'assujetti.
+
+**Documents .gouv.fr cités : 367.** Le rescrit BOI-RES-TVA-000269 est entré, et BOI-TVA-BASE-20-40 est sorti : version archivée de 2019, titre inexact, et affirmations déjà couvertes par BOI-TVA-BASE-20-20. La tuile de l'accueil et la présentation recalculent ce total.
+
+**Laissé en l'état, à relire par un humain :**
+
+- seuil de 25 € de la note de restaurant : l'arrêté n° 25-361 de 1967 n'a pas pu être consulté ;
+- sources service-public.fr de couturière, céramiste et horloger, à confirmer par un texte Légifrance ou BOFiP ;
+- agriculteur : la phrase sur la paille et les fourrages ; la réécriture annoncée de L441-11 ; la notice 3520-SD ;
+- plaquiste : formulation de la franchise en faq[3] et besoins_prioritaires[2] ;
+- architecte : sources[2] cite encore LIQ-30-20-90-40-20160302 ;
+- chef à domicile : la mention du devis ; couvreur : le délai de L221-10 du Code de la consommation.
+
+**Résultats :** 125 tests, 14 parcours e2e, tous les gardes de `pnpm verify` verts.

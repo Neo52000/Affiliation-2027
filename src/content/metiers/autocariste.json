@@ -8,14 +8,14 @@
   "specificites_facturation": [
     "Vos prestations d'autocar — circuits scolaires, services occasionnels, excursions, navettes — sont du transport de voyageurs lorsque la mise à disposition du véhicule avec conducteur constitue un véritable contrat de transport. Elles relèvent alors du taux réduit de TVA de 10 %, quel que soit le donneur d'ordre. Attention à la limite : une mise à disposition de véhicule sans conducteur, ou avec conducteur hors d'un véritable contrat de transport, n'est pas un transport de voyageurs mais une location, soumise au taux normal de 20 %.",
     "Vos marchés de transport scolaire ou de lignes régulières sont conclus avec des collectivités. Ces factures à la sphère publique se déposent sur Chorus Pro, déjà obligatoire pour tous les fournisseurs d'entités publiques. Ne les confondez pas avec le circuit de la réforme, qui vise vos clients professionnels privés.",
-    "Pour un circuit transfrontalier en autocar, seule la partie du trajet réalisée en France est soumise à la TVA française. La facture doit ventiler le parcours entre la France et l'étranger.",
+    "Pour un circuit transfrontalier en autocar, seule la partie du trajet réalisée en France est soumise à la TVA française. La facture doit ventiler le parcours entre la France et l'étranger. Exception : le transport par route de voyageurs étrangers en provenance et à destination de l'étranger, circulant en groupe d'au moins dix personnes, peut être exonéré, notamment quand vous véhiculez en France des touristes étrangers pour le compte d'une agence de voyages.",
     "Vos clients professionnels établis en France (agences de voyages, entreprises, associations assujetties) basculent dans la facturation électronique : à l'échéance applicable à votre entreprise, ces factures transiteront par une plateforme agréée, en réception puis en émission.",
     "Si une agence ou un voyagiste établi dans un autre État membre de l'UE affrète votre autocar, la qualité de votre client ne change pas le lieu d'imposition du transport : la partie du trajet réalisée en France reste soumise à la TVA française, que vous facturez vous-même, sans mention « Autoliquidation »."
   ],
   "mentions_obligatoires_specifiques": [
     "Taux de TVA de 10 % indiqué ligne par ligne pour chaque prestation de transport de voyageurs, avec le montant de taxe correspondant.",
     "Pour un transport commandé par un preneur assujetti établi dans un autre État membre de l'UE : TVA française sur la partie du parcours réalisée en France, sans mention « Autoliquidation ».",
-    "Pour un transport international de voyageurs, ventilation du parcours : seule la partie réalisée en France supporte la TVA française.",
+    "Pour un transport international de voyageurs, ventilation du parcours : seule la partie réalisée en France supporte la TVA française, sauf exonération du transport par route de groupes d'au moins dix voyageurs étrangers en provenance et à destination de l'étranger.",
     "Identité et adresse des parties, numéro SIREN, numéro individuel de TVA, date et numéro de facture, détail des prestations, taux et montant de la TVA."
   ],
   "exemple_facture": {
@@ -98,8 +98,8 @@
       "url": "https://bofip.impots.gouv.fr/bofip/2270-PGP.html/identifiant=BOI-TVA-CHAMP-20-60-10-20240724"
     },
     {
-      "titre": "BOFiP — Autoliquidation, prestations intracommunautaires (BOI-TVA-DECLA-30-20-20-30)",
-      "url": "https://bofip.impots.gouv.fr/bofip/1531-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-30-20190925"
+      "titre": "BOFiP — Mentions à porter sur les factures : mentions spécifiques à certaines opérations, dont « Autoliquidation » pour les prestations dont le preneur est redevable de la taxe, le prestataire n'étant pas établi en France (BOI-TVA-DECLA-30-20-20-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1531-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-30-20250108"
     },
     {
       "titre": "Commande publique : la facturation électronique via Chorus Pro (CEDEF, economie.gouv.fr)",

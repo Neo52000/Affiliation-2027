@@ -35,12 +35,16 @@
       },
       {
         "titre": "Autoliquidation : seulement vers votre donneur d'ordre",
-        "texte": "L'autoliquidation ne vaut que pour vos factures de sous-traitant adressées à votre donneur d'ordre, même sous-traitant lui-même, jamais pour le client final. Vous déclarez alors leur montant hors taxes sur la ligne « autres opérations non imposables » de votre déclaration.",
+        "texte": "L'autoliquidation ne vaut que pour vos factures de sous-traitant adressées à votre donneur d'ordre, même sous-traitant lui-même, jamais pour le client final ni en franchise en base. Vous déclarez alors leur montant hors taxes sur la ligne « autres opérations non imposables ».",
         "metiers_concernes": ["carreleur", "plaquiste"],
         "sources": [
           {
             "titre": "BOI-TVA-DECLA-10-10-20 — Autoliquidation de la TVA en sous-traitance de travaux de construction",
             "url": "https://bofip.impots.gouv.fr/bofip/3218-PGP.html/identifiant=BOI-TVA-DECLA-10-10-20-20210421"
+          },
+          {
+            "titre": "BOI-RES-TVA-000269 — Rescrit : autoliquidation des travaux de construction sous-traités, exclusion du sous-traitant en franchise en base",
+            "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
           }
         ]
       },
@@ -271,7 +275,7 @@
         "sources": [
           {
             "titre": "BOFiP — TVA, taux normal applicable aux prestations des professions libérales et officiers publics (BOI-TVA-LIQ-20-20)",
-            "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+            "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
           },
           {
             "titre": "BOFiP — Base d'imposition, opérations réalisées par les membres de certaines professions libérales, dont les notaires (BOI-TVA-BASE-10-20-40-30)",
@@ -286,11 +290,11 @@
         "sources": [
           {
             "titre": "Taux réduits limités à certains travaux sur locaux d'habitation (BOFiP, BOI-TVA-LIQ-30-20-90-30)",
-            "url": "https://bofip.impots.gouv.fr/bofip/1733-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-30-20240731"
+            "url": "https://bofip.impots.gouv.fr/bofip/1733-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-30-20251022"
           },
           {
             "titre": "BOFiP — TVA, taux normal applicable aux prestations des experts et professions libérales (BOI-TVA-LIQ-20-20)",
-            "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+            "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
           }
         ]
       },
@@ -305,7 +309,7 @@
           },
           {
             "titre": "BOFiP — Lieu des prestations se rattachant à un immeuble, dont prestations d'architectes (BOI-TVA-CHAMP-20-50-30)",
-            "url": "https://bofip.impots.gouv.fr/bofip/1490-PGP.html/identifiant=BOI-TVA-CHAMP-20-50-30-20201204"
+            "url": "https://bofip.impots.gouv.fr/bofip/1490-PGP.html/identifiant=BOI-TVA-CHAMP-20-50-30-20230823"
           }
         ]
       }
@@ -380,7 +384,7 @@
           },
           {
             "titre": "BOFiP — Taux normal de TVA de 20 % applicable par défaut (BOI-TVA-LIQ-20-20)",
-            "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20240807"
+            "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
           }
         ]
       },
@@ -495,15 +499,15 @@
         "sources": [
           {
             "titre": "BOFIP, BOI-TVA-LIQ-30-10-10 : le pain, les viennoiseries et les pâtisseries sucrées ne sont pas des produits préparés en vue d'une consommation immédiate et relèvent du taux de 5,5 %",
-            "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+            "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
           },
           {
             "titre": "BOFIP, annexe BOI-ANNX-000495 : taux des ventes à emporter ou à livrer — produits pour consommation immédiate (10 %) ou conditionnés pour consommation différée (5,5 %)",
-            "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+            "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240821"
           },
           {
             "titre": "BOFIP : TVA à 10 % sur les ventes à consommer sur place, à l'exclusion des boissons alcooliques",
-            "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20201014"
+            "url": "https://bofip.impots.gouv.fr/bofip/256-PGP.html/identifiant=BOI-TVA-LIQ-30-20-10-20-20240807"
           }
         ]
       },
@@ -517,7 +521,7 @@
             "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
           },
           {
-            "titre": "DGCCRF (economie.gouv.fr) – Cafés et bars : quelles obligations pour les professionnels ? (affichage extérieur et intérieur, note dès 25 € TTC)",
+            "titre": "DGCCRF (economie.gouv.fr) – Cafés et bars : quelles obligations pour les professionnels ? (affichage extérieur et intérieur, note au-dessus de 25 €, et en dessous sur demande)",
             "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/cafes-et-bars-quelles-obligations-pour-les-professionnels"
           }
         ]

@@ -19,7 +19,7 @@
   ],
   "mentions_obligatoires_specifiques": [
     "Sur les notes d'honoraires de séances exonérées : la référence à l'exonération, par exemple « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts », réservée aux praticiens autorisés à faire usage du titre de psychologue.",
-    "Sur les prestations taxables (supervision, formation non exonérée, expertise) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Ne mélangez jamais cette mention avec la référence d'exonération des soins sur une même ligne."
+    "Sur les prestations taxables (supervision, formation non exonérée, expertise) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Ne mélangez jamais cette mention avec la référence d'exonération des soins sur une même ligne. Si vous facturez une formation exonérée, portez la référence à sa propre disposition d'exonération (article 261, 4, 4° a du CGI)."
   ],
   "exemple_facture": {
     "intitule": "Note d'honoraires – accompagnement psychologique dans le dispositif Mon soutien psy",
@@ -123,6 +123,10 @@
     {
       "titre": "BOFiP BOI-TVA-CHAMP-30-10-20-50 – exonération de la formation professionnelle continue (article 261, 4, 4° a du CGI) sous condition d'attestation de l'autorité administrative",
       "url": "https://bofip.impots.gouv.fr/bofip/943-PGP.html/identifiant=BOI-TVA-CHAMP-30-10-20-50-20191016"
+    },
+    {
+      "titre": "BOFiP BOI-TVA-DECLA-30-20-20-10 – mentions obligatoires générales des factures : référence à la disposition d'exonération appliquée",
+      "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20131018"
     }
   ],
   "date_maj": "2026-10-09"

@@ -11,12 +11,12 @@
     "La dépose d'un ancien revêtement en vue de son remplacement relève du même taux réduit que la pose : inutile de l'isoler à 20 % sur la facture.",
     "En sous-traitance pour une entreprise générale, la facture part sans TVA avec la mention « Autoliquidation » ; c'est le donneur d'ordre qui déclare la taxe. Si vous êtes en franchise en base, l'autoliquidation ne s'applique pas : la facture porte la mention « TVA non applicable, article 293 B du CGI ».",
     "Les chantiers de carrelage de plusieurs semaines (logements complets, halls d'immeuble, locaux commerciaux) se facturent par acomptes puis situations d'avancement établies sur les surfaces posées ; en marché privé de travaux, les paiements peuvent être minorés d'une retenue de garantie plafonnée à 5 %.",
-    "Pour tout taux réduit, le client certifie directement sur le devis ou la facture que le logement est achevé depuis plus de deux ans et que les travaux remplissent les conditions ; l'attestation séparée n'est plus exigée."
+    "Pour tout taux réduit, le client certifie en principe directement sur le devis ou la facture que le logement est achevé depuis plus de deux ans et que les travaux remplissent les conditions ; l'attestation séparée n'est plus exigée. Pour des travaux de réparation et d'entretien de moins de 1 000 € TTC, cette certification peut être omise si le devis ou la facture indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans ; un bailleur ou gestionnaire qui vous confie plusieurs interventions de maintenance, d'entretien ou de réparation peut aussi vous remettre une attestation valable pour l'année."
   ],
   "mentions_obligatoires_specifiques": [
     "Mention de l'assurance professionnelle souscrite au titre de l'activité de pose de carrelage (responsabilité décennale), coordonnées de l'assureur ou du garant et couverture géographique du contrat, sur les devis et les factures.",
     "Mention « Autoliquidation » sur les factures de sous-traitance, qui ne font apparaître aucune TVA exigible ; en franchise en base, l'autoliquidation ne s'applique pas et la facture porte à la place la mention « TVA non applicable, article 293 B du CGI ».",
-    "Mention certifiée par le client, portée sur le devis ou la facture, attestant l'ancienneté du logement et les conditions du taux de 10 % ou de 5,5 %.",
+    "Mention certifiée par le client, portée sur le devis ou la facture, attestant l'ancienneté du logement et les conditions du taux de 10 % ou de 5,5 % ; pour des travaux de réparation et d'entretien de moins de 1 000 € TTC, elle peut être omise si le document indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans, et l'attestation annuelle d'un bailleur ou gestionnaire vaut certification pour les interventions qu'il vous confie dans l'année.",
     "Devis détaillé remis avant toute prestation de dépannage, de réparation ou d'entretien : nature des travaux, décompte en quantité et prix unitaire, main-d'œuvre, frais de déplacement."
   ],
   "exemple_facture": {
@@ -67,7 +67,7 @@
   "besoins_prioritaires": [
     "Gérer plusieurs taux de TVA (10 %, 20 %, parfois 5,5 % en travaux induits) ligne par ligne sur un même devis puis sur la facture.",
     "Relier acomptes et situations d'avancement à un même chantier, retenue de garantie comprise.",
-    "Basculer en facturation sans TVA avec mention « Autoliquidation » pour les chantiers en sous-traitance.",
+    "Basculer en facturation sans TVA avec mention « Autoliquidation » pour les chantiers en sous-traitance, ou avec la mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base.",
     "Émettre et recevoir les factures via une plateforme agréée à l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
@@ -87,7 +87,7 @@
   "faq": [
     {
       "question": "Quel taux de TVA pour refaire le carrelage d'une salle de bain chez un particulier ?",
-      "reponse": "Le taux de 10 % s'applique si le local est à usage d'habitation et achevé depuis plus de deux ans. Votre client certifie ces conditions directement sur le devis ou la facture. Si le logement a moins de deux ans ou s'il s'agit d'une construction neuve, le taux normal de 20 % s'applique."
+      "reponse": "Le taux de 10 % s'applique si le local est à usage d'habitation et achevé depuis plus de deux ans. Votre client certifie ces conditions directement sur le devis ou la facture ; pour des travaux de réparation et d'entretien de moins de 1 000 € TTC, cette mention peut être omise si le document indique le nom et l'adresse du client et de l'immeuble, la nature des travaux et l'achèvement depuis plus de deux ans. Si le logement a moins de deux ans ou s'il s'agit d'une construction neuve, le taux normal de 20 % s'applique."
     },
     {
       "question": "Je repose du carrelage après des travaux d'isolation : puis-je facturer 5,5 % ?",
@@ -142,6 +142,10 @@
     {
       "titre": "BOI-RES-TVA-000269 — Rescrit : autoliquidation des travaux de construction sous-traités, exclusion du sous-traitant en franchise en base (question 10)",
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
+    },
+    {
+      "titre": "BOI-TVA-LIQ-30-20-90-40 — Travaux dans les locaux d'habitation achevés depuis plus de deux ans : certification sur devis ou facture, tolérance pour les travaux de réparation et d'entretien de moins de 1 000 € TTC, attestation annuelle des bailleurs ou gestionnaires",
+      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20260909"
     }
   ],
   "date_maj": "2026-10-09"

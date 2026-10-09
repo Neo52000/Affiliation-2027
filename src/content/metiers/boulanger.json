@@ -95,11 +95,11 @@
   "sources": [
     {
       "titre": "BOFIP, annexe BOI-ANNX-000495 : taux des ventes à emporter ou à livrer — produits pour consommation immédiate (10 %) ou conditionnés pour consommation différée (5,5 %)",
-      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240207"
+      "url": "https://bofip.impots.gouv.fr/bofip/7204-PGP.html/identifiant=BOI-ANNX-000495-20240821"
     },
     {
       "titre": "BOFIP, BOI-TVA-LIQ-30-10-10 : le pain, les viennoiseries et les pâtisseries sucrées ne sont pas des produits préparés en vue d'une consommation immédiate et relèvent du taux de 5,5 %",
-      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20240207"
+      "url": "https://bofip.impots.gouv.fr/bofip/2033-PGP.html/identifiant=BOI-TVA-LIQ-30-10-10-20251119"
     },
     {
       "titre": "BOFIP, rescrit BOI-RES-TVA-000205 : les livraisons de produits alimentaires préparés entre assujettis, en amont de la vente au consommateur final, relèvent de 5,5 % ; le taux de 10 % ne vise que la vente au consommateur final",
@@ -115,7 +115,7 @@
     },
     {
       "titre": "BOFIP : franchise en base — facturation sans TVA, mention de l'article 293 B du CGI, TVA facturée à tort due",
-      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
     },
     {
       "titre": "impots.gouv.fr : je découvre la facturation électronique — obligation de réception puis d'émission pour toutes les entreprises assujetties",
@@ -130,5 +130,5 @@
       "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }
