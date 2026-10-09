@@ -27,8 +27,15 @@ export function getStaticPaths() {
     erreur: {
       titre: 'L’inscription n’a pas abouti',
       texte: [
-        'Vérifiez l’adresse email et cochez la case de consentement, puis réessayez.',
-        'Si le problème persiste, le service d’envoi est peut-être momentanément indisponible : réessayez plus tard.',
+        'Cochez la case de consentement, puis réessayez.',
+        'Si elle était cochée, le service d’envoi est peut-être momentanément indisponible : réessayez plus tard.',
+      ],
+    },
+    'adresse-invalide': {
+      titre: 'Adresse email non reconnue',
+      texte: [
+        'L’adresse saisie n’a pas été reconnue : vérifiez son orthographe et l’extension du domaine (par exemple nom@entreprise.fr), puis réessayez.',
+        'Aucune donnée n’a été enregistrée.',
       ],
     },
     indisponible: {

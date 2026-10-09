@@ -45,6 +45,8 @@ const { id, titre, siFerme = 'masquer', class: classes } = Astro.props;
           type="email"
           required
           maxlength="254"
+          pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}"
+          title="Adresse complète avec une extension de domaine, par exemple nom@entreprise.fr"
           autocomplete="email"
           class="champ mt-1"
         />
@@ -72,8 +74,9 @@ const { id, titre, siFerme = 'masquer', class: classes } = Astro.props;
         S'inscrire à la newsletter
       </button>
       <p class="text-xs text-ink-soft">
-        Responsable du traitement : {SITE.editeurLegal}. Votre adresse n'est transmise qu'à notre
-        prestataire d'envoi, jamais à un annonceur ni à un éditeur comparé.{' '}
+        Responsable du traitement : {SITE.editeurLegal}. Votre adresse n'est transmise qu'à nos
+        sous-traitants (prestataire d'envoi, hébergeur Netlify, établi aux États-Unis), jamais à un
+        annonceur ni à un éditeur comparé.{' '}
         <a href="/confidentialite#newsletter">Vos données et vos droits</a>
       </p>
     </form>

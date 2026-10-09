@@ -5,6 +5,8 @@ import { estUrlSure, INVISIBLES, MESSAGE_URL_SURE } from './url-sure.ts';
 // Zod sonde Function("") pour compiler ses validateurs ; la CSP du site interdit
 // eval : le mode sans compilation évite cette sonde (et sa violation CSP dans /admin).
 z.config({ jitless: true });
+// Messages d'erreur en français : ils sont affichés tels quels dans le back office.
+z.config(z.locales.fr());
 
 /**
  * Schémas de données (section 5 de la spécification).
@@ -207,8 +209,8 @@ const texteSur = (min: number, max: number) =>
   z
     .string()
     .trim()
-    .min(min)
-    .max(max)
+    .min(min, `${min} caractère${min > 1 ? 's' : ''} au moins`)
+    .max(max, `${max} caractères au plus`)
     .refine((t) => !INVISIBLES.test(t), 'caractère de contrôle ou invisible interdit');
 
 /**
@@ -220,7 +222,7 @@ export const lienAffiliationSchema = z
   .strictObject({
     /** URL fournie par le programme d'affiliation ; null = aucun partenariat. */
     url: urlSure.nullable(),
-    /** Réseau ou programme (ex. « Affilae », « programme direct ») : mémo pour l'éditeur. */
+    /** Réseau ou programme (ex. « Affilae », « programme direct ») : publié sur /transparence. */
     reseau: texteSur(1, 60).nullable(),
     /** false = lien conservé mais suspendu : le bouton revient à l'URL officielle. */
     actif: z.boolean(),
@@ -248,7 +250,7 @@ export const EMPLACEMENTS_PUB = ['accueil', 'guides', 'familles'] as const;
 
 /** Formulations qui feraient passer une annonce pour un avis ou un classement du site. */
 export const TEXTE_PUB_INTERDIT =
-  /recommand|classement|class[ée]|comparatif|compar[ée]|n°\s*1|num[ée]ro\s*(1|un)\b|meilleur|[ée]lu\b|not[ée]\b|\bavis\b|plateforme agr[ée][ée]e/i;
+  /recommand|classement|class[ée]|comparatif|compar[ée]|n°\s*1|num[ée]ro\s*(1|un)(?![\p{L}\d])|meilleur|(?<!\p{L})[ée]lu(e|s|es)?(?!\p{L})|(?<!\p{L})not(é|ée|és|ées)(?!\p{L})|(?<!\p{L})notes?\s*(de\s*)?\d|(?<!\p{L})avis(?!\p{L})|plateforme agr[ée][ée]e/iu;
 
 /** Libellés de bouton que Lighthouse juge non descriptifs (audit « link-text »). */
 const CTA_GENERIQUES = new Set([
@@ -295,7 +297,12 @@ export const campagneSchema = z
     url: urlSure,
     image: z
       .strictObject({
-        fichier: z.string().regex(/^[a-z0-9-]{1,80}\.(webp|png|jpe?g|avif)$/),
+        fichier: z
+          .string()
+          .regex(
+            /^[a-z0-9-]{1,80}\.(webp|png|jpe?g|avif)$/,
+            'nom d’image invalide : identifiant en minuscules, chiffres et tirets',
+          ),
         /** Texte alternatif ; vide si l'image est décorative (le texte de l'annonce suffit). */
         alt: z
           .string()

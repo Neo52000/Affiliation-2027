@@ -5,6 +5,7 @@ import {
   doitReconstruire,
   heureParis,
   jourParis,
+  memeEditeur,
   urlAvecUtm,
   veille,
   type CampagneSelection,
@@ -131,5 +132,18 @@ describe('veille', () => {
     expect(veille('2026-10-26')).toBe('2026-10-25');
     expect(veille('2027-01-01')).toBe('2026-12-31');
     expect(veille('2028-03-01')).toBe('2028-02-29');
+  });
+});
+
+describe('memeEditeur', () => {
+  it.each([
+    ['https://www.abby.fr/offre', 'https://abby.fr/', true],
+    ['https://lp.abby.fr/offre', 'https://www.abby.fr/', true],
+    ['https://go.qonto.com/x', 'https://qonto.com/fr', true],
+    ['https://fauxabby.fr/', 'https://abby.fr/', false],
+    ['https://abby.fr.evil.com/', 'https://abby.fr/', false],
+    ['https://exemple.fr/', 'pas une url', false],
+  ])('%s chez %s : %s', (url, officielle, attendu) => {
+    expect(memeEditeur(url, officielle)).toBe(attendu);
   });
 });

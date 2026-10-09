@@ -135,3 +135,22 @@ export function doitReconstruire<C extends CampagneSelection>(
   }
   return false;
 }
+
+const hoteSansWww = (u: string): string => {
+  try {
+    return new URL(u).hostname.replace(/^www\./, '');
+  } catch {
+    return '';
+  }
+};
+
+/**
+ * Une URL mène-t-elle chez l'éditeur d'un logiciel comparé ? Domaine officiel
+ * ou l'un de ses sous-domaines (lp.abby.fr pour abby.fr) : l'annonce doit
+ * alors déclarer l'outil, ce qui la limite à l'accueil et aux guides.
+ */
+export function memeEditeur(url: string, urlOfficielle: string): boolean {
+  const h = hoteSansWww(url);
+  const o = hoteSansWww(urlOfficielle);
+  return o !== '' && (h === o || h.endsWith(`.${o}`));
+}

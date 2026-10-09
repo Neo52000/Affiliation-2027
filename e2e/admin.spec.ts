@@ -20,6 +20,8 @@ interface Appel {
 interface Options {
   push?: boolean;
   regles?: string[];
+  /** Statut renvoyé par la création de la pull request (201 par défaut). */
+  creationPr?: number;
 }
 
 async function simulerGitHub(page: Page, options: Options = {}) {
@@ -108,6 +110,9 @@ async function simulerGitHub(page: Page, options: Options = {}) {
       branche = (JSON.parse(req.postData()!) as { ref: string }).ref.replace('refs/heads/', '');
       return repondre(route, 201, {});
     }
+    if (cle === 'POST /pulls' && options.creationPr && options.creationPr !== 201) {
+      return repondre(route, options.creationPr, { message: 'Validation Failed' });
+    }
     if (cle === 'POST /pulls') {
       return repondre(route, 201, {
         number: 7,
@@ -139,6 +144,12 @@ async function simulerGitHub(page: Page, options: Options = {}) {
             head_sha: 'c0ffee',
           },
         ],
+      });
+    }
+    if (cle === 'PATCH /pulls/7') {
+      return repondre(route, 200, {
+        state: 'closed',
+        head: { ref: branche, repo: { full_name: 'Neo52000/Affiliation-2027' } },
       });
     }
     if (cle === 'PUT /pulls/7/merge') {
@@ -213,14 +224,14 @@ test('lien affilié : saisie, publication vérifiée par la CI, mise en ligne', 
   await expect(publier).toBeDisabled();
 
   await url.fill('https://www.tiime.fr/?via=partenaire');
-  await tiime.getByLabel('Réseau ou programme (mémo)').fill('Affilae');
+  await tiime.getByLabel('Réseau ou programme (publié sur la page transparence)').fill('Affilae');
   await expect(url).not.toHaveAttribute('aria-invalid', 'true');
   await expect(tiime.getByText('Domaine de destination : www.tiime.fr')).toBeVisible();
   await expect(page.getByText('Lien affilié tiime : actif (Affilae)')).toBeVisible();
 
   await expect(page.getByText(/Demande n° 9[89]/)).toHaveCount(0);
   await publier.click();
-  await expect(page.getByText('Demande n° 7')).toBeVisible();
+  await expect(page.getByText(/^Demande n° 7 :/)).toBeVisible();
   await expect(page.getByText('vérifications réussies')).toBeVisible();
 
   // Un seul commit : le fichier écrit est du JSON valide portant le lien saisi.
@@ -250,4 +261,52 @@ test('se déconnecter efface la session', async ({ page }) => {
   await page.getByRole('button', { name: 'Se déconnecter' }).click();
   await expect(page.getByLabel('Jeton GitHub')).toHaveValue('');
   await expect(page.getByRole('heading', { name: 'Données du site' })).toHaveCount(0);
+});
+
+test('abandon : la demande est fermée, le brouillon est conservé pour être corrigé', async ({
+  page,
+}) => {
+  const appels = await simulerGitHub(page);
+  await seConnecter(page);
+  const url = page.getByRole('group', { name: 'Tiime' }).getByLabel('URL affiliée');
+  await url.fill('https://www.tiime.fr/?via=partenaire');
+  await page.getByRole('button', { name: 'Créer la demande de publication' }).click();
+  await expect(page.getByText(/^Demande n° 7 :/)).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Publication' })).toBeFocused();
+
+  page.once('dialog', (d) => void d.accept());
+  await page.getByRole('button', { name: 'Abandonner la demande n° 7' }).click();
+  await expect(page.getByText(/^Demande n° 7 :/)).toHaveCount(0);
+  await expect(url).toHaveValue('https://www.tiime.fr/?via=partenaire');
+  await expect(url).toBeEnabled();
+  expect(appels.find((a) => a.methode === 'PATCH')!.corps).toEqual({ state: 'closed' });
+  expect(appels.filter((a) => a.methode === 'DELETE').map((a) => a.chemin)).toEqual([
+    expect.stringMatching(/^\/git\/refs\/heads\/back-office\/\d{8}-\d{6}-[0-9a-f]{4}$/),
+  ]);
+});
+
+test('échec de publication : message visible et annoncé, sans perte du brouillon', async ({
+  page,
+}) => {
+  await simulerGitHub(page, { creationPr: 422 });
+  await seConnecter(page);
+  const url = page.getByRole('group', { name: 'Tiime' }).getByLabel('URL affiliée');
+  await url.fill('https://www.tiime.fr/?via=partenaire');
+  await page.getByRole('button', { name: 'Créer la demande de publication' }).click();
+  await expect(page.getByRole('alert').filter({ hasText: 'Erreur GitHub 422' })).toBeVisible();
+  await expect(url).toHaveValue('https://www.tiime.fr/?via=partenaire');
+});
+
+test('jeton refusé : l’erreur est annoncée (role=alert)', async ({ page }) => {
+  await page.route('**/admin/gh/**', (route) =>
+    route.fulfill({
+      status: 401,
+      contentType: 'application/json',
+      body: '{"message":"Bad credentials"}',
+    }),
+  );
+  await seConnecter(page);
+  await expect(
+    page.getByRole('alert').filter({ hasText: 'Jeton refusé par GitHub' }),
+  ).toBeVisible();
 });

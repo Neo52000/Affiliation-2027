@@ -105,6 +105,37 @@ describe('appliquerLien', () => {
   });
 });
 
+describe('appliquerLien : saisie annulée', () => {
+  const publie: Depart['affiliation'] = {
+    date_maj: '2026-10-01',
+    liens: { abby: { url: null, reseau: null, actif: false, maj: '2026-10-01' } },
+  };
+  const brouillon = (affiliation: Depart['affiliation']) => ({
+    affiliation,
+    publicites: depart.publicites,
+    images: new Map<string, Uint8Array>(),
+  });
+
+  it.each([
+    ['URL tapée puis effacée', { url: 'h', reseau: '', actif: false }],
+    ['case cochée puis décochée', { url: '', reseau: '', actif: true }],
+  ])('%s : lien publié rétabli, date comprise, rien à publier', (_, intermediaire) => {
+    const origine = publie.liens['abby'];
+    const etape = appliquerLien(publie, 'abby', intermediaire, '2026-10-09', origine);
+    const retour = appliquerLien(
+      etape,
+      'abby',
+      { url: '', reseau: '', actif: false },
+      '2026-10-09',
+      origine,
+    );
+    expect(retour.liens['abby']).toBe(origine);
+    expect(
+      fichiersAPublier({ ...depart, affiliation: publie }, brouillon(retour), '2026-10-09'),
+    ).toEqual([]);
+  });
+});
+
 describe('fichiersAPublier', () => {
   it('rien à publier sans changement, même si la date du brouillon a bougé', () => {
     expect(
@@ -170,5 +201,34 @@ describe('resumeModifications', () => {
       'Lien affilié tiime : actif (Affilae)',
       'Annonce ajoutée : exemple (Exemple, 2026-11-01 → 2026-11-30)',
     ]);
+  });
+});
+
+describe('resumeModifications : image seule ou ordre', () => {
+  const illustree = campagne({ image: { fichier: 'exemple.webp', alt: '' } });
+  const avec = (campagnes: Campagne[]): Depart => ({
+    ...depart,
+    publicites: { date_maj: '2026-10-09', campagnes },
+  });
+
+  it('une image remplacée est listée', () => {
+    expect(
+      resumeModifications(avec([illustree]), {
+        affiliation: depart.affiliation,
+        publicites: { date_maj: '2026-11-02', campagnes: [illustree] },
+        images: new Map([['exemple.webp', new Uint8Array([1])]]),
+      }),
+    ).toEqual(['Image d’annonce envoyée : exemple.webp']);
+  });
+
+  it('un changement d’ordre seul est signalé', () => {
+    const b = campagne({ id: 'autre' });
+    expect(
+      resumeModifications(avec([illustree, b]), {
+        affiliation: depart.affiliation,
+        publicites: { date_maj: '2026-11-02', campagnes: [b, illustree] },
+        images: new Map(),
+      }),
+    ).toEqual(['Ordre des annonces modifié']);
   });
 });

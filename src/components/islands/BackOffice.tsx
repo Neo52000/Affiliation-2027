@@ -21,7 +21,7 @@ import {
   type EtatPublication,
   type Publication,
 } from '../../lib/github-admin';
-import { jourParis } from '../../lib/publicites';
+import { jourParis, memeEditeur } from '../../lib/publicites';
 import {
   affiliationSchema,
   campagneSchema,
@@ -50,6 +50,26 @@ interface Props {
 }
 
 const INACTIVITE_MAX = 30 * 60 * 1000;
+/** Préavis avant la fermeture pour inactivité (WCAG 2.2.1 : au moins 20 s). */
+const PREAVIS = 2 * 60 * 1000;
+/** Libellés visibles des champs, pour le récapitulatif des erreurs d'une campagne. */
+const LIBELLES_CHAMPS: Record<string, string> = {
+  id: 'Identifiant',
+  annonceur: 'Annonceur',
+  annonceur_legal: 'Raison sociale et SIREN',
+  outil: 'Logiciel comparé',
+  emplacement: 'Emplacement',
+  familles: 'Familles ciblées',
+  titre: 'Titre',
+  texte: 'Texte',
+  cta: 'Libellé du bouton',
+  url: 'URL de destination',
+  debut: 'Début',
+  fin: 'Fin',
+  image: 'Image',
+  'image.fichier': 'Image',
+  'image.alt': 'Texte alternatif',
+};
 const LIBELLES_EMPLACEMENT: Record<(typeof EMPLACEMENTS_PUB)[number], string> = {
   accueil: 'Accueil (fin de page)',
   guides: 'Guides (fin d’article)',
@@ -70,8 +90,6 @@ const hote = (u: string): string => {
     return '';
   }
 };
-const sansWww = (h: string) => h.replace(/^www\./, '');
-
 const messageErreur = (e: unknown): string => {
   if (e instanceof ErreurGitHub) {
     if (e.statut === 401) return 'Jeton refusé par GitHub (expiré ou mal copié).';
@@ -134,6 +152,8 @@ function Champ(p: {
   label: string;
   erreur?: string | undefined;
   aide?: string;
+  /** Erreur annoncée dès son apparition (champ validé à l'envoi, pas à la frappe). */
+  alerte?: boolean;
   children: (attrs: Record<string, unknown>) => preact.ComponentChildren;
 }) {
   const decrit = [p.aide ? `${p.id}-aide` : '', p.erreur ? `${p.id}-erreur` : '']
@@ -156,7 +176,11 @@ function Champ(p: {
         'aria-describedby': decrit || undefined,
       })}
       {p.erreur && (
-        <p id={`${p.id}-erreur`} class="admin-erreur mt-1 text-sm">
+        <p
+          id={`${p.id}-erreur`}
+          class="admin-erreur mt-1 text-sm"
+          role={p.alerte ? 'alert' : undefined}
+        >
           {p.erreur}
         </p>
       )}
@@ -184,10 +208,27 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
   const [publications, setPublications] = useState<Publication[]>([]);
   const [etats, setEtats] = useState<Record<number, EtatPublication>>({});
   const [annonce, setAnnonce] = useState('');
+  const [erreurPublication, setErreurPublication] = useState('');
+  const [avertir, setAvertir] = useState(false);
   const [occupe, setOccupe] = useState(false);
   const titreDonnees = useRef<HTMLHeadingElement>(null);
+  const titreConnexion = useRef<HTMLHeadingElement>(null);
+  const titrePubs = useRef<HTMLHeadingElement>(null);
+  const titreCampagne = useRef<HTMLHeadingElement>(null);
+  const titrePublication = useRef<HTMLHeadingElement>(null);
+  const boutonNouvelle = useRef<HTMLButtonElement>(null);
   const resumeErreurs = useRef<HTMLDivElement>(null);
+  /** Élément à focaliser après le prochain rendu (l'élément qui avait le focus a disparu). */
+  const aFocaliser = useRef<{ current: HTMLElement | null } | (() => HTMLElement | null) | null>(
+    null,
+  );
+  const aEteConnecte = useRef(false);
+  const prolonger = useRef(() => {});
   const jour = jourParis();
+
+  const focaliserApres = (cible: { current: HTMLElement | null } | (() => HTMLElement | null)) => {
+    aFocaliser.current = cible;
+  };
 
   const charger = async (c: ClientGitHub) => {
     const [aff, pub, images, ouvertes, manquantes] = await Promise.all([
@@ -221,6 +262,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
   const seConnecter = async (jeton: string) => {
     setJetonSaisi('');
     setErreurConnexion('');
+    setAnnonce('');
     if (!jeton.startsWith('github_pat_')) {
       setErreurConnexion('Jeton à portée fine attendu (il commence par github_pat_).');
       return;
@@ -247,45 +289,67 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     setPublications([]);
     setEtats({});
     setExpiration(null);
+    setErreurPublication('');
+    setAvertir(false);
     setAnnonce(motif);
   };
 
-  /** Toute erreur d'authentification efface la session. */
+  /**
+   * Erreur d'une action de publication : affichée et annoncée (role=alert).
+   * Toute erreur d'authentification efface la session.
+   */
   const signaler = (e: unknown) => {
     if (e instanceof ErreurGitHub && e.statut === 401) {
       seDeconnecter('Jeton refusé par GitHub : session effacée, reconnectez-vous.');
       return;
     }
-    setAnnonce(messageErreur(e));
+    setErreurPublication(messageErreur(e));
   };
 
+  // Focus : sur les données à la connexion, sur le titre « Connexion » après une déconnexion.
   useEffect(() => {
-    if (client) titreDonnees.current?.focus();
+    if (client) {
+      aEteConnecte.current = true;
+      titreDonnees.current?.focus();
+    } else if (aEteConnecte.current) {
+      titreConnexion.current?.focus();
+    }
   }, [client]);
 
-  // Le jeton quitte la mémoire en quittant la page et après 30 minutes d'inactivité.
+  useEffect(() => {
+    const cible = aFocaliser.current;
+    if (!cible) return;
+    aFocaliser.current = null;
+    (typeof cible === 'function' ? cible() : cible.current)?.focus();
+  });
+
+  // Le jeton quitte la mémoire en quittant la page et après 30 minutes
+  // d'inactivité, avec un préavis de 2 minutes qui permet de prolonger.
   useEffect(() => {
     if (!client) return;
-    let minuterie = setTimeout(
-      () => seDeconnecter('Session expirée après 30 minutes d’inactivité.'),
-      INACTIVITE_MAX,
-    );
+    let alerte: ReturnType<typeof setTimeout> | undefined;
+    let fin: ReturnType<typeof setTimeout> | undefined;
     const relancer = () => {
-      clearTimeout(minuterie);
-      minuterie = setTimeout(
+      clearTimeout(alerte);
+      clearTimeout(fin);
+      setAvertir(false);
+      alerte = setTimeout(() => setAvertir(true), INACTIVITE_MAX - PREAVIS);
+      fin = setTimeout(
         () => seDeconnecter('Session expirée après 30 minutes d’inactivité.'),
         INACTIVITE_MAX,
       );
     };
+    prolonger.current = relancer;
+    relancer();
     const quitter = () => seDeconnecter();
+    const activite = ['keydown', 'pointerdown', 'focusin', 'input'] as const;
     window.addEventListener('pagehide', quitter);
-    window.addEventListener('keydown', relancer);
-    window.addEventListener('pointerdown', relancer);
+    for (const t of activite) window.addEventListener(t, relancer);
     return () => {
-      clearTimeout(minuterie);
+      clearTimeout(alerte);
+      clearTimeout(fin);
       window.removeEventListener('pagehide', quitter);
-      window.removeEventListener('keydown', relancer);
-      window.removeEventListener('pointerdown', relancer);
+      for (const t of activite) window.removeEventListener(t, relancer);
     };
   }, [client]);
 
@@ -296,19 +360,41 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     let minuterie: ReturnType<typeof setTimeout> | undefined;
     const suivre = async () => {
       const nouveaux: Record<number, EtatPublication> = {};
+      let echec = false;
       for (const p of publications) {
         try {
           nouveaux[p.numero] = await client.etat(p, estCheminPublie);
-        } catch {
-          // état indisponible : nouvel essai au prochain passage
+        } catch (e) {
+          if (e instanceof ErreurGitHub && e.statut === 401) {
+            if (actif) signaler(e);
+            return;
+          }
+          echec = true; // état indisponible : nouvel essai au prochain passage
         }
       }
       if (!actif) return;
       setEtats((avant) => ({ ...avant, ...nouveaux }));
+      // Demande fusionnée ou fermée sur GitHub, hors de ce back office.
+      const close = Object.values(nouveaux).find((e) => !e.ouverte);
+      if (close) {
+        if (close.fusionnee) {
+          void charger(client)
+            .then(() => {
+              setEtats({});
+              setAnnonce('Demande déjà mise en ligne : données rechargées depuis le site.');
+            })
+            .catch(signaler);
+        } else {
+          setPublications([]);
+          setEtats({});
+          setAnnonce('Demande fermée sur GitHub : votre brouillon est conservé.');
+        }
+        return;
+      }
       const enCours = Object.values(nouveaux).some(
         (e) => e.ouverte && (e.ci !== 'reussie' || e.blocages.length > 0) && e.ci !== 'echouee',
       );
-      if (enCours) minuterie = setTimeout(() => void suivre(), 20_000);
+      if (enCours || echec) minuterie = setTimeout(() => void suivre(), 20_000);
     };
     void suivre();
     return () => {
@@ -317,83 +403,92 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     };
   }, [client, publications]);
 
+  // Une seule région d'état, au même endroit dans les deux écrans : elle n'est
+  // jamais recréée, et son contenu est donc annoncé à chaque changement.
+  const statut = (
+    <p role="status" class="sr-only">
+      {annonce}
+    </p>
+  );
+
   if (!client || !depart || !brouillon) {
     return (
-      <section aria-labelledby="connexion-titre" class="prose-measure">
-        <h2 id="connexion-titre" class="text-2xl font-bold">
-          Connexion
-        </h2>
-        <p class="mt-2">
-          Le back office écrit dans le dépôt GitHub du site. Collez un jeton GitHub à portée fine,
-          limité à ce dépôt : il ne sert qu’à joindre GitHub, ne reste qu’en mémoire et n’est jamais
-          enregistré par le site. Votre gestionnaire de mots de passe peut le retenir.
-        </p>
-        <details class="mt-3">
-          <summary class="font-bold">Créer le jeton (une fois, 2 minutes)</summary>
-          <ol class="mt-2 list-decimal space-y-1 pl-5 text-sm">
-            <li>
-              GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token.
-            </li>
-            <li>
-              Resource owner : {depot.proprietaire}. Repository access :{' '}
-              <em>Only select repositories</em> → {depot.nom}. Expiration : 30 jours conseillés, 90
-              au plus.
-            </li>
-            <li>
-              Permissions du dépôt : Contents (Read and write), Pull requests (Read and write),
-              Actions (Read-only). Metadata (Read-only) est ajouté d’office.
-            </li>
-            <li>
-              Rien d’autre (ni Workflows, ni Administration). Copiez le jeton et collez-le
-              ci-dessous ; révoquez-le en cas de doute. Utilisez de préférence un profil de
-              navigateur sans extensions.
-            </li>
-          </ol>
-        </details>
-        <form
-          class="mt-4"
-          method="post"
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (jetonSaisi.trim()) void seConnecter(jetonSaisi.trim());
-          }}
-        >
-          <Champ
-            id="compte"
-            label="Identifiant"
-            aide="Fixe : il permet à votre gestionnaire de mots de passe de retrouver le jeton."
+      <div>
+        {statut}
+        <section aria-labelledby="connexion-titre" class="prose-measure">
+          <h2 id="connexion-titre" ref={titreConnexion} tabIndex={-1} class="text-2xl font-bold">
+            Connexion
+          </h2>
+          {annonce && aEteConnecte.current && <p class="mt-2 font-bold">{annonce}</p>}
+          <p class="mt-2">
+            Le back office écrit dans le dépôt GitHub du site. Collez un jeton GitHub à portée fine,
+            limité à ce dépôt : il ne sert qu’à joindre GitHub, ne reste qu’en mémoire et n’est
+            jamais enregistré par le site. Votre gestionnaire de mots de passe peut le retenir.
+          </p>
+          <details class="mt-3">
+            <summary class="font-bold">Créer le jeton (une fois, 2 minutes)</summary>
+            <ol class="mt-2 list-decimal space-y-1 pl-5 text-sm">
+              <li>
+                GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token.
+              </li>
+              <li>
+                Resource owner : {depot.proprietaire}. Repository access :{' '}
+                <em>Only select repositories</em> → {depot.nom}. Expiration : 30 jours conseillés,
+                90 au plus.
+              </li>
+              <li>
+                Permissions du dépôt : Contents (Read and write), Pull requests (Read and write),
+                Actions (Read-only). Metadata (Read-only) est ajouté d’office.
+              </li>
+              <li>
+                Rien d’autre (ni Workflows, ni Administration). Copiez le jeton et collez-le
+                ci-dessous ; révoquez-le en cas de doute. Utilisez de préférence un profil de
+                navigateur sans extensions.
+              </li>
+            </ol>
+          </details>
+          <form
+            class="mt-4"
+            method="post"
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (jetonSaisi.trim()) void seConnecter(jetonSaisi.trim());
+            }}
           >
-            {(a) => (
-              <input
-                {...a}
-                type="text"
-                autocomplete="username"
-                readOnly
-                value="back-office-jeton"
-              />
-            )}
-          </Champ>
-          <Champ id="jeton" label="Jeton GitHub" erreur={erreurConnexion || undefined}>
-            {(a) => (
-              <input
-                {...a}
-                type="password"
-                autocomplete="current-password"
-                spellcheck={false}
-                required
-                value={jetonSaisi}
-                onInput={(e) => setJetonSaisi((e.target as HTMLInputElement).value)}
-              />
-            )}
-          </Champ>
-          <button type="submit" class="btn-cta mt-4" disabled={connexion === 'en_cours'}>
-            {connexion === 'en_cours' ? 'Connexion…' : 'Se connecter'}
-          </button>
-        </form>
-        <p role="status" class="sr-only">
-          {annonce}
-        </p>
-      </section>
+            <Champ
+              id="compte"
+              label="Identifiant"
+              aide="Fixe : il permet à votre gestionnaire de mots de passe de retrouver le jeton."
+            >
+              {(a) => (
+                <input
+                  {...a}
+                  type="text"
+                  autocomplete="username"
+                  readOnly
+                  value="back-office-jeton"
+                />
+              )}
+            </Champ>
+            <Champ id="jeton" label="Jeton GitHub" erreur={erreurConnexion || undefined} alerte>
+              {(a) => (
+                <input
+                  {...a}
+                  type="password"
+                  autocomplete="current-password"
+                  spellcheck={false}
+                  required
+                  value={jetonSaisi}
+                  onInput={(e) => setJetonSaisi((e.target as HTMLInputElement).value)}
+                />
+              )}
+            </Champ>
+            <button type="submit" class="btn-cta mt-4" disabled={connexion === 'en_cours'}>
+              {connexion === 'en_cours' ? 'Connexion…' : 'Se connecter'}
+            </button>
+          </form>
+        </section>
+      </div>
     );
   }
 
@@ -407,7 +502,13 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     setSaisies({ ...saisies, [slug]: saisie });
     setBrouillon({
       ...brouillon,
-      affiliation: appliquerLien(brouillon.affiliation, slug, saisie, jour),
+      affiliation: appliquerLien(
+        brouillon.affiliation,
+        slug,
+        saisie,
+        jour,
+        depart.affiliation.liens[slug],
+      ),
     });
   };
 
@@ -482,9 +583,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
       active: s.active,
     };
     // Une annonce qui mène chez un éditeur comparé doit le déclarer (mention au lecteur).
-    const edite = outils.find(
-      (o) => sansWww(hote(o.urlOfficielle)) === sansWww(hote(candidate.url)),
-    );
+    const edite = outils.find((o) => memeEditeur(candidate.url, o.urlOfficielle));
     if (edite && candidate.outil !== edite.slug) {
       setErreursCampagne({
         outil: `Cette URL mène chez ${edite.nom} : choisissez « ${edite.nom} » comme logiciel comparé.`,
@@ -528,6 +627,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     setEdition(null);
     setErreursCampagne({});
     setAnnonce(`Campagne « ${candidate.id} » enregistrée dans le brouillon.`);
+    focaliserApres(boutonNouvelle);
   };
 
   const supprimerCampagne = (index: number) => {
@@ -535,11 +635,20 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     if (!window.confirm(`Supprimer la campagne « ${c.id} » du brouillon ?`)) return;
     const campagnes = brouillon.publicites.campagnes.filter((_, i) => i !== index);
     setBrouillon({ ...brouillon, publicites: { date_maj: jour, campagnes } });
+    // La campagne en cours d'édition est désignée par son rang : il suit la suppression.
+    if (edition?.index === index) {
+      setEdition(null);
+      setErreursCampagne({});
+    } else if (edition && edition.index !== null && edition.index > index) {
+      setEdition({ ...edition, index: edition.index - 1 });
+    }
     setAnnonce(`Campagne « ${c.id} » retirée du brouillon.`);
+    focaliserApres(titrePubs);
   };
 
   const publier = async () => {
     setOccupe(true);
+    setErreurPublication('');
     try {
       // Sha des JSON tels que chargés : si main a changé depuis, la publication est refusée.
       const attendus = Object.fromEntries(
@@ -561,6 +670,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
       );
       setPublications([p]);
       setAnnonce(`Demande de publication n° ${p.numero} créée. Vérifications lancées.`);
+      focaliserApres(titrePublication);
     } catch (e) {
       signaler(e);
     } finally {
@@ -570,36 +680,61 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
 
   const mettreEnLigne = async (p: Publication) => {
     setOccupe(true);
+    setErreurPublication('');
     try {
       // Dernière lecture juste avant la fusion : rien ne doit avoir bougé.
       const etat = await client.etat(p, estCheminPublie);
       if (etat.blocages.length > 0) {
         setEtats((avant) => ({ ...avant, [p.numero]: etat }));
-        setAnnonce(`Mise en ligne refusée : ${etat.blocages.join(' ; ')}.`);
+        setErreurPublication(`Mise en ligne refusée : ${etat.blocages.join(' ; ')}.`);
+        setOccupe(false);
         return;
       }
       await client.mettreEnLigne(p);
-      setAnnonce(
-        `Publication n° ${p.numero} mise en ligne : Netlify déploie le site (quelques minutes).`,
-      );
-      await charger(client);
-      setEtats({});
     } catch (e) {
       signaler(e);
+      setOccupe(false);
+      return;
+    }
+    // La fusion est faite : la demande n'est plus ouverte, même si le rechargement échoue.
+    setPublications([]);
+    setEtats({});
+    setAnnonce(
+      `Publication n° ${p.numero} mise en ligne : Netlify déploie le site (quelques minutes).`,
+    );
+    focaliserApres(titrePublication);
+    try {
+      await charger(client);
+    } catch (e) {
+      if (e instanceof ErreurGitHub && e.statut === 401) signaler(e);
+      else
+        setErreurPublication(
+          'Mise en ligne faite, mais les données n’ont pas pu être rechargées : rechargez la page.',
+        );
     } finally {
       setOccupe(false);
     }
   };
 
   const abandonner = async (p: Publication) => {
-    if (!window.confirm(`Abandonner la demande n° ${p.numero} ? Rien ne sera mis en ligne.`))
+    if (
+      !window.confirm(
+        `Abandonner la demande n° ${p.numero} ? Rien ne sera mis en ligne ; votre brouillon est conservé.`,
+      )
+    )
       return;
     setOccupe(true);
+    setErreurPublication('');
     try {
       await client.abandonner(p);
-      await charger(client);
+      // Le brouillon reste tel quel pour être corrigé ; si le site a changé
+      // entretemps, la prochaine publication le signalera (contrôle des sha).
+      setPublications((avant) => avant.filter((x) => x.numero !== p.numero));
       setEtats({});
-      setAnnonce(`Demande n° ${p.numero} abandonnée. Brouillon rechargé depuis le site en ligne.`);
+      setAnnonce(
+        `Demande n° ${p.numero} abandonnée : votre brouillon est conservé, corrigez-le puis publiez à nouveau.`,
+      );
+      focaliserApres(titrePublication);
     } catch (e) {
       signaler(e);
     } finally {
@@ -614,9 +749,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
 
   return (
     <div>
-      <p role="status" class="sr-only">
-        {annonce}
-      </p>
+      {statut}
       <div class="flex flex-wrap items-center justify-between gap-3">
         <h2 ref={titreDonnees} tabIndex={-1} class="text-2xl font-bold">
           Données du site
@@ -625,6 +758,17 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
           Se déconnecter
         </button>
       </div>
+      {avertir && (
+        <div role="alert" class="admin-erreurs mt-4 p-3">
+          <p>
+            Sans activité, la session sera fermée dans 2 minutes et le brouillon non publié sera
+            perdu.
+          </p>
+          <button type="button" class="btn-cta mt-2" onClick={() => prolonger.current()}>
+            Rester connecté
+          </button>
+        </div>
+      )}
       {expiration && (
         <p class="mt-2 text-sm text-ink-soft">
           Jeton valable jusqu’au {expiration.toLocaleDateString('fr-FR')} : pensez à le renouveler.
@@ -689,7 +833,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
                 </Champ>
                 <Champ
                   id={`reseau-${o.slug}`}
-                  label="Réseau ou programme (mémo)"
+                  label="Réseau ou programme (publié sur la page transparence)"
                   erreur={err['reseau']}
                 >
                   {(a) => (
@@ -716,7 +860,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
         </section>
 
         <section aria-labelledby="pubs-titre" class="mt-10">
-          <h3 id="pubs-titre" class="titre-section text-xl font-bold">
+          <h3 id="pubs-titre" ref={titrePubs} tabIndex={-1} class="titre-section text-xl font-bold">
             Espaces publicitaires
           </h3>
           <p class="mt-2 text-sm text-ink-soft">
@@ -749,6 +893,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
                       onClick={() => {
                         setErreursCampagne({});
                         setEdition({ index: i, saisie: versSaisie(c) });
+                        focaliserApres(titreCampagne);
                       }}
                     >
                       Modifier<span class="sr-only"> la campagne {c.id}</span>
@@ -766,9 +911,11 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
             <button
               type="button"
               class="btn-ghost mt-4"
+              ref={boutonNouvelle}
               onClick={() => {
                 setErreursCampagne({});
                 setEdition({ index: null, saisie: campagneVide(jour) });
+                focaliserApres(titreCampagne);
               }}
             >
               Nouvelle campagne
@@ -784,7 +931,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
                 enregistrerCampagne();
               }}
             >
-              <h4 id="campagne-titre" class="text-lg font-bold">
+              <h4 id="campagne-titre" ref={titreCampagne} tabIndex={-1} class="text-lg font-bold">
                 {edition.index === null ? 'Nouvelle campagne' : `Modifier « ${s.id} »`}
               </h4>
               {Object.keys(erreursCampagne).length > 0 && (
@@ -793,7 +940,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
                   <ul class="list-disc pl-5 text-sm">
                     {Object.entries(erreursCampagne).map(([champ, m]) => (
                       <li key={champ}>
-                        {champ === '_' ? '' : `${champ} : `}
+                        {champ === '_' ? '' : `${LIBELLES_CHAMPS[champ] ?? champ} : `}
                         {m}
                       </li>
                     ))}
@@ -1030,13 +1177,14 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
                   <button
                     type="button"
                     class="btn-ghost mt-3"
-                    onClick={() =>
-                      edition &&
+                    onClick={() => {
+                      if (!edition) return;
                       setEdition({
                         ...edition,
                         saisie: { ...s, imageNouvelle: null, imageExistante: null, imageAlt: '' },
-                      })
-                    }
+                      });
+                      focaliserApres(() => document.getElementById('c-image'));
+                    }}
                   >
                     Retirer l’image
                   </button>
@@ -1080,6 +1228,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
                   onClick={() => {
                     setEdition(null);
                     setErreursCampagne({});
+                    focaliserApres(boutonNouvelle);
                   }}
                 >
                   Annuler
@@ -1091,9 +1240,19 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
       </fieldset>
 
       <section aria-labelledby="publication-titre" class="mt-10">
-        <h3 id="publication-titre" class="titre-section text-xl font-bold">
+        <h3
+          id="publication-titre"
+          ref={titrePublication}
+          tabIndex={-1}
+          class="titre-section text-xl font-bold"
+        >
           Publication
         </h3>
+        {erreurPublication && (
+          <div role="alert" class="admin-erreurs mt-3 p-3">
+            <p>{erreurPublication}</p>
+          </div>
+        )}
         {!enCoursDePublication && (
           <>
             {modifications.length === 0 ? (
@@ -1143,7 +1302,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
               <p class="font-bold">
                 Demande n° {p.numero} : {p.titre}
               </p>
-              <p class="mt-1 text-sm">
+              <p class="mt-1 text-sm" aria-live="polite" aria-atomic="true">
                 {e ? (
                   e.fusionnee ? (
                     'Déjà mise en ligne.'
@@ -1163,10 +1322,11 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
               </p>
               <p class="mt-2 flex flex-wrap gap-3 text-sm">
                 <a href={p.url} rel="noopener">
-                  Voir la demande sur GitHub
+                  Voir la demande<span class="sr-only"> n° {p.numero}</span> sur GitHub
                 </a>
                 <a href={previsualisation.replace('{n}', String(p.numero))} rel="noopener">
                   Prévisualiser le site modifié
+                  <span class="sr-only"> par la demande n° {p.numero}</span>
                 </a>
               </p>
               <p class="mt-3 flex flex-wrap gap-2">
@@ -1176,7 +1336,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
                   disabled={!pret || occupe}
                   onClick={() => void mettreEnLigne(p)}
                 >
-                  Mettre en ligne
+                  Mettre en ligne<span class="sr-only"> la demande n° {p.numero}</span>
                 </button>
                 <button
                   type="button"
@@ -1184,7 +1344,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
                   disabled={occupe}
                   onClick={() => void abandonner(p)}
                 >
-                  Abandonner
+                  Abandonner<span class="sr-only"> la demande n° {p.numero}</span>
                 </button>
               </p>
               {e?.ci === 'echouee' && (

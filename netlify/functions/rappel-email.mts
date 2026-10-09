@@ -8,6 +8,7 @@
  * Implémentation prête pour Brevo (contacts/doubleOptinConfirmation) ; adapter
  * API_URL/payload si OUTIL_EMAIL est un autre fournisseur.
  */
+import { EDITEUR_IDENTIFIE } from '../../src/config.ts';
 import { validerDemandeRappel } from '../../src/lib/email-capture.ts';
 
 const API_URL = 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation';
@@ -27,7 +28,8 @@ export default async function handler(request: Request): Promise<Response> {
     return json(405, { erreur: 'Méthode non autorisée.' });
   }
 
-  const cle = process.env['EMAIL_API_KEY'];
+  // Aucune collecte tant que l'éditeur n'est pas identifié (RGPD, art. 13).
+  const cle = EDITEUR_IDENTIFIE ? process.env['EMAIL_API_KEY'] : undefined;
   if (!cle || !TEMPLATE_ID || !LISTE_ID) {
     return json(503, {
       erreur: "Le rappel par email n'est pas encore activé sur ce site.",

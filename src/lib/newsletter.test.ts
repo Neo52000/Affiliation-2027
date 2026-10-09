@@ -54,11 +54,13 @@ describe('traiterInscription', () => {
     expect(appels).toHaveLength(0);
   });
 
-  it('sans consentement ou email invalide : page d’erreur, aucun appel', async () => {
+  it('sans consentement : page d’erreur ; adresse refusée : page dédiée ; aucun appel', async () => {
     const { f, appels } = fauxBrevo();
-    for (const corps of ['email=a%40b.fr', 'email=a%40b&consentement=oui']) {
+    const sansConsentement = await traiterInscription(requete('email=a%40b.fr'), ENV, f);
+    expect(sansConsentement.headers.get('location')).toMatch(/\/newsletter\/erreur$/);
+    for (const corps of ['email=a%40b&consentement=oui', 'email=a%40b.f&consentement=oui']) {
       const r = await traiterInscription(requete(corps), ENV, f);
-      expect(r.headers.get('location')).toMatch(/\/newsletter\/erreur$/);
+      expect(r.headers.get('location')).toMatch(/\/newsletter\/adresse-invalide$/);
     }
     expect(appels).toHaveLength(0);
   });
