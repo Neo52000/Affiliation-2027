@@ -8,7 +8,7 @@
   "specificites_facturation": [
     "Le taux de TVA dépend de la menuiserie posée, dans un logement achevé depuis plus de deux ans : 5,5 % pour l'isolation thermique des parois vitrées (fenêtres, portes-fenêtres, fenêtres de toit), les volets isolants et les portes d'entrée donnant sur l'extérieur, sous conditions de performance ; 10 % pour les autres menuiseries ; 20 % dès que l'une des conditions manque.",
     "La part correspondant à la fourniture d'équipements mobiliers (meuble livré non fixé) est exclue du taux de 10 %, même dans un logement ancien : une même facture de menuisier ventile donc souvent trois taux, ligne par ligne.",
-    "Le sur-mesure se paie avec acompte à la commande : chaque versement donne lieu à une facture d'acompte, et pour les livraisons de biens la TVA est exigible dès l'encaissement de l'acompte.",
+    "Le sur-mesure se paie avec acompte à la commande : chaque versement donne lieu à une facture d'acompte lorsque le client est un professionnel ou une personne morale, et pour les livraisons de biens la TVA est exigible dès l'encaissement de l'acompte. Si un client particulier signe la commande à son domicile, vous ne pouvez toutefois recevoir aucun paiement, acompte compris, avant l'expiration d'un délai de sept jours à compter de la conclusion du contrat.",
     "Une vente départ atelier, sans pose, est une livraison de bien au taux normal de 20 % : les taux réduits sont réservés aux prestations de travaux dans les logements anciens.",
     "Quand le client achète lui-même ses menuiseries, ces fournitures restent à 20 % chez son vendeur ; seule votre main-d'œuvre de pose bénéficie du taux réduit applicable.",
     "L'application d'un taux réduit repose sur une mention certifiée par le client, inscrite sur le devis ou la facture : ancienneté du logement supérieure à deux ans et conditions du taux remplies."
@@ -90,7 +90,7 @@
     },
     {
       "question": "Dois-je émettre une facture pour l'acompte encaissé à la commande d'un ouvrage sur mesure ?",
-      "reponse": "Oui si votre client est un professionnel ou une personne morale : tout versement d'acompte donne alors lieu à une facture d'acompte. Pour les livraisons de biens, la TVA est en outre exigible dès l'encaissement de l'acompte, en application de la loi de finances pour 2022. La facture de solde déduit ensuite les acomptes déjà facturés."
+      "reponse": "Oui si votre client est un professionnel ou une personne morale : tout versement d'acompte donne alors lieu à une facture d'acompte. Pour les livraisons de biens, la TVA est en outre exigible dès l'encaissement de l'acompte, en application de la loi de finances pour 2022. La facture de solde déduit ensuite les acomptes déjà facturés. Si un client particulier a signé la commande à son domicile, vous ne pouvez toutefois recevoir aucun paiement, acompte compris, avant l'expiration d'un délai de sept jours à compter de la conclusion du contrat."
     },
     {
       "question": "Je vends un escalier départ atelier, sans pose : puis-je facturer à 10 % ?",
@@ -129,6 +129,10 @@
     {
       "titre": "Légifrance — Mention de l'assurance professionnelle sur devis et factures des artisans",
       "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044056690/2026-06-12"
+    },
+    {
+      "titre": "Légifrance — Code de la consommation, article L221-10 : aucun paiement ni aucune contrepartie avant l'expiration d'un délai de sept jours pour un contrat conclu hors établissement (au domicile du client)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226864"
     }
   ],
   "date_maj": "2026-10-09"

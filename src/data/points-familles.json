@@ -512,8 +512,8 @@
         ]
       },
       {
-        "titre": "Note au client dès 25 € TTC pour une consommation sur place",
-        "texte": "Un repas, une boisson ou une coupe servis sur place constituent une prestation de services : vous devez remettre une note au client dès que le prix atteint 25 € TTC, et en dessous de ce montant s'il la demande.",
+        "titre": "Note : à chaque repas servi, dès 25 € TTC pour une autre consommation",
+        "texte": "Pour un repas servi au restaurant, vous devez remettre une note en fin de repas, quel que soit son montant. Pour une autre consommation sur place (boisson, coupe), la note est due dès que le prix atteint 25 € TTC, et en dessous de ce montant si le client la demande.",
         "metiers_concernes": ["bar-brasserie", "glacier", "food-truck", "pizzeria", "restaurateur"],
         "sources": [
           {
@@ -523,6 +523,14 @@
           {
             "titre": "DGCCRF (economie.gouv.fr) – Cafés et bars : quelles obligations pour les professionnels ? (affichage extérieur et intérieur, note au-dessus de 25 €, et en dessous sur demande)",
             "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/cafes-et-bars-quelles-obligations-pour-les-professionnels"
+          },
+          {
+            "titre": "DGCCRF (economie.gouv.fr) – Restaurants : droits et obligations des professionnels (note remise en fin de repas, sans seuil de montant)",
+            "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/restaurants-droits-et-obligations-des-professionnels"
+          },
+          {
+            "titre": "DGCCRF (economie.gouv.fr) – Ticket de caisse et de carte bancaire (note des prestations d'hôtels ou de restaurants, à part des services d'au moins 25 €)",
+            "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/ticket-de-caisse-et-de-carte-bancaire"
           }
         ]
       },

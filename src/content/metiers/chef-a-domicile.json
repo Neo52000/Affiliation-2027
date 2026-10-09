@@ -8,7 +8,7 @@
   "specificites_facturation": [
     "La préparation de repas à domicile, y compris le temps passé aux commissions, figure parmi les activités de services à la personne. Lorsque l'entreprise est déclarée au titre des services à la personne, la facture doit permettre d'identifier cette prestation séparément des autres activités exercées. Sans déclaration, cette séparation n'est pas imposée, mais elle reste utile au client.",
     "Le coût des denrées alimentaires n'entre pas dans le champ des services à la personne : il se facture sur une ligne distincte de la prestation, sans quoi la part relevant de ce champ n'est plus identifiable pour le client.",
-    "Un devis personnalisé gratuit est obligatoire dès que le prix de la prestation ou de l'ensemble de prestations atteint 100 € TTC par mois, et doit être établi gratuitement sur demande du client en dessous de ce montant. Le devis mentionne notamment sa date de rédaction et sa durée de validité, la dénomination et l'adresse du prestataire, le numéro de déclaration ou d'agrément le cas échéant, le nom et l'adresse du client et le lieu d'intervention.",
+    "Pour un client particulier, un devis personnalisé gratuit est obligatoire dès que le prix de la prestation ou de l'ensemble de prestations atteint 100 € TTC par mois, et doit être établi gratuitement sur sa demande en dessous de ce montant. Le devis mentionne notamment sa date de rédaction et sa durée de validité, la dénomination et l'adresse du prestataire, le numéro de déclaration ou d'agrément le cas échéant, le nom et l'adresse du client et le lieu d'intervention. La facture prévue par le code du travail pour les services à la personne doit en outre être délivrée au client particulier avant paiement, et gratuitement.",
     "Pour une prestation de services, la TVA est exigible lors de l'encaissement : un acompte versé à la réservation rend la taxe exigible à hauteur de la somme reçue, avant même l'exécution. Si le client est un professionnel assujetti ou une personne morale, chaque acompte appelle une facture d'acompte, puis une facture de solde rappelant le montant déjà réglé. Cette règle d'exigibilité est celle du droit commun. Un prestataire peut opter pour le paiement de la taxe d'après les débits, auquel cas la taxe devient exigible dès la facturation, sans attendre l'encaissement ; l'option se mentionne alors sur les factures et se vérifie avec l'expert-comptable.",
     "La franchise en base de TVA est fréquente dans cette activité : la facture ne porte alors aucun taux mais la mention « TVA non applicable, article 293 B du CGI ». Facturer la TVA à tort rendrait l'entreprise redevable de la taxe.",
     "Lorsque l'entreprise est assujettie, le repas préparé et servi chez le client relève des ventes à consommer sur place, au taux réduit de 10 %, à l'exclusion des boissons alcooliques qui restent à 20 %.",
@@ -17,7 +17,7 @@
   "mentions_obligatoires_specifiques": [
     "Pour un chef déclaré au titre des services à la personne : lignes séparées pour la prestation relevant de ce champ et pour le coût des denrées alimentaires, qui en est exclu.",
     "« TVA non applicable, article 293 B du CGI » pour un chef relevant de la franchise en base, sans aucun taux apparent sur le document.",
-    "Référence au devis accepté lorsque celui-ci était obligatoire (prix mensuel atteignant 100 € TTC) ou avait été demandé par le client.",
+    "Référence conseillée, et non imposée, au devis accepté lorsque celui-ci était obligatoire (client particulier, prix mensuel atteignant 100 € TTC) ou avait été demandé par le client.",
     "Sur la facture de solde, référence aux factures d'acompte émises (client professionnel assujetti ou personne morale) ; avec un client particulier, rappel conseillé de l'acompte encaissé et de son montant, pour éviter une double prise en compte.",
     "Date et lieu d'exécution de la prestation, le service étant rendu au domicile du client.",
     "SIREN ou SIRET du client lorsque la prestation est commandée par une entreprise."
@@ -69,7 +69,7 @@
     },
     {
       "slug": "tiime",
-      "justification": "Le même outil porte le devis obligatoire à partir de 100 € TTC par mois, la facture d'acompte et la facture de solde, sans ressaisie entre les trois documents."
+      "justification": "Le même outil porte le devis obligatoire pour un particulier à partir de 100 € TTC par mois, la facture d'acompte et la facture de solde, sans ressaisie entre les trois documents."
     },
     {
       "slug": "shine",
