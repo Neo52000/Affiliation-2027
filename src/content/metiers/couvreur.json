@@ -76,7 +76,7 @@
     },
     {
       "question": "Puis-je encaisser un acompte avant de monter l'échafaudage, et dois-je l'accompagner d'une facture ?",
-      "reponse": "Oui pour l'encaissement. Pour la facture, tout dépend du client : si c'est un professionnel ou une personne morale, tout acompte versé avant la réalisation de la prestation doit donner lieu à une facture. Si vous facturez la TVA, elle est exigible pour les prestations de services dès l'encaissement de l'acompte, voire dès sa facturation si votre entreprise a opté pour le paiement de la TVA d'après les débits, et pas seulement au solde. La facture finale déduit ensuite les acomptes déjà facturés."
+      "reponse": "Oui pour l'encaissement, sauf si le contrat a été signé au domicile d'un client particulier : vous ne pouvez alors recevoir aucun paiement avant l'expiration d'un délai de sept jours à compter de sa conclusion. Pour la facture, tout dépend du client : si c'est un professionnel ou une personne morale, tout acompte versé avant la réalisation de la prestation doit donner lieu à une facture. Si vous facturez la TVA, elle est exigible pour les prestations de services dès l'encaissement de l'acompte, voire dès sa facturation si votre entreprise a opté pour le paiement de la TVA d'après les débits, et pas seulement au solde. La facture finale déduit ensuite les acomptes déjà facturés."
     },
     {
       "question": "En déposant les tuiles, je découvre une volige pourrie : comment facturer ce travail imprévu ?",
@@ -131,6 +131,10 @@
     {
       "titre": "BOFiP — Rescrit BOI-RES-TVA-000269 : autoliquidation des travaux de construction sous-traités, exclusion du sous-traitant en franchise en base et mention « TVA non applicable, article 293 B du CGI »",
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
+    },
+    {
+      "titre": "Légifrance — Code de la consommation, article L221-10 : aucun paiement ni aucune contrepartie avant l'expiration d'un délai de sept jours pour un contrat conclu hors établissement (au domicile du client)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226864"
     }
   ],
   "date_maj": "2026-10-09"

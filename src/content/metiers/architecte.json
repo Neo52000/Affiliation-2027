@@ -11,7 +11,7 @@
   "clients_types": "mixte",
   "specificites_facturation": [
     "Vos honoraires se facturent par phases de mission (esquisse, avant-projet, projet, suivi de chantier), généralement sous forme d'acomptes appelés à chaque étape. La TVA est exigible à l'encaissement de chaque acompte, pas à la fin de la mission.",
-    "Les honoraires d'architecte relèvent du taux normal de 20 %. Une étude facturée isolément reste au taux normal ; en revanche, une maîtrise d'œuvre qui se rapporte à des travaux eux-mêmes éligibles peut suivre leur taux réduit, et lorsque vous assurez ensuite la maîtrise d'œuvre ou l'exécution de ces travaux, la doctrine admet une facture rectificative appliquant ce taux à l'ensemble de la prestation, études antérieures comprises. Ni l'application systématique du taux réduit ni son exclusion systématique ne sont correctes : le lien avec les travaux et l'éligibilité du chantier se vérifient dossier par dossier, attestation du client à l'appui.",
+    "Les honoraires d'architecte relèvent du taux normal de 20 %. Une étude facturée isolément reste au taux normal ; en revanche, une maîtrise d'œuvre qui se rapporte à des travaux eux-mêmes éligibles peut suivre leur taux réduit, et lorsque vous assurez ensuite la maîtrise d'œuvre ou l'exécution de ces travaux, la doctrine admet une facture rectificative appliquant ce taux à l'ensemble de la prestation, études antérieures comprises. Ni l'application systématique du taux réduit ni son exclusion systématique ne sont correctes : le lien avec les travaux et l'éligibilité du chantier se vérifient dossier par dossier, certification du client sur le devis ou la facture à l'appui.",
     "Votre assurance professionnelle est obligatoire au titre de la loi du 3 janvier 1977 sur l'architecture, et l'attestation est jointe au contrat conclu avec le maître d'ouvrage. Pour les missions portant sur des travaux de bâtiment, l'attestation d'assurance est en outre annexée à vos devis et à vos factures.",
     "Pour un projet portant sur un immeuble situé en France, votre prestation de conception ou de coordination est imposable en France même si le client est établi à l'étranger : la règle du lieu de l'immeuble prime sur les règles générales entre assujettis.",
     "Pour un particulier qui fait construire ou rénover, une note détaillée (date, identité, décompte de chaque prestation, montants HT et TTC) est remise avant paiement dès que la prestation atteint 25 € TTC — en pratique dès la première étude."
@@ -106,8 +106,8 @@
       "url": "https://bofip.impots.gouv.fr/bofip/1666-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-20-20260909"
     },
     {
-      "titre": "BOFiP — Travaux sur locaux d'habitation achevés depuis plus de deux ans, modalités d'application et facture rectificative (BOI-TVA-LIQ-30-20-90-40)",
-      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20160302"
+      "titre": "BOFiP — Travaux sur locaux d'habitation achevés depuis plus de deux ans, modalités d'application et certification du client sur le devis ou la facture (BOI-TVA-LIQ-30-20-90-40)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20260909"
     },
     {
       "titre": "Légifrance — Article 16 de la loi n° 77-2 du 3 janvier 1977 sur l'architecture (assurance obligatoire)",
@@ -148,6 +148,10 @@
     {
       "titre": "impots.gouv.fr — Je découvre la facturation électronique",
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+    },
+    {
+      "titre": "BOFiP — Travaux sur locaux d'habitation, prestations d'études et de maîtrise d'œuvre : taux normal des études isolées, facture rectificative (BOI-TVA-LIQ-30-20-90-30)",
+      "url": "https://bofip.impots.gouv.fr/bofip/1733-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-30-20251022"
     }
   ],
   "date_maj": "2026-10-09"

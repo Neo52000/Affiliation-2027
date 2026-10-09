@@ -1,7 +1,7 @@
 {
   "date_releve": "2026-10-06",
   "sources_principales": [
-    "https://entreprendre.service-public.fr/vosdroits/F31808",
+    "https://entreprendre.service-public.gouv.fr/vosdroits/F31808",
     "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir",
     "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique",
     "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038414397",
@@ -13,35 +13,35 @@
       "libelle": "Date d'émission de la facture",
       "regle": "La facture doit porter la date à laquelle elle est émise, en principe au moment de la livraison du bien ou de la réalisation de la prestation.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "numero-facture",
       "libelle": "Numéro unique de la facture",
       "regle": "Chaque facture doit porter un numéro unique basé sur une séquence chronologique et continue, sans rupture.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "date-vente-prestation",
       "libelle": "Date de la vente ou de la prestation de services",
       "regle": "La facture indique la date à laquelle est effectuée ou achevée la livraison de biens ou la prestation de services, ou la date de versement de l'acompte.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "identite-vendeur",
       "libelle": "Identité du vendeur ou du prestataire",
       "regle": "Nom complet et adresse du vendeur : pour un entrepreneur individuel, nom et prénom précédés ou suivis de la mention « Entrepreneur individuel » ou « EI » et numéro Siren ; pour une société, dénomination sociale, numéro Siren, adresse du siège social, forme juridique et montant du capital social.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "identite-client",
       "libelle": "Identité de l'acheteur ou du client",
       "regle": "La facture mentionne le nom (ou la dénomination sociale) et l'adresse du client.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "adresse-facturation",
@@ -55,35 +55,35 @@
       "libelle": "Numéro du bon de commande",
       "regle": "La facture doit mentionner le numéro du bon de commande lorsque celui-ci a été préalablement établi par l'acheteur.",
       "condition": "si un bon de commande a été préalablement établi par l'acheteur",
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "numero-tva-intracommunautaire",
       "libelle": "Numéro individuel d'identification à la TVA du vendeur et du client",
       "regle": "Le numéro d'identification à la TVA du vendeur et celui du client professionnel redevable de la TVA doivent figurer sur la facture.",
       "condition": "sauf pour les factures d'un montant total hors taxes inférieur ou égal à 150 €",
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "designation-produits-services",
       "libelle": "Désignation précise des produits vendus ou des services rendus",
       "regle": "Chaque bien livré ou service rendu doit être désigné par sa dénomination précise, avec sa quantité.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "decompte-quantite-prix-unitaire",
       "libelle": "Décompte détaillé : quantité et prix unitaire hors taxes de chaque ligne",
       "regle": "La facture détaille, pour chaque produit et chaque prestation, la quantité et le prix unitaire hors taxes.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "taux-tva",
       "libelle": "Taux de TVA légalement applicable",
       "regle": "Le taux de TVA applicable à chaque bien ou service doit être indiqué ou, le cas échéant, le bénéfice d'une exonération.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "montant-tva",
@@ -97,14 +97,14 @@
       "libelle": "Réductions de prix (rabais, remises, ristournes)",
       "regle": "Toute réduction de prix acquise à la date de la vente ou de la prestation et directement liée à l'opération doit figurer sur la facture.",
       "condition": "si une réduction de prix est acquise à la date de l'opération",
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "somme-totale-ht-ttc",
       "libelle": "Somme totale à payer hors taxes (HT) et toutes taxes comprises (TTC)",
       "regle": "La facture indique le montant total hors taxes et le montant total toutes taxes comprises.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "date-limite-reglement",
@@ -132,7 +132,7 @@
       "libelle": "Indemnité forfaitaire pour frais de recouvrement de 40 €",
       "regle": "La facture mentionne le montant de l'indemnité forfaitaire pour frais de recouvrement (40 €) due au créancier en cas de retard de paiement, exigible uniquement auprès d'un client professionnel.",
       "condition": null,
-      "url_source": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "url_source": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "id": "siren-client",

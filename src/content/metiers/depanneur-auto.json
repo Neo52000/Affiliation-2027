@@ -7,7 +7,7 @@
   "clients_types": "mixte",
   "specificites_facturation": [
     "Remorquer ou dépanner un véhicule, c'est transporter un bien, pas une personne : vos prestations relèvent du taux normal de TVA de 20 %, sans aucun taux réduit, même quand le client est un particulier.",
-    "Sur autoroute et route express, vous ne fixez pas vos prix : l'intervention est réservée aux entreprises agréées et le dépannage comme le remorquage des véhicules légers y sont encadrés par un forfait fixé par arrêté, revalorisé chaque année et majoré pour les interventions de nuit, le week-end et les jours fériés. Vérifiez le montant en vigueur sur service-public.fr avant d'établir votre facture : il change au 1er janvier.",
+    "Sur autoroute et route express, vous ne fixez pas vos prix : l'intervention est réservée aux entreprises agréées et le dépannage comme le remorquage des véhicules légers y sont encadrés par un forfait fixé par arrêté, revalorisé chaque année et majoré pour les interventions de nuit, le week-end et les jours fériés. Vérifiez le montant en vigueur sur service-public.gouv.fr avant d'établir votre facture : il change au 1er janvier.",
     "Cet encadrement ne vise que les véhicules légers. Au-delà du poids total autorisé en charge fixé par l'arrêté, votre tarification reste libre, y compris sur autoroute : indiquez-le clairement sur votre devis pour éviter toute contestation.",
     "Un particulier dépanné doit recevoir une note avant de payer dès que la prestation atteint 25 € TTC ; en dessous, remettez-la s'il la demande.",
     "Vos factures aux plateformes d'assistance, assureurs et garages sont des factures entre assujettis : à l'échéance applicable à votre entreprise, elles passeront par une plateforme agréée, en réception puis en émission.",
@@ -73,7 +73,7 @@
   "faq": [
     {
       "question": "Puis-je appliquer mes propres tarifs pour un remorquage sur autoroute ?",
-      "reponse": "Non. Sur autoroutes et routes express, l'intervention est réservée aux dépanneurs agréés et le prix des véhicules légers y est encadré par un forfait fixé par arrêté, revalorisé chaque année et majoré pour les interventions de nuit, le week-end et les jours fériés. Consultez le montant applicable sur service-public.fr avant chaque intervention. Au-delà du poids total autorisé en charge fixé par l'arrêté, cet encadrement ne s'applique pas : vos prix restent libres, y compris sur autoroute. Hors autoroute et route express, vos prix restent libres également."
+      "reponse": "Non. Sur autoroutes et routes express, l'intervention est réservée aux dépanneurs agréés et le prix des véhicules légers y est encadré par un forfait fixé par arrêté, revalorisé chaque année et majoré pour les interventions de nuit, le week-end et les jours fériés. Consultez le montant applicable sur service-public.gouv.fr avant chaque intervention. Au-delà du poids total autorisé en charge fixé par l'arrêté, cet encadrement ne s'applique pas : vos prix restent libres, y compris sur autoroute. Hors autoroute et route express, vos prix restent libres également."
     },
     {
       "question": "Le client est un particulier en panne : puis-je facturer à 10 % comme un taxi ?",
@@ -98,8 +98,8 @@
       "url": "https://bofip.impots.gouv.fr/bofip/1402-PGP.html/identifiant=BOI-TVA-LIQ-20-20-20250605"
     },
     {
-      "titre": "Tarifs du dépannage et du remorquage sur autoroute et route express (service-public.fr)",
-      "url": "https://www.service-public.fr/particuliers/actualites/A15073"
+      "titre": "Tarifs du dépannage et du remorquage sur autoroute et route express (service-public.gouv.fr)",
+      "url": "https://www.service-public.gouv.fr/particuliers/actualites/A15073"
     },
     {
       "titre": "Véhicules : que faire en cas de panne sur autoroute ? (DGCCRF, economie.gouv.fr)",

@@ -84,7 +84,7 @@
     },
     {
       "question": "Un patient me demande une facture pour sa mutuelle : que doit-elle comporter ?",
-      "reponse": "Votre note d'honoraires sert de justificatif auprès de la complémentaire. Elle reprend les mentions attendues d'une facture à un particulier : identification du praticien, date, nature de l'acte, montant (entreprendre.service-public.fr). Ajoutez la référence à l'exonération de TVA de l'article 261, 4, 1° du CGI si vous faites un usage légal du titre."
+      "reponse": "Votre note d'honoraires sert de justificatif auprès de la complémentaire. Elle reprend les mentions attendues d'une facture à un particulier : identification du praticien, date, nature de l'acte, montant (entreprendre.service-public.gouv.fr). Ajoutez la référence à l'exonération de TVA de l'article 261, 4, 1° du CGI si vous faites un usage légal du titre."
     }
   ],
   "sources": [
@@ -105,8 +105,8 @@
       "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/linformation-sur-les-prix"
     },
     {
-      "titre": "entreprendre.service-public.fr — Mentions obligatoires sur une facture",
-      "url": "https://entreprendre.service-public.fr/vosdroits/F31808"
+      "titre": "entreprendre.service-public.gouv.fr — Mentions obligatoires sur une facture",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "titre": "BOFiP — Mention de la franchise en base, article 293 B du CGI (BOI-TVA-DECLA-40-10-20)",

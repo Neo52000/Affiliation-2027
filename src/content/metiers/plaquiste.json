@@ -60,7 +60,7 @@
   "besoins_prioritaires": [
     "Émettre en série des factures de sous-traitance sans TVA portant systématiquement la mention « Autoliquidation », sans oubli possible, ou la mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base.",
     "Suivre les situations mensuelles et les quantités validées, chantier par chantier et donneur d'ordre par donneur d'ordre.",
-    "Gérer l'exception de la clientèle directe : repasser en TVA collectée à 5,5 %, 10 % ou 20 % selon le local et la nature des travaux.",
+    "Gérer l'exception de la clientèle directe : repasser en TVA collectée à 5,5 %, 10 % ou 20 % selon le local et la nature des travaux, ou conserver la mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base.",
     "Transmettre les factures aux donneurs d'ordre en format structuré via une plateforme agréée, à l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
@@ -92,7 +92,7 @@
     },
     {
       "question": "L'autoliquidation s'applique-t-elle quand je facture directement un particulier ?",
-      "reponse": "Non. Ce régime est réservé à la sous-traitance de travaux pour une entreprise principale assujettie à la TVA. En clientèle directe, vous facturez la TVA au taux applicable aux travaux : 20 %, 10 % ou 5,5 % selon le local et la nature de l'intervention."
+      "reponse": "Non. Ce régime est réservé à la sous-traitance de travaux pour une entreprise principale assujettie à la TVA, et il ne s'applique pas si vous êtes en franchise en base. En clientèle directe, si vous êtes redevable de la TVA, vous la facturez au taux applicable aux travaux : 20 %, 10 % ou 5,5 % selon le local et la nature de l'intervention. En franchise en base, vous facturez sans TVA, avec la mention « TVA non applicable, article 293 B du CGI », en clientèle directe comme en sous-traitance."
     },
     {
       "question": "La facturation électronique change-t-elle mes factures d'autoliquidation ?",
@@ -131,6 +131,10 @@
     {
       "titre": "BOI-TVA-LIQ-30-20-90-40 — Travaux dans les locaux d'habitation achevés depuis plus de deux ans : certification sur devis ou facture, tolérance pour les travaux de réparation et d'entretien de moins de 1 000 € TTC, attestation annuelle des bailleurs ou gestionnaires",
       "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20260909"
+    },
+    {
+      "titre": "BOI-TVA-DECLA-40-10-20 — Franchise en base : facturation sans TVA et mention « TVA non applicable, article 293 B du CGI »",
+      "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20260701"
     }
   ],
   "date_maj": "2026-10-09"
