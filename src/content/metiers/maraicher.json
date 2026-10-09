@@ -15,7 +15,7 @@
   ],
   "mentions_obligatoires_specifiques": [
     "Exploitant relevant du remboursement forfaitaire (non redevable) : aucune TVA ne doit figurer sur la facture.",
-    "Ventes ouvrant droit au remboursement forfaitaire : bulletin d'achat ou bon de livraison remis par l'acheteur à chaque paiement, indiquant la date, la nature et la valeur des produits, puis attestation annuelle d'achats délivrée par l'acheteur en début d'année civile, à joindre à la déclaration n° 3520-SD.",
+    "Ventes ouvrant droit au remboursement forfaitaire : bulletin d'achat ou bon de livraison remis par l'acheteur à chaque paiement, indiquant la date, la nature et la valeur des produits, puis attestation annuelle d'achats délivrée par l'acheteur en début d'année civile, à joindre à la déclaration n° 3520-SD ou, lorsque l'administration dispense de la fournir, à conserver pour le service qui instruit la demande.",
     "Exploitant redevable : taux réduit de 5,5 % à indiquer sur les lignes de produits destinés à l'alimentation humaine."
   ],
   "exemple_facture": {
@@ -91,7 +91,7 @@
     },
     {
       "question": "Comment fonctionne le remboursement forfaitaire sur mes ventes aux professionnels ?",
-      "reponse": "Si vous n'êtes pas redevable de la TVA, l'État compense forfaitairement la TVA qui a grevé vos achats et investissements, pour vos ventes de produits de votre exploitation à des entreprises redevables, vers d'autres États membres ou à l'export. Vos acheteurs vous remettent un bulletin d'achat ou bon de livraison à chaque paiement, puis une attestation annuelle récapitulative. Vous déposez ensuite une déclaration annuelle n° 3520-SD accompagnée de ces attestations. Les taux de la compensation sont fixés par l'article 298 quater du code général des impôts selon la nature des produits."
+      "reponse": "Si vous n'êtes pas redevable de la TVA, l'État compense forfaitairement la TVA qui a grevé vos achats et investissements, pour vos ventes de produits de votre exploitation à des entreprises redevables, vers d'autres États membres ou à l'export. Vos acheteurs vous remettent un bulletin d'achat ou bon de livraison à chaque paiement, puis une attestation annuelle récapitulative. Vous déposez ensuite une déclaration annuelle n° 3520-SD. Vous y joignez ces attestations ou, lorsque l'administration vous dispense de les fournir, vous les conservez, car le service qui instruit votre demande peut vous les réclamer. Les taux de la compensation sont fixés par l'article 298 quater du code général des impôts selon la nature des produits."
     },
     {
       "question": "À partir de quand dois-je obligatoirement facturer avec TVA ?",
@@ -112,7 +112,7 @@
       "url": "https://bofip.impots.gouv.fr/bofip/13565-PGP.html/identifiant=BOI-ANNX-000484-20240207"
     },
     {
-      "titre": "impots.gouv.fr – Les régimes d'imposition à la TVA (seuil de 46 000 € du régime simplifié agricole, assujettissement en cas de méthodes commerciales)",
+      "titre": "impots.gouv.fr – Les régimes d'imposition à la TVA (seuil de 46 000 € du régime simplifié agricole, assujettissement en cas de méthodes commerciales, attestations du remboursement forfaitaire n'ayant plus à être fournies à l'appui de la demande mais à conserver)",
       "url": "https://www.impots.gouv.fr/professionnel/les-regimes-dimposition-la-tva"
     },
     {
@@ -160,5 +160,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-09"
 }

@@ -114,8 +114,8 @@
       "url": "https://bofip.impots.gouv.fr/bofip/13242-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-10-20211222"
     },
     {
-      "titre": "service-public.fr — Mentions obligatoires d'une facture entre professionnels",
-      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+      "titre": "entreprendre.service-public.gouv.fr — Mentions obligatoires sur une facture",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "titre": "DGCCRF — Pénalités de retard et indemnité forfaitaire de recouvrement de 40 €",
@@ -134,5 +134,5 @@
       "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

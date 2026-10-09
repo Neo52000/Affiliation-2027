@@ -16,7 +16,7 @@
     "Toutes vos ventes ne relèvent pas pour autant du même taux. Les grains, les semences, les plants et les pommes de terre de consommation sont à 5,5 %, mais les produits de l'horticulture et de la floriculture d'ornement n'ayant subi aucune transformation restent à 10 %, de même que les semences de gazon et le gazon en plaque destinés à l'aménagement d'espaces verts. En revanche, le lin et le chanvre destinés à l'industrie textile, ainsi que les sous-produits animaux qui ne sont destinés ni à l'alimentation humaine ou animale ni à la production agricole (cuirs, laine, suifs, os, plumes), relèvent de 20 %. Le taux suit la destination normale du produit ; lorsqu'un produit a plusieurs destinations normales, c'est le taux le plus bas qui est retenu.",
     "La paille et le foin relèvent du même taux réduit de 5,5 % que les grains, quelle que soit leur destination effective : le taux ne dépend pas de l'usage qu'en fera votre acheteur. Seuls la paille et le foin spécifiquement transformés en tant qu'aliments pour animaux de compagnie ou pour être brûlés sont exclus de ce taux.",
     "Les livraisons à une coopérative ou à un négociant sont fréquemment facturées par l'acheteur lui-même. Cette autofacturation suppose un mandat de facturation conclu avant la première facture émise, et la mention « Autofacturation » doit figurer sur le document. Vous restez responsable du contenu de la facture et de vos obligations de TVA.",
-    "Si vous n'êtes pas redevable de la TVA, aucune taxe ne figure sur vos documents. Vos acheteurs assujettis vous remettent un bulletin d'achat ou un bon de livraison à chaque paiement ou acompte, puis une attestation annuelle d'achats en début d'année civile, que vous joignez à la déclaration n° 3520-SD.",
+    "Si vous n'êtes pas redevable de la TVA, aucune taxe ne figure sur vos documents. Vos acheteurs assujettis vous remettent un bulletin d'achat ou un bon de livraison à chaque paiement ou acompte, puis une attestation annuelle d'achats en début d'année civile, que vous joignez à la déclaration n° 3520-SD ou, lorsque l'administration vous dispense de la fournir, que vous conservez, car le service qui instruit votre demande peut vous la réclamer.",
     "Le remboursement forfaitaire n'est pas calculé à taux unique : il est de 5,59 % pour le lait, les animaux de basse-cour, les œufs, les animaux de boucherie et de charcuterie ainsi que les céréales, les graines oléagineuses et les protéagineux, et de 4,43 % pour les autres produits. Une exploitation de polyculture ou de polyculture-élevage doit donc ventiler ses encaissements par nature de produit.",
     "Une même récolte donne souvent lieu à plusieurs règlements : acompte à la livraison au silo, puis solde de campagne. Chaque document doit rester rattachable au bon de livraison d'origine, sans quoi le rapprochement avec les autofactures de la coopérative devient impossible.",
     "Vos clients sont presque tous des entreprises : vos ventes relèvent de la facturation électronique. Les ventes marginales de paille ou de bois à des particuliers relèvent, elles, de la transmission des données de transaction, à l'échéance applicable à votre entreprise."
@@ -106,7 +106,7 @@
     },
     {
       "question": "Je ne suis pas redevable de la TVA et je vends toute ma récolte à un négociant. Que dois-je lui réclamer chaque année ?",
-      "reponse": "Votre acheteur assujetti doit vous remettre un bulletin d'achat ou un bon de livraison lors de chaque paiement ou versement d'acompte, puis, au début de chaque année civile, une attestation annuelle récapitulant les sommes qu'il vous a versées l'année précédente. Ces attestations accompagnent votre déclaration annuelle n° 3520-SD adressée au service des impôts des entreprises. Les commissionnaires en produits agricoles sont assimilés à des acheteurs-revendeurs et vous doivent la même attestation."
+      "reponse": "Votre acheteur assujetti doit vous remettre un bulletin d'achat ou un bon de livraison lors de chaque paiement ou versement d'acompte, puis, au début de chaque année civile, une attestation annuelle récapitulant les sommes qu'il vous a versées l'année précédente. Ces attestations accompagnent votre déclaration annuelle n° 3520-SD adressée au service des impôts des entreprises ou, lorsque l'administration vous dispense de les fournir, sont à conserver, car le service qui instruit votre demande peut vous les réclamer. Les commissionnaires en produits agricoles sont assimilés à des acheteurs-revendeurs et vous doivent la même attestation."
     },
     {
       "question": "Le remboursement forfaitaire est-il calculé au même taux sur mon blé et sur mes pommes de terre ?",
@@ -177,6 +177,10 @@
     {
       "titre": "impots.gouv.fr – Mes clients sont à la fois des entreprises et des particuliers : par quel dispositif suis-je concerné ?",
       "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
+    },
+    {
+      "titre": "impots.gouv.fr – Les régimes d'imposition à la TVA (remboursement forfaitaire agricole : attestations d'achats et justificatifs n'ayant plus à être fournis à l'appui de la demande, mais à conserver pour le service instructeur)",
+      "url": "https://www.impots.gouv.fr/professionnel/les-regimes-dimposition-la-tva"
     }
   ],
   "date_maj": "2026-10-09"

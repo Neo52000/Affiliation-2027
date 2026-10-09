@@ -416,3 +416,23 @@ Trois briques de monétisation, conçues puis soumises à une contre-expertise e
 - CI en `permissions: contents: read`.
 
 **Actions humaines** : `TODO.md`, points 19 à 27. Parmi eux : ruleset de `main`, jeton, variables Netlify limitées à la Production, Brevo sans suivi des ouvertures, build hook avec alerte d'échec, conditions de vente, questions juridiques avant la première vente.
+
+## Points laissés à relecture humaine : vague 3b (2026-10-09)
+
+Même circuit : 82 modifications sur 27 fichiers, aucune rejetée, plus trois compléments directs appuyés sur les extraits des vérificateurs (titres de guides, point libéral « 10 % », dispense de poinçon du bijoutier).
+
+- **Service-Public** : les six fiches introuvables sur service-public.gouv.fr (F31410, F23897, F33177, F22215, F31199, F31554) ne sont plus citées. Chaque affirmation est désormais soutenue par une source .gouv.fr vérifiée : arrêté n° 83-50/A pour la note au particulier ; F31808 et pages voisines pour les mentions de facture ; pages de la douane pour les métaux précieux ; pages Service-Public, impots.gouv.fr et Légifrance pour les services à la personne. Plus aucune source sur l'ancien domaine (test ajouté).
+- **Menuisier** : la facture d'acompte n'est plus exigée « pour tout versement » d'un particulier. Le garde-fou de non-régression reconnaît désormais cette tournure (vérifié : il échoue sur l'ancien texte).
+- **Architecte** : justificatif du taux réduit (certification du client) et tolérance de la facture rectificative limitée au taux de 10 %, comme le point libéral correspondant.
+- **Chef à domicile** : la facture des services à la personne (code du travail, D. 7233-1) ne dépend pas d'une déclaration.
+- **Agriculture** : formulations prudentes sur les attestations jointes à la déclaration n° 3520-SD, les sources officielles se contredisant.
+
+**Documents .gouv.fr cités : 382.**
+
+**Reste à trancher par un humain** :
+
+- Mention de franchise : Service-Public (F31808 et pages voisines) annonce « TVA non applicable, art. L. 223 et suivants du CIBS » à la place de « article 293 B du CGI » (recodification de la TVA), avec une tolérance pour l'ancienne mention. La date d'effet n'a pas pu être établie : toutes les fiches qui citent 293 B seront à reprendre ensemble, sans inscrire de date.
+- Formulaire 3520-SD : lire la notice du millésime en cours pour trancher « joindre » ou « conserver » les attestations.
+- Aide à domicile : l'avance immédiate repose encore sur urssaf.fr, organisme officiel mais hors .gouv.fr.
+- Couturière (contenu exact de la note, article 3 de l'arrêté 83-50/A) ; chef à domicile (séparation prestation et denrées hors déclaration) ; menuisier (note des travaux immobiliers chez un particulier).
+- Arrêté n° 25-361 de 1967 (note de restaurant) : toujours illisible depuis l'environnement.

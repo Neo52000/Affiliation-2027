@@ -285,7 +285,7 @@
       },
       {
         "titre": "Études et diagnostics : pas de taux réduit des travaux",
-        "texte": "Un diagnostic reste toujours au taux normal, tout comme une étude facturée isolément, même pour un logement. Seul l'auteur d'études qui assure ensuite la maîtrise d'œuvre ou les travaux éligibles peut appliquer leur taux réduit à ses études, par facture rectificative.",
+        "texte": "Un diagnostic reste toujours au taux normal, tout comme une étude facturée isolément, même pour un logement. Seul l'auteur d'études qui assure ensuite la maîtrise d'œuvre ou des travaux éligibles au taux de 10 % peut l'appliquer à ses études, par facture rectificative.",
         "metiers_concernes": ["architecte", "diagnostiqueur-immobilier", "geometre-expert"],
         "sources": [
           {

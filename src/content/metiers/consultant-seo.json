@@ -109,10 +109,6 @@
       "url": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
     },
     {
-      "titre": "Tout savoir sur la facturation — service-public.fr",
-      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
-    },
-    {
       "titre": "Mentions obligatoires sur une facture (dont facture d'acompte) — entreprendre.service-public.gouv.fr",
       "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
@@ -137,5 +133,5 @@
       "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

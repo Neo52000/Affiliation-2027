@@ -138,8 +138,8 @@
       "url": "https://bofip.impots.gouv.fr/bofip/780-PGP.html/identifiant=BOI-TVA-LIQ-30-20-80-20230510"
     },
     {
-      "titre": "Quels avantages fiscaux pour une entreprise de services à la personne ? — service-public.fr",
-      "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F31554"
+      "titre": "Tout savoir sur le crédit d'impôt lié à l'emploi d'un salarié à domicile",
+      "url": "https://www.economie.gouv.fr/particuliers/gerer-mon-argent/beneficier-daides-et-de-reductions-dimpots/tout-savoir-sur-le-credit-dimpot-lie-lemploi-dun-salarie-domicile"
     },
     {
       "titre": "Plafonds de crédit d'impôt des services à la personne (avance immédiate) — urssaf.fr",
@@ -148,7 +148,15 @@
     {
       "titre": "Code rural et de la pêche maritime, articles L722-1 et suivants — Champ d'application du régime agricole",
       "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006071367/LEGISCTA000006152340/"
+    },
+    {
+      "titre": "Modèle d'attestation fiscale annuelle pour les services à la personne",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/R32522"
+    },
+    {
+      "titre": "Code du travail, articles L7232-1 à L7232-4 — Déclaration des organismes de services à la personne et condition d'activité exclusive",
+      "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072050/LEGISCTA000006189973/"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }

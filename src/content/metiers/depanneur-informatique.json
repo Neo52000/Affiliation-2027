@@ -126,8 +126,8 @@
       "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
     },
     {
-      "titre": "entreprendre.service-public.fr — Avantages fiscaux ouverts par une entreprise de services à la personne (fiche F31554)",
-      "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F31554"
+      "titre": "Comment bénéficier du crédit d'impôt pour l'emploi d'un salarié à domicile ?",
+      "url": "https://www.impots.gouv.fr/particulier/questions/comment-beneficier-du-credit-dimpot-pour-lemploi-dun-salarie-domicile"
     },
     {
       "titre": "economie.gouv.fr — Crédit d'impôt de 50 % pour l'emploi à domicile, dont l'assistance informatique et internet",
@@ -146,8 +146,8 @@
       "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre"
     },
     {
-      "titre": "service-public.fr — Facturation entre professionnels : mentions exigées (fiche F31410)",
-      "url": "https://service-public.fr/professionnels-entreprises/vosdroits/F31410"
+      "titre": "Mentions obligatoires sur une facture",
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
     },
     {
       "titre": "impots.gouv.fr — La facturation électronique : recevoir puis émettre via une plateforme agréée",
@@ -158,5 +158,5 @@
       "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-09"
 }
