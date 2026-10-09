@@ -34,6 +34,10 @@ describe('estUrlSure', () => {
     ['port explicite', 'https://exemple.fr:8443/'],
     ['le site lui-même (Netlify)', 'https://affiliation2027.netlify.app/go/tiime'],
     ['une prévisualisation du site', 'https://deploy-preview-3--affiliation2027.netlify.app/'],
+    ['schéma en majuscules', 'HTTPS://exemple.fr/'],
+    ['sans barres obliques', 'https:exemple.fr/x'],
+    ['une seule barre oblique', 'https:/exemple.fr/x'],
+    ['trois barres obliques', 'https:///exemple.fr/x'],
   ])('refuse : %s', (_, u) => {
     expect(estUrlSure(u)).toBe(false);
   });

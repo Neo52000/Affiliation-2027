@@ -449,3 +449,38 @@ La revue du build a établi que les trois fonctions ajoutées pour la monétisat
 - **Preuve** : le bundler officiel de Netlify (`@netlify/zip-it-and-ship-it` 16.3.0) produisait un manifeste sans route, sans planification ni règle de trafic. Après correction, il contient les routes `/admin/gh/*` et `/api/newsletter` (POST), la planification `5 22,23 * * *` et les limites 120/min et 5/min.
 - **Correction** : `export const config: Config = { … }`.
 - **Garde** : `src/lib/fonctions-netlify.test.ts` refuse `satisfies Config` et `as Config`, et vérifie les routes, la méthode, la planification et les limites. Il échoue sur l'ancienne forme.
+
+## Back office, publicité et newsletter : corrections de la revue (2026-10-09)
+
+Revue contradictoire sur 4 dimensions (correction, accessibilité, conformité, build Netlify). Elle a relevé 29 constats : 25 confirmés, 1 plausible, 3 réfutés. Les constats du build ont été traités à part dans la PR #34. Tous les autres sont corrigés ici.
+
+**Back office : accessibilité (WCAG 2.2)** :
+
+- Une seule région d'état, jamais recréée. L'échec de connexion est annoncé (`role="alert"`). Après une déconnexion, le focus revient sur « Connexion » et le motif s'affiche.
+- Préavis 2 minutes avant la fermeture pour inactivité, avec un bouton « Rester connecté ». La saisie et le focus comptent aussi comme activité (2.2.1).
+- Les erreurs de publication sont visibles et annoncées, et plus seulement lues par les lecteurs d'écran (3.3.1). L'avancement de la CI est annoncé (4.1.3).
+- Le focus est replacé après ouverture, enregistrement, annulation et suppression d'une campagne, et après chaque action de publication (2.4.3).
+- Les messages de validation sont en français, et le récapitulatif reprend les libellés visibles (3.1.2, 3.3.3). Les liens et boutons de chaque demande portent son numéro (2.4.4).
+
+**Back office : logique** :
+
+- Une saisie annulée (lien tapé puis effacé) rétablit le lien publié, date comprise, et ne publie rien.
+- Le suivi de la CI survit à une erreur passagère, et un refus d'authentification efface la session. Une demande fusionnée ou fermée sur GitHub libère l'écran.
+- « Abandonner » conserve le brouillon pour qu'on puisse le corriger. Une mise en ligne réussie libère l'écran, même si le rechargement échoue.
+- Une image renvoyée à l'identique ne bloque plus la mise en ligne, et une publication sans changement réel est refusée.
+- Supprimer une campagne pendant l'édition d'une autre n'écrase plus la mauvaise.
+- Le résumé signale une image remplacée ou un ordre modifié.
+
+**Règles des annonces** :
+
+- Formulations interdites : « noté », « notée », « élue », « élus » sont désormais refusés (frontière de mot Unicode), tandis que « note de frais » est accepté.
+- URL : la forme canonique `https://` est exigée, et `HTTPS://`, `https:hote` ou `https:/hote` sont refusés.
+- Un sous-domaine de l'éditeur (`lp.abby.fr`) est reconnu comme l'éditeur comparé, dans le back office comme en CI.
+
+**Conformité** :
+
+- Les mentions légales lisent l'identification dans `src/config.ts`. Dès que l'éditeur est identifié, `check:placeholders` refuse tout `TODO_`.
+- Aucune adresse n'est collectée côté serveur (newsletter, rappel) tant que l'éditeur n'est pas identifié, même en cas d'appel direct.
+- `/confidentialite` indique la base du transfert vers Netlify (clauses contractuelles types de son accord de traitement) et la durée de la liste d'opposition (3 ans). Le point de collecte nomme les sous-traitants. Deux points sont à confirmer par le propriétaire (TODO.md #28).
+- Une adresse refusée a sa propre page d'état. Le champ email bloque, dès le navigateur, les adresses sans extension.
+- `/transparence` ne dit plus qu'« une partie des outils » est sans partenariat quand tous ont un lien. `/publicite` ne décrit plus le lectorat, qui n'est pas mesuré.

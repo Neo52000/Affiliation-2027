@@ -301,6 +301,9 @@ export function clientGitHub(
         '/git/trees',
         json('POST', { base_tree: commitParent.tree.sha, tree: arbre }),
       );
+      if (tree.sha === commitParent.tree.sha) {
+        throw new ErreurGitHub(409, 'aucun changement réel par rapport au site en ligne');
+      }
       const commit = await appel<{ sha: string }>(
         '/git/commits',
         json('POST', { message, tree: tree.sha, parents: [parent] }),
@@ -386,8 +389,10 @@ export function clientGitHub(
         blocages.push('la demande modifie des fichiers hors des données du back office');
       }
       if (p.chemins) {
+        // Inclusion, pas égalité : une image renvoyée à l'identique ne change pas
+        // l'arbre et n'apparaît donc pas dans les fichiers de la demande.
         const attendus = new Set(p.chemins);
-        if (noms.length !== attendus.size || noms.some((n) => !attendus.has(n))) {
+        if (noms.length === 0 || noms.some((n) => !attendus.has(n))) {
           blocages.push(
             'les fichiers de la demande ne sont pas ceux publiés depuis ce back office',
           );

@@ -21,6 +21,9 @@ export function estUrlSure(brute: string): boolean {
   if (brute.length > LONGUEUR_MAX || !ASCII_VISIBLE.test(brute) || INTERDITS.test(brute)) {
     return false;
   }
+  // Forme canonique exigée : le texte saisi est publié tel quel (_redirects, href),
+  // et « HTTPS:// », « https:hote » ou « https:/hote » y seraient mal compris.
+  if (!/^https:\/\/[^/]/.test(brute)) return false;
   let url: URL;
   try {
     url = new URL(brute);

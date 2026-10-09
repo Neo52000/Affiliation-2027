@@ -7,6 +7,8 @@ import { serialiserJson } from './admin-json.ts';
 import type { FichierPublie } from './github-admin.ts';
 import type { Affiliation, Campagne, Publicites } from './schemas.ts';
 
+type LienAffiliation = Affiliation['liens'][string];
+
 export const CHEMIN_AFFILIATION = 'src/data/affiliation.json';
 export const CHEMIN_PUBLICITES = 'src/data/publicites.json';
 export const DOSSIER_IMAGES = 'src/assets/publicites';
@@ -77,25 +79,29 @@ export interface SaisieLien {
   actif: boolean;
 }
 
-/** Applique la saisie d'un lien ; la date du lien ne change que s'il a changé. */
+/**
+ * Applique la saisie d'un lien ; la date du lien ne change que s'il a changé.
+ * `origine` (le lien tel que publié) : une saisie qui revient à l'identique
+ * rétablit le lien publié, date comprise, au lieu de dater une non-modification.
+ */
 export function appliquerLien(
   a: Affiliation,
   slug: string,
   saisie: SaisieLien,
   jour: string,
+  origine: LienAffiliation | undefined = a.liens[slug],
 ): Affiliation {
-  const avant = a.liens[slug];
   const apres = {
     url: saisie.url.trim() === '' ? null : saisie.url.trim(),
     reseau: saisie.reseau.trim() === '' ? null : saisie.reseau.trim(),
     actif: saisie.actif,
   };
-  const inchange =
-    avant !== undefined &&
-    avant.url === apres.url &&
-    avant.reseau === apres.reseau &&
-    avant.actif === apres.actif;
-  if (inchange) return a;
+  const meme = (l: LienAffiliation | undefined) =>
+    l !== undefined && l.url === apres.url && l.reseau === apres.reseau && l.actif === apres.actif;
+  if (meme(origine)) {
+    return a.liens[slug] === origine ? a : { ...a, liens: { ...a.liens, [slug]: origine! } };
+  }
+  if (meme(a.liens[slug])) return a;
   return { date_maj: jour, liens: { ...a.liens, [slug]: { ...apres, maj: jour } } };
 }
 
@@ -176,6 +182,18 @@ export function resumeModifications(depart: Depart, brouillon: Brouillon): strin
   }
   for (const id of avantPub.keys()) {
     if (!apresPub.has(id)) lignes.push(`Annonce supprimée : ${id}`);
+  }
+  const utilisees = new Set(
+    brouillon.publicites.campagnes.flatMap((c) => (c.image ? [c.image.fichier] : [])),
+  );
+  for (const nom of brouillon.images.keys()) {
+    if (utilisees.has(nom)) lignes.push(`Image d’annonce envoyée : ${nom}`);
+  }
+  if (
+    lignes.length === 0 &&
+    !identique(depart.publicites.campagnes, brouillon.publicites.campagnes)
+  ) {
+    lignes.push('Ordre des annonces modifié');
   }
   return lignes;
 }

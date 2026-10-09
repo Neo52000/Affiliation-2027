@@ -2,15 +2,20 @@
  * Garde-fou : aucun gabarit à compléter ne doit atteindre le site publié.
  * Les maquettes reçues portent des marqueurs comme « [A RENSEIGNER] » ou
  * « [SOURCE OFFICIELLE À CITER] » : un seul dans dist fait échouer le build.
- * (Les variables de lancement TODO_xxx, documentées dans TODO.md, sont hors champ.)
+ * Les variables de lancement TODO_xxx (TODO.md) sont tolérées tant que
+ * l'éditeur n'est pas identifié ; dès qu'il l'est (src/config.ts), plus aucune
+ * ne doit subsister : mentions légales, newsletter et annonces sont alors ouvertes.
  */
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { EDITEUR_IDENTIFIE } from '../src/config.ts';
 
 // Sensible à la casse : les maquettes écrivent leurs marqueurs en capitales, alors
 // que les exemples de facture montrent volontairement « reçu le [date] ».
 const MARQUEURS =
   /\[(?:À|A) (?:RENSEIGNER|REMPLACER|RÉDIGER|REDIGER)|\[(?:URL|SOURCE|POURQUOI|DATE|PRIX|INTRO|POUR QUI|POINT FORT|LIMITE)\b/;
+
+const VARIABLES_LANCEMENT = /TODO_[A-Z_]+|todo-domaine/;
 
 const dist = join(process.cwd(), 'dist');
 const pages = readdirSync(dist, { recursive: true })
@@ -20,7 +25,7 @@ const pages = readdirSync(dist, { recursive: true })
 const erreurs: string[] = [];
 for (const page of pages) {
   const html = readFileSync(join(dist, page), 'utf8');
-  const m = html.match(MARQUEURS);
+  const m = html.match(MARQUEURS) ?? (EDITEUR_IDENTIFIE ? html.match(VARIABLES_LANCEMENT) : null);
   if (m) erreurs.push(`${page} : « ${html.slice(m.index ?? 0, (m.index ?? 0) + 40)}… »`);
 }
 

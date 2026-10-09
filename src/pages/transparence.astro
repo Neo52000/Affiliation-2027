@@ -6,13 +6,11 @@ import Picto, { type NomPicto } from '../components/Picto.astro';
 import { EDITEUR_IDENTIFIE, SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import { formatDateFr } from '../lib/dates';
-import { nombreLiensActifs } from '../lib/affiliate';
 import { jourParis } from '../lib/publicites';
 import { affiliationSchema, publicitesSchema } from '../lib/schemas';
 import affiliation from '../data/affiliation.json';
 import publicites from '../data/publicites.json';
 
-const nbLiens = nombreLiensActifs();
 const { liens } = affiliationSchema.parse(affiliation);
 
 // Annonces diffusées à la date du build (le site est reconstruit dans la nuit
@@ -40,6 +38,7 @@ const outils = (await getCollection('outils'))
     };
   })
   .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+const sansLien = outils.filter((o) => o.lienPublie === 'Non').length;
 
 // Ce que l'argent ne change pas : l'engagement central du site, énoncé en trois
 // points vérifiables plutôt qu'en déclaration d'intention.
@@ -101,9 +100,11 @@ const GARANTIES: { titre: string; texte: string; picto: NomPicto }[] = [
             recherche.
           </li>
           <li>
-            Quand nous n'avons pas de partenariat avec un éditeur, le bouton pointe directement vers
-            son site officiel, sans mention — c'est le cas aujourd'hui pour
-            {nbLiens === 0 ? ' tous les outils du site' : ' une partie des outils'}.
+            Sans lien affilié publié pour un éditeur, le bouton pointe directement vers son site
+            officiel, sans mention
+            {sansLien === 0
+              ? '.'
+              : ` — c'est le cas aujourd'hui pour ${sansLien === outils.length ? 'tous les outils du site' : 'une partie des outils'}.`}
           </li>
         </ul>
       </section>

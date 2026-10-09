@@ -209,6 +209,24 @@ describe('publier', () => {
     expect(appels.some((a) => a.methode === 'POST')).toBe(false);
   });
 
+  it('refuse une publication qui ne change rien (aucune branche, aucune demande)', async () => {
+    const { c, appels } = client({
+      ...routes('sha-charge'),
+      'POST /git/trees': () => [201, { sha: 'arbre-parent' }],
+    });
+    await expect(
+      c.publier(
+        fichiers,
+        { 'src/data/publicites.json': 'sha-charge' },
+        toujours,
+        'm',
+        'c',
+        MAINTENANT,
+      ),
+    ).rejects.toThrow(/aucun changement réel/);
+    expect(appels.some((a) => /\/git\/(commits|refs)$|\/pulls$/.test(a.url))).toBe(false);
+  });
+
   it('refuse un chemin hors de la liste autorisée', async () => {
     const { c } = client(routes('s'));
     await expect(
@@ -340,6 +358,7 @@ describe('etat et mise en ligne', () => {
       /hors des données/,
     ],
     ['fichier inattendu', routes(pr(), ['src/data/publicites.json']), /ne sont pas ceux/],
+    ['aucun fichier', routes(pr(), []), /ne sont pas ceux/],
     [
       'CI d’un autre workflow',
       routes(pr(), undefined, [run({ path: '.github/workflows/autre.yml' })]),
@@ -352,6 +371,12 @@ describe('etat et mise en ligne', () => {
     const { c } = client(r);
     const e = await c.etat(pub, autorise);
     expect(e.blocages.join(' | ')).toMatch(motif);
+  });
+
+  it('image renvoyée à l’identique : absente des fichiers de la demande, pas de blocage', async () => {
+    const { c } = client(routes(pr()));
+    const avecImage = { ...pub, chemins: [...pub.chemins!, 'src/assets/publicites/promo.webp'] };
+    expect((await c.etat(avecImage, autorise)).blocages).toEqual([]);
   });
 
   it('met en ligne avec le sha créé, en squash, puis supprime la branche', async () => {

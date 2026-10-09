@@ -10,6 +10,7 @@ import {
   plateformesAgreeesSchema,
   publicitesSchema,
 } from './schemas';
+import { memeEditeur } from './publicites';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const readJson = (p: string) => JSON.parse(readFileSync(join(ROOT, p), 'utf8')) as unknown;
@@ -94,11 +95,9 @@ describe('publicités : annonceurs et pages autorisées', () => {
   const outils = readdirSync(join(ROOT, 'src/content/outils'))
     .filter((f) => f.endsWith('.json'))
     .map((f) => outilSchema.parse(readJson(`src/content/outils/${f}`)));
-  const hote = (u: string) => new URL(u).hostname.replace(/^www\./, '');
-
-  it('une annonce vers le site d’un logiciel comparé déclare cet outil', () => {
+  it('une annonce vers le site d’un logiciel comparé (sous-domaines compris) déclare cet outil', () => {
     for (const c of data.campagnes) {
-      const edite = outils.find((o) => hote(o.url_officielle) === hote(c.url));
+      const edite = outils.find((o) => memeEditeur(c.url, o.url_officielle));
       if (edite) expect(c.outil, `${c.id} mène chez ${edite.nom}`).toBe(edite.slug);
       if (c.outil) expect(outils.map((o) => o.slug)).toContain(c.outil);
     }

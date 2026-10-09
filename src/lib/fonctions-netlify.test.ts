@@ -2,6 +2,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
+import { EDITEUR_IDENTIFIE } from '../config';
 
 /**
  * Netlify lit `config` (path, method, schedule, rateLimit) par analyse statique
@@ -35,5 +36,50 @@ describe('netlify/functions', () => {
     });
     const reconstruction = await import('../../netlify/functions/reconstruction-quotidienne.mts');
     expect(reconstruction.config).toEqual({ schedule: '5 22,23 * * *' });
+  });
+});
+
+describe.runIf(!EDITEUR_IDENTIFIE)('collecte fermée tant que l’éditeur n’est pas identifié', () => {
+  const ENV = {
+    EMAIL_API_KEY: 'cle-de-test',
+    NEWSLETTER_DOI_TEMPLATE_ID: '1',
+    NEWSLETTER_LISTE_ID: '2',
+    EMAIL_DOI_TEMPLATE_ID: '3',
+    EMAIL_LISTE_ID: '4',
+  };
+
+  it('newsletter et rappel : aucun appel au prestataire, même configurés', async () => {
+    const avant = { ...process.env };
+    Object.assign(process.env, ENV);
+    const appels: string[] = [];
+    const fetchAvant = globalThis.fetch;
+    globalThis.fetch = (async (url: string) => {
+      appels.push(String(url));
+      return new Response('{}', { status: 201 });
+    }) as typeof fetch;
+    try {
+      const newsletter = (await import('../../netlify/functions/newsletter.mts')).default;
+      const r = await newsletter(
+        new Request('https://site.example/api/newsletter', {
+          method: 'POST',
+          headers: { 'content-type': 'application/x-www-form-urlencoded' },
+          body: 'email=a%40exemple.fr&consentement=oui&site_web=',
+        }),
+      );
+      expect(r.headers.get('location')).toMatch(/\/newsletter\/indisponible$/);
+      const rappel = (await import('../../netlify/functions/rappel-email.mts')).default;
+      const r2 = await rappel(
+        new Request('https://site.example/.netlify/functions/rappel-email', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email: 'a@exemple.fr', consentement: true }),
+        }),
+      );
+      expect(r2.status).toBe(503);
+      expect(appels).toEqual([]);
+    } finally {
+      globalThis.fetch = fetchAvant;
+      process.env = avant;
+    }
   });
 });

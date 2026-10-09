@@ -31,8 +31,3 @@ export function affiliateLink(slug: string, urlOfficielle: string): AffiliateLin
 export function hasAffiliate(slugs: string[]): boolean {
   return slugs.some((s) => Object.hasOwn(actifs, s));
 }
-
-/** Nombre de partenariats publiés (pages /transparence et présentation). */
-export function nombreLiensActifs(): number {
-  return Object.keys(actifs).length;
-}

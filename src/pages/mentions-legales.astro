@@ -4,9 +4,9 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import { EDITEUR_IDENTIFIE, SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 
-// EDITEUR_LEGAL et EMAIL_CONTACT non renseignés (TODO.md #3 et #4) :
-// page construite avec placeholders explicites et maintenue hors index
-// tant qu'elle n'est pas conforme LCEN — bloquant avant communication publique.
+// Identification lue dans src/config.ts (SITE.editeurLegal, SITE.emailContact).
+// Tant qu'elle n'est pas renseignée (TODO.md #3 et #4), la page est hors index
+// et l'annonce comme incomplète ; check:placeholders refuse ensuite tout TODO_.
 const placeholders = !EDITEUR_IDENTIFIE;
 ---
 
@@ -29,11 +29,17 @@ const placeholders = !EDITEUR_IDENTIFIE;
 
     <h2 class="mt-8 text-2xl font-bold">Éditeur du site</h2>
     <ul class="mt-3 list-disc space-y-1 pl-5">
-      <li>Raison sociale : TODO_EDITEUR_LEGAL</li>
-      <li>SIRET : TODO_EDITEUR_LEGAL</li>
-      <li>Siège social : TODO_EDITEUR_LEGAL</li>
-      <li>Directeur de la publication : TODO_EDITEUR_LEGAL</li>
-      <li>Contact : TODO_EMAIL_CONTACT</li>
+      <li>
+        Raison sociale, SIRET, siège social et directeur de la publication : {SITE.editeurLegal}
+      </li>
+      <li>
+        Contact :{' '}
+        {placeholders ? (
+          SITE.emailContact
+        ) : (
+          <a href={`mailto:${SITE.emailContact}`}>{SITE.emailContact}</a>
+        )}
+      </li>
     </ul>
 
     <h2 class="mt-8 text-2xl font-bold">Hébergement</h2>

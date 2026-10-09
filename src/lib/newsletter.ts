@@ -13,6 +13,7 @@ export const PAGES_NEWSLETTER = {
   envoyee: '/newsletter/verifiez-vos-emails',
   confirmee: '/newsletter/confirmee',
   erreur: '/newsletter/erreur',
+  adresse: '/newsletter/adresse-invalide',
   indisponible: '/newsletter/indisponible',
 } as const;
 
@@ -68,7 +69,12 @@ export async function traiterInscription(
   if (!validation.ok && validation.motif === 'robot') {
     return versPage(origine, PAGES_NEWSLETTER.envoyee);
   }
-  if (!validation.ok) return versPage(origine, PAGES_NEWSLETTER.erreur);
+  if (!validation.ok) {
+    return versPage(
+      origine,
+      validation.motif === 'email' ? PAGES_NEWSLETTER.adresse : PAGES_NEWSLETTER.erreur,
+    );
+  }
 
   const cle = env.EMAIL_API_KEY;
   const modele = entierPositif(env.NEWSLETTER_DOI_TEMPLATE_ID);
