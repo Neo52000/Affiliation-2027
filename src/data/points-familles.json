@@ -401,7 +401,7 @@
       },
       {
         "titre": "Client professionnel hors UE : mention de l'article 259-1 du CGI",
-        "texte": "Pour un client assujetti établi hors de l'Union européenne, votre prestation n'est pas soumise à la TVA française : facturez hors taxe avec la mention « TVA non applicable – art. 259-1 du CGI ».",
+        "texte": "Pour un client assujetti établi hors de l'Union européenne, votre prestation n'est pas soumise à la TVA française : facturez hors taxe avec la mention « TVA non applicable, art. 259-1 du CGI ».",
         "metiers_concernes": ["developpeur-freelance", "ux-designer"],
         "sources": [
           {

@@ -20,7 +20,7 @@
     "Devis détaillé remis avant toute prestation de dépannage, de réparation ou d'entretien : nature des travaux, décompte en quantité et prix unitaire, main-d'œuvre, frais de déplacement."
   ],
   "exemple_facture": {
-    "intitule": "Rénovation du carrelage d'une salle de bain — logement achevé depuis plus de deux ans",
+    "intitule": "Rénovation du carrelage d'une salle de bain (logement achevé depuis plus de deux ans)",
     "lignes": [
       {
         "designation": "Dépose de l'ancien carrelage mural et évacuation des gravats",

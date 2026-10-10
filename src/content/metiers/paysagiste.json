@@ -15,7 +15,7 @@
     "Une exception étroite existe pour les arbres : l'abattage, le tronçonnage, le débardage, l'élagage et l'enlèvement d'arbres d'un jardin attenant à un logement achevé depuis plus de deux ans relèvent du taux de 10 % lorsqu'ils sont nécessaires pour permettre l'accès au logement ou sa remise en état.",
     "Les végétaux d'ornement vendus en l'état (plantes vivantes, arbres et arbustes, gazon en rouleau) relèvent du taux de 10 % : une même facture mêle donc souvent des lignes de fourniture à 10 % et des lignes de prestation à 20 %, à ventiler distinctement.",
     "Les contrats d'entretien annuels se facturent par échéances mensuelles ou trimestrielles : chaque échéance donne lieu à une facture, d'où un volume récurrent à automatiser.",
-    "Si l'entreprise est déclarée au titre des services à la personne (condition d'activité exclusive, sauf dérogation), les petits travaux de jardinage facturés aux particuliers restent soumis au taux normal de TVA de 20 % — ils sont exclus des taux réduits des services à la personne depuis le 1er juillet 2013 — mais ouvrent droit pour le client au crédit d'impôt de 50 % ; une attestation fiscale annuelle est remise à chaque client avant le 31 mars.",
+    "Si l'entreprise est déclarée au titre des services à la personne (condition d'activité exclusive, sauf dérogation), les petits travaux de jardinage facturés aux particuliers restent soumis au taux normal de TVA de 20 % (ils sont exclus des taux réduits des services à la personne depuis le 1er juillet 2013) mais ouvrent droit pour le client au crédit d'impôt de 50 % ; une attestation fiscale annuelle est remise à chaque client avant le 31 mars.",
     "Particularité de gestion : les travaux de création, de restauration et d'entretien des parcs et jardins sont des travaux agricoles au sens du code rural, avec affiliation à la MSA ; l'outil de facturation doit s'articuler avec ce régime social."
   ],
   "mentions_obligatoires_specifiques": [
@@ -24,7 +24,7 @@
     "Si l'activité comporte des ouvrages soumis à une assurance professionnelle obligatoire (maçonnerie paysagère, par exemple) : mention de l'assurance, coordonnées de l'assureur ou du garant et couverture géographique du contrat."
   ],
   "exemple_facture": {
-    "intitule": "Remise en état d'un jardin avec fourniture de végétaux — client particulier",
+    "intitule": "Remise en état d'un jardin avec fourniture de végétaux (client particulier)",
     "lignes": [
       {
         "designation": "Tonte de remise en état et débroussaillage du terrain",

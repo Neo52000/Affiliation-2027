@@ -13,7 +13,7 @@
     "Pas d'exonération de soins : vos actes vétérinaires sont soumis à la TVA dans les conditions de droit commun, à la différence des soins à la personne dispensés par les professions de santé humaine.",
     "Vos actes relèvent du taux normal de 20 %, le taux qui s'applique à toutes les opérations pour lesquelles aucun autre taux n'est prévu.",
     "Les médicaments vétérinaires, y compris les aliments médicamenteux, sont également au taux normal : la délivrance dans le prolongement direct d'une consultation se facture au même taux que l'acte.",
-    "Votre clientèle est double : les éleveurs et autres clients professionnels, assujettis, dont les factures entreront dans le circuit d'émission électronique à l'échéance applicable à votre entreprise ; les particuliers, que l'obligation d'émission entre assujettis ne vise pas, mais dont les transactions relèvent de la transmission de données (e-reporting) prévue par la réforme — vérifiez sur impots.gouv.fr l'échéance et les modalités applicables à votre entreprise.",
+    "Votre clientèle est double : les éleveurs et autres clients professionnels, assujettis, dont les factures entreront dans le circuit d'émission électronique à l'échéance applicable à votre entreprise ; les particuliers, que l'obligation d'émission entre assujettis ne vise pas, mais dont les transactions relèvent de la transmission de données (e-reporting) prévue par la réforme (vérifiez sur impots.gouv.fr l'échéance et les modalités applicables à votre entreprise).",
     "La boutique de la clinique (aliments, accessoires) obéit à des règles de taux propres, distinctes de celles des médicaments : chaque ligne de facture porte son taux, et aucun taux réduit ne doit être présumé sans vérification pour la référence concernée.",
     "Ne portez jamais la mention d'exonération de l'article 261, 4, 1° du CGI sur vos factures : elle vise les soins à la personne et ne s'applique pas aux soins aux animaux."
   ],
@@ -23,7 +23,7 @@
     "Aucune mention d'exonération de soins : l'exonération de l'article 261, 4, 1° du CGI ne couvre pas l'activité vétérinaire."
   ],
   "exemple_facture": {
-    "intitule": "Facture – visite d'élevage bovin et délivrance de médicaments",
+    "intitule": "Facture : visite d'élevage bovin et délivrance de médicaments",
     "lignes": [
       {
         "designation": "Visite sanitaire d'élevage : examen du troupeau et compte rendu",
@@ -54,7 +54,7 @@
   },
   "besoins_prioritaires": [
     "Gérer plusieurs taux de TVA sur une même facture lorsque les ventes de la boutique s'ajoutent aux actes et aux médicaments.",
-    "Séparer les flux : factures B2B aux éleveurs destinées au circuit d'émission électronique d'un côté, encaissements des particuliers au comptoir de l'autre — ces derniers pouvant relever de la transmission de données de transactions (e-reporting) via une plateforme.",
+    "Séparer les flux : factures B2B aux éleveurs destinées au circuit d'émission électronique d'un côté, encaissements des particuliers au comptoir de l'autre, ces derniers pouvant relever de la transmission de données de transactions (e-reporting) via une plateforme.",
     "Absorber un volume quotidien important de factures et d'encaissements sans ressaisie comptable.",
     "Recevoir au format électronique les factures des centrales d'achat et des laboratoires, à l'échéance applicable à votre entreprise."
   ],

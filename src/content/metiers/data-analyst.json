@@ -12,11 +12,11 @@
   "clients_types": "B2B",
   "specificites_facturation": [
     "La facturation au temps passé est le mode le plus courant de ce métier : un taux journalier (TJM) multiplié par les jours travaillés. La facture indique la quantité de jours, le prix unitaire et la période d'intervention : c'est le décompte détaillé exigé par la réglementation.",
-    "Sur les missions longues en régie, la facture est généralement mensuelle et s'appuie sur un compte rendu d'activité validé par le client. Sur une mission data, rattachez explicitement les jours facturés aux livrables de la période — jeux de données fiabilisés, tableaux de bord livrés, modèles mis en production — car le client évalue l'avancement sur ces livrables et non sur le temps passé.",
+    "Sur les missions longues en régie, la facture est généralement mensuelle et s'appuie sur un compte rendu d'activité validé par le client. Sur une mission data, rattachez explicitement les jours facturés aux livrables de la période (jeux de données fiabilisés, tableaux de bord livrés, modèles mis en production), car le client évalue l'avancement sur ces livrables et non sur le temps passé.",
     "Les grands comptes imposent souvent un bon de commande. Réglementairement, le numéro du bon de commande doit figurer sur la facture lorsqu'il a été établi ; en pratique, les services achats renvoient fréquemment les factures qui ne le portent pas.",
     "Entre professionnels, le délai de paiement convenu ne peut dépasser 60 jours nets après l'émission de la facture, ou 45 jours fin de mois si le contrat le prévoit. Vos factures mentionnent les pénalités de retard et l'indemnité forfaitaire de 40 €.",
     "Vos prestations d'analyse de données relèvent du taux normal de TVA de 20 % si vous êtes redevable. En franchise en base, vous facturez sans TVA avec la mention « TVA non applicable, article 293 B du CGI ».",
-    "Si vous êtes redevable de la TVA, celle-ci est en principe exigible à l'encaissement de chaque facture mensuelle, et non à son émission — sauf si vous avez opté auprès de votre service des impôts pour le paiement de la TVA d'après les débits.",
+    "Si vous êtes redevable de la TVA, celle-ci est en principe exigible à l'encaissement de chaque facture mensuelle, et non à son émission, sauf si vous avez opté auprès de votre service des impôts pour le paiement de la TVA d'après les débits.",
     "En portage salarial, vous n'émettez pas de factures en votre nom. L'entreprise de portage conclut un contrat commercial de prestation de portage avec l'entreprise cliente et lui facture la prestation que vous avez négociée ; elle vous verse ensuite une rémunération après déduction de ses frais de gestion. Les obligations décrites sur cette page valent pour l'exercice en indépendant."
   ],
   "mentions_obligatoires_specifiques": [
@@ -26,7 +26,7 @@
     "« TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base."
   ],
   "exemple_facture": {
-    "intitule": "Facture mensuelle au TJM — mission d'analyse de données pour un client français, consultant redevable de la TVA",
+    "intitule": "Facture mensuelle au TJM : mission d'analyse de données pour un client français, consultant redevable de la TVA",
     "lignes": [
       {
         "designation": "Prestation d'analyse de données — fiabilisation des indicateurs commerciaux, période du 1er au 30 septembre 2026",

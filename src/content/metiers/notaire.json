@@ -13,7 +13,7 @@
     "Votre rémunération combine des émoluments réglementés, fixés par arrêté dans le cadre du code de commerce, et des honoraires libres pour les prestations non tarifées (consultation, négociation immobilière). L'état de frais doit refléter cette dualité ligne à ligne.",
     "Un acte tarifé n'est pas un acte exonéré : émoluments et honoraires des notaires relèvent du taux normal de TVA de 20 %, sauf disposition particulière.",
     "L'état de frais sépare la rémunération de l'office, les débours engagés pour le dossier (cadastre, publicité foncière, urbanisme) et les droits et taxes versés au Trésor, pour que le client identifie la part d'impôt dans le total ; la colonne spéciale faisant ressortir les droits payés au Trésor pour chaque débours est expressément imposée par l'article 865 du CGI aux états de frais des notaires commis.",
-    "Les sommes avancées au nom et pour le compte du client — débours et droits collectés pour l'État — restent hors base de TVA lorsqu'elles s'appuient sur un mandat, une reddition de comptes exacte et des comptes de passage. Elles ne se confondent jamais avec vos émoluments taxables.",
+    "Les sommes avancées au nom et pour le compte du client (débours et droits collectés pour l'État) restent hors base de TVA lorsqu'elles s'appuient sur un mandat, une reddition de comptes exacte et des comptes de passage. Elles ne se confondent jamais avec vos émoluments taxables.",
     "Une remise sur émoluments n'est possible que dans les conditions prévues par la réglementation tarifaire, pour certaines prestations et au-delà de seuils fixés par les textes ; elle ne se négocie pas librement. Les honoraires libres, eux, relèvent de la convention avec le client.",
     "Votre clientèle est majoritairement composée de particuliers : à l'échéance applicable à votre entreprise, l'essentiel de l'activité relèvera de la transmission de données à l'administration, tandis que les clients professionnels assujettis établis en France recevront des factures électroniques via plateforme agréée."
   ],
@@ -24,7 +24,7 @@
     "Débours et droits collectés repris pour leur montant exact, hors base de TVA, avec reddition de comptes."
   ],
   "exemple_facture": {
-    "intitule": "État de frais et honoraires — consultation sur la détention de l'immobilier d'entreprise et formalités préalables (client professionnel, hors acte de vente)",
+    "intitule": "État de frais et honoraires : consultation sur la détention de l'immobilier d'entreprise et formalités préalables (client professionnel, hors acte de vente)",
     "lignes": [
       {
         "designation": "Honoraires libres — consultation juridique sur la structuration de la détention immobilière (prestation non tarifée, convention d'honoraires)",
@@ -90,7 +90,7 @@
     },
     {
       "question": "Mon office travaille surtout avec des particuliers : la facturation électronique me concerne-t-elle vraiment ?",
-      "reponse": "Oui. Concrètement, un même dossier peut mêler les deux circuits : la facture d'honoraires adressée à une société cliente passera par une plateforme, tandis que l'état de frais remis à un acquéreur particulier relèvera de la transmission de données. Prévoyez que votre logiciel métier distingue les deux flux dès la saisie du dossier. En tant qu'assujetti établi en France, vous devrez par ailleurs pouvoir recevoir des factures électroniques de vos fournisseurs, puis en émettre pour vos clients professionnels assujettis, à l'échéance applicable à votre entreprise."
+      "reponse": "Oui. Un même dossier peut mêler les deux circuits : la facture d'honoraires adressée à une société cliente passera par une plateforme, tandis que l'état de frais remis à un acquéreur particulier relèvera de la transmission de données. Prévoyez que votre logiciel métier distingue les deux flux dès la saisie du dossier. En tant qu'assujetti établi en France, vous devrez par ailleurs pouvoir recevoir des factures électroniques de vos fournisseurs, puis en émettre pour vos clients professionnels assujettis, à l'échéance applicable à votre entreprise."
     },
     {
       "question": "Puis-je consentir une remise sur mes émoluments pour un client fidèle ?",

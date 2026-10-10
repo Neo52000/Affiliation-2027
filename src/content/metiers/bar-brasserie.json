@@ -23,7 +23,7 @@
     "« TVA non applicable, article 293 B du CGI » si l'établissement relève de la franchise en base, auquel cas aucun taux ne doit figurer sur la facture."
   ],
   "exemple_facture": {
-    "intitule": "Facture – pot de départ organisé dans la brasserie par une entreprise (40 personnes)",
+    "intitule": "Facture : pot de départ organisé dans la brasserie par une entreprise (40 personnes)",
     "lignes": [
       {
         "designation": "Planche apéritive salée, servie sur place",

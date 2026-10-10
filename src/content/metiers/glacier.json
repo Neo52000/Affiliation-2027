@@ -23,7 +23,7 @@
     "Pour le reste, les mentions générales de toute facture s'appliquent sans particularité : reportez-vous au bloc commun à la famille restauration plutôt que de les recopier"
   ],
   "exemple_facture": {
-    "intitule": "Facture — bacs et coupes de glace livrés à une brasserie pour la saison",
+    "intitule": "Facture : bacs et coupes de glace livrés à une brasserie pour la saison",
     "lignes": [
       {
         "designation": "Bac 5 L glace vanille gousse, conditionné pour conservation au congélateur",
@@ -48,7 +48,7 @@
       }
     ],
     "mentions_specifiques": [
-      "Facture adressée à un client assujetti : les produits livrés en amont de la vente au consommateur final relèvent de 5,5 %. Le taux de 10 % s'applique à la vente au consommateur final — celle que réalise la brasserie en terrasse, ou celle que vous réalisez vous-même à votre comptoir.",
+      "Facture adressée à un client assujetti : les produits livrés en amont de la vente au consommateur final relèvent de 5,5 %. Le taux de 10 % s'applique à la vente au consommateur final : celle que réalise la brasserie en terrasse, ou celle que vous réalisez vous-même à votre comptoir.",
       "Identification complète de la brasserie cliente et date d'émission",
       "Conditions et délai de paiement convenus pour la saison"
     ]
@@ -87,7 +87,7 @@
     },
     {
       "question": "Je fournis des bacs à des restaurants pendant l'été : quelles mentions sur ces factures ?",
-      "reponse": "Chaque facture doit porter la date d'émission, l'identification des deux parties, le détail ligne par ligne (quantité, dénomination, prix unitaire HT), le taux de TVA par ligne — 5,5 %, aussi bien parce que les bacs sont conditionnés pour une consommation différée que parce qu'il s'agit d'une livraison entre assujettis en amont de la vente au consommateur final (rescrit BOI-RES-TVA-000205) —, les montants HT et TTC et les conditions de paiement. À l'échéance applicable à votre entreprise, ces factures devront être émises au format électronique."
+      "reponse": "Chaque facture doit porter la date d'émission, l'identification des deux parties, le détail ligne par ligne (quantité, dénomination, prix unitaire HT), le taux de TVA par ligne (5,5 %, aussi bien parce que les bacs sont conditionnés pour une consommation différée que parce qu'il s'agit d'une livraison entre assujettis en amont de la vente au consommateur final, rescrit BOI-RES-TVA-000205), les montants HT et TTC et les conditions de paiement. À l'échéance applicable à votre entreprise, ces factures devront être émises au format électronique."
     },
     {
       "question": "Milkshakes et smoothies préparés minute : quel taux appliquer ?",

@@ -21,7 +21,7 @@
     "Taux des pénalités de retard, indemnité forfaitaire de recouvrement de 40 € et conditions d'escompte sur les factures entre professionnels."
   ],
   "exemple_facture": {
-    "intitule": "Audit SEO ponctuel et premier mois de suivi — client assujetti établi en Belgique",
+    "intitule": "Audit SEO ponctuel et premier mois de suivi, client assujetti établi en Belgique",
     "lignes": [
       {
         "designation": "Audit technique et sémantique du site (crawl complet, rapport de recommandations priorisées)",
@@ -39,7 +39,7 @@
       }
     ],
     "mentions_specifiques": [
-      "Autoliquidation — TVA due par le preneur",
+      "Autoliquidation : TVA due par le preneur",
       "N° de TVA intracommunautaire du prestataire : FR XX XXXXXXXXX ; n° de TVA du client : BE XXXXXXXXXX",
       "Pénalités de retard : taux prévu aux conditions de règlement ; indemnité forfaitaire pour frais de recouvrement : 40 €",
       "Escompte pour paiement anticipé : néant"

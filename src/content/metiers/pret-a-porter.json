@@ -20,7 +20,7 @@
     "En franchise en base de TVA : mention « TVA non applicable - article 293 B du CGI » sur chaque facture."
   ],
   "exemple_facture": {
-    "intitule": "Facture de dotation vestimentaire à un restaurant voisin — chemises, pantalons et retouches",
+    "intitule": "Facture de dotation vestimentaire à un restaurant voisin : chemises, pantalons et retouches",
     "lignes": [
       {
         "designation": "Chemise coton blanc, coupe droite, réf. CH-204 (tailles S à XL)",
@@ -51,7 +51,7 @@
     ]
   },
   "besoins_prioritaires": [
-    "Appliquer les démarques de soldes avec un prix de référence conforme — le prix le plus bas des 30 jours précédant l'annonce — et en conserver la preuve.",
+    "Appliquer les démarques de soldes avec un prix de référence conforme (le prix le plus bas des 30 jours précédant l'annonce) et en conserver la preuve.",
     "Émettre des avoirs conformes lors des retours de clients professionnels : référence à la facture d'origine, montant hors taxes et TVA correspondante.",
     "Remettre le ticket à la demande du client tout en conservant la trace de chaque vente pour l'e-reporting, à l'échéance applicable à votre entreprise.",
     "Facturer au format électronique les ventes aux clients professionnels (dotations vestimentaires, CSE), à l'échéance applicable à votre entreprise.",

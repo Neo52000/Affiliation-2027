@@ -24,7 +24,7 @@
     "Ligne distincte pour les débours, repris pour leur montant exact et hors base de TVA, justificatifs conservés."
   ],
   "exemple_facture": {
-    "intitule": "Facture mensuelle d'honoraires — mission de tenue comptable et social (référence : lettre de mission du 12 janvier), client SARL",
+    "intitule": "Facture mensuelle d'honoraires, mission de tenue comptable et social (référence : lettre de mission du 12 janvier), client SARL",
     "lignes": [
       {
         "designation": "Honoraires de tenue comptable — mensualité prévue par la lettre de mission",

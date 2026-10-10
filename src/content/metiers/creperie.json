@@ -27,7 +27,7 @@
     "« TVA non applicable, article 293 B du CGI » pour une crêperie relevant de la franchise en base, dont la facture ne doit faire apparaître aucun taux."
   ],
   "exemple_facture": {
-    "intitule": "Facture – soirée galettes-cidre, salle privatisée pour un groupe de 18 personnes (client professionnel)",
+    "intitule": "Facture : soirée galettes-cidre, salle privatisée pour un groupe de 18 personnes (client professionnel)",
     "lignes": [
       {
         "designation": "Formule galette complète + crêpe sucrée, servie en salle",

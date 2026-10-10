@@ -18,7 +18,7 @@
     "Aucune mention d'exonération fondée sur l'article 261 du CGI : elle est réservée aux transporteurs sanitaires utilisant des véhicules spécialement aménagés (ambulances)."
   ],
   "exemple_facture": {
-    "intitule": "Facture mensuelle de transports adaptés — trajets domicile / accueil de jour, facturée à la famille",
+    "intitule": "Facture mensuelle de transports adaptés : trajets domicile / accueil de jour, facturée à la famille",
     "lignes": [
       {
         "designation": "Trajets aller-retour domicile / accueil de jour « Les Tilleuls », véhicule TPMR avec rampe, transport en fauteuil roulant — mois de septembre",
@@ -36,7 +36,7 @@
       }
     ],
     "mentions_specifiques": [
-      "TVA au taux réduit de 10 % — transport de voyageurs, dont transport de personnes à mobilité réduite (BOI-TVA-LIQ-30-20-60).",
+      "TVA au taux réduit de 10 %, transport de voyageurs, dont transport de personnes à mobilité réduite (BOI-TVA-LIQ-30-20-60).",
       "Transport non sanitaire : l'exonération de l'article 261 du CGI, propre aux transports sanitaires en véhicules spécialement aménagés, ne s'applique pas.",
       "Client particulier : facture remise à la famille, hors circuit inter-entreprises ; les données de la transaction relèvent du e-reporting à l'échéance applicable à votre entreprise. Référence de la convention de transport adapté conclue avec la famille."
     ]

@@ -19,7 +19,7 @@
     "Devis détaillé avant toute intervention de réparation ou d'entretien chez un consommateur (nature des travaux, quantités, prix unitaires, main-d'œuvre, déplacement)."
   ],
   "exemple_facture": {
-    "intitule": "Situation n° 2 — Cloisons et doublages, chantier de réhabilitation, sous-traitance pour une entreprise générale",
+    "intitule": "Situation n° 2 : cloisons et doublages, chantier de réhabilitation, sous-traitance pour une entreprise générale",
     "lignes": [
       {
         "designation": "Pose de cloisons de distribution en plaques de plâtre sur ossature métallique",
@@ -51,9 +51,8 @@
       }
     ],
     "mentions_specifiques": [
-      "Autoliquidation — TVA due par le preneur assujetti ; mention portée en application du 13 du I de l'article 242 nonies A de l'annexe II au CGI. La présente facture ne mentionne aucune TVA exigible.",
-      "Rendu gabarit : sur ces lignes, la colonne TVA affiche « TVA non applicable — autoliquidation », jamais « TVA 0 % » ni « exonération ».",
-      "Contrat de sous-traitance n° [référence] — quantités validées par le conducteur de travaux le [date].",
+      "Autoliquidation : TVA due par le preneur assujetti ; mention portée en application du 13 du I de l'article 242 nonies A de l'annexe II au CGI. La présente facture ne mentionne aucune TVA exigible.",
+      "Contrat de sous-traitance n° [référence], quantités validées par le conducteur de travaux le [date].",
       "Assurance responsabilité décennale : [assureur], contrat n° [référence], couverture géographique : [zone]."
     ]
   },

@@ -16,7 +16,7 @@
     "Distinguez sur chaque facture le forfait d'intervention, les heures en régie et les pièces remplacées (SSD, alimentation, barrette mémoire) : vente de matériel et main-d'œuvre sont des lignes séparées, chacune avec son taux de TVA.",
     "L'assistance informatique et internet à domicile fait partie des services à la personne : si votre activité est déclarée et respecte les conditions du dispositif, vos clients particuliers peuvent prétendre à un crédit d'impôt de 50 % des sommes versées, dans la limite d'un plafond annuel propre à cette activité.",
     "Les pénalités de retard et l'indemnité forfaitaire de recouvrement de 40 € concernent vos contrats avec des professionnels (maintenance de parc, infogérance) ; ne les réclamez pas à vos clients particuliers.",
-    "En franchise en base, toutes vos lignes — forfaits, heures, pièces — partent sans TVA, avec la mention « TVA non applicable, article 293 B du CGI » sur chaque document."
+    "En franchise en base, toutes vos lignes (forfaits, heures, pièces) partent sans TVA, avec la mention « TVA non applicable, article 293 B du CGI » sur chaque document."
   ],
   "mentions_obligatoires_specifiques": [
     "Note détaillée remise au client particulier, avant paiement, pour toute prestation d'un montant au moins égal à 25 € TTC, et en dessous de ce montant si le client la demande",

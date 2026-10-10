@@ -10,7 +10,7 @@
     "Le coût réel d'une réparation n'apparaît souvent qu'après ouverture du mouvement : pour toute prestation dont le prix ne peut pas être déterminé à l'avance, un devis suffisamment détaillé est dû au consommateur qui le demande, à faire accepter avant d'intervenir.",
     "Pour une montre de valeur confiée, reportez son identification (marque, modèle, numéro de série) dans le détail de la prestation : le devis puis la facture tracent l'objet reçu et restitué.",
     "Un changement de pile reste souvent sous 25 € TTC : la note n'est alors due que si le client la demande ; à partir de ce montant, elle est obligatoire et remise avant le paiement.",
-    "Si vous rachetez des montres d'occasion à des particuliers pour les revendre, la TVA se calcule selon le régime de la marge : la base imposable est la différence entre le prix de vente toutes taxes comprises et le prix d'achat, ramenée hors taxe. Concrètement, une montre achetée 600 € et revendue 900 € dégage une marge de 300 € TTC, soit 250 € de base et 50 € de TVA. Vous ne déduisez aucune TVA sur l'achat."
+    "Si vous rachetez des montres d'occasion à des particuliers pour les revendre, la TVA se calcule selon le régime de la marge : la base imposable est la différence entre le prix de vente toutes taxes comprises et le prix d'achat, ramenée hors taxe. Une montre achetée 600 € et revendue 900 € dégage une marge de 300 € TTC, soit 250 € de base et 50 € de TVA. Vous ne déduisez aucune TVA sur l'achat."
   ],
   "mentions_obligatoires_specifiques": [
     "Identification de la montre confiée dans le détail de la prestation (marque, modèle, numéro de série) : le devis puis la facture tracent l'objet reçu et restitué",
@@ -20,7 +20,7 @@
     "« TVA non applicable, article 293 B du CGI » si l'atelier bénéficie de la franchise en base"
   ],
   "exemple_facture": {
-    "intitule": "Note — révision complète d'une montre automatique de collection confiée à l'atelier",
+    "intitule": "Note : révision complète d'une montre automatique de collection confiée à l'atelier",
     "lignes": [
       {
         "designation": "Révision complète du mouvement automatique : démontage, nettoyage, lubrification, réglage de la marche (montre identifiée : marque, modèle, n° de série 58743)",
@@ -81,7 +81,7 @@
     },
     {
       "question": "Je rachète des montres d'occasion à des particuliers pour les revendre : quelle TVA appliquer ?",
-      "reponse": "Les biens d'occasion acquis auprès de personnes non redevables de la TVA relèvent de plein droit du régime de la marge. La base imposable est la différence entre le prix de vente toutes taxes comprises et le prix d'achat, ramenée hors taxe — et non la différence brute. Vous ne déduisez aucune TVA sur l'achat. Une option pour le régime général reste possible, livraison par livraison."
+      "reponse": "Les biens d'occasion acquis auprès de personnes non redevables de la TVA relèvent de plein droit du régime de la marge. La base imposable est la différence entre le prix de vente toutes taxes comprises et le prix d'achat, ramenée hors taxe, et non la différence brute. Vous ne déduisez aucune TVA sur l'achat. Une option pour le régime général reste possible, livraison par livraison."
     },
     {
       "question": "Un simple changement de pile impose-t-il de remettre une note ?",

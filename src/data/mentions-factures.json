@@ -138,28 +138,28 @@
       "id": "siren-client",
       "libelle": "Numéro SIREN du client",
       "regle": "Le numéro SIREN du client devient une mention obligatoire de la facture ; il sert notamment à adresser la facture électronique via l'annuaire.",
-      "condition": "nouvelle mention de la réforme de la facturation électronique — selon l'échéance applicable",
+      "condition": "nouvelle mention de la réforme de la facturation électronique, selon l'échéance applicable",
       "url_source": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     },
     {
       "id": "adresse-livraison",
       "libelle": "Adresse de livraison des biens, si différente de l'adresse du client",
       "regle": "L'adresse de livraison des biens doit être mentionnée lorsqu'elle est différente de l'adresse de facturation du client.",
-      "condition": "si l'adresse de livraison diffère de l'adresse de facturation du client — nouvelle mention de la réforme de la facturation électronique, selon l'échéance applicable",
+      "condition": "si l'adresse de livraison diffère de l'adresse de facturation du client (nouvelle mention de la réforme de la facturation électronique, selon l'échéance applicable)",
       "url_source": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     },
     {
       "id": "nature-operation",
       "libelle": "Nature de l'opération : livraison de biens, prestation de services ou opération mixte",
       "regle": "La facture doit indiquer la catégorie de l'opération (livraison de biens, prestation de services, ou les deux), information utilisée notamment pour le pré-remplissage des déclarations de TVA.",
-      "condition": "nouvelle mention de la réforme de la facturation électronique — selon l'échéance applicable",
+      "condition": "nouvelle mention de la réforme de la facturation électronique, selon l'échéance applicable",
       "url_source": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     },
     {
       "id": "option-tva-debits",
       "libelle": "« Option pour le paiement de la taxe d'après les débits »",
       "regle": "Lorsque le prestataire a opté pour le paiement de la TVA d'après les débits, la facture doit porter la mention « Option pour le paiement de la taxe d'après les débits ».",
-      "condition": "si TVA sur les débits — nouvelle mention de la réforme de la facturation électronique, selon l'échéance applicable",
+      "condition": "si TVA sur les débits (nouvelle mention de la réforme de la facturation électronique, selon l'échéance applicable)",
       "url_source": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     },
     {

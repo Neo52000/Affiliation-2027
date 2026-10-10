@@ -19,7 +19,7 @@
     "Sur les devis : estimation de la quantité totale de déchets du chantier, modalités de gestion et d'enlèvement, points de collecte identifiés et estimation des coûts correspondants."
   ],
   "exemple_facture": {
-    "intitule": "Situation n° 3 — Construction d'une maison individuelle, lot gros œuvre (avancement constaté au 30 septembre)",
+    "intitule": "Situation n° 3 : construction d'une maison individuelle, lot gros œuvre (avancement constaté au 30 septembre)",
     "lignes": [
       {
         "designation": "Élévation des murs du rez-de-chaussée en blocs béton de 20 cm, chaînages compris — avancement 100 %",

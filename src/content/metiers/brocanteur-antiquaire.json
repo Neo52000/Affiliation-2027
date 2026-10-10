@@ -18,7 +18,7 @@
     "En franchise en base de TVA : mention « TVA non applicable - article 293 B du CGI » sur chaque facture."
   ],
   "exemple_facture": {
-    "intitule": "Facture de vente à un décorateur d'intérieur — mobilier ancien sous le régime de la TVA sur la marge",
+    "intitule": "Facture de vente à un décorateur d'intérieur : mobilier ancien sous le régime de la TVA sur la marge",
     "lignes": [
       {
         "designation": "Commode Louis-Philippe en noyer, vers 1850 — bien d'occasion",

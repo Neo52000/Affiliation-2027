@@ -15,12 +15,12 @@
   "mentions_obligatoires_specifiques": [
     "« TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base : aucune TVA ne figure alors sur la facture.",
     "« Autoliquidation », sans TVA française, pour une prestation à un client assujetti établi dans un autre État membre de l'UE, avec les numéros de TVA intracommunautaire des deux parties.",
-    "Pour un preneur assujetti établi hors de l'Union européenne : facture sans TVA française, portant le motif de non-imposition — la prestation n'étant pas située en France au sens des règles de territorialité, la mention « TVA non applicable — prestation non située en France (art. 259, 1° du CGI) » est portée sur la facture.",
+    "Pour un preneur assujetti établi hors de l'Union européenne : facture sans TVA française, portant le motif de non-imposition ; la prestation n'étant pas située en France au sens des règles de territorialité, la mention « TVA non applicable, prestation non située en France (art. 259, 1° du CGI) » est portée sur la facture.",
     "Décompte précis de la prestation : nombre de jours, TJM en prix unitaire HT, taux de TVA ou motif d'exonération par ligne.",
     "Taux des pénalités de retard et indemnité forfaitaire de 40 € pour frais de recouvrement, due dès le premier jour de retard (clients professionnels)."
   ],
   "exemple_facture": {
-    "intitule": "Facture de solde — mission de conseil en organisation (forfait de cadrage puis jours au TJM)",
+    "intitule": "Facture de solde : mission de conseil en organisation (forfait de cadrage puis jours au TJM)",
     "lignes": [
       {
         "designation": "Cadrage de la mission et diagnostic initial (forfait)",
@@ -84,7 +84,7 @@
     },
     {
       "question": "Et pour un client établi hors de l'UE, par exemple en Suisse ou aux États-Unis ?",
-      "reponse": "Lorsque le preneur est un assujetti établi hors de France, le lieu de la prestation n'est pas situé en France : votre prestation de conseil n'est pas soumise à la TVA française. Vous facturez donc sans TVA française, en portant le motif de non-imposition sur la facture, par exemple « TVA non applicable — prestation non située en France (art. 259, 1° du CGI) ». Vérifiez par ailleurs les obligations éventuelles dans le pays de votre client."
+      "reponse": "Lorsque le preneur est un assujetti établi hors de France, le lieu de la prestation n'est pas situé en France : votre prestation de conseil n'est pas soumise à la TVA française. Vous facturez donc sans TVA française, en portant le motif de non-imposition sur la facture, par exemple « TVA non applicable, prestation non située en France (art. 259, 1° du CGI) ». Vérifiez par ailleurs les obligations éventuelles dans le pays de votre client."
     },
     {
       "question": "Dois-je émettre une facture pour l'acompte de 30 % demandé à la commande ?",

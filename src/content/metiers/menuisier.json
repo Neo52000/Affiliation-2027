@@ -20,7 +20,7 @@
     "Mention de l'assurance professionnelle obligatoire (responsabilité décennale pour les travaux de pose), coordonnées de l'assureur ou du garant et couverture géographique du contrat."
   ],
   "exemple_facture": {
-    "intitule": "Fourniture et pose de menuiseries sur mesure — appartement achevé depuis plus de deux ans (facture de solde après acompte)",
+    "intitule": "Fourniture et pose de menuiseries sur mesure, appartement achevé depuis plus de deux ans (facture de solde après acompte)",
     "lignes": [
       {
         "designation": "Fenêtres bois sur mesure, double vitrage, conformes aux critères de performance du taux réduit (fourniture et pose)",
@@ -82,7 +82,7 @@
   "faq": [
     {
       "question": "Mes fenêtres sur mesure posées en rénovation relèvent-elles du 5,5 % ou du 10 % ?",
-      "reponse": "L'isolation thermique des parois vitrées — fenêtres, portes-fenêtres, fenêtres de toit — relève du taux de 5,5 % dans un logement achevé depuis plus de deux ans, si les menuiseries respectent les critères de performance fixés par l'administration. À défaut, c'est le taux de 10 % des travaux d'amélioration qui s'applique. Le client certifie les conditions directement sur le devis ou la facture."
+      "reponse": "L'isolation thermique des parois vitrées (fenêtres, portes-fenêtres, fenêtres de toit) relève du taux de 5,5 % dans un logement achevé depuis plus de deux ans, si les menuiseries respectent les critères de performance fixés par l'administration. À défaut, c'est le taux de 10 % des travaux d'amélioration qui s'applique. Le client certifie les conditions directement sur le devis ou la facture."
     },
     {
       "question": "Le client a acheté ses menuiseries lui-même et ne me demande que la pose : quel taux ?",

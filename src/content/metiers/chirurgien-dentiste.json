@@ -16,7 +16,7 @@
     "Les traitements d'orthodontie et d'orthopédie dento-faciale font l'objet d'une demande d'accord préalable auprès de l'Assurance Maladie, condition de la prise en charge avant facturation.",
     "En tiers payant, la facturation passe par la feuille de soins électronique : la part obligatoire, et le cas échéant la part complémentaire, sont réglées directement par les organismes. Vos encaissements doivent être rapprochés acte par acte.",
     "Lorsque vos honoraires comportent un dépassement et atteignent 70 €, une information écrite préalable sur le coût des actes est obligatoire (arrêté du 2 octobre 2008, pris pour l'application de l'article L. 1111-3 du code de la santé publique).",
-    "Vos opérations exonérées sont dispensées d'émission de factures électroniques, mais le cabinet devra recevoir celles de ses fournisseurs — prothésiste en tête — à l'échéance applicable à votre entreprise."
+    "Vos opérations exonérées sont dispensées d'émission de factures électroniques, mais le cabinet devra recevoir celles de ses fournisseurs, prothésiste en tête, à l'échéance applicable à votre entreprise."
   ],
   "mentions_obligatoires_specifiques": [
     "Référence à l'exonération (article 261, 4, 1° du CGI ou disposition correspondante de la directive 2006/112/CE) sur les notes d'honoraires portant sur des soins et sur la fourniture de prothèses sur mesure.",
@@ -24,7 +24,7 @@
     "Cohérence entre la note d'honoraires et le devis signé : le traitement prothétique facturé doit correspondre au devis accepté (matériaux, lieu de fabrication, panier de soins)."
   ],
   "exemple_facture": {
-    "intitule": "Note d'honoraires – couronne céramo-métallique sur la dent 26",
+    "intitule": "Note d'honoraires : couronne céramo-métallique sur la dent 26",
     "lignes": [
       {
         "designation": "Soins préparatoires et pose de la couronne (acte à finalité thérapeutique)",
@@ -42,7 +42,7 @@
       }
     ],
     "mentions_specifiques": [
-      "TVA non applicable en application de l'article 261, 4, 1° du CGI – soins dentaires et fourniture d'une prothèse dentaire sur mesure",
+      "TVA non applicable en application de l'article 261, 4, 1° du CGI (soins dentaires et fourniture d'une prothèse dentaire sur mesure)",
       "Traitement conforme au devis écrit signé par le patient avant le début des soins (matériaux et lieu de fabrication indiqués au devis)",
       "Part Assurance Maladie réglée en tiers payant via feuille de soins électronique"
     ]
@@ -86,7 +86,7 @@
     },
     {
       "question": "La facturation électronique change-t-elle quelque chose pour mon cabinet, alors que mes soins sont exonérés ?",
-      "reponse": "Oui, du côté des achats. Vos opérations exonérées sont dispensées d'émission au format électronique, mais vous devez être en mesure de recevoir les factures électroniques de vos fournisseurs — prothésiste, consommables, équipement — à l'échéance applicable à votre entreprise."
+      "reponse": "Oui, du côté des achats. Vos opérations exonérées sont dispensées d'émission au format électronique, mais vous devez être en mesure de recevoir les factures électroniques de vos fournisseurs (prothésiste, consommables, équipement) à l'échéance applicable à votre entreprise."
     }
   ],
   "sources": [

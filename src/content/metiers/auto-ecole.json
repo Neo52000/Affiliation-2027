@@ -19,7 +19,7 @@
     "Mention « TVA non applicable, article 293 B du CGI » si l'établissement relève de la franchise en base ; à défaut, TVA à 20 % sur chaque ligne."
   ],
   "exemple_facture": {
-    "intitule": "Note remise à un élève — préparation au permis B (contrat d'enseignement signé après évaluation de départ)",
+    "intitule": "Note remise à un élève : préparation au permis B (contrat d'enseignement signé après évaluation de départ)",
     "lignes": [
       {
         "designation": "Forfait préparation au code de la route : accès à la salle de code et aux tests pendant 6 mois",
@@ -90,7 +90,7 @@
     },
     {
       "question": "Mes élèves sont des particuliers : la facturation électronique me concerne-t-elle quand même ?",
-      "reponse": "Oui, par deux portes. Côté fournisseurs — véhicules, carburant, assurance, éditeur de code en ligne, loyer — vous devrez recevoir leurs factures via une plateforme agréée, à l'échéance applicable à votre entreprise. Côté élèves, vos encaissements auprès de particuliers ne donnent pas lieu à facture électronique mais à une transmission de données à l'administration, l'e-reporting : ce sont les sommes encaissées qui sont transmises, pas le forfait signé. Un forfait réglé en plusieurs fois se transmet donc au rythme des encaissements, et non à la signature du contrat : votre suivi élève par élève doit distinguer ce qui est facturé de ce qui est encaissé."
+      "reponse": "Oui, par deux portes. Côté fournisseurs (véhicules, carburant, assurance, éditeur de code en ligne, loyer), vous devrez recevoir leurs factures via une plateforme agréée, à l'échéance applicable à votre entreprise. Côté élèves, vos encaissements auprès de particuliers ne donnent pas lieu à facture électronique mais à une transmission de données à l'administration, l'e-reporting : ce sont les sommes encaissées qui sont transmises, pas le forfait signé. Un forfait réglé en plusieurs fois se transmet donc au rythme des encaissements, et non à la signature du contrat : votre suivi élève par élève doit distinguer ce qui est facturé de ce qui est encaissé."
     }
   ],
   "sources": [

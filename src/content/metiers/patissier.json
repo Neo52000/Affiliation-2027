@@ -23,7 +23,7 @@
     "Mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base"
   ],
   "exemple_facture": {
-    "intitule": "Facture de solde — réception d'entreprise : pièce montée, mignardises et coffrets",
+    "intitule": "Facture de solde (réception d'entreprise) : pièce montée, mignardises et coffrets",
     "lignes": [
       {
         "designation": "Pièce montée 60 choux, livrée le jour de la réception",
@@ -56,7 +56,7 @@
     ],
     "mentions_specifiques": [
       "Acompte encaissé à la commande, déduit du montant restant à régler",
-      "Taux de TVA par ligne : 5,5 % sur les pâtisseries livrées, 10 % sur la prestation de service en salle (vente à consommer sur place), 20 % sur une éventuelle boisson alcoolique — le taux suit la nature de l'opération, pas le conditionnement du produit",
+      "Taux de TVA par ligne : 5,5 % sur les pâtisseries livrées, 10 % sur la prestation de service en salle (vente à consommer sur place), 20 % sur une éventuelle boisson alcoolique ; le taux suit la nature de l'opération, pas le conditionnement du produit",
       "Conditions et délai de paiement du solde",
       "Date et lieu de livraison de la commande"
     ]
@@ -99,7 +99,7 @@
     },
     {
       "question": "Un particulier me commande un gâteau d'anniversaire : facture électronique obligatoire ?",
-      "reponse": "Non. Une commande passée par un particulier ne donne pas lieu à facture électronique, mais ses données de transaction devront être transmises à l'administration par e-reporting, selon le même calendrier. Concrètement, votre outil doit savoir distinguer dès la prise de commande un particulier d'un client professionnel — une distinction qui, en pâtisserie, se joue souvent sur la même commande d'événement selon que c'est la mariée ou l'entreprise qui règle."
+      "reponse": "Non. Une commande passée par un particulier ne donne pas lieu à facture électronique, mais ses données de transaction devront être transmises à l'administration par e-reporting, selon le même calendrier. Votre outil doit savoir distinguer dès la prise de commande un particulier d'un client professionnel, une distinction qui, en pâtisserie, se joue souvent sur la même commande d'événement selon que c'est la mariée ou l'entreprise qui règle."
     }
   ],
   "sources": [

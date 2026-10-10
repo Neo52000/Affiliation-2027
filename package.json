@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "node --experimental-strip-types scripts/generate-csp.ts && node --experimental-strip-types scripts/generate-redirects.ts",
+    "postbuild": "node --experimental-strip-types scripts/typographie-dist.ts && node --experimental-strip-types scripts/generate-csp.ts && node --experimental-strip-types scripts/generate-redirects.ts",
     "preview": "astro preview",
     "check": "astro check",
     "lint": "eslint .",
@@ -27,8 +27,9 @@
     "check:seo": "node --experimental-strip-types scripts/check-seo.ts",
     "check:liens": "node --experimental-strip-types scripts/check-liens.ts",
     "check:csp": "node --experimental-strip-types scripts/check-csp.ts",
+    "check:redaction": "node --experimental-strip-types scripts/check-redaction.ts",
     "build:presentation": "node --experimental-strip-types scripts/build-presentation.ts",
-    "verify": "pnpm check && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm check:similarity && pnpm check:seo && pnpm check:liens && pnpm check:csp && pnpm check:placeholders && pnpm build:presentation",
+    "verify": "pnpm check && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm check:similarity && pnpm check:seo && pnpm check:liens && pnpm check:csp && pnpm check:redaction && pnpm check:placeholders && pnpm build:presentation",
     "check:placeholders": "node --experimental-strip-types scripts/check-placeholders.ts"
   },
   "dependencies": {

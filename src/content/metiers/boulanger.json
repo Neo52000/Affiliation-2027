@@ -6,7 +6,7 @@
   "volume_factures_typique": "Tickets de caisse B2C quotidiens au fournil ; côté factures, de quelques unités à quelques dizaines par mois selon le nombre de restaurants, hôtels et revendeurs livrés régulièrement.",
   "clients_types": "mixte",
   "specificites_facturation": [
-    "Trois taux de TVA peuvent coexister dans une même journée de vente, et le taux dépend à la fois du produit et de la qualité de l'acheteur. Au comptoir, face au consommateur final : 5,5 % sur le pain, les viennoiseries et les pâtisseries, 10 % sur les sandwichs — réputés vendus en vue d'une consommation immédiate quel que soit leur emballage — et sur les salades vendues avec assaisonnement et couverts, 20 % si une boisson alcoolique est vendue. En revanche, lorsque vous livrez ces mêmes produits préparés à un client professionnel assujetti qui les revendra, le taux applicable est de 5,5 % : le taux de 10 % est réservé à la vente au consommateur final (rescrit BOI-RES-TVA-000205). La ventilation doit être exacte ligne par ligne.",
+    "Trois taux de TVA peuvent coexister dans une même journée de vente, et le taux dépend à la fois du produit et de la qualité de l'acheteur. Au comptoir, face au consommateur final : 5,5 % sur le pain, les viennoiseries et les pâtisseries, 10 % sur les sandwichs (réputés vendus en vue d'une consommation immédiate quel que soit leur emballage) et sur les salades vendues avec assaisonnement et couverts, 20 % si une boisson alcoolique est vendue. En revanche, lorsque vous livrez ces mêmes produits préparés à un client professionnel assujetti qui les revendra, le taux applicable est de 5,5 % : le taux de 10 % est réservé à la vente au consommateur final (rescrit BOI-RES-TVA-000205). La ventilation doit être exacte ligne par ligne.",
     "Les livraisons régulières aux restaurants, hôtels ou revendeurs sont des ventes entre professionnels : ces factures devront être émises au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise.",
     "Les ventes au comptoir aux particuliers ne donnent pas lieu à facture électronique : leurs données de transactions relèveront de l'e-reporting, selon le même calendrier que la facturation électronique.",
     "Vos achats (farine, emballages, énergie, matériel) arriveront au format électronique : vous devez pouvoir recevoir ces factures fournisseurs via une plateforme agréée."
@@ -19,7 +19,7 @@
     "En franchise en base de TVA : mention « TVA non applicable, article 293 B du CGI » et aucune TVA facturée"
   ],
   "exemple_facture": {
-    "intitule": "Facture — fourniture hebdomadaire de pain et snacking à un restaurant",
+    "intitule": "Facture : fourniture hebdomadaire de pain et snacking à un restaurant",
     "lignes": [
       {
         "designation": "Baguette tradition 250 g",
@@ -81,7 +81,7 @@
     },
     {
       "question": "Je livre du pain tous les matins à trois restaurants : comment facturer ces clients ?",
-      "reponse": "Ce sont des ventes entre professionnels. Chaque facture doit détailler quantité, dénomination et prix unitaire HT par ligne, avec le taux de TVA applicable à chaque ligne — 5,5 % sur les produits alimentaires que le restaurant revendra —, les montants HT et TTC et les conditions de paiement. À l'échéance applicable à votre entreprise, ces factures devront être émises au format électronique via une plateforme agréée."
+      "reponse": "Ce sont des ventes entre professionnels. Chaque facture doit détailler quantité, dénomination et prix unitaire HT par ligne, avec le taux de TVA applicable à chaque ligne (5,5 % sur les produits alimentaires que le restaurant revendra), les montants HT et TTC et les conditions de paiement. À l'échéance applicable à votre entreprise, ces factures devront être émises au format électronique via une plateforme agréée."
     },
     {
       "question": "Ma boulangerie est en franchise en base de TVA : qu'est-ce que cela change sur mes factures aux restaurants ?",

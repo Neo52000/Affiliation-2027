@@ -23,7 +23,7 @@
     "Information écrite préalable sur le coût des actes remise au patient lorsque les honoraires avec dépassement atteignent 70 € (arrêté du 2 octobre 2008 pris pour l'application de l'article L. 1111-3 du code de la santé publique)."
   ],
   "exemple_facture": {
-    "intitule": "Facture – soins de pédicurie et orthèses plantaires sur mesure (montants illustratifs)",
+    "intitule": "Facture : soins de pédicurie et orthèses plantaires sur mesure (montants illustratifs)",
     "lignes": [
       {
         "designation": "Soin de pédicurie : traitement d'hyperkératoses et soins unguéaux",

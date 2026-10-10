@@ -25,7 +25,7 @@
     "Taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 € sur les factures adressées à des professionnels"
   ],
   "exemple_facture": {
-    "intitule": "Facture de solde — film d'animation 2D de 45 secondes pour le lancement d'un produit (client : agence de communication française ; prestataire assujetti à la TVA)",
+    "intitule": "Facture de solde, film d'animation 2D de 45 secondes pour le lancement d'un produit (client : agence de communication française ; prestataire assujetti à la TVA)",
     "lignes": [
       {
         "designation": "Conception : script, storyboard et animatic (deux allers-retours de validation inclus)",
@@ -94,7 +94,7 @@
     },
     {
       "question": "Une agence européenne me commande un film et veut l'exploiter dans plusieurs pays : comment facturer ?",
-      "reponse": "Si l'agence est assujettie dans un autre État de l'UE, la prestation de production part hors taxe avec la mention « Autoliquidation ». La cession de droits suit le même traitement : elle ne reste pas en TVA française. En revanche, le périmètre d'exploitation reste à délimiter contractuellement — territoire, supports, durée — et une diffusion multi-pays doit être prévue dès le devis, faute de quoi l'extension se facturera par avenant. Ne confondez pas la mention « Autoliquidation » avec celle de la franchise en base, qui correspond à une situation différente."
+      "reponse": "Si l'agence est assujettie dans un autre État de l'UE, la prestation de production part hors taxe avec la mention « Autoliquidation ». La cession de droits suit le même traitement : elle ne reste pas en TVA française. En revanche, le périmètre d'exploitation reste à délimiter contractuellement (territoire, supports, durée) et une diffusion multi-pays doit être prévue dès le devis, faute de quoi l'extension se facturera par avenant. Ne confondez pas la mention « Autoliquidation » avec celle de la franchise en base, qui correspond à une situation différente."
     },
     {
       "question": "Je vends aussi des templates After Effects : quel taux de TVA appliquer ?",

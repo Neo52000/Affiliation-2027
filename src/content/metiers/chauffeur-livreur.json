@@ -43,7 +43,7 @@
       }
     ],
     "mentions_specifiques": [
-      "TVA au taux normal de 20 % — transport de biens (BOI-TVA-LIQ-20-20).",
+      "TVA au taux normal de 20 %, transport de biens (BOI-TVA-LIQ-20-20).",
       "Référence du contrat de sous-traitance et du relevé d'activité mensuel du donneur d'ordre.",
       "Si le document est établi par le donneur d'ordre au nom du livreur, la mention « Autofacturation » doit y figurer."
     ]
@@ -87,7 +87,7 @@
     },
     {
       "question": "Je suis micro-entrepreneur sans TVA : la facturation électronique me concerne-t-elle ?",
-      "reponse": "Oui. La franchise en base ne vous fait pas sortir du champ : vous restez assujetti même si vous ne collectez pas la TVA. Le point sensible pour un livreur sous-traitant est l'articulation avec l'autofacturation : si votre donneur d'ordre établit vos factures en votre nom, c'est lui qui devra les déposer sur une plateforme agréée pour votre compte, en vertu du mandat de facturation — ce qui ne vous décharge ni de l'acceptation de chaque document, ni de la responsabilité de son contenu. Vous devrez par ailleurs pouvoir recevoir, puis émettre, vos factures via une plateforme agréée à l'échéance applicable à votre entreprise. Vos factures continuent de porter la mention « TVA non applicable, article 293 B du CGI », sans ligne de taxe."
+      "reponse": "Oui. La franchise en base ne vous fait pas sortir du champ : vous restez assujetti même si vous ne collectez pas la TVA. Le point sensible pour un livreur sous-traitant est l'articulation avec l'autofacturation : si votre donneur d'ordre établit vos factures en votre nom, c'est lui qui devra les déposer sur une plateforme agréée pour votre compte, en vertu du mandat de facturation, ce qui ne vous décharge ni de l'acceptation de chaque document, ni de la responsabilité de son contenu. Vous devrez par ailleurs pouvoir recevoir, puis émettre, vos factures via une plateforme agréée à l'échéance applicable à votre entreprise. Vos factures continuent de porter la mention « TVA non applicable, article 293 B du CGI », sans ligne de taxe."
     }
   ],
   "sources": [

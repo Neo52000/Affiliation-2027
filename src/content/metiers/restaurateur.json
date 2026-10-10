@@ -27,7 +27,7 @@
     "« TVA déjà collectée » sur une facture émise a posteriori à un client professionnel, lorsque l'encaissement a déjà été transmis via le e-reporting, afin d'éviter un double comptage."
   ],
   "exemple_facture": {
-    "intitule": "Facture – repas d'affaires, déjeuner 4 couverts (client professionnel)",
+    "intitule": "Facture : repas d'affaires, déjeuner 4 couverts (client professionnel)",
     "lignes": [
       {
         "designation": "Menu du marché (entrée + plat + dessert), consommation sur place",

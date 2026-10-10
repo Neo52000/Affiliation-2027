@@ -8,7 +8,7 @@
   "specificites_facturation": [
     "La facturation en régie repose sur le TJM (taux journalier moyen) : la facture mensuelle récapitule les jours travaillés, généralement adossée à un compte rendu d'activité (CRA) validé par le client.",
     "Pour un client professionnel établi dans un autre État membre de l'UE, la facture est émise hors TVA avec la mention « Autoliquidation » et les numéros de TVA intracommunautaire du prestataire et du client. Ces opérations doivent ensuite être reprises dans une déclaration européenne de services (DES).",
-    "Pour un client assujetti établi hors de l'Union européenne, la prestation n'est pas soumise à la TVA française : la facture porte la mention « TVA non applicable – art. 259-1 du CGI ».",
+    "Pour un client assujetti établi hors de l'Union européenne, la prestation n'est pas soumise à la TVA française : la facture porte la mention « TVA non applicable, art. 259-1 du CGI ».",
     "En franchise en base de TVA, cas fréquent en début d'activité, les factures sont émises sans TVA avec la mention « TVA non applicable, article 293 B du CGI », sans possibilité de déduire la TVA sur les achats.",
     "Les missions au forfait se facturent par jalons : chaque acompte versé doit donner lieu à une facture d'acompte, avant la facture de solde en fin de projet.",
     "Hors franchise en base, les prestations de développement relèvent du taux normal de TVA de 20 %, comme les prestations de services sans taux particulier."
@@ -16,10 +16,10 @@
   "mentions_obligatoires_specifiques": [
     "« TVA non applicable, article 293 B du CGI » sur toutes les factures émises sous le régime de la franchise en base de TVA.",
     "« Autoliquidation », accompagnée du numéro de TVA intracommunautaire du prestataire et de celui du client, pour une prestation fournie à un assujetti établi dans un autre État membre de l'UE.",
-    "« TVA non applicable – art. 259-1 du CGI » pour une prestation fournie à un client assujetti établi hors de l'Union européenne."
+    "« TVA non applicable, art. 259-1 du CGI » pour une prestation fournie à un client assujetti établi hors de l'Union européenne."
   ],
   "exemple_facture": {
-    "intitule": "Facture mensuelle de régie – développement d'application web (client français, prestataire redevable de la TVA)",
+    "intitule": "Facture mensuelle de régie : développement d'application web (client français, prestataire redevable de la TVA)",
     "lignes": [
       {
         "designation": "Développement d'application web en régie – jours travaillés du mois selon CRA validé (TJM)",

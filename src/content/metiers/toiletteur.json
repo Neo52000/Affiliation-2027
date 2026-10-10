@@ -20,7 +20,7 @@
     "« TVA non applicable, article 293 B du CGI » si le salon bénéficie de la franchise en base"
   ],
   "exemple_facture": {
-    "intitule": "Note — toilettage complet d'un chien de taille moyenne, avec vente d'un produit d'entretien",
+    "intitule": "Note : toilettage complet d'un chien de taille moyenne, avec vente d'un produit d'entretien",
     "lignes": [
       {
         "designation": "Toilettage complet : bain, séchage, tonte et finitions aux ciseaux (chien de taille moyenne)",

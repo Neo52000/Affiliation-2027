@@ -15,12 +15,12 @@
   ],
   "mentions_obligatoires_specifiques": [
     "Mentions communes : identité et adresse des parties, SIREN/SIRET, numéro et date de facture, détail de la prestation (trajet, date, véhicule), taux et montant de TVA quand elle est due.",
-    "Pour un transport en ambulance exonéré : « Exonération de TVA — article 261, 4-3° du CGI (transport de malades ou de blessés en véhicule spécialement aménagé, par un transporteur sanitaire agréé) », sans aucune ligne de TVA.",
+    "Pour un transport en ambulance exonéré : « Exonération de TVA, article 261, 4-3° du CGI (transport de malades ou de blessés en véhicule spécialement aménagé, par un transporteur sanitaire agréé) », sans aucune ligne de TVA.",
     "Pour une course en VSL : TVA au taux réduit de 10 %, taux et montant affichés.",
     "Pour la part facturée à un particulier : note obligatoire avant paiement dès 25 € TTC de prestation."
   ],
   "exemple_facture": {
-    "intitule": "Transport sanitaire en ambulance sur prescription médicale — domicile vers centre hospitalier (facture exonérée de TVA)",
+    "intitule": "Transport sanitaire en ambulance sur prescription médicale : domicile vers centre hospitalier (facture exonérée de TVA)",
     "lignes": [
       {
         "designation": "Prise en charge en ambulance sur prescription médicale — équipage de deux personnes, véhicule spécialement aménagé (forfait de prise en charge)",
@@ -39,7 +39,7 @@
     ],
     "mentions_specifiques": [
       "Les montants ne sont volontairement pas reproduits dans cet exemple, qui illustre la seule structure de la facture : les tarifs du transport sanitaire conventionné sont fixés par la convention nationale et révisables. Reportez-vous aux tarifs en vigueur publiés par l'Assurance Maladie.",
-      "« Exonération de TVA — article 261, 4-3° du CGI » : transport de malades en véhicule spécialement aménagé par un transporteur sanitaire agréé. Aucune ligne de taxe ne figure sur la facture.",
+      "« Exonération de TVA, article 261, 4-3° du CGI » : transport de malades en véhicule spécialement aménagé par un transporteur sanitaire agréé. Aucune ligne de taxe ne figure sur la facture.",
       "Opération exonérée : la facture n'affiche ni colonne de TVA ni total TTC, et ses montants s'intitulent « Prix » et « Total », sans mention HT.",
       "Transport réalisé sur prescription médicale ; pièces justificatives (prescription, signature du patient) transmises à l'Assurance Maladie sous forme dématérialisée.",
       "Part Assurance Maladie réglée en tiers payant sur la base des tarifs conventionnels ; le solde éventuel est facturé au patient.",

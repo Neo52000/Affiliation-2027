@@ -14,11 +14,11 @@
   ],
   "mentions_obligatoires_specifiques": [
     "Ventilation de la TVA par taux sur toute facture mêlant pizzas livrées chaudes (10 %), boissons en contenants fermés (5,5 %) et boissons alcooliques (20 %) : montant HT et TVA détaillés par taux.",
-    "Lorsqu'une même commande d'entreprise mêle les trois canaux — pizzas livrées chaudes, boissons en contenants fermés, bouteilles de vin — chaque ligne porte son propre taux et la facture récapitule le montant HT et la TVA par taux ; une facture globale au taux moyen ou au taux unique de 10 % ne serait pas conforme, et c'est l'erreur la plus fréquente quand la facture est reconstituée à partir des tickets de caisse.",
+    "Lorsqu'une même commande d'entreprise mêle les trois canaux (pizzas livrées chaudes, boissons en contenants fermés, bouteilles de vin), chaque ligne porte son propre taux et la facture récapitule le montant HT et la TVA par taux ; une facture globale au taux moyen ou au taux unique de 10 % ne serait pas conforme, et c'est l'erreur la plus fréquente quand la facture est reconstituée à partir des tickets de caisse.",
     "Adresse de livraison lorsque les pizzas sont livrées dans les locaux du client, en complément de son adresse de facturation."
   ],
   "exemple_facture": {
-    "intitule": "Facture — pizzas livrées chaudes pour un déjeuner d'équipe (client professionnel)",
+    "intitule": "Facture : pizzas livrées chaudes pour un déjeuner d'équipe (client professionnel)",
     "lignes": [
       {
         "designation": "Pizzas Margherita et Regina livrées chaudes (consommation immédiate)",

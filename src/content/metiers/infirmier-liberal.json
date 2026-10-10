@@ -23,7 +23,7 @@
     "Sur les factures d'opérations taxables couvertes par la franchise en base (redevance de remplacement ou de collaboration, par exemple) : « TVA non applicable, art. 293 B du CGI »."
   ],
   "exemple_facture": {
-    "intitule": "Note d'honoraires – soins infirmiers non pris en charge par l'Assurance Maladie",
+    "intitule": "Note d'honoraires : soins infirmiers non pris en charge par l'Assurance Maladie",
     "lignes": [
       {
         "designation": "Séance de soins infirmiers à finalité thérapeutique hors nomenclature (suivi à domicile)",
