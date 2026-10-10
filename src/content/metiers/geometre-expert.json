@@ -21,7 +21,7 @@
     "Pour un acheteur public : références attendues par l'acheteur (numéro de marché ou d'engagement) afin que le dépôt sur le portail public aboutisse."
   ],
   "exemple_facture": {
-    "intitule": "Facture — bornage amiable de deux parcelles contiguës (coût total du dossier, à répartir entre les deux propriétaires)",
+    "intitule": "Facture : bornage amiable de deux parcelles contiguës (coût total du dossier, à répartir entre les deux propriétaires)",
     "lignes": [
       {
         "designation": "Recherches foncières et analyse des titres de propriété",
@@ -93,7 +93,7 @@
     },
     {
       "question": "Mon client me demande le plan de bornage sous forme numérique et conteste le solde : que doit porter ma facture ?",
-      "reponse": "Détaillez chaque poste du dossier séparément — recherches foncières, opérations de terrain, bornes fournies et implantées, rédaction du procès-verbal, plan annexé — avec quantité, prix unitaire HT et taux de TVA de 20 %. Un dossier facturé en un seul forfait global est difficile à défendre en cas de contestation, et ne permet pas de justifier la quote-part réclamée à chaque propriétaire. Rappelez sur la facture de solde les montants déjà réglés au titre de la provision de démarrage."
+      "reponse": "Détaillez chaque poste du dossier séparément (recherches foncières, opérations de terrain, bornes fournies et implantées, rédaction du procès-verbal, plan annexé) avec quantité, prix unitaire HT et taux de TVA de 20 %. Un dossier facturé en un seul forfait global est difficile à défendre en cas de contestation, et ne permet pas de justifier la quote-part réclamée à chaque propriétaire. Rappelez sur la facture de solde les montants déjà réglés au titre de la provision de démarrage."
     },
     {
       "question": "Je travaille surtout pour des collectivités et des particuliers : la réforme me concerne-t-elle ?",

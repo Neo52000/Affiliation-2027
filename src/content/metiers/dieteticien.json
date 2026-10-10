@@ -12,17 +12,17 @@
   "specificites_facturation": [
     "Vos consultations à finalité thérapeutique (bilan diététique, éducation et rééducation nutritionnelle sur prescription) sont exonérées de TVA : le diététicien fait partie des professions paramédicales réglementées visées par l'article 261, 4, 1° du CGI.",
     "Cette exonération repose sur l'usage légal du titre de diététicien, protégé par les articles L. 4371-1 et suivants du code de la santé publique. Sans ce titre, le conseil nutritionnel relève de la TVA.",
-    "Vos prestations sans finalité thérapeutique — ateliers en entreprise, conférences, rédaction de contenus — sortent de l'exonération des soins et sont taxables. Couvertes par la franchise en base, elles portent la mention « TVA non applicable, article 293 B du CGI », qui n'est pas celle des soins exonérés.",
+    "Vos prestations sans finalité thérapeutique (ateliers en entreprise, conférences, rédaction de contenus) sortent de l'exonération des soins et sont taxables. Couvertes par la franchise en base, elles portent la mention « TVA non applicable, article 293 B du CGI », qui n'est pas celle des soins exonérés.",
     "Un forfait de suivi (par exemple quatre séances) se facture en distinguant chaque prestation : les séances à finalité thérapeutique restent exonérées, les prestations annexes suivent leur propre régime. Ne mélangez jamais les deux mentions sur une même ligne.",
     "Vos notes d'honoraires portant sur des opérations exonérées sont dispensées d'émission au format électronique. Vous devrez en revanche pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise, et vos factures d'ateliers adressées à des clients professionnels entrent dans le circuit d'émission."
   ],
   "mentions_obligatoires_specifiques": [
     "Référence à l'exonération sur chaque note d'honoraires de soins : mention renvoyant à l'article 261, 4, 1° du CGI (ou à la disposition correspondante de la directive 2006/112/CE).",
-    "Mention « TVA non applicable, article 293 B du CGI » réservée aux prestations taxables couvertes par la franchise en base — jamais sur les soins exonérés.",
+    "Mention « TVA non applicable, article 293 B du CGI » réservée aux prestations taxables couvertes par la franchise en base, jamais sur les soins exonérés.",
     "Ventilation ligne à ligne dès qu'un document mêle soins exonérés et prestations taxables, chaque ligne portant son propre régime."
   ],
   "exemple_facture": {
-    "intitule": "Note d'honoraires – forfait de suivi diététique sur prescription médicale",
+    "intitule": "Note d'honoraires : forfait de suivi diététique sur prescription médicale",
     "lignes": [
       {
         "designation": "Bilan diététique initial : enquête alimentaire et plan personnalisé (finalité thérapeutique)",
@@ -40,7 +40,7 @@
       }
     ],
     "mentions_specifiques": [
-      "TVA non applicable en application de l'article 261, 4, 1° du CGI – soins dispensés par un diététicien, profession paramédicale réglementée",
+      "TVA non applicable en application de l'article 261, 4, 1° du CGI (soins dispensés par un diététicien, profession paramédicale réglementée)",
       "Suivi réalisé sur prescription médicale, dans le cadre d'une prise en charge à finalité thérapeutique"
     ]
   },

@@ -19,7 +19,7 @@
   "mentions_obligatoires_specifiques": [
     "Sur les notes d'honoraires de consultations exonérées : référence à l'exonération, par exemple « Exonération de TVA, article 261, 4, 1° du CGI », réservée aux praticiens faisant un usage légal du titre.",
     "Sur les prestations taxables facturées sous franchise en base : « TVA non applicable, article 293 B du CGI ».",
-    "Sur la note remise au patient (obligatoire dès 25 € de prestation, avant le paiement — arrêté du 3 octobre 1983) : date de rédaction, identification du praticien, nom du patient, date et nature de l'acte, montant total."
+    "Sur la note remise au patient (obligatoire dès 25 € de prestation, avant le paiement, arrêté du 3 octobre 1983) : date de rédaction, identification du praticien, nom du patient, date et nature de l'acte, montant total."
   ],
   "exemple_facture": {
     "intitule": "Note d'honoraires remise à un patient à l'issue de consultations d'ostéopathie",
@@ -40,7 +40,7 @@
       }
     ],
     "mentions_specifiques": [
-      "Exonération de TVA : article 261, 4, 1° du CGI — praticien autorisé à faire légalement usage du titre d'ostéopathe.",
+      "Exonération de TVA : article 261, 4, 1° du CGI (praticien autorisé à faire légalement usage du titre d'ostéopathe).",
       "Note remise au patient avant le paiement (prestation de 25 € ou plus, arrêté du 3 octobre 1983), portant date de rédaction, identification du praticien, nom du patient, date et nature de l'acte et montant total.",
       "Montants nets, sans TVA ; honoraires illustratifs, librement fixés."
     ]

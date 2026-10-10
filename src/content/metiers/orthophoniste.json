@@ -22,7 +22,7 @@
     "Sur les recettes taxables éventuelles (par exemple une formation facturée hors soins et non exonérée) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Cette mention ne remplace jamais la référence à l'exonération des soins, et inversement. Si vous facturez une formation exonérée, portez la référence à sa propre disposition d'exonération (article 261, 4, 4° a ou b du CGI)."
   ],
   "exemple_facture": {
-    "intitule": "Note d'honoraires – bilan orthophonique et rééducation du langage oral (montants illustratifs)",
+    "intitule": "Note d'honoraires : bilan orthophonique et rééducation du langage oral (montants illustratifs)",
     "lignes": [
       {
         "designation": "Bilan orthophonique initial avec compte rendu écrit, sur prescription médicale",
@@ -68,7 +68,7 @@
   "faq": [
     {
       "question": "Mes séances sont exonérées de TVA : suis-je quand même concerné par la facturation électronique ?",
-      "reponse": "Oui, partiellement. Vos bilans et séances, exonérés au titre de l'article 261 du CGI, sont dispensés d'émission de factures électroniques — et vos FSE SESAM-Vitale ne sont de toute façon pas des factures au sens de la réforme. En revanche, vous devrez pouvoir recevoir via une plateforme les factures électroniques de vos fournisseurs (tests étalonnés, matériel de rééducation, logiciel de télétransmission, loyer), à l'échéance applicable à votre entreprise."
+      "reponse": "Oui, partiellement. Vos bilans et séances, exonérés au titre de l'article 261 du CGI, sont dispensés d'émission de factures électroniques, et vos FSE SESAM-Vitale ne sont de toute façon pas des factures au sens de la réforme. En revanche, vous devrez pouvoir recevoir via une plateforme les factures électroniques de vos fournisseurs (tests étalonnés, matériel de rééducation, logiciel de télétransmission, loyer), à l'échéance applicable à votre entreprise."
     },
     {
       "question": "Mes feuilles de soins électroniques SESAM-Vitale comptent-elles comme factures électroniques ?",
@@ -80,7 +80,7 @@
     },
     {
       "question": "Quelle mention dois-je porter sur mes notes d'honoraires de rééducation ?",
-      "reponse": "Portez la référence au texte fondant l'exonération, adaptée à votre exercice, par exemple : « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts – soins dispensés par un orthophoniste ». Cette mention couvre vos bilans comme vos séances de rééducation ; la feuille de soins SESAM-Vitale remise ou télétransmise ne tient pas lieu de note d'honoraires et ne dispense pas de cette mention."
+      "reponse": "Portez la référence au texte fondant l'exonération, adaptée à votre exercice, par exemple : « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts (soins dispensés par un orthophoniste) ». Cette mention couvre vos bilans comme vos séances de rééducation ; la feuille de soins SESAM-Vitale remise ou télétransmise ne tient pas lieu de note d'honoraires et ne dispense pas de cette mention."
     },
     {
       "question": "Je facture une formation à des étudiants ou une supervision à une consœur : quelle TVA ?",

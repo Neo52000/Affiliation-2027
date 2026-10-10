@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { pluriel } from '../../lib/typographie';
+import { pluriel, typographier } from '../../lib/typographie';
 import {
   verifierFacture,
   type MentionFacture,
@@ -48,9 +48,11 @@ export default function VerificateurFacture({ mentions }: Props) {
                 onChange={() => basculer(m.id)}
               />
               <span>
-                {m.libelle}
+                {typographier(m.libelle)}
                 {m.condition && (
-                  <span class="block text-sm text-ink-soft">Condition : {m.condition}</span>
+                  <span class="block text-sm text-ink-soft">
+                    Condition&nbsp;: {typographier(m.condition)}
+                  </span>
                 )}
               </span>
             </label>
@@ -62,9 +64,11 @@ export default function VerificateurFacture({ mentions }: Props) {
 
   const manquante = (m: MentionFacture) => (
     <li key={m.id}>
-      <p class="font-semibold">{m.libelle}</p>
-      <p class="mt-1 text-sm">{m.regle}</p>
-      {m.condition && <p class="mt-1 text-sm text-ink-soft">Condition : {m.condition}</p>}
+      <p class="font-semibold">{typographier(m.libelle)}</p>
+      <p class="mt-1 text-sm">{typographier(m.regle)}</p>
+      {m.condition && (
+        <p class="mt-1 text-sm text-ink-soft">Condition&nbsp;: {typographier(m.condition)}</p>
+      )}
       <p class="mt-1 text-sm">
         <a href={m.url_source} rel="noopener">
           Source officielle
@@ -82,8 +86,8 @@ export default function VerificateurFacture({ mentions }: Props) {
         }}
       >
         <p class="text-sm text-ink-soft">
-          Cochez les mentions déjà présentes sur votre facture. Tout se passe dans votre navigateur
-          : aucune donnée n'est envoyée.
+          Cochez les mentions déjà présentes sur votre facture. Tout se passe dans votre
+          navigateur&nbsp;: aucune donnée n'est envoyée.
         </p>
         {groupe('Mentions toujours obligatoires', socle)}
         {groupe('Mentions selon votre situation', conditionnelles)}

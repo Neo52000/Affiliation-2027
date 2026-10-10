@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { situerEcheances, type Echeance, type SituationTva, type Taille } from '../../lib/echeance';
 import { formatDateFr } from '../../lib/dates';
+import { typographier } from '../../lib/typographie';
 
 interface Props {
   echeances: Echeance[];
@@ -22,12 +23,14 @@ export default function EcheanceSimulateur({ echeances }: Props) {
   const Ligne = ({ titre, e }: { titre: string; e: Echeance | null }) =>
     e && (
       <li>
-        <strong>{titre} :</strong> {formatDateFr(e.date)}{' '}
+        <strong>{titre}&nbsp;:</strong> {formatDateFr(e.date)}{' '}
         <span class={e.statut === 'en_vigueur' ? 'font-semibold text-accent' : 'text-ink-soft'}>
           ({e.statut === 'en_vigueur' ? 'déjà en vigueur' : 'à venir'})
         </span>
         {e.complement && (
-          <span class="mt-1 block text-sm text-ink-soft">{e.complement.replace(/\.?$/, '.')}</span>
+          <span class="mt-1 block text-sm text-ink-soft">
+            {typographier(e.complement.replace(/\.?$/, '.'))}
+          </span>
         )}
       </li>
     );
@@ -90,7 +93,7 @@ export default function EcheanceSimulateur({ echeances }: Props) {
             Vos échéances
           </h2>
           {situation.horsChamp ? (
-            <p class="mt-3">{situation.message}</p>
+            <p class="mt-3">{typographier(situation.message ?? '')}</p>
           ) : (
             <>
               <ul class="liste-filets mt-2">
@@ -101,7 +104,7 @@ export default function EcheanceSimulateur({ echeances }: Props) {
               <h3 class="mt-8">Votre check-list</h3>
               <ol class="mt-2 list-decimal space-y-2 pl-5">
                 {situation.checklist.map((c) => (
-                  <li key={c}>{c}</li>
+                  <li key={c}>{typographier(c)}</li>
                 ))}
               </ol>
             </>

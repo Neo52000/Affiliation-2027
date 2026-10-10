@@ -23,3 +23,12 @@ export function pluriel(n: number, groupe: string): string {
     .map((mot) => (/[sxz]$/.test(mot) ? mot : `${mot}s`))
     .join(' ')}`;
 }
+
+/**
+ * Espace insécable avant : ; ? ! » et après « (typographie française). Le
+ * postbuild l'applique au HTML ; les îlots l'appliquent à leurs textes dynamiques,
+ * pour que l'hydratation n'y remette pas d'espaces ordinaires.
+ */
+export function typographier(texte: string): string {
+  return texte.replace(/ ([:;?!»])/g, '\u00a0$1').replace(/« /g, '«\u00a0');
+}

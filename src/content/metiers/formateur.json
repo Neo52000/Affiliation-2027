@@ -20,12 +20,12 @@
   ],
   "mentions_obligatoires_specifiques": [
     "Sans convention : intitulé, nature, durée, effectifs, modalités de déroulement et de sanction de la formation, prix et contributions financières publiques, portés sur la facture ou le bon de commande (article R6353-1 du code du travail).",
-    "En cas d'exonération : mention du bénéfice de l'exonération de TVA au titre de la formation professionnelle continue (article 261, 4-4°-a du CGI), adossée à une attestation de l'autorité administrative compétente en cours de validité — et non un taux de TVA à 0 %.",
+    "En cas d'exonération : mention du bénéfice de l'exonération de TVA au titre de la formation professionnelle continue (article 261, 4-4°-a du CGI), adossée à une attestation de l'autorité administrative compétente en cours de validité, et non un taux de TVA à 0 %.",
     "En franchise en base : mention « TVA non applicable, article 293 B du CGI », à ne pas confondre avec l'exonération formation.",
     "À l'échéance applicable à votre entreprise : SIREN du client professionnel et catégorie de l'opération (prestation de services) parmi les nouvelles mentions."
   ],
   "exemple_facture": {
-    "intitule": "Facture adressée à une entreprise cliente — action de formation « Conduite de projet » (convention n° 2026-031)",
+    "intitule": "Facture adressée à une entreprise cliente : action de formation « Conduite de projet » (convention n° 2026-031)",
     "lignes": [
       {
         "designation": "Action de formation professionnelle continue « Conduite de projet », 2 jours soit 14 heures, 6 stagiaires, convention n° 2026-031 — exonérée de TVA, article 261, 4-4°-a du CGI",
@@ -43,7 +43,7 @@
       }
     ],
     "mentions_specifiques": [
-      "Ligne de formation hors champ de la taxe : exonération de TVA au titre de l'article 261, 4-4°-a du CGI, sous attestation de l'autorité administrative compétente en cours de validité — aucun taux, pas même 0 %, ne figure sur cette ligne",
+      "Ligne de formation hors champ de la taxe : exonération de TVA au titre de l'article 261, 4-4°-a du CGI, sous attestation de l'autorité administrative compétente en cours de validité (aucun taux, pas même 0 %, ne figure sur cette ligne)",
       "Ligne de conseil taxée au taux normal de 20 %, hors périmètre de l'attestation",
       "Pied de facture distinguant les deux régimes : 1 330,00 € exonérés, base taxable de 600,00 € HT, TVA à 20 % de 120,00 €, soit 2 050,00 € à payer",
       "Rappel de la convention de formation n° 2026-031 : intitulé, durée, effectif et modalités de sanction de l'action"
@@ -88,7 +88,7 @@
     },
     {
       "question": "Mes actions de formation exonérées échappent-elles à la réforme de la facturation électronique ?",
-      "reponse": "Les opérations exonérées au titre des articles 261 à 261 E du CGI et dispensées de facturation — ce qui est le cas des prestations de formation exonérées au titre de l'article 261, 4-4° — sont situées hors du champ de l'obligation d'émission de factures électroniques. Vous restez toutefois assujetti : vous devez pouvoir recevoir des factures électroniques de vos fournisseurs, et vos prestations taxables rendues à des professionnels y passeront, à l'échéance applicable à votre entreprise. Ne confondez pas cette situation avec la franchise en base, qui reste pleinement soumise à la réforme."
+      "reponse": "Les opérations exonérées au titre des articles 261 à 261 E du CGI et dispensées de facturation (ce qui est le cas des prestations de formation exonérées au titre de l'article 261, 4-4°) sont situées hors du champ de l'obligation d'émission de factures électroniques. Vous restez toutefois assujetti : vous devez pouvoir recevoir des factures électroniques de vos fournisseurs, et vos prestations taxables rendues à des professionnels y passeront, à l'échéance applicable à votre entreprise. Ne confondez pas cette situation avec la franchise en base, qui reste pleinement soumise à la réforme."
     }
   ],
   "sources": [

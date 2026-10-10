@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 
 /**
  * Le design ne s'anime pas : ni boucle, ni animation d'entrée. Seules les
@@ -84,4 +84,52 @@ test('hub : le sélecteur annonce la recommandation de la fiche choisie', async 
   );
   await page.keyboard.press('ArrowRight');
   await expect(page.getByRole('radio', { name: 'Plombier' })).not.toBeChecked();
+});
+
+/**
+ * Le postbuild pose les espaces insécables dans le HTML ; les îlots doivent
+ * produire le même texte, sinon l'hydratation remet des espaces ordinaires
+ * (check-redaction ne lit que le HTML construit).
+ */
+test.describe('espaces insécables conservés après hydratation', () => {
+  const espaceFautive = / [:;?!»]|« /;
+  const hydrater = async (page: Page, chemin: string) => {
+    await page.goto(chemin);
+    await page.waitForFunction(() => document.querySelectorAll('astro-island[ssr]').length === 0);
+  };
+  const texteDesIlots = (page: Page) =>
+    page.evaluate(() =>
+      [...document.querySelectorAll('astro-island')].map((i) => i.textContent ?? '').join('\n'),
+    );
+
+  test('quiz, sans métier puis avec', async ({ page }) => {
+    await hydrater(page, '/outils/quiz');
+    await page.getByRole('button', { name: 'Voir ma recommandation' }).click();
+    expect(await texteDesIlots(page)).not.toMatch(espaceFautive);
+    await hydrater(page, '/outils/quiz?metier=plombier');
+    await page.getByRole('button', { name: 'Voir ma recommandation' }).click();
+    expect(await texteDesIlots(page)).not.toMatch(espaceFautive);
+  });
+
+  test('vérificateur, mentions manquantes', async ({ page }) => {
+    await hydrater(page, '/outils/verificateur-facture');
+    await page.getByRole('button', { name: 'Vérifier ma facture' }).click();
+    expect(await texteDesIlots(page)).not.toMatch(espaceFautive);
+  });
+
+  test('simulateur, franchise en base et non assujetti', async ({ page }) => {
+    await hydrater(page, '/outils/echeance');
+    for (const tva of ['franchise', 'non-assujetti']) {
+      await page.selectOption('#sim-tva', tva);
+      await page.getByRole('button', { name: 'Voir mes échéances' }).click();
+      expect(await texteDesIlots(page)).not.toMatch(espaceFautive);
+    }
+  });
+
+  test('sélecteur de métier d’une famille', async ({ page }) => {
+    await hydrater(page, '/metiers/batiment');
+    expect(await texteDesIlots(page)).not.toMatch(espaceFautive);
+    await page.getByRole('radio', { name: 'Plombier' }).check();
+    expect(await texteDesIlots(page)).not.toMatch(espaceFautive);
+  });
 });

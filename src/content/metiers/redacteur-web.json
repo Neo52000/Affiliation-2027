@@ -22,7 +22,7 @@
     "Sur une facture récapitulative mensuelle : chaque texte livré sur sa propre ligne, avec sa date de réalisation, même lorsque deux lignes sont identiques"
   ],
   "exemple_facture": {
-    "intitule": "Facture récapitulative mensuelle — rédacteur web en franchise en base (micro-BNC), client professionnel français",
+    "intitule": "Facture récapitulative mensuelle : rédacteur web en franchise en base (micro-BNC), client professionnel français",
     "lignes": [
       {
         "designation": "Article de blog « Bien organiser son calendrier éditorial » (1 200 mots, brief, optimisation sémantique, une révision incluse) — livré le 04/09",

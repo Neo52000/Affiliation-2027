@@ -14,7 +14,7 @@
     "Les honoraires d'architecte relèvent du taux normal de 20 %. Une étude facturée isolément reste au taux normal ; en revanche, une maîtrise d'œuvre qui se rapporte à des travaux eux-mêmes éligibles peut suivre leur taux réduit, et lorsque vous assurez ensuite la maîtrise d'œuvre ou l'exécution de travaux éligibles au taux de 10 %, la doctrine admet une facture rectificative appliquant ce taux à l'ensemble de la prestation, études antérieures comprises. Ni l'application systématique du taux réduit ni son exclusion systématique ne sont correctes : le lien avec les travaux et l'éligibilité du chantier se vérifient dossier par dossier, certification du client sur le devis ou la facture à l'appui.",
     "Votre assurance professionnelle est obligatoire au titre de la loi du 3 janvier 1977 sur l'architecture, et l'attestation est jointe au contrat conclu avec le maître d'ouvrage. Pour les missions portant sur des travaux de bâtiment, l'attestation d'assurance est en outre annexée à vos devis et à vos factures.",
     "Pour un projet portant sur un immeuble situé en France, votre prestation de conception ou de coordination est imposable en France même si le client est établi à l'étranger : la règle du lieu de l'immeuble prime sur les règles générales entre assujettis.",
-    "Pour un particulier qui fait construire ou rénover, une note détaillée (date, identité, décompte de chaque prestation, montants HT et TTC) est remise avant paiement dès que la prestation atteint 25 € TTC — en pratique dès la première étude."
+    "Pour un particulier qui fait construire ou rénover, une note détaillée (date, identité, décompte de chaque prestation, montants HT et TTC) est remise avant paiement dès que la prestation atteint 25 € TTC (en pratique dès la première étude)."
   ],
   "mentions_obligatoires_specifiques": [
     "Attestation d'assurance annexée aux devis et aux factures pour les missions portant sur des travaux de bâtiment : l'attestation, conforme au modèle à mentions minimales, indique l'assureur et ses coordonnées, le numéro de contrat, les activités couvertes et la couverture géographique.",
@@ -23,7 +23,7 @@
     "Mention « TVA non applicable, article 293 B du CGI » si vous débutez sous le régime de la franchise en base."
   ],
   "exemple_facture": {
-    "intitule": "Facture d'acompte — mission complète de maîtrise d'œuvre, maison individuelle, appel d'acompte à l'engagement de la phase avant-projet (client particulier)",
+    "intitule": "Facture d'acompte : mission complète de maîtrise d'œuvre, maison individuelle, appel d'acompte à l'engagement de la phase avant-projet (client particulier)",
     "lignes": [
       {
         "designation": "Phase esquisse (ESQ) — solde à la validation du parti architectural",
@@ -81,7 +81,7 @@
     },
     {
       "question": "J'appelle un acompte à chaque phase (ESQ, APS, PRO) : quand la TVA est-elle due ?",
-      "reponse": "À l'encaissement de chaque acompte. Pour les prestations de services, toutes les sommes encaissées au titre de l'opération — avances, acomptes, soldes — déclenchent l'exigibilité de la TVA correspondante. Chaque appel d'acompte doit donc porter son propre décompte de taxe."
+      "reponse": "À l'encaissement de chaque acompte. Pour les prestations de services, toutes les sommes encaissées au titre de l'opération (avances, acomptes, soldes) déclenchent l'exigibilité de la TVA correspondante. Chaque appel d'acompte doit donc porter son propre décompte de taxe."
     },
     {
       "question": "Dois-je faire figurer mon assurance sur mes factures ?",

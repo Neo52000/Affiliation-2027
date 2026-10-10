@@ -659,3 +659,43 @@ Troisième PR de la refonte. Les outils et les pages de confiance passent au sty
   - « En vigueur » insécable dans le calendrier complet ; un seul filet sous « Qui édite ce site » ;
   - la règle d'en-tête collant du registre des plateformes, sans effet depuis son ajout (le conteneur de défilement horizontal l'annulait), est retirée ;
   - parcours e2e 5 : le titre attendu est ancré (`^\d+ mentions…$`) pour ne plus accepter l'état « Aucune mention obligatoire manquante ».
+
+## Design v7 « éditorial » : contenus et garde de rédaction (2026-10-10)
+
+Quatrième PR de la refonte. Les contenus suivent désormais les règles de rédaction, et une garde de build les fait respecter.
+
+**Typographie et garde** :
+
+- Espaces insécables : le postbuild (`scripts/typographie-dist.ts`) place une insécable avant « : ; ? ! » et « », et après « », dans le texte de chaque page. Les attributs, les scripts, `code` et `pre` restent intacts. Gabarits et contenus gardent des espaces ordinaires. Sur le dernier build, 4 664 espaces sont concernées. Les îlots appliquent la même règle (`typographier()`, `src/lib/typographie.ts`) à leurs textes, pour que l'hydratation ne remette pas d'espaces ordinaires ; un test e2e le vérifie après hydratation et interaction.
+- `check:redaction` (`scripts/check-redaction.ts`, logique testée dans `src/lib/redaction.ts`) contrôle le texte de `<main>` à chaque build, en local et en CI. Il refuse :
+  - tiret cadratin, demi-cadratin ou trait d'union espacés (hors « Régime particulier - … », mention légale) ;
+  - espace ordinaire avant la ponctuation haute, ou ponctuation haute collée au mot ;
+  - mot soudé à un lien ;
+  - « En savoir plus », « Découvrir » (y compris comme intitulé entier d'un lien externe), « Ce qu'il faut retenir » ;
+  - phrase ouverte par « Voici », « Concrètement » ou « Autrement dit » ;
+  - renvoi interne (« TODO.md »).
+    Les tableaux et les intitulés de liens externes (titres de sources, cités tels quels) sont exclus des règles de texte.
+
+**Contenus** :
+
+- Fiches métier : 200 tirets retirés de la prose de 75 fiches, quatre « Concrètement » supprimés ; six mentions « TVA non applicable - article 293 B du CGI » ramenées à la virgule, comme les 188 autres. Une incise devient une paire de virgules ou des parenthèses, une explication un deux-points, jamais un point.
+  - Une garde de migration a comparé chaque fichier à `main` : mêmes clés, mêmes sources, mêmes lignes de facture, mêmes mots, même nombre de phrases.
+  - `date_maj` n'est pas modifiée, aucun fait n'ayant été revérifié.
+  - La note interne « Rendu gabarit : … » de la fiche plaquiste, publiée par erreur, est retirée.
+- Familles (`hubs.json`) :
+  - la réception, obligatoire pour tous depuis le 1er septembre 2026, était encore au futur dans les dix introductions (« À l'échéance applicable, vous devrez recevoir… »). Elle passe au présent, et seule l'émission reste liée à l'échéance ;
+  - les « Concrètement » sont retirés, le paragraphe libéral renvoie aux pages métiers et non à « ce guide » ;
+  - une garde a vérifié que pourcentages, montants, articles et références sont inchangés.
+- Guides :
+  - les dix sections « Ce qu'il faut retenir » sont retirées, après vérification que chacun de leurs faits, liens et chiffres figure dans le corps du guide. La fréquence bimestrielle des données de transaction en franchise en base, qui ne figurait que dans le résumé du guide micro-entrepreneur, est reportée dans le corps avec sa source. Seule perte : un conseil sans source (« chiffrer sur trois ans ») ;
+  - celle du guide des formats datait d'avant la réforme (« choisir une plateforme d'ici le 1er septembre 2026 ») ;
+  - seize débuts de phrase de remplissage sont réécrits ;
+  - « Étape 1 : … » devient « 1. … » ;
+  - dans le guide micro-entrepreneur, la phrase sur les fournisseurs devient exacte : une facture électronique passe par une plateforme agréée, ce qui n'impose pas aux fournisseurs d'émettre avant leur propre échéance. Le `date_maj` du guide est mis à jour.
+- Fiches logiciel : « (TODO.md #13) » et « TODO.md #14 », affichés dans les sources, sont remplacés par des libellés publics.
+- Données : tirets retirés des conditions du vérificateur, de la mention « TVA non applicable, art. 259-1 du CGI » et du texte de tolérance 2026. La note sous les exemples de facture parle désormais d'« un tiret dans la colonne TVA » au lieu de citer le symbole.
+
+**Hors périmètre, relevé pour la suite** :
+
+- Environ 25 phrases de 22 fiches métier mettent encore la réception au futur. Elles seront corrigées dans une PR dédiée, avec mise à jour de `date_maj`.
+- Les lignes de facture à 0 % (autoliquidation, exonérations) affichent « 0 % » dans la colonne TVA. La convention d'affichage reste à trancher.

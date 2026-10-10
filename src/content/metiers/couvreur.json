@@ -14,12 +14,12 @@
   ],
   "mentions_obligatoires_specifiques": [
     "Pour une facture combinant 10 % sur la couverture et 5,5 % sur l'isolation d'un logement de plus de deux ans : mention certifiée par le client, portée sur le devis ou la facture, couvrant les conditions de chaque taux réduit appliqué.",
-    "Coordonnées de l'assureur ou du garant et couverture géographique du contrat d'assurance obligatoire, dont la responsabilité décennale — essentielle pour des travaux de couverture —, sur les devis comme sur les factures.",
+    "Coordonnées de l'assureur ou du garant et couverture géographique du contrat d'assurance obligatoire, dont la responsabilité décennale (essentielle pour des travaux de couverture), sur les devis comme sur les factures.",
     "Mention « Autoliquidation » et facture émise sans TVA lorsque le couvreur intervient comme sous-traitant d'une entreprise générale ou d'un constructeur ; en franchise en base, l'autoliquidation ne s'applique pas et la facture porte à la place la mention « TVA non applicable, article 293 B du CGI ».",
     "Sur les devis : informations relatives à l'enlèvement et à la gestion des déchets de dépose, avec les points de collecte envisagés et l'estimation des coûts correspondants."
   ],
   "exemple_facture": {
-    "intitule": "Réfection complète de la couverture avec isolation de la toiture par l'extérieur — maison achevée depuis plus de deux ans (acompte de 30 % déduit)",
+    "intitule": "Réfection complète de la couverture avec isolation de la toiture par l'extérieur, maison achevée depuis plus de deux ans (acompte de 30 % déduit)",
     "lignes": [
       {
         "designation": "Dépose de la couverture existante, tri et évacuation des tuiles et liteaux vers une installation de collecte",
@@ -53,7 +53,7 @@
     "Gérer trois taux de TVA (5,5 %, 10 %, 20 %) ligne à ligne sur un même document, avec la mention de certification du client pour chaque taux réduit.",
     "Enchaîner devis, facture d'acompte et facture de solde avec déduction de l'acompte, sans ressaisie entre les documents.",
     "Transformer rapidement un travail supplémentaire découvert en cours de chantier en devis complémentaire accepté, puis en lignes de facture.",
-    "Lisser une trésorerie saisonnière grâce au suivi des encaissements, et préparer le passage des factures de chantier — acomptes et soldes rattachés — à la facturation électronique via une plateforme agréée, au calendrier propre à votre entreprise."
+    "Lisser une trésorerie saisonnière grâce au suivi des encaissements, et préparer le passage des factures de chantier (acomptes et soldes rattachés) à la facturation électronique via une plateforme agréée, au calendrier propre à votre entreprise."
   ],
   "outils_recommandes": [
     {

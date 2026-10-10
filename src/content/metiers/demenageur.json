@@ -21,7 +21,7 @@
     "Mentions communes de facturation : identité des parties, SIREN/SIRET, numéro et date de facture, détail des prestations, taux et montant de la TVA."
   ],
   "exemple_facture": {
-    "intitule": "Facture de solde — déménagement d'un logement de 35 m³, chargement à Lyon, livraison à Nantes (devis accepté n° D-AAAA-0415)",
+    "intitule": "Facture de solde : déménagement d'un logement de 35 m³, chargement à Lyon, livraison à Nantes (devis accepté n° D-AAAA-0415)",
     "lignes": [
       {
         "designation": "Forfait déménagement conforme au devis accepté n° D-AAAA-0415 — 35 m³, formule avec démontage, chargement, transport et remontage",

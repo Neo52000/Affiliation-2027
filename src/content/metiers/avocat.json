@@ -17,14 +17,14 @@
     "Les débours payés au nom et pour le compte du client (frais de commissaire de justice, par exemple) sont exclus de la base d'imposition à la TVA à condition d'un mandat préalable, d'une reddition de compte exacte et de justificatifs, à la différence des frais généraux du cabinet refacturés, qui restent taxables (BOFiP, BOI-TVA-BASE-10-20-40-30).",
     "Le pacte de quota litis est interdit : un honoraire fixé uniquement en fonction du résultat judiciaire est illicite, l'honoraire de résultat n'étant admis qu'en complément de la rémunération des diligences, prévu par convention (article 10 de la loi du 31 décembre 1971).",
     "En aide juridictionnelle, l'avocat est rétribué par l'État via des fonds versés aux CARPA ; en aide juridictionnelle partielle, un honoraire complémentaire ne peut être facturé au client que sur convention écrite préalable, communiquée au bâtonnier dans les quinze jours de sa signature (loi n° 91-647 du 10 juillet 1991).",
-    "Le droit de plaidoirie, fixé à 13 € par le décret n° 2014-1704 du 30 décembre 2014 et recouvré par la CNBF, est dû pour chaque plaidoirie devant la plupart des juridictions — sauf exceptions, notamment devant le conseil de prud'hommes et en matière de sécurité sociale — et apparaît en pratique sur la facture en plus des honoraires."
+    "Le droit de plaidoirie, fixé à 13 € par le décret n° 2014-1704 du 30 décembre 2014 et recouvré par la CNBF, est dû pour chaque plaidoirie devant la plupart des juridictions (sauf exceptions, notamment devant le conseil de prud'hommes et en matière de sécurité sociale) et apparaît en pratique sur la facture en plus des honoraires."
   ],
   "mentions_obligatoires_specifiques": [
     "« TVA non applicable, article 293 B du CGI » sur chaque facture si le cabinet bénéficie de la franchise en base de TVA ; aucune TVA ne doit alors apparaître, sous peine d'en devenir redevable du seul fait de la facturation (BOFiP, BOI-TVA-DECLA-40-10-20).",
     "Identification distincte des débours payés au nom et pour le compte du client, justifiés dans leur nature et leur montant exact, pour fonder leur exclusion de la base d'imposition à la TVA (article 267, II-2° du CGI ; BOFiP, BOI-TVA-BASE-10-20-40-30)."
   ],
   "exemple_facture": {
-    "intitule": "Facture d'honoraires – procédure devant le tribunal judiciaire, client particulier (exemple illustratif)",
+    "intitule": "Facture d'honoraires : procédure devant le tribunal judiciaire, client particulier (exemple illustratif)",
     "lignes": [
       {
         "designation": "Honoraires forfaitaires – procédure devant le tribunal judiciaire, selon convention d'honoraires du 15/09/2026",

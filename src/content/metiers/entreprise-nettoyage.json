@@ -23,7 +23,7 @@
     "À l'échéance applicable à votre entreprise : numéro SIREN du client, catégorie de l'opération (prestation, livraison ou opération mixte), adresse de livraison du site entretenu si elle diffère de l'adresse de facturation, et le cas échéant l'option pour le paiement de la TVA d'après les débits."
   ],
   "exemple_facture": {
-    "intitule": "Facture mensuelle — contrat d'entretien de bureaux n° 2026-042, période du 1er au 30 septembre 2026",
+    "intitule": "Facture mensuelle : contrat d'entretien de bureaux n° 2026-042, période du 1er au 30 septembre 2026",
     "lignes": [
       {
         "designation": "Forfait mensuel d'entretien de bureaux (420 m², 3 passages hebdomadaires)",
@@ -56,7 +56,7 @@
     ],
     "mentions_specifiques": [
       "Facture périodique : chaque intervention du mois est datée ligne par ligne.",
-      "Numéro SIREN du client professionnel et catégorie de l'opération (ici opération mixte : prestations et livraison de consommables) — à l'échéance applicable à votre entreprise.",
+      "Numéro SIREN du client professionnel et catégorie de l'opération (ici opération mixte : prestations et livraison de consommables), à l'échéance applicable à votre entreprise.",
       "Adresse du site entretenu, distincte de l'adresse de facturation du siège du client.",
       "Référence du contrat d'entretien et de l'avenant pour la prestation hors forfait."
     ]

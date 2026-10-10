@@ -20,7 +20,7 @@
     "Note remise au client particulier dès 25 € TTC, avant le paiement : date de rédaction de la note, nom et adresse du prestataire, nom du client (sauf opposition de celui-ci), date et lieu d'exécution de la prestation, décompte détaillé en quantité et prix de chaque prestation, somme totale à payer."
   ],
   "exemple_facture": {
-    "intitule": "Courses du mois – compte entreprise (client professionnel)",
+    "intitule": "Courses du mois, compte entreprise (client professionnel)",
     "lignes": [
       {
         "designation": "Transfert aéroport – centre-ville (forfait réservé)",
@@ -45,7 +45,7 @@
       }
     ],
     "mentions_specifiques": [
-      "TVA au taux réduit de 10 % – transport de voyageurs (art. 279, b quater du CGI)",
+      "TVA au taux réduit de 10 %, transport de voyageurs (art. 279, b quater du CGI)",
       "Si le chauffeur relève de la franchise en base : aucune TVA facturée et mention « TVA non applicable, art. 293 B du CGI »",
       "Si la facture est établie par le client pour le compte du chauffeur : mention « Autofacturation » ; si elle est établie par une plateforme tierce mandatée : mention recommandée « Facture établie par [plateforme] au nom et pour le compte de [chauffeur] »"
     ]

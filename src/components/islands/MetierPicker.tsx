@@ -41,7 +41,7 @@ export default function MetierPicker({ metiers }: Props) {
 
   const annonce =
     metier && reco
-      ? `${metier.nom} : ${reco.nom} recommandé${
+      ? `${metier.nom}\u00a0: ${reco.nom} recommandé${
           alternatives.length > 0 ? `, alternatives ${listeFr(alternatives.map((a) => a.nom))}` : ''
         }.`
       : '';
@@ -76,13 +76,15 @@ export default function MetierPicker({ metiers }: Props) {
       <div class="choix-panneau mt-4">
         {metier && reco ? (
           <div key={metier.slug}>
-            <p class="text-sm text-ink-soft">Sur la fiche {metier.nom}, notre recommandation :</p>
+            <p class="text-sm text-ink-soft">
+              Sur la fiche {metier.nom}, notre recommandation&nbsp;:
+            </p>
             <p class="mt-1 font-serif text-2xl">
               <a href={`/logiciels/${reco.slug}`}>{reco.nom}</a>
             </p>
             {alternatives.length > 0 && (
               <p class="mt-1 text-sm">
-                Alternatives :{' '}
+                Alternatives&nbsp;:{' '}
                 {alternatives.map((a, i) => (
                   <span key={a.slug}>
                     {i > 0 && (i === alternatives.length - 1 ? ' et ' : ', ')}
@@ -102,7 +104,7 @@ export default function MetierPicker({ metiers }: Props) {
           </div>
         ) : (
           <p class="text-sm text-ink-soft">
-            Choisissez votre métier : la recommandation de sa fiche s'affiche ici, avec ses
+            Choisissez votre métier&nbsp;: la recommandation de sa fiche s'affiche ici, avec ses
             alternatives.
           </p>
         )}

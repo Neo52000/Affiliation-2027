@@ -23,7 +23,7 @@
     "Le cas échéant, sur une activité taxable marginale sous franchise en base : « TVA non applicable, article 293 B du CGI »."
   ],
   "exemple_facture": {
-    "intitule": "Note d'honoraires — surveillance à domicile de la mère et du nouveau-né après la sortie de maternité",
+    "intitule": "Note d'honoraires : surveillance à domicile de la mère et du nouveau-né après la sortie de maternité",
     "lignes": [
       {
         "designation": "Visite de surveillance à domicile de la mère et du nouveau-né (acte coté selon la NGAP)",
@@ -41,7 +41,7 @@
       }
     ],
     "mentions_specifiques": [
-      "Exonération de TVA : article 261, 4, 1° du CGI — soins dispensés par un membre d'une profession médicale.",
+      "Exonération de TVA : article 261, 4, 1° du CGI (soins dispensés par un membre d'une profession médicale).",
       "Acte relevant de la NGAP et donnant lieu à feuille de soins pour la prise en charge par l'Assurance Maladie.",
       "Montants nets de TVA, donnés à titre illustratif : reportez-vous aux tarifs conventionnels en vigueur (ameli.fr)."
     ]

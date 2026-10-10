@@ -6,8 +6,8 @@
   "volume_factures_typique": "Volume faible mais documents multiples et montants élevés : chaque événement génère en général un devis détaillé par postes, une ou plusieurs factures d'acompte, une facture de solde, parfois un avoir. L'activité est saisonnière, avec des pics avant les périodes de mariages et de séminaires.",
   "clients_types": "mixte",
   "specificites_facturation": [
-    "Les acomptes structurent votre facturation : pour une prestation de services, la TVA est exigible dès l'encaissement de chaque acompte, pas seulement au solde — sauf si vous avez opté pour le paiement de la TVA d'après les débits. Pour un client professionnel, vous devez délivrer une facture pour chaque versement d'acompte, et la facture définitive doit faire référence aux factures d'acompte déjà émises et imputer les montants versés. Pour un client particulier, l'obligation est celle de la note détaillée dès 25 € TTC, remise avant paiement : établissez-la pour chaque acompte encaissé, puis pour le solde.",
-    "Débours ou refacturation, il faut choisir et documenter : une dépense engagée au nom et pour le compte de votre client peut être exclue de votre base d'imposition à la TVA, sous conditions cumulatives — mandat préalable et explicite, reddition de compte exacte, enregistrement en comptes de passage, et justification, auprès de l'administration, de la nature ou du montant exact des débours (2° du II de l'article 267 du CGI), toutes pièces utiles à l'appui : factures des fournisseurs, copies de relevés ou factures détaillées adressées au client. À défaut, tout frais refacturé (salle, technique, décoration) entre dans votre base d'imposition et supporte la TVA.",
+    "Les acomptes structurent votre facturation : pour une prestation de services, la TVA est exigible dès l'encaissement de chaque acompte, pas seulement au solde, sauf si vous avez opté pour le paiement de la TVA d'après les débits. Pour un client professionnel, vous devez délivrer une facture pour chaque versement d'acompte, et la facture définitive doit faire référence aux factures d'acompte déjà émises et imputer les montants versés. Pour un client particulier, l'obligation est celle de la note détaillée dès 25 € TTC, remise avant paiement : établissez-la pour chaque acompte encaissé, puis pour le solde.",
+    "Débours ou refacturation, il faut choisir et documenter : une dépense engagée au nom et pour le compte de votre client peut être exclue de votre base d'imposition à la TVA, sous conditions cumulatives, mandat préalable et explicite, reddition de compte exacte, enregistrement en comptes de passage, et justification, auprès de l'administration, de la nature ou du montant exact des débours (2° du II de l'article 267 du CGI), toutes pièces utiles à l'appui : factures des fournisseurs, copies de relevés ou factures détaillées adressées au client. À défaut, tout frais refacturé (salle, technique, décoration) entre dans votre base d'imposition et supporte la TVA.",
     "Vos honoraires de conception et de coordination relèvent du taux normal de 20 %, aucun texte ne prévoyant de taux réduit pour l'organisation d'événements. Chaque prestataire que vous mobilisez (traiteur, lieu, technique) applique son propre régime de TVA sur sa propre facture ; ce que vous refacturez en votre nom suit vos règles, pas les leurs.",
     "Votre clientèle est double : pour un séminaire d'entreprise, facture obligatoire avec mentions légales et, à l'échéance applicable à votre entreprise, émission via une plateforme agréée avec le SIREN du client ; pour un mariage, note détaillée remise au particulier dès 25 € TTC et transmission des données de vente à l'administration (e-reporting).",
     "Si vous vendez aussi des biens (décoration, cadeaux d'invités), la facture devient une opération mixte : la catégorie de l'opération figurera parmi les mentions exigées à l'échéance applicable à votre entreprise."
@@ -18,7 +18,7 @@
     "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel, catégorie de l'opération (prestation de services ou opération mixte en cas de vente de biens), option éventuelle pour la TVA d'après les débits, adresse de livraison (lieu de l'événement) si elle diffère de l'adresse de facturation."
   ],
   "exemple_facture": {
-    "intitule": "Facture de solde — organisation d'un séminaire d'entreprise de 90 participants (après facture d'acompte n° FA-2026-118)",
+    "intitule": "Facture de solde : organisation d'un séminaire d'entreprise de 90 participants (après facture d'acompte n° FA-2026-118)",
     "lignes": [
       {
         "designation": "Honoraires de conception, coordination des prestataires et régie le jour J",
@@ -45,7 +45,7 @@
     "mentions_specifiques": [
       "Référence à la facture d'acompte n° FA-2026-118 et imputation de l'acompte encaissé sur le montant du solde.",
       "Débours éventuels (dépenses engagées au nom et pour le compte du client, sur mandat) listés à part, hors base de TVA, dont la nature ou le montant exact peut être justifié auprès de l'administration, justificatifs à l'appui.",
-      "Catégorie de l'opération : prestation de services (opération mixte si vente de décoration) — à l'échéance applicable à votre entreprise.",
+      "Catégorie de l'opération : prestation de services (opération mixte si vente de décoration), à l'échéance applicable à votre entreprise.",
       "Numéro SIREN du client professionnel et adresse du lieu de l'événement si elle diffère de l'adresse de facturation."
     ]
   },
@@ -73,7 +73,7 @@
   "faq": [
     {
       "question": "Dois-je facturer la TVA sur l'acompte encaissé à la signature du contrat ?",
-      "reponse": "Oui. Pour une prestation de services, la TVA est exigible lors de l'encaissement, acomptes compris — sauf si vous avez opté pour le paiement de la TVA d'après les débits. Pour un client professionnel, vous devez délivrer une facture pour ce versement d'acompte, puis la facture définitive devra faire référence aux factures d'acompte émises et imputer les montants versés. Pour un client particulier, c'est une note détaillée dès 25 € TTC, remise avant paiement, que vous établissez pour chaque acompte puis pour le solde."
+      "reponse": "Oui. Pour une prestation de services, la TVA est exigible lors de l'encaissement, acomptes compris, sauf si vous avez opté pour le paiement de la TVA d'après les débits. Pour un client professionnel, vous devez délivrer une facture pour ce versement d'acompte, puis la facture définitive devra faire référence aux factures d'acompte émises et imputer les montants versés. Pour un client particulier, c'est une note détaillée dès 25 € TTC, remise avant paiement, que vous établissez pour chaque acompte puis pour le solde."
     },
     {
       "question": "Puis-je refacturer la location de salle ou le traiteur à mon client sans y ajouter de TVA ?",

@@ -44,7 +44,7 @@ Factur-X est un format dit hybride, ou mixte. Il réunit deux éléments dans un
 - un PDF conforme à la norme PDF/A-3 (ISO 19005-3), qui constitue la représentation lisible de la facture ;
 - un fichier de données structurées attaché, nommé factur-x.xml, écrit en syntaxe UN/CEFACT CII.
 
-Concrètement, vous ouvrez le fichier et vous voyez une facture normale, avec votre mise en page. Le logiciel de votre client, lui, lit la pièce jointe XML et alimente sa comptabilité. Un seul document, deux lectures.
+Vous ouvrez le fichier et vous voyez une facture normale, avec votre mise en page. Le logiciel de votre client, lui, lit la pièce jointe XML et alimente sa comptabilité. Un seul document, deux lectures.
 
 Conséquence pratique : avec Factur-X, la facture reste consultable à l'œil, sans outil particulier.
 
@@ -73,15 +73,15 @@ Sources : [spécifications externes et normes](https://www.impots.gouv.fr/specif
 
 ## Le format ne dit pas tout : regardez le profil
 
-Voici la seule subtilité technique qui mérite votre attention. Chacun des trois formats du socle décline deux profils de données : le profil EN16931 et le profil EXTENDED-CTC-FR, ce dernier ajoutant des données complémentaires pour couvrir les besoins des entreprises ([norme AFNOR XP Z12-012](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/specification_externes_b2b/afnor/norme-afnor-factures.pdf)).
+Une seule subtilité technique mérite votre attention. Chacun des trois formats du socle décline deux profils de données : le profil EN16931 et le profil EXTENDED-CTC-FR, ce dernier ajoutant des données complémentaires pour couvrir les besoins des entreprises ([norme AFNOR XP Z12-012](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/specification_externes_b2b/afnor/norme-afnor-factures.pdf)).
 
 Factur-X comporte en outre ses propres profils : MINIMUM, BASIC WL, BASIC et EXTENDED. Le profil MINIMUM ne peut pas être utilisé dans le cadre de la réforme, car il ne contient pas assez de données sous forme structurée (même source).
 
-Autrement dit : si un prestataire indique « compatible Factur-X », la question utile est « avec quel profil ? ». Un fichier Factur-X en profil MINIMUM ne répond pas à l'obligation.
+Si un prestataire indique « compatible Factur-X », la question utile est donc « avec quel profil ? ». Un fichier Factur-X en profil MINIMUM ne répond pas à l'obligation.
 
 Ces profils sont décrits dans la version de mai 2025 de la norme ; la page d'index des [spécifications externes et normes](https://www.impots.gouv.fr/specifications-externes-b2b) porte toujours la version en vigueur.
 
-## Ce que ça change concrètement : presque rien pour vous
+## Ce que ça change pour vous : presque rien
 
 Vous n'avez pas à produire du XML, ni à arbitrer entre UBL et CII dans votre travail quotidien. Deux règles expliquent pourquoi.
 
@@ -135,9 +135,3 @@ Sources : [impots.gouv.fr](https://www.impots.gouv.fr/professionnel/je-decouvre-
 - Comment récupérer mes factures et mes données si je change de prestataire ?
 
 Ces cinq questions couvrent l'essentiel. Le reste relève de la technique que vous n'avez pas à maîtriser.
-
-## Ce qu'il faut retenir
-
-- Factur-X est un PDF lisible auquel sont attachées les données ; UBL et CII sont des fichiers XML destinés aux machines. Les trois appartiennent au socle et sont admis.
-- Vous n'avez ni format à choisir ni XML à produire : la plateforme agréée transmet dans l'un des trois formats et convertit si nécessaire.
-- Votre travail est ailleurs : choisir une plateforme agréée d'ici le 1er septembre 2026, mettre à jour les SIREN de vos clients et prévoir les nouvelles mentions.

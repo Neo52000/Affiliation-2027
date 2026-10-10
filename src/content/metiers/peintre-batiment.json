@@ -20,7 +20,7 @@
     "Devis détaillé remis avant toute prestation d'entretien ou de réparation dans le bâtiment."
   ],
   "exemple_facture": {
-    "intitule": "Mise en peinture séjour, couloir et cage d'escalier — appartement achevé depuis plus de deux ans",
+    "intitule": "Mise en peinture séjour, couloir et cage d'escalier (appartement achevé depuis plus de deux ans)",
     "lignes": [
       {
         "designation": "Préparation des supports : lessivage, rebouchage, ponçage (séjour et couloir)",
@@ -100,7 +100,7 @@
     },
     {
       "question": "Que dois-je écrire sur mes devis au sujet des déchets de chantier (pots, enduits, bâches) ?",
-      "reponse": "Les devis de travaux de rénovation indiquent une estimation de la quantité totale de déchets générés, les modalités de gestion et d'enlèvement dont l'effort de tri, les points de collecte retenus — raison sociale, adresse et type d'installation — et une estimation des coûts associés. Cette obligation résulte du décret n° 2020-1817."
+      "reponse": "Les devis de travaux de rénovation indiquent une estimation de la quantité totale de déchets générés, les modalités de gestion et d'enlèvement dont l'effort de tri, les points de collecte retenus (raison sociale, adresse et type d'installation) et une estimation des coûts associés. Cette obligation résulte du décret n° 2020-1817."
     },
     {
       "question": "La mise en peinture d'une façade suit-elle le même taux que l'intérieur ?",

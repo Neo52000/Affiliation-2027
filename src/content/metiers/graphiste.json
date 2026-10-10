@@ -23,7 +23,7 @@
     "Sur la facture de solde, le rappel du numéro et de la date de la facture d'acompte déjà émise, et le montant déduit du net à payer"
   ],
   "exemple_facture": {
-    "intitule": "Facture de solde — identité visuelle avec cession de droits (graphiste assujetti à la TVA, client professionnel français)",
+    "intitule": "Facture de solde : identité visuelle avec cession de droits (graphiste assujetti à la TVA, client professionnel français)",
     "lignes": [
       {
         "designation": "Conception d'un logotype et de ses déclinaisons couleur (trois pistes créatives, deux séries de retours)",
@@ -95,7 +95,7 @@
     },
     {
       "question": "Mon client me demande d'étendre la cession de droits deux ans après la livraison : dois-je émettre une nouvelle facture ?",
-      "reponse": "Oui. Une extension de la cession — nouveaux supports, nouveau territoire, durée prolongée — est une opération distincte de la mission initiale : elle donne lieu à une nouvelle facture, avec sa propre ligne décrivant l'étendue accordée et son prix. S'il s'agit bien d'une cession de droits patrimoniaux, le taux de 10 % s'applique à cette ligne ; en franchise en base, vous facturez sans TVA avec la mention prévue. Conservez l'avenant ou le contrat signé : c'est lui qui matérialise l'étendue cédée."
+      "reponse": "Oui. Une extension de la cession (nouveaux supports, nouveau territoire, durée prolongée) est une opération distincte de la mission initiale : elle donne lieu à une nouvelle facture, avec sa propre ligne décrivant l'étendue accordée et son prix. S'il s'agit bien d'une cession de droits patrimoniaux, le taux de 10 % s'applique à cette ligne ; en franchise en base, vous facturez sans TVA avec la mention prévue. Conservez l'avenant ou le contrat signé : c'est lui qui matérialise l'étendue cédée."
     },
     {
       "question": "Mes créations graphiques peuvent-elles relever du régime des artistes-auteurs ?",

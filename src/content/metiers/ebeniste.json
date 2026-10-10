@@ -20,7 +20,7 @@
     "Date d'émission de la facture et date de livraison du meuble : la date de la vente ou de la prestation doit figurer sur la facture."
   ],
   "exemple_facture": {
-    "intitule": "Facture de solde — bibliothèque en chêne massif sur mesure (acompte encaissé à la commande)",
+    "intitule": "Facture de solde : bibliothèque en chêne massif sur mesure (acompte encaissé à la commande)",
     "lignes": [
       {
         "designation": "Conception et fabrication d'une bibliothèque en chêne massif sur mesure (H 240 × L 180 cm), finition huilée",

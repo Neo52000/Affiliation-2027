@@ -52,6 +52,9 @@ jobs:
       - name: CSP (chaque script en ligne autorisé par empreinte)
         run: pnpm check:csp
 
+      - name: Rédaction (tirets, espaces insécables, mots soudés, formules creuses)
+        run: pnpm check:redaction
+
       - name: Gabarits à compléter (aucun marqueur dans le site publié)
         run: pnpm check:placeholders
 

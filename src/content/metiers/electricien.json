@@ -9,7 +9,7 @@
     "Plusieurs taux de TVA coexistent selon le chantier : 10 % pour la rénovation électrique d'un logement achevé depuis plus de deux ans, 20 % pour le neuf ou les locaux récents, 5,5 % possible sur certains équipements liés à l'amélioration de la qualité énergétique (chauffage performant, ventilation). Le taux réduit exige une mention certifiée par le client sur le devis ou la facture.",
     "Le dépannage électrique impose un devis détaillé remis avant toute prestation : nature des travaux, décompte en quantité et prix unitaire, main-d'œuvre et frais de déplacement. Ce devis structure ensuite la facture ligne à ligne.",
     "En sous-traitance pour une entreprise générale ou un constructeur, la facture est émise sans TVA avec la mention « Autoliquidation » ; c'est l'entreprise principale qui déclare la taxe. Ce régime ne s'applique jamais aux factures adressées au client final. Il ne s'applique pas non plus si vous êtes en franchise en base : la facture porte alors la mention « TVA non applicable, article 293 B du CGI ».",
-    "Pour une installation neuve ou une rénovation totale avec mise hors tension, l'attestation de conformité visée par un organisme agréé (Consuel) est établie sous la responsabilité de l'installateur ; elle est ensuite remise au distributeur par le souscripteur de l'abonnement — en pratique souvent par l'intermédiaire de l'installateur — au plus tard à la demande de mise en service (installation neuve) ou avant la remise sous tension (rénovation totale). Elle s'archive avec le dossier de facturation du chantier.",
+    "Pour une installation neuve ou une rénovation totale avec mise hors tension, l'attestation de conformité visée par un organisme agréé (Consuel) est établie sous la responsabilité de l'installateur ; elle est ensuite remise au distributeur par le souscripteur de l'abonnement, en pratique souvent par l'intermédiaire de l'installateur, au plus tard à la demande de mise en service (installation neuve) ou avant la remise sous tension (rénovation totale). Elle s'archive avec le dossier de facturation du chantier.",
     "Beaucoup d'électriciens débutent en micro-entreprise sous franchise en base de TVA : leurs factures portent la mention « TVA non applicable, article 293 B du CGI » et ne doivent faire apparaître aucune TVA."
   ],
   "mentions_obligatoires_specifiques": [
@@ -19,7 +19,7 @@
     "« TVA non applicable, article 293 B du CGI » pour l'électricien en franchise en base ; aucune TVA ne doit alors figurer sur la facture."
   ],
   "exemple_facture": {
-    "intitule": "Rénovation de l'installation électrique — maison individuelle achevée depuis plus de deux ans",
+    "intitule": "Rénovation de l'installation électrique (maison individuelle achevée depuis plus de deux ans)",
     "lignes": [
       {
         "designation": "Remplacement du tableau électrique : fourniture et pose, disjoncteurs divisionnaires et interrupteurs différentiels compris",
@@ -57,7 +57,7 @@
   "outils_recommandes": [
     {
       "slug": "tiime",
-      "justification": "Sa cible — indépendants, TPE et micro-entrepreneurs — correspond au profil courant de l'électricien artisan."
+      "justification": "Sa cible (indépendants, TPE et micro-entrepreneurs) correspond au profil courant de l'électricien artisan."
     },
     {
       "slug": "abby",
@@ -79,7 +79,7 @@
     },
     {
       "question": "L'attestation Consuel doit-elle figurer sur ma facture ?",
-      "reponse": "Non, ce n'est pas une mention de facture. Pour une installation neuve ou une rénovation totale avec mise hors tension, l'attestation de conformité est établie sous votre responsabilité, visée par un organisme agréé puis remise au distributeur par le souscripteur de l'abonnement — en pratique souvent par votre intermédiaire — au plus tard à la demande de mise en service pour une installation neuve, ou avant la remise sous tension après une rénovation totale avec mise hors tension. Conservez-la dans le dossier du chantier, avec le devis et la facture."
+      "reponse": "Non, ce n'est pas une mention de facture. Pour une installation neuve ou une rénovation totale avec mise hors tension, l'attestation de conformité est établie sous votre responsabilité, visée par un organisme agréé puis remise au distributeur par le souscripteur de l'abonnement (en pratique souvent par votre intermédiaire) au plus tard à la demande de mise en service pour une installation neuve, ou avant la remise sous tension après une rénovation totale avec mise hors tension. Conservez-la dans le dossier du chantier, avec le devis et la facture."
     },
     {
       "question": "Micro-entrepreneur en franchise de TVA : que dois-je écrire sur mes factures de dépannage ?",

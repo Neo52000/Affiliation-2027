@@ -18,7 +18,7 @@
     "Remise obligatoire d'une note au client particulier à partir de 25 € TTC de prestation de services (ou sur demande du client, quel que soit le montant)."
   ],
   "exemple_facture": {
-    "intitule": "Note – salon de coiffure (prestations et vente de produits)",
+    "intitule": "Note : salon de coiffure (prestations et vente de produits)",
     "lignes": [
       {
         "designation": "Coupe, brushing et coiffage",

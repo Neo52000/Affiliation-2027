@@ -6,7 +6,7 @@
   "volume_factures_typique": "Quelques dizaines de factures par mois : échéanciers de marchés scolaires ou de lignes régulières, services occasionnels, mises à disposition d'autocar avec conducteur.",
   "clients_types": "mixte",
   "specificites_facturation": [
-    "Vos prestations d'autocar — circuits scolaires, services occasionnels, excursions, navettes — sont du transport de voyageurs lorsque la mise à disposition du véhicule avec conducteur constitue un véritable contrat de transport. Elles relèvent alors du taux réduit de TVA de 10 %, quel que soit le donneur d'ordre. Attention à la limite : une mise à disposition de véhicule sans conducteur, ou avec conducteur hors d'un véritable contrat de transport, n'est pas un transport de voyageurs mais une location, soumise au taux normal de 20 %.",
+    "Vos prestations d'autocar (circuits scolaires, services occasionnels, excursions, navettes) sont du transport de voyageurs lorsque la mise à disposition du véhicule avec conducteur constitue un véritable contrat de transport. Elles relèvent alors du taux réduit de TVA de 10 %, quel que soit le donneur d'ordre. Attention à la limite : une mise à disposition de véhicule sans conducteur, ou avec conducteur hors d'un véritable contrat de transport, n'est pas un transport de voyageurs mais une location, soumise au taux normal de 20 %.",
     "Vos marchés de transport scolaire ou de lignes régulières sont conclus avec des collectivités. Ces factures à la sphère publique se déposent sur Chorus Pro, déjà obligatoire pour tous les fournisseurs d'entités publiques. Ne les confondez pas avec le circuit de la réforme, qui vise vos clients professionnels privés.",
     "Pour un circuit transfrontalier en autocar, seule la partie du trajet réalisée en France est soumise à la TVA française. La facture doit ventiler le parcours entre la France et l'étranger. Exception : le transport par route de voyageurs étrangers en provenance et à destination de l'étranger, circulant en groupe d'au moins dix personnes, peut être exonéré, notamment quand vous véhiculez en France des touristes étrangers pour le compte d'une agence de voyages.",
     "Vos clients professionnels établis en France (agences de voyages, entreprises, associations assujetties) basculent dans la facturation électronique : à l'échéance applicable à votre entreprise, ces factures transiteront par une plateforme agréée, en réception puis en émission.",
@@ -19,7 +19,7 @@
     "Identité et adresse des parties, numéro SIREN, numéro individuel de TVA, date et numéro de facture, détail des prestations, taux et montant de la TVA."
   ],
   "exemple_facture": {
-    "intitule": "Sortie scolaire à la journée pour un collège public — marché de transport occasionnel passé par la collectivité",
+    "intitule": "Sortie scolaire à la journée pour un collège public, marché de transport occasionnel passé par la collectivité",
     "lignes": [
       {
         "designation": "Mise à disposition d'un autocar 59 places avec conducteur — aller-retour Chaumont / Reims, journée complète (forfait marché)",
@@ -37,7 +37,7 @@
       }
     ],
     "mentions_specifiques": [
-      "TVA au taux réduit de 10 % — transport de voyageurs (BOI-TVA-LIQ-30-20-60).",
+      "TVA au taux réduit de 10 %, transport de voyageurs (BOI-TVA-LIQ-30-20-60).",
       "Référence du marché public et numéro d'engagement communiqués par la collectivité.",
       "Facture déposée sur le portail Chorus Pro (client : entité publique)."
     ]

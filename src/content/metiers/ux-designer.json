@@ -13,16 +13,16 @@
     "En régie au TJM, la facture mensuelle détaille les jours travaillés : quantité, dénomination précise des prestations (ateliers, recherche utilisateur, écrans livrés) et prix unitaire HT par jour sont des mentions obligatoires.",
     "Au forfait projet, les sommes encaissées avant l'exécution (à la signature, au lancement d'une phase) imposent chacune une facture d'acompte ; la facture finale récapitule les jalons déjà facturés.",
     "Le taux réduit de 10 % sur les cessions de droits d'auteur exclut expressément les droits portant sur des logiciels (CGI, art. 279, g). Lorsque vos livrables sont des composants d'un produit logiciel, la question du taux applicable à la cession n'est pas tranchée en votre faveur : en pratique, le taux normal de 20 % s'applique à l'ensemble de la mission, sauf position formalisée avec votre conseil.",
-    "Avec un client assujetti établi dans un autre État membre de l'UE, vous facturez sans TVA avec la mention « Autoliquidation ». Avec un client assujetti établi hors UE, la prestation n'est pas imposable à la TVA française : la facture porte la mention « TVA non applicable – art. 259-1 du CGI »."
+    "Avec un client assujetti établi dans un autre État membre de l'UE, vous facturez sans TVA avec la mention « Autoliquidation ». Avec un client assujetti établi hors UE, la prestation n'est pas imposable à la TVA française : la facture porte la mention « TVA non applicable, art. 259-1 du CGI »."
   ],
   "mentions_obligatoires_specifiques": [
     "« Autoliquidation » pour un client assujetti établi dans un autre État membre de l'UE",
-    "« TVA non applicable – art. 259-1 du CGI » pour un client assujetti établi hors de l'UE",
+    "« TVA non applicable, art. 259-1 du CGI » pour un client assujetti établi hors de l'UE",
     "Numéro d'identification à la TVA du prestataire, et celui du client professionnel en cas d'autoliquidation",
     "« TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base"
   ],
   "exemple_facture": {
-    "intitule": "Facture mensuelle en régie — mission UX/UI pour une entreprise assujettie établie en Allemagne (autoliquidation)",
+    "intitule": "Facture mensuelle en régie : mission UX/UI pour une entreprise assujettie établie en Allemagne (autoliquidation)",
     "lignes": [
       {
         "designation": "Jours de conception UX : ateliers de cadrage, parcours utilisateurs, tests modérés sur prototype",
@@ -77,7 +77,7 @@
     },
     {
       "question": "Et si mon client est une startup américaine, hors Union européenne ?",
-      "reponse": "La prestation réalisée pour un assujetti établi hors de l'UE n'est pas imposable à la TVA française. Vous facturez hors taxe avec la mention « TVA non applicable – art. 259-1 du CGI ». Pensez à conserver les éléments prouvant la qualité d'assujetti et le lieu d'établissement de votre client."
+      "reponse": "La prestation réalisée pour un assujetti établi hors de l'UE n'est pas imposable à la TVA française. Vous facturez hors taxe avec la mention « TVA non applicable, art. 259-1 du CGI ». Pensez à conserver les éléments prouvant la qualité d'assujetti et le lieu d'établissement de votre client."
     },
     {
       "question": "Puis-je appliquer le taux de 10 % en cédant les droits sur mes maquettes et mon design system ?",

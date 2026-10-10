@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { recommander, type OutilFacts, type QuizReponses, type QuizResultat } from '../../lib/quiz';
 import { affiliateLink } from '../../lib/affiliate';
-import { de } from '../../lib/typographie';
+import { de, typographier } from '../../lib/typographie';
 
 interface MetierOption {
   nom: string;
@@ -89,7 +89,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
             id="quiz-metier"
             list="quiz-metiers-liste"
             class="champ mt-1"
-            placeholder="Ex. : plombier, infirmier libéral…"
+            placeholder={'Ex.\u00a0: plombier, infirmier libéral…'}
             value={metierSaisi}
             onInput={(e) => setMetierSaisi((e.target as HTMLInputElement).value)}
           />
@@ -137,7 +137,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
         </div>
 
         <fieldset>
-          <legend class="font-bold">4. Avez-vous besoin d'un compte professionnel ?</legend>
+          <legend class="font-bold">4. Avez-vous besoin d'un compte professionnel&nbsp;?</legend>
           <label class="choix mr-2">
             <input
               type="radio"
@@ -159,7 +159,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
         </fieldset>
 
         <fieldset>
-          <legend class="font-bold">5. Travaillez-vous avec un expert-comptable ?</legend>
+          <legend class="font-bold">5. Travaillez-vous avec un expert-comptable&nbsp;?</legend>
           <label class="choix mr-2">
             <input type="radio" name="expert" checked={expert} onChange={() => setExpert(true)} />{' '}
             Oui
@@ -190,7 +190,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
                 {outils.find((o) => o.slug === resultat.recommande.slug)?.libelleTest}
               </span>
             </p>
-            <p class="mt-1">{resultat.recommande.justification}</p>
+            <p class="mt-1">{typographier(resultat.recommande.justification)}</p>
             <div class="mt-3">
               <Bouton slug={resultat.recommande.slug} nom={resultat.recommande.nom} />
             </div>
@@ -202,7 +202,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
                 <a href={`/logiciels/${a.slug}`} class="font-semibold">
                   {a.nom}
                 </a>
-                <p class="mt-1">{a.justification}</p>
+                <p class="mt-1">{typographier(a.justification)}</p>
               </li>
             ))}
           </ul>

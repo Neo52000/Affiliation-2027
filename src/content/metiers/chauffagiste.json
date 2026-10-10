@@ -25,7 +25,7 @@
     "Pour le dépannage, la réparation et l'entretien : devis détaillé remis avant toute prestation (nature des travaux, décompte en quantité et prix unitaire, main-d'œuvre, frais de déplacement)."
   ],
   "exemple_facture": {
-    "intitule": "Remplacement d'une chaudière fioul par une pompe à chaleur air/eau — maison individuelle achevée depuis plus de deux ans",
+    "intitule": "Remplacement d'une chaudière fioul par une pompe à chaleur air/eau, maison individuelle achevée depuis plus de deux ans",
     "lignes": [
       {
         "designation": "Pompe à chaleur air/eau conforme aux caractéristiques techniques exigées pour le taux réduit (fourniture)",
@@ -102,7 +102,7 @@
     },
     {
       "question": "Que dois-je anticiper pour la prime CEE de mon client ?",
-      "reponse": "Le dispositif des certificats d'économies d'énergie repose sur les fournisseurs d'énergie, qui financent des opérations d'économies d'énergie chez les ménages, les collectivités et les professionnels. Les démarches sont à engager avant tout engagement de l'opération, c'est-à-dire avant la signature du devis ou du bon de commande. Une facture précise — référence, caractéristiques et performance des équipements posés — facilite la constitution du dossier de votre client."
+      "reponse": "Le dispositif des certificats d'économies d'énergie repose sur les fournisseurs d'énergie, qui financent des opérations d'économies d'énergie chez les ménages, les collectivités et les professionnels. Les démarches sont à engager avant tout engagement de l'opération, c'est-à-dire avant la signature du devis ou du bon de commande. Une facture précise (référence, caractéristiques et performance des équipements posés) facilite la constitution du dossier de votre client."
     }
   ],
   "sources": [

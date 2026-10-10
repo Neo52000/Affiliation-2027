@@ -23,7 +23,7 @@
     "SIREN ou SIRET du client lorsque la prestation est commandée par une entreprise."
   ],
   "exemple_facture": {
-    "intitule": "Facture de solde – dîner préparé et servi au domicile du client, 6 couverts (chef relevant de la franchise en base de TVA)",
+    "intitule": "Facture de solde : dîner préparé et servi au domicile du client, 6 couverts (chef relevant de la franchise en base de TVA)",
     "lignes": [
       {
         "designation": "Prestation de chef à domicile : conception du menu, préparation et service du dîner",

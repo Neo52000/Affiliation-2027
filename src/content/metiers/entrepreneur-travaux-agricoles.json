@@ -17,10 +17,10 @@
   ],
   "mentions_obligatoires_specifiques": [
     "Numéro individuel d'identification à la TVA du prestataire, exigé dès lors que le total hors taxes de la facture dépasse 150 €.",
-    "Pour chaque chantier : la quantité dans l'unité retenue — hectare, tonne ou heure —, la dénomination précise, le prix unitaire hors taxes et le taux de TVA applicable.",
+    "Pour chaque chantier : la quantité dans l'unité retenue (hectare, tonne ou heure), la dénomination précise, le prix unitaire hors taxes et le taux de TVA applicable.",
     "Récapitulatif de TVA par taux, dès lors que la facture mêle des chantiers relevant de taux différents.",
     "Date d'échéance du règlement, qui ne peut dépasser soixante jours à compter de l'émission de la facture ou quarante-cinq jours fin de mois, taux des pénalités de retard et indemnité forfaitaire pour frais de recouvrement de 40 €.",
-    "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel, nature des opérations facturées — ici des prestations de services, et non des livraisons de biens —, adresse de livraison lorsqu'elle diffère de celle du client et, le cas échéant, mention « Option pour le paiement de la taxe d'après les débits »."
+    "À l'échéance applicable à votre entreprise : numéro SIREN du client professionnel, nature des opérations facturées (ici des prestations de services, et non des livraisons de biens), adresse de livraison lorsqu'elle diffère de celle du client et, le cas échéant, mention « Option pour le paiement de la taxe d'après les débits »."
   ],
   "exemple_facture": {
     "intitule": "Fin de campagne : facture récapitulative de quatre chantiers réalisés pour une même exploitation relevant du régime agricole de TVA",
@@ -62,7 +62,7 @@
       "Récapitulatif par taux, obligatoire dès lors que la facture mêle plusieurs taux.",
       "Échéance de règlement convenue au contrat de chantier et taux des pénalités de retard.",
       "Indemnité forfaitaire pour frais de recouvrement de 40 €.",
-      "À l'échéance applicable à votre entreprise, la facture porte en plus le numéro SIREN du client professionnel, la nature des opérations facturées — ici des prestations de services, et non des livraisons de biens —, l'adresse de livraison lorsqu'elle diffère de celle du client et, le cas échéant, la mention « Option pour le paiement de la taxe d'après les débits ».",
+      "À l'échéance applicable à votre entreprise, la facture porte en plus le numéro SIREN du client professionnel, la nature des opérations facturées (ici des prestations de services, et non des livraisons de biens), l'adresse de livraison lorsqu'elle diffère de celle du client et, le cas échéant, la mention « Option pour le paiement de la taxe d'après les débits ».",
       "Point de vigilance : la ligne au taux de 10 % n'est justifiée que parce que le client relève du régime agricole de TVA et que les travaux servent son activité agricole. Si l'une de ces deux conditions tombe, la ligne change de taux. Le libellé reprend une opération expressément visée par la liste réglementaire : n'y agrégez pas une prestation voisine qui n'y figure pas."
     ]
   },

@@ -14,7 +14,7 @@
     "Votre exonération de TVA n'est pas automatique : elle est subordonnée à l'autorisation de faire légalement usage du titre de psychologue. Avec le titre, vos soins psychologiques à finalité thérapeutique relèvent de l'article 261, 4, 1° du CGI ; sans cette condition, vos actes sont soumis à la TVA.",
     "Dans le dispositif Mon soutien psy, le psychologue conventionné facture au tarif unique de 50 € la séance, dépassement d'honoraires interdit, dans la limite de 12 séances par an (une séance d'évaluation puis jusqu'à 11 séances de suivi). Le patient peut vous consulter directement, sans adressage préalable obligatoire.",
     "Deux circuits coexistent pour ces séances conventionnées : sans tiers payant, le patient vous règle et vous lui remettez la feuille de soins ; avec tiers payant, vous adressez la feuille de soins complétée et signée à son organisme d'assurance maladie. Le tiers payant est obligatoire pour certains publics (Complémentaire santé solidaire, ALD, maternité à partir du sixième mois notamment).",
-    "Vos prestations sans finalité thérapeutique — supervision d'équipes, analyse de pratiques, formation, recrutement, expertises — sont exclues de l'exonération des soins et, en principe, taxables. Une formation professionnelle continue peut toutefois être exonérée (article 261, 4, 4° a du CGI) si vous êtes titulaire d'une attestation délivrée par l'autorité administrative compétente. Les prestations taxables facturées sous franchise en base portent la mention « TVA non applicable, article 293 B du CGI ».",
+    "Vos prestations sans finalité thérapeutique (supervision d'équipes, analyse de pratiques, formation, recrutement, expertises) sont exclues de l'exonération des soins et, en principe, taxables. Une formation professionnelle continue peut toutefois être exonérée (article 261, 4, 4° a du CGI) si vous êtes titulaire d'une attestation délivrée par l'autorité administrative compétente. Les prestations taxables facturées sous franchise en base portent la mention « TVA non applicable, article 293 B du CGI ».",
     "Ces prestations taxables facturées à des clients professionnels entrent dans le circuit d'émission de factures électroniques, à l'échéance applicable à votre entreprise. Vos séances exonérées en sont dispensées, mais l'obligation de recevoir les factures électroniques de vos fournisseurs vous concerne comme tout professionnel."
   ],
   "mentions_obligatoires_specifiques": [
@@ -22,7 +22,7 @@
     "Sur les prestations taxables (supervision, formation non exonérée, expertise) couvertes par la franchise en base : « TVA non applicable, article 293 B du CGI ». Ne mélangez jamais cette mention avec la référence d'exonération des soins sur une même ligne. Si vous facturez une formation exonérée, portez la référence à sa propre disposition d'exonération (article 261, 4, 4° a du CGI)."
   ],
   "exemple_facture": {
-    "intitule": "Note d'honoraires – accompagnement psychologique dans le dispositif Mon soutien psy",
+    "intitule": "Note d'honoraires : accompagnement psychologique dans le dispositif Mon soutien psy",
     "lignes": [
       {
         "designation": "Séance d'entretien d'évaluation (dispositif Mon soutien psy, tarif conventionné)",
@@ -84,7 +84,7 @@
     },
     {
       "question": "Dois-je émettre des factures électroniques pour mes patients particuliers ?",
-      "reponse": "Non. Vos patients sont des particuliers et la réforme ne vise que les factures entre assujettis ; vos séances exonérées — y compris les séances Mon soutien psy, qui donnent lieu à une feuille de soins et non à une facture électronique — sont en outre dispensées d'émission au format électronique. Seules vos prestations taxables facturées à des entreprises ou institutions (supervision, analyse de pratiques, formation non exonérée) entreront dans le circuit d'émission, et vous devrez recevoir les factures électroniques de vos fournisseurs (loyer, tests psychométriques) à l'échéance applicable à votre entreprise."
+      "reponse": "Non. Vos patients sont des particuliers et la réforme ne vise que les factures entre assujettis ; vos séances exonérées (y compris les séances Mon soutien psy, qui donnent lieu à une feuille de soins et non à une facture électronique) sont en outre dispensées d'émission au format électronique. Seules vos prestations taxables facturées à des entreprises ou institutions (supervision, analyse de pratiques, formation non exonérée) entreront dans le circuit d'émission, et vous devrez recevoir les factures électroniques de vos fournisseurs (loyer, tests psychométriques) à l'échéance applicable à votre entreprise."
     }
   ],
   "sources": [

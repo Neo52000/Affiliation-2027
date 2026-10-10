@@ -69,7 +69,7 @@
       }
     ],
     "mentions_specifiques": [
-      "TVA à 10 % : produits non transformés de l'horticulture et de la floriculture d'ornement — plants annuels d'ornement et plants d'arbustes vendus en l'état",
+      "TVA à 10 % : produits non transformés de l'horticulture et de la floriculture d'ornement (plants annuels d'ornement et plants d'arbustes vendus en l'état)",
       "TVA à 20 % : contenants et support de culture ne remplissant pas les conditions du taux réduit des matières fertilisantes",
       "Totaux de TVA présentés par taux, chaque ligne portant le sien",
       "Facture déposée sur Chorus Pro, avec les références d'identification communiquées par la commune",
@@ -101,7 +101,7 @@
   "faq": [
     {
       "question": "Tous mes godets sont-ils au même taux de TVA ?",
-      "reponse": "Non, et c'est la distinction la plus coûteuse à manquer dans un catalogue de pépinière. Les produits non transformés de l'horticulture et de la floriculture d'ornement — fleurs coupées, plantes vivantes, plants d'arbres et d'arbustes d'ornement, bulbes et tubercules à fleurs, gazon en plaque — relèvent du taux réduit de 10 %. Les semences et les plants destinés à la production agricole, eux, relèvent de 5,5 % depuis le 1er janvier 2023 : plants potagers, plants fruitiers, plants de vigne, semences de légumes et d'espèces aromatiques. Un plant de tomate et un géranium zonal, vendus côte à côte sur le même banc, ne portent donc pas le même taux. Les poteries, l'outillage et les supports de culture courants relèvent du taux normal de 20 %. Le taux réduit de 10 % des matières fertilisantes et des supports de culture suppose un usage agricole, et que le produit soit mentionné à l'annexe I du règlement (CE) n° 889/2008, ou d'origine organique agricole et autorisé à la vente ; les produits relevant des articles L. 255-3 à L. 255-6 du code rural et de la pêche maritime, dispensés d'autorisation de mise sur le marché, sont regardés comme autorisés à la vente et bénéficient eux aussi de 10 %."
+      "reponse": "Non, et c'est la distinction la plus coûteuse à manquer dans un catalogue de pépinière. Les produits non transformés de l'horticulture et de la floriculture d'ornement (fleurs coupées, plantes vivantes, plants d'arbres et d'arbustes d'ornement, bulbes et tubercules à fleurs, gazon en plaque) relèvent du taux réduit de 10 %. Les semences et les plants destinés à la production agricole, eux, relèvent de 5,5 % depuis le 1er janvier 2023 : plants potagers, plants fruitiers, plants de vigne, semences de légumes et d'espèces aromatiques. Un plant de tomate et un géranium zonal, vendus côte à côte sur le même banc, ne portent donc pas le même taux. Les poteries, l'outillage et les supports de culture courants relèvent du taux normal de 20 %. Le taux réduit de 10 % des matières fertilisantes et des supports de culture suppose un usage agricole, et que le produit soit mentionné à l'annexe I du règlement (CE) n° 889/2008, ou d'origine organique agricole et autorisé à la vente ; les produits relevant des articles L. 255-3 à L. 255-6 du code rural et de la pêche maritime, dispensés d'autorisation de mise sur le marché, sont regardés comme autorisés à la vente et bénéficient eux aussi de 10 %."
     },
     {
       "question": "La mairie me demande de déposer ma facture sur Chorus Pro. Est-ce la même chose que la facturation électronique entre entreprises ?",

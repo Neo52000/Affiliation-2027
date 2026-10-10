@@ -19,7 +19,7 @@
     "Décompte distinguant la façon (dégarnissage, garnissage, couverture) des fournitures (sangles, crin, toile forte, passepoil), en quantité et en prix, avec montants hors taxe et toutes taxes comprises."
   ],
   "exemple_facture": {
-    "intitule": "Facture de solde — réfection complète d'un fauteuil Voltaire, tissu fourni par le client",
+    "intitule": "Facture de solde : réfection complète d'un fauteuil Voltaire, tissu fourni par le client",
     "lignes": [
       {
         "designation": "Dégarnissage complet du fauteuil Voltaire et remise en état de la carcasse",
