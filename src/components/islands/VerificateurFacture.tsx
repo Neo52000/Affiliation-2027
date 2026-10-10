@@ -1,4 +1,5 @@
 import { useState } from 'preact/hooks';
+import { pluriel } from '../../lib/typographie';
 import {
   verifierFacture,
   type MentionFacture,
@@ -49,8 +50,8 @@ export default function VerificateurFacture({ mentions }: Props) {
   );
 
   const Manquante = ({ m }: { m: MentionFacture }) => (
-    <li class="rounded border border-border p-3">
-      <p class="font-bold">{m.libelle}</p>
+    <li>
+      <p class="font-semibold">{m.libelle}</p>
       <p class="mt-1 text-sm">{m.regle}</p>
       {m.condition && <p class="mt-1 text-sm text-ink-soft">Condition : {m.condition}</p>}
       <p class="mt-1 text-sm">
@@ -83,16 +84,16 @@ export default function VerificateurFacture({ mentions }: Props) {
       {resultat && (
         <section aria-live="polite" class="mt-8">
           {resultat.complet ? (
-            <p class="card-top rounded-lg border border-border p-4 font-bold">
+            <p class="en-bref font-semibold">
               Toutes les mentions toujours obligatoires sont présentes. Vérifiez encore les mentions
               conditionnelles ci-dessous si votre situation est concernée.
             </p>
           ) : (
             <>
-              <h2 class="text-2xl font-bold">
-                {resultat.manquantes.length} mention(s) obligatoire(s) manquante(s)
+              <h2 class="titre-section">
+                {pluriel(resultat.manquantes.length, 'mention obligatoire manquante')}
               </h2>
-              <ul class="mt-3 space-y-3">
+              <ul class="liste-filets mt-2">
                 {resultat.manquantes.map((m) => (
                   <Manquante m={m} key={m.id} />
                 ))}
@@ -101,8 +102,8 @@ export default function VerificateurFacture({ mentions }: Props) {
           )}
           {resultat.aVerifier.length > 0 && (
             <>
-              <h3 class="mt-6 text-lg font-bold">À vérifier selon votre situation</h3>
-              <ul class="mt-3 space-y-3">
+              <h3 class="mt-8">À vérifier selon votre situation</h3>
+              <ul class="liste-filets mt-2">
                 {resultat.aVerifier.map((m) => (
                   <Manquante m={m} key={m.id} />
                 ))}

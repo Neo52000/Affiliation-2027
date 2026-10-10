@@ -25,12 +25,12 @@ const { id, titre, siFerme = 'masquer', class: classes } = Astro.props;
 
 {EDITEUR_IDENTIFIE ? (
   <section
-    class:list={['newsletter rounded-lg border border-border p-5', classes]}
+    class:list={['newsletter', classes]}
     aria-labelledby={titre ? `${id}-titre` : undefined}
     aria-label={titre ? undefined : 'Inscription à la newsletter'}
   >
     {titre && (
-      <h2 id={`${id}-titre`} class="text-xl font-bold">
+      <h2 id={`${id}-titre`} class="titre-section">
         {titre}
       </h2>
     )}
@@ -83,7 +83,7 @@ const { id, titre, siFerme = 'masquer', class: classes } = Astro.props;
   </section>
 ) : (
   siFerme === 'annoncer' && (
-    <p class:list={['rounded-lg border border-border p-5', classes]}>
+    <p class:list={['border-t border-ink pt-4', classes]}>
       Les inscriptions à la newsletter ne sont pas encore ouvertes : aucune adresse n'est collectée
       pour l'instant.
     </p>

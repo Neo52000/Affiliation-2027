@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { recommander, type OutilFacts, type QuizReponses, type QuizResultat } from '../../lib/quiz';
 import { affiliateLink } from '../../lib/affiliate';
+import { de } from '../../lib/typographie';
 
 interface MetierOption {
   nom: string;
@@ -70,7 +71,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
           class="btn-cta"
           data-emplacement={`quiz-${slug}`}
         >
-          Découvrir {nom}
+          Aller sur le site {de(nom)}
         </a>
         {lien.sponsored && <span class="text-xs text-ink-soft">lien affilié</span>}
       </span>
@@ -173,19 +174,19 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
           Voir ma recommandation
         </button>
         <p id="quiz-note" class="text-xs text-ink-soft">
-          Recommandation calculée à partir des faits vérifiés de chaque outil et de votre métier.
+          Recommandation calculée à partir des faits vérifiés de chaque logiciel et de votre métier.
         </p>
       </form>
 
       {resultat && (
-        <section class="mt-8 space-y-4">
+        <section class="mt-10">
           <h2 ref={titreResultat} tabIndex={-1} class="titre-section">
             Notre recommandation
           </h2>
-          <div class="card-top carte-reco rounded-lg border border-border p-4">
-            <p class="font-bold">
+          <div class="mt-4">
+            <p class="text-xl font-semibold">
               <a href={`/logiciels/${resultat.recommande.slug}`}>{resultat.recommande.nom}</a>
-              <span class="pill ml-2 align-middle font-normal">
+              <span class="pill ml-2 align-middle text-base font-normal">
                 {outils.find((o) => o.slug === resultat.recommande.slug)?.libelleTest}
               </span>
             </p>
@@ -194,15 +195,17 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
               <Bouton slug={resultat.recommande.slug} nom={resultat.recommande.nom} />
             </div>
           </div>
-          <h3 class="text-lg font-bold">Deux alternatives</h3>
-          {resultat.alternatives.map((a) => (
-            <div class="card-reco rounded-lg border border-border p-4" key={a.slug}>
-              <p class="font-bold">
-                <a href={`/logiciels/${a.slug}`}>{a.nom}</a>
-              </p>
-              <p class="mt-1">{a.justification}</p>
-            </div>
-          ))}
+          <h3 class="mt-8">Deux alternatives</h3>
+          <ul class="liste-filets mt-2">
+            {resultat.alternatives.map((a) => (
+              <li key={a.slug}>
+                <a href={`/logiciels/${a.slug}`} class="font-semibold">
+                  {a.nom}
+                </a>
+                <p class="mt-1">{a.justification}</p>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
     </div>

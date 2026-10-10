@@ -33,17 +33,19 @@ const outils = outilsColl.map((o) => ({
 
 <Base
   title={pageTitle('Quiz : quel logiciel pour vous ?', SITE.name)}
-  description="5 questions — métier, statut, volume, compte pro, expert-comptable — pour trouver votre logiciel de facturation électronique, avec deux alternatives."
+  description="Cinq questions (métier, statut, volume, compte pro, expert-comptable) pour trouver votre logiciel de facturation électronique, avec deux alternatives."
 >
-  <BandeauTransparence outils={outils.map((o) => o.slug)} />
+  <BandeauTransparence outils={outils.map((o) => o.slug)} rappelIndependance={false} />
   <Breadcrumb items={[{ label: 'Outils' }, { label: 'Quiz' }]} />
-  <h1 class="titre-page mt-4">Quel logiciel de facturation électronique pour vous&nbsp;?</h1>
-  <p class="prose-measure mt-3">
-    5 questions, une recommandation fondée uniquement sur des faits vérifiés et sur votre métier.
+  <p class="surtitre mt-4">Outil</p>
+  <h1 class="titre-page mt-3">Quel logiciel de facturation électronique pour vous&nbsp;?</h1>
+  <p class="chapo mt-5">
+    Cinq questions sur votre activité. La recommandation part de votre métier et des faits vérifiés
+    de chaque logiciel.
   </p>
 
-  <div class="layout-article mt-6">
-    <div class="card-top rounded-lg border border-border bg-paper p-5 sm:p-6">
+  <div class="layout-article mt-10">
+    <div class="max-w-2xl">
       <Quiz client:load metiers={metiers} outils={outils} recosParMetier={recosParMetier} />
     </div>
 
@@ -52,7 +54,7 @@ const outils = outilsColl.map((o) => ({
         <p class="carte-appui-titre">Comment elle est calculée</p>
         <ul class="mt-2 space-y-2 text-sm text-ink-soft">
           <li>Votre métier détermine les besoins réellement utiles.</li>
-          <li>Seuls les faits vérifiés de chaque outil entrent dans le calcul.</li>
+          <li>Seuls les faits vérifiés de chaque logiciel entrent dans le calcul.</li>
           <li>Ni les commissions ni la publicité n'y entrent jamais.</li>
           <li>À égalité, l'ordre alphabétique départage.</li>
         </ul>
@@ -64,8 +66,8 @@ const outils = outilsColl.map((o) => ({
       <div class="carte-appui">
         <p class="carte-appui-titre">Pas encore de note</p>
         <p class="mt-2 text-sm text-ink-soft">
-          Aucun outil n'est noté avant un test réel documenté. En attendant, la recommandation
-          s'appuie sur le périmètre et la cible vérifiés.
+          Aucun logiciel n'est noté avant notre test. En attendant, la recommandation s'appuie sur
+          le périmètre et la cible vérifiés.
         </p>
       </div>
 
@@ -82,10 +84,10 @@ const outils = outilsColl.map((o) => ({
   </div>
 
   <noscript>
-    <p class="mt-6 rounded border border-border bg-paper-soft p-4">
-      Le quiz a besoin de JavaScript. Sans lui, le plus simple est de passer par la page de votre
-      métier : chacune recommande 3 outils adaptés, avec les mêmes critères.
-      <a href="/">Trouver votre métier depuis l'accueil</a>
+    <p class="prose-measure mt-6 border-t border-ink pt-4">
+      Le quiz a besoin de JavaScript. Sans lui, passez par la page de votre métier : chacune
+      recommande trois logiciels, avec les mêmes critères.
+      <a href="/">Trouver votre métier depuis l'accueil</a>.
     </p>
   </noscript>
 </Base>

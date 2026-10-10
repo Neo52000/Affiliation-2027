@@ -37,7 +37,7 @@ export default function RappelEmail({ metiers }: Props) {
   };
 
   if (etat.phase === 'ok') {
-    return <p class="card-top rounded-lg border border-border p-4 font-bold">{etat.message}</p>;
+    return <p class="en-bref font-semibold">{etat.message}</p>;
   }
 
   return (
@@ -66,7 +66,7 @@ export default function RappelEmail({ metiers }: Props) {
           value={metier}
           onChange={(e) => setMetier((e.target as HTMLSelectElement).value)}
         >
-          <option value="">—</option>
+          <option value="">Non précisé</option>
           {metiers.map((m) => (
             <option value={m.slug} key={m.slug}>
               {m.nom}
@@ -96,7 +96,7 @@ export default function RappelEmail({ metiers }: Props) {
         {etat.phase === 'envoi' ? 'Envoi…' : 'Recevoir mon rappel'}
       </button>
       {etat.phase === 'erreur' && (
-        <p class="rounded border border-border bg-paper-soft p-3 text-sm" role="alert">
+        <p class="admin-erreur text-sm" role="alert">
           {etat.message}
         </p>
       )}

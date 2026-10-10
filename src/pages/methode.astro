@@ -15,90 +15,139 @@ const PONDERATIONS = [
 ];
 
 const protocole = (await getCollection('tests'))[0]?.data.protocole ?? [];
+
+// La charte : chaque principe est vérifiable sur le site (code du quiz, fiches,
+// page transparence).
+const PRINCIPES: { titre: string; texte: string; lien?: { href: string; label: string } }[] = [
+  {
+    titre: 'Ni commission ni publicité dans la note',
+    texte:
+      "Les commissions d'affiliation et les achats d'espace publicitaire n'entrent ni dans la note ni dans l'ordre des recommandations. Ils financent le site, pas les classements.",
+    lien: { href: '/transparence', label: 'Voir comment le site est financé' },
+  },
+  {
+    titre: "À égalité, l'ordre alphabétique",
+    texte:
+      "À égalité de score, l'ordre alphabétique départage. Le calcul du quiz ne contient aucun ordre de préférence entre éditeurs.",
+  },
+  {
+    titre: 'Pas de note avant notre test',
+    texte:
+      "Tant qu'un logiciel affiche « Test à venir », sa fiche ne contient que des faits vérifiés sur sources officielles.",
+  },
+  {
+    titre: 'Chaque donnée est datée et sourcée',
+    texte: 'Une donnée invérifiable est affichée « À vérifier », jamais estimée.',
+  },
+];
 ---
 
 <Base
   title={pageTitle('Notre méthode de notation', SITE.name)}
-  description="Comment nous notons les logiciels de facturation électronique : pondérations publiques, tests réels documentés, commissions exclues de la notation."
+  description="Comment nous notons les logiciels de facturation électronique : pondérations publiques, tests documentés, commissions exclues de la notation."
 >
   <Breadcrumb items={[{ label: 'Notre méthode' }]} />
-  <article class="prose-measure mt-4">
-    <h1 class="text-3xl font-bold">Notre méthode de notation</h1>
-
-    <h2 class="mt-8 text-2xl font-bold">Les principes</h2>
-    <ul class="liste-aeree mt-3 list-disc pl-5">
-      <li>
-        <strong>
-          Ni les commissions ni les achats d'espace publicitaire n'entrent dans la notation
-        </strong>{' '}
-        ni dans l'ordre des recommandations. L'affiliation et la publicité financent le site, pas
-        les classements (<a href="/transparence">voir la page transparence</a>).
-      </li>
-      <li>
-        <strong>À égalité de score, l'ordre alphabétique départage.</strong> Le calcul du quiz ne
-        contient aucun ordre de préférence entre éditeurs.
-      </li>
-      <li>
-        <strong>Aucune note n'est publiée avant un test réel documenté.</strong> Tant qu'un outil
-        affiche « Test à venir », sa fiche ne contient que des faits vérifiés sur sources
-        officielles.
-      </li>
-      <li>
-        <strong>Chaque donnée est datée et sourcée.</strong> Une donnée invérifiable est affichée «
-        À vérifier », jamais estimée.
-      </li>
-    </ul>
-
-    <h2 class="mt-8 text-2xl font-bold">La pondération de la note sur 10</h2>
-    <div
-      class="table-scroll mt-3"
-      role="region"
-      aria-label="Pondération de la note sur 10"
-      tabindex="0"
-    >
-      <table class="w-full border-collapse text-sm">
-        <thead>
-          <tr class="border-b-2 border-border text-left">
-            <th scope="col" class="py-2 pr-3">
-              Critère
-            </th>
-            <th scope="col" class="nombre py-2 pr-3">
-              Poids
-            </th>
-            <th scope="col" class="py-2">
-              <span class="sr-only">Représentation du poids</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {PONDERATIONS.map((p) => (
-            <tr class="border-b border-border">
-              <td class="py-2 pr-3">{p.critere}</td>
-              <td class="nombre py-2 pr-3">{p.poids} %</td>
-              <td class="w-40 py-2">
-                <span class="jauge" aria-hidden="true">
-                  <span style={`width: ${(p.poids / 25) * 100}%`}></span>
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-
-    <h2 class="mt-8 text-2xl font-bold">Le protocole de test réel</h2>
-    <p class="mt-3">Chaque outil passe le même protocole, rempli par un testeur humain :</p>
-    <ol class="mt-3 list-decimal space-y-2 pl-5">
-      {protocole.map((p) => (
-        <li>{p}</li>
-      ))}
-    </ol>
-
-    <h2 class="mt-8 text-2xl font-bold">Corrections</h2>
-    <p class="mt-3">
-      Une erreur constatée est corrigée dès signalement, avec mise à jour de la date affichée sur la
-      page concernée. Les données font l'objet d'une revue mensuelle (prix, liste des plateformes
-      agréées, calendrier).
+  <article class="mt-4">
+    <p class="surtitre">Confiance</p>
+    <h1 class="titre-page mt-3">Notre méthode de notation</h1>
+    <p class="chapo mt-5">
+      Les règles qui décident de l'ordre des recommandations et de la note sur 10. Elles
+      s'appliquent à tous les logiciels, sans exception.
     </p>
+
+    <section aria-labelledby="principes" class="mt-12">
+      <h2 id="principes" class="titre-section">
+        Les principes
+      </h2>
+      <ol class="prose-measure mt-2">
+        {PRINCIPES.map((p, i) => (
+          <li class="numerote border-b border-border py-5">
+            <span class="numero" aria-hidden="true">
+              {i + 1}
+            </span>
+            <div>
+              <h3>{p.titre}</h3>
+              <p class="mt-1">
+                {p.texte}
+                {p.lien && (
+                  <>
+                    {' '}
+                    <a href={p.lien.href}>{p.lien.label}</a>.
+                  </>
+                )}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section aria-labelledby="ponderation" class="mt-12">
+      <h2 id="ponderation" class="titre-section">
+        La pondération de la note sur 10
+      </h2>
+      <div
+        class="table-scroll prose-measure mt-4"
+        role="region"
+        aria-label="Pondération de la note sur 10"
+        tabindex="0"
+      >
+        <table class="table-chiffres w-full border-collapse text-sm">
+          <thead>
+            <tr>
+              <th scope="col" class="py-2 pr-3">
+                Critère
+              </th>
+              <th scope="col" class="nombre py-2 pr-3">
+                Poids
+              </th>
+              <th scope="col" class="py-2">
+                <span class="sr-only">Représentation du poids</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {PONDERATIONS.map((p) => (
+              <tr>
+                <th scope="row" class="py-2 pr-3 font-normal">
+                  {p.critere}
+                </th>
+                <td class="nombre py-2 pr-3">{p.poids} %</td>
+                <td class="w-40 py-2 align-middle">
+                  <span class="jauge" aria-hidden="true">
+                    <span style={`width: ${(p.poids / 25) * 100}%`} />
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="protocole" class="mt-12">
+      <h2 id="protocole" class="titre-section">
+        Le protocole de test
+      </h2>
+      <p class="prose-measure mt-3">
+        Chaque logiciel passe le même protocole, mené par un testeur humain :
+      </p>
+      <ol class="prose-measure mt-3 list-decimal space-y-2 pl-5">
+        {protocole.map((p) => (
+          <li>{p}</li>
+        ))}
+      </ol>
+    </section>
+
+    <section aria-labelledby="corrections" class="mt-12">
+      <h2 id="corrections" class="titre-section">
+        Corrections
+      </h2>
+      <p class="prose-measure mt-3">
+        Une erreur constatée est corrigée dès signalement, avec mise à jour de la date affichée sur
+        la page concernée. Les données font l'objet d'une revue mensuelle : prix, liste des
+        plateformes agréées, calendrier.
+      </p>
+    </section>
   </article>
 </Base>

@@ -16,29 +16,30 @@ const mentions = mentionsData.mentions as MentionFacture[];
   description="Cochez les mentions présentes sur votre facture : le vérificateur liste celles qui manquent, avec la règle et la source officielle. Aucune donnée envoyée."
 >
   <Breadcrumb items={[{ label: 'Outils' }, { label: 'Vérificateur de facture' }]} />
-  <h1 class="titre-page mt-4">Votre facture est-elle conforme&nbsp;?</h1>
-  <p class="prose-measure mt-3">
+  <p class="surtitre mt-4">Outil</p>
+  <h1 class="titre-page mt-3">Votre facture est-elle conforme&nbsp;?</h1>
+  <p class="chapo mt-5">
     {mentions.length} mentions contrôlées, chacune adossée à une source officielle. Relevé du{' '}
     {formatDateFr(mentionsData.date_releve)}.
   </p>
 
-  <div class="mt-6 max-w-2xl">
+  <div class="mt-10 max-w-2xl">
     <VerificateurFacture client:load mentions={mentions} />
   </div>
 
   <noscript>
     <section class="prose-measure mt-8">
-      <p class="rounded border border-border bg-paper-soft p-4">
-        Le vérificateur interactif a besoin de JavaScript. Voici la liste complète des mentions à
-        contrôler manuellement :
+      <p class="border-t border-ink pt-4">
+        Le vérificateur interactif a besoin de JavaScript. Sans lui, contrôlez votre facture avec la
+        liste complète des mentions :
       </p>
-      <ul class="mt-4 list-disc space-y-2 pl-5">
+      <ul class="liste-filets mt-2">
         {mentions.map((m) => (
           <li>
             {m.libelle}
-            {m.condition && <span class="text-sm text-ink-soft"> (si : {m.condition})</span>} —{' '}
+            {m.condition && <span class="text-sm text-ink-soft"> (si : {m.condition})</span>}.{' '}
             <a href={m.url_source} rel="noopener">
-              source
+              Source
             </a>
           </li>
         ))}

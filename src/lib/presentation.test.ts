@@ -12,7 +12,6 @@ import {
   extraireUrls,
   hotesGouv,
   insecables,
-  de,
   insererBloc,
   remplirGabarit,
   valeurConfiguree,
@@ -187,15 +186,5 @@ describe('remplissage', () => {
     expect(valeurConfiguree('TODO_EMAIL_CONTACT')).toBeNull();
     expect(valeurConfiguree('https://todo-domaine.example')).toBeNull();
     expect(valeurConfiguree('contact@exemple.fr')).toBe('contact@exemple.fr');
-  });
-});
-
-describe('de', () => {
-  it('élide devant une voyelle, pas devant une consonne', () => {
-    expect(de('Abby')).toBe('d’Abby');
-    expect(de('Indy')).toBe('d’Indy');
-    expect(de('Tiime')).toBe('de Tiime');
-    expect(de('Qonto')).toBe('de Qonto');
-    expect(de('Épicerie fine')).toBe('d’Épicerie fine');
   });
 });

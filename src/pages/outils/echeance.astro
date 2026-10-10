@@ -21,18 +21,19 @@ const metiersRappel = (await getCollection('metiers'))
   description="Quand recevoir et émettre vos factures électroniques ? Taille d'entreprise et situation TVA : dates applicables et check-list de mise en conformité."
 >
   <Breadcrumb items={[{ label: 'Outils' }, { label: 'Simulateur d’échéance' }]} />
-  <h1 class="titre-page mt-4">Vos échéances de facturation électronique</h1>
-  <p class="prose-measure mt-3">
-    Indiquez votre situation : le simulateur affiche les dates qui s'appliquent à votre entreprise
-    et votre check-list de mise en conformité.
+  <p class="surtitre mt-4">Outil</p>
+  <h1 class="titre-page mt-3">Vos échéances de facturation électronique</h1>
+  <p class="chapo mt-5">
+    Indiquez la taille de votre entreprise et votre situation de TVA&nbsp;: le simulateur affiche
+    les dates qui vous concernent et votre check-list de mise en conformité.
   </p>
 
-  <div class="mt-6">
+  <div class="mt-10 max-w-2xl">
     <EcheanceSimulateur client:load echeances={echeances} />
   </div>
 
-  <section aria-labelledby="rappel" class="prose-measure mt-12 rounded border border-border p-4">
-    <h2 id="rappel" class="text-2xl font-bold">
+  <section aria-labelledby="rappel" class="mt-14 max-w-2xl">
+    <h2 id="rappel" class="titre-section">
       Recevoir un rappel avant mon échéance
     </h2>
     <p class="mt-2 text-sm text-ink-soft">
@@ -56,9 +57,9 @@ const metiersRappel = (await getCollection('metiers'))
     )}
   </section>
 
-  <section aria-labelledby="calendrier-complet" class="prose-measure mt-12">
-    <h2 id="calendrier-complet" class="text-2xl font-bold">
-      Le calendrier complet (sans simulateur)
+  <section aria-labelledby="calendrier-complet" class="mt-14">
+    <h2 id="calendrier-complet" class="titre-section">
+      Le calendrier complet
     </h2>
     <div
       class="table-scroll mt-3"
@@ -68,12 +69,12 @@ const metiersRappel = (await getCollection('metiers'))
     >
       <table class="w-full border-collapse text-sm">
         <thead>
-          <tr class="border-b-2 border-border text-left">
+          <tr>
             <th scope="col" class="py-2 pr-3">
               Obligation
             </th>
             <th scope="col" class="py-2 pr-3">
-              Qui
+              Concerne
             </th>
             <th scope="col" class="py-2 pr-3">
               Date
@@ -85,10 +86,10 @@ const metiersRappel = (await getCollection('metiers'))
         </thead>
         <tbody>
           {echeances.map((e) => (
-            <tr class="border-b border-border">
+            <tr>
               <td class="py-2 pr-3">{e.obligation}</td>
               <td class="py-2 pr-3">{e.concernes}</td>
-              <td class="py-2 pr-3">{formatDateFr(e.date)}</td>
+              <td class="py-2 pr-3 whitespace-nowrap">{formatDateFr(e.date)}</td>
               <td class="py-2">{e.statut === 'en_vigueur' ? 'En vigueur' : 'À venir'}</td>
             </tr>
           ))}
@@ -101,11 +102,11 @@ const metiersRappel = (await getCollection('metiers'))
         <>
           {i > 0 && ' · '}
           <a href={b.url} rel="noopener">
-            {b.texte.split('(')[0]}
+            {b.texte.split('(')[0]?.trim()}
           </a>
         </>
       ))}
-      — données relevées le {formatDateFr(echeancesData.date_releve)}.
+      . Données relevées le {formatDateFr(echeancesData.date_releve)}.
     </p>
   </section>
 </Base>

@@ -4,8 +4,8 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 
-// Identité de l'éditeur : EDITEUR_LEGAL non renseigné (TODO.md #3) —
-// la page reste hors index tant que les placeholders sont présents.
+// Identité de l'éditeur : EDITEUR_LEGAL non renseigné (TODO.md #3). La page
+// reste hors index tant que les placeholders sont présents.
 const placeholders = SITE.name.startsWith('TODO_');
 ---
 
@@ -18,27 +18,28 @@ const placeholders = SITE.name.startsWith('TODO_');
 
   <div class="layout-article mt-4">
     <article>
-      <h1 class="titre-page">À propos de ce site</h1>
+      <p class="surtitre">Confiance</p>
+      <h1 class="titre-page mt-3">À propos de ce site</h1>
 
-      <h2 class="titre-section prose-measure mt-8 text-2xl font-bold">Pourquoi ce site existe</h2>
+      <h2 class="titre-section mt-10">Pourquoi ce site existe</h2>
       <p class="prose-measure mt-3">
-        La facturation électronique devient obligatoire pour toutes les entreprises françaises, et
-        les comparatifs existants classent surtout par statut juridique — rarement par métier, alors
-        que c'est le métier qui dicte les besoins : TVA multi-taux d'un plombier, exonération d'un
+        La facturation électronique s'impose à toutes les entreprises assujetties à la TVA. Les
+        comparatifs existants classent surtout par statut juridique, rarement par métier, alors que
+        c'est le métier qui dicte les besoins : TVA multi-taux d'un plombier, exonération d'un
         infirmier libéral, autofacturation d'un VTC.
       </p>
       <p class="prose-measure mt-3">
         Ce site prend l'angle inverse : une page par métier, des spécificités vérifiées sur sources
-        officielles, et des recommandations fondées sur des faits — jamais sur les commissions (
-        <a href="/methode">méthode publique</a>, <a href="/transparence">financement transparent</a>
-        ).
+        officielles, et des recommandations fondées sur des faits. La{' '}
+        <a href="/methode">méthode de notation</a> est publique, et le{' '}
+        <a href="/transparence">financement du site</a> est détaillé.
       </p>
 
-      <h2 class="titre-section prose-measure mt-10 text-2xl font-bold">Qui édite ce site</h2>
+      <h2 class="titre-section mt-10">Qui édite ce site</h2>
       {placeholders ? (
-        <p class="encadre-essentiel prose-measure mt-3 p-4">
+        <p class="en-bref prose-measure mt-3">
           L'identité complète de l'éditeur (raison sociale, SIRET, directeur de publication) est en
-          cours de publication et figurera ici et dans les
+          cours de publication et figurera ici et dans les{' '}
           <a href="/mentions-legales">mentions légales</a>.
         </p>
       ) : (
@@ -47,7 +48,7 @@ const placeholders = SITE.name.startsWith('TODO_');
         </p>
       )}
 
-      <h2 class="titre-section prose-measure mt-10 text-2xl font-bold">Relecture</h2>
+      <h2 class="titre-section mt-10">Relecture</h2>
       <p class="prose-measure mt-3">
         {SITE.expertRelecteur
           ? `Les contenus réglementaires sont relus par ${SITE.expertRelecteur}.`
@@ -56,11 +57,11 @@ const placeholders = SITE.name.startsWith('TODO_');
     </article>
 
     <aside class="colonne-appui" aria-label="Pour aller plus loin">
-      <div class="carte-appui card-top">
+      <div class="carte-appui">
         <p class="carte-appui-titre">Notre méthode</p>
         <p class="mt-2 text-sm text-ink-soft">
-          Les critères de classement, leur poids, et pourquoi aucune note n'est publiée avant un
-          test réel.
+          Les critères de classement, leur poids, et pourquoi aucune note n'est publiée avant notre
+          test.
         </p>
         <p class="mt-3 text-sm">
           <a href="/methode">Lire la méthode</a>
@@ -79,9 +80,11 @@ const placeholders = SITE.name.startsWith('TODO_');
 
       <div class="carte-appui">
         <p class="carte-appui-titre">Commencer</p>
-        <p class="mt-2 text-sm text-ink-soft">Cinq questions pour l'outil adapté à votre métier.</p>
-        <p class="mt-3">
-          <a href="/outils/quiz" class="btn-cta">
+        <p class="mt-2 text-sm text-ink-soft">
+          Cinq questions pour le logiciel adapté à votre métier.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/outils/quiz" class="lien-fleche">
             Faire le quiz
           </a>
         </p>
