@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { situerEcheances, type Echeance, type SituationTva, type Taille } from '../../lib/echeance';
 import { formatDateFr } from '../../lib/dates';
 
@@ -10,6 +10,12 @@ export default function EcheanceSimulateur({ echeances }: Props) {
   const [taille, setTaille] = useState<Taille>('pme-tpe-micro');
   const [tva, setTva] = useState<SituationTva>('assujetti');
   const [affiche, setAffiche] = useState(false);
+  // Le focus va sur le titre du résultat (même modèle que le quiz) : une région
+  // aria-live insérée déjà remplie n'est pas annoncée de façon fiable.
+  const titreResultat = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (affiche) titreResultat.current?.focus();
+  }, [affiche]);
 
   const situation = affiche ? situerEcheances(taille, tva, echeances) : null;
 
@@ -17,10 +23,12 @@ export default function EcheanceSimulateur({ echeances }: Props) {
     e && (
       <li>
         <strong>{titre} :</strong> {formatDateFr(e.date)}{' '}
-        <span class={e.statut === 'en_vigueur' ? 'font-bold text-accent' : 'text-ink-soft'}>
+        <span class={e.statut === 'en_vigueur' ? 'font-semibold text-accent' : 'text-ink-soft'}>
           ({e.statut === 'en_vigueur' ? 'déjà en vigueur' : 'à venir'})
         </span>
-        {e.complement && <span class="text-sm text-ink-soft"> — {e.complement}</span>}
+        {e.complement && (
+          <span class="mt-1 block text-sm text-ink-soft">{e.complement.replace(/\.?$/, '.')}</span>
+        )}
       </li>
     );
 
@@ -74,26 +82,25 @@ export default function EcheanceSimulateur({ echeances }: Props) {
       </form>
 
       {situation && (
-        <section aria-live="polite" class="mt-8">
+        <section class="mt-8">
+          <h2 ref={titreResultat} tabIndex={-1} class="titre-section">
+            Vos échéances
+          </h2>
           {situation.horsChamp ? (
-            <p class="rounded border border-border bg-paper-soft p-4">{situation.message}</p>
+            <p class="mt-3">{situation.message}</p>
           ) : (
             <>
-              <h2 class="text-2xl font-bold">Vos échéances</h2>
-              <ul class="mt-3 list-disc space-y-2 pl-5">
+              <ul class="liste-filets mt-2">
                 <Ligne titre="Recevoir des factures électroniques" e={situation.reception} />
                 <Ligne titre="Émettre vos factures en électronique" e={situation.emission} />
                 <Ligne titre="E-reporting (données de transactions)" e={situation.eReporting} />
               </ul>
-              <h3 class="mt-5 text-lg font-bold">Votre check-list</h3>
-              <ol class="mt-2 list-decimal space-y-1 pl-5">
+              <h3 class="mt-8">Votre check-list</h3>
+              <ol class="mt-2 list-decimal space-y-2 pl-5">
                 {situation.checklist.map((c) => (
                   <li key={c}>{c}</li>
                 ))}
               </ol>
-              <p class="mt-4 text-sm text-ink-soft">
-                Rappel par email avant votre échéance : bientôt disponible sur cette page.
-              </p>
             </>
           )}
         </section>

@@ -68,7 +68,7 @@ test('5. vérificateur de facture : mentions manquantes listées avec leur sourc
   await attendreHydratation(page, page.getByRole('button', { name: 'Vérifier ma facture' }));
   await page.getByRole('button', { name: 'Vérifier ma facture' }).click();
   await expect(
-    page.getByRole('heading', { name: /mention\(s\) obligatoire\(s\) manquante/ }),
+    page.getByRole('heading', { name: /mentions? obligatoires? manquantes?/ }),
   ).toBeVisible();
   await expect(page.getByRole('link', { name: 'Source officielle' }).first()).toBeVisible();
 });

@@ -275,7 +275,10 @@ a:hover {
   }
 }
 
+/* Positionné : un élément absolu à l'intérieur (texte .sr-only d'une cellule)
+   reste contenu et rogné par le défilement au lieu d'élargir la page. */
 .table-scroll {
+  position: relative;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -472,7 +475,8 @@ a:hover {
 
 /* Sans JavaScript, le sélecteur ne servirait à rien : la liste des métiers
    juste en dessous mène aux mêmes pages. */
-html:not(.js) .selecteur-metier {
+html:not(.js) .selecteur-metier,
+html:not(.js) .js-seul {
   display: none;
 }
 
@@ -596,8 +600,7 @@ html:not(.js) .selecteur-metier {
 }
 
 /* En bref : l'essentiel d'une page entre deux filets, sans fond ni boîte. */
-.en-bref,
-.encadre-essentiel {
+.en-bref {
   border: 0;
   border-top: 2px solid var(--color-ink);
   border-bottom: 1px solid var(--color-border);
@@ -681,20 +684,6 @@ html:not(.js) .selecteur-metier {
     padding-inline: 0.6rem;
     color: var(--color-ink-soft);
   }
-}
-
-/* Anciennes cartes : désormais des blocs ouverts par un filet, sans contour,
-   fond ni ombre. Restructurées gabarit par gabarit. */
-.card-reco,
-.card-top,
-.carte-reco {
-  position: relative;
-  border: 0;
-  border-top: 1px solid var(--color-ink);
-  border-radius: 0;
-  background: none;
-  box-shadow: none;
-  padding-inline: 0;
 }
 
 /* Le lien principal d'un bloc le couvre en entier (une seule tabulation) ; le
@@ -870,19 +859,6 @@ html:not(.js) .selecteur-metier {
   width: 1px;
   height: 1px;
   overflow: hidden;
-}
-
-/* Listes aérées : l'espace entre deux puces dépasse l'interligne intérieur. */
-.liste-aeree > li {
-  line-height: 1.55;
-}
-
-.liste-aeree > li + li {
-  margin-top: 0.9rem;
-}
-
-.liste-aeree > li::marker {
-  color: var(--color-accent);
 }
 
 /* Garde d'accessibilité du mouvement. */

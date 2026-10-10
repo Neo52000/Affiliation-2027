@@ -857,7 +857,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
         </div>
       )}
       {enCoursDePublication && (
-        <p class="encadre-essentiel mt-4 p-4">
+        <p class="en-bref mt-4">
           Une demande de publication est ouverte : mettez-la en ligne ou abandonnez-la (section
           Publication) avant d’en préparer une autre.
         </p>
@@ -879,7 +879,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
             const sa = saisies[o.slug]!;
             const err = erreursLien(o.slug);
             return (
-              <fieldset class="card-reco mt-4 rounded-md border border-border p-4" key={o.slug}>
+              <fieldset class="mt-4 border-t border-border pt-4" key={o.slug}>
                 <legend class="px-1 font-bold">{o.nom}</legend>
                 <p class="text-sm text-ink-soft">Site officiel : {o.urlOfficielle}</p>
                 <Champ
@@ -1366,11 +1366,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
           const pret =
             e?.ouverte === true && e.blocages.length === 0 && reglesManquantes.length === 0;
           return (
-            <div
-              class="card-top mt-4 rounded-md border border-border p-4"
-              key={p.numero}
-              data-demande={p.numero}
-            >
+            <div class="mt-4 border-t border-ink pt-4" key={p.numero} data-demande={p.numero}>
               <p class="font-bold">
                 Demande n° {p.numero} : {p.titre}
               </p>

@@ -19,15 +19,16 @@ const nbFamilles = new Set((await getCollection('metiers')).map((m) => m.data.fa
 >
   <Breadcrumb items={[{ label: 'Annoncer sur le site' }]} />
   <article class="prose-measure mt-4">
-    <h1 class="text-3xl font-bold">Annoncer sur le site</h1>
+    <p class="surtitre">Annonceurs</p>
+    <h1 class="titre-page mt-3">Annoncer sur le site</h1>
     <p class="mt-3">
       Le site vend en direct, sans régie, quelques espaces publicitaires, sur des pages destinées
       aux artisans, indépendants et dirigeants de TPE qui préparent leur passage à la facturation
       électronique.
     </p>
 
-    <h2 class="mt-8 text-2xl font-bold">Emplacements</h2>
-    <ul class="liste-aeree mt-3 list-disc pl-5">
+    <h2 class="titre-section mt-10">Emplacements</h2>
+    <ul class="liste-filets mt-2">
       <li>Accueil : 1 emplacement, en fin de page.</li>
       <li>Guides : 1 emplacement commun aux {nbGuides} guides, en fin d'article.</li>
       <li>
@@ -40,8 +41,8 @@ const nbFamilles = new Set((await getCollection('metiers')).map((m) => m.data.fa
       logiciel, les comparatifs, les outils ni la méthode.
     </p>
 
-    <h2 class="mt-8 text-2xl font-bold">Format</h2>
-    <ul class="liste-aeree mt-3 list-disc pl-5">
+    <h2 class="titre-section mt-10">Format</h2>
+    <ul class="liste-filets mt-2">
       <li>
         Titre de 70 caractères au plus, texte de 160 caractères au plus, bouton de 30 caractères.
       </li>
@@ -59,10 +60,10 @@ const nbFamilles = new Set((await getCollection('metiers')).map((m) => m.data.fa
       </li>
     </ul>
 
-    <h2 class="mt-8 text-2xl font-bold">Ce que l'annonce n'achète pas</h2>
-    <ul class="liste-aeree mt-3 list-disc pl-5">
+    <h2 class="titre-section mt-10">Ce que l'annonce n'achète pas</h2>
+    <ul class="liste-filets mt-2">
       <li>
-        Ni note, ni rang, ni recommandation : la sélection et le classement des logiciels suivent la
+        Ni note, ni rang, ni recommandation : la sélection et le classement des logiciels suivent la{' '}
         <a href="/methode">méthode publique</a>, sans aucune donnée publicitaire.
       </li>
       <li>Ni relecture des contenus du site, ni droit de réponse sur un comparatif.</li>
@@ -77,14 +78,14 @@ const nbFamilles = new Set((await getCollection('metiers')).map((m) => m.data.fa
       </li>
     </ul>
 
-    <h2 class="mt-8 text-2xl font-bold">Mesure</h2>
+    <h2 class="titre-section mt-10">Mesure</h2>
     <p class="mt-3">
       Le site ne pose ni cookie ni pixel : aucun affichage n'est mesuré. Le lien de l'annonce porte
       des paramètres de campagne (utm) qui vous permettent de compter, de votre côté, les visites
       venues du site. La vente se fait donc au forfait, par période et par emplacement.
     </p>
 
-    <h2 class="mt-8 text-2xl font-bold">Tarif et contact</h2>
+    <h2 class="titre-section mt-10">Tarif et contact</h2>
     <p class="mt-3">
       Tarif sur devis, selon l'emplacement et la durée. Le site se réserve le droit de refuser une
       annonce. Contact : {SITE.emailContact}.

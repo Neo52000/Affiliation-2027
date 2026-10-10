@@ -9,21 +9,22 @@ import registre from '../data/plateformes-agreees.json';
 const { provenance, plateformes } = registre;
 const definitives = plateformes.filter((p) => p.statut === 'immatriculation_definitive');
 const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
+const s = (n: number) => (n > 1 ? 's' : '');
+// Une seule chaîne : le formatage du gabarit ne peut pas coller les mots.
+const chapo = `${definitives.length} plateforme${s(definitives.length)} immatriculée${s(definitives.length)} définitivement et ${enAttente.length} dossier${s(enAttente.length)} complet${s(enAttente.length)} en attente des tests d'interopérabilité, d'après le registre de la DGFiP.`;
 ---
 
 <Base
   title={pageTitle('Liste des plateformes agréées', SITE.name)}
-  description={`Les ${plateformes.length} plateformes agréées (PA, ex-PDP) du registre DGFiP : statut, date d'immatriculation et site — avec date de relevé et provenance.`}
+  description={`Les ${definitives.length} plateformes agréées (PA, ex-PDP) et les ${enAttente.length} dossiers en attente du registre DGFiP : statut, date d'immatriculation et site.`}
 >
   <Breadcrumb items={[{ label: 'Plateformes agréées' }]} />
   <article class="mt-4">
-    <h1 class="prose-measure text-3xl font-bold">La liste des plateformes agréées (PA, ex-PDP)</h1>
-    <p class="prose-measure mt-3">
-      {definitives.length} plateformes immatriculées définitivement et {enAttente.length} dossiers
-      complets en attente des tests d'interopérabilité, d'après le registre de la DGFiP.
-    </p>
+    <p class="surtitre">Registre</p>
+    <h1 class="titre-page mt-3">La liste des plateformes agréées (PA, ex-PDP)</h1>
+    <p class="chapo mt-5">{chapo}</p>
 
-    <p class="prose-measure mt-4 rounded-md border border-border bg-paper-soft p-4 text-sm">
+    <p class="prose-measure mt-4 text-sm text-ink-soft">
       <strong>Provenance :</strong> copie du registre DGFiP (état du{' '}
       {formatDateFr(provenance.date_registre)}) republiée sur{' '}
       <a href={provenance.copie_consultee} rel="noopener">
@@ -36,15 +37,15 @@ const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
       .
     </p>
 
-    <div class="mt-6 max-w-md">
-      <label class="font-bold" for="filtre-pa">
+    <div class="js-seul mt-8 max-w-md">
+      <label class="font-semibold" for="filtre-pa">
         Filtrer par nom ou localisation
       </label>
       <input
         id="filtre-pa"
         type="search"
         placeholder="Ex. : Tiime, Lyon, Italie…"
-        class="mt-1 block w-full rounded-md border border-border px-3 py-2"
+        class="champ mt-1"
       />
       <p id="filtre-pa-compte" class="mt-1 text-sm text-ink-soft" aria-live="polite"></p>
     </div>
@@ -55,9 +56,12 @@ const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
       aria-label="Registre des plateformes agréées"
       tabindex="0"
     >
-      <table class="table-interactive table-longue w-full border-collapse text-sm" id="table-pa">
+      <table class="table-longue w-full border-collapse text-sm" id="table-pa">
+        <caption class="sr-only">
+          Plateformes agréées, avec leur statut, leur date d'immatriculation et leur localisation
+        </caption>
         <thead>
-          <tr class="border-b-2 border-border text-left">
+          <tr>
             <th scope="col" class="py-2 pr-3">
               Plateforme
             </th>
@@ -74,10 +78,7 @@ const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
         </thead>
         <tbody>
           {plateformes.map((p) => (
-            <tr
-              class="border-b border-border"
-              data-recherche={`${p.nom} ${p.localisation}`.toLowerCase()}
-            >
+            <tr data-recherche={`${p.nom} ${p.localisation}`.toLowerCase()}>
               <td class="py-2 pr-3">
                 <a href={p.site} rel="noopener">
                   {p.nom}
@@ -91,7 +92,18 @@ const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
                 )}
               </td>
               <td class="py-2 pr-3">
-                {p.date_immatriculation ? formatDateFr(p.date_immatriculation) : '—'}
+                {p.date_immatriculation ? (
+                  formatDateFr(p.date_immatriculation)
+                ) : (
+                  <>
+                    <span aria-hidden="true">—</span>
+                    <span class="sr-only">
+                      {p.statut === 'dossier_en_attente'
+                        ? 'pas encore immatriculée'
+                        : 'non renseignée'}
+                    </span>
+                  </>
+                )}
               </td>
               <td class="py-2">{p.localisation}</td>
             </tr>
@@ -103,8 +115,7 @@ const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
     <p class="prose-measure mt-4 text-sm text-ink-soft">
       Être immatriculée signifie que la plateforme est autorisée à émettre, transmettre et recevoir
       des factures électroniques et à transmettre les données à l'administration. Cela ne préjuge ni
-      du prix ni de l'adéquation à votre métier : voir
-      <a href="/methode">notre méthode</a>.
+      du prix ni de l'adéquation à votre métier : voir <a href="/methode">notre méthode</a>.
     </p>
   </article>
 </Base>
@@ -123,8 +134,9 @@ const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
       if (visible) visibles++;
     }
     if (compte) {
+      const s = visibles > 1 ? 's' : '';
       compte.textContent =
-        q === '' ? '' : `${visibles} plateforme(s) correspondante(s) sur ${lignes.length}`;
+        q === '' ? '' : `${visibles} plateforme${s} correspondante${s} sur ${lignes.length}`;
     }
   });
 </script>

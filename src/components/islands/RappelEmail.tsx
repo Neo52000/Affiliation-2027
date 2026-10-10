@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 
 interface Props {
   metiers: { nom: string; slug: string }[];
@@ -15,9 +15,17 @@ export default function RappelEmail({ metiers }: Props) {
   const [metier, setMetier] = useState('');
   const [consentement, setConsentement] = useState(false);
   const [etat, setEtat] = useState<Etat>({ phase: 'saisie' });
+  // La confirmation remplace le formulaire : le focus la suit, sinon il tombe
+  // sur body et le message qui demande de confirmer l'adresse passe inaperçu.
+  const confirmation = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    if (etat.phase === 'ok') confirmation.current?.focus();
+  }, [etat.phase]);
 
   const envoyer = async (e: Event) => {
     e.preventDefault();
+    // Bouton aria-disabled (et non disabled) pendant l'envoi : il garde le focus.
+    if (etat.phase === 'envoi') return;
     setEtat({ phase: 'envoi' });
     try {
       const reponse = await fetch('/.netlify/functions/rappel-email', {
@@ -37,7 +45,11 @@ export default function RappelEmail({ metiers }: Props) {
   };
 
   if (etat.phase === 'ok') {
-    return <p class="card-top rounded-lg border border-border p-4 font-bold">{etat.message}</p>;
+    return (
+      <p ref={confirmation} tabIndex={-1} class="en-bref font-semibold">
+        {etat.message}
+      </p>
+    );
   }
 
   return (
@@ -66,7 +78,7 @@ export default function RappelEmail({ metiers }: Props) {
           value={metier}
           onChange={(e) => setMetier((e.target as HTMLSelectElement).value)}
         >
-          <option value="">—</option>
+          <option value="">Non précisé</option>
           {metiers.map((m) => (
             <option value={m.slug} key={m.slug}>
               {m.nom}
@@ -90,13 +102,13 @@ export default function RappelEmail({ metiers }: Props) {
       </label>
       <button
         type="submit"
-        disabled={etat.phase === 'envoi'}
-        class="btn-cta text-lg disabled:opacity-50"
+        aria-disabled={etat.phase === 'envoi'}
+        class="btn-cta text-lg aria-disabled:opacity-50"
       >
         {etat.phase === 'envoi' ? 'Envoi…' : 'Recevoir mon rappel'}
       </button>
       {etat.phase === 'erreur' && (
-        <p class="rounded border border-border bg-paper-soft p-3 text-sm" role="alert">
+        <p class="admin-erreur text-sm" role="alert">
           {etat.message}
         </p>
       )}

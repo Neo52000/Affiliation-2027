@@ -617,3 +617,36 @@ Deuxième PR de la refonte. Les cinq gabarits les plus lus passent au style édi
 - Doublons retirés : « aucune note avant notre test » et l'avertissement du guide, déjà présent dans le pied de page.
 - « Points forts » remplace « À qui s'adresse », qui annonçait mal la liste.
 - La note quiz de la marge est réécrite.
+
+## Design v7 « éditorial » : outils et pages de confiance (2026-10-10)
+
+Troisième PR de la refonte. Les outils et les pages de confiance passent au style éditorial, et leur texte est réécrit selon les règles de rédaction de la refonte.
+
+**Outils** :
+
+- Le quiz, le simulateur d'échéance et le vérificateur de facture posent leur formulaire directement sur le papier, sans cadre. Chacun a un surtitre « Outil » et un chapô.
+- Résultats du quiz :
+  - recommandation sous un filet ;
+  - alternatives en liste ;
+  - bouton « Aller sur le site d'… ».
+- Le vérificateur accorde ses titres : « 1 mention obligatoire manquante », « 14 mentions… ». La fonction `pluriel()` est testée et le parcours e2e 5 est adapté.
+- Le simulateur ne dit plus que le rappel par email est « bientôt disponible » : la section en dessous en donne l'état réel.
+
+**Pages de confiance** :
+
+- La méthode devient une charte de quatre principes numérotés. La pondération est en tableau à chiffres alignés.
+- Transparence : chapô et listes à filets ; l'ancre `#publicite` est conservée. À propos : surtitre et titres de section ; le périmètre de la réforme y redevient celui d'`echeances.json` (« établies en France et assujetties à la TVA »), avec sa source. Sur les deux pages, les tirets cadratins et « Voici » sont retirés, et l'indépendance n'est plus martelée.
+- Plateformes agréées :
+  - le filtre devient un vrai champ, dont le bord est à 4,1:1 au lieu de 1,45:1 ;
+  - il est masqué sans JavaScript (`.js-seul`) ;
+  - les pluriels sont accordés ; un dossier en attente annonce sa date « pas encore immatriculée » ;
+  - la description ne compte plus les dossiers en attente parmi les plateformes agréées.
+- Publicité, newsletter et ses pages d'état, confidentialité, mentions légales, 404 et back office reçoivent les titres de section à filet et les listes à filets ; le back office remplace aussi deux anciennes cartes.
+
+**Correctifs transverses** :
+
+- Mots collés à un lien : six occurrences sont corrigées par une espace explicite. Cinq sont antérieures à la refonte (« voirnotre méthode », « dans lesmentions légales »), la sixième est dans le texte sans JavaScript du quiz (« critères.Trouver »). Une garde de build suivra en PR 4 (`check:redaction`).
+- `.table-scroll` est positionné, si bien qu'un texte `.sr-only` dans une cellule n'élargit plus la page de 2 px à 320 px.
+- `de()` déménage dans `src/lib/typographie.ts`, sans dépendance, pour être importable par les îlots.
+- Les anciennes classes de cartes (`card-reco`, `card-top`, `carte-reco`), `encadre-essentiel` et `liste-aeree` sont supprimées.
+- Accessibilité des résultats : le simulateur et le vérificateur reprennent le modèle du quiz. Le focus va sur le titre du résultat, et la région `aria-live`, insérée déjà remplie, est retirée. L'état « complet » du vérificateur reçoit son h2, qui manquait (saut h1 → h3). Le formulaire de rappel garde le focus pendant l'envoi (`aria-disabled`) puis le donne à la confirmation.

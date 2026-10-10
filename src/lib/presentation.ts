@@ -43,14 +43,6 @@ export function insecables(texte: string): string {
 }
 
 /**
- * Préposition « de » élidée devant une voyelle : « d’Abby », « de Tiime ».
- * Le h n'est pas élidé (h aspiré possible) : aucun nom concerné aujourd'hui.
- */
-export function de(nom: string): string {
-  return /^[aeiouàâäéèêëîïôöùûü]/i.test(nom) ? `d’${nom}` : `de ${nom}`;
-}
-
-/**
  * Espaces fautives qui subsistent dans un texte affiché : espace ordinaire
  * avant : ; ! ? » ou après «. Sert de garde-fou sur la page générée.
  */

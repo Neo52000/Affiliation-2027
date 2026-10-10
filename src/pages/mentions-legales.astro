@@ -17,17 +17,18 @@ const placeholders = !EDITEUR_IDENTIFIE;
 >
   <Breadcrumb items={[{ label: 'Mentions légales' }]} />
   <article class="prose-measure mt-4">
-    <h1 class="text-3xl font-bold">Mentions légales</h1>
+    <p class="surtitre">Légal</p>
+    <h1 class="titre-page mt-3">Mentions légales</h1>
 
     {placeholders && (
-      <p class="mt-4 rounded-md border border-border bg-paper-soft p-4 text-sm">
+      <p class="en-bref mt-6 text-sm">
         Page en cours de complétion : les informations d'identification de l'éditeur seront publiées
         ici avant toute communication publique du site (loi pour la confiance dans l'économie
         numérique).
       </p>
     )}
 
-    <h2 class="mt-8 text-2xl font-bold">Éditeur du site</h2>
+    <h2 class="titre-section mt-10">Éditeur du site</h2>
     <ul class="mt-3 list-disc space-y-1 pl-5">
       <li>
         Raison sociale et forme, capital social, numéro RCS ou SIRET, siège social et directeur de
@@ -44,20 +45,21 @@ const placeholders = !EDITEUR_IDENTIFIE;
       </li>
     </ul>
 
-    <h2 class="mt-8 text-2xl font-bold">Hébergement</h2>
+    <h2 class="titre-section mt-10">Hébergement</h2>
     <p class="mt-3">
-      Netlify, Inc. — 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis — téléphone :
-      {SITE.telephoneHebergeur} —
+      Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis. Téléphone :{' '}
+      {SITE.telephoneHebergeur}. Site :{' '}
       <a href="https://www.netlify.com" rel="noopener">
         www.netlify.com
       </a>
+      .
     </p>
 
-    <h2 class="mt-8 text-2xl font-bold">Propriété intellectuelle</h2>
+    <h2 class="titre-section mt-10">Propriété intellectuelle</h2>
     <p class="mt-3">
       Les contenus de ce site (textes, tableaux, outils) sont protégés. Les marques citées (éditeurs
       de logiciels, plateformes) appartiennent à leurs propriétaires respectifs ; leur mention
-      n'implique aucun partenariat au-delà de ce qui est déclaré sur la page
+      n'implique aucun partenariat au-delà de ce qui est déclaré sur la page{' '}
       <a href="/transparence">transparence</a>.
     </p>
   </article>
