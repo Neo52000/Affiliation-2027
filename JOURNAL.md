@@ -449,6 +449,7 @@ La revue du build a établi que les trois fonctions ajoutées pour la monétisat
 - **Preuve** : le bundler officiel de Netlify (`@netlify/zip-it-and-ship-it` 16.3.0) produisait un manifeste sans route, sans planification ni règle de trafic. Après correction, il contient les routes `/admin/gh/*` et `/api/newsletter` (POST), la planification `5 22,23 * * *` et les limites 120/min et 5/min.
 - **Correction** : `export const config: Config = { … }`.
 - **Garde** : `src/lib/fonctions-netlify.test.ts` refuse `satisfies Config` et `as Config`, et vérifie les routes, la méthode, la planification et les limites. Il échoue sur l'ancienne forme.
+- **Confirmé en production** (2026-10-10, API Netlify, déploiement `6ac921c0` du commit `b2a60b5`) : routes, limites de débit et planification `5 22,23 * * *` sont bien enregistrées ; scan de secrets du déploiement sans résultat.
 
 ## Back office, publicité et newsletter : corrections de la revue (2026-10-09)
 
