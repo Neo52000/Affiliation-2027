@@ -73,9 +73,10 @@ Les deux scores SEO de 66 sont **voulus** et ne sont pas un défaut : le seul au
 « Page is blocked from indexing », vérifié audit par audit. La page À propos reste hors index tant que
 l'identité de l'éditeur est un placeholder (TODO #3), et une page d'erreur n'a pas à être indexée.
 
-Au-delà de Lighthouse, qui ne contrôle pas ce critère : les bordures de composants d'interface ont été
-mesurées à **4,55:1** en thème clair et **5,07:1** en thème sombre, au-dessus du seuil de 3:1 de la règle
-WCAG 1.4.11. La version précédente était à 1,45:1.
+Au-delà de Lighthouse, qui ne contrôle pas ce critère : depuis la refonte éditoriale, les bordures de
+composants d'interface sont à **4,12:1** sur le papier en thème clair et **4,80:1** en thème sombre
+(4,52:1 et 4,37:1 sur le fond des champs), au-dessus du seuil de 3:1 de la règle WCAG 1.4.11. Le test
+`src/lib/contraste.test.ts` relit les jetons de couleur et échoue si une paire passe sous son seuil.
 
 ## 4. Tests et garde-fous automatiques
 
@@ -84,13 +85,16 @@ WCAG 1.4.11. La version précédente était à 1,45:1.
 | `astro check` (TypeScript le plus strict)      | 0 erreur                                      | local + CI   |
 | ESLint                                         | propre                                        | local + CI   |
 | Prettier                                       | propre                                        | local + CI   |
-| Tests unitaires Vitest                         | **77 tests, 10 fichiers**                     | local + CI   |
-| Parcours Playwright de bout en bout            | **6 parcours**                                | local + CI   |
-| `check:similarity` — anti-duplication          | **4 950 paires, maximum 21,2 %** (seuil 50 %) | local + CI   |
-| `check:seo` — titles, descriptions, canonicals | **150 pages indexables** conformes            | local + CI   |
-| `check:liens` — cibles internes                | **5 345 liens, 0 cassé**                      | local + CI   |
+| Tests unitaires Vitest                         | **379 tests, 29 fichiers**                    | local + CI   |
+| Tests Playwright de bout en bout               | **32 tests, 4 fichiers**                      | local + CI   |
+| `check:similarity` — anti-duplication          | **4 950 paires, maximum 22,3 %** (seuil 50 %) | local + CI   |
+| `check:seo` — titles, descriptions, canonicals | **152 pages indexables** conformes            | local + CI   |
+| `check:liens` — cibles internes                | **5 771 liens, 0 cassé**                      | local + CI   |
+| `check:csp` — scripts en ligne                 | **192 scripts, tous autorisés par empreinte** | local + CI   |
+| `check:redaction` — règles de rédaction        | **161 pages, 0 infraction**                   | local + CI   |
+| `check:placeholders` — gabarits à compléter    | **161 pages, aucun marqueur**                 | local + CI   |
 
-Trois garde-fous bloquants, pas deux : `check:liens` a été ajouté après avoir constaté que les
+Les garde-fous sur le site construit sont tous bloquants. Parmi eux, `check:liens` a été ajouté après avoir constaté que les
 15 pages de comparatif avaient vécu plusieurs phases sans qu'aucun lien n'y mène, sans qu'aucune
 alerte ne se déclenche. Il a été éprouvé en cassant volontairement un lien, pour vérifier qu'il échoue
 avec le code 1 et nomme la page fautive.
@@ -142,7 +146,7 @@ la règle « jamais de note avant un test réel documenté ».
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Schéma de facture assoupli sur trois cas           | Les rédacteurs avaient raison et le schéma avait tort : ligne d'acompte à montant négatif, émolument au tarif réglementé non reproduit, TVA hors champ. Le composant rend ces cas sans mentir plutôt que de les refuser. |
 | Jamais « TVA 0 % » en franchise en base            | Un taux affiché, fût-il nul, rendrait l'entreprise redevable de la taxe. La colonne porte « — » avec sa légende.                                                                                                         |
-| Largeur de lecture à 54ch, non 70ch                | 70ch rendait 86 caractères par ligne, l'unité `ch` valant l'avance du glyphe « 0 ». Mesuré à 71 caractères après correction.                                                                                             |
+| Largeur de lecture à 34rem                         | Une largeur en `ch` dépend de l'avance du glyphe « 0 » et dérivait selon la police ; une largeur en rem n'en dépend pas.                                                                                                 |
 | Statut de plateforme agréée rendu depuis la donnée | Il était réaffirmé à la main dans les 300 justifications d'outils, en 225 formulations distinctes. Une affirmation réglementaire recopiée trois cents fois ne peut que dériver.                                          |
 | `check:liens` ajouté aux garde-fous                | Non demandé par la spécification, mais un défaut de structure s'était déjà produit sans alerte.                                                                                                                          |
 | `format:check` ajouté à `pnpm verify`              | La CI l'exécutait, `verify` non : un échec CI sur du vert local. Le trou a été comblé plutôt que les fichiers seulement reformatés.                                                                                      |
@@ -150,13 +154,13 @@ la règle « jamais de note avant un test réel documenté ».
 
 ## 8. Conformité au positionnement
 
-| Engagement de la spécification         | État                                                                                                                                       |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Angle par métier                       | 100 pages métier, chacune avec ses spécificités propres ; similarité maximale 21,2 %                                                       |
-| Classement indépendant des commissions | Les commissions n'entrent dans aucun calcul, ni dans le quiz, ni dans l'ordre ; méthode publique sur `/methode`                            |
-| Tests réels documentés                 | Aucune note publiée ; « Test en cours » assumé sur les six fiches                                                                          |
-| Données datées et sourcées             | Chaque affirmation réglementaire renvoie à une source officielle datée ; les données non vérifiables sont `null` et listées dans `TODO.md` |
-| Aucune date de réforme en dur          | Les dates ne vivent que dans `echeances.json` ; les contenus écrivent « à l'échéance applicable à votre entreprise »                       |
-| Aucun cookie soumis à consentement     | Aucun traceur, aucune bannière                                                                                                             |
-| Vouvoiement                            | Respecté sur l'ensemble des contenus                                                                                                       |
-| Secrets hors du dépôt                  | Confirmé par le scan Netlify : 201 fichiers, 0 secret                                                                                      |
+| Engagement de la spécification         | État                                                                                                                                                                     |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Angle par métier                       | 100 pages métier, chacune avec ses spécificités propres ; similarité maximale 22,3 %                                                                                     |
+| Classement indépendant des commissions | Les commissions n'entrent dans aucun calcul, ni dans le quiz, ni dans l'ordre ; méthode publique sur `/methode`                                                          |
+| Tests réels documentés                 | Aucune note publiée ; « Test en cours » assumé sur les six fiches                                                                                                        |
+| Données datées et sourcées             | Chaque affirmation réglementaire renvoie à une source officielle datée ; les données non vérifiables sont `null` et listées dans `TODO.md`                               |
+| Aucune date de réforme en dur          | Les dates ne vivent que dans `echeances.json` ; les contenus disent la réception déjà obligatoire et renvoient l'émission « à l'échéance applicable à votre entreprise » |
+| Aucun cookie soumis à consentement     | Aucun traceur, aucune bannière                                                                                                                                           |
+| Vouvoiement                            | Respecté sur l'ensemble des contenus                                                                                                                                     |
+| Secrets hors du dépôt                  | Confirmé par le scan Netlify : 201 fichiers, 0 secret                                                                                                                    |

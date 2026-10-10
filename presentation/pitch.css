@@ -1,30 +1,26 @@
 /* Concept : une frise réglementaire qui devient un registre de métiers.
    Scène plein écran, une idée par scène, barre de lecture en pied.
-   Tokens repris du design system « Affiliation 2027 » (src/styles/global.css). */
+   Tokens repris du design éditorial du site (src/styles/global.css) : papier,
+   encre, un seul accent vert sapin, filets plutôt que cadres, ni dégradé ni ombre. */
 :root {
-  --paper: #ffffff;
-  --paper-soft: #f6f8fa;
-  --ink: #1f2328;
-  --ink-soft: #57606a;
-  --border: #d0d7de;
-  --border-strong: #6e7781;
-  --accent: #2563eb;
-  --accent-soft: #eff4ff;
-  --ok: #047857;
-  --ok-soft: #ecfdf3;
-  /* Dégradé d'action : saturé dans les deux thèmes, texte blanc AA */
-  --cta-from: #2563eb;
-  --cta-to: #7c3aed;
+  --paper: #f7f4ee;
+  --paper-soft: #efeae1;
+  --ink: #1b1d1a;
+  --ink-soft: #55594f;
+  --border: #d8d1c3;
+  --border-strong: #7c7668;
+  --accent: #1f5c4a;
+  --accent-strong: #174a3b;
+  --accent-soft: #e2ece6;
+  --ok: #1f5c4a;
+  --ok-soft: #e2ece6;
+  /* Bouton d'action en aplat d'accent (texte 7,8:1) */
+  --cta-from: #1f5c4a;
   --on-cta: #ffffff;
-  /* Dégradé de titre (un mot clé par titre) : chaque extrémité AA sur paper */
-  --titre-from: #1d4ed8;
-  --titre-to: #6d28d9;
-  --halo-1: rgba(37, 99, 235, 0.12);
-  --halo-2: rgba(124, 58, 237, 0.1);
-  --ombre-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-  --ombre-md: 0 4px 12px rgba(15, 23, 42, 0.1);
+  --ombre-sm: none;
 
-  --font: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-titre: 'Newsreader', Georgia, serif;
   /* Échelle d'affiche, indexée sur le plus petit côté de l'écran */
   --fs-affiche: clamp(2.4rem, 0.6rem + 9.5vmin, 8.5rem);
   --fs-titre: clamp(1.6rem, 0.5rem + 5.4vmin, 5rem);
@@ -36,52 +32,48 @@
   --point: clamp(7px, 2.1vmin, 20px);
   --ecart-point: clamp(4px, 1.3vmin, 12px);
 
-  --rayon-sm: 6px;
-  --rayon-md: 10px;
-  --rayon-lg: 16px;
+  --rayon-sm: 2px;
+  --rayon-md: 3px;
+  --rayon-lg: 3px;
   --gouttiere: max(16px, 4vw);
   --pas: clamp(0.75rem, 0.3rem + 2.2vmin, 2.25rem);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --paper: #0e1116;
-    --paper-soft: #161b22;
-    --ink: #e6e9ef;
-    --ink-soft: #9aa4b2;
-    --border: #2b3340;
-    --border-strong: #7d8590;
-    --accent: #60a5fa;
-    --accent-soft: #16233f;
-    --ok: #34d399;
-    --ok-soft: #0b2e22;
-    --titre-from: #60a5fa;
-    --titre-to: #a78bfa;
-    --halo-1: rgba(96, 165, 250, 0.14);
-    --halo-2: rgba(167, 139, 250, 0.12);
-    --ombre-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
-    --ombre-md: 0 4px 14px rgba(0, 0, 0, 0.55);
+    --paper: #121411;
+    --paper-soft: #1b1e1a;
+    --ink: #ece8df;
+    --ink-soft: #a6a89c;
+    --border: #30342e;
+    --border-strong: #80837a;
+    --accent: #7cc4a6;
+    --accent-strong: #98d3ba;
+    --accent-soft: #1a2e26;
+    --ok: #7cc4a6;
+    --ok-soft: #1a2e26;
+    --cta-from: #7cc4a6;
+    --on-cta: #0d1a14;
+    --ombre-sm: none;
     color-scheme: dark;
   }
 }
 
 :root[data-theme='dark'] {
-  --paper: #0e1116;
-  --paper-soft: #161b22;
-  --ink: #e6e9ef;
-  --ink-soft: #9aa4b2;
-  --border: #2b3340;
-  --border-strong: #7d8590;
-  --accent: #60a5fa;
-  --accent-soft: #16233f;
-  --ok: #34d399;
-  --ok-soft: #0b2e22;
-  --titre-from: #60a5fa;
-  --titre-to: #a78bfa;
-  --halo-1: rgba(96, 165, 250, 0.14);
-  --halo-2: rgba(167, 139, 250, 0.12);
-  --ombre-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
-  --ombre-md: 0 4px 14px rgba(0, 0, 0, 0.55);
+  --paper: #121411;
+  --paper-soft: #1b1e1a;
+  --ink: #ece8df;
+  --ink-soft: #a6a89c;
+  --border: #30342e;
+  --border-strong: #80837a;
+  --accent: #7cc4a6;
+  --accent-strong: #98d3ba;
+  --accent-soft: #1a2e26;
+  --ok: #7cc4a6;
+  --ok-soft: #1a2e26;
+  --cta-from: #7cc4a6;
+  --on-cta: #0d1a14;
+  --ombre-sm: none;
   color-scheme: dark;
 }
 
@@ -122,18 +114,6 @@ body {
   display: grid;
   padding-inline: var(--gouttiere);
   overflow-x: clip;
-}
-
-/* Halo très faible derrière la scène (design system : --hero-glow, opacité ≤ 0,16) */
-.pitch::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(60vmax 40vmax at 12% 0%, var(--halo-1), transparent 60%),
-    radial-gradient(50vmax 36vmax at 92% 8%, var(--halo-2), transparent 60%);
 }
 
 .carrousel {
@@ -182,16 +162,15 @@ body {
 .surtitre {
   margin: 0;
   font-size: var(--fs-legende);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: 600;
   color: var(--accent);
 }
 
 .titre-affiche,
 .titre-scene {
   margin: 0;
-  font-weight: 800;
+  font-family: var(--font-titre);
+  font-weight: 500;
   text-wrap: balance;
   overflow-wrap: break-word;
 }
@@ -206,12 +185,13 @@ body {
      téléphone, même en police de repli */
   font-size: min(var(--fs-affiche), 11vw);
   line-height: 1.02;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.015em;
 }
 
 .titre-suite {
+  font-family: var(--font);
   font-size: var(--fs-chapo);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.01em;
   max-width: 30ch;
@@ -219,17 +199,9 @@ body {
 
 .titre-scene {
   font-size: var(--fs-titre);
-  line-height: 1.06;
-  letter-spacing: -0.03em;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
   max-width: 22ch;
-}
-
-.degrade {
-  color: var(--titre-from);
-  background: linear-gradient(100deg, var(--titre-from), var(--titre-to));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .chapo {
@@ -473,8 +445,9 @@ body {
 }
 
 .compteur-valeur {
+  font-family: var(--font-titre);
   font-size: var(--fs-affiche);
-  font-weight: 800;
+  font-weight: 500;
   line-height: 1.08;
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
@@ -504,8 +477,9 @@ body {
 }
 
 .tuile-chiffre {
+  font-family: var(--font-titre);
   font-size: var(--fs-chiffre);
-  font-weight: 800;
+  font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
@@ -668,7 +642,7 @@ body {
   background: var(--accent-soft);
   border: 1px solid var(--accent);
   color: var(--accent);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .financement {
@@ -701,9 +675,7 @@ body {
 .logiciels-libelle {
   margin: 0;
   font-size: var(--fs-legende);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: 600;
   color: var(--ink-soft);
 }
 
@@ -738,21 +710,20 @@ body {
 }
 
 /* Pas de transition CSS sur le transform du bouton : GSAP l'anime, une
-   transition brouillerait la timeline. Le survol joue sur la saturation. */
+   transition brouillerait la timeline. Le survol fonce l'accent. */
 .btn-cta {
   display: inline-flex;
   align-items: center;
   padding: 0.8rem 1.4rem;
   border-radius: var(--rayon-md);
-  background: linear-gradient(100deg, var(--cta-from), var(--cta-to));
+  background: var(--cta-from);
   color: var(--on-cta);
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
-  box-shadow: var(--ombre-md);
 }
 
 .btn-cta:hover {
-  filter: saturate(1.15);
+  background: var(--accent-strong);
 }
 
 .icone-externe {
@@ -932,11 +903,6 @@ body {
 
   .fleche::after {
     border-color: CanvasText;
-  }
-
-  .degrade {
-    background: none;
-    -webkit-text-fill-color: currentColor;
   }
 
   .segment[aria-current='step'] {
