@@ -73,7 +73,7 @@
   "faq": [
     {
       "question": "Je vends uniquement au guichet à des particuliers : la facturation électronique me concerne-t-elle vraiment ?",
-      "reponse": "Oui, même si vous n'émettez presque jamais de facture. Côté réception d'abord : les factures de vos fournisseurs, les redevances d'emplacement et les factures des organisateurs d'événements devront vous parvenir au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise (c'est le volet qui vous concerne en premier). Côté ventes ensuite : vos recettes du guichet ne deviennent pas des factures électroniques, elles alimentent l'e-reporting sous forme de données agrégées par jour et par taux de TVA, sans le nom de vos clients. Seules vos privatisations facturées à des entreprises passeront par la facture électronique. En pratique, c'est votre caisse qui doit savoir ventiler 5,5 %, 10 % et 20 % pour que ces données soient justes."
+      "reponse": "Oui, même si vous n'émettez presque jamais de facture. Côté réception d'abord : vous devez déjà pouvoir recevoir au format électronique, via une plateforme agréée, les factures de vos fournisseurs, les redevances d'emplacement et les factures des organisateurs d'événements (c'est le volet qui vous concerne en premier). Côté ventes ensuite : vos recettes du guichet ne deviennent pas des factures électroniques, elles alimentent l'e-reporting sous forme de données agrégées par jour et par taux de TVA, sans le nom de vos clients. Seules vos privatisations facturées à des entreprises passeront par la facture électronique. En pratique, c'est votre caisse qui doit savoir ventiler 5,5 %, 10 % et 20 % pour que ces données soient justes."
     },
     {
       "question": "Mes burgers vendus à emporter sont-ils à 5,5 % ou à 10 % ?",
@@ -89,7 +89,7 @@
     },
     {
       "question": "Je suis en franchise de TVA : puis-je quand même afficher un taux sur mes factures de privatisation ?",
-      "reponse": "Non. Vos factures ne portent aucun taux et doivent mentionner « TVA non applicable, article 293 B du CGI ». Facturer la TVA à tort vous en rendrait redevable. La franchise ne vous fait pas non plus sortir de la réforme : réception des factures fournisseurs au format électronique et e-reporting de vos ventes s'appliquent à l'échéance applicable à votre entreprise."
+      "reponse": "Non. Vos factures ne portent aucun taux et doivent mentionner « TVA non applicable, article 293 B du CGI ». Facturer la TVA à tort vous en rendrait redevable. La franchise ne vous fait pas non plus sortir de la réforme : la réception des factures fournisseurs au format électronique est déjà obligatoire, et l'e-reporting de vos ventes s'appliquera à l'échéance applicable à votre entreprise."
     }
   ],
   "sources": [
@@ -138,5 +138,5 @@
       "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

@@ -62,7 +62,7 @@
   "besoins_prioritaires": [
     "Enchaîner devis, facture d'acompte et facture de solde sur une même commande sur mesure, sans ressaisie",
     "Suivre la TVA exigible à chaque encaissement d'acompte, sur les ventes de meubles neufs comme sur les restaurations",
-    "Recevoir les factures électroniques des fournisseurs de bois, quincaillerie et produits de finition à l'échéance applicable",
+    "Recevoir dès maintenant les factures électroniques des fournisseurs de bois, quincaillerie et produits de finition",
     "Distinguer les ventes aux particuliers (e-reporting) des factures aux professionnels (facture électronique)"
   ],
   "outils_recommandes": [
@@ -97,8 +97,8 @@
       "reponse": "À défaut de précision, les sommes versées d'avance sont des arrhes : chaque partie peut se dédire, le client en perdant les arrhes, vous en remboursant le double. L'acompte, lui, engage fermement les deux parties. Précisez la nature du versement sur le devis et le bon de commande du meuble."
     },
     {
-      "question": "Mon atelier est en franchise en base : devrai-je quand même recevoir au format électronique les factures de ma scierie ?",
-      "reponse": "Oui. La réforme concerne toutes les entreprises assujetties à la TVA établies en France, y compris celles en franchise en base. À l'échéance applicable à votre entreprise, vous devrez pouvoir recevoir les factures électroniques de vos fournisseurs de bois, de quincaillerie et de finitions."
+      "question": "Mon atelier est en franchise en base : dois-je quand même recevoir au format électronique les factures de ma scierie ?",
+      "reponse": "Oui. La réforme concerne toutes les entreprises assujetties à la TVA établies en France, y compris celles en franchise en base. Vous devez déjà pouvoir recevoir les factures électroniques de vos fournisseurs de bois, de quincaillerie et de finitions."
     }
   ],
   "sources": [
@@ -155,5 +155,5 @@
       "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

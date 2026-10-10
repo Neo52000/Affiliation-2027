@@ -16,7 +16,7 @@
     "La redevance de collaboration que vous facturez à votre assistant rémunère la mise à disposition du cabinet, du plateau technique et de la patientèle. Le BOFiP la soumet à la TVA : taux normal de 20 %, ou mention « TVA non applicable, article 293 B du CGI » si vous relevez de la franchise en base.",
     "Les flux d'un remplacement suivent un autre régime : les honoraires que vous rétrocédez à votre remplaçant sont exonérés de TVA, car ils rémunèrent des soins dispensés aux patients. La somme que vous conservez en contrepartie de la mise à disposition de vos installations est en revanche en principe imposable ; l'administration admet de ne pas la soumettre à la TVA lorsque le remplacement a un caractère occasionnel (rescrit BOI-RES-TVA-000056). Ne confondez pas cette redevance de remplacement et la redevance de collaboration, toujours imposable.",
     "Vos actes sans prescription ni finalité thérapeutique (massages de confort, prestations de bien-être) sont exclus de l'exonération et taxables.",
-    "Vos opérations exonérées sont dispensées d'émission de factures électroniques, mais vous devrez pouvoir recevoir celles de vos fournisseurs (matériel de rééducation, électrothérapie, consommables, loyer) à l'échéance applicable à votre entreprise."
+    "Vos opérations exonérées sont dispensées d'émission de factures électroniques, mais vous devez déjà pouvoir recevoir celles de vos fournisseurs (matériel de rééducation, électrothérapie, consommables, loyer)."
   ],
   "mentions_obligatoires_specifiques": [
     "Sur les notes d'honoraires de soins : référence à l'exonération, par exemple « Exonération de TVA, article 261, 4, 1° du CGI » (ou référence équivalente à la directive 2006/112/CE).",
@@ -50,7 +50,7 @@
   "besoins_prioritaires": [
     "Distinguer trois flux dans votre gestion : feuilles de soins télétransmises, notes d'honoraires exonérées et redevances de collaboration taxables.",
     "Facturer chaque mois les redevances de vos assistants avec le bon régime de TVA et la mention correspondante.",
-    "Être en mesure de recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise.",
+    "Être en mesure de recevoir dès maintenant les factures électroniques de vos fournisseurs.",
     "Suivre les règlements du tiers payant séparément des honoraires encaissés directement."
   ],
   "outils_recommandes": [
@@ -64,13 +64,13 @@
     },
     {
       "slug": "tiime",
-      "justification": "Tiime répond au cas d'un exercice individuel qui centralise notes d'honoraires et pièces d'achat avant l'obligation de réception."
+      "justification": "Tiime répond au cas d'un exercice individuel qui centralise notes d'honoraires et pièces d'achat face à l'obligation de réception, déjà en vigueur."
     }
   ],
   "faq": [
     {
       "question": "Mes séances remboursées par l'Assurance Maladie devront-elles être émises au format électronique ?",
-      "reponse": "Non pour l'émission. Vos soins à finalité thérapeutique sont exonérés de TVA (article 261, 4, 1° du CGI) et les opérations exonérées sont dispensées d'émission de factures électroniques (impots.gouv.fr). La facturation à l'Assurance Maladie continue de passer par la feuille de soins. Vous devrez en revanche pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+      "reponse": "Non pour l'émission. Vos soins à finalité thérapeutique sont exonérés de TVA (article 261, 4, 1° du CGI) et les opérations exonérées sont dispensées d'émission de factures électroniques (impots.gouv.fr). La facturation à l'Assurance Maladie continue de passer par la feuille de soins. Vous devez en revanche déjà pouvoir recevoir les factures électroniques de vos fournisseurs."
     },
     {
       "question": "La redevance que me verse mon assistant est-elle soumise à la TVA ?",
@@ -119,5 +119,5 @@
       "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

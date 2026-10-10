@@ -68,7 +68,7 @@
     "Gérer plusieurs taux de TVA (10 %, 20 %, parfois 5,5 % en travaux induits) ligne par ligne sur un même devis puis sur la facture.",
     "Relier acomptes et situations d'avancement à un même chantier, retenue de garantie comprise.",
     "Basculer en facturation sans TVA avec mention « Autoliquidation » pour les chantiers en sous-traitance, ou avec la mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base.",
-    "Émettre et recevoir les factures via une plateforme agréée à l'échéance applicable à votre entreprise."
+    "Recevoir dès maintenant les factures via une plateforme agréée, et les émettre à l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -148,5 +148,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/1742-PGP.html/identifiant=BOI-TVA-LIQ-30-20-90-40-20260909"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

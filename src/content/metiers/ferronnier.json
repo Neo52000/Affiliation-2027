@@ -53,7 +53,7 @@
     "Transformer un devis accepté en facture d'acompte puis en facture de solde, sans ressaisie",
     "Gérer deux taux de TVA (20 % atelier, 10 % pose en rénovation) sur un même dossier",
     "Personnaliser les mentions : certification du client pour le taux réduit, assurance décennale, « Autoliquidation »",
-    "Recevoir les factures électroniques des fournisseurs d'acier et de consommables sur une plateforme agréée, à l'échéance applicable à votre entreprise"
+    "Recevoir dès maintenant les factures électroniques des fournisseurs d'acier et de consommables sur une plateforme agréée"
   ],
   "outils_recommandes": [
     {
@@ -149,5 +149,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

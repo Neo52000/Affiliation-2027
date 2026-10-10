@@ -15,7 +15,7 @@
     "Pour ces ventes taxables, les orthèses plantaires et podo-orthèses inscrites sur la liste des produits et prestations remboursables (LPP) relèvent du taux réduit de 5,5 % applicable aux appareillages pour personnes handicapées. Ne retenez un taux qu'après avoir vérifié l'inscription du produit à la LPP ; la référence LPP portée sur la facture justifie l'application de ce taux.",
     "Les séances de prévention des lésions du pied chez le patient diabétique (risque podologique de grade 2 ou 3) sont prises en charge et cotées avec la lettre-clé POD. Depuis la loi du 19 mai 2023, vous pouvez grader directement le risque et la prescription n'est plus indispensable à la prise en charge ; si une prescription existe, elle s'impose à vous.",
     "Lorsque vos honoraires comportent un dépassement et atteignent 70 €, vous devez remettre au patient une information écrite préalable sur le coût des actes (arrêté du 2 octobre 2008, article L. 1111-3 du code de la santé publique). Ce document précède la facture et ne s'y substitue pas.",
-    "Vos soins exonérés sont dispensés d'émission au format électronique. Vos ventes taxables à des clients professionnels (un établissement, une structure sportive) entreraient en revanche dans le circuit d'émission, et vous devrez dans tous les cas recevoir les factures électroniques de vos fournisseurs de matériaux, à l'échéance applicable à votre entreprise."
+    "Vos soins exonérés sont dispensés d'émission au format électronique. Vos ventes taxables à des clients professionnels (un établissement, une structure sportive) entreraient en revanche dans le circuit d'émission à l'échéance applicable à votre entreprise, et vous devez dans tous les cas déjà pouvoir recevoir les factures électroniques de vos fournisseurs de matériaux."
   ],
   "mentions_obligatoires_specifiques": [
     "Sur les lignes de soins et d'orthèses délivrées à vos patients soignés : « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts ».",
@@ -56,7 +56,7 @@
   "besoins_prioritaires": [
     "Distinguer sur une même facture les lignes exonérées (soins, orthèses du patient soigné) et les lignes taxables (ventes hors soins).",
     "Appliquer le bon taux et la bonne mention ligne par ligne, dont le 5,5 % des orthèses inscrites à la LPP vendues hors soins.",
-    "Recevoir les factures électroniques des fournisseurs de matériaux et de matériel, à l'échéance applicable à votre entreprise.",
+    "Recevoir dès maintenant les factures électroniques des fournisseurs de matériaux et de matériel.",
     "Garder la traçabilité entre information écrite préalable, prescription éventuelle et facture."
   ],
   "outils_recommandes": [
@@ -92,7 +92,7 @@
     },
     {
       "question": "La réforme de la facturation électronique change-t-elle quelque chose pour mon cabinet ?",
-      "reponse": "Vos soins exonérés sont dispensés d'émission au format électronique. Mais vos ventes taxables facturées à des clients professionnels entreraient dans le circuit d'émission, et vous devrez recevoir les factures électroniques de vos fournisseurs de matériaux via une plateforme, à l'échéance applicable à votre entreprise."
+      "reponse": "Vos soins exonérés sont dispensés d'émission au format électronique. Mais vos ventes taxables facturées à des clients professionnels entreraient dans le circuit d'émission à l'échéance applicable à votre entreprise, et vous devez déjà pouvoir recevoir les factures électroniques de vos fournisseurs de matériaux via une plateforme agréée."
     }
   ],
   "sources": [
@@ -125,5 +125,5 @@
       "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

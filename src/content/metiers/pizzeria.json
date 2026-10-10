@@ -8,7 +8,7 @@
   "specificites_facturation": [
     "Trois taux peuvent coexister sur un même ticket selon le canal et le produit : la pizza relève de 10 % qu'elle soit servie en salle, emportée ou livrée chaude, car elle est préparée en vue d'une consommation immédiate ; une boisson non alcoolique vendue en bouteille ou canette fermée avec une commande à emporter relève de 5,5 % ; vins et bières restent à 20 % partout. La caisse doit affecter le bon taux automatiquement.",
     "L'encaissement des particuliers via un logiciel ou système de caisse impose un équipement sécurisé satisfaisant des conditions d'inaltérabilité, de sécurisation, de conservation et d'archivage des données, justifiées par certificat ou attestation. Les entreprises en franchise en base échappent à cette obligation précise, pas à la réforme de la facturation électronique.",
-    "Les plateformes de livraison ajoutent un flux entrant : leurs commissions sont des factures de prestataires que vous devrez pouvoir recevoir au format électronique via une plateforme agréée, à l'échéance applicable à votre entreprise, puis rapprocher de vos encaissements.",
+    "Les plateformes de livraison ajoutent un flux entrant : leurs commissions sont des factures de prestataires que vous devez déjà pouvoir recevoir au format électronique via une plateforme agréée, puis rapprocher de vos encaissements.",
     "Les ventes aux particuliers, en salle comme en livraison, ne donnent pas lieu à facture électronique : elles alimentent l'e-reporting, sous forme de données agrégées par jour et ventilées par taux de TVA, sans donnée nominative. Les commandes passées par des entreprises (plateaux pour des bureaux) relèvent en revanche de la facture électronique.",
     "En salle, une note doit être remise au client en fin de repas, quel que soit son montant : la règle vise le repas servi sur place, et non la pizza vendue à emporter au comptoir ou livrée. Cette note reste un document distinct de la facture au sens de la réforme : elle ne remplace pas la facture électronique due à un client professionnel."
   ],
@@ -84,7 +84,7 @@
     },
     {
       "question": "Les commissions prélevées par les plateformes de livraison changent-elles quelque chose pour moi ?",
-      "reponse": "Oui, côté réception. Ces commissions sont des factures de prestataires : à l'échéance applicable à votre entreprise, vous devrez pouvoir les recevoir au format électronique via une plateforme agréée, comme toutes vos factures fournisseurs. Pensez à les rapprocher des encaissements reversés pour fiabiliser votre comptabilité."
+      "reponse": "Oui, côté réception. Ces commissions sont des factures de prestataires : vous devez déjà pouvoir les recevoir au format électronique via une plateforme agréée, comme toutes vos factures fournisseurs. Pensez à les rapprocher des encaissements reversés pour fiabiliser votre comptabilité."
     },
     {
       "question": "Une entreprise voisine me commande des pizzas chaque semaine : dois-je lui faire une facture électronique ?",
@@ -149,5 +149,5 @@
       "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/ticket-de-caisse-et-de-carte-bancaire"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

@@ -64,7 +64,7 @@
     "Enchaîner devis, facture d'acompte et facture de solde sur un même projet créatif sans erreur de numérotation",
     "Gérer deux taux de TVA (20 % et 10 %) ou la franchise en base sur une même facture, selon la présence d'une cession de droits",
     "Suivre les recettes encaissées pour la déclaration micro-BNC",
-    "Recevoir puis émettre des factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise"
+    "Recevoir dès maintenant des factures électroniques via une plateforme agréée, et en émettre à l'échéance applicable à votre entreprise"
   ],
   "outils_recommandes": [
     {
@@ -148,5 +148,5 @@
       "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

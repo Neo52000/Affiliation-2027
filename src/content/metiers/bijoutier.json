@@ -15,7 +15,7 @@
     "Un bijou racheté à un particulier puis revendu bascule en TVA sur la marge : la facture de revente ne montre aucune TVA, n'ouvre aucun droit à déduction et porte la mention du régime particulier applicable aux biens d'occasion.",
     "Le rachat d'or impose trois réflexes simultanés : inscription au livre de police, paiement du particulier par chèque barré à son nom ou par virement sur un compte ouvert à son nom (les espèces sont interdites), et qualification de l'objet racheté (métal précieux ou bijou), car elle commande la taxe forfaitaire sur les objets précieux : due à 11 % sur les métaux précieux quel que soit le montant, due à 6 % sur les bijoux seulement au-delà de 5 000 euros de prix de cession, CRDS de 0,5 % en sus dans les deux cas. Lorsqu'elle est due, vous la déclarez via le formulaire 2091-SD.",
     "Le titre légal du métal (or 750 millièmes, argent 925 millièmes, platine 950 millièmes, par exemple) accompagne l'article : poinçon de garantie sur la pièce (sauf dispense liée à son poids, le poinçon de maître restant dû), titre repris sur l'étiquette et les documents remis au client, tableau des poinçons affiché en magasin.",
-    "Les ventes au comptoir aux particuliers ne passent pas en facture électronique : leurs données sont transmises en e-reporting, à l'échéance applicable à votre entreprise, tandis que vos achats (métaux, pierres, écrins) arriveront en factures électroniques à recevoir via votre plateforme."
+    "Les ventes au comptoir aux particuliers ne passent pas en facture électronique : leurs données sont transmises en e-reporting, à l'échéance applicable à votre entreprise, tandis que vos achats (métaux, pierres, écrins) arriveront en factures électroniques, que vous devez déjà pouvoir recevoir via votre plateforme."
   ],
   "mentions_obligatoires_specifiques": [
     "Indication du titre légal du métal précieux (or, argent, platine, en millièmes) sur les étiquettes et les documents de vente remis au client.",
@@ -94,7 +94,7 @@
     },
     {
       "question": "La réforme de la facturation électronique concerne-t-elle mes ventes au comptoir ?",
-      "reponse": "Vos ventes aux particuliers ne donneront pas lieu à facture électronique : leurs données de transaction seront transmises à l'administration en e-reporting, à l'échéance applicable à votre entreprise. En parallèle, vous devrez recevoir les factures de vos fournisseurs au format électronique via une plateforme agréée. Vérifiez que votre caisse et votre logiciel savent faire les deux."
+      "reponse": "Vos ventes aux particuliers ne donneront pas lieu à facture électronique : leurs données de transaction seront transmises à l'administration en e-reporting, à l'échéance applicable à votre entreprise. En parallèle, vous devez déjà pouvoir recevoir les factures de vos fournisseurs au format électronique via une plateforme agréée. Vérifiez que votre caisse et votre logiciel savent faire les deux."
     }
   ],
   "sources": [
@@ -143,5 +143,5 @@
       "url": "https://www.douane.gouv.fr/demarche/faire-marquer-ou-marquer-vos-ouvrages-dun-poincon-de-garantie"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

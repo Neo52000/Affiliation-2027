@@ -65,7 +65,7 @@
     "Facturer en volume des actes au tarif réglementé, dossier par dossier, sans ressaisie.",
     "Isoler automatiquement les débours de la base de TVA et documenter la reddition de comptes.",
     "Suivre les encaissements par dossier et les sommes à reverser aux créanciers.",
-    "Pouvoir recevoir, puis émettre, des factures électroniques via une plateforme agréée à l'échéance applicable à votre entreprise."
+    "Pouvoir recevoir dès maintenant des factures électroniques via une plateforme agréée, et en émettre à l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -100,7 +100,7 @@
     },
     {
       "question": "Les significations facturées à des particuliers passent-elles par la facturation électronique ?",
-      "reponse": "Pas sous forme de facture électronique : l'émission concerne vos opérations avec des clients assujettis établis en France. Vos opérations avec des particuliers donneront lieu à une transmission de données à l'administration. Votre étude, assujettie à la TVA, devra en revanche pouvoir recevoir des factures électroniques de ses fournisseurs à l'échéance applicable à votre entreprise."
+      "reponse": "Pas sous forme de facture électronique : l'émission concerne vos opérations avec des clients assujettis établis en France. Vos opérations avec des particuliers donneront lieu à une transmission de données à l'administration. Votre étude, assujettie à la TVA, doit en revanche déjà pouvoir recevoir des factures électroniques de ses fournisseurs."
     }
   ],
   "sources": [
@@ -153,5 +153,5 @@
       "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

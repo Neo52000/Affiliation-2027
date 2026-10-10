@@ -9,7 +9,7 @@
     "Le transport de personnes à mobilité réduite est du transport de voyageurs : vos courses sont soumises à la TVA au taux réduit de 10 %, y compris lorsque le véhicule est équipé d'une rampe ou de fixations pour fauteuil roulant. L'aménagement du véhicule ne change pas le taux applicable.",
     "Un véhicule TPMR n'est pas une ambulance : l'exonération de TVA de l'article 261 du CGI est réservée aux transports de malades ou de blessés en véhicules spécialement aménagés, réalisés par des transporteurs sanitaires. N'émettez jamais de facture en exonération pour une course TPMR.",
     "Le transport scolaire adapté des élèves en situation de handicap est organisé par une collectivité et attribué par marché public. Votre client est alors une entité publique : ces factures se déposent sur Chorus Pro, pas sur votre plateforme agréée. Vérifiez dans le dossier de consultation quelle collectivité est l'autorité organisatrice, elle varie selon les territoires.",
-    "Beaucoup de structures TPMR démarrent en franchise en base : vous facturez alors sans TVA avec la mention « TVA non applicable, article 293 B du CGI ». Vous restez pourtant assujetti, donc concerné par la facturation électronique, en réception comme en émission, à l'échéance applicable à votre entreprise.",
+    "Beaucoup de structures TPMR démarrent en franchise en base : vous facturez alors sans TVA avec la mention « TVA non applicable, article 293 B du CGI ». Vous restez pourtant assujetti, donc concerné par la facturation électronique, en réception dès maintenant, en émission à l'échéance applicable à votre entreprise.",
     "Les trajets réglés par les familles ne passent pas par le circuit inter-entreprises, mais les données de ces transactions seront transmises à l'administration via le e-reporting."
   ],
   "mentions_obligatoires_specifiques": [
@@ -72,7 +72,7 @@
     },
     {
       "question": "Je facture à la fois des familles, un EHPAD et un marché de transport adapté : combien de circuits de facturation dois-je gérer ?",
-      "reponse": "Trois, et il vaut mieux les séparer dès maintenant. Le marché public part sur Chorus Pro. L'EHPAD et les établissements médico-sociaux privés sont des clients professionnels : leurs factures passeront par une plateforme agréée, en réception puis en émission, à l'échéance applicable à votre entreprise. Les familles restent hors de ce circuit, mais les données de ces transactions devront être transmises via le e-reporting. Prévoyez des séries de numérotation distinctes par type de client : c'est ce qui vous évitera de chercher une facture dans le mauvais flux."
+      "reponse": "Trois, et il vaut mieux les séparer dès maintenant. Le marché public part sur Chorus Pro. L'EHPAD et les établissements médico-sociaux privés sont des clients professionnels : les factures que vous leur adressez passeront par une plateforme agréée, à l'échéance applicable à votre entreprise. Les familles restent hors de ce circuit, mais les données de ces transactions devront être transmises via le e-reporting. Prévoyez des séries de numérotation distinctes par type de client : c'est ce qui vous évitera de chercher une facture dans le mauvais flux."
     },
     {
       "question": "Un EHPAD me demande d'appliquer l'autoliquidation sur mes factures : est-ce justifié ?",
@@ -117,5 +117,5 @@
       "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

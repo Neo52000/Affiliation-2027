@@ -15,7 +15,7 @@
     "La facture périodique (dite récapitulative) est adaptée aux interventions multiples chez un même client : elle peut regrouper des prestations distinctes dont la TVA devient exigible au cours du même mois civil, à condition de reprendre chaque intervention ligne par ligne avec sa date de réalisation. Elle doit être émise au plus tard à la fin de ce mois civil.",
     "Le nettoyage de locaux professionnels relève du taux normal de TVA de 20 %, aucun texte ne prévoyant de taux réduit pour cette prestation. La fourniture de consommables (savon, essuie-mains, sacs) reste elle aussi à 20 %.",
     "Quand la facture mensuelle combine prestations d'entretien et livraison de consommables, il s'agit d'une opération mixte : à l'échéance applicable à votre entreprise, la catégorie de l'opération devra figurer sur la facture, avec le numéro SIREN du client professionnel et l'adresse du site entretenu si elle diffère de l'adresse de facturation.",
-    "Votre clientèle étant essentiellement professionnelle, la quasi-totalité de vos factures passera par une plateforme agréée, en réception comme en émission, à l'échéance applicable à votre entreprise. Les éventuelles prestations de ménage chez des particuliers suivront, elles, le circuit de transmission de données (e-reporting)."
+    "Votre clientèle étant essentiellement professionnelle, la quasi-totalité de vos factures passera par une plateforme agréée à l'échéance applicable à votre entreprise, et vous devez déjà pouvoir y recevoir celles de vos fournisseurs. Les éventuelles prestations de ménage chez des particuliers suivront, elles, le circuit de transmission de données (e-reporting)."
   ],
   "mentions_obligatoires_specifiques": [
     "Sur une facture périodique : chaque prestation du mois reprise ligne par ligne avec sa date de réalisation, même quand les interventions sont identiques.",
@@ -66,7 +66,7 @@
     "Gérer le multi-sites et le multi-contrats d'un même client (une ligne datée par intervention, adresse du site sur la facture).",
     "Suivre les avenants : répercuter une révision de périmètre ou de prix sur les factures dès la bonne période.",
     "Relancer les règlements B2B et suivre les échéances contractuelles de paiement.",
-    "Préparer la réception puis l'émission des factures via une plateforme agréée, à l'échéance applicable à votre entreprise."
+    "Recevoir dès maintenant les factures via une plateforme agréée et préparer l'émission pour l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -146,5 +146,5 @@
       "url": "https://www.economie.gouv.fr/entreprises/gerer-sa-comptabilite-et-ses-demarches/devis-obligatoire-comment-ca-marche"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

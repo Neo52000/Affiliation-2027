@@ -59,7 +59,7 @@
     "Automatiser la facturation récurrente des honoraires mensualisés adossés aux lettres de mission.",
     "Isoler les débours (greffe, annonces légales) hors base de TVA, avec justificatifs rattachés dossier par dossier.",
     "Suivre les encaissements pour caler l'exigibilité de la TVA, ou gérer proprement l'option pour les débits.",
-    "Recevoir puis émettre des factures électroniques pour une clientèle presque entièrement assujettie, à l'échéance applicable à votre entreprise."
+    "Recevoir dès maintenant des factures électroniques, et en émettre pour une clientèle presque entièrement assujettie, à l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -135,5 +135,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

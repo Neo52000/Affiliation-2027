@@ -55,7 +55,7 @@
   "besoins_prioritaires": [
     "Rattacher chaque facture aux lettres de voiture et aux ordres de transport correspondants.",
     "Calculer, tracer et faire apparaître la révision carburant et les charges de gazole sur chaque facture.",
-    "Faire transiter une facturation entièrement B2B par les plateformes agréées, en émission comme en réception, à l'échéance applicable à votre entreprise.",
+    "Faire transiter une facturation entièrement B2B par les plateformes agréées, en réception dès maintenant, en émission à l'échéance applicable à votre entreprise.",
     "Documenter les consommations de gazole des véhicules de 7,5 tonnes et plus pour la demande de remboursement partiel d'accise."
   ],
   "outils_recommandes": [
@@ -140,5 +140,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/477-PGP.html/identifiant=BOI-TVA-LIQ-30-20-60-20130625"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

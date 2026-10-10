@@ -12,7 +12,7 @@
     "Pour un client particulier, l'article L. 214-1 du code de la consommation qualifie d'arrhes les sommes versées d'avance, sauf stipulation contraire du contrat : le client peut se désister en les perdant. Un acompte, lui, engage fermement les deux parties. Pour un client professionnel, la qualification dépend de ce que prévoit votre contrat. Dans tous les cas, précisez la nature du versement sur le devis et rappelez-la sur la facture de solde.",
     "Le déménagement est un transport de biens : TVA au taux normal de 20 %, sans aucun taux réduit. En franchise en base, facturez sans TVA avec la mention « TVA non applicable, article 293 B du CGI ».",
     "La déclaration de valeur remplie par le client au moment du devis et la responsabilité présumée du déménageur en cas de perte ou de casse pèsent directement sur la facture de solde et sur le traitement des réserves.",
-    "Vos prestations sont taxées à 20 % : elles entrent pleinement dans le champ de la facturation électronique. Vos factures à des clients professionnels (entreprises, administrations) devront être émises et reçues via une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale, à l'échéance applicable à votre entreprise. Vos déménagements facturés à des particuliers relèvent, eux, du e-reporting : les données de la transaction sont transmises à l'administration, mais la facture reste émise selon vos modalités habituelles."
+    "Vos prestations sont taxées à 20 % : elles entrent pleinement dans le champ de la facturation électronique. Vos factures à des clients professionnels (entreprises, administrations) devront être émises et reçues via une plateforme agréée (ex-PDP) immatriculée par l'administration fiscale, à l'échéance applicable à votre entreprise. Vos déménagements facturés à des particuliers relèvent, eux, du e-reporting : les données de la transaction sont transmises à l'administration, mais la facture reste émise selon vos modalités habituelles."
   ],
   "mentions_obligatoires_specifiques": [
     "Sur le devis (arrêté du 27 avril 2010) : références de l'entreprise, nom et adresse du client, période ou date d'exécution, lieux de chargement et de livraison, volume du mobilier, définition exacte de la prestation, modalités de paiement, montants HT et TTC avec indication de leur caractère définitif.",
@@ -101,7 +101,7 @@
     },
     {
       "question": "Je déménage surtout des particuliers : suis-je concerné par la facturation électronique ?",
-      "reponse": "Oui, à deux titres. Vos prestations sont taxées à 20 %, donc pleinement dans le champ : vos factures à des clients professionnels devront être émises et reçues via une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale, à l'échéance applicable à votre entreprise. Vos déménagements facturés à des particuliers relèvent du e-reporting : la facture reste émise selon vos modalités habituelles, mais les données de la transaction sont transmises à l'administration. Un déménageur à clientèle mixte doit donc organiser les deux flux."
+      "reponse": "Oui, à deux titres. Vos prestations sont taxées à 20 %, donc pleinement dans le champ : vos factures à des clients professionnels devront être émises et reçues via une plateforme agréée (ex-PDP) immatriculée par l'administration fiscale, à l'échéance applicable à votre entreprise. Vos déménagements facturés à des particuliers relèvent du e-reporting : la facture reste émise selon vos modalités habituelles, mais les données de la transaction sont transmises à l'administration. Un déménageur à clientèle mixte doit donc organiser les deux flux."
     }
   ],
   "sources": [
@@ -138,5 +138,5 @@
       "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

@@ -86,7 +86,7 @@
     },
     {
       "question": "Je suis en franchise en base de TVA : la réforme me concerne-t-elle quand même ?",
-      "reponse": "Oui. La réforme vise tous les assujettis, redevables ou non de la TVA : un chauffeur en franchise en base est un assujetti non redevable. Selon le calendrier de la réforme, vous devrez recevoir et émettre des factures électroniques pour vos courses facturées à des clients professionnels, et transmettre les données de vos courses payées par des particuliers (e-reporting). La mention « TVA non applicable, art. 293 B du CGI » reste obligatoire sur vos factures et n'est pas remise en cause par la réforme."
+      "reponse": "Oui. La réforme vise tous les assujettis, redevables ou non de la TVA : un chauffeur en franchise en base est un assujetti non redevable. Vous devez déjà pouvoir recevoir des factures électroniques. Selon le calendrier de la réforme, vous devrez aussi en émettre pour vos courses facturées à des clients professionnels, et transmettre les données de vos courses payées par des particuliers (e-reporting). La mention « TVA non applicable, art. 293 B du CGI » reste obligatoire sur vos factures et n'est pas remise en cause par la réforme."
     },
     {
       "question": "Ma plateforme me facture ses commissions depuis l'étranger : ai-je des obligations de TVA ?",
@@ -139,5 +139,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/prestations-entre-assujettis"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

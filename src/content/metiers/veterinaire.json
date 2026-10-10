@@ -54,9 +54,9 @@
   },
   "besoins_prioritaires": [
     "Gérer plusieurs taux de TVA sur une même facture lorsque les ventes de la boutique s'ajoutent aux actes et aux médicaments.",
-    "Séparer les flux : factures B2B aux éleveurs destinées au circuit d'émission électronique d'un côté, encaissements des particuliers au comptoir de l'autre, ces derniers pouvant relever de la transmission de données de transactions (e-reporting) via une plateforme.",
+    "Séparer les flux : factures B2B aux éleveurs destinées au circuit d'émission électronique d'un côté, encaissements des particuliers au comptoir de l'autre, ces derniers pouvant relever de la transmission de données de transactions (e-reporting) via une plateforme agréée.",
     "Absorber un volume quotidien important de factures et d'encaissements sans ressaisie comptable.",
-    "Recevoir au format électronique les factures des centrales d'achat et des laboratoires, à l'échéance applicable à votre entreprise."
+    "Recevoir dès maintenant au format électronique les factures des centrales d'achat et des laboratoires."
   ],
   "outils_recommandes": [
     {
@@ -83,11 +83,11 @@
     },
     {
       "question": "Mes factures aux éleveurs devront-elles passer par une plateforme ?",
-      "reponse": "Oui. Ce sont des factures entre assujettis : elles entreront dans le circuit d'émission électronique à l'échéance applicable à votre entreprise, via une plateforme. Anticipez ce basculement pour vos clients professionnels, qui représentent souvent une part importante du chiffre d'affaires en activité rurale."
+      "reponse": "Oui. Ce sont des factures entre assujettis : elles entreront dans le circuit d'émission électronique à l'échéance applicable à votre entreprise, via une plateforme agréée. Anticipez ce basculement pour vos clients professionnels, qui représentent souvent une part importante du chiffre d'affaires en activité rurale."
     },
     {
       "question": "Et pour les propriétaires d'animaux de compagnie, dois-je changer ma facturation ?",
-      "reponse": "L'obligation d'émission au format électronique concerne les factures entre assujettis : elle ne vous impose pas d'émettre une facture électronique pour un particulier au comptoir. En revanche, la réforme prévoit aussi la transmission des données de transactions réalisées avec les particuliers (e-reporting), qui passe par une plateforme : vérifiez sur impots.gouv.fr l'échéance et les modalités applicables à votre entreprise. Vous restez par ailleurs tenu de pouvoir recevoir les factures électroniques de vos fournisseurs."
+      "reponse": "L'obligation d'émission au format électronique concerne les factures entre assujettis : elle ne vous impose pas d'émettre une facture électronique pour un particulier au comptoir. En revanche, la réforme prévoit aussi la transmission des données de transactions réalisées avec les particuliers (e-reporting), qui passe par une plateforme agréée : vérifiez sur impots.gouv.fr l'échéance et les modalités applicables à votre entreprise. Vous restez par ailleurs tenu de pouvoir recevoir les factures électroniques de vos fournisseurs."
     },
     {
       "question": "Les aliments et accessoires vendus à l'accueil suivent-ils le taux de mes actes ?",
@@ -116,5 +116,5 @@
       "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

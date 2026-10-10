@@ -67,7 +67,7 @@
     "Facturer en récurrence les contrats d'entretien annuels, avec échéancier et relances automatiques.",
     "Intégrer la mention de certification du client sur chaque devis et chaque facture à taux réduit.",
     "Enchaîner devis, intervention de dépannage et facture sans ressaisie, y compris en déplacement.",
-    "Préparer la réception puis l'émission de factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise."
+    "Recevoir dès maintenant les factures électroniques via une plateforme agréée et préparer l'émission pour l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -159,5 +159,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

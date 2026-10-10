@@ -14,7 +14,7 @@
     "Cette exonération repose sur l'usage légal du titre de diététicien, protégé par les articles L. 4371-1 et suivants du code de la santé publique. Sans ce titre, le conseil nutritionnel relève de la TVA.",
     "Vos prestations sans finalité thérapeutique (ateliers en entreprise, conférences, rédaction de contenus) sortent de l'exonération des soins et sont taxables. Couvertes par la franchise en base, elles portent la mention « TVA non applicable, article 293 B du CGI », qui n'est pas celle des soins exonérés.",
     "Un forfait de suivi (par exemple quatre séances) se facture en distinguant chaque prestation : les séances à finalité thérapeutique restent exonérées, les prestations annexes suivent leur propre régime. Ne mélangez jamais les deux mentions sur une même ligne.",
-    "Vos notes d'honoraires portant sur des opérations exonérées sont dispensées d'émission au format électronique. Vous devrez en revanche pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise, et vos factures d'ateliers adressées à des clients professionnels entrent dans le circuit d'émission."
+    "Vos notes d'honoraires portant sur des opérations exonérées sont dispensées d'émission au format électronique. Vous devez en revanche déjà pouvoir recevoir les factures électroniques de vos fournisseurs, et vos factures d'ateliers adressées à des clients professionnels entrent dans le circuit d'émission."
   ],
   "mentions_obligatoires_specifiques": [
     "Référence à l'exonération sur chaque note d'honoraires de soins : mention renvoyant à l'article 261, 4, 1° du CGI (ou à la disposition correspondante de la directive 2006/112/CE).",
@@ -48,7 +48,7 @@
     "Distinguer automatiquement les consultations exonérées des prestations taxables (ateliers, conférences) et appliquer la bonne mention sur chaque document.",
     "Facturer des forfaits multi-séances avec acomptes ou paiements échelonnés, sans perdre le lien entre séances réalisées et montants encaissés.",
     "Émettre des factures conformes aux entreprises et établissements clients, appelées à passer par le circuit électronique à l'échéance applicable à votre entreprise.",
-    "Recevoir les factures électroniques des fournisseurs via une plateforme, même quand l'activité est presque entièrement exonérée."
+    "Recevoir les factures électroniques des fournisseurs via une plateforme agréée, même quand l'activité est presque entièrement exonérée."
   ],
   "outils_recommandes": [
     {
@@ -79,7 +79,7 @@
     },
     {
       "question": "La réforme de la facturation électronique me concerne-t-elle si presque tout mon chiffre d'affaires est exonéré ?",
-      "reponse": "Oui, partiellement. Vos opérations exonérées sont dispensées d'émission au format électronique, mais vous devez pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise. Vos factures d'ateliers adressées à des clients professionnels entrent, elles, dans le circuit d'émission."
+      "reponse": "Oui, partiellement. Vos opérations exonérées sont dispensées d'émission au format électronique, mais vous devez déjà pouvoir recevoir les factures électroniques de vos fournisseurs. Vos factures d'ateliers adressées à des clients professionnels entrent, elles, dans le circuit d'émission."
     },
     {
       "question": "Je propose du conseil nutritionnel sans être titulaire du titre de diététicien : puis-je appliquer l'exonération ?",
@@ -112,5 +112,5 @@
       "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

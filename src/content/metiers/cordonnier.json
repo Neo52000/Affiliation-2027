@@ -11,7 +11,7 @@
     "Activité multiservices : le ressemelage et la gravure sont des prestations de services, la reproduction de clés et les produits d'entretien des ventes de biens ; l'ensemble relève par défaut du taux normal de 20 %.",
     "Si votre cordonnerie relève de la franchise en base, vous facturez sans TVA, avec la mention « TVA non applicable, article 293 B du CGI », et vous ne récupérez pas la TVA sur vos achats de cuir, de semelles et d'ébauches de clés.",
     "Si vous êtes redevable de la TVA et que vous enregistrez les règlements de vos clients particuliers au moyen d'une caisse ou d'un logiciel de caisse, celui-ci doit garantir l'inaltérabilité, la sécurisation, la conservation et l'archivage des données ; les assujettis en franchise en base ne sont pas soumis à cette obligation.",
-    "Même avec une clientèle presque exclusivement de particuliers, vous devrez pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+    "Même avec une clientèle presque exclusivement de particuliers, vous devez déjà pouvoir recevoir les factures électroniques de vos fournisseurs."
   ],
   "mentions_obligatoires_specifiques": [
     "Mention « TVA non applicable, article 293 B du CGI » sur chaque note ou facture si votre cordonnerie relève de la franchise en base, y compris sur la note d'un simple ressemelage.",
@@ -60,7 +60,7 @@
   "besoins_prioritaires": [
     "Encaisser en caisse un flux quotidien d'opérations mêlant prestations (ressemelage, gravure) et ventes (clés, produits d'entretien)",
     "Transmettre le e-reporting des ventes aux particuliers sous forme de totaux quotidiens via une plateforme agréée",
-    "Recevoir au format électronique les factures des fournisseurs de cuir, semelles et ébauches de clés à l'échéance applicable",
+    "Recevoir dès maintenant au format électronique les factures des fournisseurs de cuir, semelles et ébauches de clés",
     "Éditer une note conforme dès 25 € TTC et porter la mention de franchise en base le cas échéant"
   ],
   "outils_recommandes": [
@@ -92,7 +92,7 @@
     },
     {
       "question": "Je ne travaille qu'avec des particuliers : la réforme de la facturation électronique me concerne-t-elle ?",
-      "reponse": "Oui. Toutes les entreprises assujetties à la TVA établies en France sont concernées, y compris celles en franchise en base. À l'échéance applicable à votre entreprise, vous devrez pouvoir recevoir les factures électroniques de vos fournisseurs (cuir, semelles, ébauches de clés) et transmettre le e-reporting de vos ventes aux particuliers."
+      "reponse": "Oui. Toutes les entreprises assujetties à la TVA établies en France sont concernées, y compris celles en franchise en base. Vous devez déjà pouvoir recevoir les factures électroniques de vos fournisseurs (cuir, semelles, ébauches de clés), et vous transmettrez le e-reporting de vos ventes aux particuliers à l'échéance applicable à votre entreprise."
     },
     {
       "question": "Une société de sécurité me demande une facture pour le ressemelage des chaussures de ses agents : qu'est-ce qui change ?",
@@ -141,5 +141,5 @@
       "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

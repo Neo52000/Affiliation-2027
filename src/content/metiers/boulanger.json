@@ -73,7 +73,7 @@
   "faq": [
     {
       "question": "Je vends surtout des baguettes au comptoir : la facturation électronique me concerne-t-elle vraiment ?",
-      "reponse": "Oui. Même si vos ventes au comptoir aux particuliers relèvent de l'e-reporting et non de la facture électronique, votre fournil reçoit déjà des factures de meunier, de minotier, d'emballage et d'énergie : vous devrez pouvoir les recevoir via une plateforme agréée. Et dès que vous livrez un restaurant, une cantine ou un revendeur, vous émettez des factures entre professionnels, qui devront passer au format électronique à l'échéance applicable à votre entreprise. En pratique, un boulanger qui ne livre personne reste concerné par la réception et par l'e-reporting de ses ventes au comptoir."
+      "reponse": "Oui. Même si vos ventes au comptoir aux particuliers relèvent de l'e-reporting et non de la facture électronique, votre fournil reçoit déjà des factures de meunier, de minotier, d'emballage et d'énergie : vous devez déjà pouvoir les recevoir via une plateforme agréée. Et dès que vous livrez un restaurant, une cantine ou un revendeur, vous émettez des factures entre professionnels, qui devront passer au format électronique à l'échéance applicable à votre entreprise. En pratique, un boulanger qui ne livre personne reste concerné par la réception et par l'e-reporting de ses ventes au comptoir."
     },
     {
       "question": "Quel taux appliquer sur une baguette, et sur un sandwich préparé le matin ?",
@@ -130,5 +130,5 @@
       "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

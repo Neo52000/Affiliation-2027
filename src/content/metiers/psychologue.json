@@ -84,7 +84,7 @@
     },
     {
       "question": "Dois-je émettre des factures électroniques pour mes patients particuliers ?",
-      "reponse": "Non. Vos patients sont des particuliers et la réforme ne vise que les factures entre assujettis ; vos séances exonérées (y compris les séances Mon soutien psy, qui donnent lieu à une feuille de soins et non à une facture électronique) sont en outre dispensées d'émission au format électronique. Seules vos prestations taxables facturées à des entreprises ou institutions (supervision, analyse de pratiques, formation non exonérée) entreront dans le circuit d'émission, et vous devrez recevoir les factures électroniques de vos fournisseurs (loyer, tests psychométriques) à l'échéance applicable à votre entreprise."
+      "reponse": "Non. Vos patients sont des particuliers et la réforme ne vise que les factures entre assujettis ; vos séances exonérées (y compris les séances Mon soutien psy, qui donnent lieu à une feuille de soins et non à une facture électronique) sont en outre dispensées d'émission au format électronique. Seules vos prestations taxables facturées à des entreprises ou institutions (supervision, analyse de pratiques, formation non exonérée) entreront dans le circuit d'émission à l'échéance applicable à votre entreprise, et vous devez déjà pouvoir recevoir les factures électroniques de vos fournisseurs (loyer, tests psychométriques)."
     }
   ],
   "sources": [
@@ -129,5 +129,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20131018"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

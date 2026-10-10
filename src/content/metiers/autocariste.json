@@ -9,7 +9,7 @@
     "Vos prestations d'autocar (circuits scolaires, services occasionnels, excursions, navettes) sont du transport de voyageurs lorsque la mise à disposition du véhicule avec conducteur constitue un véritable contrat de transport. Elles relèvent alors du taux réduit de TVA de 10 %, quel que soit le donneur d'ordre. Attention à la limite : une mise à disposition de véhicule sans conducteur, ou avec conducteur hors d'un véritable contrat de transport, n'est pas un transport de voyageurs mais une location, soumise au taux normal de 20 %.",
     "Vos marchés de transport scolaire ou de lignes régulières sont conclus avec des collectivités. Ces factures à la sphère publique se déposent sur Chorus Pro, déjà obligatoire pour tous les fournisseurs d'entités publiques. Ne les confondez pas avec le circuit de la réforme, qui vise vos clients professionnels privés.",
     "Pour un circuit transfrontalier en autocar, seule la partie du trajet réalisée en France est soumise à la TVA française. La facture doit ventiler le parcours entre la France et l'étranger. Exception : le transport par route de voyageurs étrangers en provenance et à destination de l'étranger, circulant en groupe d'au moins dix personnes, peut être exonéré, notamment quand vous véhiculez en France des touristes étrangers pour le compte d'une agence de voyages.",
-    "Vos clients professionnels établis en France (agences de voyages, entreprises, associations assujetties) basculent dans la facturation électronique : à l'échéance applicable à votre entreprise, ces factures transiteront par une plateforme agréée, en réception puis en émission.",
+    "Vos clients professionnels établis en France (agences de voyages, entreprises, associations assujetties) basculent dans la facturation électronique : les factures que vous leur adressez passeront par une plateforme agréée à l'échéance applicable à votre entreprise.",
     "Si une agence ou un voyagiste établi dans un autre État membre de l'UE affrète votre autocar, la qualité de votre client ne change pas le lieu d'imposition du transport : la partie du trajet réalisée en France reste soumise à la TVA française, que vous facturez vous-même, sans mention « Autoliquidation »."
   ],
   "mentions_obligatoires_specifiques": [
@@ -81,7 +81,7 @@
     },
     {
       "question": "Je vends des excursions à la journée à des particuliers et le même autocar part le lendemain pour une agence de voyages : dois-je gérer deux circuits de facturation ?",
-      "reponse": "Oui, et c'est le point de vigilance de votre activité mixte. La course vendue à l'agence de voyages est une facture entre professionnels : elle passera par une plateforme agréée, en réception puis en émission, à l'échéance applicable à votre entreprise. L'excursion vendue aux particuliers reste hors de ce circuit, mais les données de la transaction devront être transmises à l'administration via le e-reporting. Séparez dès maintenant vos séries de numéros de facture selon le type de client : le rapprochement sera immédiat le jour où les deux flux cohabiteront."
+      "reponse": "Oui, et c'est le point de vigilance de votre activité mixte. La course vendue à l'agence de voyages est une facture entre professionnels : elle passera par une plateforme agréée à l'échéance applicable à votre entreprise. L'excursion vendue aux particuliers reste hors de ce circuit, mais les données de la transaction devront être transmises à l'administration via le e-reporting. Séparez dès maintenant vos séries de numéros de facture selon le type de client : le rapprochement sera immédiat le jour où les deux flux cohabiteront."
     }
   ],
   "sources": [
@@ -126,5 +126,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/1490-PGP.html/identifiant=BOI-TVA-CHAMP-20-50-30-20230823"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

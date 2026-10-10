@@ -60,7 +60,7 @@
     "Rapprocher les relevés des plateformes de vente de vos factures et de vos écritures",
     "Suivre le cumul de vos ventes B2C vers l'UE pour détecter le franchissement du seuil de 10 000 € HT et basculer au bon moment sur le guichet OSS",
     "Préparer la facturation avec l'appui d'un expert-comptable sur les régimes de TVA (exonération, OSS, autoliquidation)",
-    "Anticiper la réception puis l'émission de factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise"
+    "Recevoir dès maintenant les factures électroniques via une plateforme agréée et anticiper l'émission pour l'échéance applicable à votre entreprise"
   ],
   "outils_recommandes": [
     {
@@ -152,5 +152,5 @@
       "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

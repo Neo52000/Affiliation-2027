@@ -16,7 +16,7 @@
     "Pour un client professionnel établi hors de l'Union européenne, la prestation n'est en principe pas soumise à la TVA française : le lieu d'imposition se situe chez le preneur. La DES, elle, ne vise que les clients établis dans l'UE.",
     "Vos traductions d'œuvres de l'esprit (ouvrages littéraires, conférences) sont elles-mêmes des œuvres de l'esprit : la cession de vos droits patrimoniaux sur ces traductions relève du taux réduit de 10 %. Vos traductions de textes de toute autre nature (documents juridiques, commerciaux, techniques) restent au taux normal de 20 %, quel que soit le mode de rémunération. L'éditeur opère en principe une retenue de TVA et vous remet un relevé de droits à chaque paiement, sauf renonciation de votre part à ce dispositif.",
     "Certaines traductions littéraires ou audiovisuelles relèvent du régime social des artistes-auteurs, distinct de vos prestations de traduction technique classiques. Vérifiez le rattachement de chaque revenu avant de le facturer.",
-    "En franchise en base, aucune TVA ne figure sur vos factures, qui portent la mention « TVA non applicable, article 293 B du CGI ». Vous restez assujetti, donc concerné par la facturation électronique à l'échéance applicable à votre entreprise."
+    "En franchise en base, aucune TVA ne figure sur vos factures, qui portent la mention « TVA non applicable, article 293 B du CGI ». Vous restez assujetti, donc concerné par la facturation électronique : en réception dès maintenant, en émission à l'échéance applicable à votre entreprise."
   ],
   "mentions_obligatoires_specifiques": [
     "« Autoliquidation » sur les factures adressées à un assujetti établi dans un autre État membre de l'UE",
@@ -61,7 +61,7 @@
     "Gérer des unités de facturation variées : mot source, page, heure de relecture, journée d'interprétation",
     "Préparer la déclaration européenne de services à partir de vos factures intracommunautaires",
     "Distinguer prestations classiques et revenus relevant des droits d'auteur (taux de 10 % sur les cessions portant sur une œuvre de l'esprit, retenue de TVA de l'éditeur)",
-    "Recevoir puis émettre des factures électroniques à l'échéance applicable à votre entreprise"
+    "Recevoir dès maintenant des factures électroniques, et en émettre à l'échéance applicable à votre entreprise"
   ],
   "outils_recommandes": [
     {
@@ -92,7 +92,7 @@
     },
     {
       "question": "Je suis traducteur en franchise en base : la facturation électronique me concerne-t-elle ?",
-      "reponse": "Oui. La réforme vise toutes les entreprises assujetties à la TVA établies en France, y compris en franchise en base. À l'échéance applicable à votre entreprise, vous devrez pouvoir recevoir des factures électroniques, puis en émettre pour vos clients professionnels établis en France. Vos prestations pour des clients étrangers donneront lieu à une transmission de données à l'administration."
+      "reponse": "Oui. La réforme vise toutes les entreprises assujetties à la TVA établies en France, y compris en franchise en base. Vous devez déjà pouvoir recevoir des factures électroniques, et vous en émettrez à l'échéance applicable à votre entreprise pour vos clients professionnels établis en France. Vos prestations pour des clients étrangers donneront lieu à une transmission de données à l'administration."
     },
     {
       "question": "Je facture au mot source, à la page et à la journée d'interprétation sur une même mission : comment présenter la facture ?",
@@ -149,5 +149,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

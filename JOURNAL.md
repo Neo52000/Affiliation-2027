@@ -699,3 +699,20 @@ Quatrième PR de la refonte. Les contenus suivent désormais les règles de réd
 
 - Environ 25 phrases de 22 fiches métier mettent encore la réception au futur. Elles seront corrigées dans une PR dédiée, avec mise à jour de `date_maj`.
 - Les lignes de facture à 0 % (autoliquidation, exonérations) affichent « 0 % » dans la colonne TVA. La convention d'affichage reste à trancher.
+
+## Réception des factures électroniques au présent dans les fiches métier (2026-10-10)
+
+La réception est obligatoire pour toutes les entreprises établies en France et assujetties à la TVA depuis le 1er septembre 2026 (`echeances.json`), mais 127 chaînes de 71 fiches la décrivaient encore au futur ou la rattachaient à « l'échéance applicable à votre entreprise ».
+
+- La réception passe au présent (« vous devez déjà pouvoir recevoir », « dès maintenant »), sans date écrite en dur ; seules l'émission et l'e-reporting restent liés à l'échéance de l'entreprise.
+- Les phrases qui attribuaient un volet « réception » aux factures adressées aux clients (autocariste, dépanneur, TPMR, entreprise de nettoyage) sont réécrites : ces factures relèvent de l'émission.
+- Les phrases générales qui plaçaient toute la réforme à l'échéance (traducteur, céramiste, diagnostiqueur, data analyst, bar-brasserie) distinguent désormais réception et émission.
+- Terminologie : « plateforme de dématérialisation partenaire (PDP) » devient « plateforme agréée (ex-PDP) » dans la prose de quatre fiches (titres de sources inchangés) ; « via une plateforme » devient « via une plateforme agréée ».
+- `date_maj` passe au 10 octobre 2026 sur les fiches modifiées. Une garde de migration a vérifié : sources et lignes de facture inchangées, chiffres, montants et articles identiques dans chaque chaîne, plus aucune réception au futur.
+
+**Relevé pendant la passe, à vérifier (non modifié)** :
+
+- « loyer » cité parmi les factures électroniques à recevoir (kinésithérapeute, orthophoniste, ostéopathe, psychologue, sage-femme, auto-école) : une location nue exonérée, ou consentie par un bailleur particulier, ne donne pas lieu à facture électronique ;
+- food-truck : une redevance d'occupation du domaine public communal donne lieu à un titre de recette, pas à une facture entre assujettis ;
+- pizzeria : les commissions d'une plateforme de livraison établie hors de France relèvent de l'e-reporting, pas d'une facture reçue via une plateforme agréée ;
+- agriculteur : l'obligation de réception pour l'exploitant au remboursement forfaitaire agricole est à confirmer sur la documentation DGFiP.

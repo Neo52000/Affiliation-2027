@@ -16,7 +16,7 @@
     "Le cidre et le poiré figurent dans le troisième groupe de l'article L3321-1 du code de la santé publique, celui des boissons fermentées non distillées : ce sont des boissons alcooliques. Or les boissons alcooliques sont expressément exclues du taux réduit applicable aux ventes à consommer sur place par le m de l'article 279 du CGI : la bolée servie en salle comme la bouteille vendue à emporter restent à 20 %.",
     "Lorsque la carte propose un menu à prix unique comprenant une bolée, le prix forfaitaire doit être ventilé pour isoler la part correspondant à la boisson alcoolique. Si ce prix n'est pas identifiable, l'administration admet une méthode de ventilation économiquement rationnelle, que l'exploitant doit pouvoir justifier ; une méthode forfaitaire unique est admise pour l'ensemble des menus lorsque la proportion est voisine de l'un à l'autre.",
     "Les crêpes et galettes vendues chaudes au comptoir ou sur un stand restent à 10 % : ce sont des produits préparés en vue d'une consommation immédiate. Seuls les produits conditionnés permettant leur conservation, comme la farine de sarrasin, la pâte à crêpes sous vide ou les confitures, relèvent de 5,5 %.",
-    "L'activité est saisonnière, l'obligation de pouvoir recevoir les factures électroniques ne l'est pas : elle vise toutes les entreprises assujetties à la TVA et prend effet à l'échéance applicable à votre entreprise, sans se suspendre pendant une fermeture d'arrière-saison. Les factures de vos fournisseurs continueront d'arriver pendant la fermeture : chacun les émet depuis sa propre plateforme agréée, qui les achemine vers celle que vous aurez déclarée dans l'annuaire. Vous n'avez pas à ouvrir d'accès à vos fournisseurs, mais vous devez consulter votre plateforme même à l'arrêt.",
+    "L'activité est saisonnière, l'obligation de pouvoir recevoir les factures électroniques ne l'est pas : elle vise toutes les entreprises assujetties à la TVA et est déjà en vigueur, sans se suspendre pendant une fermeture d'arrière-saison. Les factures de vos fournisseurs continueront d'arriver pendant la fermeture : chacun les émet depuis sa propre plateforme agréée, qui les achemine vers celle que vous avez déclarée dans l'annuaire. Vous n'avez pas à ouvrir d'accès à vos fournisseurs, mais vous devez consulter votre plateforme même à l'arrêt.",
     "Les encaissements de salle et de comptoir sont des ventes à des particuliers : elles ne donnent pas lieu à facture électronique mais à une transmission des données de transactions à l'administration, selon le même calendrier que la facturation électronique."
   ],
   "mentions_obligatoires_specifiques": [
@@ -103,7 +103,7 @@
     },
     {
       "question": "Ma crêperie ferme plusieurs mois hors saison : suis-je dispensé de la facturation électronique pendant cette période ?",
-      "reponse": "Non. L'obligation vise les entreprises assujetties à la TVA, et rien ne la suspend pendant une fermeture saisonnière. Vous devez pouvoir recevoir les factures électroniques de vos fournisseurs par une plateforme agréée, puis en émettre, à l'échéance applicable à votre entreprise. Pensez à consulter votre plateforme même à l'arrêt, les abonnements et les loyers continuant de courir."
+      "reponse": "Non. L'obligation vise les entreprises assujetties à la TVA, et rien ne la suspend pendant une fermeture saisonnière. Vous devez déjà pouvoir recevoir les factures électroniques de vos fournisseurs par une plateforme agréée, et vous en émettrez à l'échéance applicable à votre entreprise. Pensez à consulter votre plateforme même à l'arrêt, les abonnements et les loyers continuant de courir."
     },
     {
       "question": "Je livre des galettes sous vide à une épicerie fine : quelle facture dois-je établir ?",
@@ -152,5 +152,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

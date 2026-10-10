@@ -50,7 +50,7 @@
     "Émettre des factures sans TVA conformes selon la situation du client : autoliquidation en UE, non-imposition en France hors UE",
     "Articuler devis, factures d'acompte et factures de jalons sur un forfait projet, et une facture mensuelle propre en régie",
     "Encaisser des virements de clients professionnels et suivre les paiements à échéance",
-    "Basculer l'émission et la réception des factures sur une plateforme agréée, à l'échéance applicable à votre entreprise"
+    "Recevoir dès maintenant les factures sur une plateforme agréée, et y basculer l'émission à l'échéance applicable à votre entreprise"
   ],
   "outils_recommandes": [
     {
@@ -134,5 +134,5 @@
       "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }
