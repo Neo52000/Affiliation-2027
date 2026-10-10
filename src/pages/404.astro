@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import Picto from '../components/Picto.astro';
+import ListeFamilles from '../components/ListeFamilles.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import { FAMILLE_LABELS, type Famille } from '../lib/familles';
@@ -11,8 +11,13 @@ import hubs from '../data/hubs.json';
 // Les familles réellement publiées sont listées : le lecteur repart de là.
 const metiers = await getCollection('metiers');
 const familles = (Object.keys(FAMILLE_LABELS) as Famille[])
-  .filter((f) => f in hubs && metiers.some((m) => m.data.famille === f))
-  .map((f) => ({ famille: f, label: FAMILLE_LABELS[f] }));
+  .map((f) => ({
+    famille: f,
+    label: FAMILLE_LABELS[f],
+    nb: metiers.filter((m) => m.data.famille === f).length,
+    hub: f in hubs,
+  }))
+  .filter((f) => f.hub && f.nb > 0);
 ---
 
 <Base
@@ -21,11 +26,9 @@ const familles = (Object.keys(FAMILLE_LABELS) as Famille[])
   noindex
 >
   <div class="prose-measure">
-    <p class="text-sm font-bold tracking-wide text-ink-soft">ERREUR 404</p>
-    <h1 class="display-title mt-2">Cette page n'existe pas</h1>
-    <p class="mt-4 text-lg">
-      Elle a peut-être été déplacée, ou l'adresse comporte une erreur. Voici par où repartir.
-    </p>
+    <p class="surtitre">Erreur 404</p>
+    <h1 class="titre-une mt-3">Cette page n'existe pas</h1>
+    <p class="chapo mt-4">Elle a peut-être été déplacée, ou l'adresse comporte une erreur.</p>
     <div class="mt-6 flex flex-wrap items-center gap-4">
       <a href="/outils/quiz" class="btn-cta">
         Trouver mon logiciel
@@ -38,19 +41,10 @@ const familles = (Object.keys(FAMILLE_LABELS) as Famille[])
 
   {familles.length > 0 && (
     <section aria-labelledby="familles-404" class="mt-12">
-      <h2 id="familles-404" class="titre-section text-2xl font-bold">
+      <h2 id="familles-404" class="titre-section">
         Les métiers documentés
       </h2>
-      <ul class="mt-4 flex flex-wrap gap-2">
-        {familles.map((f) => (
-          <li>
-            <a href={`/metiers/${f.famille}`} class="puce-famille">
-              <Picto nom={f.famille} taille={18} />
-              {f.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <ListeFamilles familles={familles} class="mt-2 max-w-2xl" />
     </section>
   )}
 

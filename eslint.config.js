@@ -11,4 +11,15 @@ export default tseslint.config(
   ...tseslint.configs.recommended,
   ...astro.configs['flat/recommended'],
   ...astro.configs['flat/jsx-a11y-recommended'],
+  {
+    // Un tableau large défile dans une région nommée : elle doit recevoir le focus
+    // pour défiler au clavier (WCAG 2.1.1, règle axe scrollable-region-focusable).
+    files: ['**/*.astro'],
+    rules: {
+      'astro/jsx-a11y/no-noninteractive-tabindex': [
+        'error',
+        { tags: [], roles: ['tabpanel', 'region'], allowExpressionValues: true },
+      ],
+    },
+  },
 );

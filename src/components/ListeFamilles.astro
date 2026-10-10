@@ -1,0 +1,32 @@
+---
+/**
+ * Familles de métiers en liste à filets : « Bâtiment ······ 10 fiches ».
+ * Le lien couvre toute la ligne. Une famille sans page de synthèse reste citée,
+ * sans lien.
+ */
+interface Props {
+  familles: { famille: string; label: string; nb: number; hub: boolean }[];
+  class?: string;
+}
+
+const { familles, class: classes } = Astro.props;
+---
+
+<ul class:list={['liste-filets', classes]}>
+  {familles.map((f) => (
+    <li>
+      <p class="ligne-repere">
+        {f.hub ? (
+          <a href={`/metiers/${f.famille}`} class="lien-carte font-semibold">
+            {f.label}
+          </a>
+        ) : (
+          <span class="font-semibold">{f.label}</span>
+        )}
+        <span class="chiffres text-sm text-ink-soft">
+          {f.nb} fiche{f.nb > 1 ? 's' : ''}
+        </span>
+      </p>
+    </li>
+  ))}
+</ul>

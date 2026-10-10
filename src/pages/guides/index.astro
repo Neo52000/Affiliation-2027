@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import Picto from '../../components/Picto.astro';
 import { SITE } from '../../config';
 import { pageTitle } from '../../lib/seo';
 import { formatDateFr } from '../../lib/dates';
@@ -24,17 +23,10 @@ const total = guides.reduce((n, g) => n + g.data.sources.length, 0);
 
   <div class="layout-article mt-4">
     <div>
-      <div class="flex items-center gap-4">
-        <span class="picto-carre shrink-0">
-          <Picto nom="document-source" taille={26} />
-        </span>
-        <div>
-          <h1 class="prose-measure text-3xl font-bold">Guides de la facturation électronique</h1>
-          <p class="mt-1 text-sm text-ink-soft">
-            {guides.length} guide{guides.length > 1 ? 's' : ''} · {total} sources officielles
-          </p>
-        </div>
-      </div>
+      <h1 class="titre-page">Guides de la facturation électronique</h1>
+      <p class="mt-3 text-sm text-ink-soft">
+        {guides.length} guide{guides.length > 1 ? 's' : ''} · {total} sources officielles
+      </p>
 
       <p class="encadre-essentiel prose-measure mt-6 p-4">
         Les règles communes à tous les métiers : qui est concerné et quand, ce qu'est une plateforme

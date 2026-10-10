@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import Picto from '../../components/Picto.astro';
+import ListeFamilles from '../../components/ListeFamilles.astro';
 import MetierPicker from '../../components/islands/MetierPicker.tsx';
 import EspacePublicitaire from '../../components/EspacePublicitaire.astro';
 import { FAMILLE_FORMES, FAMILLE_LABELS, estElide, type Famille } from '../../lib/familles';
@@ -12,6 +12,7 @@ import { familleTitle, pageTitle } from '../../lib/seo';
 import { formatDateFr } from '../../lib/dates';
 import { SITE } from '../../config';
 import echeances from '../../data/echeances.json';
+import hubs from '../../data/hubs.json';
 
 export async function getStaticPaths() {
   // Un hub n'est publié que lorsque son introduction est rédigée (src/data/hubs.json)
@@ -27,9 +28,10 @@ const { intro } = Astro.props;
 const famille = Astro.params.famille as Famille;
 const label = FAMILLE_LABELS[famille];
 const formes = FAMILLE_FORMES[famille];
-// « pour le » suivi d'un espace, « pour l’ » collé au nom : une seule unité animée,
-// pour que le formatage du gabarit ne puisse jamais insérer d'espace après l’élision.
+// « pour le » suivi d'un espace, « pour l’ » collé au nom : le titre est une seule
+// chaîne, pour que le formatage du gabarit ne puisse jamais insérer d'espace après l’élision.
 const debutTitre = estElide(formes.pour) ? formes.pour : `${formes.pour} `;
+const titre = `Facturation électronique ${debutTitre}${formes.objet}`;
 const tous = await getCollection('metiers');
 const metiers = tous
   .filter((m) => m.data.famille === famille)
@@ -78,7 +80,12 @@ const points = pointsFamilles?.familles[famille] ?? [];
 // d'ici plutôt que de la page d'accueil.
 const autresFamilles = (Object.keys(FAMILLE_LABELS) as Famille[])
   .filter((f) => f !== famille && tous.some((m) => m.data.famille === f))
-  .map((f) => ({ famille: f, label: FAMILLE_LABELS[f] }));
+  .map((f) => ({
+    famille: f,
+    label: FAMILLE_LABELS[f],
+    nb: tous.filter((m) => m.data.famille === f).length,
+    hub: f in hubs,
+  }));
 
 // L'introduction du hub décrit la réforme : elle renvoie à la source officielle,
 // comme les pages métier (règle : toute affirmation réglementaire est sourcée).
@@ -94,24 +101,11 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
 
   <div class="layout-article mt-4">
     <div>
-      <div class="hero flex items-center gap-4 pt-2">
-        <span class="picto-carre shrink-0">
-          <Picto nom={famille} taille={26} />
-        </span>
-        <div>
-          <h1 class="m-mots text-3xl font-extrabold sm:text-4xl">
-            <span class="m-word">Facturation</span> <span class="m-word">électronique</span>{' '}
-            <span class="m-word">
-              {debutTitre}
-              <span class="text-gradient m-reflet">{formes.objet}</span>
-            </span>
-          </h1>
-          <p class="mt-1 text-sm text-ink-soft">
-            {metiers.length} métier{metiers.length > 1 ? 's' : ''} documenté
-            {metiers.length > 1 ? 's' : ''} · obligations communes et spécificités de chacun
-          </p>
-        </div>
-      </div>
+      <h1 class="titre-page">{titre}</h1>
+      <p class="mt-3 text-sm text-ink-soft">
+        {metiers.length} métier{metiers.length > 1 ? 's' : ''} documenté
+        {metiers.length > 1 ? 's' : ''} · obligations communes et spécificités de chacun
+      </p>
 
       <section class="prose-measure mt-6 space-y-3">
         {intro.map((p) => (
@@ -128,8 +122,10 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
           </h2>
           <ol class="mt-4 grid gap-4 sm:grid-cols-2">
             {points.map((p, i) => (
-              <li class="m-lift reveal rounded-lg border border-border bg-paper p-4">
-                <span class="picto-carre m-pop-icon text-lg font-extrabold">{i + 1}</span>
+              <li class="border-t border-border pt-4">
+                <span class="numero" aria-hidden="true">
+                  {i + 1}
+                </span>
                 <h3 class="mt-3 font-bold">{p.titre}</h3>
                 <p class="mt-1 text-sm">{p.texte}</p>
                 <p class="mt-2 text-sm text-ink-soft">
@@ -205,10 +201,7 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
           </p>
           <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {retenus.map((o) => (
-              <li class="m-lift reveal flex items-center gap-3 rounded-lg border border-border bg-paper p-3">
-                <span class="duel-monogramme m-pop-icon shrink-0" aria-hidden="true">
-                  {o.nom.slice(0, 1)}
-                </span>
+              <li class="relative border-t border-border pt-3">
                 <span>
                   <a href={`/logiciels/${o.slug}`} class="lien-carte font-bold">
                     {o.nom}
@@ -223,7 +216,7 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
         </section>
       )}
 
-      <section aria-labelledby="quiz-famille" class="m-panneau reveal mt-10 p-6 sm:p-8">
+      <section aria-labelledby="quiz-famille" class="m-panneau mt-10 py-6">
         <h2 id="quiz-famille" class="text-2xl font-bold">
           Pas sûr de votre choix ?
         </h2>
@@ -245,16 +238,7 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
           <h2 id="autres-familles" class="titre-section text-2xl font-bold">
             Votre métier n'est pas dans cette famille ?
           </h2>
-          <ul class="mt-4 flex flex-wrap gap-2">
-            {autresFamilles.map((f) => (
-              <li>
-                <a href={`/metiers/${f.famille}`} class="puce-famille">
-                  <Picto nom={f.famille} taille={18} />
-                  {f.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <ListeFamilles familles={autresFamilles} class="mt-2 max-w-2xl" />
         </section>
       )}
 

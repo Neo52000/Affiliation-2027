@@ -50,7 +50,12 @@ const protocole = (await getCollection('tests'))[0]?.data.protocole ?? [];
     </ul>
 
     <h2 class="mt-8 text-2xl font-bold">La pondération de la note sur 10</h2>
-    <div class="table-scroll mt-3">
+    <div
+      class="table-scroll mt-3"
+      role="region"
+      aria-label="Pondération de la note sur 10"
+      tabindex="0"
+    >
       <table class="w-full border-collapse text-sm">
         <thead>
           <tr class="border-b-2 border-border text-left">

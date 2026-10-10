@@ -505,3 +505,39 @@ Le diff précédent (#35) a lui-même été soumis à une revue contradictoire :
   - le libellé cite aussi la forme, le capital et le RCS.
 - **`robots.txt`** est généré depuis le domaine configuré. Une fois l'éditeur identifié, `check:placeholders` lit aussi les fichiers `.txt`, `.xml`, `_headers` et `_redirects`.
 - **Liste d'opposition** : la durée de 3 ans est tenue par une purge annuelle dans Brevo (`MAINTENANCE.md` §8).
+
+## Design v7 « éditorial » : fondations (2026-10-10)
+
+Demande : un site plus moderne, qui ne semble pas fait par une IA. Direction retenue : éditoriale, à la manière d'un magazine économique. Livraison en cinq PR ; celle-ci pose les fondations.
+
+**Système de design** (`src/styles/global.css`, réécrit) :
+
+- Polices auto-hébergées par l'API Fonts d'Astro : Newsreader (titres, 58 Ko) et Instrument Sans (texte, 30 Ko), sous-ensemble latin, préchargées. Replis à métriques ajustées générés au build : Times New Roman pour les titres ; Segoe UI, Roboto, Helvetica Neue et Arial pour le texte. `@fontsource/inter` est retiré.
+- Couleurs : papier `#F7F4EE`, encre `#1B1D1A`, un seul accent vert sapin `#1F5C4A`, thème sombre complet. Les noms des jetons sont conservés, si bien que les gabarits et le back office suivent sans modification.
+- Contrastes vérifiés par un nouveau test (`src/lib/contraste.test.ts`, 38 paires en clair et en sombre) : texte ≥ 5,9:1, bords de contrôles ≥ 3,7:1.
+- Des filets à la place des cartes : listes à points de conduite, titres de section sous un filet encre, notes en marge sans boîte, tableaux à filets.
+
+**Suppressions** : `motion.css`, le téléscripteur, les compteurs animés, l'illustration du hero, les pictogrammes, les monogrammes, les dégradés, les halos, le titre animé mot à mot, la barre de progression et le bouton pause. Il ne reste aucune animation, seulement des transitions de couleur de 120 ms au survol. Le script de tête se réduit à la classe `js`, dont dépend le masquage du sélecteur de métier sans JavaScript. La page confidentialité ne mentionne plus la préférence de pause, qui n'existe plus.
+
+**Accueil réécrit** :
+
+- surtitre daté et sourcé depuis `echeances.json` ;
+- titre, chapô de deux phrases ;
+- ligne de faits calculés (métiers, sources .gouv.fr, logiciels) ;
+- familles en liste ;
+- quiz ;
+- « Comment nous classons » ;
+- tableau des six logiciels (agrément, compte pro, comptabilité, état du test) ;
+- guides.
+
+L'en-tête se limite au nom et à trois liens ; il n'est plus collant.
+
+**Accessibilité** : les tableaux qui défilent deviennent des régions nommées et focalisables. Le sommaire des guides n'est plus présent deux fois sur mobile. axe ne relève aucune violation sur 17 pages, en clair et en sombre, à 1280 et 360 px.
+
+**Mesures** sous la vraie CSP :
+
+- Lighthouse : 100/100/100/100 en mobile et en ordinateur sur 7 gabarits ; LCP mobile entre 1,5 et 1,8 s ; CLS 0.
+- Précharger seulement Newsreader n'améliorait pas le LCP et créait un CLS de 0,006 : les deux polices restent préchargées.
+- Avec le throttling devtools, sur un poste Linux sans Times New Roman ni Arial, le CLS de l'accueil est de 0,021 (seuil « bon » : 0,1).
+
+**e2e** : `motion.spec.ts` devient `interactions.spec.ts`. Deux vérifications s'ajoutent : aucune animation au chargement sur cinq gabarits, et sélecteur masqué sans JavaScript.

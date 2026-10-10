@@ -36,7 +36,12 @@ const totalTva = lignes.reduce(
   <figcaption class="mb-2 text-sm text-ink-soft">
     {intitule} — exemple illustratif (montants fictifs, taux de TVA réels)
   </figcaption>
-  <div class="table-scroll rounded-lg border border-border px-4 py-2">
+  <div
+    class="table-scroll rounded-lg border border-border px-4 py-2"
+    role="region"
+    aria-label="Lignes de la facture"
+    tabindex="0"
+  >
     <table class="table-interactive table-chiffres w-full border-collapse text-sm">
       <thead>
         <tr class="border-b-2 border-border text-left">

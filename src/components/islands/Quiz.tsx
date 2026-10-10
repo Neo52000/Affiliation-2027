@@ -173,28 +173,15 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
           Voir ma recommandation
         </button>
         <p id="quiz-note" class="text-xs text-ink-soft">
-          Recommandation fondée sur les faits vérifiés de chaque outil et sur votre métier — jamais
-          sur les commissions.
+          Recommandation calculée à partir des faits vérifiés de chaque outil et de votre métier.
         </p>
       </form>
 
       {resultat && (
         <section class="mt-8 space-y-4">
-          <div class="flex items-center gap-3">
-            <svg
-              class="m-anneau shrink-0"
-              width="40"
-              height="40"
-              viewBox="0 0 80 80"
-              aria-hidden="true"
-            >
-              <circle cx="40" cy="40" r="36"></circle>
-              <path d="M26 41l9 9 19-19"></path>
-            </svg>
-            <h2 ref={titreResultat} tabIndex={-1} class="text-2xl font-bold">
-              Notre recommandation
-            </h2>
-          </div>
+          <h2 ref={titreResultat} tabIndex={-1} class="titre-section">
+            Notre recommandation
+          </h2>
           <div class="card-top carte-reco rounded-lg border border-border p-4">
             <p class="font-bold">
               <a href={`/logiciels/${resultat.recommande.slug}`}>{resultat.recommande.nom}</a>

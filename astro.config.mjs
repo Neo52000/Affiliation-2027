@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
@@ -19,6 +19,45 @@ export default defineConfig({
   // Îlots interactifs réservés aux 3 outils (section 4 de la spécification).
   // Sitemap segmenté (sitemap-index.xml) — section 9.
   // Le sitemap exclut les pages non indexées (contrôlé par scripts/check-seo.ts).
+  // Polices auto-hébergées (CSP font-src 'self') : fichiers variables latins de
+  // @fontsource-variable, déclarés par l'API Fonts d'Astro, qui génère aussi des
+  // polices de repli ajustées (size-adjust) pour un CLS nul. Pas d'italique.
+  fonts: [
+    {
+      provider: fontProviders.local(),
+      name: 'Newsreader',
+      cssVariable: '--font-newsreader',
+      fallbacks: ['Georgia', 'serif'],
+      options: {
+        variants: [
+          {
+            src: [
+              './node_modules/@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2',
+            ],
+            weight: '200 800',
+            style: 'normal',
+          },
+        ],
+      },
+    },
+    {
+      provider: fontProviders.local(),
+      name: 'Instrument Sans',
+      cssVariable: '--font-instrument',
+      fallbacks: ['system-ui'],
+      options: {
+        variants: [
+          {
+            src: [
+              './node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2',
+            ],
+            weight: '400 700',
+            style: 'normal',
+          },
+        ],
+      },
+    },
+  ],
   integrations: [
     preact(),
     mdx(),
