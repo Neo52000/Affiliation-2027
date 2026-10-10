@@ -16,7 +16,7 @@ const chapo = `${definitives.length} plateforme${s(definitives.length)} immatric
 
 <Base
   title={pageTitle('Liste des plateformes agréées', SITE.name)}
-  description={`Les ${plateformes.length} plateformes agréées (PA, ex-PDP) du registre DGFiP : statut, date d'immatriculation et site, avec date de relevé et provenance.`}
+  description={`Les ${definitives.length} plateformes agréées (PA, ex-PDP) et les ${enAttente.length} dossiers en attente du registre DGFiP : statut, date d'immatriculation et site.`}
 >
   <Breadcrumb items={[{ label: 'Plateformes agréées' }]} />
   <article class="mt-4">
@@ -97,7 +97,11 @@ const chapo = `${definitives.length} plateforme${s(definitives.length)} immatric
                 ) : (
                   <>
                     <span aria-hidden="true">—</span>
-                    <span class="sr-only">non renseignée</span>
+                    <span class="sr-only">
+                      {p.statut === 'dossier_en_attente'
+                        ? 'pas encore immatriculée'
+                        : 'non renseignée'}
+                    </span>
                   </>
                 )}
               </td>

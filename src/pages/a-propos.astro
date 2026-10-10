@@ -3,10 +3,16 @@ import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
+import echeances from '../data/echeances.json';
 
 // Identité de l'éditeur : EDITEUR_LEGAL non renseigné (TODO.md #3). La page
 // reste hors index tant que les placeholders sont présents.
 const placeholders = SITE.name.startsWith('TODO_');
+
+// Périmètre de la réforme : celui d'echeances.json, avec sa source officielle.
+const reception = echeances.echeances.find((e) => e.id === 'reception-toutes-entreprises');
+if (!reception?.sources[0]) throw new Error('echeances.json : réception sans source');
+const sourceReforme = reception.sources[0];
 ---
 
 <Base
@@ -23,10 +29,14 @@ const placeholders = SITE.name.startsWith('TODO_');
 
       <h2 class="titre-section mt-10">Pourquoi ce site existe</h2>
       <p class="prose-measure mt-3">
-        La facturation électronique s'impose à toutes les entreprises assujetties à la TVA. Les
-        comparatifs existants classent surtout par statut juridique, rarement par métier, alors que
-        c'est le métier qui dicte les besoins : TVA multi-taux d'un plombier, exonération d'un
-        infirmier libéral, autofacturation d'un VTC.
+        La facturation électronique s'impose à toutes les entreprises établies en France et
+        assujetties à la TVA, y compris en franchise en base (
+        <a href={sourceReforme} rel="noopener">
+          impots.gouv.fr
+        </a>
+        ). Les comparatifs existants classent surtout par statut juridique, rarement par métier,
+        alors que c'est le métier qui dicte les besoins : TVA multi-taux d'un plombier, exonération
+        d'un infirmier libéral, autofacturation d'un VTC.
       </p>
       <p class="prose-measure mt-3">
         Ce site prend l'angle inverse : une page par métier, des spécificités vérifiées sur sources

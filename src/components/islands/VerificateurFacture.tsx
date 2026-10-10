@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { pluriel } from '../../lib/typographie';
 import {
   verifierFacture,
@@ -13,6 +13,12 @@ interface Props {
 export default function VerificateurFacture({ mentions }: Props) {
   const [cochees, setCochees] = useState<Set<string>>(new Set());
   const [resultat, setResultat] = useState<ResultatVerification | null>(null);
+  // Focus sur le titre du résultat, comme le quiz (pas de région aria-live
+  // insérée déjà remplie).
+  const titreResultat = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (resultat) titreResultat.current?.focus();
+  }, [resultat]);
 
   const socle = mentions.filter((m) => m.condition === null);
   const conditionnelles = mentions.filter((m) => m.condition !== null);
@@ -82,15 +88,20 @@ export default function VerificateurFacture({ mentions }: Props) {
       </form>
 
       {resultat && (
-        <section aria-live="polite" class="mt-8">
+        <section class="mt-8">
           {resultat.complet ? (
-            <p class="en-bref font-semibold">
-              Toutes les mentions toujours obligatoires sont présentes. Vérifiez encore les mentions
-              conditionnelles ci-dessous si votre situation est concernée.
-            </p>
+            <>
+              <h2 ref={titreResultat} tabIndex={-1} class="titre-section">
+                Aucune mention obligatoire manquante
+              </h2>
+              <p class="mt-3">
+                Toutes les mentions toujours obligatoires sont présentes. Vérifiez encore les
+                mentions conditionnelles ci-dessous si votre situation est concernée.
+              </p>
+            </>
           ) : (
             <>
-              <h2 class="titre-section">
+              <h2 ref={titreResultat} tabIndex={-1} class="titre-section">
                 {pluriel(resultat.manquantes.length, 'mention obligatoire manquante')}
               </h2>
               <ul class="liste-filets mt-2">

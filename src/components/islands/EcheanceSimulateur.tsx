@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { situerEcheances, type Echeance, type SituationTva, type Taille } from '../../lib/echeance';
 import { formatDateFr } from '../../lib/dates';
 
@@ -10,6 +10,12 @@ export default function EcheanceSimulateur({ echeances }: Props) {
   const [taille, setTaille] = useState<Taille>('pme-tpe-micro');
   const [tva, setTva] = useState<SituationTva>('assujetti');
   const [affiche, setAffiche] = useState(false);
+  // Le focus va sur le titre du résultat (même modèle que le quiz) : une région
+  // aria-live insérée déjà remplie n'est pas annoncée de façon fiable.
+  const titreResultat = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (affiche) titreResultat.current?.focus();
+  }, [affiche]);
 
   const situation = affiche ? situerEcheances(taille, tva, echeances) : null;
 
@@ -76,12 +82,14 @@ export default function EcheanceSimulateur({ echeances }: Props) {
       </form>
 
       {situation && (
-        <section aria-live="polite" class="mt-8">
+        <section class="mt-8">
+          <h2 ref={titreResultat} tabIndex={-1} class="titre-section">
+            Vos échéances
+          </h2>
           {situation.horsChamp ? (
-            <p class="en-bref">{situation.message}</p>
+            <p class="mt-3">{situation.message}</p>
           ) : (
             <>
-              <h2 class="titre-section">Vos échéances</h2>
               <ul class="liste-filets mt-2">
                 <Ligne titre="Recevoir des factures électroniques" e={situation.reception} />
                 <Ligne titre="Émettre vos factures en électronique" e={situation.emission} />
