@@ -46,6 +46,12 @@ describe('verifierRedaction', () => {
     expect(regles(page('<p>Une incise — ici.</p>'))).toEqual(['tiret cadratin']);
     expect(regles(page('<p>Une incise – ici.</p>'))).toEqual(['tiret demi-cadratin espacé']);
     expect(regles(page('<p>Pages 10–12, porte-monnaie.</p>'))).toEqual([]);
+    expect(
+      regles(page(`<p>«${NBSP}TVA non applicable - article 293 B du CGI${NBSP}»</p>`)),
+    ).toEqual(['trait d’union espacé']);
+    expect(regles(page(`<p>«${NBSP}Régime particulier - Biens d’occasion${NBSP}»</p>`))).toEqual(
+      [],
+    );
   });
 
   it('exclut les tableaux et les intitulés de liens externes (titres de sources)', () => {
@@ -55,7 +61,13 @@ describe('verifierRedaction', () => {
 
   it('refuse les espaces ordinaires que le postbuild aurait dû remplacer', () => {
     expect(regles(page('<p>Statut : agréé</p>'))).toEqual(['espace ordinaire avant : ; ? ! ou »']);
-    expect(regles(page('<p>« agréé»</p>'))).toEqual(['espace ordinaire après «']);
+    expect(regles(page('<p>« agréé»</p>'))).toEqual([
+      'espace ordinaire après «',
+      'ponctuation haute sans espace',
+    ]);
+    expect(
+      regles(page('<p>Statut: agréé. Pourquoi? Ouvert de 9:30 à 18:00, https://x.fr</p>')),
+    ).toEqual(['ponctuation haute sans espace', 'ponctuation haute sans espace']);
   });
 
   it('refuse un mot soudé à un lien, pas une élision', () => {
@@ -83,6 +95,10 @@ describe('verifierRedaction', () => {
       'début de phrase de remplissage',
     ]);
     expect(regles(page('<a href="/guides">En savoir plus</a>'))).toEqual(['libellé de lien vague']);
+    expect(regles(page('<a href="https://x.gouv.fr">Découvrir</a>'))).toEqual([
+      'libellé de lien vague',
+    ]);
+    expect(regles(page('<a href="https://x.gouv.fr">Je découvre la facturation</a>'))).toEqual([]);
     expect(
       regles(
         page('<p>Ce que « gratuit » recouvre en pratique.</p>')

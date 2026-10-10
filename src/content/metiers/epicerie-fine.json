@@ -20,7 +20,7 @@
   "mentions_obligatoires_specifiques": [
     "Pour un coffret vendu à un prix unique : une seule ligne, au taux déterminé par ses éléments non accessoires, sans ventilation du prix entre les produits. Pour des produits vendus séparément à des prix distincts : une ligne par produit, avec le taux propre à chacun et sa base hors taxes.",
     "Dénomination précise du contenu dans le libellé de la ligne (« terrine de canard 180 g, sablés 200 g, miel 250 g, vin rouge AOC 75 cl »), et non un simple intitulé « panier gourmand ».",
-    "En franchise en base de TVA : aucune TVA facturée et mention « TVA non applicable - article 293 B du CGI » sur chaque facture."
+    "En franchise en base de TVA : aucune TVA facturée et mention « TVA non applicable, article 293 B du CGI » sur chaque facture."
   ],
   "exemple_facture": {
     "intitule": "Commande de fin d'année : 20 coffrets « Terroir » et quelques produits à l'unité pour une entreprise locale",
@@ -80,7 +80,7 @@
     },
     {
       "question": "Je suis en franchise en base de TVA : mes coffrets d'entreprise portent-ils de la TVA ?",
-      "reponse": "Non. Vous ne facturez pas de TVA et portez sur chaque facture la mention « TVA non applicable - article 293 B du CGI ». La facture elle-même reste obligatoire dès lors que le client est un professionnel."
+      "reponse": "Non. Vous ne facturez pas de TVA et portez sur chaque facture la mention « TVA non applicable, article 293 B du CGI ». La facture elle-même reste obligatoire dès lors que le client est un professionnel."
     },
     {
       "question": "Pendant le pic de décembre, comment distinguer mes ventes en boutique et mes commandes d'entreprises ?",

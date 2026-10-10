@@ -15,7 +15,7 @@
   "mentions_obligatoires_specifiques": [
     "Mention « Régime particulier - Biens d'occasion » (ou « Régime particulier - Objets de collection et d'antiquités », au pluriel, selon la nature du bien) sur toute facture relevant de la TVA sur la marge.",
     "Aucune TVA apparente sur les factures soumises au régime de la marge : le montant de taxe ne doit figurer nulle part et n'est pas déductible par l'acheteur.",
-    "En franchise en base de TVA : mention « TVA non applicable - article 293 B du CGI » sur chaque facture."
+    "En franchise en base de TVA : mention « TVA non applicable, article 293 B du CGI » sur chaque facture."
   ],
   "exemple_facture": {
     "intitule": "Facture de vente à un décorateur d'intérieur : mobilier ancien sous le régime de la TVA sur la marge",

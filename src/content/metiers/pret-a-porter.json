@@ -17,7 +17,7 @@
     "Toute remise, tout rabais ou toute ristourne acquis à la date de la vente (démarque de soldes comprise) doit apparaître sur la facture, ligne par ligne.",
     "Une note d'avoir doit porter la référence explicite de la facture initiale (numéro et date), les noms et adresses des parties, le montant hors taxes de la réduction et la TVA correspondante.",
     "Étiquette de composition en français fixée sur chaque vêtement, indiquant le pourcentage de chaque fibre textile, cohérente avec vos factures d'achat et vos documents de traçabilité.",
-    "En franchise en base de TVA : mention « TVA non applicable - article 293 B du CGI » sur chaque facture."
+    "En franchise en base de TVA : mention « TVA non applicable, article 293 B du CGI » sur chaque facture."
   ],
   "exemple_facture": {
     "intitule": "Facture de dotation vestimentaire à un restaurant voisin : chemises, pantalons et retouches",

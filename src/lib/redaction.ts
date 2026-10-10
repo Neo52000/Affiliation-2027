@@ -8,7 +8,9 @@
  *   de sources, cités tels quels) en sont exclus.
  */
 
-const NBSP = ' ';
+import { typographier } from './typographie.ts';
+
+const NBSP = '\u00a0';
 
 // Éléments dont le contenu n'est pas du texte courant, protégés en bloc ; puis
 // commentaires, balises et texte. L'alternance est essayée de gauche à droite.
@@ -19,7 +21,7 @@ const JETONS =
 export function insererEspacesInsecables(html: string): string {
   return html.replace(JETONS, (jeton: string, brut?: string) => {
     if (brut || jeton.startsWith('<')) return jeton;
-    return jeton.replace(/ ([:;?!»])/g, `${NBSP}$1`).replace(/« /g, `«${NBSP}`);
+    return typographier(jeton);
   });
 }
 
@@ -72,8 +74,16 @@ const COLLE_APRES = new RegExp(`(</(?:${EN_LIGNE})>)[\\p{L}\\p{N}«(]`, 'u');
 const REGLES_TEXTE: { regle: string; motif: RegExp }[] = [
   { regle: 'tiret cadratin', motif: /—/g },
   { regle: 'tiret demi-cadratin espacé', motif: /\s–\s/g },
+  // Trait d'union employé comme tiret ; « Régime particulier - Biens d'occasion »
+  // et ses variantes sont des mentions légales citées telles quelles.
+  { regle: 'trait d’union espacé', motif: /(?<!Régime particulier)\s-\s/g },
   { regle: 'espace ordinaire avant : ; ? ! ou »', motif: / [:;?!»]/g },
   { regle: 'espace ordinaire après «', motif: /« /g },
+  // Ponctuation haute collée au mot ; les heures (14:30) et les URL (https://) passent.
+  {
+    regle: 'ponctuation haute sans espace',
+    motif: /[\p{L}\p{N})\]][;!?»]|[\p{L})\]]:(?!\/\/)|«[\p{L}\p{N}]/gu,
+  },
   { regle: 'libellé de lien vague', motif: /\ben savoir plus\b|\bdécouvrir\b/gi },
   { regle: 'formule de remplissage', motif: /\bce qu['’]il faut retenir\b/gi },
   {
@@ -110,6 +120,17 @@ export function verifierRedaction(html: string): Infraction[] {
       regle: 'renvoi interne',
       extrait: extrait(toutLeTexte, m.index ?? 0, m[0].length),
     });
+  }
+
+  // Intitulé entier d'un lien externe : exclu des règles de texte (titres de
+  // sources), il ne doit pas pour autant être un libellé vague.
+  for (const m of sansBrut.matchAll(/<a\b[^>]*\bhref="https?:[^"]*"[^>]*>([\s\S]*?)<\/a>/gi)) {
+    const libelle = decoder((m[1] ?? '').replace(/<[^>]*>/g, ' '))
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (/^(en savoir plus|découvrir)$/i.test(libelle)) {
+      infractions.push({ regle: 'libellé de lien vague', extrait: libelle });
+    }
   }
 
   // Texte courant : sans tableaux ni intitulés de liens externes (titres de

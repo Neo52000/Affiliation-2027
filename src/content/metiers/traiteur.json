@@ -22,7 +22,7 @@
   "mentions_obligatoires_specifiques": [
     "Date et lieu de la prestation (réception servie ou livraison du buffet), en plus de la date d'émission de la facture.",
     "Ventilation de la TVA par taux lorsque l'événement combine service à table (10 %), plateaux livrés pour consommation différée (5,5 %) et boissons alcooliques (20 %), avec le taux applicable ligne par ligne.",
-    "Sur les factures de séminaires, cocktails et réceptions d'entreprise, les mentions entre professionnels s'ajoutent : conditions et délai de paiement, taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 €, à porter aussi sur la facture d'acompte, et pas seulement sur la facture de solde.",
+    "Sur les factures de séminaires, cocktails et réceptions d'entreprise, les mentions entre professionnels s'ajoutent (conditions et délai de paiement, taux des pénalités de retard et indemnité forfaitaire de recouvrement de 40 €), à porter aussi sur la facture d'acompte, et pas seulement sur la facture de solde.",
     "Pour un client professionnel assujetti ou une personne morale, une facture d'acompte pour chaque acompte encaissé avant la réalisation de la prestation."
   ],
   "exemple_facture": {

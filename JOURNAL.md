@@ -666,19 +666,19 @@ Quatrième PR de la refonte. Les contenus suivent désormais les règles de réd
 
 **Typographie et garde** :
 
-- Espaces insécables : le postbuild (`scripts/typographie-dist.ts`) place une insécable avant « : ; ? ! » et « », et après « », dans le texte de chaque page. Les attributs, les scripts, `code` et `pre` restent intacts. Gabarits et contenus gardent des espaces ordinaires. Sur le dernier build, 4 664 espaces sont concernées. Après hydratation, le texte des îlots revient aux espaces ordinaires.
+- Espaces insécables : le postbuild (`scripts/typographie-dist.ts`) place une insécable avant « : ; ? ! » et « », et après « », dans le texte de chaque page. Les attributs, les scripts, `code` et `pre` restent intacts. Gabarits et contenus gardent des espaces ordinaires. Sur le dernier build, 4 664 espaces sont concernées. Les îlots appliquent la même règle (`typographier()`, `src/lib/typographie.ts`) à leurs textes, pour que l'hydratation ne remette pas d'espaces ordinaires ; un test e2e le vérifie après hydratation et interaction.
 - `check:redaction` (`scripts/check-redaction.ts`, logique testée dans `src/lib/redaction.ts`) contrôle le texte de `<main>` à chaque build, en local et en CI. Il refuse :
-  - tiret cadratin, demi-cadratin espacé ;
-  - espace ordinaire avant la ponctuation haute ;
+  - tiret cadratin, demi-cadratin ou trait d'union espacés (hors « Régime particulier - … », mention légale) ;
+  - espace ordinaire avant la ponctuation haute, ou ponctuation haute collée au mot ;
   - mot soudé à un lien ;
-  - « En savoir plus », « Découvrir », « Ce qu'il faut retenir » ;
+  - « En savoir plus », « Découvrir » (y compris comme intitulé entier d'un lien externe), « Ce qu'il faut retenir » ;
   - phrase ouverte par « Voici », « Concrètement » ou « Autrement dit » ;
   - renvoi interne (« TODO.md »).
     Les tableaux et les intitulés de liens externes (titres de sources, cités tels quels) sont exclus des règles de texte.
 
 **Contenus** :
 
-- Fiches métier : 200 tirets retirés de la prose de 75 fiches, quatre « Concrètement » supprimés. Une incise devient une paire de virgules ou des parenthèses, une explication un deux-points, jamais un point.
+- Fiches métier : 200 tirets retirés de la prose de 75 fiches, quatre « Concrètement » supprimés ; six mentions « TVA non applicable - article 293 B du CGI » ramenées à la virgule, comme les 188 autres. Une incise devient une paire de virgules ou des parenthèses, une explication un deux-points, jamais un point.
   - Une garde de migration a comparé chaque fichier à `main` : mêmes clés, mêmes sources, mêmes lignes de facture, mêmes mots, même nombre de phrases.
   - `date_maj` n'est pas modifiée, aucun fait n'ayant été revérifié.
   - La note interne « Rendu gabarit : … » de la fiche plaquiste, publiée par erreur, est retirée.
@@ -687,7 +687,7 @@ Quatrième PR de la refonte. Les contenus suivent désormais les règles de réd
   - les « Concrètement » sont retirés, le paragraphe libéral renvoie aux pages métiers et non à « ce guide » ;
   - une garde a vérifié que pourcentages, montants, articles et références sont inchangés.
 - Guides :
-  - les dix sections « Ce qu'il faut retenir » sont retirées, après vérification que chacun de leurs faits, liens et chiffres figure dans le corps du guide ; seule perte, un conseil sans source (« chiffrer sur trois ans ») ;
+  - les dix sections « Ce qu'il faut retenir » sont retirées, après vérification que chacun de leurs faits, liens et chiffres figure dans le corps du guide. La fréquence bimestrielle des données de transaction en franchise en base, qui ne figurait que dans le résumé du guide micro-entrepreneur, est reportée dans le corps avec sa source. Seule perte : un conseil sans source (« chiffrer sur trois ans ») ;
   - celle du guide des formats datait d'avant la réforme (« choisir une plateforme d'ici le 1er septembre 2026 ») ;
   - seize débuts de phrase de remplissage sont réécrits ;
   - « Étape 1 : … » devient « 1. … » ;

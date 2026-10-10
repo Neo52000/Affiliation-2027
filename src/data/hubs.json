@@ -1,7 +1,7 @@
 {
   "batiment": [
     "Électricien, maçon, couvreur, chauffagiste, menuisier, peintre, carreleur, plaquiste ou paysagiste : les métiers du bâtiment partagent l'essentiel de leurs règles de facturation. Plusieurs taux de TVA peuvent coexister sur une même facture, selon la nature des travaux et l'ancienneté du logement. S'y ajoutent des obligations propres au secteur : devis détaillé avant intervention, mention de l'assurance décennale, autoliquidation en cas de sous-traitance.",
-    "La facturation électronique ne change pas ces règles, elle change leur support. Vous devez déjà pouvoir recevoir vos factures via une plateforme agréée, et vous émettrez les vôtres dans un format structuré à l'échéance applicable à votre entreprise. Le PDF envoyé par courriel ne suffira plus entre professionnels.",
+    "La facturation électronique ne change pas ces règles, elle change leur support. Vous devez déjà pouvoir recevoir les factures de vos fournisseurs via une plateforme agréée, et vous émettrez les vôtres dans un format structuré à l'échéance applicable à votre entreprise. Le PDF envoyé par courriel ne suffira plus entre professionnels.",
     "Pour le bâtiment, l'enjeu principal est la fiabilité des données portées sur chaque ligne : taux de TVA appliqué, mention d'autoliquidation, certification du client pour les taux réduits. Un outil correctement paramétré sur ces points limite les rejets de factures et les risques de redressement. Les pages métiers de cette famille détaillent les cas propres à chaque activité."
   ],
   "sante": [
@@ -36,7 +36,7 @@
   ],
   "transport": [
     "Les métiers du transport partagent un socle de facturation commun. Le transport de personnes relève du taux réduit de TVA de 10 %, le transport de biens du taux normal de 20 %. Seuls les transports sanitaires réalisés en véhicules spécialement aménagés, comme les ambulances, sont exonérés de TVA.",
-    "La réforme de la facturation électronique change le circuit de vos factures entre professionnels. Vous devez déjà pouvoir recevoir vos factures via une plateforme agréée, et vous émettrez les vôtres par ce même circuit à l'échéance applicable à votre entreprise. Les entreprises en franchise en base de TVA restent assujetties : elles sont donc concernées elles aussi.",
+    "La réforme de la facturation électronique change le circuit de vos factures entre professionnels. Vous devez déjà pouvoir recevoir les factures de vos fournisseurs via une plateforme agréée, et vous émettrez les vôtres par ce même circuit à l'échéance applicable à votre entreprise. Les entreprises en franchise en base de TVA restent assujetties : elles sont donc concernées elles aussi.",
     "Vos courses et prestations facturées aux particuliers ne passent pas par ce circuit, mais leurs données devront être transmises à l'administration via le e-reporting. La facture devient une donnée structurée : un taux de TVA erroné ou une mention manquante se repère immédiatement. Vérifiez dès maintenant vos mentions obligatoires et le taux appliqué à chaque type de prestation."
   ],
   "restauration": [

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
+import { typographier } from '../../lib/typographie';
 
 interface Props {
   metiers: { nom: string; slug: string }[];
@@ -47,7 +48,7 @@ export default function RappelEmail({ metiers }: Props) {
   if (etat.phase === 'ok') {
     return (
       <p ref={confirmation} tabIndex={-1} class="en-bref font-semibold">
-        {etat.message}
+        {typographier(etat.message)}
       </p>
     );
   }
@@ -96,8 +97,8 @@ export default function RappelEmail({ metiers }: Props) {
         />
         <span class="text-sm">
           J'accepte de recevoir un rappel par email avant mon échéance de facturation électronique.
-          Désinscription possible à tout moment via le lien présent dans chaque email (double opt-in
-          : une confirmation vous sera demandée).
+          Désinscription possible à tout moment via le lien présent dans chaque email (double
+          opt-in&nbsp;: une confirmation vous sera demandée).
         </span>
       </label>
       <button
@@ -109,7 +110,7 @@ export default function RappelEmail({ metiers }: Props) {
       </button>
       {etat.phase === 'erreur' && (
         <p class="admin-erreur text-sm" role="alert">
-          {etat.message}
+          {typographier(etat.message)}
         </p>
       )}
     </form>
