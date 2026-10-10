@@ -53,8 +53,10 @@ passe par une PR (la CI rejoue les garde-fous : similarité, SEO, tests, e2e).
 
 ## 6. Vérifications transverses
 
-- `pnpm verify` en local avant la PR (types, lint, tests, build, similarité, SEO).
-- Lighthouse sur 2 pages (accueil + 1 page métier) : objectif ≥ 95 partout.
+- `pnpm verify` en local avant la PR (types, lint, format, tests, build, similarité,
+  SEO, liens, CSP, rédaction, gabarits à compléter, présentation).
+- Lighthouse sur 2 pages (accueil + 1 page métier), servies avec la vraie CSP
+  (`dist/_headers`) : objectif 100 partout, CLS 0.
 - Parcourir `TODO.md` : dépiler ce qui peut l'être (variables de lancement,
   données en attente de re-vérification).
 
@@ -97,3 +99,50 @@ Liens d'affiliation et espaces publicitaires, sans toucher au code. Prérequis :
 - Une fois par an : supprimer dans Brevo les contacts désinscrits depuis plus de
   3 ans (durée de la liste d'opposition annoncée sur `/confidentialite`), pour la
   newsletter comme pour le rappel.
+
+## 9. Règles de rédaction
+
+Elles s'appliquent aux gabarits comme aux contenus (`src/content`, `src/data`).
+`pnpm check:redaction` fait respecter celles qu'une machine peut vérifier, sur le
+texte de `<main>` de chaque page construite (tableaux et titres de sources
+exclus) ; le reste relève de la relecture.
+
+- Vouvoiement ; phrases courtes ; un seul message par paragraphe.
+- Ni tiret cadratin ni demi-cadratin ou trait d'union espacés dans la prose :
+  une incise se met entre virgules ou entre parenthèses, une explication après un
+  deux-points, jamais à la place d'un point. Exception : les mentions légales
+  citées telles quelles (« Régime particulier - Biens d'occasion »).
+- Pas de triade réflexe ni de formule « X, pas Y ». L'indépendance du classement
+  se dit une fois par page au plus, avec un lien vers `/methode`, jamais dans un
+  bouton.
+- Libellés de lien explicites : ni « En savoir plus », ni « Découvrir ».
+- Ni « Voici », « Concrètement », « Autrement dit », « Ce qu'il faut retenir »,
+  ni suite de débuts de phrase en gras ; titres sans numéro de liste superflu.
+- Dates : dans les gabarits, uniquement depuis `src/data/echeances.json`. Dans
+  les contenus, la réception est déjà obligatoire (« vous devez déjà pouvoir
+  recevoir ») ; l'émission et l'e-reporting restent « à l'échéance applicable à
+  votre entreprise ».
+- Typographie : écrire des espaces ordinaires avant « : ; ? ! » et dans « » ;
+  le postbuild (`scripts/typographie-dist.ts`) pose les insécables dans le HTML.
+  Dans un îlot Preact, passer le texte dynamique par `typographier()`
+  (`src/lib/typographie.ts`) et écrire `&nbsp;` dans le texte littéral, sinon
+  l'hydratation remet des espaces ordinaires (test e2e « espaces insécables
+  conservés après hydratation »).
+- Aucun renvoi interne (« TODO.md #13 ») dans un texte publié.
+
+## 10. Design : polices, couleurs, image de partage
+
+- Polices : Newsreader (titres) et Instrument Sans (texte), fichiers variables
+  latins de `@fontsource-variable`, déclarés par l'API Fonts d'Astro dans
+  `astro.config.mjs` (polices de repli ajustées générées, CLS 0). Pas d'italique.
+- Couleurs : jetons `--color-*` de `src/styles/global.css`, clair et sombre. Le
+  test `src/lib/contraste.test.ts` relit ces jetons et vérifie chaque paire
+  (texte ≥ 4,5:1, bords de contrôles ≥ 3:1) : il échoue si un changement de
+  palette casse un contraste.
+- Aucune animation d'entrée ni boucle ; transitions de couleur seulement.
+- Image de partage `public/og.png` : `pnpm og` la régénère depuis un gabarit
+  local (couleurs lues dans `global.css`, polices du site). À relancer après un
+  changement de palette, de polices ou de texte (`PW_CHROMIUM=…` pour un
+  Chromium déjà installé). Elle ne porte ni chiffre, ni date, ni nom de site.
+- Présentation partenaires (`presentation/`) : mêmes jetons et polices ;
+  `pnpm build:presentation` la régénère depuis les données.

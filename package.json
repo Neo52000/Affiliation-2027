@@ -29,6 +29,7 @@
     "check:csp": "node --experimental-strip-types scripts/check-csp.ts",
     "check:redaction": "node --experimental-strip-types scripts/check-redaction.ts",
     "build:presentation": "node --experimental-strip-types scripts/build-presentation.ts",
+    "og": "node --experimental-strip-types scripts/generate-og.ts",
     "verify": "pnpm check && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm check:similarity && pnpm check:seo && pnpm check:liens && pnpm check:csp && pnpm check:redaction && pnpm check:placeholders && pnpm build:presentation",
     "check:placeholders": "node --experimental-strip-types scripts/check-placeholders.ts"
   },

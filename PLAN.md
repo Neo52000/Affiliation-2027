@@ -269,7 +269,7 @@ Prix et fonctionnalités : volontairement **non relevés** en Phase 0 (objet de 
 | **Dépendance aux 6 programmes d'affiliation**                                                | Revenu nul si un programme ferme                 | Candidats de réserve (section 5), bouton bascule automatique vers URL officielle si lien affilié absent                                                           |
 | **YMYL / E-E-A-T** : sujet fiscal sans auteur identifié                                      | Déclassement SEO                                 | Bloc auteur + relecteur (EXPERT_RELECTEUR), méthode publique, sources officielles liées sur chaque affirmation, encart « ne remplace pas votre expert-comptable » |
 | **Variables légales non renseignées** (EDITEUR_LEGAL…)                                       | Mise en ligne non conforme LCEN                  | Bloquant tracé dans `TODO.md` ; le déploiement Phase 9 exige ces valeurs                                                                                          |
-| **Budget perf** (JS < 30 ko hors outils, LCP < 1,5 s)                                        | Échec critère Lighthouse ≥ 95                    | Sortie 100 % statique, îlots Preact uniquement sur les 3 outils, polices auto-hébergées 2 graisses, audit à chaque phase                                          |
+| **Budget perf** (JS < 30 ko hors outils, LCP < 1,5 s)                                        | Échec critère Lighthouse ≥ 95                    | Sortie 100 % statique, îlots Preact sur les 3 outils et le sélecteur de métier, deux polices variables auto-hébergées, audit Lighthouse sous CSP à chaque PR      |
 | **Fiches de test non remplies** (l'éditeur humain doit tester)                               | Notes `null` durables, pages moins convaincantes | Affichage « Test en cours » assumé, structure de fiche prête, relance dans `TODO.md`                                                                              |
 | **Angle métier déjà partiellement occupé** (§6.5 : un hub « 63 activités » existe)           | Différenciation réduite                          | Profondeur réelle par page (exemple de facture, FAQ, spécificités vérifiées) vs déclinaisons d'un même comparatif ; 100 métiers ; méthode + tests réels publics   |
 | **Accès réseau bloqué vers .gouv.fr depuis l'environnement de build**                        | Données vérifiées via index, pas en direct       | Recoupement multi-sources systématique en build ; relecture humaine des pages sources avant mise en ligne (tracée dans `TODO.md`)                                 |
@@ -296,3 +296,11 @@ Prix et fonctionnalités : volontairement **non relevés** en Phase 0 (objet de 
 | 9. Déploiement         | Netlify, README, MAINTENANCE.md, `check-links.ts`                                  | URL de production, checklist cochée              |
 
 Pages métier pilotes proposées pour la Phase 3 (1 par famille) : plombier, infirmier libéral, fleuriste, coiffeur, avocat, serrurier, développeur freelance, VTC, restaurateur, maraîcher.
+
+## 10. Refonte éditoriale (octobre 2026)
+
+Demande : un site plus moderne, qui ne semble pas fait par une IA. Direction retenue : éditoriale, à la manière d'un magazine économique.
+
+- **Design** : titres en Newsreader, texte en Instrument Sans ; papier `#F7F4EE`, encre `#1B1D1A`, un seul accent vert sapin `#1F5C4A` (thème sombre dédié) ; filets plutôt que cartes, tableaux mis en avant ; ni dégradé, ni halo, ni ombre, ni animation d'entrée.
+- **Textes** : gabarits réécrits, contenus ponctués sans tiret cadratin, formules creuses retirées ; règles dans `MAINTENANCE.md` § 9, gardées par `check:redaction`.
+- **Livraison** en cinq PR (#38 fondations, #39 gabarits de lecture, #40 et #41 outils et pages de confiance, #42 contenus, PR 5 image de partage, présentation et documentation), plus #43 (réception au présent dans les fiches), chacune après une revue contradictoire et sur CI verte.

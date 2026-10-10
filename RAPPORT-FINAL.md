@@ -36,7 +36,7 @@ restauration, santé, professions libérales, numérique, services, agriculture,
 
 ## 3. Lighthouse — quatre axes, tous les types de page
 
-Mesures locales sur le build de production, préréglage desktop.
+Mesures locales sur le build de production, préréglages mobile et desktop.
 
 > Limite découverte le 2026-10-08 : ces mesures tournaient sur `astro preview`, qui n'applique pas les
 > en-têtes Netlify. La CSP de production bloquait alors les scripts en ligne d'Astro et les îlots
@@ -44,38 +44,40 @@ Mesures locales sur le build de production, préréglage desktop.
 > empreintes dans `dist/_headers` et contrôlée par `check-csp`. Les prochaines mesures se font avec
 > ces en-têtes.
 
-**Mesure du 2026-10-08, dans les conditions de production.** Le build a été servi avec la CSP de
-`dist/_headers` et la compression gzip, puis audité par Lighthouse 13.5 en préréglages desktop et
-mobile. L'accueil, un hub, une fiche outil, le quiz, une page métier et un comparatif obtiennent
-**100/100/100/100 en desktop comme en mobile**, avec CLS 0, aucune erreur console et un LCP mobile de
-1,4 à 1,5 s. Sans compression, la même grille donne 99 en mobile, et `main` aussi : c'est un artefact
-du serveur de test, pas une régression. Un CLS de 0,005 propre au quiz en desktop est corrigé : la
-barre de défilement apparaissait après un premier rendu partiel, et `scrollbar-gutter: stable` lui
-réserve désormais sa place.
+**Mesure du 2026-10-10, après la refonte éditoriale.** Le build de production est servi avec la CSP
+de `dist/_headers` et la compression gzip, puis audité par Lighthouse 12 en préréglages mobile
+(throttling simulé) et desktop. Les huit types de page obtiennent **100/100/100/100 en mobile comme
+en desktop**, avec un CLS de 0 et un temps de blocage nul.
 
-| Page                     | Performance | Accessibilité | Bonnes pratiques | SEO    | CLS | LCP   |
-| ------------------------ | ----------- | ------------- | ---------------- | ------ | --- | ----- |
-| Accueil                  | 100         | 100           | 100              | 100    | 0   | 0,4 s |
-| Page métier              | 100         | 100           | 100              | 100    | 0   | 0,3 s |
-| Hub de famille           | 100         | 100           | 100              | 100    | 0   | 0,3 s |
-| Comparatif               | 100         | 100           | 100              | 100    | 0   | 0,3 s |
-| Fiche outil              | 100         | 100           | 100              | 100    | 0   | 0,3 s |
-| Registre des plateformes | 100         | 100           | 100              | 100    | 0   | 0,3 s |
-| Quiz                     | 100         | 100           | 100              | 100    | 0   | 0,4 s |
-| Simulateur d'échéance    | 100         | 100           | 100              | 100    | 0   | 0,4 s |
-| Vérificateur de facture  | 100         | 100           | 100              | 100    | 0   | 0,4 s |
-| Guide pilier             | 100         | 100           | 100              | 100    | 0   | 0,3 s |
-| Transparence             | 100         | 100           | 100              | 100    | 0   | 0,3 s |
-| À propos                 | 100         | 100           | 100              | **66** | 0   | 0,3 s |
-| 404                      | 100         | 100           | 100              | **66** | 0   | 0,3 s |
+| Page                    | Mobile (Perf/A11y/BP/SEO) | Desktop (Perf/A11y/BP/SEO) | CLS | LCP mobile | LCP desktop |
+| ----------------------- | ------------------------- | -------------------------- | --- | ---------- | ----------- |
+| Accueil                 | 100/100/100/100           | 100/100/100/100            | 0   | 1,65 s     | 0,40 s      |
+| Hub de famille          | 100/100/100/100           | 100/100/100/100            | 0   | 1,65 s     | 0,40 s      |
+| Page métier             | 100/100/100/100           | 100/100/100/100            | 0   | 1,50 s     | 0,36 s      |
+| Fiche outil             | 100/100/100/100           | 100/100/100/100            | 0   | 1,50 s     | 0,36 s      |
+| Comparatif              | 100/100/100/100           | 100/100/100/100            | 0   | 1,50 s     | 0,36 s      |
+| Guide pilier            | 100/100/100/100           | 100/100/100/100            | 0   | 1,50 s     | 0,36 s      |
+| Quiz                    | 100/100/100/100           | 100/100/100/100            | 0   | 1,80 s     | 0,40 s      |
+| Vérificateur de facture | 100/100/100/100           | 100/100/100/100            | 0   | 1,80 s     | 0,40 s      |
 
-Les deux scores SEO de 66 sont **voulus** et ne sont pas un défaut : le seul audit en échec est
+Un passage complémentaire sur l'accueil avec un throttling réel (`--throttling-method=devtools`), qui
+laisse les polices arriver après le premier rendu, donne une performance de 99 et un **CLS de 0,025**,
+bien en deçà du seuil « bon » de 0,1. Lighthouse attribue ce décalage au chargement des polices : le
+chapô en Newsreader se recompose sur une ligne de plus ou de moins quand la police remplace sa
+police de repli, pourtant ajustée par l'API Fonts d'Astro (`size-adjust`). Passer en
+`font-display: optional` annulerait ce décalage, mais afficherait Georgia au lieu de la police du site
+lors d'une première visite lente ; le compromis retenu est de garder `swap`.
+
+Lors de la mesure précédente (2026-10-08), la grille complète couvrait aussi le registre des
+plateformes, le simulateur, la transparence, l'à-propos et la 404, tous à 100 sauf le SEO de deux
+pages. Les deux scores SEO de 66 sont **voulus** et ne sont pas un défaut : le seul audit en échec est
 « Page is blocked from indexing », vérifié audit par audit. La page À propos reste hors index tant que
 l'identité de l'éditeur est un placeholder (TODO #3), et une page d'erreur n'a pas à être indexée.
 
-Au-delà de Lighthouse, qui ne contrôle pas ce critère : les bordures de composants d'interface ont été
-mesurées à **4,55:1** en thème clair et **5,07:1** en thème sombre, au-dessus du seuil de 3:1 de la règle
-WCAG 1.4.11. La version précédente était à 1,45:1.
+Au-delà de Lighthouse, qui ne contrôle pas ce critère : depuis la refonte éditoriale, les bordures de
+composants d'interface sont à **4,12:1** sur le papier en thème clair et **4,80:1** en thème sombre
+(4,52:1 et 4,37:1 sur le fond des champs), au-dessus du seuil de 3:1 de la règle WCAG 1.4.11. Le test
+`src/lib/contraste.test.ts` relit les jetons de couleur et échoue si une paire passe sous son seuil.
 
 ## 4. Tests et garde-fous automatiques
 
@@ -84,13 +86,16 @@ WCAG 1.4.11. La version précédente était à 1,45:1.
 | `astro check` (TypeScript le plus strict)      | 0 erreur                                      | local + CI   |
 | ESLint                                         | propre                                        | local + CI   |
 | Prettier                                       | propre                                        | local + CI   |
-| Tests unitaires Vitest                         | **77 tests, 10 fichiers**                     | local + CI   |
-| Parcours Playwright de bout en bout            | **6 parcours**                                | local + CI   |
-| `check:similarity` — anti-duplication          | **4 950 paires, maximum 21,2 %** (seuil 50 %) | local + CI   |
-| `check:seo` — titles, descriptions, canonicals | **150 pages indexables** conformes            | local + CI   |
-| `check:liens` — cibles internes                | **5 345 liens, 0 cassé**                      | local + CI   |
+| Tests unitaires Vitest                         | **379 tests, 29 fichiers**                    | local + CI   |
+| Tests Playwright de bout en bout               | **32 tests, 4 fichiers**                      | local + CI   |
+| `check:similarity` — anti-duplication          | **4 950 paires, maximum 22,3 %** (seuil 50 %) | local + CI   |
+| `check:seo` — titles, descriptions, canonicals | **152 pages indexables** conformes            | local + CI   |
+| `check:liens` — cibles internes                | **5 771 liens, 0 cassé**                      | local + CI   |
+| `check:csp` — scripts en ligne                 | **192 scripts, tous autorisés par empreinte** | local + CI   |
+| `check:redaction` — règles de rédaction        | **161 pages, 0 infraction**                   | local + CI   |
+| `check:placeholders` — gabarits à compléter    | **161 pages, aucun marqueur**                 | local + CI   |
 
-Trois garde-fous bloquants, pas deux : `check:liens` a été ajouté après avoir constaté que les
+Les garde-fous sur le site construit sont tous bloquants. Parmi eux, `check:liens` a été ajouté après avoir constaté que les
 15 pages de comparatif avaient vécu plusieurs phases sans qu'aucun lien n'y mène, sans qu'aucune
 alerte ne se déclenche. Il a été éprouvé en cassant volontairement un lien, pour vérifier qu'il échoue
 avec le code 1 et nomme la page fautive.
@@ -142,7 +147,7 @@ la règle « jamais de note avant un test réel documenté ».
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Schéma de facture assoupli sur trois cas           | Les rédacteurs avaient raison et le schéma avait tort : ligne d'acompte à montant négatif, émolument au tarif réglementé non reproduit, TVA hors champ. Le composant rend ces cas sans mentir plutôt que de les refuser. |
 | Jamais « TVA 0 % » en franchise en base            | Un taux affiché, fût-il nul, rendrait l'entreprise redevable de la taxe. La colonne porte « — » avec sa légende.                                                                                                         |
-| Largeur de lecture à 54ch, non 70ch                | 70ch rendait 86 caractères par ligne, l'unité `ch` valant l'avance du glyphe « 0 ». Mesuré à 71 caractères après correction.                                                                                             |
+| Largeur de lecture à 34rem                         | Une largeur en `ch` dépend de l'avance du glyphe « 0 » et dérivait selon la police. 34rem (612 px) donne 65 à 73 caractères par ligne en moyenne par paragraphe, mesuré au navigateur sur un guide et une fiche métier.  |
 | Statut de plateforme agréée rendu depuis la donnée | Il était réaffirmé à la main dans les 300 justifications d'outils, en 225 formulations distinctes. Une affirmation réglementaire recopiée trois cents fois ne peut que dériver.                                          |
 | `check:liens` ajouté aux garde-fous                | Non demandé par la spécification, mais un défaut de structure s'était déjà produit sans alerte.                                                                                                                          |
 | `format:check` ajouté à `pnpm verify`              | La CI l'exécutait, `verify` non : un échec CI sur du vert local. Le trou a été comblé plutôt que les fichiers seulement reformatés.                                                                                      |
@@ -150,13 +155,32 @@ la règle « jamais de note avant un test réel documenté ».
 
 ## 8. Conformité au positionnement
 
-| Engagement de la spécification         | État                                                                                                                                       |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Angle par métier                       | 100 pages métier, chacune avec ses spécificités propres ; similarité maximale 21,2 %                                                       |
-| Classement indépendant des commissions | Les commissions n'entrent dans aucun calcul, ni dans le quiz, ni dans l'ordre ; méthode publique sur `/methode`                            |
-| Tests réels documentés                 | Aucune note publiée ; « Test en cours » assumé sur les six fiches                                                                          |
-| Données datées et sourcées             | Chaque affirmation réglementaire renvoie à une source officielle datée ; les données non vérifiables sont `null` et listées dans `TODO.md` |
-| Aucune date de réforme en dur          | Les dates ne vivent que dans `echeances.json` ; les contenus écrivent « à l'échéance applicable à votre entreprise »                       |
-| Aucun cookie soumis à consentement     | Aucun traceur, aucune bannière                                                                                                             |
-| Vouvoiement                            | Respecté sur l'ensemble des contenus                                                                                                       |
-| Secrets hors du dépôt                  | Confirmé par le scan Netlify : 201 fichiers, 0 secret                                                                                      |
+| Engagement de la spécification         | État                                                                                                                                                                     |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Angle par métier                       | 100 pages métier, chacune avec ses spécificités propres ; similarité maximale 22,3 %                                                                                     |
+| Classement indépendant des commissions | Les commissions n'entrent dans aucun calcul, ni dans le quiz, ni dans l'ordre ; méthode publique sur `/methode`                                                          |
+| Tests réels documentés                 | Aucune note publiée ; « Test en cours » assumé sur les six fiches                                                                                                        |
+| Données datées et sourcées             | Chaque affirmation réglementaire renvoie à une source officielle datée ; les données non vérifiables sont `null` et listées dans `TODO.md`                               |
+| Aucune date de réforme en dur          | Les dates ne vivent que dans `echeances.json` ; les contenus disent la réception déjà obligatoire et renvoient l'émission « à l'échéance applicable à votre entreprise » |
+| Aucun cookie soumis à consentement     | Aucun traceur, aucune bannière                                                                                                                                           |
+| Vouvoiement                            | Respecté sur l'ensemble des contenus                                                                                                                                     |
+| Secrets hors du dépôt                  | Confirmé par le scan Netlify : 201 fichiers, 0 secret                                                                                                                    |
+
+## 9. Refonte éditoriale (octobre 2026)
+
+Demande : un site plus moderne, qui ne semble pas fait par une IA. Livrée en sept PR fusionnées sur CI verte (#38 à #44 ; #41 porte les corrections de revue de #40, #43 un correctif factuel), chacune après une revue contradictoire suivie
+d'un vérificateur sceptique par constat.
+
+| Avant                                                                    | Après                                                                                      |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| Inter partout, dégradé bleu-violet sur boutons, titres et favicon        | Newsreader pour les titres, Instrument Sans pour le texte ; papier, encre, un accent sapin |
+| Halos, badges pulsants, compteurs animés, bandeau défilant, fausse UI    | Aucune animation d'entrée ni boucle ; transitions de couleur seulement                     |
+| Grilles de cartes à pictogramme, libellés en capitales espacées          | Filets, listes numérotées, tableaux mis en avant ; surtitres en casse de phrase            |
+| Tirets cadratins, « Voici », « Concrètement », « Ce qu'il faut retenir » | 200 tirets retirés des fiches, formules creuses supprimées ; `check:redaction` les refuse  |
+| Espaces ordinaires avant la ponctuation haute                            | 4 664 insécables posées au build, conservées après hydratation des îlots (test e2e)        |
+| Réception au futur dans 10 hubs et 73 fiches                             | Réception au présent (obligatoire depuis le 1er septembre 2026), émission à l'échéance     |
+| Image de partage en dégradé avec fausse interface                        | `pnpm og` : image éditoriale générée depuis les jetons et les polices du site              |
+
+Accessibilité mesurée à chaque PR (axe, WCAG 2.2 AA, clair et sombre, 1280 et 360 px, états résultat
+des outils compris) : 0 violation. Les points de contenu relevés en chemin sans être modifiés sont
+listés dans `TODO.md` #30.
