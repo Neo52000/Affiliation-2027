@@ -21,7 +21,7 @@ test('1. accueil → hub bâtiment → page métier plombier', async ({ page }) 
     .getByRole('link', { name: /plombier/i })
     .click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/plombier/i);
-  await expect(page.getByText("L'essentiel en 3 lignes")).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'En bref' })).toBeVisible();
 });
 
 test('2. quiz : 5 réponses → 1 recommandation + 2 alternatives', async ({ page }) => {

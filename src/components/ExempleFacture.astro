@@ -32,19 +32,17 @@ const totalTva = lignes.reduce(
 );
 ---
 
-<figure>
-  <figcaption class="mb-2 text-sm text-ink-soft">
-    {intitule} — exemple illustratif (montants fictifs, taux de TVA réels)
+<figure class="feuille">
+  <figcaption class="mb-3 text-sm">
+    <span class="block font-semibold">{intitule}</span>
+    <span class="mt-1 block text-ink-soft">
+      Exemple illustratif : montants fictifs, taux de TVA réels.
+    </span>
   </figcaption>
-  <div
-    class="table-scroll rounded-lg border border-border px-4 py-2"
-    role="region"
-    aria-label="Lignes de la facture"
-    tabindex="0"
-  >
-    <table class="table-interactive table-chiffres w-full border-collapse text-sm">
+  <div class="table-scroll" role="region" aria-label="Lignes de la facture" tabindex="0">
+    <table class="table-chiffres w-full border-collapse text-sm">
       <thead>
-        <tr class="border-b-2 border-border text-left">
+        <tr>
           <th scope="col" class="designation py-2 pr-3">
             Désignation
           </th>
@@ -67,7 +65,7 @@ const totalTva = lignes.reduce(
       </thead>
       <tbody>
         {lignes.map((l) => (
-          <tr class="border-b border-border">
+          <tr>
             <td class="designation py-2 pr-3">{l.designation}</td>
             <td class="nombre py-2 pr-3">{l.quantite.toLocaleString('fr-FR')}</td>
             <td class="py-2 pr-3">{l.unite}</td>
@@ -85,14 +83,14 @@ const totalTva = lignes.reduce(
       </tbody>
       {montantsComplets && (
         <tfoot>
-          <tr class="border-b border-border">
+          <tr class="border-t border-border">
             <th scope="row" colspan="5" class="nombre py-2 pr-3 font-normal">
               Total HT
             </th>
             <td class="nombre py-2 font-bold">{euros(totalHt)} €</td>
           </tr>
           {!horsChampTva && (
-            <tr class="border-b border-border">
+            <tr class="border-t border-border">
               <th scope="row" colspan="5" class="nombre py-2 pr-3 font-normal">
                 TVA
               </th>
@@ -100,7 +98,7 @@ const totalTva = lignes.reduce(
             </tr>
           )}
           {!horsChampTva && (
-            <tr>
+            <tr class="border-t border-border">
               <th scope="row" colspan="5" class="nombre py-2 pr-3 font-normal">
                 Total TTC
               </th>

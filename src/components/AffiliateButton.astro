@@ -10,9 +10,14 @@ interface Props {
   label: string;
   /** Position du bouton, transmise en analytics (Phase 7) */
   emplacement: string;
+  /**
+   * Emphase visuelle : `principal` pour le premier rang éditorial (calculé sans
+   * les commissions), `secondaire` pour les suivants et les comparatifs.
+   */
+  variante?: 'principal' | 'secondaire';
 }
 
-const { outil, urlOfficielle, label, emplacement } = Astro.props;
+const { outil, urlOfficielle, label, emplacement, variante = 'principal' } = Astro.props;
 const lien = affiliateLink(outil, urlOfficielle);
 ---
 
@@ -22,7 +27,7 @@ const lien = affiliateLink(outil, urlOfficielle);
     rel={lien.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
     data-emplacement={emplacement}
     data-outil={outil}
-    class="btn-affiliate btn-cta"
+    class:list={['btn-affiliate', variante === 'principal' ? 'btn-cta' : 'btn-ghost']}
   >
     {label}
   </a>

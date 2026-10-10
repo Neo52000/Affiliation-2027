@@ -7,7 +7,7 @@ import ComparatifCourt from '../../components/ComparatifCourt.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { toutesLesPaires } from '../../lib/comparatifs';
 import { formatDateFr } from '../../lib/dates';
-import { insecables } from '../../lib/presentation';
+import { de, insecables } from '../../lib/presentation';
 import { pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
 
@@ -48,92 +48,117 @@ const profils = [
     verdict: [a, b].filter((o) => o.cible.some((c) => /PME/i.test(c))),
   },
 ];
+
+// Introduction tirée des données : le statut d'agrément de chacun, jamais écrit
+// à la main (il change avec le registre).
+const agrees = [a, b].filter((o) => o.est_plateforme_agreee.valeur);
+const sourceRegistre = agrees.find((o) => o.est_plateforme_agreee.source)?.est_plateforme_agreee
+  .source;
+const phraseAgrement =
+  agrees.length === 2
+    ? `${a.nom} et ${b.nom} figurent tous deux au registre des plateformes agréées de l’administration fiscale.`
+    : agrees.length === 1
+      ? `${agrees[0]!.nom} figure au registre des plateformes agréées de l’administration fiscale ; ${
+          (agrees[0] === a ? b : a).nom
+        } n’est pas lui-même une plateforme agréée.`
+      : `Ni ${a.nom} ni ${b.nom} n’est lui-même une plateforme agréée : vos factures transitent par la plateforme d’un tiers.`;
 ---
 
 <Base
   title={pageTitle(`${a.nom} ou ${b.nom} : que choisir ?`, SITE.name)}
-  description={`${a.nom} contre ${b.nom} pour la facturation électronique : statut de plateforme agréée, périmètre, cible — comparaison sur données vérifiées et datées.`}
+  description={`${a.nom} contre ${b.nom} pour la facturation électronique : statut de plateforme agréée, périmètre et cible, comparés sur des données vérifiées et datées.`}
 >
   <BandeauTransparence outils={[a.slug, b.slug]} />
-  <Breadcrumb items={[{ label: 'Comparatifs' }, { label: `${a.nom} vs ${b.nom}` }]} />
+  <Breadcrumb items={[{ label: 'Comparatifs' }, { label: `${a.nom} ou ${b.nom}` }]} />
 
   <article class="mt-4">
-    <h1 class="titre-page">{insecables(`${a.nom} ou ${b.nom} : que choisir ?`)}</h1>
-    <p class="mt-2 text-sm text-ink-soft">Mis à jour le {formatDateFr(dateMaj)}</p>
+    <p class="surtitre">Comparatif</p>
+    <h1 class="titre-page mt-3">{insecables(`${a.nom} ou ${b.nom} ?`)}</h1>
+    <p class="mt-3 text-sm text-ink-soft">Mis à jour le {formatDateFr(dateMaj)}</p>
 
-    <div class="duel mt-6 max-w-2xl">
-      <div class="duel-carte">
-        <span class="duel-monogramme">{a.nom.slice(0, 1)}</span>
-        <p class="mt-2 font-bold">
-          <a href={`/logiciels/${a.slug}`}>{a.nom}</a>
-        </p>
-        <p class="mt-1 text-sm text-ink-soft">{a.cible.slice(0, 2).join(', ')}</p>
-        {a.est_plateforme_agreee.valeur && <p class="badge-ok mt-2">Plateforme agréée</p>}
-      </div>
-      <p class="duel-contre">VS</p>
-      <div class="duel-carte">
-        <span class="duel-monogramme">{b.nom.slice(0, 1)}</span>
-        <p class="mt-2 font-bold">
-          <a href={`/logiciels/${b.slug}`}>{b.nom}</a>
-        </p>
-        <p class="mt-1 text-sm text-ink-soft">{b.cible.slice(0, 2).join(', ')}</p>
-        {b.est_plateforme_agreee.valeur && <p class="badge-ok mt-2">Plateforme agréée</p>}
-      </div>
-    </div>
-
-    <p class="prose-measure mt-6">
-      {a.nom} et {b.nom} sont tous deux des plateformes agréées immatriculées par la DGFiP. La
-      comparaison ci-dessous repose uniquement sur des données vérifiées : les notes n'arriveront
-      qu'après nos tests réels, et les prix qu'une fois relevés à la source.
+    <p class="chapo mt-5">
+      {insecables(phraseAgrement)}{' '}
+      {sourceRegistre && (
+        <a href={sourceRegistre} rel="noopener" class="text-base">
+          Voir le registre
+        </a>
+      )}
+    </p>
+    <p class="prose-measure mt-4">
+      La comparaison repose sur des données vérifiées : aucune note avant notre test, aucun prix
+      avant son relevé à la source.
     </p>
 
-    <section aria-labelledby="tableau" class="mt-8">
-      <h2 id="tableau" class="titre-section text-2xl font-bold">
+    <section aria-labelledby="tableau" class="mt-10">
+      <h2 id="tableau" class="titre-section">
         Comparaison
       </h2>
-      <div class="mt-3">
+      <div class="mt-4 max-w-3xl">
         <ComparatifCourt outils={[a, b]} />
       </div>
     </section>
 
-    <section aria-labelledby="verdict" class="mt-8">
-      <h2 id="verdict" class="titre-section text-2xl font-bold">
+    <section aria-labelledby="verdict" class="mt-10">
+      <h2 id="verdict" class="titre-section">
         Verdict par profil
       </h2>
-      <ul class="mt-3 grid gap-3 sm:grid-cols-2">
-        {profils.map((p) => (
-          <li class="card-reco rounded-lg border border-border p-4">
-            <p class="font-bold">{p.profil}</p>
-            <p class="mt-1">
-              {p.verdict.length === 1
-                ? `${p.verdict[0]!.nom}, d'après le périmètre vérifié à ce jour.`
-                : p.verdict.length === 2
-                  ? 'Les deux répondent à ce besoin d’après leur périmètre vérifié.'
-                  : 'Aucun des deux ne revendique ce profil : comparez avec les autres outils.'}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <table class="mt-4 w-full max-w-3xl text-sm">
+        <caption class="sr-only">
+          Le logiciel qui répond à chaque profil, d'après son périmètre vérifié
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" class="py-2 pr-4">
+              Votre profil
+            </th>
+            <th scope="col" class="py-2">
+              Verdict
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {profils.map((p) => (
+            <tr>
+              <th scope="row" class="py-3 pr-4 align-top font-semibold">
+                {p.profil}
+              </th>
+              <td class="py-3 align-top">
+                {p.verdict.length === 1
+                  ? `${p.verdict[0]!.nom}, d'après le périmètre vérifié à ce jour.`
+                  : p.verdict.length === 2
+                    ? 'Les deux répondent à ce besoin d’après leur périmètre vérifié.'
+                    : 'Aucun des deux ne revendique ce profil : comparez avec les autres logiciels.'}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </section>
 
-    <section class="mt-8 flex flex-wrap gap-4">
-      <AffiliateButton
-        outil={a.slug}
-        urlOfficielle={a.url_officielle}
-        label={`Découvrir ${a.nom}`}
-        emplacement={`comparatif-${a.slug}-vs-${b.slug}-a`}
-      />
-      <AffiliateButton
-        outil={b.slug}
-        urlOfficielle={b.url_officielle}
-        label={`Découvrir ${b.nom}`}
-        emplacement={`comparatif-${a.slug}-vs-${b.slug}-b`}
-      />
+    <section aria-labelledby="sites" class="mt-10">
+      <h2 id="sites" class="titre-section">
+        Les sites des éditeurs
+      </h2>
+      <div class="mt-4 flex flex-wrap gap-4">
+        <AffiliateButton
+          outil={a.slug}
+          urlOfficielle={a.url_officielle}
+          label={`Aller sur le site ${de(a.nom)}`}
+          emplacement={`comparatif-${a.slug}-vs-${b.slug}-a`}
+          variante="secondaire"
+        />
+        <AffiliateButton
+          outil={b.slug}
+          urlOfficielle={b.url_officielle}
+          label={`Aller sur le site ${de(b.nom)}`}
+          emplacement={`comparatif-${a.slug}-vs-${b.slug}-b`}
+          variante="secondaire"
+        />
+      </div>
+      <p class="mt-6 text-sm text-ink-soft">
+        Fiches détaillées : <a href={`/logiciels/${a.slug}`}>{a.nom}</a> ·{' '}
+        <a href={`/logiciels/${b.slug}`}>{b.nom}</a>
+      </p>
     </section>
-
-    <p class="prose-measure mt-8 text-sm text-ink-soft">
-      Fiches détaillées : <a href={`/logiciels/${a.slug}`}>{a.nom}</a> ·{' '}
-      <a href={`/logiciels/${b.slug}`}>{b.nom}</a>
-    </p>
   </article>
 </Base>

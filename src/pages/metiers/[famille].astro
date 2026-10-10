@@ -101,7 +101,8 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
 
   <div class="layout-article mt-4">
     <div>
-      <h1 class="titre-page">{titre}</h1>
+      <p class="surtitre">Famille de métiers</p>
+      <h1 class="titre-page mt-3">{titre}</h1>
       <p class="mt-3 text-sm text-ink-soft">
         {metiers.length} métier{metiers.length > 1 ? 's' : ''} documenté
         {metiers.length > 1 ? 's' : ''} · obligations communes et spécificités de chacun
@@ -116,72 +117,88 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
       <MetierPicker client:idle metiers={choixMetiers} />
 
       {points.length > 0 && pointsFamilles && (
-        <section aria-labelledby="points-famille" class="mt-10">
-          <h2 id="points-famille" class="titre-section text-2xl font-bold">
+        <section aria-labelledby="points-famille" class="mt-12">
+          <h2 id="points-famille" class="titre-section">
             {points.length} points de facturation propres {formes.a}
           </h2>
-          <ol class="mt-4 grid gap-4 sm:grid-cols-2">
+          <ol class="mt-2 max-w-3xl">
             {points.map((p, i) => (
-              <li class="border-t border-border pt-4">
+              <li class="numerote border-b border-border py-5">
                 <span class="numero" aria-hidden="true">
                   {i + 1}
                 </span>
-                <h3 class="mt-3 font-bold">{p.titre}</h3>
-                <p class="mt-1 text-sm">{p.texte}</p>
-                <p class="mt-2 text-sm text-ink-soft">
-                  Concerne notamment :{' '}
-                  {p.metiers_concernes.map((slug, j) => (
-                    <>
-                      {j > 0 && ', '}
-                      <a href={`/facturation-electronique/${slug}`}>{nomsMetiers[slug]}</a>
-                    </>
-                  ))}
-                </p>
-                <p class="mt-1 text-sm text-ink-soft">
-                  Source :{' '}
-                  {p.sources.map((s, j) => (
-                    <>
-                      {j > 0 && ' · '}
-                      <a href={s.url} rel="noopener">
-                        {s.titre}
-                      </a>
-                    </>
-                  ))}
-                </p>
+                <div>
+                  <h3>{p.titre}</h3>
+                  <p class="mt-1">{p.texte}</p>
+                  <p class="mt-2 text-sm text-ink-soft">
+                    Concerne notamment :{' '}
+                    {p.metiers_concernes.map((slug, j) => (
+                      <>
+                        {j > 0 && ', '}
+                        <a href={`/facturation-electronique/${slug}`}>{nomsMetiers[slug]}</a>
+                      </>
+                    ))}
+                  </p>
+                  <p class="mt-1 text-sm text-ink-soft">
+                    Source{p.sources.length > 1 ? 's' : ''} :{' '}
+                    {p.sources.map((s, j) => (
+                      <>
+                        {j > 0 && ' · '}
+                        <a href={s.url} rel="noopener">
+                          {s.titre}
+                        </a>
+                      </>
+                    ))}
+                  </p>
+                </div>
               </li>
             ))}
           </ol>
-          <p class="mt-2 text-xs text-ink-soft">
+          <p class="mt-3 text-sm text-ink-soft">
             Points relevés le {formatDateFr(pointsFamilles.date_releve)} sur les sources citées.
             Chaque fiche métier détaille ses propres règles.
           </p>
         </section>
       )}
 
-      <section aria-labelledby="liste-metiers" class="mt-10">
-        <h2 id="liste-metiers" class="titre-section text-2xl font-bold">
+      <section aria-labelledby="liste-metiers" class="mt-12">
+        <h2 id="liste-metiers" class="titre-section">
           Choisir votre métier
         </h2>
-        <ul class="mt-4 grid gap-3 sm:grid-cols-2">
-          {metiers.map((m) => (
-            <li class="carte-metier card-reco">
-              <p class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                <a
-                  href={`/facturation-electronique/${m.data.slug}`}
-                  class="text-base font-bold no-underline"
-                >
-                  {m.data.nom}
-                </a>
-                <span class="text-xs text-ink-soft">
+        <table class="mt-4 w-full text-sm">
+          <caption class="sr-only">
+            Métiers de cette famille, avec leur clientèle et leur premier besoin
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" class="py-2 pr-4">
+                Métier
+              </th>
+              <th scope="col" class="hidden py-2 pr-4 sm:table-cell">
+                Clientèle
+              </th>
+              <th scope="col" class="py-2">
+                Premier besoin
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {metiers.map((m) => (
+              <tr>
+                <th scope="row" class="py-3 pr-4 align-top font-semibold">
+                  <a href={`/facturation-electronique/${m.data.slug}`}>{m.data.nom}</a>
+                  <span class="mt-1 block font-normal text-ink-soft sm:hidden">
+                    {LIBELLE_CLIENTS[m.data.clients_types] ?? m.data.clients_types}
+                  </span>
+                </th>
+                <td class="hidden py-3 pr-4 align-top whitespace-nowrap text-ink-soft sm:table-cell">
                   {LIBELLE_CLIENTS[m.data.clients_types] ?? m.data.clients_types}
-                </span>
-              </p>
-              {m.data.besoins_prioritaires[0] && (
-                <p class="ligne-2 mt-2 text-sm text-ink-soft">{m.data.besoins_prioritaires[0]}</p>
-              )}
-            </li>
-          ))}
-        </ul>
+                </td>
+                <td class="py-3 align-top">{m.data.besoins_prioritaires[0] ?? ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
         {!familleComplete && (
           <p class="prose-measure mt-4 text-sm text-ink-soft">
             D'autres métiers de cette famille seront ajoutés progressivement.
@@ -190,91 +207,95 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
       </section>
 
       {retenus.length > 0 && (
-        <section aria-labelledby="outils-famille" class="mt-10">
-          <h2 id="outils-famille" class="titre-section text-2xl font-bold">
-            Les outils retenus pour ces métiers
+        <section aria-labelledby="outils-famille" class="mt-12">
+          <h2 id="outils-famille" class="titre-section">
+            Les logiciels retenus pour ces métiers
           </h2>
-          <p class="prose-measure mt-2 text-sm text-ink-soft">
-            Chaque fiche métier retient trois outils sur des faits vérifiés, jamais sur les
-            commissions. Ici, le nombre de fiches qui citent chacun ; à égalité, l'ordre
-            alphabétique.
+          <p class="prose-measure mt-3 text-sm text-ink-soft">
+            Chaque fiche métier retient trois logiciels d'après des faits vérifiés. Le tableau
+            compte les fiches de la famille qui citent chacun ; à égalité, l'ordre alphabétique
+            départage.
           </p>
-          <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {retenus.map((o) => (
-              <li class="relative border-t border-border pt-3">
-                <span>
-                  <a href={`/logiciels/${o.slug}`} class="lien-carte font-bold">
-                    {o.nom}
-                  </a>
-                  <span class="block text-sm text-ink-soft">
-                    Retenu sur {o.fiches} fiche{o.fiches > 1 ? 's' : ''} sur {metiers.length}
-                  </span>
-                </span>
-              </li>
-            ))}
-          </ul>
+          <table class="mt-4 w-full max-w-2xl text-sm">
+            <caption class="sr-only">
+              Nombre de fiches de la famille qui retiennent chaque logiciel
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" class="py-2 pr-4">
+                  Logiciel
+                </th>
+                <th scope="col" class="py-2 pr-4">
+                  Fiches
+                </th>
+                <th scope="col" class="w-2/5 py-2">
+                  <span class="sr-only">Part des fiches</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {retenus.map((o) => (
+                <tr>
+                  <th scope="row" class="py-2 pr-4 font-semibold">
+                    <a href={`/logiciels/${o.slug}`}>{o.nom}</a>
+                  </th>
+                  <td class="py-2 pr-4 whitespace-nowrap">
+                    {o.fiches} sur {metiers.length}
+                  </td>
+                  <td class="py-2 align-middle">
+                    <span class="jauge" aria-hidden="true">
+                      <span style={`width: ${(o.fiches / metiers.length) * 100}%`} />
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </section>
       )}
 
-      <section aria-labelledby="quiz-famille" class="m-panneau mt-10 py-6">
-        <h2 id="quiz-famille" class="text-2xl font-bold">
-          Pas sûr de votre choix ?
+      <section aria-labelledby="quiz-famille" class="mt-12">
+        <h2 id="quiz-famille" class="titre-section">
+          Affiner avec le quiz
         </h2>
-        <p class="prose-measure mt-2">
-          Cinq questions sur votre activité suffisent pour une recommandation fondée sur des faits
-          vérifiés.
+        <p class="prose-measure mt-3">
+          Cinq questions sur votre activité : métier, statut, volume de factures, compte
+          professionnel et expert-comptable.
         </p>
-        <p class="mt-5">
-          <a href="/outils/quiz" class="btn-clair">
+        <p class="mt-4">
+          <a href="/outils/quiz" class="btn-cta">
             Faire le quiz
           </a>
         </p>
       </section>
 
-      <EspacePublicitaire emplacement="familles" famille={famille} class="mt-10" />
+      <EspacePublicitaire emplacement="familles" famille={famille} class="mt-12" />
 
       {autresFamilles.length > 0 && (
-        <section aria-labelledby="autres-familles" class="mt-10">
-          <h2 id="autres-familles" class="titre-section text-2xl font-bold">
+        <section aria-labelledby="autres-familles" class="mt-12">
+          <h2 id="autres-familles" class="titre-section">
             Votre métier n'est pas dans cette famille ?
           </h2>
           <ListeFamilles familles={autresFamilles} class="mt-2 max-w-2xl" />
         </section>
       )}
 
-      <section
-        aria-labelledby="sources-hub"
-        class="prose-measure mt-10 border-t border-border pt-4"
-      >
-        <h2 id="sources-hub" class="text-lg font-bold">
+      <section aria-labelledby="sources-hub" class="mt-12">
+        <h2 id="sources-hub" class="titre-section">
           Source
         </h2>
-        <p class="mt-2 text-sm">
+        <p class="mt-3 text-sm">
           <a href={reception.sources[0]} rel="noopener">
             Calendrier officiel de la réforme (impots.gouv.fr)
           </a>
         </p>
         <p class="mt-2 text-sm text-ink-soft">
-          Données relevées le {formatDateFr(echeances.date_releve)}. Information générale : ne
-          remplace pas l'avis de votre expert-comptable.
+          Données relevées le {formatDateFr(echeances.date_releve)}.
         </p>
       </section>
     </div>
 
     <aside class="colonne-appui" aria-label="Accès rapides">
-      <div class="carte-appui card-top">
-        <p class="carte-appui-titre">Trouver votre outil</p>
-        <p class="mt-2 text-sm text-ink-soft">
-          Cinq questions, une recommandation fondée sur des faits vérifiés — jamais sur les
-          commissions.
-        </p>
-        <p class="mt-3">
-          <a href="/outils/quiz" class="btn-cta">
-            Faire le quiz
-          </a>
-        </p>
-      </div>
-
       <div class="carte-appui">
         <p class="carte-appui-titre">Votre échéance</p>
         <p class="mt-2 text-sm text-ink-soft">
@@ -288,7 +309,7 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
       <div class="carte-appui">
         <p class="carte-appui-titre">Notre méthode</p>
         <p class="mt-2 text-sm text-ink-soft">
-          Comment les outils sont classés, et pourquoi aucune note n'est encore publiée.
+          Comment les logiciels sont classés, et pourquoi aucune note n'est encore publiée.
         </p>
         <p class="mt-3 text-sm">
           <a href="/methode">Lire la méthode</a>
