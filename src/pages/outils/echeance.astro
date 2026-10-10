@@ -90,7 +90,9 @@ const metiersRappel = (await getCollection('metiers'))
               <td class="py-2 pr-3">{e.obligation}</td>
               <td class="py-2 pr-3">{e.concernes}</td>
               <td class="py-2 pr-3 whitespace-nowrap">{formatDateFr(e.date)}</td>
-              <td class="py-2">{e.statut === 'en_vigueur' ? 'En vigueur' : 'À venir'}</td>
+              <td class="py-2 whitespace-nowrap">
+                {e.statut === 'en_vigueur' ? 'En vigueur' : 'À venir'}
+              </td>
             </tr>
           ))}
         </tbody>

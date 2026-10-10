@@ -12,7 +12,7 @@ export interface OutilFacts {
   comptePro: boolean | null;
   compta: boolean | null;
   lienExpertComptable: boolean | null;
-  /** Cible revendiquée par l'éditeur (minuscules) */
+  /** Cible revendiquée par l'éditeur, telle qu'affichée (comparaisons insensibles à la casse) */
   cibles: string[];
 }
 
@@ -49,7 +49,7 @@ function justifier(o: OutilFacts, r: QuizReponses, parMetier: boolean): string {
       ? `${o.nom} est une plateforme agréée qui ${atouts.slice(0, 2).join(' et ')}.`
       : `${o.nom} est une plateforme agréée : émission, réception et e-reporting sans intermédiaire.`;
   const p2 = parMetier
-    ? `C'est aussi l'un des outils que nous recommandons pour votre métier.`
+    ? `C'est aussi l'un des logiciels recommandés sur la fiche de votre métier.`
     : `L'éditeur cible notamment : ${o.cibles.join(', ')}.`;
   return `${p1} ${p2}`;
 }
@@ -74,8 +74,10 @@ export function recommander(
 
     if (reponses.besoinComptePro && o.comptePro === true) score += 3;
     if (reponses.expertComptable && o.lienExpertComptable === true) score += 2;
-    if (reponses.statut === 'micro' && o.cibles.some((c) => c.includes('micro'))) score += 2;
-    if (reponses.statut === 'societe' && o.cibles.some((c) => c.includes('pme'))) score += 2;
+    if (reponses.statut === 'micro' && o.cibles.some((c) => c.toLowerCase().includes('micro')))
+      score += 2;
+    if (reponses.statut === 'societe' && o.cibles.some((c) => c.toLowerCase().includes('pme')))
+      score += 2;
     if (reponses.facturesParMois === 'plus-50' && o.compta === true) score += 1;
 
     return { o, score };

@@ -283,14 +283,6 @@ a:hover {
   -webkit-overflow-scrolling: touch;
 }
 
-/* En-tête de tableau long : reste visible pendant le défilement. */
-.table-longue thead th {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background: var(--color-paper);
-}
-
 .table-chiffres td.nombre,
 .table-chiffres th.nombre {
   text-align: right;
@@ -408,7 +400,10 @@ a:hover {
   outline-offset: 3px;
 }
 
-.choix input {
+/* Cases et boutons radio dans l'accent du site, partout (vérificateur, rappel,
+   newsletter, back office), pas dans le bleu natif du navigateur. */
+input[type='checkbox'],
+input[type='radio'] {
   accent-color: var(--color-accent);
 }
 

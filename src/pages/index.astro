@@ -37,7 +37,7 @@ const outilsQuiz = outilsColl.map((o) => ({
   comptePro: o.data.fonctionnalites.compte_pro,
   compta: o.data.fonctionnalites.compta,
   lienExpertComptable: o.data.fonctionnalites.lien_expert_comptable,
-  cibles: o.data.cible.map((c) => c.toLowerCase()),
+  cibles: o.data.cible,
   urlOfficielle: o.data.url_officielle,
   libelleTest: libelleStatutTest(o.data.statut_test),
 }));

@@ -66,7 +66,9 @@ export function situerEcheances(
     reception.statut === 'en_vigueur'
       ? 'Vérifier dès maintenant que vous recevez bien les factures de vos fournisseurs via votre plateforme.'
       : 'Préparer la réception des factures fournisseurs via votre plateforme.',
-    'Tester l’émission d’une facture électronique avant votre échéance.',
+    emission.statut === 'en_vigueur'
+      ? 'Vérifier dès maintenant que vos factures électroniques partent bien via votre plateforme.'
+      : 'Tester l’émission d’une facture électronique avant votre échéance.',
     'Prévenir votre expert-comptable et organiser l’archivage.',
   ];
   if (tva === 'franchise') {
