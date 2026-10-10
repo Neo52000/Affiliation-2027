@@ -9,14 +9,20 @@ import { hasAffiliate } from '../lib/affiliate';
 interface Props {
   /** Slugs des outils dont la page affiche un bouton. */
   outils: string[];
+  /**
+   * Rappel « ni l'ordre ni les recommandations ». À désactiver sur une page qui
+   * l'énonce déjà dans son texte : l'indépendance n'est dite qu'une fois par page.
+   */
+  rappelIndependance?: boolean;
 }
 
-const { outils } = Astro.props;
+const { outils, rappelIndependance = true } = Astro.props;
 ---
 
 {hasAffiliate(outils) && (
   <p class="mb-6 border-b border-border pb-3 text-sm text-ink-soft">
-    Cette page contient des liens affiliés, signalés individuellement. Ils ne modifient ni l'ordre
-    ni les recommandations. <a href="/transparence">Comment le site gagne de l'argent</a>.
+    Cette page contient des liens affiliés, signalés individuellement.
+    {rappelIndependance && " Ils ne modifient ni l'ordre ni les recommandations."}{' '}
+    <a href="/transparence">Comment le site gagne de l'argent</a>.
   </p>
 )}

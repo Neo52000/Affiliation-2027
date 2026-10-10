@@ -24,7 +24,7 @@ const actif = (href: string) => chemin === href || chemin.startsWith(`${href}/`)
             <a
               href={item.href}
               class="nav-link"
-              aria-current={actif(item.href) ? 'page' : undefined}
+              aria-current={chemin === item.href ? 'page' : actif(item.href) ? 'true' : undefined}
             >
               {item.label}
             </a>

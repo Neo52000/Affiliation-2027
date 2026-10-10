@@ -42,9 +42,7 @@ const colonnes: { titre: string; liens: { label: string; href: string }[] }[] = 
           <ul class="mt-2 space-y-1">
             {c.liens.map((l) => (
               <li>
-                <a href={l.href} class="text-ink">
-                  {l.label}
-                </a>
+                <a href={l.href}>{l.label}</a>
               </li>
             ))}
           </ul>

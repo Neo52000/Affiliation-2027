@@ -541,3 +541,17 @@ L'en-tête se limite au nom et à trois liens ; il n'est plus collant.
 - Avec le throttling devtools, sur un poste Linux sans Times New Roman ni Arial, le CLS de l'accueil est de 0,021 (seuil « bon » : 0,1).
 
 **e2e** : `motion.spec.ts` devient `interactions.spec.ts`. Deux vérifications s'ajoutent : aucune animation au chargement sur cinq gabarits, et sélecteur masqué sans JavaScript.
+
+**Revue contradictoire** (5 relecteurs, chacun suivi d'un vérificateur sceptique) : 26 constats, dont 17 retenus et tous corrigés. Les 9 autres ont été réfutés.
+
+- La phrase sur l'état des tests est extraite et testée, et reste juste quand une partie des logiciels, ou tous, auront été testés.
+- Le tableau des logiciels gagne la légende « À vérifier » et ne s'écrase plus sur mobile.
+- Dans la navigation, `aria-current` vaut `page` sur la page exacte et `true` sur la rubrique parente.
+- Le texte indicatif des champs remonte à 5,9:1.
+- Les liens du pied de page passent réellement à l'encre.
+- La taille de `.titre-section` est limitée aux h2, ce qui rétablit la hiérarchie du back office.
+- Les filets restent alignés sur deux colonnes.
+- Typographie : espaces insécables dans le surtitre et les titres de guides.
+- L'indépendance n'est énoncée qu'une fois sur l'accueil.
+- Le test « aucune animation » écoute désormais `animationstart` et `transitionrun`, ce qui détecte aussi un fondu court.
+- Les restes inutilisés (`.m-lift`, `.display-title`) sont supprimés.

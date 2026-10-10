@@ -16,9 +16,20 @@ test.describe('aucune animation au chargement', () => {
     '/outils/quiz',
   ]) {
     test(chemin, async ({ page }) => {
+      // Une animation courte et terminée disparaît de getAnimations() : on écoute
+      // donc aussi leur démarrage dès le premier octet, pseudo-éléments compris.
+      await page.addInitScript(() => {
+        const vus: string[] = [];
+        Object.defineProperty(window, '__mouvements', { value: vus });
+        addEventListener('animationstart', (e) => vus.push(`animation ${e.animationName}`), true);
+        addEventListener('transitionrun', (e) => vus.push(`transition ${e.propertyName}`), true);
+      });
       // Hydratation comprise : un îlot client:visible hors écran peut ne jamais s'hydrater,
       // on attend donc le calme réseau plutôt que la disparition de tous les attributs ssr.
       await page.goto(chemin, { waitUntil: 'networkidle' });
+      expect(
+        await page.evaluate(() => (window as unknown as { __mouvements: string[] }).__mouvements),
+      ).toEqual([]);
       expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
     });
   }

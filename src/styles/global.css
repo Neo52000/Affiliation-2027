@@ -130,8 +130,7 @@ h1,
   text-wrap: balance;
 }
 
-.titre-une,
-.display-title {
+.titre-une {
   font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.125rem);
   line-height: 1.08;
   letter-spacing: -0.012em;
@@ -153,11 +152,15 @@ h4 {
   line-height: 1.35;
 }
 
-/* Titre de section : un filet d'encre ouvre la section. */
+/* Titre de section : un filet d'encre ouvre la section. La taille ne vaut que
+   pour un h2 : un h3 qui porte la classe (back office) garde la sienne. */
 .titre-section {
-  font-size: clamp(1.375rem, 1.2rem + 0.7vw, 1.625rem);
   border-top: 1px solid var(--color-ink);
   padding-top: 0.6rem;
+}
+
+h2.titre-section {
+  font-size: clamp(1.375rem, 1.2rem + 0.7vw, 1.625rem);
 }
 
 /* Chapô : la phrase qui pose le sujet, sous le titre. */
@@ -353,6 +356,13 @@ a:hover {
   font: inherit;
 }
 
+/* Le texte indicatif garde le contraste du texte secondaire (WCAG 1.4.3) : le
+   préréglage de Tailwind l'afficherait à 50 % d'opacité, sous 4,5:1. */
+.champ::placeholder {
+  color: var(--color-ink-soft);
+  opacity: 1;
+}
+
 .champ:focus {
   outline: 2px solid var(--color-accent);
   outline-offset: 1px;
@@ -530,13 +540,12 @@ html:not(.js) .selecteur-metier {
    Structure éditoriale
    --------------------------------------------------------------------------- */
 
-/* Liste séparée par des filets. */
-.liste-filets {
-  border-bottom: 1px solid var(--color-border);
-}
-
+/* Liste séparée par des filets. Chaque élément porte ses deux filets, qui se
+   superposent entre voisins : en deux colonnes, le filet du bas s'arrête lui
+   aussi à la gouttière. */
 .liste-filets > li {
-  border-top: 1px solid var(--color-border);
+  border-block: 1px solid var(--color-border);
+  margin-bottom: -1px;
   padding-block: 0.7rem;
 }
 
@@ -563,13 +572,7 @@ html:not(.js) .selecteur-metier {
   white-space: nowrap;
 }
 
-/* Élément numéroté : le numéro en serif sert de repère, à la place d'une icône. */
-.numerote {
-  display: grid;
-  grid-template-columns: 2.25rem minmax(0, 1fr);
-  column-gap: 0.75rem;
-}
-
+/* Numéro en serif : il sert de repère, à la place d'une icône. */
 .numero {
   font-family: var(--font-serif);
   font-size: 1.75rem;
@@ -578,8 +581,7 @@ html:not(.js) .selecteur-metier {
   font-variant-numeric: lining-nums;
 }
 
-/* En bref : l'essentiel d'une page entre deux filets, sans fond ni boîte. */
-.en-bref,
+/* L'essentiel d'une page entre deux filets, sans fond ni boîte. */
 .encadre-essentiel {
   border: 0;
   border-top: 2px solid var(--color-ink);
@@ -628,11 +630,8 @@ html:not(.js) .selecteur-metier {
   padding-inline: 0;
 }
 
-/* Le lien principal d'un bloc le couvre en entier (une seule tabulation). */
-.m-lift {
-  position: relative;
-}
-
+/* Le lien principal d'un bloc le couvre en entier (une seule tabulation) ; le
+   bloc qui le contient est positionné (.ligne-repere, li.relative). */
 .lien-carte::after {
   content: '';
   position: absolute;
@@ -734,13 +733,17 @@ html:not(.js) .selecteur-metier {
 }
 
 .nav-link:hover,
-.nav-link[aria-current='page'] {
+.nav-link[aria-current] {
   text-decoration-line: underline;
   text-decoration-thickness: 2px;
 }
 
 .site-footer {
   border-top: 1px solid var(--color-ink);
+}
+
+.site-footer a {
+  color: var(--color-ink);
 }
 
 /* ---------------------------------------------------------------------------

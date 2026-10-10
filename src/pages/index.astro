@@ -11,7 +11,7 @@ import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import { formatDateFr } from '../lib/dates';
 import { compterSourcesGouv, insecables } from '../lib/presentation';
-import { libelleStatutTest } from '../lib/statut-test';
+import { libelleStatutTest, phraseEtatTests } from '../lib/statut-test';
 import { FAMILLE_LABELS, type Famille } from '../lib/familles';
 import hubs from '../data/hubs.json';
 import echeances from '../data/echeances.json';
@@ -97,18 +97,15 @@ const sourcesAgrement = [
 ];
 
 const nbTestes = outilsColl.filter((o) => o.data.statut_test === 'teste').length;
-const etatTests =
-  nbTestes === 0
-    ? `Aucun des ${outilsColl.length} logiciels n’a encore été testé par nos soins : leurs fiches portent la mention « Test à venir » et aucune note.`
-    : `${nbTestes} logiciel${nbTestes > 1 ? 's' : ''} sur ${outilsColl.length} ${nbTestes > 1 ? 'ont' : 'a'} passé notre protocole de test ; les autres n’ont pas encore de note.`;
+const etatTests = phraseEtatTests(outilsColl.length, nbTestes);
 ---
 
 <Base title={title} description={SITE.description}>
-  <BandeauTransparence outils={outilsQuiz.map((o) => o.slug)} />
+  <BandeauTransparence outils={outilsQuiz.map((o) => o.slug)} rappelIndependance={false} />
 
   <header class="mt-6">
     <p class="surtitre">
-      {surtitre} ·{' '}
+      {insecables(surtitre)}&nbsp;·{' '}
       <a href={sourceReception} rel="noopener" class="font-normal">
         source {domaine(sourceReception)}
       </a>
@@ -117,9 +114,9 @@ const etatTests =
       Le logiciel de facturation électronique qui convient à votre métier.
     </h1>
     <p class="chapo mt-5">
-      Un plombier, une infirmière libérale et un chauffeur VTC ne facturent pas de la même façon.
-      Chaque fiche part des règles de facturation du métier, avec leurs sources officielles, puis
-      indique les logiciels qui y répondent.
+      Une infirmière libérale ne facture pas comme un plombier. Chaque fiche métier part des règles
+      de facturation propres à l’activité, avec leurs sources officielles, puis indique les
+      logiciels qui y répondent.
     </p>
     <hr class="mt-8 border-ink" />
     <ul class="faits chiffres mt-4 text-ink-soft">
@@ -164,12 +161,13 @@ const etatTests =
       Comment nous classons
     </h2>
     <p class="prose-measure mt-4">
-      La note sur 10 suit une pondération publiée, où la conformité pèse le plus. Les commissions
-      d’affiliation et les espaces publicitaires financent le site&nbsp;; ils n’entrent ni dans la
-      note ni dans l’ordre des recommandations. <a href="/methode">Lire la méthode de notation</a>.
+      La note sur 10 suit une pondération publiée, où la conformité pèse le plus.{' '}
+      {insecables(etatTests)} <a href="/methode">Lire la méthode de notation</a>.
     </p>
     <p class="prose-measure mt-4">
-      {insecables(etatTests)} <a href="/transparence">Voir comment le site est financé</a>.
+      Les commissions d’affiliation et les espaces publicitaires financent le site&nbsp;; ils
+      n’entrent ni dans la note ni dans l’ordre des recommandations.{' '}
+      <a href="/transparence">Voir comment le site est financé</a>.
     </p>
   </section>
 
@@ -205,7 +203,7 @@ const etatTests =
         {guides.map((g) => (
           <li>
             <a href={`/guides/${g.id}`} class="font-semibold">
-              {g.data.title}
+              {insecables(g.data.title)}
             </a>
           </li>
         ))}

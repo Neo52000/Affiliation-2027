@@ -38,7 +38,7 @@ const outils = [...Astro.props.outils].sort((a, b) => a.nom.localeCompare(b.nom,
         <th scope="col" class="py-2 pr-4">
           Comptabilité
         </th>
-        <th scope="col" class="py-2">
+        <th scope="col" class="py-2 whitespace-nowrap">
           Notre test
         </th>
       </tr>
@@ -58,9 +58,14 @@ const outils = [...Astro.props.outils].sort((a, b) => a.nom.localeCompare(b.nom,
           <td class="py-2 pr-4">
             <Statut valeur={o.compta} />
           </td>
-          <td class="py-2 text-ink-soft">{libelleStatutTest(o.statutTest)}</td>
+          <td class="py-2 whitespace-nowrap text-ink-soft">{libelleStatutTest(o.statutTest)}</td>
         </tr>
       ))}
     </tbody>
   </table>
 </div>
+{outils.some((o) => o.comptePro === null || o.compta === null) && (
+  <p class="mt-2 text-sm text-ink-soft">
+    « À vérifier »&nbsp;: donnée en cours de relevé sur le site officiel de l’éditeur.
+  </p>
+)}

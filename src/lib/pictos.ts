@@ -1,7 +1,7 @@
 /**
- * Tracés des pictogrammes du site (trait 1.8, currentColor), partagés entre le
- * composant `Picto.astro` et les supports générés hors Astro (présentation
- * partenaires) : un seul dessin par pictogramme, jamais deux copies qui dérivent.
+ * Tracés des pictogrammes (trait 1.8, currentColor) de la présentation
+ * partenaires, générée hors Astro par scripts/build-presentation.ts. Le site
+ * lui-même n'affiche plus de pictogrammes depuis le design v7.
  */
 export type NomPicto =
   | 'batiment'
