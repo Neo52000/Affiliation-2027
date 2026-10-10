@@ -16,7 +16,7 @@
     "Les traitements d'orthodontie et d'orthopédie dento-faciale font l'objet d'une demande d'accord préalable auprès de l'Assurance Maladie, condition de la prise en charge avant facturation.",
     "En tiers payant, la facturation passe par la feuille de soins électronique : la part obligatoire, et le cas échéant la part complémentaire, sont réglées directement par les organismes. Vos encaissements doivent être rapprochés acte par acte.",
     "Lorsque vos honoraires comportent un dépassement et atteignent 70 €, une information écrite préalable sur le coût des actes est obligatoire (arrêté du 2 octobre 2008, pris pour l'application de l'article L. 1111-3 du code de la santé publique).",
-    "Vos opérations exonérées sont dispensées d'émission de factures électroniques, mais le cabinet doit déjà pouvoir recevoir celles de ses fournisseurs, prothésiste en tête."
+    "Vos opérations exonérées sont dispensées d'émission de factures électroniques, mais le cabinet doit déjà pouvoir recevoir celles de ses fournisseurs (consommables, équipement)."
   ],
   "mentions_obligatoires_specifiques": [
     "Référence à l'exonération (article 261, 4, 1° du CGI ou disposition correspondante de la directive 2006/112/CE) sur les notes d'honoraires portant sur des soins et sur la fourniture de prothèses sur mesure.",
@@ -50,7 +50,7 @@
   "besoins_prioritaires": [
     "Relier chaque note d'honoraires au devis normé signé (prothèses, orthodontie) et conserver la trace des accords préalables.",
     "Rapprocher les règlements du tiers payant (part obligatoire, part complémentaire) des actes facturés.",
-    "Recevoir et traiter un flux régulier de factures fournisseurs au format électronique : prothésiste, consommables, équipement.",
+    "Recevoir et traiter un flux régulier de factures fournisseurs au format électronique : consommables, équipement.",
     "Isoler les éventuels actes sans finalité thérapeutique, soumis à la TVA, du reste de l'activité exonérée."
   ],
   "outils_recommandes": [
@@ -86,7 +86,7 @@
     },
     {
       "question": "La facturation électronique change-t-elle quelque chose pour mon cabinet, alors que mes soins sont exonérés ?",
-      "reponse": "Oui, du côté des achats. Vos opérations exonérées sont dispensées d'émission au format électronique, mais vous devez déjà être en mesure de recevoir les factures électroniques de vos fournisseurs (prothésiste, consommables, équipement)."
+      "reponse": "Oui, du côté des achats. Vos opérations exonérées sont dispensées d'émission au format électronique, mais vous devez déjà être en mesure de recevoir les factures électroniques de vos fournisseurs (consommables, équipement)."
     }
   ],
   "sources": [

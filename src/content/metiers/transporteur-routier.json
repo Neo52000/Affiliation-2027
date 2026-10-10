@@ -55,7 +55,7 @@
   "besoins_prioritaires": [
     "Rattacher chaque facture aux lettres de voiture et aux ordres de transport correspondants.",
     "Calculer, tracer et faire apparaître la révision carburant et les charges de gazole sur chaque facture.",
-    "Faire transiter une facturation entièrement B2B par les plateformes agréées, en réception dès maintenant, en émission à l'échéance applicable à votre entreprise.",
+    "Faire transiter une facturation entièrement B2B par les plateformes agréées : y recevoir dès maintenant vos factures fournisseurs, y émettre les vôtres à l'échéance applicable à votre entreprise.",
     "Documenter les consommations de gazole des véhicules de 7,5 tonnes et plus pour la demande de remboursement partiel d'accise."
   ],
   "outils_recommandes": [

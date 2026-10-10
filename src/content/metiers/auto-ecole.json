@@ -55,7 +55,7 @@
     "Suivre chaque élève : heures prévues au contrat, heures consommées, heures facturées en plus, solde du forfait.",
     "Gérer les encaissements échelonnés et rapprocher chaque paiement de l'échéancier prévu au contrat.",
     "Émettre des notes détaillées conformes à l'affichage des prix et au contrat type.",
-    "Recevoir dès maintenant les factures fournisseurs en électronique et préparer l'e-reporting des encaissements des élèves particuliers pour l'échéance applicable à votre entreprise."
+    "Pouvoir recevoir dès maintenant les factures électroniques des fournisseurs et préparer l'e-reporting des encaissements des élèves particuliers pour l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -90,7 +90,7 @@
     },
     {
       "question": "Mes élèves sont des particuliers : la facturation électronique me concerne-t-elle quand même ?",
-      "reponse": "Oui, par deux portes. Côté fournisseurs (véhicules, carburant, assurance, éditeur de code en ligne, loyer), vous devez déjà pouvoir recevoir leurs factures via une plateforme agréée. Côté élèves, vos encaissements auprès de particuliers ne donnent pas lieu à facture électronique mais à une transmission de données à l'administration, l'e-reporting : ce sont les sommes encaissées qui sont transmises, pas le forfait signé. Un forfait réglé en plusieurs fois se transmet donc au rythme des encaissements, et non à la signature du contrat : votre suivi élève par élève doit distinguer ce qui est facturé de ce qui est encaissé."
+      "reponse": "Oui, par deux portes. Côté fournisseurs (véhicules, carburant, assurance, éditeur de code en ligne, loyer), vous devez déjà pouvoir recevoir leurs factures via une plateforme agréée. Côté élèves, vos encaissements auprès de particuliers ne donneront pas lieu à facture électronique mais, à l'échéance applicable à votre entreprise, à une transmission de données à l'administration, l'e-reporting : ce sont les sommes encaissées qui sont transmises, pas le forfait signé. Un forfait réglé en plusieurs fois se transmet donc au rythme des encaissements, et non à la signature du contrat : votre suivi élève par élève doit distinguer ce qui est facturé de ce qui est encaissé."
     }
   ],
   "sources": [

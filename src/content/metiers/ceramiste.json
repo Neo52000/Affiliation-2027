@@ -9,7 +9,7 @@
     "Lorsque vous êtes redevable de la TVA, la vaisselle et les pièces utilitaires produites en série dans votre atelier (bols, tasses, plats) relèvent du taux normal de 20 %, comme la plupart des ventes de biens.",
     "Le taux réduit de 5,5 % applicable aux livraisons d'œuvres d'art est réservé, pour la céramique, aux exemplaires uniques entièrement exécutés de la main de l'artiste et signés par lui. Une série de tasses tournées à l'identique n'y ouvre pas droit, même décorée et signée.",
     "Vos ventes au stand, sur les marchés de potiers et les salons, sont des ventes aux particuliers : elles ne donnent pas lieu à facture électronique mais à un e-reporting, sous forme de données agrégées quotidiennes transmises à l'administration.",
-    "En dépôt-vente, le circuit de facturation dépend du contrat signé avec la boutique : vente ferme ou dépôt avec commission. Dans les deux cas, les factures échangées entre votre atelier et la boutique sont des factures entre professionnels, concernées par la facturation électronique : vous devez déjà pouvoir recevoir celles de la boutique, et vous émettrez les vôtres à l'échéance applicable à votre entreprise.",
+    "En dépôt-vente, le circuit de facturation dépend du contrat signé avec la boutique : vente ferme ou dépôt avec commission. Dans les deux cas, les factures échangées entre votre atelier et la boutique sont des factures entre professionnels, concernées par la facturation électronique : vous émettrez les vôtres à l'échéance applicable à votre entreprise, et celles de la boutique (sa commission, en dépôt) vous parviendront au format électronique à l'échéance qui la concerne.",
     "Si vous bénéficiez de la franchise en base, vous facturez sans TVA et portez sur chaque facture et chaque note la mention « TVA non applicable, article 293 B du CGI », y compris sur un relevé de dépôt-vente."
   ],
   "mentions_obligatoires_specifiques": [
@@ -79,7 +79,7 @@
     },
     {
       "question": "En dépôt-vente, qui facture quoi entre mon atelier et la boutique ?",
-      "reponse": "Tout dépend du contrat. En vente ferme, vous facturez la boutique, qui revend ensuite vos pièces. En dépôt avec commission, la boutique encaisse les ventes et vous facture sa commission, selon ce que prévoit le contrat. Ces flux entre professionnels relèveront de la facturation électronique à l'échéance applicable à votre entreprise."
+      "reponse": "Tout dépend du contrat. En vente ferme, vous facturez la boutique, qui revend ensuite vos pièces. En dépôt avec commission, la boutique encaisse les ventes et vous facture sa commission, selon ce que prévoit le contrat. Ces flux entre professionnels relèveront de la facturation électronique, chacun à l'échéance de son émetteur : la vôtre pour vos factures, celle de la boutique pour sa commission."
     },
     {
       "question": "Comment justifier le taux de 5,5 % appliqué à une pièce unique ?",
