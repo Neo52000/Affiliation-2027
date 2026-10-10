@@ -55,7 +55,7 @@
     "Appliquer la bonne règle de TVA selon le client : taux normal en France, mention « Autoliquidation » pour un assujetti de l'UE, hors TVA française pour un client hors UE, mention de l'article 293 B du CGI en franchise en base.",
     "Chaîner devis, factures d'acompte et facture de solde sur les missions au forfait sans perdre le lien entre les documents.",
     "Suivre le chiffre d'affaires pour anticiper la sortie de la franchise en base et préparer les déclarations associées (TVA, déclaration européenne de services).",
-    "Émettre et recevoir des factures électroniques via une plateforme agréée, à l'échéance applicable à l'entreprise selon le calendrier de la réforme."
+    "Recevoir dès maintenant des factures électroniques via une plateforme agréée, et en émettre à l'échéance applicable à l'entreprise selon le calendrier de la réforme."
   ],
   "outils_recommandes": [
     {
@@ -74,7 +74,7 @@
   "faq": [
     {
       "question": "Je suis développeur en micro-entreprise et je facture sans TVA (mention « TVA non applicable, art. 293 B du CGI ») : suis-je concerné par la facturation électronique ?",
-      "reponse": "Oui. La réforme s'applique à tous les assujettis à la TVA, y compris ceux qui n'en sont pas redevables, comme les développeurs en franchise en base. Vous devrez recevoir puis émettre des factures électroniques à l'échéance applicable à votre entreprise, selon le calendrier de la réforme. Vos factures continueront de porter la mention « TVA non applicable, article 293 B du CGI »."
+      "reponse": "Oui. La réforme s'applique à tous les assujettis à la TVA, y compris ceux qui n'en sont pas redevables, comme les développeurs en franchise en base. Vous devez déjà pouvoir recevoir des factures électroniques, et vous en émettrez à l'échéance applicable à votre entreprise, selon le calendrier de la réforme. Vos factures continueront de porter la mention « TVA non applicable, article 293 B du CGI »."
     },
     {
       "question": "Je développe à distance pour des clients établis à l'étranger : mes factures passent-elles par la facturation électronique ?",
@@ -147,5 +147,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/les-regimes-dimposition-la-tva"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

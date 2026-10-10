@@ -15,7 +15,7 @@
     "L'avance immédiate de crédit d'impôt, service optionnel et gratuit de l'Urssaf, change votre circuit d'encaissement : votre client ne règle que le reste à charge après déduction immédiate de son crédit d'impôt de 50 %, l'Urssaf vous versant le complément. L'activation relève du client et reste soumise aux conditions d'éligibilité fixées par l'Urssaf ; une partie de votre clientèle peut donc continuer à régler la totalité de la facture. Prévoyez les deux circuits d'encaissement dans votre suivi de règlements. Vos demandes de paiement doivent reprendre fidèlement le détail facturé.",
     "Avant le 31 mars de l'année suivant celle du paiement des prestations, vous devez délivrer à chaque client l'attestation fiscale annuelle prévue par l'article D. 7233-4 du code du travail, récapitulant les interventions de l'année (intervenants, dates, durées, taux horaire, sommes effectivement acquittées) : sans historique de facturation propre et détaillé, ce document devient impossible à produire.",
     "Le devis est gratuit et obligatoire dès que la prestation atteint 100 € TTC par mois ; en dessous, il doit être fourni si le client le demande. Pour toute prestation d'au moins 25 € TTC, une note détaillée est remise au client avant paiement.",
-    "Beaucoup d'intervenants exercent en micro-entreprise sous franchise en base : la facture porte alors la mention « TVA non applicable, article 293 B du CGI », sans aucune TVA. La franchise n'exonère pas de la réforme : réception de factures électroniques des fournisseurs et transmission des données de ventes aux particuliers (e-reporting), à l'échéance applicable à votre entreprise."
+    "Beaucoup d'intervenants exercent en micro-entreprise sous franchise en base : la facture porte alors la mention « TVA non applicable, article 293 B du CGI », sans aucune TVA. La franchise n'exonère pas de la réforme : réception dès maintenant de factures électroniques des fournisseurs, et transmission des données de ventes aux particuliers (e-reporting) à l'échéance applicable à votre entreprise."
   ],
   "mentions_obligatoires_specifiques": [
     "Note détaillée obligatoire dès 25 € TTC pour un particulier : date, identité du prestataire, décompte par prestation, montants HT et TTC, remise avant paiement.",
@@ -54,7 +54,7 @@
     "Gérer un circuit d'encaissement avec reste à charge (avance immédiate Urssaf) et rapprocher les versements Urssaf des factures émises, tout en conservant le circuit classique pour les clients non éligibles.",
     "Ventiler correctement plusieurs taux de TVA (5,5 %, 10 %, 20 %) ou appliquer la franchise en base selon le statut et le régime de la structure.",
     "Éditer des devis conformes dès 100 € TTC par mois et des notes détaillées dès 25 € TTC.",
-    "Préparer l'e-reporting des ventes aux particuliers et la réception de factures électroniques, à l'échéance applicable à votre entreprise."
+    "Recevoir dès maintenant les factures électroniques et préparer l'e-reporting des ventes aux particuliers pour l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -89,7 +89,7 @@
     },
     {
       "question": "Mes clients règlent via l'avance immédiate de l'Urssaf : qu'est-ce que cela change pour mes factures et pour la réforme ?",
-      "reponse": "Rien quant au contenu : votre demande de paiement doit reprendre fidèlement le détail facturé (nature des prestations, heures, taux horaire, ventilation par taux de TVA ou mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base), car ce détail alimente ensuite l'attestation fiscale annuelle de votre client. Ce qui change, c'est l'encaissement : votre client ne vous règle que son reste à charge et l'Urssaf vous verse le complément, ce que votre suivi de règlements doit savoir rapprocher. Côté réforme, vos prestations à des particuliers ne passeront pas par l'émission de factures électroniques mais par la transmission de données de vente (e-reporting), tandis que vous devrez pouvoir recevoir les factures de vos fournisseurs via une plateforme agréée, à l'échéance applicable à votre entreprise."
+      "reponse": "Rien quant au contenu : votre demande de paiement doit reprendre fidèlement le détail facturé (nature des prestations, heures, taux horaire, ventilation par taux de TVA ou mention « TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base), car ce détail alimente ensuite l'attestation fiscale annuelle de votre client. Ce qui change, c'est l'encaissement : votre client ne vous règle que son reste à charge et l'Urssaf vous verse le complément, ce que votre suivi de règlements doit savoir rapprocher. Côté réforme, vos prestations à des particuliers ne passeront pas par l'émission de factures électroniques mais par la transmission de données de vente (e-reporting), à l'échéance applicable à votre entreprise, tandis que vous devez déjà pouvoir recevoir les factures de vos fournisseurs via une plateforme agréée."
     }
   ],
   "sources": [
@@ -146,5 +146,5 @@
       "url": "https://economie.gouv.fr/dgccrf/services-a-personne-quelle-reglementation"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

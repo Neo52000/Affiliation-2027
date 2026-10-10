@@ -11,7 +11,7 @@
     "L'activité exige un agrément délivré par le directeur général de l'ARS et une autorisation de mise en service pour chaque véhicule (code de la santé publique, articles R. 6312-1 et suivants). Sans agrément, pas de transport sanitaire facturable.",
     "La facturation à l'Assurance Maladie passe par le téléservice de facturation mis à disposition des transporteurs sanitaires, auquel s'ajoute la transmission dématérialisée des pièces justificatives (prescription médicale et signature du patient). Vérifiez les modalités exactes et les prérequis techniques sur votre espace ameli pro.",
     "Le tiers payant règle la part Assurance Maladie directement au transporteur. Le reste à charge du patient (dont la franchise médicale, selon sa situation) fait l'objet d'une facturation distincte.",
-    "Votre entreprise est assujettie : vous devrez être en mesure de recevoir vos factures fournisseurs au format électronique, à l'échéance applicable à votre entreprise. L'obligation d'émettre des factures électroniques ne porte en revanche pas sur les opérations exonérées de TVA en application des articles 261 à 261 E du CGI : vos transports en ambulance en sont exclus, tandis que vos courses en VSL, taxées à 10 %, y entrent. Les échanges concernés passent par une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale."
+    "Votre entreprise est assujettie : vous devez déjà être en mesure de recevoir vos factures fournisseurs au format électronique. L'obligation d'émettre des factures électroniques ne porte en revanche pas sur les opérations exonérées de TVA en application des articles 261 à 261 E du CGI : vos transports en ambulance en sont exclus, tandis que vos courses en VSL, taxées à 10 %, y entreront à l'échéance applicable à votre entreprise. Les échanges concernés passent par une plateforme agréée (ex-PDP) immatriculée par l'administration fiscale."
   ],
   "mentions_obligatoires_specifiques": [
     "Mentions communes : identité et adresse des parties, SIREN/SIRET, numéro et date de facture, détail de la prestation (trajet, date, véhicule), taux et montant de TVA quand elle est due.",
@@ -50,7 +50,7 @@
     "Ventiler sans erreur les courses exonérées (ambulance, article 261, 4-3° du CGI) et les courses taxées à 10 % (VSL).",
     "Rapprocher les règlements en tiers payant de l'Assurance Maladie des transports télétransmis, et relancer les restes à charge patients.",
     "Faire dialoguer le téléservice de facturation de l'Assurance Maladie avec la facturation et la comptabilité de l'entreprise.",
-    "Distinguer, dans votre facturation professionnelle, les transports exonérés (hors champ de l'obligation d'émission électronique) des courses en VSL taxées à 10 % qui y entrent, et être prêt à recevoir toutes vos factures fournisseurs au format électronique, à l'échéance applicable à votre entreprise."
+    "Distinguer, dans votre facturation professionnelle, les transports exonérés (hors champ de l'obligation d'émission électronique) des courses en VSL taxées à 10 % qui y entrent, et être en mesure, dès maintenant, de recevoir vos factures fournisseurs au format électronique."
   ],
   "outils_recommandes": [
     {
@@ -81,7 +81,7 @@
     },
     {
       "question": "Exonéré de TVA, suis-je quand même concerné par la facturation électronique ?",
-      "reponse": "En partie, et c'est une spécificité de votre métier. Vous êtes un assujetti établi en France : vous devrez être en mesure de recevoir vos factures au format électronique, à l'échéance applicable à votre entreprise. En revanche, l'obligation d'émettre des factures électroniques ne porte pas sur les opérations exonérées de TVA en application des articles 261 à 261 E du CGI : vos transports en ambulance, exonérés au titre de l'article 261, 4-3°, en sont exclus, y compris lorsqu'ils sont facturés à un établissement de santé. Vos courses en VSL, elles, sont taxées à 10 % et entrent dans le champ de l'émission, via une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale. Une entreprise qui exploite les deux doit donc distinguer ses flux."
+      "reponse": "En partie, et c'est une spécificité de votre métier. Vous êtes un assujetti établi en France : vous devez déjà être en mesure de recevoir vos factures au format électronique. En revanche, l'obligation d'émettre des factures électroniques ne porte pas sur les opérations exonérées de TVA en application des articles 261 à 261 E du CGI : vos transports en ambulance, exonérés au titre de l'article 261, 4-3°, en sont exclus, y compris lorsqu'ils sont facturés à un établissement de santé. Vos courses en VSL, elles, sont taxées à 10 % et entrent dans le champ de l'émission, via une plateforme agréée (ex-PDP) immatriculée par l'administration fiscale, à l'échéance applicable à votre entreprise. Une entreprise qui exploite les deux doit donc distinguer ses flux."
     },
     {
       "question": "Puis-je facturer un transport sanitaire sans agrément de l'ARS ?",
@@ -122,5 +122,5 @@
       "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000032459194"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

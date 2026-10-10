@@ -79,11 +79,11 @@
   "faq": [
     {
       "question": "Je vends mes légumes uniquement sur les marchés et en AMAP, à des particuliers. Suis-je concerné par la réforme de la facturation électronique ?",
-      "reponse": "Oui. Les ventes aux particuliers ne donnent pas lieu à des factures électroniques, mais elles entrent dans le champ du e-reporting : vous transmettrez des données agrégées de transactions (montants par jour et par taux de TVA), à l'échéance applicable à votre entreprise. Aucune donnée nominative sur vos clients particuliers n'est transmise. Vous devrez aussi être en mesure de recevoir les factures électroniques de vos fournisseurs."
+      "reponse": "Oui. Les ventes aux particuliers ne donnent pas lieu à des factures électroniques, mais elles entrent dans le champ du e-reporting : vous transmettrez des données agrégées de transactions (montants par jour et par taux de TVA), à l'échéance applicable à votre entreprise. Aucune donnée nominative sur vos clients particuliers n'est transmise. Vous devez aussi, dès maintenant, être en mesure de recevoir les factures électroniques de vos fournisseurs."
     },
     {
       "question": "Je relève du remboursement forfaitaire agricole et je ne facture pas de TVA. Dois-je quand même m'équiper ?",
-      "reponse": "La réforme concerne les entreprises assujetties à la TVA établies en France, y compris lorsqu'elles ne collectent pas de TVA. Le remboursement forfaitaire signifie que vous n'êtes pas redevable, pas que vous êtes hors du champ de la TVA. Prévoyez donc une solution capable de recevoir des factures électroniques, d'émettre des factures électroniques pour vos ventes aux clients professionnels et de transmettre les données de vos ventes aux particuliers, selon le calendrier applicable à votre entreprise."
+      "reponse": "La réforme concerne les entreprises assujetties à la TVA établies en France, y compris lorsqu'elles ne collectent pas de TVA. Le remboursement forfaitaire signifie que vous n'êtes pas redevable, pas que vous êtes hors du champ de la TVA. Prévoyez donc une solution capable de recevoir dès maintenant des factures électroniques et, selon le calendrier applicable à votre entreprise, d'émettre des factures électroniques pour vos ventes aux clients professionnels et de transmettre les données de vos ventes aux particuliers."
     },
     {
       "question": "Quel taux de TVA dois-je appliquer sur mes légumes si je suis redevable ?",
@@ -160,5 +160,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

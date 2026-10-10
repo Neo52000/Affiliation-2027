@@ -63,7 +63,7 @@
     "Adosser chaque facture d'honoraires à la lettre de mission et au document d'entrée en relation remis au client",
     "Tracer la transparence sur le mode de rémunération exigée avant la souscription",
     "Distinguer le destinataire de la facture selon le bénéficiaire réel de la prestation : la société pour un conseil d'entreprise, le dirigeant pour un conseil patrimonial personnel",
-    "Préparer la facturation électronique malgré une part d'activité exonérée de TVA, à l'échéance applicable à votre entreprise"
+    "Recevoir dès maintenant les factures électroniques malgré une part d'activité exonérée de TVA, et préparer l'émission pour l'échéance applicable à votre entreprise"
   ],
   "outils_recommandes": [
     {
@@ -94,7 +94,7 @@
     },
     {
       "question": "Mon activité est en grande partie exonérée de TVA : suis-je quand même visé par la facturation électronique ?",
-      "reponse": "Oui. La réforme concerne les assujettis à la TVA établis en France, même lorsque leurs opérations sont exonérées. À l'échéance applicable à votre entreprise, vous devrez pouvoir recevoir des factures électroniques, puis en émettre pour vos clients professionnels établis en France."
+      "reponse": "Oui. La réforme concerne les assujettis à la TVA établis en France, même lorsque leurs opérations sont exonérées. Vous devez déjà pouvoir recevoir des factures électroniques, et vous en émettrez pour vos clients professionnels établis en France à l'échéance applicable à votre entreprise."
     },
     {
       "question": "Les commissions que je perçois sur des placements financiers suivent-elles le même régime de TVA que l'assurance ?",
@@ -151,5 +151,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

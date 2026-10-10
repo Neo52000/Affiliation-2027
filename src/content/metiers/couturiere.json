@@ -11,7 +11,7 @@
     "Pour vos clientes et clients particuliers, la note est obligatoire dès que la prestation atteint 25 € TTC, ou dès qu'elle est demandée. Ce seuil est vite atteint avec une retouche de manteau ou une création sur mesure.",
     "Pour une robe sur mesure, le prix ne peut pas être déterminé à l'avance : vous devez fournir un devis suffisamment détaillé au consommateur qui le demande, avant de commencer le travail.",
     "Vos prestations aux particuliers ne passeront pas par la facture électronique : elles relèveront du e-reporting, une transmission de totaux quotidiens à l'administration. À l'inverse, une facture adressée à un pressing ou à une boutique est une facture entre professionnels, à émettre au format électronique à l'échéance applicable à votre entreprise.",
-    "Même en franchise en base, vous devrez pouvoir recevoir au format électronique les factures de vos fournisseurs de tissus et de mercerie, à l'échéance applicable à votre entreprise."
+    "Même en franchise en base, vous devez déjà pouvoir recevoir au format électronique les factures de vos fournisseurs de tissus et de mercerie."
   ],
   "mentions_obligatoires_specifiques": [
     "Mentions communes à toute note ou facture : date d'émission, numéro unique, identité de l'atelier et du client, date de la prestation, détail et décompte en quantité et prix de chaque retouche, et montant total à payer. Si vous êtes redevable de la TVA, la note distingue les montants hors taxe et toutes taxes comprises ainsi que le taux appliqué ; en franchise en base, aucune TVA n'apparaît et les montants sont nets de taxe.",
@@ -126,5 +126,5 @@
       "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

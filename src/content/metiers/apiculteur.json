@@ -108,7 +108,7 @@
     },
     {
       "question": "Je suis au micro-BA. Ce régime me dispense-t-il de la réforme de la facturation ?",
-      "reponse": "Non. Le micro-BA est un régime d'imposition du bénéfice agricole : il détermine votre résultat à partir d'une moyenne triennale de recettes diminuée d'un abattement, et il est sans effet sur vos obligations de facturation. Il a même une conséquence pratique inverse : comme vos recettes sont majoritairement encaissées au détail, sur les marchés et à la miellerie, et non facturées, votre suivi d'encaissements par année civile sert deux obligations distinctes, la moyenne triennale du micro-BA et la transmission du chiffre d'affaires journalier ventilé par taux. Vous devrez par ailleurs, au minimum, être en mesure de recevoir les factures électroniques de vos fournisseurs de miellerie, à l'échéance applicable à votre entreprise."
+      "reponse": "Non. Le micro-BA est un régime d'imposition du bénéfice agricole : il détermine votre résultat à partir d'une moyenne triennale de recettes diminuée d'un abattement, et il est sans effet sur vos obligations de facturation. Il a même une conséquence pratique inverse : comme vos recettes sont majoritairement encaissées au détail, sur les marchés et à la miellerie, et non facturées, votre suivi d'encaissements par année civile sert deux obligations distinctes, la moyenne triennale du micro-BA et la transmission du chiffre d'affaires journalier ventilé par taux. Vous devez par ailleurs, au minimum, être déjà en mesure de recevoir les factures électroniques de vos fournisseurs de miellerie."
     },
     {
       "question": "Mon numéro d'apiculteur (NAPI) doit-il figurer sur mes factures ?",
@@ -193,5 +193,5 @@
       "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/ventes-sur-la-voie-publique-autorisations-necessaires"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

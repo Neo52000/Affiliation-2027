@@ -62,7 +62,7 @@
     "Insérer automatiquement les mentions propres au bâtiment : certification des conditions du taux réduit, assurance décennale, « Autoliquidation » en sous-traitance.",
     "Enchaîner devis signé, facture d'acompte puis facture de solde sans ressaisie, en suivant la TVA exigible sur chaque acompte encaissé.",
     "Facturer en mobilité après un dépannage, avec un devis préalable systématique : il est obligatoire avant l'intervention, quel que soit le montant des travaux.",
-    "Se préparer à la facturation électronique : recevoir les factures des fournisseurs, émettre via une plateforme agréée à l'échéance applicable et transmettre les données des ventes aux particuliers (e-reporting)."
+    "Se préparer à la facturation électronique : pouvoir recevoir dès maintenant les factures électroniques des fournisseurs, émettre via une plateforme agréée à l'échéance applicable et transmettre les données des ventes aux particuliers (e-reporting)."
   ],
   "outils_recommandes": [
     {
@@ -158,5 +158,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

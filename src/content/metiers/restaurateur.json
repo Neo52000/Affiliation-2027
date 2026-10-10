@@ -16,7 +16,7 @@
     "En fin de repas, une note détaillée doit être remise au client, quel que soit le montant de l'addition, établie en double exemplaire dont le professionnel conserve le duplicata. Le seuil de 25 € TTC, en dessous duquel la note n'est due que si le client la demande, vise les autres prestations de services, pas le repas servi.",
     "La note remise en fin de repas doit comporter la date, le nom et l'adresse de l'établissement et le prix TTC de chaque prestation servie ; dans les établissements pratiquant un prix service compris, la mention « prix service compris » s'impose.",
     "L'essentiel des encaissements provient de particuliers : ces ventes ne donnent pas lieu à facture électronique mais relèvent du e-reporting, c'est-à-dire la transmission de données de transactions, sans donnée nominative sur le client.",
-    "Quand un client professionnel demande une facture (repas d'affaires), celle-ci doit être émise au format électronique via une plateforme agréée, ce qui suppose de recueillir au minimum le SIREN ou le SIRET du client.",
+    "Quand un client professionnel demande une facture (repas d'affaires), celle-ci devra être émise au format électronique via une plateforme agréée à l'échéance applicable à votre entreprise, ce qui suppose de recueillir au minimum le SIREN ou le SIRET du client.",
     "L'enregistrement des règlements via un logiciel ou système de caisse impose un équipement respectant des conditions d'inaltérabilité, de sécurisation, de conservation et d'archivage des données, justifiées par un certificat d'organisme accrédité ou une attestation de l'éditeur."
   ],
   "mentions_obligatoires_specifiques": [
@@ -158,5 +158,5 @@
       "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/ticket-de-caisse-et-de-carte-bancaire"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

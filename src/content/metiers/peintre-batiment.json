@@ -69,7 +69,7 @@
     "Intégrer les mentions déchets sur chaque devis de chantier.",
     "Appliquer le bon taux selon l'usage du local : habitation à 10 %, local professionnel à 20 %.",
     "Suivre plusieurs chantiers en parallèle, avec acompte au démarrage et facture de solde.",
-    "Passer à la réception puis à l'émission de factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise."
+    "Recevoir dès maintenant les factures électroniques via une plateforme agréée et passer à l'émission à l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -133,5 +133,5 @@
       "url": "https://www.economie.gouv.fr/dgccrf/Publications/Vie-pratique/Fiches-pratiques/Devis"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

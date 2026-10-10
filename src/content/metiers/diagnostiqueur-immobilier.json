@@ -11,7 +11,7 @@
     "Un dossier de diagnostic technique avant vente regroupe plusieurs diagnostics : détaillez chaque intervention sur une ligne distincte avec son prix unitaire hors taxes, même lorsque vous vendez un forfait global.",
     "Vous exercez sous certification par domaine de diagnostic, délivrée par un organisme accrédité, avec une assurance couvrant les conséquences de vos interventions et une obligation d'indépendance vis-à-vis du propriétaire qui vous mandate et des entreprises de travaux.",
     "Les frais de déplacement que vous refacturez sont des frais accessoires : ils entrent dans la base d'imposition et suivent le régime de la prestation principale, donc le taux de 20 %. Les sommes que vous avancez au nom et pour le compte de votre client, sur justificatif et en rendant compte exactement, sont des débours : elles restent hors base d'imposition et ne supportent pas la TVA. Distinguez les deux sur la facture.",
-    "Assujetti à la TVA, vous êtes concerné par la facturation électronique à l'échéance applicable à votre entreprise : factures électroniques pour vos clients professionnels établis en France, transmission de données à l'administration pour vos interventions auprès des particuliers."
+    "Assujetti à la TVA, vous êtes concerné par la facturation électronique : réception des factures de vos fournisseurs dès maintenant, puis, à l'échéance applicable à votre entreprise, factures électroniques pour vos clients professionnels établis en France et transmission de données à l'administration pour vos interventions auprès des particuliers."
   ],
   "mentions_obligatoires_specifiques": [
     "Détail de chaque diagnostic sur une ligne propre : désignation, quantité, prix unitaire hors taxes",
@@ -163,5 +163,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

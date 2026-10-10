@@ -55,7 +55,7 @@
     "Éditer des factures mensuelles au TJM à partir des jours réellement travaillés",
     "Suivre les délais de paiement des grands comptes et relancer avant l'échéance",
     "Partager la comptabilité avec un expert-comptable quand l'activité passe en société",
-    "Émettre et recevoir des factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise"
+    "Recevoir dès maintenant des factures électroniques via une plateforme agréée, et en émettre à l'échéance applicable à votre entreprise"
   ],
   "outils_recommandes": [
     {
@@ -82,7 +82,7 @@
     },
     {
       "question": "Portage salarial ou indépendant : qui facture le client final ?",
-      "reponse": "En portage salarial, l'entreprise de portage conclut un contrat commercial de prestation de portage avec l'entreprise cliente et lui facture la prestation que vous avez négociée ; elle vous verse ensuite une rémunération après déduction de ses frais de gestion. Vérifiez les modalités dans votre contrat de travail et votre convention de portage. En indépendant, vous émettez vos propres factures avec l'ensemble des mentions obligatoires. Vous relevez alors de la réforme de la facturation électronique à l'échéance applicable à votre entreprise."
+      "reponse": "En portage salarial, l'entreprise de portage conclut un contrat commercial de prestation de portage avec l'entreprise cliente et lui facture la prestation que vous avez négociée ; elle vous verse ensuite une rémunération après déduction de ses frais de gestion. Vérifiez les modalités dans votre contrat de travail et votre convention de portage. En indépendant, vous émettez vos propres factures avec l'ensemble des mentions obligatoires. Vous relevez alors de la réforme de la facturation électronique : réception des factures électroniques dès maintenant, émission à l'échéance applicable à votre entreprise."
     },
     {
       "question": "Je facture chaque fin de mois : quand la TVA est-elle due ?",
@@ -131,5 +131,5 @@
       "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

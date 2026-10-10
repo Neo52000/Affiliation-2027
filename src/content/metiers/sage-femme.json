@@ -15,7 +15,7 @@
     "Exercice conventionné : vos actes cliniques sont cotés selon la NGAP, qui reste en vigueur pour les sages-femmes, et facturés via des feuilles de soins le plus souvent télétransmises (ameli.fr). Ce circuit conventionnel ne se confond pas avec la facturation électronique entre entreprises.",
     "Les séances de préparation à la naissance et à la parentalité sont prises en charge à 100 % par l'Assurance Maladie dès la déclaration de grossesse, dans la limite de sept séances (ameli.fr) : la part caisse transite par la feuille de soins, pas par une facture à la patiente.",
     "En cas de dépassement, une information écrite préalable sur le coût des actes est due dès que les honoraires atteignent 70 € (arrêté du 2 octobre 2008, article L. 1111-3 du code de la santé publique). Ce document précède l'acte et ne remplace pas la note d'honoraires.",
-    "Vos opérations exonérées sont dispensées d'émission de factures électroniques ; vous devrez en revanche pouvoir recevoir celles de vos fournisseurs (matériel d'examen, monitorage, consommables, local) à l'échéance applicable à votre entreprise."
+    "Vos opérations exonérées sont dispensées d'émission de factures électroniques ; vous devez en revanche déjà pouvoir recevoir celles de vos fournisseurs (matériel d'examen, monitorage, consommables, local)."
   ],
   "mentions_obligatoires_specifiques": [
     "Sur les notes d'honoraires : référence à l'exonération des soins, par exemple « Exonération de TVA, article 261, 4, 1° du CGI ».",
@@ -50,7 +50,7 @@
     "Articuler la télétransmission des feuilles de soins et la tenue de vos notes d'honoraires exonérées.",
     "Produire et archiver l'information écrite préalable dès 70 € en cas de dépassement d'honoraires.",
     "Suivre séparément les virements des caisses (tiers payant maternité) et les règlements directs des patientes.",
-    "Être prête à recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+    "Recevoir dès maintenant les factures électroniques de vos fournisseurs."
   ],
   "outils_recommandes": [
     {
@@ -73,7 +73,7 @@
     },
     {
       "question": "La réforme de la facturation électronique remplace-t-elle la télétransmission de mes feuilles de soins ?",
-      "reponse": "Non. La feuille de soins reste le canal de facturation de vos actes NGAP auprès de l'Assurance Maladie (ameli.fr). La facturation électronique vise les factures entre entreprises assujetties : vos opérations exonérées en sont dispensées à l'émission. Seule la réception des factures de vos fournisseurs s'imposera à vous, à l'échéance applicable à votre entreprise."
+      "reponse": "Non. La feuille de soins reste le canal de facturation de vos actes NGAP auprès de l'Assurance Maladie (ameli.fr). La facturation électronique vise les factures entre entreprises assujetties : vos opérations exonérées en sont dispensées à l'émission. Seule la réception des factures de vos fournisseurs s'impose à vous, et elle est déjà obligatoire."
     },
     {
       "question": "Comment sont facturées les séances de préparation à la naissance et à la parentalité ?",
@@ -85,7 +85,7 @@
     },
     {
       "question": "Être conventionnée change-t-il mes obligations face à la facturation électronique ?",
-      "reponse": "Le conventionnement régit vos tarifs et la télétransmission (convention nationale des sages-femmes libérales et ses avenants, ameli.fr), pas vos obligations fiscales de facturation. Vous suivez le droit commun de la réforme : dispense d'émission pour vos soins exonérés, obligation de pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+      "reponse": "Le conventionnement régit vos tarifs et la télétransmission (convention nationale des sages-femmes libérales et ses avenants, ameli.fr), pas vos obligations fiscales de facturation. Vous suivez le droit commun de la réforme : dispense d'émission pour vos soins exonérés, obligation, déjà en vigueur, de pouvoir recevoir les factures électroniques de vos fournisseurs."
     }
   ],
   "sources": [
@@ -126,5 +126,5 @@
       "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

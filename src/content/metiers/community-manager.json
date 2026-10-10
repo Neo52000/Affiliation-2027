@@ -56,7 +56,7 @@
     "Automatiser les factures récurrentes liées aux forfaits mensuels d'animation",
     "Suivre les encaissements pour la déclaration Urssaf du chiffre d'affaires",
     "Centraliser devis, factures et reportings par client",
-    "Pouvoir recevoir puis émettre des factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise"
+    "Pouvoir recevoir dès maintenant des factures électroniques via une plateforme agréée, et en émettre à l'échéance applicable à votre entreprise"
   ],
   "outils_recommandes": [
     {
@@ -91,7 +91,7 @@
     },
     {
       "question": "Combien de temps conserver mes factures de forfaits et les éléments qui prouvent mes prestations ?",
-      "reponse": "Les factures se conservent 10 ans. Gardez aussi les éléments qui attestent la réalisation des prestations, comme les calendriers éditoriaux validés et les reportings mensuels envoyés. À l'échéance applicable à votre entreprise, vos factures seront émises et reçues via une plateforme agréée, y compris si vous êtes en franchise en base."
+      "reponse": "Les factures se conservent 10 ans. Gardez aussi les éléments qui attestent la réalisation des prestations, comme les calendriers éditoriaux validés et les reportings mensuels envoyés. Vous devez déjà pouvoir recevoir des factures via une plateforme agréée, et vous en émettrez à l'échéance applicable à votre entreprise, y compris si vous êtes en franchise en base."
     }
   ],
   "sources": [
@@ -136,5 +136,5 @@
       "url": "https://www.autoentrepreneur.urssaf.fr/portail/accueil/une-question/toutes-les-fiches-pratiques/determiner-mon-chiffre-daffaires.html"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

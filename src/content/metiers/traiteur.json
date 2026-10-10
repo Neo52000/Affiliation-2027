@@ -92,7 +92,7 @@
     },
     {
       "question": "Mes clients sont des entreprises pour les séminaires et des particuliers pour les mariages : quelles obligations avec la réforme ?",
-      "reponse": "Vous êtes concerné par les deux volets, et la frontière passe à l'intérieur de vos dossiers. Un séminaire facturé à une entreprise relève de la facture électronique : facture d'acompte et facture de solde devront toutes deux transiter par une plateforme agréée, à l'échéance applicable à votre entreprise, et porter la ventilation par taux de votre prestation. Un mariage facturé à des particuliers n'y est pas soumis : ses données de transactions seront transmises à l'administration via l'e-reporting. En pratique, votre outil doit savoir distinguer les deux circuits sur une même numérotation de dossiers, et vous devrez dans tous les cas pouvoir recevoir au format électronique les factures de vos fournisseurs et de vos loueurs de matériel."
+      "reponse": "Vous êtes concerné par les deux volets, et la frontière passe à l'intérieur de vos dossiers. Un séminaire facturé à une entreprise relève de la facture électronique : facture d'acompte et facture de solde devront toutes deux transiter par une plateforme agréée, à l'échéance applicable à votre entreprise, et porter la ventilation par taux de votre prestation. Un mariage facturé à des particuliers n'y est pas soumis : ses données de transactions seront transmises à l'administration via l'e-reporting. En pratique, votre outil doit savoir distinguer les deux circuits sur une même numérotation de dossiers, et vous devez déjà, dans tous les cas, pouvoir recevoir au format électronique les factures de vos fournisseurs et de vos loueurs de matériel."
     },
     {
       "question": "Le devis est-il obligatoire pour une prestation traiteur ?",
@@ -149,5 +149,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/questions/mes-clients-sont-la-fois-des-entreprises-et-des-particuliers-par-quel"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

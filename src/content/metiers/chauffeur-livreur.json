@@ -10,7 +10,7 @@
     "En sous-traitance de messagerie, le donneur d'ordre établit fréquemment la facture à la place du livreur : cette autofacturation exige un mandat de facturation, l'apposition de la mention « Autofacturation » sur chaque document, et une acceptation par le livreur, qui reste redevable de la TVA facturée en son nom.",
     "La facturation repose sur le relevé d'activité transmis par le donneur d'ordre (tournées, points, retours) ; la facture ou l'autofacture doit détailler les prestations réellement effectuées, comme l'imposent les mentions obligatoires de toute facture.",
     "En cas d'impayé, le transporteur dispose d'une action directe en paiement contre l'expéditeur et le destinataire, garants du prix du transport ; toute clause contraire est réputée non écrite, et la jurisprudence l'ouvre aussi au transporteur substitué.",
-    "Beaucoup de chauffeurs-livreurs démarrent en micro-entreprise : en franchise en base, la facture est émise sans TVA avec la mention « TVA non applicable, article 293 B du CGI », mais l'activité reste soumise à la facturation électronique, en réception comme en émission, à l'échéance applicable à votre entreprise."
+    "Beaucoup de chauffeurs-livreurs démarrent en micro-entreprise : en franchise en base, la facture est émise sans TVA avec la mention « TVA non applicable, article 293 B du CGI », mais l'activité reste soumise à la facturation électronique, en réception dès maintenant, en émission à l'échéance applicable à votre entreprise."
   ],
   "mentions_obligatoires_specifiques": [
     "Même lorsque la facture est établie par le donneur d'ordre, le document porte les mentions de droit commun ainsi que les éléments propres à la sous-traitance de tournées : référence du contrat de sous-traitance, période couverte, nombre de tournées, de points de livraison supplémentaires et de reprises, et renvoi au relevé d'activité ayant servi de base au décompte.",
@@ -52,7 +52,7 @@
     "Contrôler les relevés de tournées et les autofactures du donneur d'ordre avant de les accepter.",
     "Facturer un petit nombre de clients avec de nombreuses lignes : tournées, points supplémentaires, retours.",
     "Gérer la franchise en base avec la mention de l'article 293 B, puis, le cas échéant, le passage à la TVA sans changer d'outil.",
-    "Recevoir puis émettre les factures via une plateforme agréée à l'échéance applicable à votre entreprise, y compris en micro-entreprise."
+    "Pouvoir recevoir dès maintenant les factures électroniques via une plateforme agréée, et émettre les vôtres à l'échéance applicable à votre entreprise, y compris en micro-entreprise."
   ],
   "outils_recommandes": [
     {
@@ -87,7 +87,7 @@
     },
     {
       "question": "Je suis micro-entrepreneur sans TVA : la facturation électronique me concerne-t-elle ?",
-      "reponse": "Oui. La franchise en base ne vous fait pas sortir du champ : vous restez assujetti même si vous ne collectez pas la TVA. Le point sensible pour un livreur sous-traitant est l'articulation avec l'autofacturation : si votre donneur d'ordre établit vos factures en votre nom, c'est lui qui devra les déposer sur une plateforme agréée pour votre compte, en vertu du mandat de facturation, ce qui ne vous décharge ni de l'acceptation de chaque document, ni de la responsabilité de son contenu. Vous devrez par ailleurs pouvoir recevoir, puis émettre, vos factures via une plateforme agréée à l'échéance applicable à votre entreprise. Vos factures continuent de porter la mention « TVA non applicable, article 293 B du CGI », sans ligne de taxe."
+      "reponse": "Oui. La franchise en base ne vous fait pas sortir du champ : vous restez assujetti même si vous ne collectez pas la TVA. Le point sensible pour un livreur sous-traitant est l'articulation avec l'autofacturation : si votre donneur d'ordre établit vos factures en votre nom, c'est lui qui devra les déposer sur une plateforme agréée pour votre compte, en vertu du mandat de facturation, ce qui ne vous décharge ni de l'acceptation de chaque document, ni de la responsabilité de son contenu. Vous devez par ailleurs déjà pouvoir recevoir des factures via une plateforme agréée, et vous émettrez les vôtres par ce canal à l'échéance applicable à votre entreprise. Vos factures continuent de porter la mention « TVA non applicable, article 293 B du CGI », sans ligne de taxe."
     }
   ],
   "sources": [
@@ -128,5 +128,5 @@
       "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000023086525/LEGISCTA000033449989/"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

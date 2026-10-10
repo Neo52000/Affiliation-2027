@@ -87,7 +87,7 @@
     },
     {
       "question": "Je n'encaisse que des particulières en cabine : la facturation électronique me concerne-t-elle vraiment ?",
-      "reponse": "Oui, mais pas au même titre selon les flux. Vous devrez d'abord être en mesure de recevoir les factures électroniques de vos fournisseurs : grossiste en cosmétiques, laboratoire de marque, loueur d'appareils de cabine, prestataire de centrale de réservation. Vos encaissements en cabine, eux, ne donneront pas lieu à une facture électronique mais à un e-reporting, une transmission de données à l'administration. L'émission de factures électroniques ne vous concernera que pour vos clients professionnels, typiquement le CSE qui vous achète des bons cadeaux. Le tout à l'échéance applicable à votre entreprise."
+      "reponse": "Oui, mais pas au même titre selon les flux. Vous devez déjà être en mesure de recevoir les factures électroniques de vos fournisseurs : grossiste en cosmétiques, laboratoire de marque, loueur d'appareils de cabine, prestataire de centrale de réservation. Vos encaissements en cabine, eux, ne donneront pas lieu à une facture électronique mais à un e-reporting, une transmission de données à l'administration. L'émission de factures électroniques ne vous concernera que pour vos clients professionnels, typiquement le CSE qui vous achète des bons cadeaux. L'e-reporting et l'émission interviendront à l'échéance applicable à votre entreprise."
     },
     {
       "question": "Sur une même note, je facture un soin et une crème : quelles précautions ?",
@@ -132,5 +132,5 @@
       "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

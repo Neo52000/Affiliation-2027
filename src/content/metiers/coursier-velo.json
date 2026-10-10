@@ -11,7 +11,7 @@
     "Deux configurations à ne pas confondre. Si la plateforme est votre client et qu'elle établit la facture à votre place, il s'agit d'une auto-facturation : la facture porte la mention « Autofacturation ». Si la facture est établie par un tiers mandaté qui n'est pas le client de la prestation, il s'agit d'une facturation par un tiers et cette mention ne s'applique pas. Dans les deux cas, un mandat de facturation écrit et conclu avant la première émission est nécessaire, et vous restez responsable du contenu des factures émises en votre nom.",
     "En micro-entreprise, la franchise en base est fréquente : vous facturez sans TVA et portez sur chaque facture la mention « TVA non applicable, article 293 B du CGI », sans faire apparaître de taxe.",
     "Les opérateurs de plateforme ont des obligations déclaratives sur les revenus de leurs utilisateurs auprès de l'administration fiscale. Vos factures et vos déclarations doivent rester cohérentes avec ces données transmises.",
-    "Même en franchise en base, vous restez assujetti à la TVA : vous êtes concerné par la facturation électronique, en réception comme en émission, à l'échéance applicable à votre entreprise. Les échanges passent par une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale. Vos éventuelles ventes à des particuliers relèvent du e-reporting."
+    "Même en franchise en base, vous restez assujetti à la TVA : vous êtes concerné par la facturation électronique, en réception dès maintenant, en émission à l'échéance applicable à votre entreprise. Les échanges passent par une plateforme agréée (ex-PDP) immatriculée par l'administration fiscale. Vos éventuelles ventes à des particuliers relèvent du e-reporting."
   ],
   "mentions_obligatoires_specifiques": [
     "« TVA non applicable, article 293 B du CGI » si vous êtes en franchise en base, sans aucune ligne de taxe.",
@@ -55,7 +55,7 @@
     "Suivre le chiffre d'affaires encaissé pour les déclarations de micro-entrepreneur à l'Urssaf.",
     "Tenir une numérotation continue et sans doublon entre les factures que vous émettez et celles émises en votre nom.",
     "Facturer depuis un téléphone, entre deux courses, avec des mentions toujours conformes.",
-    "Être prêt à recevoir, puis émettre, des factures électroniques via une plateforme de dématérialisation partenaire (PDP) immatriculée par l'administration fiscale, à l'échéance applicable à votre entreprise."
+    "Recevoir dès maintenant des factures électroniques via une plateforme agréée (ex-PDP) immatriculée par l'administration fiscale, et préparer l'émission pour l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -131,5 +131,5 @@
       "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000032459194"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

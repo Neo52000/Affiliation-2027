@@ -15,7 +15,7 @@
     "Le remboursement de vos actes est subordonné à une prescription écrite du médecin (généraliste, ORL, neurologue, psychiatre, pédiatre) ou du chirurgien-dentiste. Le lien entre la prescription, le bilan et les séances facturées doit rester traçable dans votre dossier ; depuis le 23 février 2026, l'avenant 21 à la convention nationale supprime la demande d'accord préalable, y compris pour le bilan de renouvellement et les prolongations de séances.",
     "En cabinet de ville, l'assurance maladie prend en charge 60 % des séances sur prescription ; le télésoin suit la même prise en charge. Votre encaissement se partage donc entre la part patiente et la part caisse, avec rapprochement via le retour NOEMIE.",
     "La télétransmission des feuilles de soins électroniques avec votre carte CPS relève du circuit SESAM-Vitale, qui est distinct du circuit de facturation électronique entre entreprises créé par la réforme. Une FSE adressée à la caisse n'est pas une facture électronique au sens de la réforme.",
-    "Vos soins exonérés sont dispensés d'émission de factures électroniques. En revanche, vous devrez être en mesure de recevoir les factures électroniques de vos fournisseurs via une plateforme, à l'échéance applicable à votre entreprise."
+    "Vos soins exonérés sont dispensés d'émission de factures électroniques. En revanche, vous devez déjà être en mesure de recevoir les factures électroniques de vos fournisseurs via une plateforme agréée."
   ],
   "mentions_obligatoires_specifiques": [
     "Sur toute note d'honoraires de soins : la référence à l'exonération, par exemple « TVA exonérée en application de l'article 261, 4, 1° du code général des impôts ».",
@@ -46,7 +46,7 @@
     ]
   },
   "besoins_prioritaires": [
-    "Recevoir les factures électroniques de vos fournisseurs via une plateforme, à l'échéance applicable à votre entreprise.",
+    "Recevoir dès maintenant les factures électroniques de vos fournisseurs via une plateforme agréée.",
     "Éditer des notes d'honoraires sans TVA portant la référence à l'article 261, 4, 1° du CGI.",
     "Suivre des encaissements partagés entre part patiente et part caisse (tiers payant, retour NOEMIE).",
     "Tenir une comptabilité BNC simple, sans gestion de TVA au quotidien."
@@ -68,7 +68,7 @@
   "faq": [
     {
       "question": "Mes séances sont exonérées de TVA : suis-je quand même concerné par la facturation électronique ?",
-      "reponse": "Oui, partiellement. Vos bilans et séances, exonérés au titre de l'article 261 du CGI, sont dispensés d'émission de factures électroniques, et vos FSE SESAM-Vitale ne sont de toute façon pas des factures au sens de la réforme. En revanche, vous devrez pouvoir recevoir via une plateforme les factures électroniques de vos fournisseurs (tests étalonnés, matériel de rééducation, logiciel de télétransmission, loyer), à l'échéance applicable à votre entreprise."
+      "reponse": "Oui, partiellement. Vos bilans et séances, exonérés au titre de l'article 261 du CGI, sont dispensés d'émission de factures électroniques, et vos FSE SESAM-Vitale ne sont de toute façon pas des factures au sens de la réforme. En revanche, vous devez déjà pouvoir recevoir via une plateforme agréée les factures électroniques de vos fournisseurs (tests étalonnés, matériel de rééducation, logiciel de télétransmission, loyer)."
     },
     {
       "question": "Mes feuilles de soins électroniques SESAM-Vitale comptent-elles comme factures électroniques ?",
@@ -129,5 +129,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20131018"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

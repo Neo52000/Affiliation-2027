@@ -52,7 +52,7 @@
     "Facturer vite, y compris en mobilité, les interventions de dépannage : transformer le devis détaillé obligatoire en facture sans ressaisie.",
     "Gérer plusieurs taux de TVA sur un même document et porter la mention de certification du client exigée pour les taux réduits.",
     "Émettre des factures de sous-traitance sans TVA avec la mention « Autoliquidation », distinctes des factures aux particuliers.",
-    "Être prêt à recevoir puis à émettre des factures via une plateforme agréée à l'échéance applicable à votre entreprise."
+    "Pouvoir recevoir dès maintenant les factures électroniques via une plateforme agréée, et être prêt à en émettre à l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -87,7 +87,7 @@
     },
     {
       "question": "Avec la facturation électronique, la certification du client pour le taux réduit disparaît-elle ?",
-      "reponse": "Non. La règle de fond ne change pas : la mention certifiée par le client reste portée sur le devis ou la facture. À l'échéance applicable à votre entreprise, vous devrez d'abord pouvoir recevoir vos factures via une plateforme agréée, puis les émettre en format structuré. Vérifiez que votre outil sait porter cette mention sur la facture électronique."
+      "reponse": "Non. La règle de fond ne change pas : la mention certifiée par le client reste portée sur le devis ou la facture. Vous devez déjà pouvoir recevoir les factures de vos fournisseurs via une plateforme agréée, et vous émettrez les vôtres en format structuré à l'échéance applicable à votre entreprise. Vérifiez que votre outil sait porter cette mention sur la facture électronique."
     }
   ],
   "sources": [
@@ -132,5 +132,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

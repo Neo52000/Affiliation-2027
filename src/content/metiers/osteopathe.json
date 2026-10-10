@@ -14,7 +14,7 @@
     "Sans conventionnement, votre facturation ne passe par aucune feuille de soins : vous remettez une note d'honoraires directement au patient, qui s'en sert notamment auprès de sa complémentaire santé.",
     "La note est obligatoire dès que la prestation atteint 25 €, et doit être remise avant le paiement ; en dessous, elle est remise si le patient la demande (arrêté du 3 octobre 1983, DGCCRF).",
     "Vos prestations sans finalité thérapeutique individuelle, par exemple des ateliers de prévention ou de sensibilisation facturés à une entreprise, sont exclues de l'exonération et taxables ; facturées sous franchise en base, elles portent la mention de l'article 293 B du CGI.",
-    "Vos consultations exonérées sont dispensées d'émission de factures électroniques, mais vous devrez pouvoir recevoir celles de vos fournisseurs (table de pratique, consommables, loyer du cabinet) à l'échéance applicable à votre entreprise."
+    "Vos consultations exonérées sont dispensées d'émission de factures électroniques, mais vous devez déjà pouvoir recevoir celles de vos fournisseurs (table de pratique, consommables, loyer du cabinet)."
   ],
   "mentions_obligatoires_specifiques": [
     "Sur les notes d'honoraires de consultations exonérées : référence à l'exonération, par exemple « Exonération de TVA, article 261, 4, 1° du CGI », réservée aux praticiens faisant un usage légal du titre.",
@@ -49,7 +49,7 @@
     "Éditer rapidement des notes d'honoraires B2C conformes entre deux consultations : référence d'exonération, remise avant paiement.",
     "Séparer les consultations exonérées des prestations taxables (interventions en entreprise) et appliquer la bonne mention à chacune.",
     "Encaisser et suivre des paiements directs, consultation par consultation, sans circuit de tiers payant.",
-    "Pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+    "Pouvoir recevoir dès maintenant les factures électroniques de vos fournisseurs."
   ],
   "outils_recommandes": [
     {
@@ -76,7 +76,7 @@
     },
     {
       "question": "Je ne suis pas conventionné avec l'Assurance Maladie : la réforme me concerne-t-elle quand même ?",
-      "reponse": "Oui, au moins pour la réception. Vos consultations exonérées sont dispensées d'émission de factures électroniques (impots.gouv.fr), et vos patients particuliers ne relèvent pas de la facturation entre entreprises. Vous devrez en revanche pouvoir recevoir les factures électroniques de vos fournisseurs à l'échéance applicable à votre entreprise."
+      "reponse": "Oui, au moins pour la réception. Vos consultations exonérées sont dispensées d'émission de factures électroniques (impots.gouv.fr), et vos patients particuliers ne relèvent pas de la facturation entre entreprises. Vous devez en revanche déjà pouvoir recevoir les factures électroniques de vos fournisseurs."
     },
     {
       "question": "Mes interventions en entreprise sont-elles exonérées comme mes consultations au cabinet ?",
@@ -121,5 +121,5 @@
       "url": "https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

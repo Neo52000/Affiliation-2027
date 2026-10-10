@@ -10,7 +10,7 @@
     "Avant le paiement, une note détaillée reprend les éléments d'information du devis et permet d'identifier et de tracer chaque produit délivré.",
     "Verres correcteurs, montures et lentilles de contact relèvent du taux normal de TVA de 20 % : le BOFiP les exclut expressément du taux réduit de 5,5 % réservé aux appareillages pour personnes handicapées inscrits sur la LPP.",
     "La pratique du tiers payant suppose d'avoir été enregistré au fichier national des professionnels de santé et d'avoir obtenu un identifiant de facturation, puis d'avoir adhéré à la convention de dispense d'avance des frais ; cette adhésion s'obtient par magasin et par région. La facturation ventile alors la part du régime obligatoire, celle de la complémentaire et le reste à charge du client.",
-    "Vos ventes en magasin à des particuliers ne deviendront pas des factures électroniques : leurs données seront transmises à l'administration par e-reporting, à l'échéance applicable à votre entreprise. Vous devrez en revanche recevoir les factures de vos fournisseurs (verriers, fabricants de montures) au format électronique."
+    "Vos ventes en magasin à des particuliers ne deviendront pas des factures électroniques : leurs données seront transmises à l'administration par e-reporting, à l'échéance applicable à votre entreprise. Vous devez en revanche déjà pouvoir recevoir les factures de vos fournisseurs (verriers, fabricants de montures) au format électronique."
   ],
   "mentions_obligatoires_specifiques": [
     "Devis normalisé conforme au modèle réglementaire : description détaillée de l'équipement avec monture et verres chiffrés séparément, classe de l'équipement (A ou B) et informations sur la prise en charge par l'Assurance Maladie et, si elle est connue, par la complémentaire.",
@@ -143,5 +143,5 @@
       "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

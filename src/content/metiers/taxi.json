@@ -57,7 +57,7 @@
     "Éditer en mobilité des notes conformes dès la fin de course, avec les mentions propres aux taxis.",
     "Suivre les comptes clients entreprises et regrouper leurs courses dans une facture mensuelle.",
     "Distinguer les courses conventionnées télétransmises à l'Assurance Maladie des courses facturées en direct.",
-    "Préparer la réception puis l'émission de factures via une plateforme agréée, et le e-reporting des courses aux particuliers, à l'échéance applicable à votre entreprise."
+    "Pouvoir recevoir dès maintenant les factures électroniques via une plateforme agréée et préparer l'émission de factures, ainsi que le e-reporting des courses aux particuliers, pour l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -92,7 +92,7 @@
     },
     {
       "question": "Mes courses de particuliers sont-elles concernées par la facturation électronique ?",
-      "reponse": "Vos courses réglées au compteur par des particuliers ne circuleront pas sous forme de facture électronique entre entreprises : seules leurs données de transaction seront transmises à l'administration par e-reporting, à partir des notes que vous éditez déjà. Vos clients professionnels en compte relèvent en revanche du circuit des factures électroniques : la facture mensuelle qui regroupe leurs courses devra être émise, et leurs éventuelles factures reçues acceptées, via une plateforme agréée, à l'échéance applicable à votre entreprise. Les courses conventionnées télétransmises à l'Assurance Maladie suivent leur propre circuit de facturation et ne se substituent pas à cette obligation."
+      "reponse": "Vos courses réglées au compteur par des particuliers ne circuleront pas sous forme de facture électronique entre entreprises : seules leurs données de transaction seront transmises à l'administration par e-reporting, à partir des notes que vous éditez déjà. Vos clients professionnels en compte relèvent en revanche du circuit des factures électroniques : la facture mensuelle qui regroupe leurs courses devra être émise via une plateforme agréée, à l'échéance applicable à votre entreprise, et vous devez déjà pouvoir y recevoir et accepter leurs éventuelles factures. Les courses conventionnées télétransmises à l'Assurance Maladie suivent leur propre circuit de facturation et ne se substituent pas à cette obligation."
     }
   ],
   "sources": [
@@ -137,5 +137,5 @@
       "url": "https://bofip.impots.gouv.fr/bofip/1079-PGP.html/identifiant=BOI-TVA-DECLA-40-10-20-20210630"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

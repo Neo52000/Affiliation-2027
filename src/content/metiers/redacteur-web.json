@@ -112,7 +112,7 @@
     "Regrouper les textes livrés dans le mois en une facture récapitulative conforme, ligne par ligne et datée",
     "Suivre les recettes encaissées pour la déclaration micro-BNC et surveiller l'approche des limites de la franchise en base, sans attendre la régularisation",
     "Garder une trace propre des factures émises pour votre compte par un client ou une plateforme mandatée",
-    "Recevoir puis émettre des factures électroniques via une plateforme agréée, à l'échéance applicable à votre entreprise"
+    "Recevoir dès maintenant des factures électroniques via une plateforme agréée, et en émettre à l'échéance applicable à votre entreprise"
   ],
   "outils_recommandes": [
     {
@@ -196,5 +196,5 @@
       "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
     }
   ],
-  "date_maj": "2026-10-09"
+  "date_maj": "2026-10-10"
 }

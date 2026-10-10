@@ -63,7 +63,7 @@
     "Appliquer le taux ligne par ligne selon l'état du coquillage et la qualité de l'acheteur, et produire un récapitulatif de TVA par taux dès qu'une pièce en mêle plusieurs.",
     "Relier chaque ligne de facture aux références de lots et au numéro d'agrément du centre d'expédition, pour rapprocher la pièce commerciale des documents sanitaires.",
     "Tenir le délai de paiement de trente jours propre aux denrées périssables et suivre les échéances pendant les pics d'expédition.",
-    "Émettre et recevoir les factures professionnelles par une plateforme agréée à l'échéance applicable à votre entreprise."
+    "Pouvoir recevoir dès maintenant les factures électroniques professionnelles par une plateforme agréée, et émettre les vôtres à l'échéance applicable à votre entreprise."
   ],
   "outils_recommandes": [
     {
@@ -171,5 +171,5 @@
       "url": "https://www.impots.gouv.fr/professionnel/questions/comment-obtenir-un-remboursement-forfaitaire-agricole"
     }
   ],
-  "date_maj": "2026-10-05"
+  "date_maj": "2026-10-10"
 }

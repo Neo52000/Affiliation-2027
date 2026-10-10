@@ -86,7 +86,7 @@
     },
     {
       "question": "Agent commercial mandataire en micro-entreprise, suis-je concerné par la facturation électronique ?",
-      "reponse": "Oui, et vous êtes au carrefour de deux flux. Vous n'êtes pas titulaire de la carte professionnelle : vous intervenez sous le mandat de l'agence, qui encaisse les honoraires auprès du client et vous reverse votre quote-part. Cette rétrocession est une prestation de services que vous facturez à l'agence, donc une opération entre professionnels : vous devrez recevoir puis émettre ces factures via une plateforme agréée, à l'échéance applicable à votre entreprise. La franchise en base ne vous en dispense pas ; vous conservez la mention « TVA non applicable, article 293 B du CGI ». Veillez à ce que le numéro du mandat inscrit au registre de l'agence figure sur votre facture de rétrocession : c'est lui qui rattache votre commission à l'opération conclue."
+      "reponse": "Oui, et vous êtes au carrefour de deux flux. Vous n'êtes pas titulaire de la carte professionnelle : vous intervenez sous le mandat de l'agence, qui encaisse les honoraires auprès du client et vous reverse votre quote-part. Cette rétrocession est une prestation de services que vous facturez à l'agence, donc une opération entre professionnels : vous devez déjà pouvoir recevoir des factures électroniques via une plateforme agréée, et vous émettrez vos factures de rétrocession à l'échéance applicable à votre entreprise. La franchise en base ne vous en dispense pas ; vous conservez la mention « TVA non applicable, article 293 B du CGI ». Veillez à ce que le numéro du mandat inscrit au registre de l'agence figure sur votre facture de rétrocession : c'est lui qui rattache votre commission à l'opération conclue."
     },
     {
       "question": "Mes clients vendeurs et bailleurs sont des particuliers : que change la réforme pour mes factures d'honoraires ?",
@@ -131,5 +131,5 @@
       "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000494187/"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

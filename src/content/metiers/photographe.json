@@ -92,7 +92,7 @@
     },
     {
       "question": "Devrai-je envoyer des factures électroniques à mes mariés ?",
-      "reponse": "Non. La facturation électronique vise les opérations entre entreprises. Vos ventes aux particuliers feront l'objet d'une transmission de données à l'administration, l'e-reporting, à l'échéance applicable à votre entreprise. Vous devrez en revanche être en mesure de recevoir des factures électroniques de vos fournisseurs."
+      "reponse": "Non. La facturation électronique vise les opérations entre entreprises. Vos ventes aux particuliers feront l'objet d'une transmission de données à l'administration, l'e-reporting, à l'échéance applicable à votre entreprise. Vous devez en revanche déjà être en mesure de recevoir des factures électroniques de vos fournisseurs."
     },
     {
       "question": "En franchise en base, puis-je tout de même appliquer 10 % sur la cession de droits ?",
@@ -145,5 +145,5 @@
       "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }

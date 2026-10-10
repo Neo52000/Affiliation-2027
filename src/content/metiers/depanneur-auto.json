@@ -10,7 +10,7 @@
     "Sur autoroute et route express, vous ne fixez pas vos prix : l'intervention est réservée aux entreprises agréées et le dépannage comme le remorquage des véhicules légers y sont encadrés par un forfait fixé par arrêté, revalorisé chaque année et majoré pour les interventions de nuit, le week-end et les jours fériés. Vérifiez le montant en vigueur sur service-public.gouv.fr avant d'établir votre facture : il change au 1er janvier.",
     "Cet encadrement ne vise que les véhicules légers. Au-delà du poids total autorisé en charge fixé par l'arrêté, votre tarification reste libre, y compris sur autoroute : indiquez-le clairement sur votre devis pour éviter toute contestation.",
     "Un particulier dépanné doit recevoir une note avant de payer dès que la prestation atteint 25 € TTC ; en dessous, remettez-la s'il la demande.",
-    "Vos factures aux plateformes d'assistance, assureurs et garages sont des factures entre assujettis : à l'échéance applicable à votre entreprise, elles passeront par une plateforme agréée, en réception puis en émission.",
+    "Vos factures aux plateformes d'assistance, assureurs et garages sont des factures entre assujettis : elles passeront par une plateforme agréée à l'échéance applicable à votre entreprise.",
     "Les dépannages réglés directement par les automobilistes particuliers restent hors du circuit inter-entreprises, mais les données de ces encaissements seront transmises à l'administration via le e-reporting."
   ],
   "mentions_obligatoires_specifiques": [
@@ -85,11 +85,11 @@
     },
     {
       "question": "Je travaille surtout pour des plateformes d'assistance : qu'est-ce que la réforme change pour moi ?",
-      "reponse": "Vos factures aux assisteurs sont des factures entre professionnels assujettis. À l'échéance applicable à votre entreprise, vous devrez pouvoir les recevoir, puis les émettre, via une plateforme agréée. Vérifiez dès maintenant que vos factures sont complètes : dans un format structuré, un taux erroné ou une mention manquante se repère immédiatement."
+      "reponse": "Vos factures aux assisteurs sont des factures entre professionnels assujettis. Vous les émettrez via une plateforme agréée à l'échéance applicable à votre entreprise, et vous devez déjà pouvoir y recevoir celles de vos fournisseurs. Vérifiez dès maintenant que vos factures sont complètes : dans un format structuré, un taux erroné ou une mention manquante se repère immédiatement."
     },
     {
       "question": "Je suis en franchise en base : comment facturer un forfait autoroute fixé TTC ?",
-      "reponse": "Les forfaits réglementés s'entendent toutes taxes comprises. En franchise en base, vous facturez sans TVA et portez la mention « TVA non applicable, article 293 B du CGI », sans afficher de ligne de taxe. Vous restez néanmoins concerné par la facturation électronique, en réception comme en émission, à l'échéance applicable à votre entreprise."
+      "reponse": "Les forfaits réglementés s'entendent toutes taxes comprises. En franchise en base, vous facturez sans TVA et portez la mention « TVA non applicable, article 293 B du CGI », sans afficher de ligne de taxe. Vous restez néanmoins concerné par la facturation électronique, en réception dès maintenant, en émission à l'échéance applicable à votre entreprise."
     }
   ],
   "sources": [
@@ -126,5 +126,5 @@
       "url": "https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-10"
 }
