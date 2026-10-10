@@ -51,7 +51,10 @@ const voisins = [
 
 const reception = echeances.echeances.find((e) => e.id === 'reception-toutes-entreprises');
 const emissionTpe = echeances.echeances.find((e) => e.id === 'emission-pme-tpe-micro');
-if (!reception || !emissionTpe) throw new Error('echeances.json : échéances clés manquantes');
+const emissionGe = echeances.echeances.find((e) => e.id === 'emission-ge-eti');
+if (!reception || !emissionTpe || !emissionGe) {
+  throw new Error('echeances.json : échéances clés manquantes');
+}
 
 // Comparaisons deux à deux des outils recommandés : les 15 pages /comparatif/
 // existaient sans qu'aucun lien du site n'y mène.
@@ -64,19 +67,48 @@ const paires = recommandes.flatMap((a, i) =>
   }),
 );
 const familleLabel = FAMILLE_LABELS[d.famille];
+const nomMin = d.nom.toLowerCase();
+
+// Besoins prioritaires enchaînés dans une phrase : sans leur point final, et
+// en minuscule initiale sauf sigle (« TVA », « PDF »).
+const enPhrase = (t: string) => {
+  const sansPoint = t.trim().replace(/\.+$/, '');
+  return /^\p{Lu}\p{Ll}/u.test(sansPoint)
+    ? sansPoint.charAt(0).toLowerCase() + sansPoint.slice(1)
+    : sansPoint;
+};
+const besoinsPhrase = d.besoins_prioritaires.slice(0, 3).map(enPhrase).join(' ; ');
+
+// « En bref » : trois phrases, dates et périmètres tirés d'echeances.json.
+const enVigueur = (statut: string) => statut === 'en_vigueur';
+const complementTpe = emissionTpe.complement
+  ? ` (${emissionTpe.complement.charAt(0).toLowerCase()}${emissionTpe.complement.slice(1)})`
+  : '';
+const enBref = [
+  `${enVigueur(reception.statut) ? 'Depuis le' : 'À partir du'} ${formatDateFr(reception.date)}, toute entreprise assujettie à la TVA, même en franchise en base, ${enVigueur(reception.statut) ? 'doit' : 'devra'} pouvoir recevoir des factures électroniques.`,
+  `Pour les TPE, PME et micro-entreprises, l’émission ${enVigueur(emissionTpe.statut) ? 'est obligatoire depuis le' : 'devient obligatoire le'} ${formatDateFr(emissionTpe.date)}${complementTpe}.`,
+  `Il vous faut une plateforme agréée adaptée à votre activité de ${nomMin}, avec les mentions obligatoires propres au métier.`,
+].map(insecables);
+
+// Mini-tableau des échéances de la colonne d'appui.
+const ECHEANCES_MARGE = [
+  { libelle: 'Réception, toutes entreprises', e: reception },
+  { libelle: 'Émission, grandes entreprises et ETI', e: emissionGe },
+  { libelle: 'Émission, PME, TPE et micro', e: emissionTpe },
+];
 
 // Sommaire de la colonne d'appui : les ancres existent déjà dans l'article.
 const SOMMAIRE = [
-  { id: 'essentiel', label: 'L’essentiel en 3 lignes' },
+  { id: 'en-bref', label: 'En bref' },
   { id: 'specificites', label: 'Spécificités du métier' },
   { id: 'exemple', label: 'Exemple de facture' },
-  { id: 'outils', label: '3 outils adaptés' },
+  { id: 'outils', label: 'Logiciels adaptés' },
   { id: 'checklist', label: 'Mise en conformité' },
   { id: 'faq', label: 'Questions fréquentes' },
   { id: 'sources', label: 'Sources officielles' },
 ];
 
-// JSON-LD FAQPage (section 9) — questions réellement affichées sur la page.
+// JSON-LD FAQPage (section 9) : questions réellement affichées sur la page.
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -96,50 +128,37 @@ const faqJsonLd = {
 
   <div class="layout-article mt-4">
     <article>
-      <h1 class="titre-page">
-        {insecables(
-          `Facturation électronique pour ${d.nom.toLowerCase()} : obligations et logiciels adaptés`,
-        )}
-      </h1>
+      <p class="surtitre">Fiche métier · {familleLabel}</p>
+      <h1 class="titre-page mt-3">{d.nom} et facturation électronique</h1>
       <p class="mt-3 text-sm text-ink-soft">
         Mis à jour le {formatDateFr(d.date_maj)}
         {SITE.expertRelecteur && ` · Relu par ${SITE.expertRelecteur}`}
       </p>
 
-      <section aria-labelledby="essentiel" class="encadre-essentiel prose-measure mt-6 p-4">
-        <h2 id="essentiel" class="text-lg font-bold">
-          L'essentiel en 3 lignes
+      <section aria-labelledby="en-bref" class="en-bref prose-measure mt-6">
+        <h2 id="en-bref" class="etiquette">
+          En bref
         </h2>
-        <ol class="mt-2 list-decimal space-y-1 pl-5">
-          <li>
-            <strong>Ce qui change :</strong> toutes les entreprises assujetties à la TVA doivent
-            pouvoir recevoir des factures électroniques depuis le {formatDateFr(reception.date)}.
-          </li>
-          <li>
-            <strong>Quand :</strong> l'émission devient obligatoire pour les TPE, PME et
-            micro-entreprises le {formatDateFr(emissionTpe.date)} (
-            {emissionTpe.complement?.toLowerCase()}).
-          </li>
-          <li>
-            <strong>Quoi faire :</strong> choisir une plateforme agréée adaptée à votre activité de{' '}
-            {d.nom.toLowerCase()}, puis paramétrer vos mentions obligatoires.
-          </li>
-        </ol>
+        <ul class="mt-2 space-y-2">
+          {enBref.map((phrase) => (
+            <li>{phrase}</li>
+          ))}
+        </ul>
       </section>
 
-      <section aria-labelledby="specificites" class="prose-measure mt-8">
-        <h2 id="specificites" class="titre-section text-2xl font-bold">
+      <section aria-labelledby="specificites" class="mt-10">
+        <h2 id="specificites" class="titre-section">
           Les spécificités de facturation du métier
         </h2>
-        <ul class="liste-aeree mt-3 list-disc pl-5">
+        <ul class="liste-filets prose-measure mt-2">
           {d.specificites_facturation.map((s) => (
             <li>{s}</li>
           ))}
         </ul>
         {d.mentions_obligatoires_specifiques.length > 0 && (
           <>
-            <h3 class="mt-4 text-lg font-bold">Mentions propres à votre activité</h3>
-            <ul class="liste-aeree mt-2 list-disc pl-5">
+            <h3 class="mt-6">Mentions propres à votre activité</h3>
+            <ul class="liste-filets prose-measure mt-2">
               {d.mentions_obligatoires_specifiques.map((m) => (
                 <li>{m}</li>
               ))}
@@ -148,11 +167,11 @@ const faqJsonLd = {
         )}
       </section>
 
-      <section aria-labelledby="exemple" class="mt-8">
-        <h2 id="exemple" class="titre-section text-2xl font-bold">
+      <section aria-labelledby="exemple" class="mt-10">
+        <h2 id="exemple" class="titre-section">
           Exemple de facture conforme
         </h2>
-        <div class="mt-3">
+        <div class="mt-4">
           <ExempleFacture
             intitule={d.exemple_facture.intitule}
             lignes={d.exemple_facture.lignes}
@@ -161,46 +180,50 @@ const faqJsonLd = {
         </div>
       </section>
 
-      <section aria-labelledby="outils" class="mt-8">
-        <h2 id="outils" class="titre-section text-2xl font-bold">
-          3 outils adaptés au métier
+      <section aria-labelledby="outils" class="mt-10">
+        <h2 id="outils" class="titre-section">
+          Les logiciels adaptés au métier
         </h2>
-        <p class="prose-measure mt-2 text-sm text-ink-soft">
-          Sélection fondée sur la cible et le périmètre vérifiés de chaque outil, jamais sur les
-          commissions. Les notes n'apparaîtront qu'après nos tests réels.
+        <p class="prose-measure mt-3 text-sm text-ink-soft">
+          Choix fondé sur la cible et le périmètre vérifiés de chaque logiciel, selon notre{' '}
+          <a href="/methode">méthode</a>. Aucune note n'est publiée avant notre test.
         </p>
-        <ol class="mt-4 space-y-4">
+        <ol class="mt-4">
           {recommandes.map(({ outil, justification }, i) => (
-            <li
-              class:list={['card-reco rounded-lg border border-border p-4', i === 0 && 'card-top']}
-            >
-              {i === 0 && <p class="badge-ok mb-2">Notre recommandation</p>}
-              <p class="font-bold">
-                {i + 1}. <a href={`/logiciels/${outil.data.slug}`}>{outil.data.nom}</a>
-                <span class="pill ml-2 align-middle font-normal">
-                  {libelleStatutTest(outil.data.statut_test)}
-                </span>
-              </p>
-              <p class="prose-measure mt-1">{justification}</p>
-              <StatutPlateforme statut={outil.data.est_plateforme_agreee} nom={outil.data.nom} />
-              <div class="mt-3">
-                <AffiliateButton
-                  outil={outil.data.slug}
-                  urlOfficielle={outil.data.url_officielle}
-                  label={`Découvrir ${outil.data.nom}`}
-                  emplacement={`metier-${d.slug}-reco-${i + 1}`}
-                />
+            <li class="numerote border-t border-border py-5">
+              <span class="numero" aria-hidden="true">
+                {i + 1}
+              </span>
+              <div>
+                {i === 0 && <p class="etiquette">Notre recommandation</p>}
+                <h3 class:list={['text-lg', i === 0 && 'mt-1']}>
+                  <a href={`/logiciels/${outil.data.slug}`}>{outil.data.nom}</a>
+                  <span class="pill ml-2 align-middle font-normal">
+                    {libelleStatutTest(outil.data.statut_test)}
+                  </span>
+                </h3>
+                <p class="prose-measure mt-1">{justification}</p>
+                <StatutPlateforme statut={outil.data.est_plateforme_agreee} nom={outil.data.nom} />
+                <div class="mt-3">
+                  <AffiliateButton
+                    outil={outil.data.slug}
+                    urlOfficielle={outil.data.url_officielle}
+                    label={`Aller sur le site de ${outil.data.nom}`}
+                    emplacement={`metier-${d.slug}-reco-${i + 1}`}
+                    variante={i === 0 ? 'principal' : 'secondaire'}
+                  />
+                </div>
               </div>
             </li>
           ))}
         </ol>
-        <h3 class="mt-6 text-lg font-bold">Comparatif rapide</h3>
+        <h3 class="mt-8">Comparatif rapide</h3>
         <div class="mt-2">
           <ComparatifCourt outils={recommandes.map((r) => r.outil.data)} />
         </div>
         {paires.length > 0 && (
-          <nav aria-label="Comparaisons deux à deux" class="mt-4">
-            <h3 class="text-lg font-bold">Les comparer deux à deux</h3>
+          <nav aria-label="Comparaisons deux à deux" class="mt-6">
+            <h3>Les comparer deux à deux</h3>
             <ul class="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
               {paires.map((c) => (
                 <li>
@@ -210,27 +233,23 @@ const faqJsonLd = {
             </ul>
           </nav>
         )}
+        <p class="mt-6 lg:hidden">
+          <a href={`/outils/quiz?metier=${encodeURIComponent(d.slug)}`} class="lien-fleche">
+            Affiner avec le quiz
+          </a>
+        </p>
       </section>
 
-      <p class="mt-6 lg:hidden">
-        <a href="/outils/quiz" class="btn-cta">
-          Trouver l'outil adapté à mon métier
-        </a>
-      </p>
-
-      <section aria-labelledby="checklist" class="prose-measure mt-8">
-        <h2 id="checklist" class="titre-section text-2xl font-bold">
-          Mise en conformité en 5 étapes
+      <section aria-labelledby="checklist" class="mt-10">
+        <h2 id="checklist" class="titre-section">
+          Se mettre en conformité
         </h2>
-        <ol class="mt-3 list-decimal space-y-2 pl-5">
+        <ol class="prose-measure mt-3 list-decimal space-y-2 pl-5">
           <li>
             Identifiez votre situation : statut ({d.statuts_frequents.join(', ')}), régime de TVA et
             échéance applicable.
           </li>
-          <li>
-            Choisissez une plateforme agréée qui couvre vos besoins :{' '}
-            {d.besoins_prioritaires.slice(0, 3).join(' ; ')}.
-          </li>
+          <li>Choisissez une plateforme agréée qui couvre vos besoins : {besoinsPhrase}.</li>
           <li>
             Paramétrez vos mentions obligatoires, y compris celles propres à votre activité
             (ci-dessus).
@@ -240,25 +259,25 @@ const faqJsonLd = {
         </ol>
       </section>
 
-      <section aria-labelledby="faq" class="prose-measure mt-8">
-        <h2 id="faq" class="titre-section text-2xl font-bold">
+      <section aria-labelledby="faq" class="mt-10">
+        <h2 id="faq" class="titre-section">
           Questions fréquentes
         </h2>
-        <div class="mt-3 space-y-3">
+        <div class="faq prose-measure mt-2">
           {d.faq.map((f) => (
-            <details class="rounded-md border border-border p-3">
-              <summary class="cursor-pointer font-bold">{f.question}</summary>
-              <p class="mt-2">{f.reponse}</p>
+            <details>
+              <summary>{f.question}</summary>
+              <p class="pb-4">{f.reponse}</p>
             </details>
           ))}
         </div>
       </section>
 
-      <section aria-labelledby="sources" class="prose-measure mt-8">
-        <h2 id="sources" class="titre-section text-2xl font-bold">
+      <section aria-labelledby="sources" class="mt-10">
+        <h2 id="sources" class="titre-section">
           Sources officielles
         </h2>
-        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
+        <ol class="prose-measure mt-3 list-decimal space-y-1 pl-5 text-sm">
           {d.sources.map((s) => (
             <li>
               <a href={s.url} rel="noopener">
@@ -271,17 +290,18 @@ const faqJsonLd = {
               Calendrier de la réforme (impots.gouv.fr)
             </a>
           </li>
-        </ul>
+        </ol>
         <p class="mt-3 text-sm text-ink-soft">
-          Données relevées le {formatDateFr(echeances.date_releve)}. Information générale : ne
-          remplace pas l'avis de votre expert-comptable.
+          Données relevées le {formatDateFr(echeances.date_releve)}.
         </p>
       </section>
 
       {voisins.length > 0 && (
-        <nav aria-label="Métiers voisins" class="prose-measure mt-8 border-t border-border pt-4">
-          <h2 class="text-lg font-bold">Autres métiers</h2>
-          <ul class="mt-2 flex flex-wrap gap-3">
+        <nav aria-labelledby="voisins" class="mt-10">
+          <h2 id="voisins" class="titre-section">
+            Autres métiers
+          </h2>
+          <ul class="liste-filets prose-measure mt-2">
             {voisins.map((v) => (
               <li>
                 <a href={`/facturation-electronique/${v.data.slug}`}>{v.data.nom}</a>
@@ -292,12 +312,14 @@ const faqJsonLd = {
       )}
 
       {guidesUtiles.length > 0 && (
-        <nav aria-label="Guides utiles" class="prose-measure mt-6">
-          <h2 class="text-lg font-bold">Pour aller plus loin</h2>
-          <ul class="mt-2 flex flex-wrap gap-3">
+        <nav aria-labelledby="a-lire" class="mt-10">
+          <h2 id="a-lire" class="titre-section">
+            À lire ensuite
+          </h2>
+          <ul class="liste-filets prose-measure mt-2">
             {guidesUtiles.map((g) => (
               <li>
-                <a href={`/guides/${g.id}`}>{g.data.title}</a>
+                <a href={`/guides/${g.id}`}>{insecables(g.data.title)}</a>
               </li>
             ))}
           </ul>
@@ -318,24 +340,29 @@ const faqJsonLd = {
       </nav>
 
       <div class="carte-appui">
-        <p class="carte-appui-titre">Votre échéance</p>
-        <p class="mt-2 text-sm">
-          Réception obligatoire depuis le <strong>{formatDateFr(reception.date)}</strong>, émission
-          pour les TPE et PME le <strong>{formatDateFr(emissionTpe.date)}</strong>.
-        </p>
+        <p class="carte-appui-titre">Les échéances</p>
+        <dl class="mt-2 text-sm">
+          {ECHEANCES_MARGE.map(({ libelle, e }) => (
+            <div class="border-b border-border py-2">
+              <dt class="text-ink-soft">{libelle}</dt>
+              <dd class="font-semibold">{formatDateFr(e.date)}</dd>
+            </div>
+          ))}
+        </dl>
         <p class="mt-3 text-sm">
           <a href="/outils/echeance">Simuler ma situation</a>
         </p>
       </div>
 
-      <div class="carte-appui card-top">
-        <p class="carte-appui-titre">Pas encore équipé ?</p>
+      <div class="carte-appui">
+        <p class="carte-appui-titre">Affiner la recommandation</p>
         <p class="mt-2 text-sm text-ink-soft">
-          Cinq questions pour l'outil adapté à votre activité de {d.nom.toLowerCase()}.
+          Cinq questions, dont votre métier déjà rempli : statut, volume de factures, compte pro,
+          expert-comptable.
         </p>
-        <p class="mt-3">
-          <a href="/outils/quiz" class="btn-cta text-sm">
-            Trouver mon logiciel
+        <p class="mt-3 text-sm">
+          <a href={`/outils/quiz?metier=${encodeURIComponent(d.slug)}`} class="lien-fleche">
+            Faire le quiz
           </a>
         </p>
       </div>

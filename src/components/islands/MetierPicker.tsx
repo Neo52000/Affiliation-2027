@@ -77,7 +77,7 @@ export default function MetierPicker({ metiers }: Props) {
         {metier && reco ? (
           <div key={metier.slug}>
             <p class="text-sm text-ink-soft">Sur la fiche {metier.nom}, notre recommandation :</p>
-            <p class="text-xl font-extrabold">
+            <p class="mt-1 font-serif text-2xl">
               <a href={`/logiciels/${reco.slug}`}>{reco.nom}</a>
             </p>
             {alternatives.length > 0 && (

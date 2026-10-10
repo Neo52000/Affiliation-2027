@@ -180,8 +180,10 @@ h2.titre-section {
 }
 
 .etiquette {
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 600;
+  line-height: 1.45;
   color: var(--color-ink);
 }
 
@@ -264,6 +266,7 @@ a:hover {
 
   th,
   td {
+    text-align: start;
     vertical-align: top;
   }
 
@@ -572,7 +575,13 @@ html:not(.js) .selecteur-metier {
   white-space: nowrap;
 }
 
-/* Numéro en serif : il sert de repère, à la place d'une icône. */
+/* Élément numéroté : le numéro en serif sert de repère, à la place d'une icône. */
+.numerote {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  column-gap: 0.75rem;
+}
+
 .numero {
   font-family: var(--font-serif);
   font-size: 1.75rem;
@@ -581,7 +590,8 @@ html:not(.js) .selecteur-metier {
   font-variant-numeric: lining-nums;
 }
 
-/* L'essentiel d'une page entre deux filets, sans fond ni boîte. */
+/* En bref : l'essentiel d'une page entre deux filets, sans fond ni boîte. */
+.en-bref,
 .encadre-essentiel {
   border: 0;
   border-top: 2px solid var(--color-ink);
@@ -590,6 +600,60 @@ html:not(.js) .selecteur-metier {
   background: none;
   padding-inline: 0;
   padding-block: 1rem;
+}
+
+/* Facture d'exemple : le seul document posé comme une feuille, pour qu'on la
+   lise comme une pièce et non comme un tableau de la page. */
+.feuille {
+  background: var(--color-field);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .feuille {
+    padding: 1.5rem;
+  }
+}
+
+/* Questions fréquentes : filets entre les questions, repère + / − à droite. */
+.faq {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq details {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: '+';
+  content: '+' / '';
+  flex: none;
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.faq details[open] > summary::after {
+  content: '−';
+  content: '−' / '';
 }
 
 /* Ligne de faits sous le titre de l'accueil. */
@@ -618,9 +682,7 @@ html:not(.js) .selecteur-metier {
    fond ni ombre. Restructurées gabarit par gabarit. */
 .card-reco,
 .card-top,
-.carte-reco,
-.carte-metier,
-.duel-carte {
+.carte-reco {
   position: relative;
   border: 0;
   border-top: 1px solid var(--color-ink);
@@ -747,112 +809,6 @@ html:not(.js) .selecteur-metier {
 }
 
 /* ---------------------------------------------------------------------------
-   Gabarits en transition (repris dans les prochaines étapes de la refonte)
-   --------------------------------------------------------------------------- */
-
-/* Pastille de famille, pour repartir vers un autre hub. */
-.puce-famille {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.5rem;
-  padding: 0.35rem 0.8rem;
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-sm);
-  font-size: 0.9375rem;
-  color: var(--color-ink);
-  text-decoration-line: none;
-}
-
-.puce-famille:hover {
-  background: var(--color-paper-soft);
-  text-decoration-line: underline;
-}
-
-/* Bloc d'appel vers le quiz (pages famille). */
-.m-panneau {
-  border-top: 2px solid var(--color-ink);
-  border-bottom: 1px solid var(--color-border);
-  border-radius: 0;
-  background: none;
-  color: var(--color-ink);
-  padding-inline: 0;
-}
-
-.m-panneau p {
-  color: var(--color-ink-soft);
-}
-
-.btn-clair {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  padding: 0.55rem 1.1rem;
-  background: var(--color-accent);
-  color: var(--color-on-accent);
-  border: 1px solid transparent;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.btn-clair:hover {
-  background: var(--color-accent-strong);
-  color: var(--color-on-accent);
-}
-
-/* Frise du protocole de test (fiche logiciel). */
-.m-frise {
-  list-style: none;
-}
-
-.m-frise > li {
-  position: relative;
-  padding-left: 2.25rem;
-}
-
-.m-frise > li + li {
-  margin-top: 0.75rem;
-}
-
-.m-noeud {
-  position: absolute;
-  left: 0;
-  top: 0.15rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 1px solid var(--color-border-strong);
-  border-radius: 50%;
-  font-size: 0.8125rem;
-  color: var(--color-ink-soft);
-}
-
-/* Comparatif : les deux outils côte à côte. */
-.duel {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 0.75rem;
-}
-
-@media (min-width: 640px) {
-  .duel {
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  }
-}
-
-.duel-monogramme {
-  display: none;
-}
-
-.duel-contre {
-  align-self: center;
-  font-family: var(--font-serif);
-  color: var(--color-ink-soft);
-}
-
-/* ---------------------------------------------------------------------------
    Espace publicitaire : le seul bloc encadré du site, en pointillés, mention
    « Publicité » en tête (LCEN, art. 20). Jamais confondu avec une recommandation.
    --------------------------------------------------------------------------- */
@@ -899,15 +855,6 @@ html:not(.js) .selecteur-metier {
   left: -10000px;
   width: 1px;
   height: 1px;
-  overflow: hidden;
-}
-
-/* Accroche bornée à deux lignes : le texte entier reste dans le DOM. */
-.ligne-2 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
   overflow: hidden;
 }
 

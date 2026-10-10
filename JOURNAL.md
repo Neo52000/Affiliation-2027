@@ -555,3 +555,49 @@ L'en-tête se limite au nom et à trois liens ; il n'est plus collant.
 - L'indépendance n'est énoncée qu'une fois sur l'accueil.
 - Le test « aucune animation » écoute désormais `animationstart` et `transitionrun`, ce qui détecte aussi un fondu court.
 - Les restes inutilisés (`.m-lift`, `.display-title`) sont supprimés.
+
+## Design v7 « éditorial » : gabarits de lecture (2026-10-10)
+
+Deuxième PR de la refonte. Les cinq gabarits les plus lus passent au style éditorial ; leur contenu reste le même.
+
+**Fiche métier** (100 pages) :
+
+- Surtitre « Fiche métier · famille » et titre « {Métier} et facturation électronique ».
+- « En bref » remplace « L'essentiel en 3 lignes » : trois phrases simples. Dates, périmètres et statut (en vigueur ou à venir) sont tirés d'`echeances.json`.
+- Recommandations numérotées. L'étiquette « Notre recommandation » est en texte. Le bouton plein est réservé au premier rang éditorial, qui est calculé sans les commissions ; les rangs suivants ont un bouton secondaire. Libellé : « Aller sur le site de … ».
+- Facture d'exemple posée comme une feuille.
+- FAQ à filets avec un repère + / −. Sources en liste numérotée.
+- En marge, les trois échéances clés.
+- Les besoins prioritaires enchaînés dans l'étape 2 perdent leur point final : c'est la fin de « logement. ; ».
+
+**Page famille** :
+
+- Métiers en tableau : métier, clientèle, premier besoin.
+- Logiciels retenus en tableau, avec une jauge.
+- Points de facturation numérotés.
+- Bloc « Affiner avec le quiz » sous un filet.
+
+**Fiche logiciel** :
+
+- Surtitre « Fiche logiciel · état du test ».
+- Sections « À qui s'adresse… » et « Quand regarder ailleurs ».
+- Comparatifs en liste ; protocole en liste numérotée à la place de la frise.
+
+**Comparatif** :
+
+- Titre « A ou B ? ».
+- L'introduction sur l'agrément est tirée des données ; elle était écrite à la main.
+- Verdicts par profil en tableau.
+- Les deux boutons sont secondaires.
+
+**Guides** : surtitre, chapô, h2 serif sous un filet, sources numérotées, « À lire ensuite » en liste.
+
+**CSS** : suppression des styles de transition devenus inutiles (frise, duel, panneau sombre, pastilles de famille, accroche bornée). Les `th` s'alignent à gauche par défaut. Le libellé `.etiquette` passe en sans-serif.
+
+**Mesures** :
+
+- `pnpm verify` vert, similarité maximale 22,2 %.
+- e2e 28/28 : le parcours 1 attend désormais le titre « En bref ».
+- axe : 0 violation sur 10 pages, en clair et en sombre, à 1280 et 360 px.
+- Aucun débordement ni erreur CSP de 320 à 1920 px.
+- Lighthouse 100/100/100/100 en mobile et en ordinateur sur les 5 gabarits.

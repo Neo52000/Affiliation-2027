@@ -9,7 +9,6 @@ import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { ORDRE_COMPARATIFS, urlComparatif } from '../../lib/comparatifs';
 import { libelleStatutTest } from '../../lib/statut-test';
 import { formatDateFr } from '../../lib/dates';
-import { insecables } from '../../lib/presentation';
 import { jsonLdSur, pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
 
@@ -53,7 +52,7 @@ const comparatifs = (ORDRE_COMPARATIFS as readonly string[])
 // Protocole du test réel (collection tests) : aucune étape n'est marquée faite
 // tant que le test n'a pas été mené et publié.
 const test = (await getCollection('tests')).find((t) => t.data.outil_slug === d.slug);
-// Un seul prédicat pour la phrase et la frise (la concordance des deux fiches
+// Un seul prédicat pour la phrase et la liste (la concordance des deux fiches
 // est vérifiée par src/lib/data.test.ts, la date par le schéma).
 const teste =
   d.statut_test === 'teste' && test?.data.statut === 'teste' && test.data.date_test !== null;
@@ -76,7 +75,7 @@ const appJsonLd = {
 
 <Base
   title={pageTitle(`${d.nom} : avis et conformité`, SITE.name)}
-  description={`${d.nom} pour la facturation électronique : statut de plateforme agréée, fonctionnalités vérifiées, pour qui — données datées et sourcées.`}
+  description={`${d.nom} pour la facturation électronique : statut de plateforme agréée, fonctionnalités vérifiées, pour qui. Données datées et sourcées.`}
 >
   <script type="application/ld+json" is:inline set:html={jsonLdSur(appJsonLd)} />
   <BandeauTransparence outils={[d.slug]} />
@@ -84,37 +83,36 @@ const appJsonLd = {
 
   <div class="layout-article mt-4">
     <article>
-      <h1 class="titre-page">{insecables(`${d.nom} : facturation électronique`)}</h1>
-      <p class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-soft">
-        <span class="pill">{libelleTest}</span>
-        <span>Mis à jour le {formatDateFr(d.date_maj)}</span>
-      </p>
+      <p class="surtitre">Fiche logiciel · {libelleTest}</p>
+      <h1 class="titre-page mt-3">{d.nom} et facturation électronique</h1>
+      <p class="mt-3 text-sm text-ink-soft">Mis à jour le {formatDateFr(d.date_maj)}</p>
 
-      <section aria-labelledby="essentiel-outil" class="encadre-essentiel prose-measure mt-6 p-4">
-        <h2 id="essentiel-outil" class="text-lg font-bold">
-          L'essentiel
+      <section aria-labelledby="en-bref-outil" class="en-bref prose-measure mt-6">
+        <h2 id="en-bref-outil" class="etiquette">
+          En bref
         </h2>
-        <ul class="mt-2 list-disc space-y-1 pl-5">
+        <ul class="mt-2 space-y-2">
           <li>Cible revendiquée par l'éditeur : {d.cible.join(', ')}.</li>
           {pointFortDistinctif && <li>{pointFortDistinctif.replace(/\.$/, '')}.</li>}
         </ul>
         <StatutPlateforme statut={d.est_plateforme_agreee} nom={d.nom} variante="complet" />
       </section>
 
-      <section aria-labelledby="fonctionnalites" class="mt-8">
-        <h2 id="fonctionnalites" class="titre-section text-2xl font-bold">
+      <section aria-labelledby="fonctionnalites" class="mt-10">
+        <h2 id="fonctionnalites" class="titre-section">
           Fonctionnalités
         </h2>
         <div
-          class="table-scroll mt-3 max-w-xl"
+          class="table-scroll mt-4 max-w-xl"
           role="region"
           aria-label="Tableau des fonctionnalités"
           tabindex="0"
         >
           <table class="w-full border-collapse text-sm">
+            <caption class="sr-only">Fonctionnalités de{d.nom}</caption>
             <tbody>
               {FONCTIONNALITES.map((f) => (
-                <tr class="border-b border-border">
+                <tr>
                   <th scope="row" class="py-2 pr-3 text-left font-normal">
                     {f.label}
                   </th>
@@ -126,20 +124,20 @@ const appJsonLd = {
             </tbody>
           </table>
         </div>
-        <p class="mt-2 text-xs text-ink-soft">
+        <p class="mt-2 text-sm text-ink-soft">
           « À vérifier » : donnée en cours de relevé sur le site officiel de l'éditeur.
         </p>
       </section>
 
-      <section aria-labelledby="tarifs" class="prose-measure mt-8">
-        <h2 id="tarifs" class="titre-section text-2xl font-bold">
+      <section aria-labelledby="tarifs" class="mt-10">
+        <h2 id="tarifs" class="titre-section">
           Tarifs
         </h2>
         {plansRenseignes.length > 0 && (
-          <div class="table-scroll mt-3" role="region" aria-label="Tableau des tarifs" tabindex="0">
+          <div class="table-scroll mt-4" role="region" aria-label="Tableau des tarifs" tabindex="0">
             <table class="table-chiffres w-full border-collapse text-sm">
               <thead>
-                <tr class="border-b border-border">
+                <tr>
                   <th scope="col" class="designation py-2 pr-3 text-left">
                     Offre
                   </th>
@@ -153,7 +151,7 @@ const appJsonLd = {
               </thead>
               <tbody>
                 {plansRenseignes.map((p) => (
-                  <tr class="border-b border-border">
+                  <tr>
                     <th scope="row" class="designation py-2 pr-3 text-left font-normal">
                       {p.nom}
                     </th>
@@ -175,7 +173,7 @@ const appJsonLd = {
           </div>
         )}
         {plansRenseignes.length === 0 || plansARelever.length > 0 ? (
-          <p class="mt-3">
+          <p class="prose-measure mt-3">
             {plansRenseignes.length === 0
               ? 'Les prix sont en cours de relevé, avec date et source pour chaque donnée.'
               : `Prix en cours de relevé pour : ${plansARelever.map((p) => p.nom).join(', ')}.`}
@@ -193,32 +191,31 @@ const appJsonLd = {
         ) : null}
       </section>
 
-      <section aria-labelledby="pour-qui" class="prose-measure mt-8">
-        <h2 id="pour-qui" class="titre-section text-2xl font-bold">
-          Pour qui — et pour qui pas
+      <section aria-labelledby="pour-qui" class="mt-10">
+        <h2 id="pour-qui" class="titre-section">
+          À qui s'adresse {d.nom}
         </h2>
-        <ul class="liste-aeree mt-3 list-disc pl-5">
+        <ul class="liste-filets prose-measure mt-2">
           {d.points_forts.map((p) => (
             <li>{p}</li>
           ))}
         </ul>
-        <h3 class="mt-4 text-lg font-bold">Pour qui cet outil n'est pas adapté</h3>
-        <p class="mt-2">
-          L'éditeur cible {d.cible.join(', ')} : si votre profil est éloigné de cette cible,
-          comparez d'abord avec les outils pensés pour lui. Cette section sera détaillée après notre
-          test réel documenté.
+        <h3 class="mt-6">Quand regarder ailleurs</h3>
+        <p class="prose-measure mt-2">
+          L'éditeur cible {d.cible.join(', ')}. Si votre profil s'en éloigne, comparez d'abord avec
+          les logiciels pensés pour lui. Cette partie sera complétée après notre test.
         </p>
       </section>
 
       {comparatifs.length > 0 && (
-        <section aria-labelledby="comparer-outil" class="mt-8">
-          <h2 id="comparer-outil" class="titre-section text-2xl font-bold">
+        <section aria-labelledby="comparer-outil" class="mt-10">
+          <h2 id="comparer-outil" class="titre-section">
             Comparer {d.nom}
           </h2>
-          <ul class="mt-3 flex flex-wrap gap-2">
+          <ul class="liste-filets mt-2 md:grid md:grid-cols-2 md:gap-x-12">
             {comparatifs.map((c) => (
               <li>
-                <a href={c.url} class="puce-famille">
+                <a href={c.url}>
                   {d.nom} ou {c.nom}
                 </a>
               </li>
@@ -228,48 +225,47 @@ const appJsonLd = {
       )}
 
       {test && (
-        <section aria-labelledby="protocole-outil" class="prose-measure mt-8">
-          <h2 id="protocole-outil" class="titre-section text-2xl font-bold">
+        <section aria-labelledby="protocole-outil" class="mt-10">
+          <h2 id="protocole-outil" class="titre-section">
             Notre test, étape par étape
           </h2>
-          <p class="mt-2 text-sm text-ink-soft">
+          <p class="prose-measure mt-3 text-sm text-ink-soft">
             {teste && test.data.date_test
               ? `Test mené le ${formatDateFr(test.data.date_test)} : ${test.data.protocole.length} étapes sur ${test.data.protocole.length}.`
               : `${libelleStatutTest('a_tester')} : aucune des ${test.data.protocole.length} étapes n'est encore réalisée. Aucune note n'est publiée avant.`}
           </p>
-          <ol class:list={['m-frise mt-4', teste && 'est-teste']}>
+          <ol class="prose-measure mt-2">
             {test.data.protocole.map((etape, i) => (
-              <li>
-                <span class="m-noeud">
-                  <span class="sr-only">Étape </span>
+              <li class="numerote border-b border-border py-3">
+                <span class="numero text-xl" aria-hidden="true">
                   {i + 1}
                 </span>
-                <p class="pt-2">{etape}</p>
+                <p>{etape}</p>
               </li>
             ))}
           </ol>
         </section>
       )}
 
-      <section aria-labelledby="sources-outil" class="prose-measure mt-8">
-        <h2 id="sources-outil" class="titre-section text-2xl font-bold">
+      <section aria-labelledby="sources-outil" class="mt-10">
+        <h2 id="sources-outil" class="titre-section">
           Sources
         </h2>
-        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
+        <ol class="prose-measure mt-3 list-decimal space-y-1 pl-5 text-sm">
           {d.sources.map((s) => (
             <li>
               <a href={s.url} rel="noopener">
                 {s.objet}
-              </a>{' '}
-              — relevé le {formatDateFr(s.date_releve)}
+              </a>
+              , relevé le {formatDateFr(s.date_releve)}
             </li>
           ))}
-        </ul>
+        </ol>
       </section>
     </article>
 
     <aside class="colonne-appui" aria-label="Accès rapides">
-      <div class="carte-appui card-top">
+      <div class="carte-appui">
         <p class="carte-appui-titre">Site de l'éditeur</p>
         <p class="mt-2 text-sm text-ink-soft">
           Vérifiez les tarifs et le périmètre à la source avant de vous engager.
@@ -278,19 +274,21 @@ const appJsonLd = {
           <AffiliateButton
             outil={d.slug}
             urlOfficielle={d.url_officielle}
-            label={`Découvrir ${d.nom}`}
+            label={`Aller sur le site de ${d.nom}`}
             emplacement={`fiche-${d.slug}`}
           />
         </div>
       </div>
 
       <div class="carte-appui">
-        <p class="carte-appui-titre">Hésitation ?</p>
+        <p class="carte-appui-titre">Affiner avec le quiz</p>
         <p class="mt-2 text-sm text-ink-soft">
-          Cinq questions pour savoir si cet outil correspond à votre métier.
+          Cinq questions pour savoir si ce logiciel correspond à votre métier.
         </p>
         <p class="mt-3 text-sm">
-          <a href="/outils/quiz">Faire le quiz</a>
+          <a href="/outils/quiz" class="lien-fleche">
+            Faire le quiz
+          </a>
         </p>
       </div>
     </aside>

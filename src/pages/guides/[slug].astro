@@ -49,17 +49,18 @@ const articleJsonLd = {
 
   <div class="layout-article mt-4">
     <article>
-      <h1 class="titre-page">{insecables(d.title)}</h1>
+      <p class="surtitre">Guide</p>
+      <h1 class="titre-page mt-3">{insecables(d.title)}</h1>
       <p class="mt-3 text-sm text-ink-soft">
         Mis à jour le {formatDateFr(d.date_maj)}
         {SITE.expertRelecteur ? ` · Relu par ${SITE.expertRelecteur}` : ''} · {d.sources.length}
         {d.sources.length > 1 ? ' sources officielles' : ' source officielle'}
       </p>
 
-      <p class="encadre-essentiel prose-measure mt-6 p-4">{d.description}</p>
+      <p class="chapo mt-5">{insecables(d.description)}</p>
 
       {sommaire.length > 2 && (
-        <nav aria-labelledby="sommaire-mobile" class="carte-appui mt-6 lg:hidden">
+        <nav aria-labelledby="sommaire-mobile" class="carte-appui mt-8 lg:hidden">
           <p id="sommaire-mobile" class="carte-appui-titre">
             Dans ce guide
           </p>
@@ -71,15 +72,15 @@ const articleJsonLd = {
         </nav>
       )}
 
-      <div class="guide-corps prose-measure mt-6">
+      <div class="guide-corps prose-measure mt-8">
         <Content />
       </div>
 
       <section aria-labelledby="sources-guide" class="prose-measure mt-10">
-        <h2 id="sources-guide" class="titre-section text-2xl font-bold">
+        <h2 id="sources-guide" class="titre-section">
           Sources officielles
         </h2>
-        <ul class="liste-aeree mt-3 list-disc pl-5 text-sm">
+        <ol class="mt-3 list-decimal space-y-1 pl-5 text-sm">
           {d.sources.map((s) => (
             <li>
               <a href={s.url} rel="noopener">
@@ -87,12 +88,11 @@ const articleJsonLd = {
               </a>
             </li>
           ))}
-        </ul>
+        </ol>
+        <p class="mt-4 text-sm text-ink-soft">
+          Information générale : ce guide ne remplace pas l'avis de votre expert-comptable.
+        </p>
       </section>
-
-      <p class="prose-measure mt-8 rounded-md border border-border bg-paper-soft p-4 text-sm">
-        Information générale : ce guide ne remplace pas l'avis de votre expert-comptable.
-      </p>
 
       <InscriptionNewsletter
         id="nl-guide"
@@ -102,15 +102,15 @@ const articleJsonLd = {
 
       {autresGuides.length > 0 && (
         <section aria-labelledby="autres-guides" class="mt-10">
-          <h2 id="autres-guides" class="titre-section text-2xl font-bold">
+          <h2 id="autres-guides" class="titre-section">
             À lire ensuite
           </h2>
-          <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+          <ul class="liste-filets prose-measure mt-2">
             {autresGuides.map((g) => (
-              <li class="card-reco rounded-md border border-border p-3">
-                <p class="font-bold">
-                  <a href={`/guides/${g.id}`}>{g.data.title}</a>
-                </p>
+              <li>
+                <a href={`/guides/${g.id}`} class="font-semibold">
+                  {insecables(g.data.title)}
+                </a>
                 <p class="mt-1 text-sm text-ink-soft">{g.data.description}</p>
               </li>
             ))}
@@ -135,13 +135,13 @@ const articleJsonLd = {
         </nav>
       )}
 
-      <div class="carte-appui card-top">
+      <div class="carte-appui">
         <p class="carte-appui-titre">Passer à l'action</p>
         <p class="mt-2 text-sm text-ink-soft">
-          Cinq questions pour l'outil adapté à votre métier, deux pour vos échéances.
+          Cinq questions pour le logiciel adapté à votre métier, deux pour vos échéances.
         </p>
-        <p class="mt-3">
-          <a href="/outils/quiz" class="btn-cta">
+        <p class="mt-3 text-sm">
+          <a href="/outils/quiz" class="lien-fleche">
             Faire le quiz
           </a>
         </p>
@@ -165,15 +165,17 @@ const articleJsonLd = {
 
 <style>
   /* Typographie des corps de guide (MDX) */
+  /* Les h2 du corps ouvrent une section comme les titres du gabarit : serif,
+     sous un filet d'encre. */
   .guide-corps :global(h2) {
-    margin-top: 2.25rem;
-    font-size: 1.5rem;
-    font-weight: 700;
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--color-ink);
+    padding-top: 0.6rem;
+    font-size: clamp(1.375rem, 1.2rem + 0.7vw, 1.625rem);
   }
   .guide-corps :global(h3) {
-    margin-top: 1.5rem;
-    font-size: 1.17rem;
-    font-weight: 700;
+    margin-top: 1.75rem;
+    font-size: 1.125rem;
   }
   .guide-corps :global(p) {
     margin-top: 0.75rem;
@@ -206,16 +208,13 @@ const articleJsonLd = {
   }
   .guide-corps :global(th),
   .guide-corps :global(td) {
-    border-bottom: 1px solid var(--color-border);
     padding: 0.5rem 0.75rem 0.5rem 0;
     text-align: left;
-  }
-  .guide-corps :global(th) {
-    font-weight: 700;
+    vertical-align: top;
   }
   .guide-corps :global(blockquote) {
     margin-top: 1rem;
-    border-left: 3px solid var(--color-accent);
+    border-left: 2px solid var(--color-ink);
     padding-left: 1rem;
     color: var(--color-ink-soft);
   }
