@@ -9,7 +9,7 @@ import StatutPlateforme from '../../components/StatutPlateforme.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { FAMILLE_LABELS } from '../../lib/familles';
 import { formatDateFr } from '../../lib/dates';
-import { insecables } from '../../lib/presentation';
+import { de, insecables } from '../../lib/presentation';
 import { jsonLdSur, metierDescription, metierTitle } from '../../lib/seo';
 import { paireOrdonnee, urlComparatif } from '../../lib/comparatifs';
 import { libelleStatutTest } from '../../lib/statut-test';
@@ -67,7 +67,6 @@ const paires = recommandes.flatMap((a, i) =>
   }),
 );
 const familleLabel = FAMILLE_LABELS[d.famille];
-const nomMin = d.nom.toLowerCase();
 
 // Besoins prioritaires enchaînés dans une phrase : sans leur point final, et
 // en minuscule initiale sauf sigle (« TVA », « PDF »).
@@ -79,15 +78,16 @@ const enPhrase = (t: string) => {
 };
 const besoinsPhrase = d.besoins_prioritaires.slice(0, 3).map(enPhrase).join(' ; ');
 
-// « En bref » : trois phrases, dates et périmètres tirés d'echeances.json.
+// « En bref » : trois phrases ; dates, statuts et complément tirés d'echeances.json,
+// périmètres rédigés d'après ses champs « concernes ».
 const enVigueur = (statut: string) => statut === 'en_vigueur';
 const complementTpe = emissionTpe.complement
   ? ` (${emissionTpe.complement.charAt(0).toLowerCase()}${emissionTpe.complement.slice(1)})`
   : '';
 const enBref = [
-  `${enVigueur(reception.statut) ? 'Depuis le' : 'À partir du'} ${formatDateFr(reception.date)}, toute entreprise assujettie à la TVA, même en franchise en base, ${enVigueur(reception.statut) ? 'doit' : 'devra'} pouvoir recevoir des factures électroniques.`,
+  `${enVigueur(reception.statut) ? 'Depuis le' : 'À partir du'} ${formatDateFr(reception.date)}, toute entreprise établie en France et assujettie à la TVA, même en franchise en base, ${enVigueur(reception.statut) ? 'doit' : 'devra'} pouvoir recevoir des factures électroniques.`,
   `Pour les TPE, PME et micro-entreprises, l’émission ${enVigueur(emissionTpe.statut) ? 'est obligatoire depuis le' : 'devient obligatoire le'} ${formatDateFr(emissionTpe.date)}${complementTpe}.`,
-  `Il vous faut une plateforme agréée adaptée à votre activité de ${nomMin}, avec les mentions obligatoires propres au métier.`,
+  'Il vous faut une plateforme agréée et des factures qui portent les mentions obligatoires propres à votre métier.',
 ].map(insecables);
 
 // Mini-tableau des échéances de la colonne d'appui.
@@ -208,7 +208,7 @@ const faqJsonLd = {
                   <AffiliateButton
                     outil={outil.data.slug}
                     urlOfficielle={outil.data.url_officielle}
-                    label={`Aller sur le site de ${outil.data.nom}`}
+                    label={`Aller sur le site ${de(outil.data.nom)}`}
                     emplacement={`metier-${d.slug}-reco-${i + 1}`}
                     variante={i === 0 ? 'principal' : 'secondaire'}
                   />
@@ -357,8 +357,8 @@ const faqJsonLd = {
       <div class="carte-appui">
         <p class="carte-appui-titre">Affiner la recommandation</p>
         <p class="mt-2 text-sm text-ink-soft">
-          Cinq questions, dont votre métier déjà rempli : statut, volume de factures, compte pro,
-          expert-comptable.
+          Votre métier est déjà renseigné. Il reste quatre questions : statut, volume de factures,
+          compte professionnel et expert-comptable.
         </p>
         <p class="mt-3 text-sm">
           <a href={`/outils/quiz?metier=${encodeURIComponent(d.slug)}`} class="lien-fleche">

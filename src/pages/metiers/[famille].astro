@@ -140,7 +140,7 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
                     ))}
                   </p>
                   <p class="mt-1 text-sm text-ink-soft">
-                    Source :{' '}
+                    Source{p.sources.length > 1 ? 's' : ''} :{' '}
                     {p.sources.map((s, j) => (
                       <>
                         {j > 0 && ' · '}
@@ -167,7 +167,7 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
         </h2>
         <table class="mt-4 w-full text-sm">
           <caption class="sr-only">
-            Métiers de la famille{label.toLowerCase()}, avec leur clientèle et leur premier besoin
+            Métiers de cette famille, avec leur clientèle et leur premier besoin
           </caption>
           <thead>
             <tr>
@@ -242,7 +242,7 @@ if (!reception) throw new Error('echeances.json : échéance de réception manqu
                   <td class="py-2 pr-4 whitespace-nowrap">
                     {o.fiches} sur {metiers.length}
                   </td>
-                  <td class="py-2">
+                  <td class="py-2 align-middle">
                     <span class="jauge" aria-hidden="true">
                       <span style={`width: ${(o.fiches / metiers.length) * 100}%`} />
                     </span>

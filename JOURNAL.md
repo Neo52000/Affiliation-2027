@@ -563,7 +563,7 @@ Deuxième PR de la refonte. Les cinq gabarits les plus lus passent au style édi
 **Fiche métier** (100 pages) :
 
 - Surtitre « Fiche métier · famille » et titre « {Métier} et facturation électronique ».
-- « En bref » remplace « L'essentiel en 3 lignes » : trois phrases simples. Dates, périmètres et statut (en vigueur ou à venir) sont tirés d'`echeances.json`.
+- « En bref » remplace « L'essentiel en 3 lignes » : trois phrases simples. Dates, statut (en vigueur ou à venir) et complément sont tirés d'`echeances.json` ; les périmètres sont rédigés d'après ses champs `concernes`.
 - Recommandations numérotées. L'étiquette « Notre recommandation » est en texte. Le bouton plein est réservé au premier rang éditorial, qui est calculé sans les commissions ; les rangs suivants ont un bouton secondaire. Libellé : « Aller sur le site de … ».
 - Facture d'exemple posée comme une feuille.
 - FAQ à filets avec un repère + / −. Sources en liste numérotée.
@@ -601,3 +601,19 @@ Deuxième PR de la refonte. Les cinq gabarits les plus lus passent au style édi
 - axe : 0 violation sur 10 pages, en clair et en sombre, à 1280 et 360 px.
 - Aucun débordement ni erreur CSP de 320 à 1920 px.
 - Lighthouse 100/100/100/100 en mobile et en ordinateur sur les 5 gabarits.
+
+**Revue contradictoire** (5 relecteurs, chacun suivi d'un vérificateur sceptique) : 33 constats, dont 26 retenus, soit 14 défauts distincts, tous corrigés. Les 7 autres ont été réfutés.
+
+- « En bref » :
+  - la condition « établie en France » est rétablie ;
+  - la 3e phrase ne cite plus le métier, qui donnait « de avocat » et « chauffeur vtc » sur 31 fiches.
+- Élision avec un nouvel utilitaire `de()`, testé : « Aller sur le site d'Abby ».
+- Légendes de tableau corrigées : « famillebâtiment » et « deTiime » étaient soudés.
+- La marge collante défile seule quand elle dépasse la fenêtre, ce qui rend la note quiz atteignable en 1366×768.
+- Les filets d'encre des tableaux « Comparatif » et de la facture sont rétablis.
+- La jauge est centrée sur sa ligne.
+- Protocole : `.numero-petit`, car `text-xl` n'avait pas d'effet.
+- « Sources » prend le pluriel.
+- Doublons retirés : « aucune note avant notre test » et l'avertissement du guide, déjà présent dans le pied de page.
+- « Points forts » remplace « À qui s'adresse », qui annonçait mal la liste.
+- La note quiz de la marge est réécrite.

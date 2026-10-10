@@ -42,7 +42,7 @@ const total = guides.reduce((n, g) => n + g.data.sources.length, 0);
         </h2>
         <ul class="liste-filets prose-measure mt-2">
           {guides.map((g) => (
-            <li class="py-4">
+            <li>
               <a href={`/guides/${g.id}`} class="font-semibold">
                 {insecables(g.data.title)}
               </a>

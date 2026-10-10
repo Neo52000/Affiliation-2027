@@ -89,9 +89,6 @@ const articleJsonLd = {
             </li>
           ))}
         </ol>
-        <p class="mt-4 text-sm text-ink-soft">
-          Information générale : ce guide ne remplace pas l'avis de votre expert-comptable.
-        </p>
       </section>
 
       <InscriptionNewsletter
@@ -101,11 +98,11 @@ const articleJsonLd = {
       />
 
       {autresGuides.length > 0 && (
-        <section aria-labelledby="autres-guides" class="mt-10">
+        <section aria-labelledby="autres-guides" class="prose-measure mt-10">
           <h2 id="autres-guides" class="titre-section">
             À lire ensuite
           </h2>
-          <ul class="liste-filets prose-measure mt-2">
+          <ul class="liste-filets mt-2">
             {autresGuides.map((g) => (
               <li>
                 <a href={`/guides/${g.id}`} class="font-semibold">

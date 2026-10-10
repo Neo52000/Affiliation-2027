@@ -7,7 +7,7 @@ import ComparatifCourt from '../../components/ComparatifCourt.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { toutesLesPaires } from '../../lib/comparatifs';
 import { formatDateFr } from '../../lib/dates';
-import { insecables } from '../../lib/presentation';
+import { de, insecables } from '../../lib/presentation';
 import { pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
 
@@ -143,14 +143,14 @@ const phraseAgrement =
         <AffiliateButton
           outil={a.slug}
           urlOfficielle={a.url_officielle}
-          label={`Aller sur le site de ${a.nom}`}
+          label={`Aller sur le site ${de(a.nom)}`}
           emplacement={`comparatif-${a.slug}-vs-${b.slug}-a`}
           variante="secondaire"
         />
         <AffiliateButton
           outil={b.slug}
           urlOfficielle={b.url_officielle}
-          label={`Aller sur le site de ${b.nom}`}
+          label={`Aller sur le site ${de(b.nom)}`}
           emplacement={`comparatif-${a.slug}-vs-${b.slug}-b`}
           variante="secondaire"
         />

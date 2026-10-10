@@ -590,6 +590,11 @@ html:not(.js) .selecteur-metier {
   font-variant-numeric: lining-nums;
 }
 
+/* Numéro d'une liste dense (protocole de test). */
+.numero-petit {
+  font-size: 1.25rem;
+}
+
 /* En bref : l'essentiel d'une page entre deux filets, sans fond ni boîte. */
 .en-bref,
 .encadre-essentiel {
@@ -726,9 +731,18 @@ html:not(.js) .selecteur-metier {
 }
 
 @media (min-width: 1024px) {
+  /* Collante, mais jamais plus haute que la fenêtre : une marge longue (sommaire
+     d'un guide, fenêtre de 768 px) défile seule, rien n'y reste hors d'atteinte.
+     Le retrait intérieur laisse la place au contour de focus. */
   .colonne-appui {
     position: sticky;
     top: 1.5rem;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    margin-inline: -0.375rem;
+    padding: 0.375rem;
   }
 }
 

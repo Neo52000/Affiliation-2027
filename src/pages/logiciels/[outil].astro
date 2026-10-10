@@ -9,6 +9,7 @@ import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { ORDRE_COMPARATIFS, urlComparatif } from '../../lib/comparatifs';
 import { libelleStatutTest } from '../../lib/statut-test';
 import { formatDateFr } from '../../lib/dates';
+import { de } from '../../lib/presentation';
 import { jsonLdSur, pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
 
@@ -109,7 +110,7 @@ const appJsonLd = {
           tabindex="0"
         >
           <table class="w-full border-collapse text-sm">
-            <caption class="sr-only">Fonctionnalités de{d.nom}</caption>
+            <caption class="sr-only">{`Fonctionnalités ${de(d.nom)}`}</caption>
             <tbody>
               {FONCTIONNALITES.map((f) => (
                 <tr>
@@ -193,7 +194,7 @@ const appJsonLd = {
 
       <section aria-labelledby="pour-qui" class="mt-10">
         <h2 id="pour-qui" class="titre-section">
-          À qui s'adresse {d.nom}
+          Points forts
         </h2>
         <ul class="liste-filets prose-measure mt-2">
           {d.points_forts.map((p) => (
@@ -202,7 +203,7 @@ const appJsonLd = {
         </ul>
         <h3 class="mt-6">Quand regarder ailleurs</h3>
         <p class="prose-measure mt-2">
-          L'éditeur cible {d.cible.join(', ')}. Si votre profil s'en éloigne, comparez d'abord avec
+          Si votre profil n'entre pas dans la cible revendiquée par l'éditeur, comparez d'abord avec
           les logiciels pensés pour lui. Cette partie sera complétée après notre test.
         </p>
       </section>
@@ -237,7 +238,7 @@ const appJsonLd = {
           <ol class="prose-measure mt-2">
             {test.data.protocole.map((etape, i) => (
               <li class="numerote border-b border-border py-3">
-                <span class="numero text-xl" aria-hidden="true">
+                <span class="numero numero-petit" aria-hidden="true">
                   {i + 1}
                 </span>
                 <p>{etape}</p>
@@ -274,7 +275,7 @@ const appJsonLd = {
           <AffiliateButton
             outil={d.slug}
             urlOfficielle={d.url_officielle}
-            label={`Aller sur le site de ${d.nom}`}
+            label={`Aller sur le site ${de(d.nom)}`}
             emplacement={`fiche-${d.slug}`}
           />
         </div>
