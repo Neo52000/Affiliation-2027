@@ -19,8 +19,8 @@ const mentions = mentionsData.mentions as MentionFacture[];
   <p class="surtitre mt-4">Outil</p>
   <h1 class="titre-page mt-3">Votre facture est-elle conforme&nbsp;?</h1>
   <p class="chapo mt-5">
-    {mentions.length} mentions contrôlées, chacune adossée à une source officielle. Relevé du{' '}
-    {formatDateFr(mentionsData.date_releve)}.
+    Le vérificateur contrôle {mentions.length} mentions, chacune adossée à une source officielle.
+    Relevé du {formatDateFr(mentionsData.date_releve)}.
   </p>
 
   <div class="mt-10 max-w-2xl">
@@ -36,11 +36,13 @@ const mentions = mentionsData.mentions as MentionFacture[];
       <ul class="liste-filets mt-2">
         {mentions.map((m) => (
           <li>
-            {m.libelle}
-            {m.condition && <span class="text-sm text-ink-soft"> (si : {m.condition})</span>}.{' '}
+            {m.libelle}.{' '}
             <a href={m.url_source} rel="noopener">
-              Source
+              Source officielle
             </a>
+            {m.condition && (
+              <span class="block text-sm text-ink-soft">Condition&nbsp;: {m.condition}</span>
+            )}
           </li>
         ))}
       </ul>

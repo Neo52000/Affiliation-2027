@@ -39,18 +39,14 @@ const outils = (await getCollection('outils'))
   .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
 const sansLien = outils.filter((o) => o.lienPublie === 'Non').length;
 
-// Ce que l'argent ne change pas : l'engagement central du site, énoncé en trois
-// points vérifiables plutôt qu'en déclaration d'intention.
+// Ce que l'argent ne change pas : l'engagement central du site, énoncé en deux
+// points vérifiables plutôt qu'en déclaration d'intention. C'est le seul endroit
+// de la page qui dit l'indépendance du classement.
 const GARANTIES: { titre: string; texte: string }[] = [
   {
-    titre: 'Ni l’ordre, ni les notes',
+    titre: 'Ni l’ordre ni les notes',
     texte:
-      'La méthode de notation est publique. Ni les commissions ni les achats d’espace publicitaire n’y figurent ou n’entrent dans le quiz.',
-  },
-  {
-    titre: 'Aucun montant affiché',
-    texte:
-      'Les montants de commission ou d’achat d’espace ne sont jamais affichés ni pris en compte dans un classement.',
+      'La méthode de notation est publique. Ni les commissions ni les achats d’espace publicitaire n’y figurent ni n’entrent dans le calcul du quiz.',
   },
   {
     titre: 'Publicité signalée, contenu jamais vendu',
@@ -81,7 +77,7 @@ const GARANTIES: { titre: string; texte: string }[] = [
         <h2 id="ce-que-vous-voyez" class="titre-section">
           Ce que vous voyez sur le site
         </h2>
-        <ul class="liste-filets mt-2">
+        <ul class="liste-filets prose-measure mt-2">
           <li>
             Chaque lien affilié est signalé par la mention « lien affilié » à côté du bouton, et la
             page qui en contient affiche un bandeau en haut.
@@ -108,8 +104,7 @@ const GARANTIES: { titre: string; texte: string }[] = [
           des éditeurs qui proposent un programme d'affiliation. La sélection n'est donc pas
           exhaustive : la{' '}
           <a href="/plateformes-agreees">liste officielle des plateformes agréées</a> en compte bien
-          d'autres. Une fois un logiciel retenu, sa note et son rang ne dépendent que de la méthode
-          publique.
+          d'autres.
         </p>
         <div
           class="table-scroll mt-4"
@@ -168,8 +163,7 @@ const GARANTIES: { titre: string; texte: string }[] = [
           ))}
         </ul>
         <p class="prose-measure mt-4 text-sm">
-          La <a href="/methode">méthode de notation</a> détaille la pondération de chaque critère,
-          et aucune ligne n'y porte sur une commission ou une publicité.
+          La <a href="/methode">méthode de notation</a> détaille la pondération de chaque critère.
         </p>
       </section>
 
@@ -177,7 +171,7 @@ const GARANTIES: { titre: string; texte: string }[] = [
         <h2 id="publicite" class="titre-section">
           La publicité
         </h2>
-        <ul class="liste-filets mt-2">
+        <ul class="liste-filets prose-measure mt-2">
           <li>
             Le site peut vendre des espaces publicitaires en direct, sans régie, toujours en fin de
             page : sur l'accueil, à la fin des guides et sur les pages famille de métiers. Voir l'
@@ -189,9 +183,8 @@ const GARANTIES: { titre: string; texte: string }[] = [
             comparatifs, les outils ni la méthode, et jamais à l'intérieur d'une recommandation.
           </li>
           <li>
-            Un annonceur peut être l'un des éditeurs comparés : son annonce le signale, n'est
-            diffusée que sur l'accueil ou les guides, et ne change ni ses notes, ni son rang, ni les
-            recommandations, calculés sans aucune donnée publicitaire.
+            Un annonceur peut être l'un des éditeurs comparés : son annonce le signale et n'est
+            diffusée que sur l'accueil ou les guides.
           </li>
           <li>
             Aucune annonce ne dépose de cookie ni de traceur : texte et image sont servis par ce
@@ -200,11 +193,13 @@ const GARANTIES: { titre: string; texte: string }[] = [
           </li>
         </ul>
         {annoncesDuJour.length === 0 ? (
-          <p class="mt-3">Aucune annonce n'est diffusée à la date du {formatDateFr(jour)}.</p>
+          <p class="prose-measure mt-3">
+            Aucune annonce n'est diffusée à la date du {formatDateFr(jour)}.
+          </p>
         ) : (
           <>
-            <p class="mt-3">Annonces diffusées à la date du {formatDateFr(jour)} :</p>
-            <ul class="mt-2 list-disc pl-5">
+            <p class="prose-measure mt-3">Annonces diffusées à la date du {formatDateFr(jour)} :</p>
+            <ul class="prose-measure mt-2 list-disc pl-5">
               {annoncesDuJour.map((c) => (
                 <li>
                   {c.annonceur} ({c.annonceur_legal}), jusqu'au {formatDateFr(c.fin)}
@@ -219,7 +214,7 @@ const GARANTIES: { titre: string; texte: string }[] = [
         <h2 id="vos-donnees" class="titre-section">
           Vos données
         </h2>
-        <p class="mt-3">
+        <p class="prose-measure mt-3">
           Pas de cookie soumis à consentement, pas de traceur publicitaire. Les deux inscriptions
           par email (rappel d'échéance, newsletter) sont en double opt-in ; le détail figure dans la{' '}
           <a href="/confidentialite">politique de confidentialité</a>.

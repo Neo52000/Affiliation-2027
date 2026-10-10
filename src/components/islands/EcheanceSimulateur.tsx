@@ -37,7 +37,10 @@ export default function EcheanceSimulateur({ echeances }: Props) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          setAffiche(true);
+          // Résultat déjà affiché : l'état ne change pas et l'effet ne se relance
+          // pas, le focus est donc rendu au titre ici.
+          if (affiche) titreResultat.current?.focus();
+          else setAffiche(true);
         }}
         class="space-y-4"
       >

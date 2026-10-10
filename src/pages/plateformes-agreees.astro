@@ -11,7 +11,7 @@ const definitives = plateformes.filter((p) => p.statut === 'immatriculation_defi
 const enAttente = plateformes.filter((p) => p.statut === 'dossier_en_attente');
 const s = (n: number) => (n > 1 ? 's' : '');
 // Une seule chaîne : le formatage du gabarit ne peut pas coller les mots.
-const chapo = `${definitives.length} plateforme${s(definitives.length)} immatriculée${s(definitives.length)} définitivement et ${enAttente.length} dossier${s(enAttente.length)} complet${s(enAttente.length)} en attente des tests d'interopérabilité, d'après le registre de la DGFiP.`;
+const chapo = `Le registre de la DGFiP compte ${definitives.length} plateforme${s(definitives.length)} immatriculée${s(definitives.length)} définitivement et ${enAttente.length} dossier${s(enAttente.length)} complet${s(enAttente.length)} en attente des tests d'interopérabilité.`;
 ---
 
 <Base
@@ -56,7 +56,7 @@ const chapo = `${definitives.length} plateforme${s(definitives.length)} immatric
       aria-label="Registre des plateformes agréées"
       tabindex="0"
     >
-      <table class="table-longue w-full border-collapse text-sm" id="table-pa">
+      <table class="w-full border-collapse text-sm" id="table-pa">
         <caption class="sr-only">
           Plateformes agréées, avec leur statut, leur date d'immatriculation et leur localisation
         </caption>

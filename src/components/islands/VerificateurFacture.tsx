@@ -31,7 +31,10 @@ export default function VerificateurFacture({ mentions }: Props) {
     setResultat(null);
   };
 
-  const Groupe = ({ titre, liste }: { titre: string; liste: MentionFacture[] }) => (
+  // Fonctions de rendu appelées directement, et non composants : un composant
+  // déclaré dans le corps serait un nouveau type à chaque rendu, et Preact
+  // remonterait le groupe, case focalisée comprise, à chaque coche.
+  const groupe = (titre: string, liste: MentionFacture[]) => (
     <fieldset class="mt-4">
       <legend class="font-bold">{titre}</legend>
       <ul class="mt-2 space-y-2">
@@ -40,13 +43,15 @@ export default function VerificateurFacture({ mentions }: Props) {
             <label class="flex items-start gap-2">
               <input
                 type="checkbox"
-                class="mt-1"
+                class="mt-1 size-[1.125rem] shrink-0"
                 checked={cochees.has(m.id)}
                 onChange={() => basculer(m.id)}
               />
               <span>
                 {m.libelle}
-                {m.condition && <span class="block text-sm text-ink-soft">Si : {m.condition}</span>}
+                {m.condition && (
+                  <span class="block text-sm text-ink-soft">Condition : {m.condition}</span>
+                )}
               </span>
             </label>
           </li>
@@ -55,8 +60,8 @@ export default function VerificateurFacture({ mentions }: Props) {
     </fieldset>
   );
 
-  const Manquante = ({ m }: { m: MentionFacture }) => (
-    <li>
+  const manquante = (m: MentionFacture) => (
+    <li key={m.id}>
       <p class="font-semibold">{m.libelle}</p>
       <p class="mt-1 text-sm">{m.regle}</p>
       {m.condition && <p class="mt-1 text-sm text-ink-soft">Condition : {m.condition}</p>}
@@ -80,8 +85,8 @@ export default function VerificateurFacture({ mentions }: Props) {
           Cochez les mentions déjà présentes sur votre facture. Tout se passe dans votre navigateur
           : aucune donnée n'est envoyée.
         </p>
-        <Groupe titre="Mentions toujours obligatoires" liste={socle} />
-        <Groupe titre="Mentions selon votre situation" liste={conditionnelles} />
+        {groupe('Mentions toujours obligatoires', socle)}
+        {groupe('Mentions selon votre situation', conditionnelles)}
         <button type="submit" class="btn-cta mt-5 text-lg">
           Vérifier ma facture
         </button>
@@ -90,35 +95,21 @@ export default function VerificateurFacture({ mentions }: Props) {
       {resultat && (
         <section class="mt-8">
           {resultat.complet ? (
-            <>
-              <h2 ref={titreResultat} tabIndex={-1} class="titre-section">
-                Aucune mention obligatoire manquante
-              </h2>
-              <p class="mt-3">
-                Toutes les mentions toujours obligatoires sont présentes. Vérifiez encore les
-                mentions conditionnelles ci-dessous si votre situation est concernée.
-              </p>
-            </>
+            <h2 ref={titreResultat} tabIndex={-1} class="titre-section">
+              Aucune mention obligatoire manquante
+            </h2>
           ) : (
             <>
               <h2 ref={titreResultat} tabIndex={-1} class="titre-section">
                 {pluriel(resultat.manquantes.length, 'mention obligatoire manquante')}
               </h2>
-              <ul class="liste-filets mt-2">
-                {resultat.manquantes.map((m) => (
-                  <Manquante m={m} key={m.id} />
-                ))}
-              </ul>
+              <ul class="liste-filets mt-2">{resultat.manquantes.map(manquante)}</ul>
             </>
           )}
           {resultat.aVerifier.length > 0 && (
             <>
               <h3 class="mt-8">À vérifier selon votre situation</h3>
-              <ul class="liste-filets mt-2">
-                {resultat.aVerifier.map((m) => (
-                  <Manquante m={m} key={m.id} />
-                ))}
-              </ul>
+              <ul class="liste-filets mt-2">{resultat.aVerifier.map(manquante)}</ul>
             </>
           )}
         </section>

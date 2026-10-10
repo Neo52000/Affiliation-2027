@@ -635,7 +635,7 @@ Troisième PR de la refonte. Les outils et les pages de confiance passent au sty
 **Pages de confiance** :
 
 - La méthode devient une charte de quatre principes numérotés. La pondération est en tableau à chiffres alignés.
-- Transparence : chapô et listes à filets ; l'ancre `#publicite` est conservée. À propos : surtitre et titres de section ; le périmètre de la réforme y redevient celui d'`echeances.json` (« établies en France et assujetties à la TVA »), avec sa source. Sur les deux pages, les tirets cadratins et « Voici » sont retirés, et l'indépendance n'est plus martelée.
+- Transparence : chapô et listes à filets ; l'ancre `#publicite` est conservée. À propos : surtitre et titres de section ; le périmètre de la réforme y redevient celui d'`echeances.json` (« établies en France et assujetties à la TVA »), avec sa source. Sur les deux pages, les tirets cadratins et « Voici » sont retirés. La transparence ne dit plus l'indépendance du classement qu'une fois, dans « Ce que l'argent ne change pas », au lieu de cinq ; son texte courant reprend partout la largeur de lecture.
 - Plateformes agréées :
   - le filtre devient un vrai champ, dont le bord est à 4,1:1 au lieu de 1,45:1 ;
   - il est masqué sans JavaScript (`.js-seul`) ;
@@ -650,3 +650,12 @@ Troisième PR de la refonte. Les outils et les pages de confiance passent au sty
 - `de()` déménage dans `src/lib/typographie.ts`, sans dépendance, pour être importable par les îlots.
 - Les anciennes classes de cartes (`card-reco`, `card-top`, `carte-reco`), `encadre-essentiel` et `liste-aeree` sont supprimées.
 - Accessibilité des résultats : le simulateur et le vérificateur reprennent le modèle du quiz. Le focus va sur le titre du résultat, et la région `aria-live`, insérée déjà remplie, est retirée. L'état « complet » du vérificateur reçoit son h2, qui manquait (saut h1 → h3). Le formulaire de rappel garde le focus pendant l'envoi (`aria-disabled`) puis le donne à la confirmation.
+- Revue contradictoire (rédaction, technique, visuel), corrections retenues :
+  - vérificateur : les cases ne sont plus recréées à chaque coche (les blocs étaient des composants déclarés dans le corps de l'îlot ; le focus tombait sur `body`) ; « Condition : » remplace « Si : si… » dans l'îlot et le texte sans JavaScript ; l'état complet ne renvoie plus à une liste « ci-dessous » absente ;
+  - cases et boutons radio dans l'accent du site partout (`accent-color`), cases du vérificateur à la taille du texte ;
+  - simulateur : une seconde soumission rend le focus au titre du résultat ; pour une échéance d'émission déjà en vigueur, la check-list ne parle plus de « tester avant votre échéance » ;
+  - quiz : cibles affichées avec leur casse (« TPE, PME ») et « logiciels » au lieu d'« outils » ; chapô qui ne répète plus la note du formulaire ;
+  - chapôs qui ne commencent plus par un nombre en chiffres (plateformes, vérificateur) ; titre de la confidentialité qui ne prétend plus que l'email est la seule donnée collectée ; principe 2 de la méthode qui ne répète plus son titre ;
+  - « En vigueur » insécable dans le calendrier complet ; un seul filet sous « Qui édite ce site » ;
+  - la règle d'en-tête collant du registre des plateformes, sans effet depuis son ajout (le conteneur de défilement horizontal l'annulait), est retirée ;
+  - parcours e2e 5 : le titre attendu est ancré (`^\d+ mentions…$`) pour ne plus accepter l'état « Aucune mention obligatoire manquante ».
