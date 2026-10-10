@@ -47,12 +47,12 @@ export default function MetierPicker({ metiers }: Props) {
       : '';
 
   return (
-    <div class="m-selecteur mt-6" ref={racine}>
+    <div class="selecteur-metier mt-6" ref={racine}>
       <fieldset>
         <legend class="font-bold">Votre métier dans cette famille</legend>
-        <div class="m-puces mt-3">
+        <div class="puces mt-3">
           {metiers.map((m) => (
-            <label class="m-puce" key={m.slug}>
+            <label class="puce" key={m.slug}>
               <input
                 type="radio"
                 name="metier-famille"
@@ -60,7 +60,7 @@ export default function MetierPicker({ metiers }: Props) {
                 checked={choix === m.slug}
                 onChange={() => setChoix(m.slug)}
               />
-              <span class="m-puce-coche" aria-hidden="true">
+              <span class="puce-coche" aria-hidden="true">
                 ✓
               </span>
               {m.nom}
@@ -73,9 +73,9 @@ export default function MetierPicker({ metiers }: Props) {
         {annonce}
       </p>
 
-      <div class="m-choix-panneau mt-4">
+      <div class="choix-panneau mt-4">
         {metier && reco ? (
-          <div key={metier.slug} class="m-apparait">
+          <div key={metier.slug}>
             <p class="text-sm text-ink-soft">Sur la fiche {metier.nom}, notre recommandation :</p>
             <p class="text-xl font-extrabold">
               <a href={`/logiciels/${reco.slug}`}>{reco.nom}</a>

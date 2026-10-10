@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import Picto from '../components/Picto.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 
@@ -19,12 +18,7 @@ const placeholders = SITE.name.startsWith('TODO_');
 
   <div class="layout-article mt-4">
     <article>
-      <div class="flex items-center gap-4">
-        <span class="picto-carre shrink-0">
-          <Picto nom="profil" taille={26} />
-        </span>
-        <h1 class="prose-measure text-3xl font-bold">À propos de ce site</h1>
-      </div>
+      <h1 class="titre-page">À propos de ce site</h1>
 
       <h2 class="titre-section prose-measure mt-8 text-2xl font-bold">Pourquoi ce site existe</h2>
       <p class="prose-measure mt-3">

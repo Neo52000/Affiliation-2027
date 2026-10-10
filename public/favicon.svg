@@ -1,12 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#2563eb"/>
-      <stop offset="1" stop-color="#7c3aed"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="7" fill="url(#g)"/>
-  <path d="M10 6.5h8.5L23 11v14.5H10Z" fill="#ffffff"/>
-  <path d="M18.5 6.5V11H23Z" fill="#c7d2fe"/>
-  <path d="m13 18.2 2.2 2.2 4-4.1" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <style>
+    .fond { fill: #1f5c4a; }
+    .page { fill: #f7f4ee; }
+    .ligne { stroke: #1f5c4a; }
+    @media (prefers-color-scheme: dark) {
+      .fond { fill: #7cc4a6; }
+      .page { fill: #121411; }
+      .ligne { stroke: #7cc4a6; }
+    }
+  </style>
+  <rect class="fond" width="32" height="32" rx="3"/>
+  <path class="page" d="M9 5.5h10l4 4v17H9Z"/>
+  <path class="ligne" d="M12 14h8M12 17.5h8M12 21h5" fill="none" stroke-width="1.6"/>
 </svg>

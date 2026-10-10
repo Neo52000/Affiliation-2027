@@ -9,6 +9,7 @@ import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { ORDRE_COMPARATIFS, urlComparatif } from '../../lib/comparatifs';
 import { libelleStatutTest } from '../../lib/statut-test';
 import { formatDateFr } from '../../lib/dates';
+import { insecables } from '../../lib/presentation';
 import { jsonLdSur, pageTitle } from '../../lib/seo';
 import { SITE } from '../../config';
 
@@ -83,18 +84,11 @@ const appJsonLd = {
 
   <div class="layout-article mt-4">
     <article>
-      <div class="hero flex items-center gap-5 pt-2">
-        <span class="m-mono" aria-hidden="true">
-          {d.nom.slice(0, 1)}
-        </span>
-        <div>
-          <h1 class="prose-measure text-3xl font-bold">{d.nom} : facturation électronique</h1>
-          <p class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-soft">
-            <span class="pill">{libelleTest}</span>
-            <span>Mis à jour le {formatDateFr(d.date_maj)}</span>
-          </p>
-        </div>
-      </div>
+      <h1 class="titre-page">{insecables(`${d.nom} : facturation électronique`)}</h1>
+      <p class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-soft">
+        <span class="pill">{libelleTest}</span>
+        <span>Mis à jour le {formatDateFr(d.date_maj)}</span>
+      </p>
 
       <section aria-labelledby="essentiel-outil" class="encadre-essentiel prose-measure mt-6 p-4">
         <h2 id="essentiel-outil" class="text-lg font-bold">
@@ -111,7 +105,12 @@ const appJsonLd = {
         <h2 id="fonctionnalites" class="titre-section text-2xl font-bold">
           Fonctionnalités
         </h2>
-        <div class="table-scroll mt-3 max-w-xl">
+        <div
+          class="table-scroll mt-3 max-w-xl"
+          role="region"
+          aria-label="Tableau des fonctionnalités"
+          tabindex="0"
+        >
           <table class="w-full border-collapse text-sm">
             <tbody>
               {FONCTIONNALITES.map((f) => (
@@ -137,7 +136,7 @@ const appJsonLd = {
           Tarifs
         </h2>
         {plansRenseignes.length > 0 && (
-          <div class="table-scroll mt-3">
+          <div class="table-scroll mt-3" role="region" aria-label="Tableau des tarifs" tabindex="0">
             <table class="table-chiffres w-full border-collapse text-sm">
               <thead>
                 <tr class="border-b border-border">
@@ -238,7 +237,7 @@ const appJsonLd = {
               ? `Test mené le ${formatDateFr(test.data.date_test)} : ${test.data.protocole.length} étapes sur ${test.data.protocole.length}.`
               : `${libelleStatutTest('a_tester')} : aucune des ${test.data.protocole.length} étapes n'est encore réalisée. Aucune note n'est publiée avant.`}
           </p>
-          <ol class:list={['m-frise reveal mt-4', teste && 'est-teste']}>
+          <ol class:list={['m-frise mt-4', teste && 'est-teste']}>
             {test.data.protocole.map((etape, i) => (
               <li>
                 <span class="m-noeud">

@@ -5,9 +5,9 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import EspacePublicitaire from '../../components/EspacePublicitaire.astro';
 import InscriptionNewsletter from '../../components/InscriptionNewsletter.astro';
-import Picto from '../../components/Picto.astro';
 import { SITE } from '../../config';
 import { formatDateFr } from '../../lib/dates';
+import { insecables } from '../../lib/presentation';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -49,19 +49,12 @@ const articleJsonLd = {
 
   <div class="layout-article mt-4">
     <article>
-      <div class="flex items-start gap-4">
-        <span class="picto-carre shrink-0">
-          <Picto nom="document-source" />
-        </span>
-        <div>
-          <h1 class="prose-measure text-3xl font-bold">{d.title}</h1>
-          <p class="mt-2 text-sm text-ink-soft">
-            Mis à jour le {formatDateFr(d.date_maj)}
-            {SITE.expertRelecteur ? ` · Relu par ${SITE.expertRelecteur}` : ''} · {d.sources.length}
-            {d.sources.length > 1 ? ' sources officielles' : ' source officielle'}
-          </p>
-        </div>
-      </div>
+      <h1 class="titre-page">{insecables(d.title)}</h1>
+      <p class="mt-3 text-sm text-ink-soft">
+        Mis à jour le {formatDateFr(d.date_maj)}
+        {SITE.expertRelecteur ? ` · Relu par ${SITE.expertRelecteur}` : ''} · {d.sources.length}
+        {d.sources.length > 1 ? ' sources officielles' : ' source officielle'}
+      </p>
 
       <p class="encadre-essentiel prose-measure mt-6 p-4">{d.description}</p>
 
@@ -130,7 +123,7 @@ const articleJsonLd = {
 
     <aside class="colonne-appui" aria-label="Sommaire et accès rapides">
       {sommaire.length > 2 && (
-        <nav class="carte-appui" aria-labelledby="sommaire-guide">
+        <nav class="carte-appui hidden lg:block" aria-labelledby="sommaire-guide">
           <p id="sommaire-guide" class="carte-appui-titre">
             Dans ce guide
           </p>

@@ -33,26 +33,25 @@ const colonnes: { titre: string; liens: { label: string; href: string }[] }[] = 
 ];
 ---
 
-<footer class="mt-16 border-t border-border bg-paper-soft">
-  <div class="mx-auto max-w-5xl px-4 py-8 text-sm">
-    <nav aria-label="Pied de page" class="grid gap-6 sm:grid-cols-3">
+<footer class="site-footer mt-20">
+  <div class="mx-auto max-w-5xl px-4 py-10 text-sm">
+    <nav aria-label="Pied de page" class="grid gap-8 sm:grid-cols-3">
       {colonnes.map((c) => (
         <div>
-          <p class="font-bold text-ink">{c.titre}</p>
+          <p class="etiquette">{c.titre}</p>
           <ul class="mt-2 space-y-1">
             {c.liens.map((l) => (
               <li>
-                <a href={l.href} class="text-ink-soft">
-                  {l.label}
-                </a>
+                <a href={l.href}>{l.label}</a>
               </li>
             ))}
           </ul>
         </div>
       ))}
     </nav>
-    <p class="mt-6 text-ink-soft">
-      Information générale : ce site ne remplace pas l'avis de votre expert-comptable.
+    <p class="mt-8 max-w-2xl text-ink-soft">
+      Ces pages donnent une information générale. Pour votre situation, consultez votre
+      expert-comptable.
     </p>
     <p class="mt-2 text-ink-soft">
       © {year} {SITE.name}

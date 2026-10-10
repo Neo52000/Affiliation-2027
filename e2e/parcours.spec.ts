@@ -11,7 +11,6 @@ async function attendreHydratation(page: Page, element: Locator) {
 
 test('1. accueil → hub bâtiment → page métier plombier', async ({ page }) => {
   await page.goto('/');
-  // Le téléscripteur mène aussi aux hubs : on vise la section des familles.
   await page
     .getByRole('region', { name: 'Trouver votre métier' })
     .getByRole('link', { name: 'Bâtiment' })

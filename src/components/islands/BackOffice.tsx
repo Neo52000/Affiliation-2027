@@ -343,10 +343,13 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
   };
 
   // Focus : sur les données à la connexion, sur le titre « Connexion » après une déconnexion.
+  // L'effet joue une image après le rendu : si l'éditeur a déjà posé le focus dans un
+  // champ entre-temps, il le garde (le bouton de connexion disparu, il serait sur body).
   useEffect(() => {
     if (client) {
       aEteConnecte.current = true;
-      titreDonnees.current?.focus();
+      const actif = document.activeElement;
+      if (!actif || actif === document.body) titreDonnees.current?.focus();
     } else if (aEteConnecte.current) {
       titreConnexion.current?.focus();
     }

@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Quiz from '../../components/islands/Quiz.tsx';
-import Picto from '../../components/Picto.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { libelleStatutTest } from '../../lib/statut-test';
 import { SITE } from '../../config';
@@ -38,14 +37,7 @@ const outils = outilsColl.map((o) => ({
 >
   <BandeauTransparence outils={outils.map((o) => o.slug)} />
   <Breadcrumb items={[{ label: 'Outils' }, { label: 'Quiz' }]} />
-  <div class="mt-4 flex items-center gap-4">
-    <span class="picto-carre">
-      <Picto nom="cible" taille={26} />
-    </span>
-    <h1 class="prose-measure text-3xl font-bold">
-      Quel logiciel de facturation électronique pour vous ?
-    </h1>
-  </div>
+  <h1 class="titre-page mt-4">Quel logiciel de facturation électronique pour vous&nbsp;?</h1>
   <p class="prose-measure mt-3">
     5 questions, une recommandation fondée uniquement sur des faits vérifiés et sur votre métier.
   </p>

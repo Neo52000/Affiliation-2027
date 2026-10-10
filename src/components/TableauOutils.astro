@@ -1,0 +1,71 @@
+---
+/**
+ * Les logiciels comparés, en tableau : statut de plateforme agréée, deux
+ * fonctions qui départagent souvent (compte pro, comptabilité) et l'état de
+ * notre test. Ordre alphabétique : ce tableau ne classe rien.
+ */
+import Statut from './Statut.astro';
+import { libelleStatutTest, type StatutTest } from '../lib/statut-test';
+
+interface Props {
+  outils: {
+    slug: string;
+    nom: string;
+    agree: boolean;
+    comptePro: boolean | null;
+    compta: boolean | null;
+    statutTest: StatutTest;
+  }[];
+}
+
+const outils = [...Astro.props.outils].sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+---
+
+<div class="table-scroll" role="region" aria-label="Logiciels comparés" tabindex="0">
+  <table class="w-full text-sm">
+    <caption class="sr-only">Logiciels comparés, par ordre alphabétique</caption>
+    <thead>
+      <tr>
+        <th scope="col" class="py-2 pr-4">
+          Logiciel
+        </th>
+        <th scope="col" class="py-2 pr-4">
+          Plateforme agréée
+        </th>
+        <th scope="col" class="py-2 pr-4">
+          Compte pro
+        </th>
+        <th scope="col" class="py-2 pr-4">
+          Comptabilité
+        </th>
+        <th scope="col" class="py-2 whitespace-nowrap">
+          Notre test
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {outils.map((o) => (
+        <tr>
+          <th scope="row" class="py-2 pr-4 text-left font-semibold">
+            <a href={`/logiciels/${o.slug}`}>{o.nom}</a>
+          </th>
+          <td class="py-2 pr-4">
+            <Statut valeur={o.agree} />
+          </td>
+          <td class="py-2 pr-4">
+            <Statut valeur={o.comptePro} />
+          </td>
+          <td class="py-2 pr-4">
+            <Statut valeur={o.compta} />
+          </td>
+          <td class="py-2 whitespace-nowrap text-ink-soft">{libelleStatutTest(o.statutTest)}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+{outils.some((o) => o.comptePro === null || o.compta === null) && (
+  <p class="mt-2 text-sm text-ink-soft">
+    « À vérifier »&nbsp;: donnée en cours de relevé sur le site officiel de l’éditeur.
+  </p>
+)}

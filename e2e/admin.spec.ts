@@ -321,6 +321,9 @@ test('inactivité : préavis visible et atteignable, « Rester connecté » rend
   await page.clock.install();
   await simulerGitHub(page);
   await seConnecter(page);
+  // Le focus initial (titre des données) est posé une image après le rendu : on
+  // l'attend, pour que le champ rempli ensuite soit bien l'élément actif.
+  await expect(page.getByRole('heading', { name: 'Données du site' })).toBeFocused();
   const url = page.getByRole('group', { name: 'Tiime' }).getByLabel('URL affiliée');
   await url.fill('https://www.tiime.fr/?via=partenaire');
 

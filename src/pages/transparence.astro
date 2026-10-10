@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import Picto, { type NomPicto } from '../components/Picto.astro';
 import { EDITEUR_IDENTIFIE, SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import { formatDateFr } from '../lib/dates';
@@ -42,24 +41,21 @@ const sansLien = outils.filter((o) => o.lienPublie === 'Non').length;
 
 // Ce que l'argent ne change pas : l'engagement central du site, énoncé en trois
 // points vérifiables plutôt qu'en déclaration d'intention.
-const GARANTIES: { titre: string; texte: string; picto: NomPicto }[] = [
+const GARANTIES: { titre: string; texte: string }[] = [
   {
     titre: 'Ni l’ordre, ni les notes',
     texte:
       'La méthode de notation est publique. Ni les commissions ni les achats d’espace publicitaire n’y figurent ou n’entrent dans le quiz.',
-    picto: 'medaille',
   },
   {
     titre: 'Aucun montant affiché',
     texte:
       'Les montants de commission ou d’achat d’espace ne sont jamais affichés ni pris en compte dans un classement.',
-    picto: 'bouclier',
   },
   {
     titre: 'Publicité signalée, contenu jamais vendu',
     texte:
       'Aucun article sponsorisé, aucun faux avis, aucun échange de lien. Une publicité est toujours signalée et séparée.',
-    picto: 'loupe',
   },
 ];
 ---
@@ -72,12 +68,7 @@ const GARANTIES: { titre: string; texte: string; picto: NomPicto }[] = [
 
   <div class="layout-article mt-4">
     <div>
-      <div class="flex items-center gap-4">
-        <span class="picto-carre shrink-0">
-          <Picto nom="bouclier" taille={26} />
-        </span>
-        <h1 class="prose-measure text-3xl font-bold">Comment ce site gagne de l'argent</h1>
-      </div>
+      <h1 class="titre-page">Comment ce site gagne de l'argent</h1>
 
       <p class="encadre-essentiel prose-measure mt-6 p-4">
         Ce site est financé par l'affiliation (quand vous ouvrez un compte chez certains éditeurs en
@@ -121,7 +112,12 @@ const GARANTIES: { titre: string; texte: string; picto: NomPicto }[] = [
           d'autres. Une fois un logiciel retenu, sa note et son rang ne dépendent que de la méthode
           publique.
         </p>
-        <div class="table-scroll mt-4">
+        <div
+          class="table-scroll mt-4"
+          role="region"
+          aria-label="Relation de chaque éditeur avec le site"
+          tabindex="0"
+        >
           <table class="w-full border-collapse text-sm">
             <caption class="sr-only">Relation de chaque éditeur comparé avec le site</caption>
             <thead>
@@ -164,13 +160,10 @@ const GARANTIES: { titre: string; texte: string; picto: NomPicto }[] = [
         <h2 id="ce-que-ca-ne-change-pas" class="titre-section text-2xl font-bold">
           Ce que l'argent ne change pas
         </h2>
-        <ul class="mt-4 grid gap-3 sm:grid-cols-3">
+        <ul class="liste-filets prose-measure mt-2">
           {GARANTIES.map((g) => (
-            <li class="card-reco rounded-md border border-border p-4">
-              <span class="picto-carre">
-                <Picto nom={g.picto} />
-              </span>
-              <p class="mt-3 font-bold">{g.titre}</p>
+            <li>
+              <p class="font-semibold">{g.titre}</p>
               <p class="mt-1 text-sm text-ink-soft">{g.texte}</p>
             </li>
           ))}

@@ -1,112 +1,99 @@
 @import 'tailwindcss';
-/* Couche de mouvement : importée ici, et non en fin de fichier, pour que Tailwind
-   conserve les variables de thème qu'elle référence. */
-@import './motion.css';
 
 /*
- * Design system v2 — section 10 de la spécification, étendue par le
- * design system publié (artifact « Affiliation 2027 », tokens v2).
- * Esprit : service public modernisé. Une couleur d'accent, deux thèmes
- * (clair/sombre automatique), corps 18 px, largeur de texte 70 caractères,
- * WCAG 2.1 AA. Le mouvement guide (transform/opacity, 150–450 ms),
- * il ne décore pas ; prefers-reduced-motion est respecté partout.
+ * Design system v7 « éditorial ».
+ * Une publication sobre plutôt qu'une interface : titres en serif (Newsreader),
+ * texte en grotesque (Instrument Sans), papier chaud, encre presque noire et un
+ * seul accent (vert sapin). La structure passe par des filets et des tableaux,
+ * pas par des cartes, des ombres ou des dégradés. Aucune animation : seules les
+ * couleurs des commandes changent au survol (120 ms).
+ *
+ * Contrastes (WCAG 2.2 AA) vérifiés par src/lib/contraste.test.ts, qui lit
+ * directement les valeurs de ce fichier. Les liens restent soulignés : l'accent
+ * ne se distingue pas assez de l'encre pour porter seul l'information.
+ *
+ * Les noms de jetons historiques sont conservés (text-ink-soft, border-border,
+ * bg-paper-soft…) : les gabarits et l'îlot du back office suivent sans retouche.
  */
-@theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+@theme inline {
+  /* Familles déclarées par l'API Fonts d'Astro (astro.config.mjs), avec leurs
+     polices de repli ajustées (size-adjust) pour un CLS nul. */
+  --font-serif: var(--font-newsreader);
+  --font-sans: var(--font-instrument);
+}
 
-  /* Accent : paire bleu → violet (identité « v3 conversion »), AA sur paper */
-  --color-accent: #2563eb;
-  --color-accent-2: #7c3aed;
-  --color-accent-dark: #1e40af;
-  --color-accent-soft: #eff4ff;
+@theme {
+  --color-accent: #1f5c4a;
+  --color-accent-strong: #174a3b;
+  --color-accent-soft: #e2ece6;
   --color-on-accent: #ffffff;
 
-  /* État positif (badges conformité) — AA sur son fond doux */
-  --color-ok: #047857;
-  --color-ok-soft: #ecfdf3;
+  /* État positif (« Oui », plateforme agréée) : l'accent lui-même. */
+  --color-ok: #1f5c4a;
+  --color-ok-soft: #e2ece6;
 
-  /* Erreur de saisie (back office) — AA sur paper */
-  --color-erreur: #b42318;
+  --color-erreur: #a3261a;
 
-  /* Encres et fonds */
-  --color-ink: #1f2328;
-  --color-ink-soft: #57606a;
-  --color-paper: #ffffff;
-  --color-paper-soft: #f6f8fa;
-  --color-border: #d0d7de;
-  --color-border-strong: #6e7781;
+  --color-ink: #1b1d1a;
+  --color-ink-soft: #55594f;
+  --color-paper: #f7f4ee;
+  --color-paper-soft: #efeae1;
+  /* Fond des champs de saisie et de la facture d'exemple. */
+  --color-field: #ffffff;
+  /* Filets décoratifs (séparateurs) : jamais seul contour d'une commande. */
+  --color-border: #d8d1c3;
+  /* Contours de commandes (champs, boutons secondaires) : 3:1 au moins. */
+  --color-border-strong: #7c7668;
 
-  /* Rayons : les angles s'adoucissent avec la taille du conteneur */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
 
-  /* Élévation douce — retour d'interaction, jamais structure */
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.1);
-  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.14);
+  /* Pas d'ombre de décor ; seule la bannière flottante du back office en garde une. */
+  --shadow-sm: 0 0 #0000;
+  --shadow-md: 0 0 #0000;
+  --shadow-lg: 0 6px 24px rgb(27 29 26 / 0.18);
 
-  /* Courbes de mouvement */
+  /* Notes et sources : jamais sous 14 px (1rem = 18 px). */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Durées de mouvement + dégradés (hors @theme : pas d'utilitaires dédiés) */
 :root {
-  --duration-fast: 150ms;
-  --duration-base: 250ms;
-  --duration-slow: 450ms;
-
-  /* Dégradé d'action : texte blanc gras = AA large sur toute la plage */
-  --gradient-accent: linear-gradient(100deg, var(--color-accent) 0%, var(--color-accent-2) 100%);
-  /* Dégradé de titre : chaque extrémité reste AA sur paper */
-  --gradient-text-from: #1d4ed8;
-  --gradient-text-to: #6d28d9;
-  /* Halo du hero : décoratif, très faible opacité */
-  --hero-glow:
-    radial-gradient(42rem 22rem at 18% 0%, rgba(37, 99, 235, 0.14), transparent 60%),
-    radial-gradient(36rem 20rem at 85% 10%, rgba(124, 58, 237, 0.12), transparent 60%);
+  color-scheme: light dark;
+  --duration-fast: 120ms;
 }
 
-/* Thème sombre automatique — mêmes tokens, valeurs recalibrées (AA vérifié) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-accent: #60a5fa;
-    --color-accent-2: #a78bfa;
-    --color-accent-dark: #93c5fd;
-    --color-accent-soft: #16233f;
-    --color-on-accent: #0b1220;
-    --color-ok: #34d399;
-    --color-ok-soft: #0b2e22;
-    --color-erreur: #fda29b;
-    --color-ink: #e6e9ef;
-    --color-ink-soft: #9aa4b2;
-    --color-paper: #0e1116;
-    --color-paper-soft: #161b22;
-    --color-border: #2b3340;
-    --color-border-strong: #7d8590;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
-    --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.55);
-    --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.65);
-
-    /* Les boutons gardent le dégradé saturé (texte blanc gras = AA large) ;
-       les titres passent sur des extrémités claires, AA sur fond sombre */
-    --gradient-accent: linear-gradient(100deg, #2563eb 0%, #7c3aed 100%);
-    --gradient-text-from: #60a5fa;
-    --gradient-text-to: #a78bfa;
-    --hero-glow:
-      radial-gradient(42rem 22rem at 18% 0%, rgba(96, 165, 250, 0.16), transparent 60%),
-      radial-gradient(36rem 20rem at 85% 10%, rgba(167, 139, 250, 0.14), transparent 60%);
+    --color-accent: #7cc4a6;
+    --color-accent-strong: #98d3ba;
+    --color-accent-soft: #1a2e26;
+    --color-on-accent: #0d1a14;
+    --color-ok: #7cc4a6;
+    --color-ok-soft: #1a2e26;
+    --color-erreur: #f0a090;
+    --color-ink: #ece8df;
+    --color-ink-soft: #a6a89c;
+    --color-paper: #121411;
+    --color-paper-soft: #1b1e1a;
+    --color-field: #1b1e1a;
+    --color-border: #30342e;
+    --color-border-strong: #80837a;
+    --shadow-lg: 0 6px 24px rgb(0 0 0 / 0.6);
   }
 }
 
-/* Corps de texte 18 px (112,5 %) — lisibilité cible lecteur pressé, non technique */
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+
+/* Corps 18 px : lecteur pressé, non technique. */
 html {
   font-size: 112.5%;
-  /* Gouttière de défilement réservée : quand un premier rendu partiel est plus
-     court que l'écran, l'arrivée de la barre ne décale plus toute la page
-     (CLS 0,005 mesuré sur le quiz, Lighthouse desktop). */
+  /* Gouttière réservée : l'arrivée de la barre de défilement ne décale rien. */
   scrollbar-gutter: stable;
 }
 
@@ -114,287 +101,135 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Titres resserrés (v2) */
-h1 {
-  letter-spacing: -0.015em;
+p,
+li,
+dd {
+  text-wrap: pretty;
 }
 
-h2 {
-  letter-spacing: -0.01em;
-}
-
-/* Titre héros de l'accueil — style « display » (v3 : plus grand, extra-bold) */
-/* Les titres portent des mots longs (« électronique », « facturation ») qui,
-   en corps d'affichage, dépassent un écran de 360 px : ils se coupent plutôt
-   que de pousser la page. */
-:where(h1, h2, h3, .display-title) {
+/* Des mots longs (« électronique ») en corps d'affichage dépasseraient un écran
+   de 360 px : ils se coupent plutôt que de pousser la page. */
+:where(h1, h2, h3, h4) {
   overflow-wrap: break-word;
 }
 
-.display-title {
-  font-size: clamp(2.25rem, 1.4rem + 3.4vw, 3.4rem);
-  line-height: 1.06;
-  letter-spacing: -0.025em;
-  font-weight: 800;
-}
-
-/* Texte en dégradé (titres uniquement) — extrémités AA sur paper, avec repli */
-.text-gradient {
-  color: var(--gradient-text-from);
-  background: linear-gradient(100deg, var(--gradient-text-from), var(--gradient-text-to));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Hero : halo décoratif en fond, sans incidence sur la mise en page */
-.hero {
-  position: relative;
-  /* Le halo dérive (motion.css) : il ne doit jamais élargir la page. Chromium
-     ignore overflow-clip-margin quand un seul axe est découpé : la boîte de
-     découpe est élargie de 1rem sur la gouttière de main, le contenu ne bouge
-     pas, et anneaux de focus et ombres du bord restent entiers. */
-  overflow-x: clip;
-  margin-inline: -1rem;
-  padding-inline: 1rem;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: -3rem 0 -3rem;
-  background: var(--hero-glow);
-  /* Fondu sur les quatre bords : découpé au bord du hero (ou d'un en-tête
-     court, sur les hubs et les fiches), le halo ne dessine jamais d'arête. */
-  mask-image:
-    linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent),
-    linear-gradient(transparent, #000 20%, #000 50%, transparent);
-  mask-composite: intersect;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Bouton d'action principal (CTA) : dégradé, élévation, texte gras blanc */
-.btn-cta {
-  position: relative;
-  /* Le reflet du survol ne sort jamais du bouton. */
-  overflow: clip;
-  display: inline-block;
-  background: var(--gradient-accent);
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  padding: 0.65rem 1.25rem;
-  box-shadow: var(--shadow-md);
-  transition:
-    transform var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out),
-    filter var(--duration-fast) var(--ease-out);
-}
-
-.btn-cta:hover {
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  filter: saturate(1.15);
-}
-
-.btn-cta:active {
-  transform: translateY(0);
-}
-
-/* Reflet lumineux qui traverse le bouton au survol */
-.btn-cta::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 30%,
-    rgb(255 255 255 / 0.32) 50%,
-    transparent 70%
-  );
-  transform: translateX(-120%);
-  pointer-events: none;
-}
-
-.btn-cta:hover::after {
-  transform: translateX(120%);
-  transition: transform 800ms var(--ease-out);
-}
-
-/* Bouton secondaire discret */
-.btn-ghost {
-  display: inline-block;
-  color: var(--color-accent);
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 0.65rem 1.25rem;
-  transition:
-    border-color var(--duration-fast) var(--ease-out),
-    background-color var(--duration-fast) var(--ease-out);
-}
-
-.btn-ghost:hover {
-  border-color: var(--color-accent);
-  background: var(--color-accent-soft);
-}
-
-/* Espace publicitaire : cadre neutre, mention « Publicité » en tête, jamais
-   confondu avec une recommandation (pas de dégradé, pas de badge, pas de note). */
-.espace-pub {
-  border: 1px dashed var(--color-border-strong);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  background: var(--color-paper);
-}
-
-.espace-pub-mention {
-  font-size: 0.8125rem;
-  color: var(--color-ink-soft);
-  margin-bottom: 0.75rem;
-}
-
-.espace-pub-corps {
-  display: grid;
-  gap: 1rem;
-}
-
-.espace-pub-image {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-md);
-}
-
-/* Back office : erreurs de saisie, signalées par le texte et la bordure */
-.admin-erreur {
-  color: var(--color-erreur);
-  font-weight: 600;
-}
-
-.admin-erreurs {
-  border: 2px solid var(--color-erreur);
-  border-radius: var(--radius-md);
-}
-
-.champ[aria-invalid='true'] {
-  border-color: var(--color-erreur);
-}
-
-/* Champ piège anti-robot de la newsletter : hors écran, jamais atteint au clavier */
-.piege {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-/* Tuile de chiffre clé */
-.stat-tile .stat-valeur {
-  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-/* Badge d'état positif (conformité, plateforme agréée) */
-.badge-ok {
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 700;
-  color: var(--color-ok);
-  background: var(--color-ok-soft);
-  border: 1px solid color-mix(in srgb, var(--color-ok) 35%, transparent);
-  border-radius: 999px;
-  padding: 2px 0.6rem;
-  /* Pas de nowrap : un badge court tient de lui-même sur une ligne, tandis
-     qu'un badge long sortait de l'écran sur un téléphone de 360 px. */
-  max-width: 100%;
+/* Titres de page et de section en serif, quelle que soit la classe utilitaire
+   héritée du gabarit (ces règles non stratifiées priment sur Tailwind). */
+h1,
+.titre-page {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  max-width: 22em;
   text-wrap: balance;
 }
 
-/* Pictogramme posé sur un carré d'accent doux */
-.picto-carre {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  flex-shrink: 0;
-  border-radius: var(--radius-md);
-  background: var(--color-accent-soft);
+.titre-une {
+  font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.125rem);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  max-width: 17em;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+h3,
+h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Titre de section : un filet d'encre ouvre la section. La taille ne vaut que
+   pour un h2 : un h3 qui porte la classe (back office) garde la sienne. */
+.titre-section {
+  border-top: 1px solid var(--color-ink);
+  padding-top: 0.6rem;
+}
+
+h2.titre-section {
+  font-size: clamp(1.375rem, 1.2rem + 0.7vw, 1.625rem);
+}
+
+/* Chapô : la phrase qui pose le sujet, sous le titre. */
+.chapo {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
+  line-height: 1.42;
+  max-width: 36rem;
+}
+
+/* Surtitre et étiquettes : petits libellés en casse de phrase, sans capitales
+   espacées. */
+.surtitre {
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--color-accent);
 }
 
-.picto-carre-sm {
-  width: 2.25rem;
-  height: 2.25rem;
+.etiquette {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
 }
 
-/* Carte mise en avant : liseré supérieur en dégradé */
-.card-top {
-  position: relative;
-  overflow: hidden;
-}
-
-.card-top::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-accent);
-}
-
-/* Encadré « essentiel » des pages métier */
-.encadre-essentiel {
-  background: var(--color-accent-soft);
-  border-left: 4px solid var(--color-accent);
-  border-radius: var(--radius-md);
-}
-
-/* Largeur de lecture.
-   L'unité ch vaut l'avance du glyphe « 0 », nettement plus large qu'un
-   caractère moyen en Inter : 70ch rendait 86 caractères par ligne, mesurés.
-   54ch ramène la ligne à environ 72 caractères, dans la plage de confort. */
+/* Largeur de lecture : environ 70 caractères par ligne en Instrument Sans 18 px. */
 .prose-measure {
-  max-width: 54ch;
+  max-width: 34rem;
 }
 
-/* Liens : soulignés par défaut (repère non chromatique, WCAG 1.4.1).
-   Le preflight Tailwind retire le soulignement : on le rétablit explicitement. */
+/* Chiffres alignés : tableaux, ligne de faits, numéros. */
+.chiffres,
+table {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Liens soulignés en permanence (WCAG 1.4.1) ; le survol épaissit le trait
+   au lieu de changer la couleur. */
 a {
   color: var(--color-accent);
   text-decoration-line: underline;
-  text-underline-offset: 2px;
-  transition: color var(--duration-fast) var(--ease-out);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 
-/* Au survol : soulignement renforcé plutôt que changement de couleur —
-   une bascule de teinte sombre n'atteint pas 3:1 face au texte environnant
-   (WCAG 1.4.1, axe link-in-text-block évalue aussi l'état hover). */
 a:hover {
   text-decoration-thickness: 2px;
 }
 
-/* Focus visible au clavier sur tous les éléments interactifs */
-:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
-  border-radius: 2px;
+/* Lien d'action en texte, suivi d'une flèche. */
+.lien-fleche {
+  font-weight: 600;
 }
 
-/* Lien d'évitement : masqué jusqu'au focus clavier */
+.lien-fleche::after {
+  content: ' →';
+  /* La flèche ne fait pas partie du nom accessible. */
+  content: ' →' / '';
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Ancres : marge d'arrivée sous le haut de la fenêtre. */
+:where(h1, h2, h3, [id]) {
+  scroll-margin-top: 1.5rem;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -410,250 +245,262 @@ a:hover {
   top: 0.5rem;
 }
 
-/* Tableaux : défilement horizontal sur mobile (section 10) */
+/* Tables : filet épais en tête, filets fins entre les lignes, pas de zébrage.
+   Couche de base : les tableaux des guides (MDX) en profitent aussi. */
+@layer base {
+  table {
+    border-collapse: collapse;
+    border-top: 2px solid var(--color-ink);
+    border-bottom: 1px solid var(--color-ink);
+  }
+
+  thead th {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: left;
+    vertical-align: bottom;
+    border-bottom: 1px solid var(--color-ink);
+  }
+
+  th,
+  td {
+    vertical-align: top;
+  }
+
+  tbody tr + tr > * {
+    border-top: 1px solid var(--color-border);
+  }
+}
+
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-/* ---------------------------------------------------------------------------
- * Mouvement — les cinq gestes du système (section Mouvement du design system)
- * ------------------------------------------------------------------------ */
-
-/* Geste 2 : élévation — bouton d'action */
-.btn-affiliate {
-  box-shadow: var(--shadow-sm);
-  transition:
-    transform var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out),
-    background-color var(--duration-fast) var(--ease-out);
-}
-
-.btn-affiliate:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.btn-affiliate:active {
-  transform: translateY(0);
-  transition-duration: var(--duration-fast);
-}
-
-/* Geste 5 : ponctuation — la mention « lien affilié » doit être vue */
-.mention-affiliee {
-  animation: pop-in var(--duration-slow) var(--ease-spring) 300ms both;
-}
-
-@keyframes pop-in {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Geste 3 : soulignement animé — navigation du header uniquement
-   (les liens du corps restent soulignés en permanence) */
-.nav-link {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 2px;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gradient-text-from), var(--gradient-text-to));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--duration-base) var(--ease-out);
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
-}
-
-/* Header collant : l'ombre n'apparaît qu'au défilement */
-.site-header {
+/* En-tête de tableau long : reste visible pendant le défilement. */
+.table-longue thead th {
   position: sticky;
   top: 0;
-  z-index: 40;
-  transition: box-shadow var(--duration-base) var(--ease-out);
+  z-index: 1;
+  background: var(--color-paper);
 }
 
-.site-header.is-scrolled {
-  box-shadow: var(--shadow-lg);
-}
-
-/* Geste 2 : élévation — cartes de recommandation */
-.card-reco {
-  box-shadow: var(--shadow-sm);
-  transition:
-    transform var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out);
-}
-
-.card-reco:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-/* Geste 1 : micro-retour — survol de ligne des tableaux interactifs */
-.table-interactive tbody tr {
-  transition: background-color var(--duration-fast) var(--ease-out);
-}
-
-.table-interactive tbody tr:nth-child(even) {
-  background: color-mix(in srgb, var(--color-paper-soft) 60%, transparent);
-}
-
-.table-interactive tbody tr:hover {
-  background: var(--color-accent-soft);
-}
-
-/* Pastille d'état neutre (« Test à venir ») — l'accent reste réservé aux actions */
-.pill {
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: var(--color-ink-soft);
-  background: var(--color-paper-soft);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: 2px 0.5rem;
+.table-chiffres td.nombre,
+.table-chiffres th.nombre {
+  text-align: right;
   white-space: nowrap;
 }
 
-/* Geste 4 : révélation d'entrée — pilotée par IntersectionObserver (Base.astro).
-   L'état initial masqué n'est posé que si le script est actif (.reveal-ready) :
-   sans JavaScript ou avec reduced-motion, le contenu est lisible d'emblée. */
-.reveal-ready {
-  opacity: 0;
-  transform: translateY(12px);
-}
-
-.reveal-in {
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity var(--duration-slow) var(--ease-out),
-    transform var(--duration-slow) var(--ease-out);
-}
-
-/* Impression : un bloc pas encore révélé doit s'imprimer lisible. */
-@media print {
-  .reveal-ready {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .m-etapes.reveal-ready::after {
-    transform: none !important;
-  }
-}
-
-/* Garde d'accessibilité du mouvement — obligatoire, non optionnelle */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    animation-delay: 0s !important;
-    transition-duration: 0.01ms !important;
-    transition-delay: 0s !important;
-  }
+.table-chiffres .designation {
+  width: 100%;
 }
 
 /* ---------------------------------------------------------------------------
-   Mise en page des pages longues : colonne de lecture + colonne d'appui
-   La colonne d'appui n'apparaît qu'à partir de lg ; en dessous, le contenu
-   reste en une seule colonne et l'appui passe sous l'article.
+   Commandes
    --------------------------------------------------------------------------- */
-.layout-article {
-  display: grid;
-  /* Une piste implicite vaut `auto` : elle se dimensionne sur le min-content de
-     son contenu, si bien qu'un tableau large poussait toute la page hors écran
-     au lieu de défiler dans son .table-scroll. minmax(0, 1fr) autorise la piste
-     à descendre sous le min-content : le débordement redevient local. */
-  grid-template-columns: minmax(0, 1fr);
-  gap: 2.5rem;
+
+/* Bouton principal : aplat d'accent. La bordure transparente reste visible en
+   mode de couleurs forcées. */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.1rem;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background-color var(--duration-fast) var(--ease-out);
 }
 
-@media (min-width: 1024px) {
-  .layout-article {
-    grid-template-columns: minmax(0, 1fr) 17.5rem;
-    align-items: start;
-  }
+.btn-cta:hover {
+  background: var(--color-accent-strong);
+  color: var(--color-on-accent);
 }
 
-.colonne-appui {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-@media (min-width: 1024px) {
-  .colonne-appui {
-    position: sticky;
-    top: 5rem;
-  }
-}
-
-/* Carte de la colonne d'appui */
-.carte-appui {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-paper);
-  padding: 1rem 1.1rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.carte-appui-titre {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--color-ink-soft);
-}
-
-/* Sommaire de page */
-.sommaire {
-  margin-top: 0.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  font-size: 0.9375rem;
-}
-
-.sommaire a {
-  display: block;
-  padding: 0.3rem 0 0.3rem 0.75rem;
-  border-left: 2px solid var(--color-border);
+/* Bouton secondaire : contour seul. */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.1rem;
+  background: transparent;
   color: var(--color-ink);
-  text-decoration-line: none;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
   transition:
-    border-color var(--duration-fast) var(--ease-out),
-    color var(--duration-fast) var(--ease-out);
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
 }
 
-.sommaire a:hover {
-  border-left-color: var(--color-accent);
-  color: var(--color-accent);
-  text-decoration-line: underline;
+.btn-ghost:hover {
+  border-color: var(--color-ink);
+  background: var(--color-paper-soft);
 }
 
-/* ---------------------------------------------------------------------------
-   Indicateur de statut d'une fonctionnalité (icône + texte, jamais la couleur
-   seule : le libellé porte l'information — WCAG 1.4.1)
-   --------------------------------------------------------------------------- */
+.champ {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-field);
+  color: var(--color-ink);
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+}
+
+/* Le texte indicatif garde le contraste du texte secondaire (WCAG 1.4.3) : le
+   préréglage de Tailwind l'afficherait à 50 % d'opacité, sous 4,5:1. */
+.champ::placeholder {
+  color: var(--color-ink-soft);
+  opacity: 1;
+}
+
+.champ:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.champ[aria-invalid='true'] {
+  border-color: var(--color-erreur);
+}
+
+/* Choix oui/non : le bouton radio reste visible et porte l'état ; la sélection
+   ajoute un contour d'accent et la graisse, jamais la seule couleur. */
+.choix {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.choix:hover {
+  background: var(--color-paper-soft);
+}
+
+.choix:has(input:checked) {
+  border-color: var(--color-accent);
+  box-shadow: inset 0 0 0 1px var(--color-accent);
+  background: var(--color-accent-soft);
+  font-weight: 600;
+}
+
+.choix:has(input:focus-visible) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.choix input {
+  accent-color: var(--color-accent);
+}
+
+/* Sélecteur de métier (îlot MetierPicker) : de vrais boutons radio rendus en
+   pastilles carrées ; le choix porte un repère non coloré (✓). */
+.puces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.puce {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.puce input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.puce:hover {
+  background: var(--color-paper-soft);
+}
+
+.puce:has(input:focus-visible) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.puce-coche {
+  display: none;
+}
+
+.puce:has(input:checked) {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: 600;
+}
+
+.puce:has(input:checked) .puce-coche {
+  display: inline;
+}
+
+.choix-panneau {
+  border-top: 1px solid var(--color-ink);
+  padding-top: 0.75rem;
+}
+
+/* Sans JavaScript, le sélecteur ne servirait à rien : la liste des métiers
+   juste en dessous mène aux mêmes pages. */
+html:not(.js) .selecteur-metier {
+  display: none;
+}
+
+/* Badges : texte et filet fin, sans pilule ni fond. */
+.badge-ok {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--color-ok);
+  border-radius: var(--radius-sm);
+  color: var(--color-ok);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
+.pill,
+.badge-attente {
+  display: inline-block;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-soft);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+/* Indicateur de statut d'une fonctionnalité : icône et texte, jamais la seule
+   couleur (WCAG 1.4.1). */
 .statut {
   display: inline-flex;
   align-items: center;
@@ -676,50 +523,316 @@ a:hover {
   font-weight: 400;
 }
 
-/* ---------------------------------------------------------------------------
-   Titre de section avec filet d'accent
-   --------------------------------------------------------------------------- */
-.titre-section {
-  position: relative;
-  padding-top: 0.85rem;
+/* Barre de pondération (page méthode) : le pourcentage reste écrit. */
+.jauge {
+  display: block;
+  height: 6px;
+  background: var(--color-border);
 }
 
-.titre-section::before {
+.jauge > span {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+}
+
+/* ---------------------------------------------------------------------------
+   Structure éditoriale
+   --------------------------------------------------------------------------- */
+
+/* Liste séparée par des filets. Chaque élément porte ses deux filets, qui se
+   superposent entre voisins : en deux colonnes, le filet du bas s'arrête lui
+   aussi à la gouttière. */
+.liste-filets > li {
+  border-block: 1px solid var(--color-border);
+  margin-bottom: -1px;
+  padding-block: 0.7rem;
+}
+
+/* Ligne à points de conduite : « Bâtiment ······ 10 fiches ». Le lien couvre
+   toute la ligne. */
+.ligne-repere {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.ligne-repere::after {
+  content: '';
+  order: 1;
+  flex: 1;
+  min-width: 1.5rem;
+  border-bottom: 1px dotted var(--color-border-strong);
+  transform: translateY(-0.3em);
+}
+
+.ligne-repere > :last-child {
+  order: 2;
+  white-space: nowrap;
+}
+
+/* Numéro en serif : il sert de repère, à la place d'une icône. */
+.numero {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-accent);
+  font-variant-numeric: lining-nums;
+}
+
+/* L'essentiel d'une page entre deux filets, sans fond ni boîte. */
+.encadre-essentiel {
+  border: 0;
+  border-top: 2px solid var(--color-ink);
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  background: none;
+  padding-inline: 0;
+  padding-block: 1rem;
+}
+
+/* Ligne de faits sous le titre de l'accueil. */
+.faits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+/* Le point médian ne sépare les faits que lorsqu'ils tiennent sur une ligne :
+   sur téléphone, un point en début de ligne ne séparerait plus rien. */
+@media (min-width: 40rem) {
+  .faits {
+    column-gap: 0;
+  }
+
+  .faits > li + li::before {
+    content: '·';
+    content: '·' / '';
+    padding-inline: 0.6rem;
+    color: var(--color-ink-soft);
+  }
+}
+
+/* Anciennes cartes : désormais des blocs ouverts par un filet, sans contour,
+   fond ni ombre. Restructurées gabarit par gabarit. */
+.card-reco,
+.card-top,
+.carte-reco,
+.carte-metier,
+.duel-carte {
+  position: relative;
+  border: 0;
+  border-top: 1px solid var(--color-ink);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding-inline: 0;
+}
+
+/* Le lien principal d'un bloc le couvre en entier (une seule tabulation) ; le
+   bloc qui le contient est positionné (.ligne-repere, li.relative). */
+.lien-carte::after {
   content: '';
   position: absolute;
-  top: 0;
+  inset: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Colonne de lecture et marge
+   --------------------------------------------------------------------------- */
+.layout-article {
+  display: grid;
+  /* minmax(0, 1fr) : un tableau large défile dans son conteneur au lieu de
+     pousser la page hors écran. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .layout-article {
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    gap: 3.5rem;
+    align-items: start;
+  }
+}
+
+.colonne-appui {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .colonne-appui {
+    position: sticky;
+    top: 1.5rem;
+  }
+}
+
+/* Note en marge : un filet, un libellé, une phrase, un lien. */
+.carte-appui {
+  border: 0;
+  border-top: 1px solid var(--color-ink);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding: 0.6rem 0 0;
+}
+
+.carte-appui-titre {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.sommaire {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9375rem;
+}
+
+.sommaire a {
+  display: block;
+  padding: 0.3rem 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-ink);
+  text-decoration-line: none;
+}
+
+.sommaire a:hover {
+  color: var(--color-accent);
+  text-decoration-line: underline;
+}
+
+/* ---------------------------------------------------------------------------
+   En-tête et pied de page
+   --------------------------------------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.marque {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-ink);
+  text-decoration-line: none;
+}
+
+.marque:hover {
+  color: var(--color-ink);
+  text-decoration-line: underline;
+}
+
+.nav-link {
+  color: var(--color-ink);
+  text-decoration-line: none;
+}
+
+.nav-link:hover,
+.nav-link[aria-current] {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--color-ink);
+}
+
+.site-footer a {
+  color: var(--color-ink);
+}
+
+/* ---------------------------------------------------------------------------
+   Gabarits en transition (repris dans les prochaines étapes de la refonte)
+   --------------------------------------------------------------------------- */
+
+/* Pastille de famille, pour repartir vers un autre hub. */
+.puce-famille {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  color: var(--color-ink);
+  text-decoration-line: none;
+}
+
+.puce-famille:hover {
+  background: var(--color-paper-soft);
+  text-decoration-line: underline;
+}
+
+/* Bloc d'appel vers le quiz (pages famille). */
+.m-panneau {
+  border-top: 2px solid var(--color-ink);
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  background: none;
+  color: var(--color-ink);
+  padding-inline: 0;
+}
+
+.m-panneau p {
+  color: var(--color-ink-soft);
+}
+
+.btn-clair {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.1rem;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-clair:hover {
+  background: var(--color-accent-strong);
+  color: var(--color-on-accent);
+}
+
+/* Frise du protocole de test (fiche logiciel). */
+.m-frise {
+  list-style: none;
+}
+
+.m-frise > li {
+  position: relative;
+  padding-left: 2.25rem;
+}
+
+.m-frise > li + li {
+  margin-top: 0.75rem;
+}
+
+.m-noeud {
+  position: absolute;
   left: 0;
-  width: 2.5rem;
-  height: 3px;
-  border-radius: 2px;
-  background: var(--gradient-accent);
+  top: 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
 }
 
-/* ---------------------------------------------------------------------------
-   Tableaux de chiffres : les colonnes numériques ne se coupent jamais
-   --------------------------------------------------------------------------- */
-.table-chiffres td.nombre,
-.table-chiffres th.nombre {
-  text-align: right;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-
-.table-chiffres .designation {
-  width: 100%;
-}
-
-/* ---------------------------------------------------------------------------
-   Comparatif : les deux outils face à face
-   --------------------------------------------------------------------------- */
+/* Comparatif : les deux outils côte à côte. */
 .duel {
   display: grid;
-  /* Sous 640 px, deux fiches côte à côte tombent à 140 px de large : on les
-     empile. Au-dessus, minmax(0, 1fr) et non 1fr — `1fr` vaut minmax(auto, 1fr),
-     dont le minimum est le min-content : les cartes poussaient la page hors
-     écran au lieu de se partager la largeur. */
   grid-template-columns: minmax(0, 1fr);
-  align-items: stretch;
   gap: 0.75rem;
 }
 
@@ -729,203 +842,67 @@ a:hover {
   }
 }
 
-.duel-carte {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-paper);
-  padding: 1rem;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-}
-
 .duel-monogramme {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: var(--radius-md);
-  background: var(--gradient-accent);
-  color: #ffffff;
-  font-size: 1.25rem;
-  font-weight: 800;
-  line-height: 1;
+  display: none;
 }
 
 .duel-contre {
   align-self: center;
-  font-weight: 800;
+  font-family: var(--font-serif);
   color: var(--color-ink-soft);
-  font-size: 0.875rem;
-  letter-spacing: 0.06em;
 }
 
 /* ---------------------------------------------------------------------------
-   En-tête : sur très petit écran, le bouton d'appel garde une seule ligne
+   Espace publicitaire : le seul bloc encadré du site, en pointillés, mention
+   « Publicité » en tête (LCEN, art. 20). Jamais confondu avec une recommandation.
    --------------------------------------------------------------------------- */
-@media (max-width: 480px) {
-  .site-header .btn-cta {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.8125rem;
-    white-space: nowrap;
-  }
+.espace-pub {
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
 }
 
-/* ---------------------------------------------------------------------------
-   Formulaires des outils interactifs
-   --------------------------------------------------------------------------- */
-.champ {
-  display: block;
+.espace-pub-mention {
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+.espace-pub-corps {
+  display: grid;
+  gap: 1rem;
+}
+
+.espace-pub-image {
   width: 100%;
-  max-width: 28rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-paper);
-  color: var(--color-ink);
-  padding: 0.6rem 0.75rem;
-  font: inherit;
-  transition:
-    border-color var(--duration-fast) var(--ease-out),
-    box-shadow var(--duration-fast) var(--ease-out);
-}
-
-.champ:hover {
-  border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-border));
-}
-
-.champ:focus {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px var(--color-accent-soft);
-  outline: none;
-}
-
-/* Choix oui/non : pastille cliquable, cible tactile confortable.
-   Le bouton radio reste visible (il porte l'état pour les technologies
-   d'assistance et ne laisse pas la couleur seule signaler la sélection). */
-.choix {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  min-height: 2.75rem;
-  padding: 0.5rem 0.9rem;
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  cursor: pointer;
-  transition:
-    border-color var(--duration-fast) var(--ease-out),
-    background-color var(--duration-fast) var(--ease-out);
-}
-
-.choix:hover {
-  border-color: var(--color-accent);
-  background: var(--color-accent-soft);
-}
-
-.choix:has(input:checked) {
-  border-color: var(--color-accent);
-  background: var(--color-accent-soft);
-  font-weight: 700;
-}
-
-.choix:has(input:focus-visible) {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-.choix input {
-  accent-color: var(--color-accent);
-}
-
-/* Carte de recommandation du quiz */
-.carte-reco {
-  background: var(--color-paper);
-  box-shadow: var(--shadow-md);
+  height: auto;
 }
 
 /* ---------------------------------------------------------------------------
-   Barre de pondération (page méthode) : rend le poids de chaque critère
-   lisible d'un coup d'œil ; le pourcentage reste écrit en toutes lettres.
+   Utilitaires divers
    --------------------------------------------------------------------------- */
-.jauge {
-  display: block;
-  height: 8px;
-  border-radius: 4px;
-  background: var(--color-border);
+
+/* Back office : erreurs de saisie, signalées par le texte et la bordure. */
+.admin-erreur {
+  color: var(--color-erreur);
+  font-weight: 600;
+}
+
+.admin-erreurs {
+  border: 2px solid var(--color-erreur);
+  border-radius: var(--radius-sm);
+}
+
+/* Champ piège anti-robot de la newsletter : hors écran, jamais atteint au clavier. */
+.piege {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
 }
 
-.jauge > span {
-  display: block;
-  height: 100%;
-  border-radius: 4px;
-  background: var(--gradient-accent);
-}
-
-/* Badge d'état en attente (dossier complet, audit non encore passé) */
-.badge-attente {
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 700;
-  color: var(--color-ink-soft);
-  background: var(--color-paper-soft);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: 2px 0.6rem;
-  white-space: nowrap;
-}
-
-/* En-tête de tableau long : reste visible pendant le défilement */
-.table-longue thead th {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background: var(--color-paper);
-  box-shadow: inset 0 -2px 0 var(--color-border);
-}
-
-/* Ancres : l'en-tête collant masquerait le titre visé par un lien du sommaire. */
-:where(h1, h2, h3, [id]) {
-  scroll-margin-top: 5.5rem;
-}
-
-/* Listes aérées : l'espace entre deux puces doit dépasser l'interligne
-   intérieur d'une puce, sans quoi les items se collent visuellement. */
-/* ---------------------------------------------------------------------------
-   Carte de métier sur un hub de famille : le lecteur choisit sur un fait, pas
-   sur une liste de dix liens identiques.
-   --------------------------------------------------------------------------- */
-.carte-metier {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-paper);
-  padding: 0.85rem 1rem;
-}
-
-/* Pastille de famille, pour repartir vers un autre hub. */
-.puce-famille {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  border: 1px solid var(--color-border-strong);
-  border-radius: 999px;
-  padding: 0.4rem 0.85rem;
-  min-height: 2.5rem;
-  font-size: 0.9375rem;
-  color: var(--color-ink);
-  text-decoration-line: none;
-  transition:
-    border-color var(--duration-fast) var(--ease-out),
-    color var(--duration-fast) var(--ease-out);
-}
-
-.puce-famille:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-
-/* Accroche bornée à deux lignes. Le texte entier reste dans le DOM : on coupe
-   à l'affichage, jamais la donnée. */
+/* Accroche bornée à deux lignes : le texte entier reste dans le DOM. */
 .ligne-2 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -934,6 +911,7 @@ a:hover {
   overflow: hidden;
 }
 
+/* Listes aérées : l'espace entre deux puces dépasse l'interligne intérieur. */
 .liste-aeree > li {
   line-height: 1.55;
 }
@@ -946,10 +924,22 @@ a:hover {
   color: var(--color-accent);
 }
 
-/* Limites de composants : 3:1 minimum (WCAG 1.4.11). Le token --color-border
-   (1,45:1) convient aux séparateurs décoratifs, pas aux contours de contrôles. */
-.champ,
-.choix,
-.btn-ghost {
-  border-color: var(--color-border-strong);
+/* Garde d'accessibilité du mouvement. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* Couleurs forcées : le choix coché garde un contour visible. */
+@media (forced-colors: active) {
+  .puce:has(input:checked) {
+    outline: 2px solid CanvasText;
+  }
 }

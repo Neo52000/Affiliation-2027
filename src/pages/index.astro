@@ -2,18 +2,16 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Quiz from '../components/islands/Quiz.tsx';
-import Picto, { type NomPicto } from '../components/Picto.astro';
-import HeroFlux from '../components/HeroFlux.astro';
-import Ticker from '../components/Ticker.astro';
-import StatTile from '../components/StatTile.astro';
 import BandeauTransparence from '../components/BandeauTransparence.astro';
 import EspacePublicitaire from '../components/EspacePublicitaire.astro';
 import InscriptionNewsletter from '../components/InscriptionNewsletter.astro';
+import ListeFamilles from '../components/ListeFamilles.astro';
+import TableauOutils from '../components/TableauOutils.astro';
 import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import { formatDateFr } from '../lib/dates';
-import { compterSourcesGouv } from '../lib/presentation';
-import { libelleStatutTest } from '../lib/statut-test';
+import { compterSourcesGouv, insecables } from '../lib/presentation';
+import { libelleStatutTest, phraseEtatTests } from '../lib/statut-test';
 import { FAMILLE_LABELS, type Famille } from '../lib/familles';
 import hubs from '../data/hubs.json';
 import echeances from '../data/echeances.json';
@@ -26,7 +24,7 @@ const guides = (await getCollection('guides')).sort((a, b) =>
   a.data.title.localeCompare(b.data.title, 'fr'),
 );
 
-// Données du quiz (section 7 : quiz sur /outils/quiz ET sur l'accueil)
+// Données du quiz, présent ici et sur /outils/quiz.
 const metiersQuiz = metiersColl
   .map((m) => ({ nom: m.data.nom, slug: m.data.slug }))
   .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
@@ -44,16 +42,17 @@ const outilsQuiz = outilsColl.map((o) => ({
   libelleTest: libelleStatutTest(o.data.statut_test),
 }));
 
-// Badge du hero : l'obligation qui concerne toutes les entreprises (réception),
+// Surtitre : l'obligation qui concerne toutes les entreprises (réception),
 // datée et sourcée par echeances.json, seule source des dates de la réforme.
 const reception = echeances.echeances.find((e) => e.id === 'reception-toutes-entreprises');
 if (!reception) throw new Error('echeances.json : échéance de réception manquante');
-const badgeReforme =
+const surtitre =
   reception.statut === 'en_vigueur'
     ? `Réception des factures électroniques obligatoire depuis le ${formatDateFr(reception.date)}`
     : `Réception des factures électroniques obligatoire à partir du ${formatDateFr(reception.date)}`;
 const sourceReception = reception.sources[0];
 if (!sourceReception) throw new Error('echeances.json : réception sans source');
+const domaine = (url: string) => new URL(url).hostname.replace(/^www\./, '');
 
 // Documents .gouv.fr distincts cités par le site : même calcul, sur les mêmes
 // fichiers, que la présentation partenaires (scripts/build-presentation.ts).
@@ -64,17 +63,16 @@ const textesSources = Object.values(
     eager: true,
   }),
 );
+const nbSources = compterSourcesGouv(textesSources);
 
-// Chiffres réels, calculés depuis les données du site — jamais inventés. Le
-// registre des plateformes n'y figure pas : sa copie, tierce, compte aussi des
-// dossiers en attente (TODO #8-10).
-const stats = [
-  {
-    valeur: metiersColl.length,
-    label: metiersColl.length > 1 ? 'métiers couverts' : 'métier couvert',
-  },
-  { valeur: compterSourcesGouv(textesSources), label: 'documents officiels (.gouv.fr) cités' },
-  { valeur: outilsColl.length, label: 'logiciels comparés' },
+// Chiffres calculés depuis les données du site, jamais saisis. Le registre des
+// plateformes n'y figure pas : sa copie, tierce, compte aussi des dossiers en
+// attente (TODO #8-10).
+const pluriel = (n: number, mot: string) => `${n} ${mot}${n > 1 ? 's' : ''}`;
+const faits = [
+  pluriel(metiersColl.length, 'métier'),
+  `${pluriel(nbSources, 'source')} .gouv.fr`,
+  pluriel(outilsColl.length, 'logiciel'),
 ];
 
 const famillesActives = (Object.keys(FAMILLE_LABELS) as Famille[])
@@ -86,209 +84,127 @@ const famillesActives = (Object.keys(FAMILLE_LABELS) as Famille[])
   }))
   .filter((f) => f.nb > 0);
 
-const PREUVES: { titre: string; texte: string; href: string; picto: NomPicto }[] = [
-  {
-    titre: 'Classement indépendant',
-    texte: 'Ni commissions ni publicité ne pèsent sur l’ordre ou les notes. Méthode publique.',
-    href: '/methode',
-    picto: 'medaille',
-  },
-  {
-    titre: 'Données datées et sourcées',
-    texte: 'Chaque affirmation réglementaire renvoie à une source officielle.',
-    href: '/transparence',
-    picto: 'document-source',
-  },
-  {
-    titre: 'Tests réels documentés',
-    texte: 'Aucune note avant un test réel : « Test à venir » est assumé.',
-    href: '/methode',
-    picto: 'loupe',
-  },
+const tableauOutils = outilsColl.map((o) => ({
+  slug: o.data.slug,
+  nom: o.data.nom,
+  agree: o.data.est_plateforme_agreee.valeur,
+  comptePro: o.data.fonctionnalites.compte_pro,
+  compta: o.data.fonctionnalites.compta,
+  statutTest: o.data.statut_test,
+}));
+const sourcesAgrement = [
+  ...new Set(outilsColl.flatMap((o) => o.data.est_plateforme_agreee.source ?? [])),
 ];
 
-const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
-  {
-    n: '1',
-    titre: 'Votre métier',
-    texte: 'Chaque activité a ses règles : TVA, mentions, acomptes.',
-    picto: 'profil',
-  },
-  {
-    n: '2',
-    titre: 'Votre recommandation',
-    texte: '5 questions, 1 outil adapté + 2 alternatives.',
-    picto: 'cible',
-  },
-  {
-    n: '3',
-    titre: 'Votre conformité',
-    texte: 'Échéances, check-list et facture vérifiée.',
-    picto: 'bouclier',
-  },
-];
+const nbTestes = outilsColl.filter((o) => o.data.statut_test === 'teste').length;
+const etatTests = phraseEtatTests(outilsColl.length, nbTestes);
 ---
 
 <Base title={title} description={SITE.description}>
-  <BandeauTransparence outils={outilsQuiz.map((o) => o.slug)} />
-  <section class="hero pt-4">
-    <div class="grid grid-cols-[minmax(0,1fr)] items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto]">
-      <div class="max-w-3xl">
-        <p class="badge-ok badge-icone">
-          <span class="m-point" aria-hidden="true"></span>
-          {badgeReforme}
-        </p>
-        <p class="mt-1 text-xs text-ink-soft">
-          Source :{' '}
-          <a href={sourceReception} rel="noopener">
-            {new URL(sourceReception).hostname.replace(/^www\./, '')}
-          </a>
-        </p>
-        <h1 class="display-title m-mots mt-4">
-          <span class="m-word">Le</span> <span class="m-word">bon</span>{' '}
-          <span class="m-word">logiciel</span> <span class="m-word">de</span>{' '}
-          <span class="m-word">facturation</span> <span class="m-word">électronique</span> <br />
-          <span class="m-word">
-            <span class="text-gradient m-reflet">pour votre métier</span>
-          </span>
-        </h1>
-        <p class="prose-measure mt-5 text-lg">
-          Plombier, infirmière libérale, développeur freelance… chaque métier facture différemment.
-          Répondez à 5 questions et obtenez une recommandation fondée sur des faits vérifiés —
-          jamais sur les commissions ni la publicité.
-        </p>
-        <div class="mt-6 flex flex-wrap items-center gap-4">
-          <a href="/outils/quiz" class="btn-cta text-lg">
-            Trouver mon logiciel en 5 questions
-          </a>
-          <a href="/outils/echeance" class="btn-ghost">
-            Voir mes échéances
-          </a>
-        </div>
-      </div>
+  <BandeauTransparence outils={outilsQuiz.map((o) => o.slug)} rappelIndependance={false} />
 
-      <div class="hidden lg:block">
-        <HeroFlux />
-      </div>
-    </div>
-
-    <ul class="mt-10 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
-      {stats.map((s) => (
-        <StatTile valeur={s.valeur} libelle={s.label} />
+  <header class="mt-6">
+    <p class="surtitre">
+      {insecables(surtitre)}&nbsp;·{' '}
+      <a href={sourceReception} rel="noopener" class="font-normal">
+        source {domaine(sourceReception)}
+      </a>
+    </p>
+    <h1 class="titre-une mt-4">
+      Le logiciel de facturation électronique qui convient à votre métier.
+    </h1>
+    <p class="chapo mt-5">
+      Une infirmière libérale ne facture pas comme un plombier. Chaque fiche métier part des règles
+      de facturation propres à l’activité, avec leurs sources officielles, puis indique les
+      logiciels qui y répondent.
+    </p>
+    <hr class="mt-8 border-ink" />
+    <ul class="faits chiffres mt-4 text-ink-soft">
+      {faits.map((f) => (
+        <li>{f}</li>
       ))}
     </ul>
-  </section>
+    <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+      <a href="/outils/quiz" class="btn-cta">
+        Trouver mon logiciel
+      </a>
+      <a href="/outils/echeance" class="lien-fleche">
+        Voir mon échéance
+      </a>
+    </div>
+  </header>
 
   {famillesActives.length > 0 && (
-    <div class="mt-10">
-      <Ticker familles={famillesActives.map((f) => f.famille)} />
-    </div>
+    <section aria-labelledby="acces-familles" class="mt-16">
+      <h2 id="acces-familles" class="titre-section">
+        Trouver votre métier
+      </h2>
+      <ListeFamilles familles={famillesActives} class="mt-2 md:grid md:grid-cols-2 md:gap-x-12" />
+    </section>
   )}
 
-  <section
-    aria-labelledby="quiz-accueil"
-    class="card-top card-reco mt-12 max-w-2xl rounded-lg border border-border bg-paper p-5"
-  >
-    <h2 id="quiz-accueil" class="text-3xl font-extrabold">
-      Votre recommandation en 5 questions
+  <section aria-labelledby="quiz-accueil" class="mt-16">
+    <h2 id="quiz-accueil" class="titre-section">
+      Votre recommandation en cinq questions
     </h2>
-    <div class="mt-4">
+    <p class="mt-3 max-w-2xl text-ink-soft">
+      Métier, statut, volume de factures, compte professionnel, expert-comptable&nbsp;: le quiz
+      retient un logiciel et deux alternatives.
+    </p>
+    <div class="mt-6 max-w-2xl">
       <Quiz client:idle metiers={metiersQuiz} outils={outilsQuiz} recosParMetier={recosParMetier} />
     </div>
   </section>
 
-  <section aria-labelledby="etapes" class="mt-12">
-    <h2 id="etapes" class="sr-only">
-      Comment ça marche
+  <section aria-labelledby="classement" class="mt-16">
+    <h2 id="classement" class="titre-section">
+      Comment nous classons
     </h2>
-    <ol class="m-etapes reveal grid gap-4 sm:grid-cols-3">
-      {ETAPES.map((e) => (
-        <li class="rounded-md border border-border p-4">
-          <span class="picto-carre">
-            <Picto nom={e.picto} />
-          </span>
-          <p class="mt-3 font-bold">
-            <span class="text-gradient">{e.n}.</span> {e.titre}
-          </p>
-          <p class="mt-1 text-sm text-ink-soft">{e.texte}</p>
-        </li>
-      ))}
-    </ol>
+    <p class="prose-measure mt-4">
+      La note sur 10 suit une pondération publiée, où la conformité pèse le plus.{' '}
+      {insecables(etatTests)} <a href="/methode">Lire la méthode de notation</a>.
+    </p>
+    <p class="prose-measure mt-4">
+      Les commissions d’affiliation et les espaces publicitaires financent le site&nbsp;; ils
+      n’entrent ni dans la note ni dans l’ordre des recommandations.{' '}
+      <a href="/transparence">Voir comment le site est financé</a>.
+    </p>
   </section>
 
-  <section aria-labelledby="preuves" class="mt-12">
-    <h2 id="preuves" class="titre-section text-2xl font-bold">
-      Pourquoi nous faire confiance
-    </h2>
-    <ul class="mt-4 grid gap-4 sm:grid-cols-3">
-      {PREUVES.map((p) => (
-        <li class="m-lift reveal rounded-md border border-border bg-paper p-4">
-          <span class="picto-carre m-pop-icon">
-            <Picto nom={p.picto} />
-          </span>
-          <p class="mt-3 font-bold">{p.titre}</p>
-          <p class="mt-1 text-sm text-ink-soft">{p.texte}</p>
-          <p class="mt-2 text-sm">
-            <a href={p.href}>En savoir plus</a>
-          </p>
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  {famillesActives.length > 0 && (
-    <section aria-labelledby="acces-familles" class="mt-12">
-      <h2 id="acces-familles" class="titre-section text-2xl font-bold">
-        Trouver votre métier
-      </h2>
-      <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {famillesActives.map((f) => (
-          <li class="m-fam flex items-center gap-3 rounded-md border border-border p-3">
-            <span class="picto-carre picto-carre-sm m-pop-icon">
-              <Picto nom={f.famille} taille={20} />
-            </span>
-            <span>
-              {f.hub ? (
-                <a href={`/metiers/${f.famille}`} class="lien-carte">
-                  {f.label}
-                </a>
-              ) : (
-                <span>{f.label}</span>
-              )}{' '}
-              <span class="text-sm text-ink-soft">
-                · {f.nb} métier{f.nb > 1 ? 's' : ''}
-              </span>
-            </span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
-
-  <section aria-labelledby="acces-outils" class="mt-12">
-    <h2 id="acces-outils" class="titre-section text-2xl font-bold">
+  <section aria-labelledby="acces-outils" class="mt-16">
+    <h2 id="acces-outils" class="titre-section">
       Les logiciels comparés
     </h2>
-    <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-      {outilsColl
-        .sort((a, b) => a.data.nom.localeCompare(b.data.nom, 'fr'))
-        .map((o) => (
-          <li>
-            <a href={`/logiciels/${o.data.slug}`}>{o.data.nom}</a>
-          </li>
+    <div class="mt-4">
+      <TableauOutils outils={tableauOutils} />
+    </div>
+    {sourcesAgrement.length > 0 && (
+      <p class="mt-3 text-sm text-ink-soft">
+        Statut de plateforme agréée relevé sur le registre de l’administration fiscale&nbsp;:{' '}
+        {sourcesAgrement.map((s, i) => (
+          <>
+            {i > 0 && ', '}
+            <a href={s} rel="noopener">
+              {domaine(s)}
+            </a>
+          </>
         ))}
-    </ul>
+        .
+      </p>
+    )}
   </section>
 
   {guides.length > 0 && (
-    <section aria-labelledby="acces-guides" class="mt-12">
-      <h2 id="acces-guides" class="titre-section text-2xl font-bold">
+    <section aria-labelledby="acces-guides" class="mt-16">
+      <h2 id="acces-guides" class="titre-section">
         Guides
       </h2>
-      <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+      <ul class="liste-filets mt-2 md:grid md:grid-cols-2 md:gap-x-12">
         {guides.map((g) => (
           <li>
-            <a href={`/guides/${g.id}`}>{g.data.title}</a>
+            <a href={`/guides/${g.id}`} class="font-semibold">
+              {insecables(g.data.title)}
+            </a>
           </li>
         ))}
       </ul>
@@ -298,26 +214,8 @@ const ETAPES: { n: string; titre: string; texte: string; picto: NomPicto }[] = [
   <InscriptionNewsletter
     id="nl-accueil"
     titre="Suivre la réforme par email"
-    class="prose-measure mt-12"
+    class="prose-measure mt-16"
   />
 
-  <section class="card-top mt-14 rounded-lg border border-border bg-paper-soft p-6 text-center">
-    <h2 class="text-2xl font-bold">Prêt pour la facturation électronique ?</h2>
-    <p class="mx-auto mt-2 max-w-xl text-ink-soft">
-      Cinq questions pour trouver l'outil adapté à votre métier, deux pour connaître vos échéances.
-    </p>
-    <div class="mt-4 flex flex-wrap items-center justify-center gap-4">
-      <a href="/outils/quiz" class="btn-cta">
-        Faire le quiz
-      </a>
-      <a href="/outils/echeance" class="btn-ghost">
-        Voir mes échéances
-      </a>
-      <a href="/outils/verificateur-facture" class="btn-ghost">
-        Vérifier ma facture
-      </a>
-    </div>
-  </section>
-
-  <EspacePublicitaire emplacement="accueil" class="mt-12" />
+  <EspacePublicitaire emplacement="accueil" class="mt-16" />
 </Base>
