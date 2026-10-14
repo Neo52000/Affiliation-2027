@@ -202,7 +202,7 @@ const nbSources = compterSourcesGouv(textesSources);
 const urlCta = valeurConfiguree(SITE.url) ?? URL_PRODUCTION;
 const email = valeurConfiguree(SITE.emailContact);
 const contact = email
-  ? `<p class="contact">Contact partenariats : <strong>${texte(email)}</strong></p>`
+  ? `<p class="contact">Contact partenariats&nbsp;: <strong>${texte(email)}</strong></p>`
   : '';
 const versionGsap = (
   JSON.parse(lire('node_modules', 'gsap', 'package.json')) as { version: string }
