@@ -19,17 +19,20 @@ export const SITE = {
   /** DOMAINE — repris par `site` dans astro.config.mjs */
   url: siteUrl,
   /** EMAIL_CONTACT */
-  emailContact: '[email contact]',
+  emailContact: 'contact@efactureguide.fr',
   /**
    * EDITEUR_LEGAL (LCEN, art. 6) : raison sociale et forme (ou nom et prénom),
    * capital social et numéro RCS ou SIRET, siège social, directeur de la publication.
+   * Source : Registre national des entreprises (SIREN 100 208 883).
    */
   editeurLegal:
-    '[raison sociale ou nom, forme, capital, RCS/SIRET, siège, directeur de publication]',
-  /** Téléphone de l'éditeur (LCEN, art. 6) */
-  telephone: '[téléphone éditeur]',
-  /** Téléphone de l'hébergeur Netlify, à relever sur son site (LCEN, art. 6) */
-  telephoneHebergeur: '[téléphone Netlify, à relever sur netlify.com]',
+    'Papeterie Reine & Fils, SAS au capital de 1 000 €, RCS Chaumont 100 208 883, siège social : 10 rue Toupot de Béveaux, 52000 Chaumont. Directeur de la publication : Elie Reine, président.',
+  /** Téléphone de l'éditeur (LCEN, art. 6) — null : non publié, la ligne est masquée (TODO.md) */
+  telephone: null as string | null,
+  /** Hébergeur (LCEN, art. 6) : adresse relevée sur netlify.com (pages À propos et conditions d'utilisation) */
+  adresseHebergeur: 'Netlify, Inc., 101 2nd Street, Suite 575, San Francisco, CA 94105, États-Unis',
+  /** Téléphone de l'hébergeur : source tierce, à confirmer sur netlify.com (TODO.md) */
+  telephoneHebergeur: '+1 415 691 1573',
   /** EXPERT_RELECTEUR — null tant que non renseigné : le bloc relecteur n'est pas affiché */
   expertRelecteur: null as string | null,
   /** Description par défaut (meta description de secours, < 155 caractères) */
@@ -43,8 +46,9 @@ const VALEURS_LANCEMENT = [
   SITE.emailContact,
   SITE.editeurLegal,
   SITE.telephone,
+  SITE.adresseHebergeur,
   SITE.telephoneHebergeur,
-];
+].filter((v): v is string => v !== null);
 
 /** Valeurs encore à renseigner (entre crochets) : le build échoue tant qu'il en reste dans dist/. */
 export const PLACEHOLDERS_CONFIG: readonly string[] = VALEURS_LANCEMENT.filter((v) =>
