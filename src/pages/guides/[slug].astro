@@ -43,7 +43,7 @@ const articleJsonLd = {
 };
 ---
 
-<Base title={d.title} description={d.description}>
+<Base title={d.title} description={d.description} updatedAt={new Date(d.date_maj)}>
   <script type="application/ld+json" is:inline set:html={jsonLdSur(articleJsonLd)} />
   <Breadcrumb items={[{ label: 'Guides' }, { label: d.title }]} />
 

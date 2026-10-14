@@ -1,13 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import { SITE } from '../config';
+import { EDITEUR_IDENTIFIE, SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import echeances from '../data/echeances.json';
 
-// Identité de l'éditeur : EDITEUR_LEGAL non renseigné (TODO.md #3). La page
-// reste hors index tant que les placeholders sont présents.
-const placeholders = SITE.name.startsWith('TODO_');
+// Identité de l'éditeur : la page reste hors index tant qu'elle n'est pas identifiée.
+const placeholders = !EDITEUR_IDENTIFIE;
 
 // Périmètre de la réforme : celui d'echeances.json, avec sa source officielle.
 const reception = echeances.echeances.find((e) => e.id === 'reception-toutes-entreprises');

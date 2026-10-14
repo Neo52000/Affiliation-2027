@@ -77,6 +77,7 @@ const appJsonLd = {
 <Base
   title={pageTitle(`${d.nom} : avis et conformité`, SITE.name)}
   description={`${d.nom} pour la facturation électronique : statut de plateforme agréée, fonctionnalités vérifiées, pour qui. Données datées et sourcées.`}
+  updatedAt={new Date(d.date_maj)}
 >
   <script type="application/ld+json" is:inline set:html={jsonLdSur(appJsonLd)} />
   <BandeauTransparence outils={[d.slug]} />

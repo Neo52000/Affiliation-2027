@@ -59,10 +59,14 @@ export function metierDescription(nom: string): string {
     : `Facturation électronique pour ${nom} : obligations, exemple de facture et logiciels adaptés.`;
 }
 
-/** URL canonique absolue, sans slash final (sauf racine), sans query string. */
+/**
+ * URL canonique absolue telle que Netlify la sert : sans « .html » (build.format
+ * 'file' expose /logiciels/tiime.html sur /logiciels/tiime), sans « index »,
+ * sans slash final (sauf racine), sans query string.
+ */
 export function canonicalUrl(site: string, pathname: string): string {
   const base = site.replace(/\/+$/, '');
-  let path = pathname.split('?')[0] ?? '';
+  let path = (pathname.split('?')[0] ?? '').replace(/\.html$/, '').replace(/(^|\/)index$/, '/');
   if (!path.startsWith('/')) path = `/${path}`;
   if (path !== '/' && path.endsWith('/')) path = path.slice(0, -1);
   return path === '/' ? `${base}/` : `${base}${path}`;

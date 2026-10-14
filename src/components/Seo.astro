@@ -12,7 +12,8 @@ interface Props {
 
 const { title, description, updatedAt, noindex = false } = Astro.props;
 
-const site = (Astro.site ?? new URL(SITE.url)).toString();
+// Base unique : SITE.url (src/config.ts), aussi `site` d'astro.config.mjs.
+const site = `${SITE.url}/`;
 const canonical = canonicalUrl(site, Astro.url.pathname);
 
 if (import.meta.env.DEV) {

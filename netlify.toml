@@ -53,3 +53,11 @@
 # Redirections affiliées /go/{slug} : écrites dans dist/_redirects au postbuild
 # (scripts/generate-redirects.ts) depuis src/data/affiliation.json, que le
 # back office /admin édite. 302, exclues de robots.txt.
+
+# Ancien domaine → domaine définitif (SITE_URL de src/config.ts).
+# À activer quand le domaine est rattaché au site Netlify : décommenter le bloc.
+# [[redirects]]
+#   from = "https://affiliation2027.netlify.app/*"
+#   to = "https://efactureguide.fr/:splat"
+#   status = 301
+#   force = true

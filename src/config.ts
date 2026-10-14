@@ -1,24 +1,35 @@
 /**
- * Variables de lancement (section 0 de la spécification).
- * Les valeurs TODO_xxx sont des placeholders explicites : voir TODO.md.
- * Point unique de remplacement quand les vraies valeurs seront fournies.
+ * Configuration du site : point unique de vérité pour le nom, le domaine et
+ * l'identification légale (LCEN, art. 6). Aucune de ces valeurs n'est écrite
+ * ailleurs : canonical, Open Graph, JSON-LD, sitemap, robots.txt et mentions
+ * légales la lisent ici.
+ *
+ * Une valeur entre crochets « [...] » n'est pas encore renseignée :
+ * scripts/check-placeholders.ts fait échouer le build tant qu'elle atteint dist/.
  */
+
+/** Domaine définitif, surchargeable par la variable d'environnement SITE_URL (sans slash final). */
+const SITE_URL_DEFAUT = 'https://efactureguide.fr';
+// `globalThis.process` : ce module est aussi importé par le back office, côté navigateur.
+const siteUrl = (globalThis.process?.env?.['SITE_URL'] || SITE_URL_DEFAUT).replace(/\/+$/, '');
+
 export const SITE = {
   /** NOM_SITE */
-  name: 'TODO_NOM_SITE',
-  /** DOMAINE — doit rester synchronisé avec `site` dans astro.config.mjs */
-  url: 'https://todo-domaine.example',
+  name: 'Guide eFacture',
+  /** DOMAINE — repris par `site` dans astro.config.mjs */
+  url: siteUrl,
   /** EMAIL_CONTACT */
-  emailContact: 'TODO_EMAIL_CONTACT',
+  emailContact: '[email contact]',
   /**
    * EDITEUR_LEGAL (LCEN, art. 6) : raison sociale et forme (ou nom et prénom),
    * capital social et numéro RCS ou SIRET, siège social, directeur de la publication.
    */
-  editeurLegal: 'TODO_EDITEUR_LEGAL',
+  editeurLegal:
+    '[raison sociale ou nom, forme, capital, RCS/SIRET, siège, directeur de publication]',
   /** Téléphone de l'éditeur (LCEN, art. 6) */
-  telephone: 'TODO_TELEPHONE',
+  telephone: '[téléphone éditeur]',
   /** Téléphone de l'hébergeur Netlify, à relever sur son site (LCEN, art. 6) */
-  telephoneHebergeur: 'TODO_TELEPHONE_HEBERGEUR',
+  telephoneHebergeur: '[téléphone Netlify, à relever sur netlify.com]',
   /** EXPERT_RELECTEUR — null tant que non renseigné : le bloc relecteur n'est pas affiché */
   expertRelecteur: null as string | null,
   /** Description par défaut (meta description de secours, < 155 caractères) */
@@ -26,20 +37,31 @@ export const SITE = {
     'Choisir son logiciel de facturation électronique et son compte pro, métier par métier. Comparatifs indépendants, données datées et sourcées.',
 } as const;
 
-/**
- * L'éditeur est identifié quand nom, domaine, éditeur légal et contact sont
- * renseignés. Avant cela, aucune collecte d'email (RGPD, art. 13 : identité du
- * responsable au moment de la collecte) ni aucune annonce (LCEN : l'annonceur
- * doit pouvoir identifier l'éditeur) n'est publiée.
- */
-export const EDITEUR_IDENTIFIE = [
+const VALEURS_LANCEMENT = [
   SITE.name,
   SITE.url,
   SITE.emailContact,
   SITE.editeurLegal,
   SITE.telephone,
   SITE.telephoneHebergeur,
-].every((v) => !v.includes('TODO_') && !v.includes('todo-domaine'));
+];
+
+/** Valeurs encore à renseigner (entre crochets) : le build échoue tant qu'il en reste dans dist/. */
+export const PLACEHOLDERS_CONFIG: readonly string[] = VALEURS_LANCEMENT.filter((v) =>
+  /^\[.*\]$/.test(v),
+);
+
+/**
+ * L'éditeur est identifié dès que plus aucune variable de lancement n'est vide
+ * ni marquée « à faire » : newsletter, rappel et annonces sont alors publiés. Décision
+ * de l'éditeur : les valeurs « [...] » ne ferment pas la collecte, mais
+ * check-placeholders bloque toute mise en ligne tant qu'elles subsistent.
+ */
+// Motif écrit sans le littéral recherché : ce module est embarqué dans le bundle
+// du back office, que check-placeholders lit aussi.
+export const EDITEUR_IDENTIFIE = VALEURS_LANCEMENT.every(
+  (v) => v.trim() !== '' && !/TODO(?=_)|todo-(?=domaine)/.test(v),
+);
 
 /**
  * Back office /admin : dépôt GitHub qu'il édite (via l'API GitHub, avec le jeton

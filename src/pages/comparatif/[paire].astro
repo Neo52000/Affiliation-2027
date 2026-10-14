@@ -68,6 +68,7 @@ const phraseAgrement =
 <Base
   title={pageTitle(`${a.nom} ou ${b.nom} : que choisir ?`, SITE.name)}
   description={`${a.nom} contre ${b.nom} pour la facturation électronique : statut de plateforme agréée, périmètre et cible, comparés sur des données vérifiées et datées.`}
+  updatedAt={new Date(dateMaj)}
 >
   <BandeauTransparence outils={[a.slug, b.slug]} />
   <Breadcrumb items={[{ label: 'Comparatifs' }, { label: `${a.nom} ou ${b.nom}` }]} />
