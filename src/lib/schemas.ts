@@ -51,13 +51,27 @@ export const outilSchema = z
         limites: z.string().nullable(),
       })
       .nullable(),
+    /**
+     * Offres relevées sur le site officiel. Un montant n'est publié qu'avec sa
+     * base (HT ou TTC), sa périodicité, sa date de relevé et sa source ; null =
+     * non relevé (jamais « gratuit »). Gratuité et essai : `offre_gratuite`.
+     */
     plans: z.array(
-      z.object({
-        nom: z.string(),
-        prix_ht_mensuel: z.number().nonnegative().nullable(),
-        date_releve: dateIso.nullable(),
-        url_source: url.nullable(),
-      }),
+      z
+        .object({
+          nom: z.string(),
+          montant: z.number().nonnegative().nullable(),
+          devise: z.literal('EUR'),
+          base: z.enum(['HT', 'TTC']),
+          periodicite: z.enum(['mois', 'an']),
+          /** Engagement minimal (« sans engagement », « 12 mois »…), null si inconnu. */
+          engagement: z.string().nullable(),
+          date_releve: dateIso.nullable(),
+          url_source: url.nullable(),
+        })
+        .refine((p) => p.montant === null || (p.date_releve !== null && p.url_source !== null), {
+          message: 'montant publié sans date de relevé ou sans source',
+        }),
     ),
     cible: z.array(z.string()),
     fonctionnalites: z.object({
@@ -238,6 +252,7 @@ export const affiliationSchema = z.strictObject({
   liens: z.record(slug, lienAffiliationSchema),
 });
 
+export type Outil = z.infer<typeof outilSchema>;
 export type Affiliation = z.infer<typeof affiliationSchema>;
 
 /**

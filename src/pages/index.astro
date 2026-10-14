@@ -11,7 +11,8 @@ import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 import { formatDateFr } from '../lib/dates';
 import { compterSourcesGouv, insecables } from '../lib/presentation';
-import { libelleStatutTest, phraseEtatTests } from '../lib/statut-test';
+import { phraseEtatTests } from '../lib/statut-test';
+import { faitsQuiz } from '../lib/quiz-outils';
 import { FAMILLE_LABELS, type Famille } from '../lib/familles';
 import hubs from '../data/hubs.json';
 import echeances from '../data/echeances.json';
@@ -31,16 +32,7 @@ const metiersQuiz = metiersColl
 const recosParMetier = Object.fromEntries(
   metiersColl.map((m) => [m.data.slug, m.data.outils_recommandes.map((o) => o.slug)]),
 );
-const outilsQuiz = outilsColl.map((o) => ({
-  slug: o.data.slug,
-  nom: o.data.nom,
-  comptePro: o.data.fonctionnalites.compte_pro,
-  compta: o.data.fonctionnalites.compta,
-  lienExpertComptable: o.data.fonctionnalites.lien_expert_comptable,
-  cibles: o.data.cible,
-  urlOfficielle: o.data.url_officielle,
-  libelleTest: libelleStatutTest(o.data.statut_test),
-}));
+const outilsQuiz = outilsColl.map((o) => faitsQuiz(o.data));
 
 // Surtitre : l'obligation qui concerne toutes les entreprises (réception),
 // datée et sourcée par echeances.json, seule source des dates de la réforme.

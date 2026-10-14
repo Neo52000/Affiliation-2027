@@ -1,11 +1,18 @@
 import { describe, expect, it } from 'vitest';
-import { recommander, type OutilFacts, type QuizReponses } from './quiz';
+import {
+  normaliserMetier,
+  recommander,
+  trouverMetier,
+  type OutilFacts,
+  type QuizReponses,
+} from './quiz';
 
 /** Faits vérifiés des 6 fiches outil (Phase 2) — miroir de src/content/outils. */
 const OUTILS: OutilFacts[] = [
   {
     slug: 'tiime',
     nom: 'Tiime',
+    plateformeAgreee: true,
     comptePro: null,
     compta: true,
     lienExpertComptable: null,
@@ -14,6 +21,7 @@ const OUTILS: OutilFacts[] = [
   {
     slug: 'qonto',
     nom: 'Qonto',
+    plateformeAgreee: true,
     comptePro: true,
     compta: null,
     lienExpertComptable: null,
@@ -22,6 +30,7 @@ const OUTILS: OutilFacts[] = [
   {
     slug: 'pennylane',
     nom: 'Pennylane',
+    plateformeAgreee: true,
     comptePro: null,
     compta: true,
     lienExpertComptable: true,
@@ -30,6 +39,7 @@ const OUTILS: OutilFacts[] = [
   {
     slug: 'abby',
     nom: 'Abby',
+    plateformeAgreee: true,
     comptePro: null,
     compta: null,
     lienExpertComptable: null,
@@ -38,6 +48,7 @@ const OUTILS: OutilFacts[] = [
   {
     slug: 'indy',
     nom: 'Indy',
+    plateformeAgreee: true,
     comptePro: true,
     compta: true,
     lienExpertComptable: null,
@@ -46,6 +57,7 @@ const OUTILS: OutilFacts[] = [
   {
     slug: 'shine',
     nom: 'Shine',
+    plateformeAgreee: true,
     comptePro: true,
     compta: null,
     lienExpertComptable: null,
@@ -66,17 +78,20 @@ const base: QuizReponses = {
   expertComptable: false,
 };
 
-const resultat = (r: Partial<QuizReponses>) => recommander({ ...base, ...r }, OUTILS, RECOS);
+const resultat = (r: Partial<QuizReponses>, outils = OUTILS) =>
+  recommander({ ...base, ...r }, outils, RECOS);
+/** Recommandé présent (cas où au moins un outil est compatible). */
+const reco = (r: Partial<QuizReponses>) => resultat(r).recommande!;
 const slugs = (r: Partial<QuizReponses>) => {
   const res = resultat(r);
-  return [res.recommande.slug, ...res.alternatives.map((a) => a.slug)];
+  return [res.recommande!.slug, ...res.alternatives.map((a) => a.slug)];
 };
 
 describe('recommander — structure du résultat', () => {
   it('1. retourne exactement 1 recommandé + 2 alternatives', () => {
     const res = resultat({});
     expect(res.alternatives).toHaveLength(2);
-    expect(res.recommande.slug).not.toBe(res.alternatives[0]!.slug);
+    expect(res.recommande!.slug).not.toBe(res.alternatives[0]!.slug);
   });
 
   it('2. les 3 slugs retournés sont distincts', () => {
@@ -85,13 +100,15 @@ describe('recommander — structure du résultat', () => {
 
   it('3. chaque justification fait au plus 2 phrases', () => {
     const res = resultat({ metierSlug: 'plombier', besoinComptePro: true });
-    for (const reco of [res.recommande, ...res.alternatives]) {
+    for (const reco of [res.recommande!, ...res.alternatives]) {
       expect(reco.justification.split(/(?<=\.)\s+/).length).toBeLessThanOrEqual(2);
     }
   });
 
-  it('4. lève une erreur avec moins de 3 outils', () => {
-    expect(() => recommander(base, OUTILS.slice(0, 2), {})).toThrow();
+  it('4. avec moins de 3 outils, renvoie ceux qui restent sans erreur', () => {
+    const res = recommander(base, OUTILS.slice(0, 2), {});
+    expect(res.recommande).not.toBeNull();
+    expect(res.alternatives).toHaveLength(1);
   });
 });
 
@@ -109,8 +126,7 @@ describe('recommander — priorité au métier reconnu', () => {
   });
 
   it('8. le flag recommandeParMetier est posé sur les outils du trio métier', () => {
-    const res = resultat({ metierSlug: 'plombier' });
-    expect(res.recommande.recommandeParMetier).toBe(true);
+    expect(reco({ metierSlug: 'plombier' }).recommandeParMetier).toBe(true);
   });
 });
 
@@ -128,13 +144,11 @@ describe('recommander — besoin de compte professionnel', () => {
   });
 
   it('11. un outil à compte pro non vérifié (null) ne reçoit pas le bonus', () => {
-    const res = resultat({ besoinComptePro: true });
-    expect(['qonto', 'indy', 'shine']).toContain(res.recommande.slug);
+    expect(['qonto', 'indy', 'shine']).toContain(reco({ besoinComptePro: true }).slug);
   });
 
   it('12. la justification mentionne le compte professionnel quand il est le critère', () => {
-    const res = resultat({ besoinComptePro: true });
-    expect(res.recommande.justification).toContain('compte professionnel');
+    expect(reco({ besoinComptePro: true }).justification).toContain('compte professionnel');
   });
 });
 
@@ -144,8 +158,7 @@ describe('recommander — expert-comptable et statut', () => {
   });
 
   it('14. la justification cite le travail avec l’expert-comptable', () => {
-    const res = resultat({ expertComptable: true });
-    expect(res.recommande.justification).toContain('expert-comptable');
+    expect(reco({ expertComptable: true }).justification).toContain('expert-comptable');
   });
 
   it('15. statut micro favorise les outils ciblant les micro-entrepreneurs', () => {
@@ -159,13 +172,20 @@ describe('recommander — expert-comptable et statut', () => {
 
 describe('recommander — volume et déterminisme', () => {
   it('17. gros volume favorise la comptabilité intégrée', () => {
-    const res = resultat({ facturesParMois: 'plus-50' });
-    expect(['tiime', 'pennylane', 'indy']).toContain(res.recommande.slug);
+    expect(['tiime', 'pennylane', 'indy']).toContain(reco({ facturesParMois: 'plus-50' }).slug);
   });
 
-  it('18. sans aucun signal, l’ordre alphabétique départage les ex æquo', () => {
-    // Règle publique (page méthode) : aucun ordre de préférence entre éditeurs n'est codé.
-    expect(slugs({})).toEqual(['abby', 'indy', 'pennylane']);
+  it('18. sans aucun signal, tous les outils sont ex æquo et aucun n’est mis en avant', () => {
+    // Règle publique (page méthode) : pas de départage, ordre d'affichage stable.
+    const res = resultat({});
+    expect(res.exAequo.map((r) => r.slug)).toEqual([
+      'abby',
+      'indy',
+      'pennylane',
+      'qonto',
+      'shine',
+      'tiime',
+    ]);
   });
 
   it('19. deux appels identiques donnent le même résultat (fonction pure)', () => {
@@ -180,9 +200,110 @@ describe('recommander — volume et déterminisme', () => {
       { besoinComptePro: true, expertComptable: true, statut: 'micro' as const },
     ]) {
       const res = resultat(cas);
-      for (const reco of [res.recommande, ...res.alternatives]) {
+      for (const reco of [res.recommande!, ...res.alternatives]) {
         expect(reco.justification).not.toMatch(/€|note|meilleur|n°1|leader/i);
       }
     }
+  });
+});
+
+/** Recette du cahier des charges (section 6) : cas complémentaires. */
+describe('recommander — recette : inconnues, incompatibilités, égalités', () => {
+  it('21. saisie de métier tolérante aux accents, à la casse et aux tirets', () => {
+    const metiers = [
+      { nom: 'Infirmier libéral', slug: 'infirmier-liberal' },
+      { nom: 'Plombier', slug: 'plombier' },
+    ];
+    expect(trouverMetier('  infirmier LIBERAL ', metiers)).toBe('infirmier-liberal');
+    expect(trouverMetier('Infirmier-libéral', metiers)).toBe('infirmier-liberal');
+    expect(normaliserMetier('Électricien’ne')).toBe('electricien ne');
+  });
+
+  it('22. métier inconnu ou vide : null, sans erreur', () => {
+    const metiers = [{ nom: 'Plombier', slug: 'plombier' }];
+    expect(trouverMetier('astronaute', metiers)).toBeNull();
+    expect(trouverMetier('   ', metiers)).toBeNull();
+  });
+
+  it('23. une donnée inconnue est signalée à confirmer, sans exclure ni pénaliser', () => {
+    // Abby : compte pro non vérifié (null). Elle reste classée, sans bonus, avec le
+    // besoin à confirmer ; Qonto (compte pro vérifié) reçoit la raison correspondante.
+    const res = resultat({ metierSlug: 'plombier', besoinComptePro: true });
+    const classes = [res.recommande!, ...res.alternatives];
+    expect(res.exclus).toEqual([]);
+    const abby = classes.find((r) => r.slug === 'abby');
+    expect(abby?.aConfirmer).toContain('compte professionnel intégré');
+    expect(abby?.raisons).not.toContain('compte professionnel intégré');
+    const qonto = recommander({ ...base, besoinComptePro: true }, OUTILS, RECOS).exAequo.find(
+      (r) => r.slug === 'qonto',
+    );
+    expect(qonto?.raisons).toContain('compte professionnel intégré');
+  });
+
+  it('24. une fonction indispensable vérifiée absente exclut l’outil, motif publié', () => {
+    const outils = OUTILS.map((o) =>
+      o.slug === 'tiime' ? { ...o, fonctions: { devis: false } } : o,
+    );
+    const res = resultat({ metierSlug: 'plombier', indispensables: ['devis'] }, outils);
+    expect(res.exclus).toEqual([
+      { slug: 'tiime', nom: 'Tiime', motif: 'ne propose pas les devis (donnée vérifiée)' },
+    ]);
+    expect([res.recommande!.slug, ...res.alternatives.map((a) => a.slug)]).not.toContain('tiime');
+  });
+
+  it('25. une fonction indispensable inconnue n’exclut pas et figure à confirmer', () => {
+    const res = resultat({ metierSlug: 'plombier', indispensables: ['acomptes'] });
+    expect(res.exclus).toEqual([]);
+    expect(res.recommande!.aConfirmer).toContain('les factures d’acompte');
+  });
+
+  it('26. une fonction indispensable vérifiée présente compte parmi les raisons', () => {
+    const outils = OUTILS.map((o) =>
+      o.slug === 'abby' ? { ...o, fonctions: { app_mobile: true } } : o,
+    );
+    const res = resultat({ metierSlug: 'plombier', indispensables: ['app_mobile'] }, outils);
+    const abby = [res.recommande!, ...res.alternatives].find((r) => r.slug === 'abby');
+    expect(abby?.raisons).toContain('une application mobile (vérifié)');
+  });
+
+  it('27. deux scores égaux en tête : exAequo liste les deux, sans gagnant désigné', () => {
+    // Micro sans métier : Abby et Tiime ciblent les micro-entrepreneurs (+2 chacun).
+    const res = resultat({ statut: 'micro' });
+    expect(res.exAequo.map((r) => r.slug)).toEqual(['abby', 'tiime']);
+  });
+
+  it('28. sans égalité en tête, exAequo est vide', () => {
+    expect(resultat({ metierSlug: 'plombier' }).exAequo).toEqual([]);
+  });
+
+  it('29. tous incompatibles : aucun recommandé, tous exclus', () => {
+    const outils = OUTILS.map((o) => ({ ...o, fonctions: { devis: false } }));
+    const res = resultat({ indispensables: ['devis'] }, outils);
+    expect(res.recommande).toBeNull();
+    expect(res.alternatives).toEqual([]);
+    expect(res.exclus).toHaveLength(6);
+  });
+
+  it('30. statut de plateforme non confirmé : jamais affirmé, signalé à confirmer', () => {
+    const outils = OUTILS.map((o) => (o.slug === 'tiime' ? { ...o, plateformeAgreee: null } : o));
+    const tiime = resultat({ metierSlug: 'plombier' }, outils).recommande!;
+    expect(tiime.slug).toBe('tiime');
+    expect(tiime.justification).not.toContain('est une plateforme agréée');
+    expect(tiime.aConfirmer).toContain('statut de plateforme agréée');
+  });
+
+  it('31. parcours de l’audit : plombier micro, < 10 factures, sans compte pro ni cabinet', () => {
+    const res = resultat({ metierSlug: 'plombier', statut: 'micro', facturesParMois: 'moins-10' });
+    // L'éditeur obtenu dépend des données : on vérifie la cohérence, pas un nom figé.
+    expect(res.recommande).not.toBeNull();
+    expect(res.recommande!.raisons.length).toBeGreaterThan(0);
+    expect(res.alternatives).toHaveLength(2);
+  });
+
+  it('32. parcours de l’audit : société, > 50 factures, avec expert-comptable', () => {
+    const res = resultat({ statut: 'societe', facturesParMois: 'plus-50', expertComptable: true });
+    expect(res.recommande).not.toBeNull();
+    expect(res.recommande!.raisons).toContain('accès dédié pour l’expert-comptable');
+    expect(res.exclus).toEqual([]);
   });
 });

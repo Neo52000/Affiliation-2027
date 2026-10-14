@@ -152,7 +152,7 @@ describe('src/content/outils + src/content/tests', () => {
   it('tout plan renseigné porte un prix OU un prix null, mais toujours date et URL si prix non null', () => {
     for (const { data } of outils) {
       for (const plan of data.plans) {
-        if (plan.prix_ht_mensuel !== null) {
+        if (plan.montant !== null) {
           expect(
             plan.date_releve,
             `${data.slug}/${plan.nom} : prix sans date de relevé`,

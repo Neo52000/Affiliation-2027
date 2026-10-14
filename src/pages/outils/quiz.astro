@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Quiz from '../../components/islands/Quiz.tsx';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
-import { libelleStatutTest } from '../../lib/statut-test';
+import { faitsQuiz } from '../../lib/quiz-outils';
 import { SITE } from '../../config';
 import { pageTitle } from '../../lib/seo';
 
@@ -19,16 +19,7 @@ const recosParMetier = Object.fromEntries(
   metiersColl.map((m) => [m.data.slug, m.data.outils_recommandes.map((o) => o.slug)]),
 );
 
-const outils = outilsColl.map((o) => ({
-  slug: o.data.slug,
-  nom: o.data.nom,
-  comptePro: o.data.fonctionnalites.compte_pro,
-  compta: o.data.fonctionnalites.compta,
-  lienExpertComptable: o.data.fonctionnalites.lien_expert_comptable,
-  cibles: o.data.cible,
-  urlOfficielle: o.data.url_officielle,
-  libelleTest: libelleStatutTest(o.data.statut_test),
-}));
+const outils = outilsColl.map((o) => faitsQuiz(o.data));
 ---
 
 <Base
@@ -40,8 +31,9 @@ const outils = outilsColl.map((o) => ({
   <p class="surtitre mt-4">Outil</p>
   <h1 class="titre-page mt-3">Quel logiciel de facturation électronique pour vous&nbsp;?</h1>
   <p class="chapo mt-5">
-    Répondez à cinq questions sur votre activité&nbsp;: le quiz recommande un logiciel et propose
-    deux alternatives.
+    Répondez à cinq questions sur votre activité, et cochez si besoin vos fonctions
+    indispensables&nbsp;: le quiz recommande un logiciel, propose deux alternatives et indique ce
+    qui reste à confirmer.
   </p>
 
   <div class="layout-article mt-10">
@@ -56,7 +48,8 @@ const outils = outilsColl.map((o) => ({
           <li>Votre métier détermine les besoins réellement utiles.</li>
           <li>Seuls les faits vérifiés de chaque logiciel entrent dans le calcul.</li>
           <li>Ni les commissions ni la publicité n'y entrent jamais.</li>
-          <li>À égalité, l'ordre alphabétique départage.</li>
+          <li>Une donnée inconnue n'écarte aucun logiciel : elle est signalée « à confirmer ».</li>
+          <li>À égalité, les ex æquo sont présentés ensemble, sans départage.</li>
         </ul>
         <p class="mt-3 text-sm">
           <a href="/methode">Notre méthode en détail</a>
