@@ -68,7 +68,7 @@ scripts/
 - `TODO.md` : actions humaines (variables de lancement, données à re-vérifier).
 - `MAINTENANCE.md` : routine mensuelle (prix, liste PA, calendrier, +10 métiers, liens).
 
-Configuration du site (nom, domaine surchargeable par `SITE_URL`, éditeur légal,
+Configuration du site (nom, origine publique surchargeable par `SITE_URL`, éditeur légal,
 téléphones, contact) : point d'entrée unique `src/config.ts`. Toute valeur encore
 entre crochets « [...] » fait échouer le build (`scripts/check-placeholders.ts`,
 en fin de `postbuild`) : voir `TODO.md`.

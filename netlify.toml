@@ -44,6 +44,12 @@
   [headers.values]
     X-Robots-Tag = "noindex"
 
+# Redirections affiliées : jamais indexées (en plus du Disallow de robots.txt).
+[[headers]]
+  for = "/go/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 # Assets fingerprintés par Astro : cache long immuable.
 [[headers]]
   for = "/_astro/*"

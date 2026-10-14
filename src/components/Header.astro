@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../config';
+import logo from '../assets/logo/dimensions.json';
 
 // La navigation ne pointe que vers des pages qui existent. Visible à toutes les
 // largeurs : trois liens tiennent sur une ligne, ou passent sous le nom du site.
@@ -10,12 +11,28 @@ const nav: { label: string; href: string }[] = [
 ];
 const chemin = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 const actif = (href: string) => chemin === href || chemin.startsWith(`${href}/`);
+
+// Logo : variante par thème, 1x et 2x (public/logo, scripts/generate-logo.ts).
+// width et height réservent la place : CLS nul ; la hauteur affichée suit .marque-logo.
+const srcset = (theme: 'clair' | 'sombre') =>
+  `/logo/logo-${theme}-1x.webp 1x, /logo/logo-${theme}-2x.webp 2x`;
 ---
 
 <header class="site-header">
-  <div class="mx-auto flex max-w-5xl flex-wrap items-baseline justify-between gap-x-8 gap-y-2 px-4 py-4">
+  <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-8 gap-y-2 px-4 py-4">
     <a href="/" class="marque">
-      {SITE.name}
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset={srcset('sombre')} />
+        <img
+          src="/logo/logo-clair-1x.webp"
+          srcset={srcset('clair')}
+          alt={SITE.name}
+          width={logo.largeur}
+          height={logo.hauteur}
+          class="marque-logo"
+          fetchpriority="high"
+        />
+      </picture>
     </a>
     <nav aria-label="Navigation principale">
       <ul class="flex flex-wrap gap-x-5 sm:gap-x-6 gap-y-1">

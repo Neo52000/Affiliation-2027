@@ -4,10 +4,12 @@
  * la fonction /api/newsletter (double opt-in). Case de consentement jamais
  * précochée ; champ piège invisible pour les humains, laissé vide.
  *
- * Tant que l'éditeur n'est pas identifié (mentions légales), aucune adresse
- * n'est collectée : le formulaire n'est pas rendu (RGPD, art. 13).
+ * Tant que l'éditeur n'est pas identifié (mentions légales) ou que le prestataire
+ * d'envoi n'est pas configuré, aucune adresse n'est collectée : le formulaire
+ * n'est pas rendu (RGPD, art. 13 ; src/lib/collecte.ts).
  */
-import { EDITEUR_IDENTIFIE, SITE } from '../config';
+import { SITE } from '../config';
+import { ENV_BUILD, newsletterOuverte } from '../lib/collecte';
 import { CHAMP_PIEGE } from '../lib/email-capture';
 
 interface Props {
@@ -23,7 +25,7 @@ interface Props {
 const { id, titre, siFerme = 'masquer', class: classes } = Astro.props;
 ---
 
-{EDITEUR_IDENTIFIE ? (
+{newsletterOuverte(ENV_BUILD) ? (
   <section
     class:list={['newsletter', classes]}
     aria-labelledby={titre ? `${id}-titre` : undefined}
@@ -75,8 +77,8 @@ const { id, titre, siFerme = 'masquer', class: classes } = Astro.props;
       </button>
       <p class="text-xs text-ink-soft">
         Responsable du traitement : {SITE.editeurLegal}. Votre adresse n'est transmise qu'à nos
-        sous-traitants (prestataire d'envoi, hébergeur Netlify, établi aux États-Unis), jamais à un
-        annonceur ni à un éditeur comparé.{' '}
+        sous-traitants (prestataire d'envoi Brevo, hébergeur Netlify, établi aux États-Unis), jamais
+        à un annonceur ni à un éditeur comparé.{' '}
         <a href="/confidentialite#newsletter">Vos données et vos droits</a>
       </p>
     </form>

@@ -29,7 +29,9 @@ const { title, description, updatedAt, noindex } = Astro.props;
     </script>
     <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#121411" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <Font cssVariable="--font-newsreader" preload />
     <Font cssVariable="--font-instrument" preload />
     <Seo title={title} description={description} updatedAt={updatedAt} noindex={noindex} />

@@ -1,6 +1,13 @@
 import { createHash } from 'node:crypto';
 import { describe, expect, it } from 'vitest';
-import { empreinte, empreintesAutorisees, fichierHeaders, politique, scriptsEnLigne } from './csp';
+import {
+  apercuNonIndexable,
+  empreinte,
+  empreintesAutorisees,
+  fichierHeaders,
+  politique,
+  scriptsEnLigne,
+} from './csp';
 
 describe('scriptsEnLigne', () => {
   it('retient les scripts exécutables et ignore les blocs de données et les fichiers externes', () => {
@@ -39,5 +46,16 @@ describe('politique et _headers', () => {
     const fichier = fichierHeaders(politique(["'sha256-YQ=='", "'sha256-Yg=='"]));
     expect(empreintesAutorisees(fichier)).toEqual(new Set(["'sha256-YQ=='", "'sha256-Yg=='"]));
     expect(empreintesAutorisees('')).toEqual(new Set());
+  });
+});
+
+describe('aperçus non indexables', () => {
+  it('ajoute X-Robots-Tag hors production Netlify seulement', () => {
+    expect(apercuNonIndexable('deploy-preview')).toBe(true);
+    expect(apercuNonIndexable('branch-deploy')).toBe(true);
+    expect(apercuNonIndexable('production')).toBe(false);
+    expect(apercuNonIndexable(undefined)).toBe(false);
+    expect(fichierHeaders('x', { noindex: true })).toContain('  X-Robots-Tag: noindex\n');
+    expect(fichierHeaders('x')).not.toContain('X-Robots-Tag');
   });
 });

@@ -8,14 +8,19 @@
  * scripts/check-placeholders.ts fait échouer le build tant qu'elle atteint dist/.
  */
 
-/** Domaine définitif, surchargeable par la variable d'environnement SITE_URL (sans slash final). */
-const SITE_URL_DEFAUT = 'https://efactureguide.fr';
+/**
+ * Origine publique, surchargeable par la variable d'environnement SITE_URL (sans
+ * slash final). Adresse Netlify tant que efactureguide.fr n'est pas rattaché au
+ * site : le jour du branchement DNS, définir SITE_URL=https://efactureguide.fr
+ * dans Netlify et activer la redirection de netlify.toml.
+ */
+const SITE_URL_DEFAUT = 'https://affiliation2027.netlify.app';
 // `globalThis.process` : ce module est aussi importé par le back office, côté navigateur.
 const siteUrl = (globalThis.process?.env?.['SITE_URL'] || SITE_URL_DEFAUT).replace(/\/+$/, '');
 
 export const SITE = {
   /** NOM_SITE */
-  name: 'Guide eFacture',
+  name: 'efactureguide.fr',
   /** DOMAINE — repris par `site` dans astro.config.mjs */
   url: siteUrl,
   /** EMAIL_CONTACT */
