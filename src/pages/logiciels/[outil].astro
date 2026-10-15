@@ -11,6 +11,7 @@ import { libelleStatutTest } from '../../lib/statut-test';
 import { formatDateFr } from '../../lib/dates';
 import { de } from '../../lib/typographie';
 import { jsonLdSur, pageTitle } from '../../lib/seo';
+import { coutDouzeMois, enteteLogiciel } from '../../lib/tarifs';
 import { SITE } from '../../config';
 
 export async function getStaticPaths() {
@@ -63,6 +64,9 @@ const plansRenseignes = d.plans.filter(
 // Une offre déclarée mais pas encore relevée est nommée, jamais omise.
 const plansARelever = d.plans.filter((p) => !plansRenseignes.includes(p));
 
+// Title, H1 et description : « tarifs » et « limites » seulement s'ils sont publiés.
+const entete = enteteLogiciel(d.nom, plansRenseignes.length > 0, d.points_faibles.length > 0);
+
 // JSON-LD SoftwareApplication, sans AggregateRating ni prix inventés (section 9).
 const appJsonLd = {
   '@context': 'https://schema.org',
@@ -75,8 +79,8 @@ const appJsonLd = {
 ---
 
 <Base
-  title={pageTitle(`${d.nom} : avis et conformité`, SITE.name)}
-  description={`${d.nom} pour la facturation électronique : statut de plateforme agréée, fonctionnalités vérifiées, pour qui. Données datées et sourcées.`}
+  title={pageTitle(entete.titre, SITE.name)}
+  description={entete.description}
   updatedAt={new Date(d.date_maj)}
 >
   <script type="application/ld+json" is:inline set:html={jsonLdSur(appJsonLd)} />
@@ -86,7 +90,7 @@ const appJsonLd = {
   <div class="layout-article mt-4">
     <article>
       <p class="surtitre">Fiche logiciel · {libelleTest}</p>
-      <h1 class="titre-page mt-3">{d.nom} et facturation électronique</h1>
+      <h1 class="titre-page mt-3">{entete.h1}</h1>
       <p class="mt-3 text-sm text-ink-soft">Mis à jour le {formatDateFr(d.date_maj)}</p>
 
       <section aria-labelledby="en-bref-outil" class="en-bref prose-measure mt-6">
@@ -98,6 +102,32 @@ const appJsonLd = {
           {pointFortDistinctif && <li>{pointFortDistinctif.replace(/\.$/, '')}.</li>}
         </ul>
         <StatutPlateforme statut={d.est_plateforme_agreee} nom={d.nom} variante="complet" />
+      </section>
+
+      <section aria-labelledby="pour-qui" class="mt-10">
+        <h2 id="pour-qui" class="titre-section">
+          Pour qui
+        </h2>
+        <ul class="liste-filets prose-measure mt-2">
+          {d.points_forts.map((p) => (
+            <li>{p}</li>
+          ))}
+        </ul>
+        {d.points_faibles.length > 0 && (
+          <>
+            <h3 class="mt-6">Limites</h3>
+            <ul class="liste-filets prose-measure mt-2">
+              {d.points_faibles.map((p) => (
+                <li>{p}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        <h3 class="mt-6">Quand regarder ailleurs</h3>
+        <p class="prose-measure mt-2">
+          Si votre profil n'entre pas dans la cible revendiquée par l'éditeur, comparez d'abord avec
+          les logiciels pensés pour lui. Cette partie sera complétée après notre test.
+        </p>
       </section>
 
       <section aria-labelledby="fonctionnalites" class="mt-10">
@@ -146,6 +176,9 @@ const appJsonLd = {
                   <th scope="col" class="nombre py-2 pr-3">
                     Prix
                   </th>
+                  <th scope="col" class="nombre py-2 pr-3">
+                    Sur 12 mois
+                  </th>
                   <th scope="col" class="py-2 pr-3 text-left">
                     Engagement
                   </th>
@@ -166,6 +199,14 @@ const appJsonLd = {
                         currency: p.devise,
                       }).format(p.montant ?? 0)}{' '}
                       {p.base} / {p.periodicite}
+                    </td>
+                    <td class="nombre py-2 pr-3">
+                      {(() => {
+                        const c = coutDouzeMois(p);
+                        return c
+                          ? `${new Intl.NumberFormat('fr-FR', { style: 'currency', currency: p.devise }).format(c.montant)} ${c.base}`
+                          : '—';
+                      })()}
                     </td>
                     <td class="py-2 pr-3">{p.engagement ?? 'Non précisé'}</td>
                     <td class="py-2">
@@ -196,22 +237,6 @@ const appJsonLd = {
             )}
           </p>
         ) : null}
-      </section>
-
-      <section aria-labelledby="pour-qui" class="mt-10">
-        <h2 id="pour-qui" class="titre-section">
-          Points forts
-        </h2>
-        <ul class="liste-filets prose-measure mt-2">
-          {d.points_forts.map((p) => (
-            <li>{p}</li>
-          ))}
-        </ul>
-        <h3 class="mt-6">Quand regarder ailleurs</h3>
-        <p class="prose-measure mt-2">
-          Si votre profil n'entre pas dans la cible revendiquée par l'éditeur, comparez d'abord avec
-          les logiciels pensés pour lui. Cette partie sera complétée après notre test.
-        </p>
       </section>
 
       {comparatifs.length > 0 && (

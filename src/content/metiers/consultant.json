@@ -145,5 +145,11 @@
       "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
     }
   ],
-  "date_maj": "2026-10-06"
+  "date_maj": "2026-10-06",
+  "seo": {
+    "title": "Logiciel de facturation pour consultant : comparatif",
+    "h1": "Quel logiciel de facturation choisir quand on est consultant ?",
+    "description": "Comparez les logiciels de facturation pour consultant : TJM, forfaits, acomptes et fonctions vérifiées. Choisissez selon votre statut.",
+    "ordre_commercial": true
+  }
 }

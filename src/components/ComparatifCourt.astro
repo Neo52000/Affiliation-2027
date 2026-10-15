@@ -3,6 +3,7 @@ import type { z } from 'astro/zod';
 import type { outilSchema } from '../lib/schemas';
 import Statut from './Statut.astro';
 import { libelleStatutTest } from '../lib/statut-test';
+import { prixEntreeDouzeMois } from '../lib/tarifs';
 
 type Outil = z.infer<typeof outilSchema>;
 
@@ -27,6 +28,19 @@ const lignes: Ligne[] = [
   { label: 'Pour qui (cible de l’éditeur)', type: 'texte', valeur: (o) => o.cible.join(', ') },
   { label: 'Comptabilité intégrée', type: 'statut', valeur: (o) => o.fonctionnalites.compta },
   { label: 'Compte professionnel', type: 'statut', valeur: (o) => o.fonctionnalites.compte_pro },
+  {
+    // Coût annuel de l'offre relevée la moins chère : jamais estimé (src/lib/tarifs.ts).
+    label: 'Prix d’entrée sur 12 mois',
+    type: 'texte',
+    valeur: (o) => {
+      const p = prixEntreeDouzeMois(o.plans);
+      if (!p) return 'Non relevé';
+      const montant = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(
+        p.montant,
+      );
+      return `${montant} ${p.base} (${p.nom})`;
+    },
+  },
   {
     label: 'Note',
     type: 'note',

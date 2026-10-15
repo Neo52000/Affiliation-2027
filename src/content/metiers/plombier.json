@@ -158,5 +158,11 @@
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-10"
+  "date_maj": "2026-10-10",
+  "seo": {
+    "title": "Logiciel de facturation pour plombier : comment choisir ?",
+    "h1": "Quel logiciel de facturation choisir pour votre activité de plombier ?",
+    "description": "Comparez les logiciels de facturation pour plombier : devis, acomptes, TVA multi-taux et usage mobile. Fonctions vérifiées et obligations utiles.",
+    "ordre_commercial": true
+  }
 }
