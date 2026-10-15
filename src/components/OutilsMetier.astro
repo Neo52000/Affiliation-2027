@@ -1,0 +1,82 @@
+---
+/**
+ * « Les logiciels adaptés au métier » : recommandations de la fiche, comparatif
+ * rapide, liens vers les duels et le quiz prérempli. Composant partagé pour que
+ * la fiche puisse le placer selon son ordre (ordre_commercial des pilotes SEO).
+ */
+import type { CollectionEntry } from 'astro:content';
+import AffiliateButton from './AffiliateButton.astro';
+import ComparatifCourt from './ComparatifCourt.astro';
+import StatutPlateforme from './StatutPlateforme.astro';
+import { libelleStatutTest } from '../lib/statut-test';
+import { de } from '../lib/typographie';
+
+interface Props {
+  metierSlug: string;
+  recommandes: { justification: string; outil: CollectionEntry<'outils'> }[];
+  paires: { url: string; label: string }[];
+  class?: string;
+}
+
+const { metierSlug, recommandes, paires, class: classes = 'mt-10' } = Astro.props;
+---
+
+<section aria-labelledby="outils" class={classes}>
+  <h2 id="outils" class="titre-section">
+    Les logiciels adaptés au métier
+  </h2>
+  <p class="prose-measure mt-3 text-sm text-ink-soft">
+    Choix fondé sur la cible et le périmètre vérifiés de chaque logiciel, selon notre{' '}
+    <a href="/methode">méthode</a>. Aucune note n'est publiée avant notre test.
+  </p>
+  <ol class="mt-4">
+    {recommandes.map(({ outil, justification }, i) => (
+      <li class="numerote border-t border-border py-5">
+        <span class="numero" aria-hidden="true">
+          {i + 1}
+        </span>
+        <div>
+          {i === 0 && <p class="etiquette">Notre recommandation</p>}
+          <h3 class:list={['text-lg', i === 0 && 'mt-1']}>
+            <a href={`/logiciels/${outil.data.slug}`}>{outil.data.nom}</a>
+            <span class="pill ml-2 align-middle font-normal">
+              {libelleStatutTest(outil.data.statut_test)}
+            </span>
+          </h3>
+          <p class="prose-measure mt-1">{justification}</p>
+          <StatutPlateforme statut={outil.data.est_plateforme_agreee} nom={outil.data.nom} />
+          <div class="mt-3">
+            <AffiliateButton
+              outil={outil.data.slug}
+              urlOfficielle={outil.data.url_officielle}
+              label={`Aller sur le site ${de(outil.data.nom)}`}
+              emplacement={`metier-${metierSlug}-reco-${i + 1}`}
+              variante={i === 0 ? 'principal' : 'secondaire'}
+            />
+          </div>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <h3 class="mt-8">Comparatif rapide</h3>
+  <div class="mt-2">
+    <ComparatifCourt outils={recommandes.map((r) => r.outil.data)} />
+  </div>
+  {paires.length > 0 && (
+    <nav aria-label="Comparaisons deux à deux" class="mt-6">
+      <h3>Les comparer deux à deux</h3>
+      <ul class="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+        {paires.map((c) => (
+          <li>
+            <a href={c.url}>{c.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )}
+  <p class="mt-6 lg:hidden">
+    <a href={`/outils/quiz?metier=${encodeURIComponent(metierSlug)}`} class="lien-fleche">
+      Affiner avec le quiz
+    </a>
+  </p>
+</section>

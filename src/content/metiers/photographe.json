@@ -145,5 +145,11 @@
       "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
     }
   ],
-  "date_maj": "2026-10-10"
+  "date_maj": "2026-10-10",
+  "seo": {
+    "title": "Logiciel de facturation photographe : comment choisir ?",
+    "h1": "Quel logiciel de facturation choisir pour votre activité de photographe ?",
+    "description": "Comparez les logiciels de facturation pour photographe : TVA multi-taux, cession de droits, acomptes et fonctions vérifiées.",
+    "ordre_commercial": true
+  }
 }

@@ -2,18 +2,14 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import AffiliateButton from '../../components/AffiliateButton.astro';
 import ExempleFacture from '../../components/ExempleFacture.astro';
-import ComparatifCourt from '../../components/ComparatifCourt.astro';
-import StatutPlateforme from '../../components/StatutPlateforme.astro';
+import OutilsMetier from '../../components/OutilsMetier.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { FAMILLE_LABELS } from '../../lib/familles';
 import { formatDateFr } from '../../lib/dates';
 import { insecables } from '../../lib/presentation';
-import { de } from '../../lib/typographie';
 import { jsonLdSur, metierDescription, metierTitle } from '../../lib/seo';
 import { paireOrdonnee, urlComparatif } from '../../lib/comparatifs';
-import { libelleStatutTest } from '../../lib/statut-test';
 import { SITE } from '../../config';
 import echeances from '../../data/echeances.json';
 
@@ -69,6 +65,14 @@ const paires = recommandes.flatMap((a, i) =>
 );
 const familleLabel = FAMILLE_LABELS[d.famille];
 
+// Pilote SEO (plan du 2026-10-15) : quelques fiches portent une intention
+// d'achat explicite (title, H1, description) et placent les logiciels en tête.
+// Les autres gardent la formule commune et servent de témoin.
+const commercial = d.seo?.ordre_commercial ?? false;
+const titre = d.seo?.title ?? metierTitle(d.nom);
+const description = d.seo?.description ?? metierDescription(d.nom);
+const h1 = d.seo?.h1 ?? `${d.nom} et facturation électronique`;
+
 // Besoins prioritaires enchaînés dans une phrase : sans leur point final, et
 // en minuscule initiale sauf sigle (« TVA », « PDF »).
 const enPhrase = (t: string) => {
@@ -121,11 +125,7 @@ const faqJsonLd = {
 };
 ---
 
-<Base
-  title={metierTitle(d.nom)}
-  description={metierDescription(d.nom)}
-  updatedAt={new Date(d.date_maj)}
->
+<Base title={titre} description={description} updatedAt={new Date(d.date_maj)}>
   <script type="application/ld+json" is:inline set:html={jsonLdSur(faqJsonLd)} />
   <BandeauTransparence outils={recommandes.map((r) => r.outil.data.slug)} />
 
@@ -134,7 +134,7 @@ const faqJsonLd = {
   <div class="layout-article mt-4">
     <article>
       <p class="surtitre">Fiche métier · {familleLabel}</p>
-      <h1 class="titre-page mt-3">{d.nom} et facturation électronique</h1>
+      <h1 class="titre-page mt-3">{h1}</h1>
       <p class="mt-3 text-sm text-ink-soft">
         Mis à jour le {formatDateFr(d.date_maj)}
         {SITE.expertRelecteur && ` · Relu par ${SITE.expertRelecteur}`}
@@ -150,6 +150,8 @@ const faqJsonLd = {
           ))}
         </ul>
       </section>
+
+      {commercial && <OutilsMetier metierSlug={d.slug} recommandes={recommandes} paires={paires} />}
 
       <section aria-labelledby="specificites" class="mt-10">
         <h2 id="specificites" class="titre-section">
@@ -185,65 +187,9 @@ const faqJsonLd = {
         </div>
       </section>
 
-      <section aria-labelledby="outils" class="mt-10">
-        <h2 id="outils" class="titre-section">
-          Les logiciels adaptés au métier
-        </h2>
-        <p class="prose-measure mt-3 text-sm text-ink-soft">
-          Choix fondé sur la cible et le périmètre vérifiés de chaque logiciel, selon notre{' '}
-          <a href="/methode">méthode</a>. Aucune note n'est publiée avant notre test.
-        </p>
-        <ol class="mt-4">
-          {recommandes.map(({ outil, justification }, i) => (
-            <li class="numerote border-t border-border py-5">
-              <span class="numero" aria-hidden="true">
-                {i + 1}
-              </span>
-              <div>
-                {i === 0 && <p class="etiquette">Notre recommandation</p>}
-                <h3 class:list={['text-lg', i === 0 && 'mt-1']}>
-                  <a href={`/logiciels/${outil.data.slug}`}>{outil.data.nom}</a>
-                  <span class="pill ml-2 align-middle font-normal">
-                    {libelleStatutTest(outil.data.statut_test)}
-                  </span>
-                </h3>
-                <p class="prose-measure mt-1">{justification}</p>
-                <StatutPlateforme statut={outil.data.est_plateforme_agreee} nom={outil.data.nom} />
-                <div class="mt-3">
-                  <AffiliateButton
-                    outil={outil.data.slug}
-                    urlOfficielle={outil.data.url_officielle}
-                    label={`Aller sur le site ${de(outil.data.nom)}`}
-                    emplacement={`metier-${d.slug}-reco-${i + 1}`}
-                    variante={i === 0 ? 'principal' : 'secondaire'}
-                  />
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
-        <h3 class="mt-8">Comparatif rapide</h3>
-        <div class="mt-2">
-          <ComparatifCourt outils={recommandes.map((r) => r.outil.data)} />
-        </div>
-        {paires.length > 0 && (
-          <nav aria-label="Comparaisons deux à deux" class="mt-6">
-            <h3>Les comparer deux à deux</h3>
-            <ul class="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-              {paires.map((c) => (
-                <li>
-                  <a href={c.url}>{c.label}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
-        <p class="mt-6 lg:hidden">
-          <a href={`/outils/quiz?metier=${encodeURIComponent(d.slug)}`} class="lien-fleche">
-            Affiner avec le quiz
-          </a>
-        </p>
-      </section>
+      {!commercial && (
+        <OutilsMetier metierSlug={d.slug} recommandes={recommandes} paires={paires} />
+      )}
 
       <section aria-labelledby="checklist" class="mt-10">
         <h2 id="checklist" class="titre-section">

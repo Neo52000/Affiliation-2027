@@ -143,6 +143,20 @@ export const metierSchema = z.object({
   faq: z.array(z.object({ question: z.string(), reponse: z.string() })).length(5),
   sources: z.array(z.object({ titre: z.string(), url })).min(1),
   date_maj: dateIso,
+  /**
+   * Pilote SEO (plan du 2026-10-15) : intention d'achat explicite. Absent = formule
+   * commune (metierTitle, metierDescription, H1 « X et facturation électronique »).
+   * Longueurs : mêmes bornes que src/lib/seo.ts (title < 60, description < 155).
+   */
+  seo: z
+    .object({
+      title: z.string().min(1).max(59),
+      h1: z.string().min(1),
+      description: z.string().min(1).max(154),
+      /** true : la section des logiciels passe juste après « En bref ». */
+      ordre_commercial: z.boolean(),
+    })
+    .optional(),
 });
 
 export const ficheTestSchema = z
