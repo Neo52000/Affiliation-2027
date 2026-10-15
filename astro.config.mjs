@@ -4,12 +4,12 @@ import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
-import { EDITEUR_IDENTIFIE, SITE } from './src/config.ts';
+import { SITE } from './src/config.ts';
 
-// `site` : domaine définitif non renseigné (TODO_DOMAINE, voir TODO.md).
-// Placeholder requis dès maintenant pour générer canonical et sitemap.
+// `site` : domaine lu dans src/config.ts (surchargeable par SITE_URL), seule source
+// de canonical, Open Graph, sitemap et robots.txt.
 export default defineConfig({
-  site: 'https://todo-domaine.example',
+  site: SITE.url,
   trailingSlash: 'never',
   build: {
     // 1 fichier HTML par route (ex. /logiciels/tiime.html servi sur /logiciels/tiime) :
@@ -62,11 +62,9 @@ export default defineConfig({
     preact(),
     mdx(),
     sitemap({
+      // Mêmes pages que le noindex : back office, états de la newsletter, pages légales.
       filter: (page) =>
-        !/\/(admin|newsletter\/[a-z-]+)$/.test(page) &&
-        // Mêmes conditions que le noindex de ces pages (placeholders non renseignés).
-        (EDITEUR_IDENTIFIE || !page.endsWith('/mentions-legales')) &&
-        (!SITE.name.startsWith('TODO_') || !page.endsWith('/a-propos')),
+        !/\/(admin|newsletter\/[a-z-]+|mentions-legales|confidentialite)$/.test(page),
     }),
   ],
   vite: {

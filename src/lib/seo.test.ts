@@ -49,6 +49,12 @@ describe('canonicalUrl', () => {
     expect(canonicalUrl(site, '/logiciels/tiime/')).toBe('https://exemple.fr/logiciels/tiime');
   });
 
+  it('retire l’extension .html et index (build.format file)', () => {
+    expect(canonicalUrl(site, '/index.html')).toBe('https://exemple.fr/');
+    expect(canonicalUrl(site, '/logiciels/indy.html')).toBe('https://exemple.fr/logiciels/indy');
+    expect(canonicalUrl(site, '/guides/index.html')).toBe('https://exemple.fr/guides');
+  });
+
   it('ignore la query string et normalise le slash du site', () => {
     expect(canonicalUrl('https://exemple.fr/', '/outils/quiz?x=1')).toBe(
       'https://exemple.fr/outils/quiz',

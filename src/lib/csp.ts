@@ -51,8 +51,18 @@ export function politique(empreintes: Iterable<string>): string {
 }
 
 /** Fichier `_headers` Netlify : la CSP s'applique à toutes les pages. */
-export function fichierHeaders(csp: string): string {
-  return `# Généré par scripts/generate-csp.ts : ne pas éditer à la main.\n/*\n  Content-Security-Policy: ${csp}\n`;
+export function fichierHeaders(csp: string, { noindex = false } = {}): string {
+  const robots = noindex ? '  X-Robots-Tag: noindex\n' : '';
+  return `# Généré par scripts/generate-csp.ts : ne pas éditer à la main.\n/*\n  Content-Security-Policy: ${csp}\n${robots}`;
+}
+
+/**
+ * Seule la production est indexable : Netlify expose le contexte du build dans
+ * CONTEXT (production, deploy-preview, branch-deploy, dev). Hors Netlify (build
+ * local, CI), la variable est absente et rien n'est ajouté.
+ */
+export function apercuNonIndexable(contexte: string | undefined): boolean {
+  return contexte !== undefined && contexte !== '' && contexte !== 'production';
 }
 
 /** Empreintes autorisées par un fichier `_headers` (vide si aucune CSP). */

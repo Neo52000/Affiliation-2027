@@ -8,6 +8,7 @@ import { pageTitle } from '../lib/seo';
 <Base
   title={pageTitle('Politique de confidentialité', SITE.name)}
   description="Vos données sur ce site : aucun cookie soumis à consentement, aucun traceur publicitaire, deux inscriptions par email en double opt-in."
+  noindex
 >
   <Breadcrumb items={[{ label: 'Confidentialité' }]} />
   <article class="prose-measure mt-4">
@@ -50,13 +51,13 @@ import { pageTitle } from '../lib/seo';
         d'opposition, pendant 3 ans, pour ne plus vous écrire.
       </li>
       <li>
-        Sous-traitants : notre prestataire d'envoi d'emails, et Netlify (hébergement du site et
-        traitement du formulaire, dont l'adresse IP utilisée pour limiter les abus). Netlify, Inc.
-        est établie aux États-Unis : ces données peuvent donc être traitées hors de l'Union
-        européenne. Ce transfert est encadré par les clauses contractuelles types de la Commission
-        européenne, intégrées à l'accord de traitement des données de Netlify ; vous pouvez en
-        obtenir copie en écrivant à {SITE.emailContact}. Aucune transmission aux annonceurs ni aux
-        éditeurs comparés.
+        Sous-traitants : notre prestataire d'envoi d'emails, Brevo (Sendinblue SAS, établie en
+        France), et Netlify (hébergement du site et traitement du formulaire, dont l'adresse IP
+        utilisée pour limiter les abus). Netlify, Inc. est établie aux États-Unis : ces données
+        peuvent donc être traitées hors de l'Union européenne. Ce transfert est encadré par les
+        clauses contractuelles types de la Commission européenne, intégrées à l'accord de traitement
+        des données de Netlify ; vous pouvez en obtenir copie en écrivant à {SITE.emailContact}.
+        Aucune transmission aux annonceurs ni aux éditeurs comparés.
       </li>
       <li>
         Les deux listes restent distinctes : une inscription à l'une ne vous inscrit jamais à
@@ -64,8 +65,8 @@ import { pageTitle } from '../lib/seo';
       </li>
     </ul>
     <p class="mt-3">
-      Tant que l'éditeur du site n'est pas identifié dans les mentions légales, ces deux formulaires
-      restent fermés et aucune adresse n'est collectée.
+      Tant que le prestataire d'envoi n'est pas configuré, ces deux formulaires restent fermés et
+      aucune adresse n'est collectée.
     </p>
 
     <h2 class="titre-section mt-10">Vos droits</h2>

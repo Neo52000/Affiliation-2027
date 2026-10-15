@@ -1,32 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import { EDITEUR_IDENTIFIE, SITE } from '../config';
+import { SITE } from '../config';
 import { pageTitle } from '../lib/seo';
 
-// Identification lue dans src/config.ts (SITE.editeurLegal, SITE.emailContact).
-// Tant qu'elle n'est pas renseignée (TODO.md #3 et #4), la page est hors index
-// et l'annonce comme incomplète ; check:placeholders refuse ensuite tout TODO_.
-const placeholders = !EDITEUR_IDENTIFIE;
+// Identification lue dans src/config.ts (éditeur, téléphones, contact) ; tant
+// qu'une valeur reste « [...] », check:placeholders fait échouer le build.
+// Page légale : hors index, canonical conservé.
 ---
 
 <Base
   title={pageTitle('Mentions légales', SITE.name)}
   description="Mentions légales du site : éditeur, directeur de publication, hébergeur et contact."
-  noindex={placeholders}
+  noindex
 >
   <Breadcrumb items={[{ label: 'Mentions légales' }]} />
   <article class="prose-measure mt-4">
     <p class="surtitre">Légal</p>
     <h1 class="titre-page mt-3">Mentions légales</h1>
-
-    {placeholders && (
-      <p class="en-bref mt-6 text-sm">
-        Page en cours de complétion : les informations d'identification de l'éditeur seront publiées
-        ici avant toute communication publique du site (loi pour la confiance dans l'économie
-        numérique).
-      </p>
-    )}
 
     <h2 class="titre-section mt-10">Éditeur du site</h2>
     <ul class="mt-3 list-disc space-y-1 pl-5">
@@ -34,21 +25,15 @@ const placeholders = !EDITEUR_IDENTIFIE;
         Raison sociale et forme, capital social, numéro RCS ou SIRET, siège social et directeur de
         la publication : {SITE.editeurLegal}
       </li>
-      <li>Téléphone : {SITE.telephone}</li>
+      {SITE.telephone && <li>Téléphone : {SITE.telephone}</li>}
       <li>
-        Contact :{' '}
-        {placeholders ? (
-          SITE.emailContact
-        ) : (
-          <a href={`mailto:${SITE.emailContact}`}>{SITE.emailContact}</a>
-        )}
+        Contact : <a href={`mailto:${SITE.emailContact}`}>{SITE.emailContact}</a>
       </li>
     </ul>
 
     <h2 class="titre-section mt-10">Hébergement</h2>
     <p class="mt-3">
-      Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis. Téléphone :{' '}
-      {SITE.telephoneHebergeur}. Site :{' '}
+      {SITE.adresseHebergeur}. Téléphone : {SITE.telephoneHebergeur}. Site :{' '}
       <a href="https://www.netlify.com" rel="noopener">
         www.netlify.com
       </a>

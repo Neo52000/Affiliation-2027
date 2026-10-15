@@ -787,6 +787,18 @@ html:not(.js) .js-seul {
   text-decoration-line: underline;
 }
 
+.marque-logo {
+  display: block;
+  width: auto;
+  height: 1.75rem;
+}
+
+@media (min-width: 40rem) {
+  .marque-logo {
+    height: 2.125rem;
+  }
+}
+
 .nav-link {
   color: var(--color-ink);
   text-decoration-line: none;

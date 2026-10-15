@@ -68,6 +68,7 @@ scripts/
 - `TODO.md` : actions humaines (variables de lancement, données à re-vérifier).
 - `MAINTENANCE.md` : routine mensuelle (prix, liste PA, calendrier, +10 métiers, liens).
 
-Variables de lancement non renseignées (`TODO_NOM_SITE`, domaine, éditeur légal,
-liens affiliés, outil email) : voir `TODO.md` — point d'entrée unique
-`src/config.ts` + `astro.config.mjs` (site).
+Configuration du site (nom, origine publique surchargeable par `SITE_URL`, éditeur légal,
+téléphones, contact) : point d'entrée unique `src/config.ts`. Toute valeur encore
+entre crochets « [...] » fait échouer le build (`scripts/check-placeholders.ts`,
+en fin de `postbuild`) : voir `TODO.md`.

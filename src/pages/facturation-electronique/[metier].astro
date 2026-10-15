@@ -121,7 +121,11 @@ const faqJsonLd = {
 };
 ---
 
-<Base title={metierTitle(d.nom)} description={metierDescription(d.nom)}>
+<Base
+  title={metierTitle(d.nom)}
+  description={metierDescription(d.nom)}
+  updatedAt={new Date(d.date_maj)}
+>
   <script type="application/ld+json" is:inline set:html={jsonLdSur(faqJsonLd)} />
   <BandeauTransparence outils={recommandes.map((r) => r.outil.data.slug)} />
 

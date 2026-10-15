@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "node --experimental-strip-types scripts/typographie-dist.ts && node --experimental-strip-types scripts/generate-csp.ts && node --experimental-strip-types scripts/generate-redirects.ts",
+    "postbuild": "node --experimental-strip-types scripts/typographie-dist.ts && node --experimental-strip-types scripts/generate-csp.ts && node --experimental-strip-types scripts/generate-redirects.ts && node --experimental-strip-types scripts/sitemap-lastmod.ts && node --experimental-strip-types scripts/check-placeholders.ts",
     "preview": "astro preview",
     "check": "astro check",
     "lint": "eslint .",
@@ -30,6 +30,7 @@
     "check:redaction": "node --experimental-strip-types scripts/check-redaction.ts",
     "build:presentation": "node --experimental-strip-types scripts/build-presentation.ts",
     "og": "node --experimental-strip-types scripts/generate-og.ts",
+    "logo": "node --experimental-strip-types scripts/generate-logo.ts",
     "verify": "pnpm check && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm check:similarity && pnpm check:seo && pnpm check:liens && pnpm check:csp && pnpm check:redaction && pnpm check:placeholders && pnpm build:presentation",
     "check:placeholders": "node --experimental-strip-types scripts/check-placeholders.ts"
   },

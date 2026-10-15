@@ -28,7 +28,7 @@ const autresGuides = (await getCollection('guides'))
   .sort((a, b) => a.data.title.localeCompare(b.data.title, 'fr'))
   .slice(0, 4);
 
-const site = (Astro.site ?? new URL(SITE.url)).toString().replace(/\/+$/, '');
+const site = SITE.url;
 // JSON-LD Article sur les guides (section 9).
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -38,12 +38,12 @@ const articleJsonLd = {
   inLanguage: 'fr-FR',
   dateModified: d.date_maj,
   mainEntityOfPage: `${site}/guides/${entry.id}`,
-  author: { '@type': 'Organization', name: SITE.name },
+  author: { '@id': `${site}/#organisation` },
   publisher: { '@id': `${site}/#organisation` },
 };
 ---
 
-<Base title={d.title} description={d.description}>
+<Base title={d.title} description={d.description} updatedAt={new Date(d.date_maj)}>
   <script type="application/ld+json" is:inline set:html={jsonLdSur(articleJsonLd)} />
   <Breadcrumb items={[{ label: 'Guides' }, { label: d.title }]} />
 

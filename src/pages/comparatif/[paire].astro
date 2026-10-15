@@ -5,7 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
 import ComparatifCourt from '../../components/ComparatifCourt.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
-import { toutesLesPaires } from '../../lib/comparatifs';
+import { toutesLesPaires, verdictProfil } from '../../lib/comparatifs';
 import { formatDateFr } from '../../lib/dates';
 import { insecables } from '../../lib/presentation';
 import { de } from '../../lib/typographie';
@@ -31,22 +31,29 @@ const b = ob.data;
 const dateMaj = a.date_maj > b.date_maj ? a.date_maj : b.date_maj;
 
 // Verdicts par profil, fondés uniquement sur la cible et le périmètre vérifiés.
+// Une fonctionnalité non vérifiée (null) est dite « à confirmer », jamais absente.
+type Outil = typeof a;
+const verdict = (porte: (o: Outil) => boolean | null) =>
+  verdictProfil([
+    { nom: a.nom, porte: porte(a) },
+    { nom: b.nom, porte: porte(b) },
+  ]);
 const profils = [
   {
     profil: 'Vous cherchez d’abord un compte professionnel',
-    verdict: [a, b].filter((o) => o.fonctionnalites.compte_pro === true),
+    verdict: verdict((o) => o.fonctionnalites.compte_pro),
   },
   {
     profil: 'Vous voulez facturation et comptabilité au même endroit',
-    verdict: [a, b].filter((o) => o.fonctionnalites.compta === true),
+    verdict: verdict((o) => o.fonctionnalites.compta),
   },
   {
     profil: 'Vous êtes indépendant ou micro-entrepreneur',
-    verdict: [a, b].filter((o) => o.cible.some((c) => /indépendant|micro|freelance/i.test(c))),
+    verdict: verdict((o) => o.cible.some((c) => /indépendant|micro|freelance/i.test(c))),
   },
   {
     profil: 'Vous dirigez une PME',
-    verdict: [a, b].filter((o) => o.cible.some((c) => /PME/i.test(c))),
+    verdict: verdict((o) => o.cible.some((c) => /PME/i.test(c))),
   },
 ];
 
@@ -68,6 +75,7 @@ const phraseAgrement =
 <Base
   title={pageTitle(`${a.nom} ou ${b.nom} : que choisir ?`, SITE.name)}
   description={`${a.nom} contre ${b.nom} pour la facturation électronique : statut de plateforme agréée, périmètre et cible, comparés sur des données vérifiées et datées.`}
+  updatedAt={new Date(dateMaj)}
 >
   <BandeauTransparence outils={[a.slug, b.slug]} />
   <Breadcrumb items={[{ label: 'Comparatifs' }, { label: `${a.nom} ou ${b.nom}` }]} />
@@ -123,13 +131,7 @@ const phraseAgrement =
               <th scope="row" class="py-3 pr-4 align-top font-semibold">
                 {p.profil}
               </th>
-              <td class="py-3 align-top">
-                {p.verdict.length === 1
-                  ? `${p.verdict[0]!.nom}, d'après le périmètre vérifié à ce jour.`
-                  : p.verdict.length === 2
-                    ? 'Les deux répondent à ce besoin d’après leur périmètre vérifié.'
-                    : 'Aucun des deux ne revendique ce profil : comparez avec les autres logiciels.'}
-              </td>
+              <td class="py-3 align-top">{p.verdict}</td>
             </tr>
           ))}
         </tbody>

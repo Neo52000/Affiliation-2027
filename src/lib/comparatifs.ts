@@ -31,3 +31,29 @@ export function toutesLesPaires(): [string, string][] {
     ORDRE_COMPARATIFS.slice(i + 1).map((b): [string, string] => [a, b]),
   );
 }
+
+/**
+ * Verdict d'un profil pour une paire, sans jamais lire une donnée inconnue
+ * (null) comme une absence : « à confirmer » n'est pas « non ».
+ * `porte` : true = répond au besoin (vérifié), false = n'y répond pas, null = inconnu.
+ */
+export function verdictProfil(
+  outils: [{ nom: string; porte: boolean | null }, { nom: string; porte: boolean | null }],
+): string {
+  const oui = outils.filter((o) => o.porte === true);
+  const inconnus = outils.filter((o) => o.porte === null);
+  const non = outils.filter((o) => o.porte === false);
+  if (oui.length === 2) return 'Les deux répondent à ce besoin d’après leur périmètre vérifié.';
+  if (oui.length === 1) {
+    return inconnus.length === 1
+      ? `${oui[0]!.nom}, d'après le périmètre vérifié ; pour ${inconnus[0]!.nom}, donnée à confirmer sur son site.`
+      : `${oui[0]!.nom}, d'après le périmètre vérifié à ce jour.`;
+  }
+  if (inconnus.length === 2) {
+    return 'Non confirmé pour l’un comme pour l’autre : vérifiez sur leurs sites avant de choisir.';
+  }
+  if (inconnus.length === 1) {
+    return `${non[0]!.nom} n'y répond pas d'après son périmètre vérifié ; pour ${inconnus[0]!.nom}, donnée à confirmer sur son site.`;
+  }
+  return 'Aucun des deux ne répond à ce besoin d’après leur périmètre vérifié : comparez avec les autres logiciels.';
+}

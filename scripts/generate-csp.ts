@@ -5,7 +5,13 @@
  */
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { empreinte, fichierHeaders, politique, scriptsEnLigne } from '../src/lib/csp.ts';
+import {
+  apercuNonIndexable,
+  empreinte,
+  fichierHeaders,
+  politique,
+  scriptsEnLigne,
+} from '../src/lib/csp.ts';
 
 const dist = join(process.cwd(), 'dist');
 const pages = readdirSync(dist, { recursive: true })
@@ -19,7 +25,11 @@ for (const page of pages) {
   }
 }
 
-writeFileSync(join(dist, '_headers'), fichierHeaders(politique(empreintes)));
+// Aperçus Netlify (deploy-preview, branch-deploy) : X-Robots-Tag noindex sur tout le site.
+const noindex = apercuNonIndexable(process.env['CONTEXT']);
+writeFileSync(join(dist, '_headers'), fichierHeaders(politique(empreintes), { noindex }));
+if (noindex)
+  console.log(`generate-csp : contexte ${process.env['CONTEXT']}, aperçu non indexable.`);
 console.log(
   `generate-csp : ${pages.length} pages, ${empreintes.size} script(s) en ligne autorisé(s) par empreinte.`,
 );
