@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import EcheanceSimulateur from '../../components/islands/EcheanceSimulateur.tsx';
 import RappelEmail from '../../components/islands/RappelEmail.tsx';
+import GuideOffert from '../../components/GuideOffert.astro';
 import { SITE } from '../../config';
 import { ENV_BUILD, rappelOuvert } from '../../lib/collecte';
 import { pageTitle } from '../../lib/seo';
@@ -43,11 +44,12 @@ const metiersRappel = (await getCollection('metiers'))
     </p>
     {rappelOuvert(ENV_BUILD) ? (
       <>
+        <GuideOffert mode="annonce" class="mt-4" />
         <div class="mt-4">
           <RappelEmail client:visible metiers={metiersRappel} />
         </div>
         <p class="mt-3 text-xs text-ink-soft">
-          Responsable du traitement : {SITE.editeurLegal}.{' '}
+          Responsable du traitement : {SITE.editeurLegal}{' '}
           <a href="/confidentialite">Vos données et vos droits</a>
         </p>
       </>

@@ -20,3 +20,5 @@ dist/
 coverage/
 playwright-report/
 test-results/
+scripts/guide-pdf/fonts/
+scripts/guide-pdf/*.png

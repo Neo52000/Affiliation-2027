@@ -1,0 +1,70 @@
+---
+/**
+ * Guide PDF offert à l'inscription (src/config.ts, GUIDE_OFFERT).
+ * - mode « annonce » : présenté au-dessus d'un formulaire d'inscription ;
+ * - mode « telechargement » : bouton de téléchargement, affiché seulement sur les
+ *   pages de confirmation du double opt-in (newsletter et rappel d'échéance).
+ * Image dimensionnée (aucun décalage de mise en page), texte de remplacement vide :
+ * la couverture répète le titre écrit à côté.
+ */
+import { GUIDE_OFFERT } from '../config';
+
+interface Props {
+  mode: 'annonce' | 'telechargement';
+  class?: string;
+}
+
+const { mode, class: classes } = Astro.props;
+const g = GUIDE_OFFERT;
+---
+
+<div class:list={['guide-offert flex flex-col items-start gap-4 sm:flex-row', classes]}>
+  <img
+    src={g.couverture.x1}
+    srcset={`${g.couverture.x1} ${g.couverture.largeur}w, ${g.couverture.x2} ${g.couverture.largeur * 2}w`}
+    sizes={`${g.couverture.largeur / 2}px`}
+    width={g.couverture.largeur / 2}
+    height={Math.round(g.couverture.hauteur / 2)}
+    alt=""
+    loading="lazy"
+    decoding="async"
+    class="guide-offert-couverture shrink-0"
+  />
+  <div>
+    {mode === 'annonce' ? (
+      <>
+        <p class="font-bold">Offert à l'inscription : le guide PDF</p>
+        <p class="mt-1">
+          {g.titre}, {g.pages} pages : calendrier, sanctions, e-reporting, choix de la plateforme
+          agréée, plan d'action jusqu'au 1er septembre 2027 et checklist à imprimer.
+        </p>
+        <p class="mt-1 text-sm text-ink-soft">
+          Lien de téléchargement affiché dès la confirmation de votre adresse.
+        </p>
+      </>
+    ) : (
+      <>
+        <p class="font-bold">Votre guide PDF est prêt</p>
+        <p class="mt-1">
+          {g.titre}, édition {g.edition}, {g.pages} pages.
+        </p>
+        <p class="mt-3">
+          <a href={g.fichier} download class="btn-cta">
+            Télécharger le guide (PDF, {g.poidsKo} Ko)
+          </a>
+        </p>
+        <p class="mt-2 text-sm text-ink-soft">
+          Gardez ce fichier : nous vous préviendrons par email quand une nouvelle édition sera
+          disponible.
+        </p>
+      </>
+    )}
+  </div>
+</div>
+
+<style>
+  .guide-offert-couverture {
+    border: 1px solid var(--color-border);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.12);
+  }
+</style>
