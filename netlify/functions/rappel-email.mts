@@ -10,6 +10,7 @@
  */
 import { EDITEUR_IDENTIFIE } from '../../src/config.ts';
 import { validerDemandeRappel } from '../../src/lib/email-capture.ts';
+import { PAGES_NEWSLETTER } from '../../src/lib/newsletter.ts';
 
 const API_URL = 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation';
 // À renseigner avec OUTIL_EMAIL (TODO.md #7) : id du template de confirmation
@@ -57,7 +58,8 @@ export default async function handler(request: Request): Promise<Response> {
       attributes: validation.demande.metier ? { METIER: validation.demande.metier } : {},
       includeListIds: [LISTE_ID],
       templateId: TEMPLATE_ID,
-      redirectionUrl: `${origine}/outils/echeance?confirmation=ok`,
+      // Page de confirmation qui propose le guide PDF offert.
+      redirectionUrl: `${origine}${PAGES_NEWSLETTER.rappelConfirme}`,
     }),
   });
 
@@ -66,6 +68,7 @@ export default async function handler(request: Request): Promise<Response> {
   }
   return json(200, {
     ok: true,
-    message: 'Vérifiez votre boîte mail pour confirmer votre inscription (double opt-in).',
+    message:
+      'Vérifiez votre boîte mail pour confirmer votre inscription (double opt-in). Le guide PDF vous sera proposé dès la confirmation.',
   });
 }

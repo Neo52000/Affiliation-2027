@@ -73,6 +73,27 @@ export const EDITEUR_IDENTIFIE = VALEURS_LANCEMENT.every(
 );
 
 /**
+ * Guide PDF offert à l'inscription (newsletter et rappel d'échéance). Fichier
+ * servi depuis public/telechargement/, non indexé (netlify.toml), proposé au
+ * téléchargement sur les pages de confirmation du double opt-in. Source et
+ * régénération : scripts/guide-pdf/README.md. À chaque nouvelle édition, changer
+ * le nom du fichier (cache) et ces valeurs.
+ */
+export const GUIDE_OFFERT = {
+  titre: 'Facturation électronique : le guide pratique 2026-2027',
+  fichier: '/telechargement/guide-facturation-electronique-2026-2027.pdf',
+  couverture: {
+    x1: '/telechargement/guide-couverture-1x.webp',
+    x2: '/telechargement/guide-couverture-2x.webp',
+    largeur: 240,
+    hauteur: 339,
+  },
+  pages: 19,
+  poidsKo: 121,
+  edition: 'octobre 2026',
+} as const;
+
+/**
  * Back office /admin : dépôt GitHub qu'il édite (via l'API GitHub, avec le jeton
  * de l'éditeur) et adresse des prévisualisations Netlify des pull requests.
  */

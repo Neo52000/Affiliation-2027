@@ -67,3 +67,12 @@
 #   to = "https://efactureguide.fr/:splat"
 #   status = 301
 #   force = true
+
+# Guide PDF offert à l'inscription (src/config.ts, GUIDE_OFFERT) : fichier non
+# indexé, proposé sur les pages de confirmation du double opt-in. Nom de fichier
+# changé à chaque édition, d'où un cache d'une journée seulement côté navigateur.
+[[headers]]
+  for = "/telechargement/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "public, max-age=86400"

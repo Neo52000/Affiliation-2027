@@ -12,6 +12,8 @@ export const API_BREVO_DOI = 'https://api.brevo.com/v3/contacts/doubleOptinConfi
 export const PAGES_NEWSLETTER = {
   envoyee: '/newsletter/verifiez-vos-emails',
   confirmee: '/newsletter/confirmee',
+  /** Confirmation du double opt-in du rappel d'échéance (netlify/functions/rappel-email.mts). */
+  rappelConfirme: '/newsletter/rappel-confirme',
   erreur: '/newsletter/erreur',
   adresse: '/newsletter/adresse-invalide',
   indisponible: '/newsletter/indisponible',

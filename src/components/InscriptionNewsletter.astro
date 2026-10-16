@@ -11,6 +11,7 @@
 import { SITE } from '../config';
 import { ENV_BUILD, newsletterOuverte } from '../lib/collecte';
 import { CHAMP_PIEGE } from '../lib/email-capture';
+import GuideOffert from './GuideOffert.astro';
 
 interface Props {
   /** Préfixe des identifiants, unique dans la page. */
@@ -36,6 +37,7 @@ const { id, titre, siFerme = 'masquer', class: classes } = Astro.props;
         {titre}
       </h2>
     )}
+    <GuideOffert mode="annonce" class="mt-3" />
     <form method="post" action="/api/newsletter" class="mt-3 space-y-3">
       <div>
         <label for={`${id}-email`} class="font-bold">
@@ -67,16 +69,16 @@ const { id, titre, siFerme = 'masquer', class: classes } = Astro.props;
         <input type="checkbox" name="consentement" value="oui" required class="mt-1" />
         <span class="text-sm">
           J'accepte de recevoir par email la lettre d'information de {SITE.name} : évolutions de la
-          facturation électronique et nouveaux contenus du site, au plus une fois par mois, sans
-          publicité ni lien affilié. Un email de confirmation me sera envoyé (double opt-in) ;
-          désinscription en un clic dans chaque envoi.
+          facturation électronique, nouveaux contenus du site et nouvelles éditions du guide PDF, au
+          plus une fois par mois, sans publicité ni lien affilié. Un email de confirmation me sera
+          envoyé (double opt-in) ; désinscription en un clic dans chaque envoi.
         </span>
       </label>
       <button type="submit" class="btn-cta">
-        S'inscrire à la newsletter
+        S'inscrire et recevoir le guide
       </button>
       <p class="text-xs text-ink-soft">
-        Responsable du traitement : {SITE.editeurLegal}. Votre adresse n'est transmise qu'à nos
+        Responsable du traitement : {SITE.editeurLegal} Votre adresse n'est transmise qu'à nos
         sous-traitants (prestataire d'envoi Brevo, hébergeur Netlify, établi aux États-Unis), jamais
         à un annonceur ni à un éditeur comparé.{' '}
         <a href="/confidentialite#newsletter">Vos données et vos droits</a>
