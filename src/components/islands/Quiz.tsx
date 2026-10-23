@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import {
   LIBELLES_FONCTIONS,
+  outilRetenu,
   recommander,
   trouverMetier,
   type FonctionCle,
@@ -10,6 +11,7 @@ import {
   type Recommandation,
 } from '../../lib/quiz';
 import { affiliateLink } from '../../lib/affiliate';
+import { envoyerMesure } from '../../lib/mesure-client';
 import { de, typographier } from '../../lib/typographie';
 
 interface MetierOption {
@@ -34,6 +36,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
   // Saisie de métier non reconnue au moment du calcul (message dans le résultat).
   const [metierInconnu, setMetierInconnu] = useState<string | null>(null);
   const titreResultat = useRef<HTMLHeadingElement>(null);
+  const commence = useRef(false);
 
   // Préremplissage depuis un hub de famille (?metier=slug). Un slug inconnu est
   // ignoré : seul un métier de la collection peut remplir le champ.
@@ -46,11 +49,24 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
   // Le résultat apparaît sous le formulaire : le focus y est déplacé, et son
   // titre est la première chose annoncée.
   useEffect(() => {
-    if (resultat) titreResultat.current?.focus();
+    if (!resultat) return;
+    titreResultat.current?.focus();
+    // Quiz terminé : seul le logiciel retenu est transmis (mesure agrégée, sans cookie),
+    // « aucun » en cas d'égalité ou sans logiciel compatible.
+    envoyerMesure({ type: 'quiz_termine', outil: outilRetenu(resultat), emplacement: 'quiz' });
   }, [resultat]);
+
+  // Quiz commencé : première saisie dans le formulaire, une fois par affichage de la page.
+  const signalerDebut = () => {
+    if (commence.current) return;
+    commence.current = true;
+    envoyerMesure({ type: 'quiz_commence', outil: 'aucun', emplacement: 'quiz' });
+  };
 
   const calculer = (e: Event) => {
     e.preventDefault();
+    // Envoi direct avec les valeurs par défaut : le quiz compte aussi comme commencé.
+    signalerDebut();
     const metierSlug = trouverMetier(metierSaisi, metiers);
     setMetierInconnu(metierSaisi.trim() && !metierSlug ? metierSaisi.trim() : null);
     setResultat(
@@ -111,20 +127,27 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
       <span class="inline-flex flex-col items-start gap-1">
         <a
           href={lien.href}
-          rel={lien.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
+          rel={lien.rel}
           class="btn-cta"
           data-emplacement={`quiz-${slug}`}
+          data-outil={slug}
         >
           Aller sur le site {de(nom)}
         </a>
-        {lien.sponsored && <span class="text-xs text-ink-soft">lien affilié</span>}
+        {lien.mention && <span class="mention-affiliee text-xs text-ink-soft">{lien.mention}</span>}
       </span>
     );
   };
 
   return (
     <div>
-      <form onSubmit={calculer} class="space-y-5" aria-describedby="quiz-note">
+      <form
+        onSubmit={calculer}
+        onInput={signalerDebut}
+        onChange={signalerDebut}
+        class="space-y-5"
+        aria-describedby="quiz-note"
+      >
         <div>
           <label class="font-bold" for="quiz-metier">
             1. Votre métier

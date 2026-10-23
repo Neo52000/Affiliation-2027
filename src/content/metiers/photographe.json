@@ -145,7 +145,32 @@
       "url": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-partenaires"
     }
   ],
-  "date_maj": "2026-10-10",
+  "scenario": {
+    "situation": "Un couple réserve votre reportage de mariage plusieurs mois à l'avance, tandis qu'une entreprise vous commande un reportage dans ses locaux avec cession de droits et un tirage d'exposition signé et numéroté.",
+    "etapes": [
+      {
+        "titre": "Réservation du mariage",
+        "detail": "Le devis précise la prestation, la date et l'échéancier des acomptes qui bloquent la journée dans votre agenda.",
+        "fonction": "devis"
+      },
+      {
+        "titre": "Acomptes échelonnés",
+        "detail": "Chaque acompte encaissé donne lieu à sa facture, jusqu'à la facture de solde après livraison des photos aux mariés.",
+        "fonction": "acomptes"
+      },
+      {
+        "titre": "Facture multi-taux à l'entreprise",
+        "detail": "Prise de vue et post-production à 20 %, cession de droits à 10 % et tirage d'art à 5,5 % figurent sur des lignes distinctes de la même facture.",
+        "fonction": "emission"
+      },
+      {
+        "titre": "Encaissements sur un compte dédié",
+        "detail": "Les acomptes des particuliers et les virements des entreprises arrivent sur un compte professionnel rapproché des factures.",
+        "fonction": "compte_pro"
+      }
+    ]
+  },
+  "date_maj": "2026-10-23",
   "seo": {
     "title": "Logiciel de facturation photographe : comment choisir ?",
     "h1": "Quel logiciel de facturation choisir pour votre activité de photographe ?",

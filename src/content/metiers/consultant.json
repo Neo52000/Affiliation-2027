@@ -145,7 +145,32 @@
       "url": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
     }
   ],
-  "date_maj": "2026-10-06",
+  "scenario": {
+    "situation": "Une entreprise cliente vous confie une mission de conseil en organisation : un forfait de cadrage, puis des ateliers décomptés en jours au TJM, avec un acompte de 30 % à la commande et des frais de déplacement refacturés.",
+    "etapes": [
+      {
+        "titre": "Devis de mission",
+        "detail": "Le devis fixe le forfait de cadrage, le nombre de jours prévus au TJM et l'acompte demandé à la commande.",
+        "fonction": "devis"
+      },
+      {
+        "titre": "Facture d'acompte",
+        "detail": "L'acompte encaissé fait l'objet d'une facture distincte : la TVA sur cette prestation de services devient exigible dès l'encaissement.",
+        "fonction": "acomptes"
+      },
+      {
+        "titre": "Facture de solde",
+        "detail": "Elle reprend le cadrage, les jours réellement consommés selon le relevé visé par le client et les frais refacturés, puis déduit l'acompte déjà facturé.",
+        "fonction": "emission"
+      },
+      {
+        "titre": "Suivi comptable",
+        "detail": "Encaissements, TVA collectée et frais de mission sont rapprochés sans ressaisie entre la facturation et la comptabilité.",
+        "fonction": "compta"
+      }
+    ]
+  },
+  "date_maj": "2026-10-23",
   "seo": {
     "title": "Logiciel de facturation pour consultant : comparatif",
     "h1": "Quel logiciel de facturation choisir quand on est consultant ?",

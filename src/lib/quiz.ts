@@ -70,6 +70,15 @@ export interface Exclusion {
   motif: string;
 }
 
+/**
+ * Logiciel auquel la mesure attribue un quiz terminé : le recommandé, sinon
+ * « aucun » (égalité en tête ou aucun logiciel compatible). Une égalité ne
+ * désigne jamais de gagnant, pas même dans les statistiques.
+ */
+export function outilRetenu(r: Pick<QuizResultat, 'recommande' | 'exAequo'>): string {
+  return r.recommande && r.exAequo.length < 2 ? r.recommande.slug : 'aucun';
+}
+
 export interface QuizResultat {
   /** Premier du classement ; null si aucun outil n'est compatible. */
   recommande: Recommandation | null;

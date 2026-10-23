@@ -30,6 +30,7 @@ import {
   publicitesSchema,
   type Campagne,
 } from '../../lib/schemas';
+import { syntheseParOutil, syntheseQuiz, type TotalMesure } from '../../lib/mesure-client';
 
 /**
  * Back office : liens d'affiliation et espaces publicitaires. Les données sont
@@ -215,6 +216,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
   const [avertir, setAvertir] = useState(false);
   const [essaisConnexion, setEssaisConnexion] = useState(0);
   const [occupe, setOccupe] = useState(false);
+  const [mesure, setMesure] = useState<TotalMesure[] | 'indisponible' | null>(null);
   const titreDonnees = useRef<HTMLHeadingElement>(null);
   const titreConnexion = useRef<HTMLHeadingElement>(null);
   const titrePubs = useRef<HTMLHeadingElement>(null);
@@ -284,10 +286,24 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
       setExpiration(acces.expiration);
       setClient(c);
       setAnnonce('Connecté. Données chargées depuis la branche principale.');
+      void chargerMesure(jeton);
     } catch (e) {
       setErreurConnexion(messageErreur(e));
     } finally {
       setConnexion('repos');
+    }
+  };
+
+  // Totaux de la mesure sans cookie (30 jours) ; un échec n'empêche pas l'édition.
+  const chargerMesure = async (jeton: string) => {
+    try {
+      const r = await fetch('/api/mesure?jours=30', {
+        headers: { authorization: `Bearer ${jeton}` },
+      });
+      if (!r.ok) throw new Error(String(r.status));
+      setMesure(((await r.json()) as { totaux: TotalMesure[] }).totaux);
+    } catch {
+      setMesure('indisponible');
     }
   };
 
@@ -298,6 +314,7 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
     setPublications([]);
     setEtats({});
     setExpiration(null);
+    setMesure(null);
     setErreurPublication('');
     setAvertir(false);
     setAnnonce(motif);
@@ -862,6 +879,60 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
           Publication) avant d’en préparer une autre.
         </p>
       )}
+
+      <section aria-labelledby="mesure-titre" class="mt-6">
+        <h3 id="mesure-titre" class="titre-section text-xl font-bold">
+          Mesure sur 30 jours
+        </h3>
+        <p class="mt-1 text-sm text-ink-soft">
+          Totaux agrégés sans cookie : quiz commencés et terminés, logiciel retenu, clics vers
+          l’éditeur. Les inscriptions validées se lisent dans l’espace de chaque programme
+          d’affiliation.
+        </p>
+        {mesure === null ? (
+          <p class="mt-2 text-sm">Chargement…</p>
+        ) : mesure === 'indisponible' ? (
+          <p class="mt-2 text-sm">Mesure indisponible (fonction non déployée ou jeton refusé).</p>
+        ) : mesure.length === 0 ? (
+          <p class="mt-2 text-sm">Aucun événement enregistré sur la période.</p>
+        ) : (
+          <>
+            <p class="mt-2 text-sm">
+              {(() => {
+                const q = syntheseQuiz(mesure);
+                const taux = q.commences > 0 ? Math.round((q.termines / q.commences) * 100) : null;
+                return `Quiz : ${q.commences} commencés, ${q.termines} terminés${taux === null ? '' : ` (${taux} %)`}.`;
+              })()}
+            </p>
+            <table class="mt-2 text-sm">
+              <thead>
+                <tr>
+                  <th scope="col" class="pr-4 text-left">
+                    Logiciel
+                  </th>
+                  <th scope="col" class="pr-4 text-right">
+                    Quiz terminés
+                  </th>
+                  <th scope="col" class="text-right">
+                    Clics éditeur
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {syntheseParOutil(mesure).map((l) => (
+                  <tr key={l.outil}>
+                    <th scope="row" class="pr-4 text-left font-normal">
+                      {outils.find((o) => o.slug === l.outil)?.nom ?? l.outil}
+                    </th>
+                    <td class="pr-4 text-right">{l.quiz}</td>
+                    <td class="text-right">{l.clics}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
+        )}
+      </section>
 
       <fieldset disabled={enCoursDePublication || occupe} class="mt-6">
         <legend class="sr-only">Modifications</legend>
