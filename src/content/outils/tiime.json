@@ -7,8 +7,42 @@
     "date_immatriculation": null,
     "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
   },
-  "offre_gratuite": null,
-  "plans": [],
+  "offre_gratuite": {
+    "valeur": true,
+    "limites": "Free, sans rapprochement automatique ni archivage à valeur probante"
+  },
+  "plans": [
+    {
+      "nom": "Initial",
+      "montant": 119.88,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "12 mois, renouvelés automatiquement",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.tiime.fr/tarifs"
+    },
+    {
+      "nom": "Smart",
+      "montant": 215.88,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "12 mois, renouvelés automatiquement",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.tiime.fr/tarifs"
+    },
+    {
+      "nom": "Business",
+      "montant": 299.88,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "12 mois, renouvelés automatiquement",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.tiime.fr/tarifs"
+    }
+  ],
   "cible": ["indépendants", "freelances", "TPE", "micro-entrepreneurs"],
   "fonctionnalites": {
     "emission": true,
@@ -35,9 +69,12 @@
     "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
     "Facturation et comptabilité réunies dans un même outil"
   ],
-  "points_faibles": [],
+  "points_faibles": [
+    "Offre Free sans rapprochement automatique des justificatifs et des transactions",
+    "Archivage à valeur probante : réservé à l'offre Smart, payante"
+  ],
   "statut_test": "a_tester",
-  "date_maj": "2026-10-04",
+  "date_maj": "2026-10-23",
   "sources": [
     {
       "objet": "Présence au registre DGFiP des plateformes agréées (« TIIME PDP »)",
@@ -55,14 +92,19 @@
       "date_releve": "2026-10-04"
     },
     {
-      "objet": "Page tarifs de l'éditeur (prix pas encore reportés ici)",
+      "objet": "Tarifs HT relevés sur la page tarifs de l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://www.tiime.fr/tarifs",
-      "date_releve": "2026-10-04"
+      "date_releve": "2026-10-23"
     },
     {
       "objet": "Programme d'affiliation (via Affilae)",
       "url": "https://www.tiime.fr/affiliation",
       "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://support.tiime.fr/fr/articles/26311-comment-mes-justificatifs-sont-ils-traites",
+      "date_releve": "2026-10-23"
     }
   ]
 }

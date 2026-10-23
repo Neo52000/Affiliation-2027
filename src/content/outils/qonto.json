@@ -7,8 +7,42 @@
     "date_immatriculation": null,
     "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
   },
-  "offre_gratuite": null,
-  "plans": [],
+  "offre_gratuite": {
+    "valeur": true,
+    "limites": "Qonto Facturation, avec factures récurrentes, relances automatiques et signature des devis en module payant"
+  },
+  "plans": [
+    {
+      "nom": "Basic",
+      "montant": 108,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://qonto.com/fr/pricing"
+    },
+    {
+      "nom": "Smart",
+      "montant": 228,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://qonto.com/fr/pricing"
+    },
+    {
+      "nom": "Premium",
+      "montant": 468,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://qonto.com/fr/pricing"
+    }
+  ],
   "cible": ["PME", "indépendants"],
   "fonctionnalites": {
     "emission": true,
@@ -35,9 +69,12 @@
     "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
     "Compte professionnel et facturation dans un même outil"
   ],
-  "points_faibles": [],
+  "points_faibles": [
+    "Factures récurrentes, relances automatiques et signature électronique des devis : module payant en supplément (Facturation automatisée)",
+    "Tenue comptable par un expert-comptable : service distinct et payant (Qonto Comptabilité)"
+  ],
   "statut_test": "a_tester",
-  "date_maj": "2026-10-04",
+  "date_maj": "2026-10-23",
   "sources": [
     {
       "objet": "Présence au registre DGFiP des plateformes agréées",
@@ -55,14 +92,24 @@
       "date_releve": "2026-10-04"
     },
     {
-      "objet": "Page tarifs de l'éditeur (prix pas encore reportés ici)",
+      "objet": "Tarifs HT relevés sur la page tarifs de l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://qonto.com/fr/pricing",
-      "date_releve": "2026-10-04"
+      "date_releve": "2026-10-23"
     },
     {
       "objet": "Programme d'affiliation (candidature directe)",
       "url": "https://qonto.com/fr/affiliate",
       "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://support-fr.qonto.com/hc/en-us/articles/28479048690705-What-add-ons-are-available-to-complement-my-plan",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://accounting.qonto.com/fr",
+      "date_releve": "2026-10-23"
     }
   ]
 }
