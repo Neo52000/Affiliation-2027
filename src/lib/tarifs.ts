@@ -32,6 +32,29 @@ export function prixEntreeDouzeMois(
   return null;
 }
 
+type FonctionTarifee = keyof NonNullable<Outil['offre_minimale']>;
+
+/** Plans d'une offre nommée : son nom exact ou ses variantes (« Start (mensuel) »). */
+export function plansDeLOffre(plans: Plan[], offre: string): Plan[] {
+  return plans.filter((p) => p.nom === offre || p.nom.startsWith(`${offre} `));
+}
+
+/**
+ * Coût sur 12 mois de l'offre la moins chère qui inclut une fonction : 0 pour
+ * l'offre gratuite, sinon le moins cher des plans relevés de l'offre nommée
+ * (HT d'abord) ; null si l'offre ou son prix ne sont pas déterminés.
+ */
+export function coutFonction(
+  outil: Pick<Outil, 'plans' | 'offre_minimale'>,
+  fonction: FonctionTarifee,
+): { montant: number; base: Plan['base']; offre: string } | null {
+  const offre = outil.offre_minimale?.[fonction]?.offre;
+  if (!offre) return null;
+  if (offre === 'gratuite') return { montant: 0, base: 'HT', offre };
+  const prix = prixEntreeDouzeMois(plansDeLOffre(outil.plans, offre));
+  return prix ? { montant: prix.montant, base: prix.base, offre } : null;
+}
+
 /**
  * Title, H1 et description d'une fiche logiciel : « tarifs » et « limites »
  * n'apparaissent que si la page les publie (offre relevée, points faibles).

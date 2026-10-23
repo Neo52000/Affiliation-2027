@@ -47,6 +47,8 @@ export const FONCTIONS_OUTIL = [
   'lien_expert_comptable',
 ] as const;
 
+const offreMinimale = z.object({ offre: z.string().min(1), source: url });
+
 export const outilSchema = z
   .object({
     nom: z.string().min(1),
@@ -113,6 +115,21 @@ export const outilSchema = z
     }),
     points_forts: z.array(z.string()),
     points_faibles: z.array(z.string()),
+    /**
+     * Offre la moins chère qui inclut chaque fonction, selon l'éditeur : « gratuite »
+     * ou début du nom d'un plan de `plans` (« Start » couvre « Start (mensuel) »).
+     * Fonction absente = offre non déterminée, aucun coût n'est affiché.
+     */
+    offre_minimale: z
+      .object({
+        devis: offreMinimale,
+        acomptes: offreMinimale,
+        app_mobile: offreMinimale,
+        export_comptable: offreMinimale,
+        lien_expert_comptable: offreMinimale,
+      })
+      .partial()
+      .optional(),
     statut_test: z.enum(['a_tester', 'teste']),
     date_maj: dateIso,
     sources: z.array(z.object({ objet: z.string(), url, date_releve: dateIso })),

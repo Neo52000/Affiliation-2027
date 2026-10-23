@@ -2,10 +2,11 @@
 /**
  * Scénarios de facturation d'un métier : étapes concrètes, exemple chiffré et,
  * pour chaque logiciel recommandé, la disponibilité déclarée de la fonctionnalité
- * exigée (fiches outils). Aucun résultat de test n'est affiché avant nos essais.
+ * exigée et le coût sur 12 mois de l'offre qui l'inclut (fiches outils). Aucun résultat de test n'est affiché avant nos essais.
  */
 import type { CollectionEntry } from 'astro:content';
 import Statut from './Statut.astro';
+import { coutFonction } from '../lib/tarifs';
 
 type Scenario = NonNullable<CollectionEntry<'metiers'>['data']['scenarios']>[number];
 
@@ -22,6 +23,14 @@ const LIBELLES: Record<Scenario['fonction'], string> = {
   app_mobile: 'Application mobile',
   export_comptable: 'Export comptable',
   lien_expert_comptable: 'Accès expert-comptable',
+};
+
+const euros = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
+const libelleCout = (outil: CollectionEntry<'outils'>, fonction: Scenario['fonction']) => {
+  const cout = coutFonction(outil.data, fonction);
+  if (!cout) return 'Coût non déterminé';
+  if (cout.offre === 'gratuite') return '0 € (offre gratuite)';
+  return `${euros.format(cout.montant)} ${cout.base} / 12 mois (${cout.offre})`;
 };
 ---
 
@@ -60,7 +69,8 @@ const LIBELLES: Record<Scenario['fonction'], string> = {
   >
     <table class="w-full border-collapse text-sm">
       <caption class="sr-only">
-        Fonction exigée par chaque scénario et disponibilité déclarée par l’éditeur
+        Fonction exigée par chaque scénario, disponibilité déclarée par l’éditeur et coût sur 12
+        mois
       </caption>
       <thead>
         <tr>
@@ -84,6 +94,7 @@ const LIBELLES: Record<Scenario['fonction'], string> = {
             {outils.map((o) => (
               <td class="py-2 pr-3">
                 <Statut valeur={o.data.fonctionnalites[s.fonction]} />
+                <span class="block text-xs text-ink-soft">{libelleCout(o, s.fonction)}</span>
               </td>
             ))}
           </tr>
@@ -93,5 +104,9 @@ const LIBELLES: Record<Scenario['fonction'], string> = {
   </div>
   <p class="mt-2 text-xs text-ink-soft">
     « À vérifier » : donnée en cours de relevé sur le site officiel de l’éditeur.
+  </p>
+  <p class="mt-1 text-xs text-ink-soft">
+    Coût de l’offre la moins chère qui inclut la fonction, selon l’éditeur, HT, sur 12 mois, hors
+    options et hors frais bancaires ; il peut varier selon le statut. Relevé du 23 octobre 2026.
   </p>
 </section>

@@ -103,6 +103,20 @@
     "Offre gratuite sans télédéclaration Urssaf ni connexion bancaire : ces fonctions sont réservées aux offres payantes",
     "Plusieurs utilisateurs : seulement avec l'offre Business, la plus complète"
   ],
+  "offre_minimale": {
+    "devis": {
+      "offre": "gratuite",
+      "source": "https://abby.fr/tarifs"
+    },
+    "acomptes": {
+      "offre": "Start",
+      "source": "https://abby.fr/tarifs"
+    },
+    "app_mobile": {
+      "offre": "gratuite",
+      "source": "https://abby.fr/tarifs"
+    }
+  },
   "statut_test": "a_tester",
   "date_maj": "2026-10-23",
   "sources": [

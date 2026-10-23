@@ -73,6 +73,20 @@
     "Factures récurrentes, relances automatiques et signature électronique des devis : module payant en supplément (Facturation automatisée)",
     "Tenue comptable par un expert-comptable : service distinct et payant (Qonto Comptabilité)"
   ],
+  "offre_minimale": {
+    "devis": {
+      "offre": "gratuite",
+      "source": "https://qonto.com/fr/invoicing/quotes"
+    },
+    "acomptes": {
+      "offre": "gratuite",
+      "source": "https://qonto.com/fr/invoicing/free-software"
+    },
+    "app_mobile": {
+      "offre": "gratuite",
+      "source": "https://qonto.com/fr/invoicing/free-software"
+    }
+  },
   "statut_test": "a_tester",
   "date_maj": "2026-10-23",
   "sources": [

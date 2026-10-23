@@ -72,6 +72,12 @@
   "points_faibles": [
     "Accompagnement par un expert-comptable : option payante, en plus de l'abonnement"
   ],
+  "offre_minimale": {
+    "devis": {
+      "offre": "gratuite",
+      "source": "https://www.indy.fr/prix/"
+    }
+  },
   "statut_test": "a_tester",
   "date_maj": "2026-10-23",
   "sources": [
