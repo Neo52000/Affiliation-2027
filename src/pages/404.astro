@@ -1,4 +1,5 @@
 ---
+import { QUIZ_FORMAT, majuscule } from '../lib/quiz-libelles';
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ListeFamilles from '../components/ListeFamilles.astro';
@@ -58,8 +59,7 @@ const familles = (Object.keys(FAMILLE_LABELS) as Famille[])
           <a href="/outils/quiz">Quiz</a>
         </p>
         <p class="mt-1 text-sm text-ink-soft">
-          Cinq questions (et une facultative), un logiciel adapté à votre métier et deux
-          alternatives.
+          {majuscule(QUIZ_FORMAT)}, un logiciel adapté à votre métier et deux alternatives.
         </p>
       </li>
       <li>

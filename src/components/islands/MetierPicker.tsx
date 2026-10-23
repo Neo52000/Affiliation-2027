@@ -1,3 +1,4 @@
+import { QUIZ_QUESTIONS_METIER_CONNU } from '../../lib/quiz-libelles';
 import { useEffect, useRef, useState } from 'preact/hooks';
 
 /**
@@ -95,7 +96,7 @@ export default function MetierPicker({ metiers }: Props) {
             )}
             <div class="mt-3 flex flex-wrap items-center gap-3">
               <a href={`/outils/quiz?metier=${encodeURIComponent(metier.slug)}`} class="btn-cta">
-                Affiner en 4 questions
+                Affiner en {QUIZ_QUESTIONS_METIER_CONNU} questions
               </a>
               <a href={`/facturation-electronique/${metier.slug}`} class="btn-ghost">
                 Lire la fiche {metier.nom}
