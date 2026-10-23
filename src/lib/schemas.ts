@@ -33,6 +33,20 @@ export const FAMILLES = [
 /** Note sur 10, ou null tant que statut_test = a_tester. */
 const note = z.number().min(0).max(10).nullable();
 
+/** Fonctions d'un logiciel relevées dans sa fiche (`outilSchema.fonctionnalites`). */
+export const FONCTIONS_OUTIL = [
+  'emission',
+  'reception',
+  'e_reporting',
+  'compte_pro',
+  'compta',
+  'devis',
+  'acomptes',
+  'app_mobile',
+  'export_comptable',
+  'lien_expert_comptable',
+] as const;
+
 export const outilSchema = z
   .object({
     nom: z.string().min(1),
@@ -155,6 +169,27 @@ export const metierSchema = z.object({
       description: z.string().min(1).max(154),
       /** true : la section des logiciels passe juste après « En bref ». */
       ordre_commercial: z.boolean(),
+    })
+    .optional(),
+  /**
+   * Cas concret (TODO.md #40) : une situation type et ses étapes de facturation,
+   * chacune rattachée à la fonction logicielle qu'elle sollicite. La page croise
+   * ces étapes avec les fiches des logiciels recommandés (Oui / Non / À vérifier) :
+   * aucune capacité n'est affirmée ici, et aucun montant n'y figure.
+   */
+  scenario: z
+    .object({
+      situation: z.string().min(40),
+      etapes: z
+        .array(
+          z.object({
+            titre: z.string().min(1),
+            detail: z.string().min(20),
+            fonction: z.enum(FONCTIONS_OUTIL),
+          }),
+        )
+        .min(2)
+        .max(5),
     })
     .optional(),
 });

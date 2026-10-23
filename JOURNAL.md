@@ -724,3 +724,11 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 - Navigateur (`src/lib/mesure-client.ts`) : `sendBeacon`, script chargé par `Base.astro` qui écoute les clics sur `a[data-outil]` (boutons `AffiliateButton` et quiz) ; le quiz envoie le logiciel retenu à l'affichage du résultat, jamais les réponses.
 - Lecture : GET `/api/mesure?jours=30` avec le jeton du back office, accepté seulement si GitHub lui donne le droit d'écriture sur le dépôt. `/admin` affiche l'entonnoir par logiciel (quiz terminés, clics éditeur). Les inscriptions validées restent à lire chez chaque programme d'affiliation.
 - Page confidentialité : section « Mesure d'audience agrégée ».
+
+## Cas concrets sur 5 fiches métier (2026-10-23)
+
+- Champ facultatif `scenario` (`metierSchema`) : une situation type et 2 à 5 étapes, chacune rattachée à une fonction de `outilSchema.fonctionnalites`. Composant `ScenarioMetier.astro`, après l'exemple de facture : la page croise chaque étape avec les fiches des logiciels recommandés (Oui / Non / À vérifier). Aucune capacité n'est affirmée par le scénario lui-même.
+- Rédigés pour consultant, plombier, photographe (pages pilotes) et électricien, graphiste ; aucun montant ni date écrits (test `src/lib/scenario.test.ts`).
+- Libellés des fonctions partagés (`src/lib/fonctions.ts`) entre la fiche logiciel et le cas concret.
+- Effet attendu et assumé : tant que devis, acomptes, app mobile et export comptable restent `null`, le tableau affiche « À vérifier » ; il se remplit dès le relevé TODO #31.
+- Relevé des tarifs (TODO #31) tenté le 2026-10-23 : les 6 sites éditeurs sont refusés par le proxy de l'environnement, rien n'a été saisi.

@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import ExempleFacture from '../../components/ExempleFacture.astro';
 import OutilsMetier from '../../components/OutilsMetier.astro';
+import ScenarioMetier from '../../components/ScenarioMetier.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { FAMILLE_LABELS } from '../../lib/familles';
 import { formatDateFr } from '../../lib/dates';
@@ -186,6 +187,19 @@ const faqJsonLd = {
           />
         </div>
       </section>
+
+      {d.scenario && (
+        <ScenarioMetier
+          metierNom={d.nom}
+          situation={d.scenario.situation}
+          etapes={d.scenario.etapes}
+          outils={recommandes.map((r) => ({
+            slug: r.outil.data.slug,
+            nom: r.outil.data.nom,
+            fonctionnalites: r.outil.data.fonctionnalites,
+          }))}
+        />
+      )}
 
       {!commercial && (
         <OutilsMetier metierSlug={d.slug} recommandes={recommandes} paires={paires} />

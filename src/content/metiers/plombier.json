@@ -158,7 +158,32 @@
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-10",
+  "scenario": {
+    "situation": "Un particulier vous appelle pour remplacer le chauffe-eau électrique de sa résidence principale, achevée depuis plus de deux ans : fourniture, dépose de l'ancien appareil et main-d'œuvre au taux réduit de 10 %.",
+    "etapes": [
+      {
+        "titre": "Devis avant intervention",
+        "detail": "Le devis détaillé est remis avant les travaux, quel que soit leur montant, avec les fournitures et les heures de pose ligne par ligne.",
+        "fonction": "devis"
+      },
+      {
+        "titre": "Facture sur place",
+        "detail": "Une fois le chauffe-eau posé, la facture est établie depuis le chantier, avec la mention certifiant les conditions du taux réduit et l'assurance décennale.",
+        "fonction": "app_mobile"
+      },
+      {
+        "titre": "Facture de fournisseur",
+        "detail": "Si le grossiste vous facture le chauffe-eau et les raccords au format électronique, la facture vous parvient via une plateforme agréée : vous devez déjà pouvoir la recevoir.",
+        "fonction": "reception"
+      },
+      {
+        "titre": "Transmission au cabinet",
+        "detail": "Les factures émises et reçues partent vers la comptabilité avec leurs taux de TVA distincts, sans ressaisie des lignes.",
+        "fonction": "export_comptable"
+      }
+    ]
+  },
+  "date_maj": "2026-10-23",
   "seo": {
     "title": "Logiciel de facturation pour plombier : comment choisir ?",
     "h1": "Quel logiciel de facturation choisir pour votre activité de plombier ?",

@@ -148,5 +148,30 @@
       "url": "https://www.impots.gouv.fr/actualite/facturation-electronique-liste-des-plateformes-de-dematerialisation-partenaires"
     }
   ],
-  "date_maj": "2026-10-10"
+  "scenario": {
+    "situation": "Une entreprise française vous commande son identité visuelle : création du logo et de la charte, puis cession des droits d'exploitation, avec une facture d'acompte à la commande et une facture de solde à la livraison.",
+    "etapes": [
+      {
+        "titre": "Devis créatif",
+        "detail": "Le devis sépare la prestation de création et la cession de droits, en précisant supports, durée et territoire de la cession.",
+        "fonction": "devis"
+      },
+      {
+        "titre": "Facture d'acompte",
+        "detail": "L'acompte demandé à la commande est facturé à part, avec un numéro qui s'inscrit dans la même séquence que le solde du projet.",
+        "fonction": "acomptes"
+      },
+      {
+        "titre": "Facture de solde",
+        "detail": "Création à 20 % et cession de droits à 10 % figurent sur des lignes distinctes, puis l'acompte déjà facturé est déduit.",
+        "fonction": "emission"
+      },
+      {
+        "titre": "Suivi des recettes",
+        "detail": "Les montants encaissés alimentent le suivi des recettes utilisé pour la déclaration de l'activité.",
+        "fonction": "compta"
+      }
+    ]
+  },
+  "date_maj": "2026-10-23"
 }

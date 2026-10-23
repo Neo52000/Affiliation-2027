@@ -132,5 +132,30 @@
       "url": "https://bofip.impots.gouv.fr/bofip/15082-PGP.html/identifiant=BOI-RES-TVA-000269-20260909"
     }
   ],
-  "date_maj": "2026-10-10"
+  "scenario": {
+    "situation": "Entre deux dépannages, vous rénovez l'installation électrique d'une maison individuelle achevée depuis plus de deux ans, et vous intervenez ponctuellement en sous-traitance pour une entreprise générale du bâtiment.",
+    "etapes": [
+      {
+        "titre": "Devis de dépannage",
+        "detail": "Le devis détaillé obligatoire est établi avant l'intervention, puis transformé en facture sans ressaisie une fois le dépannage terminé.",
+        "fonction": "devis"
+      },
+      {
+        "titre": "Facture depuis le chantier",
+        "detail": "Les petites factures de dépannage partent dès la fin de l'intervention, depuis le téléphone, pour ne pas les accumuler en fin de mois.",
+        "fonction": "app_mobile"
+      },
+      {
+        "titre": "Facture de sous-traitance",
+        "detail": "La facture adressée à l'entreprise générale est émise sans TVA avec la mention « Autoliquidation », à part des factures aux particuliers.",
+        "fonction": "emission"
+      },
+      {
+        "titre": "Factures de matériel reçues",
+        "detail": "Les factures électroniques du distributeur de matériel vous parviennent via une plateforme agréée : vous devez déjà pouvoir les recevoir.",
+        "fonction": "reception"
+      }
+    ]
+  },
+  "date_maj": "2026-10-23"
 }
