@@ -360,6 +360,14 @@ describe('etat et mise en ligne', () => {
     ['fichier inattendu', routes(pr(), ['src/data/publicites.json']), /ne sont pas ceux/],
     ['aucun fichier', routes(pr(), []), /ne sont pas ceux/],
     [
+      '100 fichiers ou plus (liste tronquée par GitHub)',
+      routes(
+        pr(),
+        Array.from({ length: 100 }, (_, i) => `src/data/f${i}.json`),
+      ),
+      /trop de fichiers/,
+    ],
+    [
       'CI d’un autre workflow',
       routes(pr(), undefined, [run({ path: '.github/workflows/autre.yml' })]),
       /non réussies/,

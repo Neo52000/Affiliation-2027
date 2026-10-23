@@ -79,3 +79,38 @@ test('6. fiche outil : « Test à venir » et sources datées', async ({ page })
   await expect(page.getByText('Test à venir').first()).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Sources' })).toBeVisible();
 });
+
+test('quiz : un seul « quiz commencé » et un « quiz terminé » envoyés à la mesure', async ({
+  page,
+}) => {
+  const envois: string[] = [];
+  await page.route('**/api/mesure', async (route) => {
+    envois.push(route.request().postData() ?? '');
+    await route.fulfill({ status: 204 });
+  });
+  await page.goto('/outils/quiz');
+  await attendreHydratation(page, page.getByLabel('1. Votre métier'));
+  await page.getByLabel('1. Votre métier').fill('Plombier');
+  await page.getByLabel('2. Votre statut').selectOption('micro');
+  await page.getByRole('button', { name: 'Voir ma recommandation' }).click();
+  await expect(page.getByRole('heading', { name: 'Notre recommandation' })).toBeVisible();
+  await expect
+    .poll(() => envois.map((e) => (JSON.parse(e) as { type: string }).type).sort())
+    .toEqual(['quiz_commence', 'quiz_termine']);
+test.describe('fiche outil sur mobile', () => {
+  test.use({ viewport: { width: 393, height: 851 } });
+
+  test('7. le bouton vers l’éditeur est visible dès le premier écran', async ({ page }) => {
+    await page.goto('/logiciels/abby');
+    const bouton = page.locator('a[data-emplacement="fiche-abby-haut"]');
+    await expect(bouton).toBeInViewport();
+    await expect(bouton).toHaveAttribute('data-outil', 'abby');
+  });
+
+  test('8. sur grand écran, seul le bouton de la colonne d’appui est affiché', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto('/logiciels/abby');
+    await expect(page.locator('a[data-emplacement="fiche-abby-haut"]')).toBeHidden();
+    await expect(page.locator('a[data-emplacement="fiche-abby"]')).toBeVisible();
+  });
+});

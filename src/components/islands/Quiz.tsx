@@ -36,6 +36,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
   // Saisie de métier non reconnue au moment du calcul (message dans le résultat).
   const [metierInconnu, setMetierInconnu] = useState<string | null>(null);
   const titreResultat = useRef<HTMLHeadingElement>(null);
+  const commence = useRef(false);
 
   // Préremplissage depuis un hub de famille (?metier=slug). Un slug inconnu est
   // ignoré : seul un métier de la collection peut remplir le champ.
@@ -55,8 +56,17 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
     envoyerMesure({ type: 'quiz_termine', outil: outilRetenu(resultat), emplacement: 'quiz' });
   }, [resultat]);
 
+  // Quiz commencé : première saisie dans le formulaire, une fois par affichage de la page.
+  const signalerDebut = () => {
+    if (commence.current) return;
+    commence.current = true;
+    envoyerMesure({ type: 'quiz_commence', outil: 'aucun', emplacement: 'quiz' });
+  };
+
   const calculer = (e: Event) => {
     e.preventDefault();
+    // Envoi direct avec les valeurs par défaut : le quiz compte aussi comme commencé.
+    signalerDebut();
     const metierSlug = trouverMetier(metierSaisi, metiers);
     setMetierInconnu(metierSaisi.trim() && !metierSlug ? metierSaisi.trim() : null);
     setResultat(
@@ -125,7 +135,13 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
 
   return (
     <div>
-      <form onSubmit={calculer} class="space-y-5" aria-describedby="quiz-note">
+      <form
+        onSubmit={calculer}
+        onInput={signalerDebut}
+        onChange={signalerDebut}
+        class="space-y-5"
+        aria-describedby="quiz-note"
+      >
         <div>
           <label class="font-bold" for="quiz-metier">
             1. Votre métier

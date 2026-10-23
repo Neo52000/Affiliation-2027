@@ -30,7 +30,7 @@ import {
   publicitesSchema,
   type Campagne,
 } from '../../lib/schemas';
-import { syntheseParOutil, type TotalMesure } from '../../lib/mesure-client';
+import { syntheseParOutil, syntheseQuiz, type TotalMesure } from '../../lib/mesure-client';
 
 /**
  * Back office : liens d'affiliation et espaces publicitaires. Les données sont
@@ -885,8 +885,9 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
           Mesure sur 30 jours
         </h3>
         <p class="mt-1 text-sm text-ink-soft">
-          Totaux agrégés sans cookie : quiz terminés (logiciel retenu) et clics vers l’éditeur. Les
-          inscriptions validées se lisent dans l’espace de chaque programme d’affiliation.
+          Totaux agrégés sans cookie : quiz commencés et terminés, logiciel retenu, clics vers
+          l’éditeur. Les inscriptions validées se lisent dans l’espace de chaque programme
+          d’affiliation.
         </p>
         {mesure === null ? (
           <p class="mt-2 text-sm">Chargement…</p>
@@ -895,32 +896,41 @@ export default function BackOffice({ depot, previsualisation, outils, familles }
         ) : mesure.length === 0 ? (
           <p class="mt-2 text-sm">Aucun événement enregistré sur la période.</p>
         ) : (
-          <table class="mt-2 text-sm">
-            <thead>
-              <tr>
-                <th scope="col" class="pr-4 text-left">
-                  Logiciel
-                </th>
-                <th scope="col" class="pr-4 text-right">
-                  Quiz terminés
-                </th>
-                <th scope="col" class="text-right">
-                  Clics éditeur
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {syntheseParOutil(mesure).map((l) => (
-                <tr key={l.outil}>
-                  <th scope="row" class="pr-4 text-left font-normal">
-                    {outils.find((o) => o.slug === l.outil)?.nom ?? l.outil}
+          <>
+            <p class="mt-2 text-sm">
+              {(() => {
+                const q = syntheseQuiz(mesure);
+                const taux = q.commences > 0 ? Math.round((q.termines / q.commences) * 100) : null;
+                return `Quiz : ${q.commences} commencés, ${q.termines} terminés${taux === null ? '' : ` (${taux} %)`}.`;
+              })()}
+            </p>
+            <table class="mt-2 text-sm">
+              <thead>
+                <tr>
+                  <th scope="col" class="pr-4 text-left">
+                    Logiciel
                   </th>
-                  <td class="pr-4 text-right">{l.quiz}</td>
-                  <td class="text-right">{l.clics}</td>
+                  <th scope="col" class="pr-4 text-right">
+                    Quiz terminés
+                  </th>
+                  <th scope="col" class="text-right">
+                    Clics éditeur
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {syntheseParOutil(mesure).map((l) => (
+                  <tr key={l.outil}>
+                    <th scope="row" class="pr-4 text-left font-normal">
+                      {outils.find((o) => o.slug === l.outil)?.nom ?? l.outil}
+                    </th>
+                    <td class="pr-4 text-right">{l.quiz}</td>
+                    <td class="text-right">{l.clics}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
         )}
       </section>
 
