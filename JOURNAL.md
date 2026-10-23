@@ -718,6 +718,24 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 - pizzeria : les commissions d'une plateforme de livraison établie hors de France relèvent de l'e-reporting, pas d'une facture reçue via une plateforme agréée ;
 - agriculteur : l'obligation de réception pour l'exploitant au remboursement forfaitaire agricole est à confirmer sur la documentation DGFiP.
 
+## Mesure sans cookie : quiz terminé et clic éditeur (2026-10-23)
+
+- Fonction Netlify `/api/mesure` (logique et tests : `src/lib/mesure.ts`) : POST d'un événement `quiz_termine` ou `clic_editeur`, validé (type, outil connu d'`affiliation.json`, emplacement en slug), stocké dans Netlify Blobs sous une clé vide `AAAA-MM-JJ/type/outil/emplacement/id`. Ni IP, ni navigateur, ni page d'origine ; l'id aléatoire évite seulement d'écraser un événement concurrent. Limite : 30 envois par minute et par IP.
+- Navigateur (`src/lib/mesure-client.ts`) : `sendBeacon`, script chargé par `Base.astro` qui écoute les clics sur `a[data-outil]` (boutons `AffiliateButton` et quiz) ; le quiz envoie le logiciel retenu à l'affichage du résultat, jamais les réponses.
+- Lecture : GET `/api/mesure?jours=30` avec le jeton du back office, accepté seulement si GitHub lui donne le droit d'écriture sur le dépôt. `/admin` affiche l'entonnoir par logiciel (quiz terminés, clics éditeur). Les inscriptions validées restent à lire chez chaque programme d'affiliation.
+- Page confidentialité : section « Mesure d'audience agrégée ».
+
+## Cas concrets sur 5 fiches métier (2026-10-23)
+
+- Champ facultatif `scenario` (`metierSchema`) : une situation type et 2 à 5 étapes, chacune rattachée à une fonction de `outilSchema.fonctionnalites`. Composant `ScenarioMetier.astro`, après l'exemple de facture : la page croise chaque étape avec les fiches des logiciels recommandés (Oui / Non / À vérifier). Aucune capacité n'est affirmée par le scénario lui-même.
+- Rédigés pour consultant, plombier, photographe (pages pilotes) et électricien, graphiste ; aucun montant ni date écrits (test `src/lib/scenario.test.ts`).
+- Libellés des fonctions partagés (`src/lib/fonctions.ts`) entre la fiche logiciel et le cas concret.
+- Effet attendu et assumé : tant que devis, acomptes, app mobile et export comptable restent `null`, le tableau affiche « À vérifier » ; il se remplit dès le relevé TODO #31.
+- Relevé des tarifs (TODO #31) tenté le 2026-10-23 : les 6 sites éditeurs sont refusés par le proxy de l'environnement, rien n'a été saisi.
+
+## Mesure : une égalité au quiz n'est attribuée à aucun logiciel (2026-10-23)
+
+- Correction : en cas d'égalité en tête, `quiz_termine` était attribué au premier logiciel par ordre alphabétique (`recommande` vaut toujours le premier trié), ce qui faussait l'entonnoir et contredisait la règle « pas de gagnant sur une égalité ». `outilRetenu()` (`src/lib/quiz.ts`) renvoie désormais `aucun` dans ce cas et sans logiciel compatible ; `/api/mesure` accepte `aucun` pour un quiz terminé, jamais pour un clic éditeur.
 ## Durcissement serveur et back office (2026-10-23)
 
 Audit de bugs en lecture seule, défauts reproduits puis corrigés avec un test qui échouait avant :

@@ -45,5 +45,9 @@ const { title, description, updatedAt, noindex } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <script>
+      import { suivreClics } from '../lib/mesure-client';
+      suivreClics();
+    </script>
   </body>
 </html>

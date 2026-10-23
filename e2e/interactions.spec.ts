@@ -78,7 +78,7 @@ test('hub : le sélecteur annonce la recommandation de la fiche choisie', async 
   await page.waitForFunction(() => document.querySelectorAll('astro-island[ssr]').length === 0);
   await page.getByRole('radio', { name: 'Plombier' }).check();
   await expect(page.getByRole('status')).toContainText('Plombier :');
-  await expect(page.getByRole('link', { name: 'Affiner en 5 questions' })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: 'Affiner en 4 questions' })).toHaveAttribute(
     'href',
     '/outils/quiz?metier=plombier',
   );

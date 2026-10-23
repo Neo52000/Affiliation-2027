@@ -24,14 +24,14 @@ const outils = outilsColl.map((o) => faitsQuiz(o.data));
 
 <Base
   title={pageTitle('Quiz : quel logiciel pour vous ?', SITE.name)}
-  description="Cinq questions (métier, statut, volume, compte pro, expert-comptable) pour trouver votre logiciel de facturation électronique, avec deux alternatives."
+  description="Cinq questions (métier, statut, volume, compte pro, expert-comptable) et une facultative : votre logiciel de facturation et deux alternatives."
 >
   <BandeauTransparence outils={outils.map((o) => o.slug)} rappelIndependance={false} />
   <Breadcrumb items={[{ label: 'Outils' }, { label: 'Quiz' }]} />
   <p class="surtitre mt-4">Outil</p>
   <h1 class="titre-page mt-3">Quel logiciel de facturation électronique pour vous&nbsp;?</h1>
   <p class="chapo mt-5">
-    Répondez à cinq questions sur votre activité, et cochez si besoin vos fonctions
+    Répondez à cinq questions sur votre activité, puis à une sixième, facultative, sur vos fonctions
     indispensables&nbsp;: le quiz recommande un logiciel, propose deux alternatives et indique ce
     qui reste à confirmer.
   </p>

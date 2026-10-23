@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import ExempleFacture from '../../components/ExempleFacture.astro';
 import OutilsMetier from '../../components/OutilsMetier.astro';
+import ScenarioMetier from '../../components/ScenarioMetier.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { FAMILLE_LABELS } from '../../lib/familles';
 import { formatDateFr } from '../../lib/dates';
@@ -187,6 +188,19 @@ const faqJsonLd = {
         </div>
       </section>
 
+      {d.scenario && (
+        <ScenarioMetier
+          metierNom={d.nom}
+          situation={d.scenario.situation}
+          etapes={d.scenario.etapes}
+          outils={recommandes.map((r) => ({
+            slug: r.outil.data.slug,
+            nom: r.outil.data.nom,
+            fonctionnalites: r.outil.data.fonctionnalites,
+          }))}
+        />
+      )}
+
       {!commercial && (
         <OutilsMetier metierSlug={d.slug} recommandes={recommandes} paires={paires} />
       )}
@@ -309,7 +323,7 @@ const faqJsonLd = {
         <p class="carte-appui-titre">Affiner la recommandation</p>
         <p class="mt-2 text-sm text-ink-soft">
           Votre métier est déjà renseigné. Il reste quatre questions : statut, volume de factures,
-          compte professionnel et expert-comptable.
+          compte professionnel et expert-comptable, puis vos fonctions indispensables si besoin.
         </p>
         <p class="mt-3 text-sm">
           <a href={`/outils/quiz?metier=${encodeURIComponent(d.slug)}`} class="lien-fleche">
