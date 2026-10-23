@@ -733,6 +733,11 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 - Effet attendu et assumé : tant que devis, acomptes, app mobile et export comptable restent `null`, le tableau affiche « À vérifier » ; il se remplit dès le relevé TODO #31.
 - Relevé des tarifs (TODO #31) tenté le 2026-10-23 : les 6 sites éditeurs sont refusés par le proxy de l'environnement, rien n'a été saisi.
 
+## Mesure : quiz commencé (2026-10-23)
+
+- Troisième événement `quiz_commence`, envoyé à la première saisie dans le formulaire (ou à l'envoi direct), une fois par affichage. `outil` vaut alors `aucun` ; `quiz_termine` l'accepte aussi quand aucun logiciel n'est compatible, pour que le taux de complétion soit exact. Un clic éditeur exige toujours un logiciel connu.
+- `/admin` affiche « Quiz : N commencés, M terminés (x %) » au-dessus du tableau par logiciel.
+
 ## Mesure : une égalité au quiz n'est attribuée à aucun logiciel (2026-10-23)
 
 - Correction : en cas d'égalité en tête, `quiz_termine` était attribué au premier logiciel par ordre alphabétique (`recommande` vaut toujours le premier trié), ce qui faussait l'entonnoir et contredisait la règle « pas de gagnant sur une égalité ». `outilRetenu()` (`src/lib/quiz.ts`) renvoie désormais `aucun` dans ce cas et sans logiciel compatible ; `/api/mesure` accepte `aucun` pour un quiz terminé, jamais pour un clic éditeur.
