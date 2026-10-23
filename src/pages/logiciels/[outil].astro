@@ -98,6 +98,17 @@ const appJsonLd = {
         <StatutPlateforme statut={d.est_plateforme_agreee} nom={d.nom} variante="complet" />
       </section>
 
+      {/* Sur mobile, la colonne d'appui ne vient qu'après l'article (environ 5 écrans) :
+          le bouton vers l'éditeur est repris ici. Sur grand écran, la colonne est visible d'emblée. */}
+      <p class="mt-6 lg:hidden">
+        <AffiliateButton
+          outil={d.slug}
+          urlOfficielle={d.url_officielle}
+          label={`Aller sur le site ${de(d.nom)}`}
+          emplacement={`fiche-${d.slug}-haut`}
+        />
+      </p>
+
       <section aria-labelledby="pour-qui" class="mt-10">
         <h2 id="pour-qui" class="titre-section">
           Pour qui

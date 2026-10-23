@@ -121,7 +121,6 @@ describe('relayer : écritures', () => {
     ['POST', '/git/refs', { ref: `refs/heads/${BRANCHE}`, sha: 'c0ffee' }],
     ['POST', '/pulls', { title: 't', head: BRANCHE, base: 'main', body: '' }],
     ['PATCH', '/pulls/7', { state: 'closed' }],
-    ['PUT', '/pulls/7/merge', { sha: 'c0ffee', merge_method: 'squash' }],
     ['DELETE', `/git/refs/heads/${BRANCHE}`, undefined],
   ])('relaie %s %s', async (methode, route, corps) => {
     const { f, appels } = fauxGitHub();
@@ -151,6 +150,55 @@ describe('relayer : écritures', () => {
     const { f, appels } = fauxGitHub();
     expect((await relayer(ecrire(methode, route, corps), DEPOT, f)).status).toBe(403);
     expect(appels).toHaveLength(0);
+  });
+
+  describe('mise en ligne (PUT /pulls/n/merge)', () => {
+    const SHA = 'c0ffee';
+    const OK = { sha: SHA, merge_method: 'squash' };
+    /** GitHub simulé : la lecture de la demande renvoie `pr`, la fusion répond 200. */
+    function github(pr: unknown) {
+      const appels: { url: string; init: RequestInit }[] = [];
+      const f = (async (url: string, init: RequestInit) => {
+        appels.push({ url, init });
+        const corps = init.method === 'GET' ? JSON.stringify(pr) : '{"merged":true}';
+        return new Response(corps, {
+          status: 200,
+          headers: { 'content-type': 'application/json' },
+        });
+      }) as typeof fetch;
+      return { f, appels };
+    }
+    const prBackOffice = { head: { ref: BRANCHE, sha: SHA, repo: { full_name: DEPOT } } };
+
+    it('relaie la fusion d’une demande back-office de ce dépôt, au commit vérifié', async () => {
+      const { f, appels } = github(prBackOffice);
+      expect((await relayer(ecrire('PUT', '/pulls/7/merge', OK), DEPOT, f)).status).toBe(200);
+      expect(appels.map((a) => a.init.method)).toEqual(['GET', 'PUT']);
+    });
+
+    it.each([
+      ['une autre branche du dépôt', { head: { ...prBackOffice.head, ref: 'dependabot/npm/x' } }],
+      [
+        'une branche de fork',
+        { head: { ...prBackOffice.head, repo: { full_name: 'autre/fork' } } },
+      ],
+      ['un fork supprimé', { head: { ...prBackOffice.head, repo: null } }],
+      ['un autre commit que celui vérifié', { head: { ...prBackOffice.head, sha: 'bad' } }],
+    ])('refuse %s', async (_cas, pr) => {
+      const { f, appels } = github(pr);
+      expect((await relayer(ecrire('PUT', '/pulls/7/merge', OK), DEPOT, f)).status).toBe(403);
+      expect(appels.map((a) => a.init.method)).toEqual(['GET']);
+    });
+
+    it.each([
+      ['merge simple', { sha: SHA, merge_method: 'merge' }],
+      ['sans sha', { merge_method: 'squash' }],
+      ['champ en plus', { ...OK, commit_title: 'x' }],
+    ])('refuse un corps %s sans interroger GitHub', async (_cas, corps) => {
+      const { f, appels } = github(prBackOffice);
+      expect((await relayer(ecrire('PUT', '/pulls/7/merge', corps), DEPOT, f)).status).toBe(403);
+      expect(appels).toHaveLength(0);
+    });
   });
 
   it('refuse un nom de branche piégé que le navigateur normalise (%2e%2e)', async () => {

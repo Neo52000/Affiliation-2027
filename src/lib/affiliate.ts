@@ -7,7 +7,13 @@ export interface AffiliateLink {
   href: string;
   /** true = lien affilié (mention « lien affilié » + rel sponsored obligatoires, section 8) */
   sponsored: boolean;
+  /** Attribut rel du bouton : seule source de vérité pour tous les boutons d'outil. */
+  rel: string;
+  /** Mention visible à côté du bouton, null sans lien affilié. */
+  mention: string | null;
 }
+
+export const MENTION_AFFILIEE = 'lien affilié';
 
 /**
  * Ce module part aussi dans l'îlot du quiz : il ne charge donc pas Zod (poids,
@@ -23,8 +29,13 @@ const actifs = liensActifs(donnees as Affiliation);
  */
 export function affiliateLink(slug: string, urlOfficielle: string): AffiliateLink {
   return Object.hasOwn(actifs, slug)
-    ? { href: `/go/${slug}`, sponsored: true }
-    : { href: urlOfficielle, sponsored: false };
+    ? {
+        href: `/go/${slug}`,
+        sponsored: true,
+        rel: 'sponsored nofollow noopener',
+        mention: MENTION_AFFILIEE,
+      }
+    : { href: urlOfficielle, sponsored: false, rel: 'noopener', mention: null };
 }
 
 /** Une page contenant au moins un lien affilié affiche le bandeau de transparence. */
