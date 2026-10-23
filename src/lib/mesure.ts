@@ -13,6 +13,12 @@ import donnees from '../data/affiliation.json';
 export const TYPES_MESURE = ['quiz_termine', 'clic_editeur'] as const;
 export type TypeMesure = (typeof TYPES_MESURE)[number];
 
+/**
+ * Valeur d'`outil` pour un événement du quiz sans logiciel : quiz commencé, ou
+ * terminé sans logiciel compatible. Jamais accepté pour un clic éditeur.
+ */
+export const SANS_OUTIL = 'aucun';
+
 /** Outils connus : ceux d'affiliation.json, une entrée par fiche logiciel. */
 export const OUTILS_MESURE: ReadonlySet<string> = new Set(Object.keys(donnees.liens));
 
@@ -33,7 +39,8 @@ export function validerEvenement(corps: unknown, outils = OUTILS_MESURE): Evenem
   if (corps === null || typeof corps !== 'object' || Array.isArray(corps)) return null;
   const { type, outil, emplacement } = corps as Record<string, unknown>;
   if (typeof type !== 'string' || !(TYPES_MESURE as readonly string[]).includes(type)) return null;
-  if (typeof outil !== 'string' || !outils.has(outil)) return null;
+  const sansOutilPermis = type !== 'clic_editeur' && outil === SANS_OUTIL;
+  if (typeof outil !== 'string' || !(outils.has(outil) || sansOutilPermis)) return null;
   if (
     typeof emplacement !== 'string' ||
     emplacement.length > EMPLACEMENT_MAX ||

@@ -43,6 +43,7 @@ export function syntheseParOutil(
 ): { outil: string; quiz: number; clics: number }[] {
   const lignes = new Map<string, { outil: string; quiz: number; clics: number }>();
   for (const t of totaux) {
+    if (t.outil === 'aucun') continue;
     const l = lignes.get(t.outil) ?? { outil: t.outil, quiz: 0, clics: 0 };
     if (t.type === 'quiz_termine') l.quiz += t.n;
     else l.clics += t.n;
