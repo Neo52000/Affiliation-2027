@@ -35,9 +35,12 @@
     "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
     "Compte professionnel et facturation dans un même outil"
   ],
-  "points_faibles": [],
+  "points_faibles": [
+    "Factures récurrentes, relances automatiques et signature électronique des devis : module payant en supplément (Facturation automatisée)",
+    "Tenue comptable par un expert-comptable : service distinct et payant (Qonto Comptabilité)"
+  ],
   "statut_test": "a_tester",
-  "date_maj": "2026-10-04",
+  "date_maj": "2026-10-23",
   "sources": [
     {
       "objet": "Présence au registre DGFiP des plateformes agréées",
@@ -63,6 +66,16 @@
       "objet": "Programme d'affiliation (candidature directe)",
       "url": "https://qonto.com/fr/affiliate",
       "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://support-fr.qonto.com/hc/en-us/articles/28479048690705-What-add-ons-are-available-to-complement-my-plan",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://accounting.qonto.com/fr",
+      "date_releve": "2026-10-23"
     }
   ]
 }

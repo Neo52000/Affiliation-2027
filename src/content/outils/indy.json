@@ -35,9 +35,11 @@
     "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
     "Comptabilité, compte pro et facturation réunis pour les indépendants"
   ],
-  "points_faibles": [],
+  "points_faibles": [
+    "Accompagnement par un expert-comptable : option payante, en plus de l'abonnement"
+  ],
   "statut_test": "a_tester",
-  "date_maj": "2026-10-04",
+  "date_maj": "2026-10-23",
   "sources": [
     {
       "objet": "Présence au registre DGFiP des plateformes agréées (entrée INDY)",
@@ -58,6 +60,11 @@
       "objet": "Programme d'affiliation (Affilae)",
       "url": "https://www.indy.fr/affiliation/",
       "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://www.indy.fr/prix/",
+      "date_releve": "2026-10-23"
     }
   ]
 }

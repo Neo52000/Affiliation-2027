@@ -35,9 +35,12 @@
     "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
     "Compte professionnel en ligne pensé pour les freelances et petites entreprises"
   ],
-  "points_faibles": [],
+  "points_faibles": [
+    "Offre gratuite limitée à 5 clients, sans transformation d'un devis en facture",
+    "Relances automatiques et factures récurrentes : à partir de l'offre Plus"
+  ],
   "statut_test": "a_tester",
-  "date_maj": "2026-10-04",
+  "date_maj": "2026-10-23",
   "sources": [
     {
       "objet": "Présence au registre DGFiP des plateformes agréées (entrée Shine)",
@@ -63,6 +66,11 @@
       "objet": "Programme d'affiliation (Affilae, participation 2026 à confirmer)",
       "url": "https://affilae.com/fr/cas-clients/shine/",
       "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://help.shine.fr/shine-facture/fr/articles/13419459-comparer-les-offres-free-start-et-plus",
+      "date_releve": "2026-10-23"
     }
   ]
 }

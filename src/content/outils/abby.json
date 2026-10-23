@@ -35,9 +35,12 @@
     "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
     "Se définit comme « le logiciel des indépendants » (facturation et gestion)"
   ],
-  "points_faibles": [],
+  "points_faibles": [
+    "Offre gratuite sans télédéclaration Urssaf ni connexion bancaire : ces fonctions sont réservées aux offres payantes",
+    "Plusieurs utilisateurs : seulement avec l'offre Business, la plus complète"
+  ],
   "statut_test": "a_tester",
-  "date_maj": "2026-10-04",
+  "date_maj": "2026-10-23",
   "sources": [
     {
       "objet": "Présence au registre DGFiP des plateformes agréées (entrée ABBY)",
@@ -58,6 +61,16 @@
       "objet": "Programme d'affiliation (Affilae)",
       "url": "https://lp.abby.fr/partenaires/affiliation",
       "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://aide.abby.fr/fr/articles/15276582-abby-est-il-gratuit",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://abby.fr/tarifs",
+      "date_releve": "2026-10-23"
     }
   ]
 }

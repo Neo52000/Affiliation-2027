@@ -35,9 +35,12 @@
     "Plateforme agréée immatriculée par la DGFiP : émission, réception et e-reporting sans intermédiaire",
     "Facturation et comptabilité réunies dans un même outil"
   ],
-  "points_faibles": [],
+  "points_faibles": [
+    "Offre Free sans rapprochement automatique des justificatifs et des transactions",
+    "Archivage à valeur probante : réservé à l'offre Smart, payante"
+  ],
   "statut_test": "a_tester",
-  "date_maj": "2026-10-04",
+  "date_maj": "2026-10-23",
   "sources": [
     {
       "objet": "Présence au registre DGFiP des plateformes agréées (« TIIME PDP »)",
@@ -63,6 +66,16 @@
       "objet": "Programme d'affiliation (via Affilae)",
       "url": "https://www.tiime.fr/affiliation",
       "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://support.tiime.fr/fr/articles/26311-comment-mes-justificatifs-sont-ils-traites",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://www.tiime.fr/tarifs",
+      "date_releve": "2026-10-23"
     }
   ]
 }
