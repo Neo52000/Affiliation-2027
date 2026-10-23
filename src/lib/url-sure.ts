@@ -13,8 +13,16 @@ const INTERDITS = /["'<>\\`#{}|^]/;
 const LONGUEUR_MAX = 2048;
 const NETLIFY = 'affiliation2027.netlify.app';
 
-function estHoteDuSite(hote: string): boolean {
-  return hote === new URL(SITE.url).hostname || hote === NETLIFY || hote.endsWith(`--${NETLIFY}`);
+/** Nom d'hôte comparable : sans point final (FQDN) ni « www. » de tête. */
+const normaliser = (h: string) => h.replace(/\.$/, '').replace(/^www\./, '');
+
+function estHoteDuSite(brut: string): boolean {
+  const hote = normaliser(brut);
+  return (
+    hote === normaliser(new URL(SITE.url).hostname) ||
+    hote === NETLIFY ||
+    hote.endsWith(`--${NETLIFY}`)
+  );
 }
 
 export function estUrlSure(brute: string): boolean {

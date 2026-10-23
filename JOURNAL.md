@@ -722,3 +722,12 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 
 - Un besoin coché (compte pro, accès expert-comptable, comptabilité au-delà de 50 factures) que la fiche dit absent (`false`) était ignoré en silence. Il s'affiche désormais sous le logiciel : « Ne propose pas (vérifié) : … ». Le score et l'ordre ne changent pas ; seuls les indispensables excluent. Une donnée inconnue (`null`) reste « À confirmer ».
 - Sans effet visible tant que les fiches n'ont aucun `false` sur ces trois besoins (TODO #31).
+
+## Durcissement serveur et back office (2026-10-23)
+
+Audit de bugs en lecture seule, défauts reproduits puis corrigés avec un test qui échouait avant :
+
+- Rappel d'échéance : logique sortie dans `src/lib/rappel.ts` (testée), même garde-fous que la newsletter. Origine refusée (403), JSON exigé (415 : un `text/plain` venu d'un autre site ne déclenche plus d'envoi), corps borné (413), Brevo injoignable → 502 JSON au lieu d'un plantage. La fonction passe sur `/api/rappel` avec une limite de 5 envois par minute et par IP.
+- `estUrlSure` : le site lui-même est reconnu aussi avec un point final (`netlify.app.`) ou en `www.`, y compris sur le domaine définitif (boucle de redirection `/go/` impossible).
+- Relais `/admin/gh` : une mise en ligne n'est relayée qu'en squash, sur le commit vérifié, pour une branche `back-office/…` de ce dépôt (lue chez GitHub avant la fusion) ; jamais une demande de fork ou d'une autre branche.
+- Back office : une demande de 100 fichiers ou plus est bloquée (liste GitHub tronquée, fichiers suivants non vérifiables).
