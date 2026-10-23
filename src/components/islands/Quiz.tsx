@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import {
   LIBELLES_FONCTIONS,
+  outilRetenu,
   recommander,
   trouverMetier,
   type FonctionCle,
@@ -50,10 +51,9 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
   useEffect(() => {
     if (!resultat) return;
     titreResultat.current?.focus();
-    // Quiz terminé : seul le logiciel retenu est transmis (mesure agrégée, sans cookie).
-    // « aucun » : quiz terminé sans logiciel compatible, compté pour le taux de complétion.
-    const retenu = resultat.recommande?.slug ?? resultat.exAequo[0]?.slug ?? 'aucun';
-    envoyerMesure({ type: 'quiz_termine', outil: retenu, emplacement: 'quiz' });
+    // Quiz terminé : seul le logiciel retenu est transmis (mesure agrégée, sans cookie),
+    // « aucun » en cas d'égalité ou sans logiciel compatible.
+    envoyerMesure({ type: 'quiz_termine', outil: outilRetenu(resultat), emplacement: 'quiz' });
   }, [resultat]);
 
   // Quiz commencé : première saisie dans le formulaire, une fois par affichage de la page.
