@@ -95,7 +95,7 @@ export default function MetierPicker({ metiers }: Props) {
             )}
             <div class="mt-3 flex flex-wrap items-center gap-3">
               <a href={`/outils/quiz?metier=${encodeURIComponent(metier.slug)}`} class="btn-cta">
-                Affiner en 5 questions
+                Affiner en 4 questions
               </a>
               <a href={`/facturation-electronique/${metier.slug}`} class="btn-ghost">
                 Lire la fiche {metier.nom}
