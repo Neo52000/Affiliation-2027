@@ -7,8 +7,62 @@
     "date_immatriculation": null,
     "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
   },
-  "offre_gratuite": null,
-  "plans": [],
+  "offre_gratuite": {
+    "valeur": true,
+    "limites": "Free, limitée à 5 clients, sans transformation d'un devis en facture"
+  },
+  "plans": [
+    {
+      "nom": "Start",
+      "montant": 108,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.shine.fr/tarifs/"
+    },
+    {
+      "nom": "Plus",
+      "montant": 240,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.shine.fr/tarifs/"
+    },
+    {
+      "nom": "Business",
+      "montant": 540,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.shine.fr/tarifs/"
+    },
+    {
+      "nom": "Start (mensuel)",
+      "montant": 11,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "mois",
+      "engagement": "Paiement mensuel",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.shine.fr/tarifs/"
+    },
+    {
+      "nom": "Plus (mensuel)",
+      "montant": 25,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "mois",
+      "engagement": "Paiement mensuel",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.shine.fr/tarifs/"
+    }
+  ],
   "cible": ["indépendants", "freelances", "TPE"],
   "fonctionnalites": {
     "emission": true,
@@ -58,9 +112,9 @@
       "date_releve": "2026-10-04"
     },
     {
-      "objet": "Page tarifs de l'éditeur (prix pas encore reportés ici)",
+      "objet": "Tarifs HT relevés sur la page tarifs de l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://www.shine.fr/tarifs/",
-      "date_releve": "2026-10-04"
+      "date_releve": "2026-10-23"
     },
     {
       "objet": "Programme d'affiliation (Affilae, participation 2026 à confirmer)",

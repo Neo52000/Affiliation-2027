@@ -7,8 +7,42 @@
     "date_immatriculation": null,
     "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
   },
-  "offre_gratuite": null,
-  "plans": [],
+  "offre_gratuite": {
+    "valeur": true,
+    "limites": null
+  },
+  "plans": [
+    {
+      "nom": "Premium micro-entreprise",
+      "montant": 180,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.indy.fr/prix/"
+    },
+    {
+      "nom": "Premium entreprise individuelle",
+      "montant": 264,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.indy.fr/prix/"
+    },
+    {
+      "nom": "Premium société",
+      "montant": 588,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.indy.fr/prix/"
+    }
+  ],
   "cible": ["indépendants"],
   "fonctionnalites": {
     "emission": true,
@@ -52,19 +86,14 @@
       "date_releve": "2026-10-04"
     },
     {
-      "objet": "Page tarifs de l'éditeur (prix pas encore reportés ici)",
+      "objet": "Tarifs HT relevés sur la page tarifs de l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://www.indy.fr/prix/",
-      "date_releve": "2026-10-04"
+      "date_releve": "2026-10-23"
     },
     {
       "objet": "Programme d'affiliation (Affilae)",
       "url": "https://www.indy.fr/affiliation/",
       "date_releve": "2026-10-04"
-    },
-    {
-      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
-      "url": "https://www.indy.fr/prix/",
-      "date_releve": "2026-10-23"
     }
   ]
 }

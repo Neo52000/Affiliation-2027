@@ -7,8 +7,72 @@
     "date_immatriculation": null,
     "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
   },
-  "offre_gratuite": null,
-  "plans": [],
+  "offre_gratuite": {
+    "valeur": true,
+    "limites": "Basique, sans limite de durée, sans télédéclaration Urssaf ni connexion bancaire"
+  },
+  "plans": [
+    {
+      "nom": "Start",
+      "montant": 108,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://abby.fr/tarifs"
+    },
+    {
+      "nom": "Pro",
+      "montant": 180,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://abby.fr/tarifs"
+    },
+    {
+      "nom": "Business",
+      "montant": 396,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "an",
+      "engagement": "Facturation annuelle",
+      "date_releve": "2026-10-23",
+      "url_source": "https://abby.fr/tarifs"
+    },
+    {
+      "nom": "Start (mensuel)",
+      "montant": 11,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "mois",
+      "engagement": "Paiement mensuel",
+      "date_releve": "2026-10-23",
+      "url_source": "https://abby.fr/tarifs"
+    },
+    {
+      "nom": "Pro (mensuel)",
+      "montant": 19,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "mois",
+      "engagement": "Paiement mensuel",
+      "date_releve": "2026-10-23",
+      "url_source": "https://abby.fr/tarifs"
+    },
+    {
+      "nom": "Business (mensuel)",
+      "montant": 39,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "mois",
+      "engagement": "Paiement mensuel",
+      "date_releve": "2026-10-23",
+      "url_source": "https://abby.fr/tarifs"
+    }
+  ],
   "cible": ["indépendants", "micro-entrepreneurs"],
   "fonctionnalites": {
     "emission": true,
@@ -53,9 +117,9 @@
       "date_releve": "2026-10-04"
     },
     {
-      "objet": "Page tarifs de l'éditeur (prix pas encore reportés ici)",
+      "objet": "Tarifs HT relevés sur la page tarifs de l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://abby.fr/tarifs",
-      "date_releve": "2026-10-04"
+      "date_releve": "2026-10-23"
     },
     {
       "objet": "Programme d'affiliation (Affilae)",
@@ -65,11 +129,6 @@
     {
       "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://aide.abby.fr/fr/articles/15276582-abby-est-il-gratuit",
-      "date_releve": "2026-10-23"
-    },
-    {
-      "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
-      "url": "https://abby.fr/tarifs",
       "date_releve": "2026-10-23"
     }
   ]

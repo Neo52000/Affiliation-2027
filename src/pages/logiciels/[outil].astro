@@ -170,6 +170,12 @@ const appJsonLd = {
         <h2 id="tarifs" class="titre-section">
           Tarifs
         </h2>
+        {d.offre_gratuite?.valeur && (
+          <p class="prose-measure mt-3">
+            Offre gratuite disponible
+            {d.offre_gratuite.limites ? ` : ${d.offre_gratuite.limites.replace(/\.$/, '')}.` : '.'}
+          </p>
+        )}
         {plansRenseignes.length > 0 && (
           <div class="table-scroll mt-4" role="region" aria-label="Tableau des tarifs" tabindex="0">
             <table class="table-chiffres w-full border-collapse text-sm">

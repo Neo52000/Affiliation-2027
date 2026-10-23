@@ -7,8 +7,52 @@
     "date_immatriculation": null,
     "source": "https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees"
   },
-  "offre_gratuite": null,
-  "plans": [],
+  "offre_gratuite": {
+    "valeur": true,
+    "limites": "réservée aux micro-entreprises, 1 utilisateur et 1 200 factures par an"
+  },
+  "plans": [
+    {
+      "nom": "Starter",
+      "montant": 7,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "mois",
+      "engagement": "Sans engagement ; ouverture du Compte Pro Pennylane sous 30 jours, sinon passage au plan Basique",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.pennylane.com/fr/tarifs"
+    },
+    {
+      "nom": "Basique",
+      "montant": 14,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "mois",
+      "engagement": "Sans engagement",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.pennylane.com/fr/tarifs"
+    },
+    {
+      "nom": "Essentiel",
+      "montant": 24,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "mois",
+      "engagement": "Sans engagement",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.pennylane.com/fr/tarifs"
+    },
+    {
+      "nom": "Premium et module comptable",
+      "montant": 79,
+      "devise": "EUR",
+      "base": "HT",
+      "periodicite": "mois",
+      "engagement": "Sans engagement",
+      "date_releve": "2026-10-23",
+      "url_source": "https://www.pennylane.com/fr/tarifs"
+    }
+  ],
   "cible": ["TPE", "PME", "experts-comptables"],
   "fonctionnalites": {
     "emission": true,
@@ -58,9 +102,9 @@
       "date_releve": "2026-10-04"
     },
     {
-      "objet": "Page tarifs de l'éditeur (prix pas encore reportés ici)",
+      "objet": "Tarifs HT relevés sur la page tarifs de l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://www.pennylane.com/fr/tarifs",
-      "date_releve": "2026-10-04"
+      "date_releve": "2026-10-23"
     },
     {
       "objet": "Programme d'affiliation (Affilae)",
