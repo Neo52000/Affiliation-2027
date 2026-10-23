@@ -732,3 +732,8 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 - Libellés des fonctions partagés (`src/lib/fonctions.ts`) entre la fiche logiciel et le cas concret.
 - Effet attendu et assumé : tant que devis, acomptes, app mobile et export comptable restent `null`, le tableau affiche « À vérifier » ; il se remplit dès le relevé TODO #31.
 - Relevé des tarifs (TODO #31) tenté le 2026-10-23 : les 6 sites éditeurs sont refusés par le proxy de l'environnement, rien n'a été saisi.
+
+## Mesure : quiz commencé (2026-10-23)
+
+- Troisième événement `quiz_commence`, envoyé à la première saisie dans le formulaire (ou à l'envoi direct), une fois par affichage. `outil` vaut alors `aucun` ; `quiz_termine` l'accepte aussi quand aucun logiciel n'est compatible, pour que le taux de complétion soit exact. Un clic éditeur exige toujours un logiciel connu.
+- `/admin` affiche « Quiz : N commencés, M terminés (x %) » au-dessus du tableau par logiciel.

@@ -46,6 +46,21 @@ describe('validerEvenement', () => {
     );
   });
 
+  it('accepte « aucun » pour le quiz, jamais pour un clic éditeur', () => {
+    expect(
+      validerEvenement({ type: 'quiz_commence', outil: 'aucun', emplacement: 'quiz' }),
+    ).not.toBeNull();
+    expect(
+      validerEvenement({ type: 'quiz_termine', outil: 'aucun', emplacement: 'quiz' }),
+    ).not.toBeNull();
+    expect(
+      validerEvenement({ type: 'clic_editeur', outil: 'aucun', emplacement: 'quiz' }),
+    ).toBeNull();
+    expect(
+      validerEvenement({ type: 'quiz_commence', outil: 'abby', emplacement: 'quiz' }),
+    ).toBeNull();
+  });
+
   it.each([
     [null],
     [[]],

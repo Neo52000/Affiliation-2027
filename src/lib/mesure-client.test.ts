@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { envoyerMesure, syntheseParOutil } from './mesure-client';
+import { envoyerMesure, syntheseParOutil, syntheseQuiz } from './mesure-client';
 
 describe('envoyerMesure', () => {
   it('envoie l’événement par sendBeacon', () => {
@@ -42,5 +42,29 @@ describe('syntheseParOutil', () => {
       { outil: 'tiime', quiz: 0, clics: 4 },
       { outil: 'abby', quiz: 3, clics: 1 },
     ]);
+  });
+});
+
+describe('syntheseQuiz', () => {
+  it('compte les quiz commencés et terminés, « aucun » compris, hors clics', () => {
+    const t = (
+      type: 'quiz_commence' | 'quiz_termine' | 'clic_editeur',
+      outil: string,
+      n: number,
+    ) => ({
+      jour: '2026-10-23',
+      type,
+      outil,
+      emplacement: 'quiz',
+      n,
+    });
+    const totaux = [
+      t('quiz_commence', 'aucun', 10),
+      t('quiz_termine', 'abby', 4),
+      t('quiz_termine', 'aucun', 1),
+      t('clic_editeur', 'abby', 2),
+    ];
+    expect(syntheseQuiz(totaux)).toEqual({ commences: 10, termines: 5 });
+    expect(syntheseParOutil(totaux)).toEqual([{ outil: 'abby', quiz: 4, clics: 2 }]);
   });
 });

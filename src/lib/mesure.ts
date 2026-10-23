@@ -1,6 +1,7 @@
 /**
- * Mesure d'audience sans cookie ni donnée personnelle (TODO.md #35) : deux
- * événements agrégés, « quiz terminé » et « clic vers un éditeur », reçus par
+ * Mesure d'audience sans cookie ni donnée personnelle (TODO.md #35) : trois
+ * événements agrégés, « quiz commencé », « quiz terminé » et « clic vers un
+ * éditeur », reçus par
  * la fonction Netlify /api/mesure et rangés dans Netlify Blobs. Chaque
  * événement est une clé vide `AAAA-MM-JJ/type/outil/emplacement/id` : ni IP, ni
  * navigateur, ni page d'origine, ni identifiant de visiteur ; l'id aléatoire
@@ -10,8 +11,14 @@
  */
 import donnees from '../data/affiliation.json';
 
-export const TYPES_MESURE = ['quiz_termine', 'clic_editeur'] as const;
+export const TYPES_MESURE = ['quiz_commence', 'quiz_termine', 'clic_editeur'] as const;
 export type TypeMesure = (typeof TYPES_MESURE)[number];
+
+/**
+ * Valeur d'`outil` pour un événement du quiz sans logiciel : quiz commencé, ou
+ * terminé sans logiciel compatible. Jamais accepté pour un clic éditeur.
+ */
+export const SANS_OUTIL = 'aucun';
 
 /** Outils connus : ceux d'affiliation.json, une entrée par fiche logiciel. */
 export const OUTILS_MESURE: ReadonlySet<string> = new Set(Object.keys(donnees.liens));
@@ -33,7 +40,9 @@ export function validerEvenement(corps: unknown, outils = OUTILS_MESURE): Evenem
   if (corps === null || typeof corps !== 'object' || Array.isArray(corps)) return null;
   const { type, outil, emplacement } = corps as Record<string, unknown>;
   if (typeof type !== 'string' || !(TYPES_MESURE as readonly string[]).includes(type)) return null;
-  if (typeof outil !== 'string' || !outils.has(outil)) return null;
+  const sansOutilPermis = type !== 'clic_editeur' && outil === SANS_OUTIL;
+  if (typeof outil !== 'string' || !(outils.has(outil) || sansOutilPermis)) return null;
+  if (type === 'quiz_commence' && outil !== SANS_OUTIL) return null;
   if (
     typeof emplacement !== 'string' ||
     emplacement.length > EMPLACEMENT_MAX ||
