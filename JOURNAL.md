@@ -737,10 +737,12 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 
 - `src/lib/quiz-libelles.ts` : « cinq questions et une facultative » (et sa variante métier connu) défini une seule fois, utilisé par les 9 pages et composants qui annoncent le quiz.
 - Test `quiz-libelles.test.ts` : le format correspond aux questions numérotées de `Quiz.tsx`, et aucune page ni composant ne le réécrit en dur.
+
 ## Liens affiliés : une seule source pour rel et la mention (2026-10-23)
 
 - `affiliateLink()` renvoie désormais `rel` et `mention` ; `AffiliateButton.astro` et le quiz les affichent tels quels, sans littéral recopié. Le bouton du quiz reçoit aussi la classe `mention-affiliee`.
 - Test `src/lib/affiliate-actif.test.ts` : branche « lien actif » vérifiée avec un fichier d'affiliation simulé, et garde-fou qui échoue si un composant réécrit `sponsored` ou « lien affilié » en dur.
+
 ## Mesure : quiz commencé (2026-10-23)
 
 - Troisième événement `quiz_commence`, envoyé à la première saisie dans le formulaire (ou à l'envoi direct), une fois par affichage. `outil` vaut alors `aucun` ; `quiz_termine` l'accepte aussi quand aucun logiciel n'est compatible, pour que le taux de complétion soit exact. Un clic éditeur exige toujours un logiciel connu.
