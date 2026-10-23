@@ -4,7 +4,7 @@
  * Aucun envoi sans sendBeacon (navigateur ancien) : la page n'en dépend pas.
  */
 export interface EvenementClient {
-  type: 'quiz_termine' | 'clic_editeur';
+  type: 'quiz_commence' | 'quiz_termine' | 'clic_editeur';
   outil: string;
   emplacement: string;
 }
@@ -37,13 +37,27 @@ export interface TotalMesure {
   n: number;
 }
 
+/** Quiz commencés et terminés sur la fenêtre lue (tous logiciels confondus). */
+export function syntheseQuiz(totaux: readonly TotalMesure[]): {
+  commences: number;
+  termines: number;
+} {
+  let commences = 0;
+  let termines = 0;
+  for (const t of totaux) {
+    if (t.type === 'quiz_commence') commences += t.n;
+    else if (t.type === 'quiz_termine') termines += t.n;
+  }
+  return { commences, termines };
+}
+
 /** Entonnoir par logiciel sur la fenêtre lue : quiz terminés (logiciel retenu) et clics éditeur. */
 export function syntheseParOutil(
   totaux: readonly TotalMesure[],
 ): { outil: string; quiz: number; clics: number }[] {
   const lignes = new Map<string, { outil: string; quiz: number; clics: number }>();
   for (const t of totaux) {
-    if (t.outil === 'aucun') continue;
+    if (t.type === 'quiz_commence' || t.outil === 'aucun') continue;
     const l = lignes.get(t.outil) ?? { outil: t.outil, quiz: 0, clics: 0 };
     if (t.type === 'quiz_termine') l.quiz += t.n;
     else l.clics += t.n;

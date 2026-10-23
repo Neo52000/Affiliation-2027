@@ -7,12 +7,22 @@ import { affiliateLink, hasAffiliate } from './affiliate';
 describe('affiliateLink', () => {
   it('bascule vers l’URL officielle sans mention quand le lien affilié est absent', () => {
     const l = affiliateLink('tiime', 'https://www.tiime.fr/');
-    expect(l).toEqual({ href: 'https://www.tiime.fr/', sponsored: false });
+    expect(l).toEqual({
+      href: 'https://www.tiime.fr/',
+      sponsored: false,
+      rel: 'noopener',
+      mention: null,
+    });
   });
 
   it('bascule aussi pour un slug inconnu du fichier d’affiliation', () => {
     const l = affiliateLink('outil-inconnu', 'https://exemple.fr/');
-    expect(l).toEqual({ href: 'https://exemple.fr/', sponsored: false });
+    expect(l).toEqual({
+      href: 'https://exemple.fr/',
+      sponsored: false,
+      rel: 'noopener',
+      mention: null,
+    });
   });
 });
 

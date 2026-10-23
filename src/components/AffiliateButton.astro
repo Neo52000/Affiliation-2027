@@ -24,12 +24,12 @@ const lien = affiliateLink(outil, urlOfficielle);
 <span class="inline-flex flex-col items-start gap-1">
   <a
     href={lien.href}
-    rel={lien.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
+    rel={lien.rel}
     data-emplacement={emplacement}
     data-outil={outil}
     class:list={['btn-affiliate', variante === 'principal' ? 'btn-cta' : 'btn-ghost']}
   >
     {label}
   </a>
-  {lien.sponsored && <span class="mention-affiliee text-xs text-ink-soft">lien affilié</span>}
+  {lien.mention && <span class="mention-affiliee text-xs text-ink-soft">{lien.mention}</span>}
 </span>
