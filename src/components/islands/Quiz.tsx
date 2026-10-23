@@ -110,14 +110,14 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
       <span class="inline-flex flex-col items-start gap-1">
         <a
           href={lien.href}
-          rel={lien.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
+          rel={lien.rel}
           class="btn-cta"
           data-emplacement={`quiz-${slug}`}
           data-outil={slug}
         >
           Aller sur le site {de(nom)}
         </a>
-        {lien.sponsored && <span class="text-xs text-ink-soft">lien affilié</span>}
+        {lien.mention && <span class="mention-affiliee text-xs text-ink-soft">{lien.mention}</span>}
       </span>
     );
   };

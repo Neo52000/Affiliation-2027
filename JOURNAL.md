@@ -732,3 +732,8 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 - Libellés des fonctions partagés (`src/lib/fonctions.ts`) entre la fiche logiciel et le cas concret.
 - Effet attendu et assumé : tant que devis, acomptes, app mobile et export comptable restent `null`, le tableau affiche « À vérifier » ; il se remplit dès le relevé TODO #31.
 - Relevé des tarifs (TODO #31) tenté le 2026-10-23 : les 6 sites éditeurs sont refusés par le proxy de l'environnement, rien n'a été saisi.
+
+## Liens affiliés : une seule source pour rel et la mention (2026-10-23)
+
+- `affiliateLink()` renvoie désormais `rel` et `mention` ; `AffiliateButton.astro` et le quiz les affichent tels quels, sans littéral recopié. Le bouton du quiz reçoit aussi la classe `mention-affiliee`.
+- Test `src/lib/affiliate-actif.test.ts` : branche « lien actif » vérifiée avec un fichier d'affiliation simulé, et garde-fou qui échoue si un composant réécrit `sponsored` ou « lien affilié » en dur.
