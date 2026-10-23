@@ -97,4 +97,20 @@ test('quiz : un seul « quiz commencé » et un « quiz terminé » envoyés à 
   await expect
     .poll(() => envois.map((e) => (JSON.parse(e) as { type: string }).type).sort())
     .toEqual(['quiz_commence', 'quiz_termine']);
+test.describe('fiche outil sur mobile', () => {
+  test.use({ viewport: { width: 393, height: 851 } });
+
+  test('7. le bouton vers l’éditeur est visible dès le premier écran', async ({ page }) => {
+    await page.goto('/logiciels/abby');
+    const bouton = page.locator('a[data-emplacement="fiche-abby-haut"]');
+    await expect(bouton).toBeInViewport();
+    await expect(bouton).toHaveAttribute('data-outil', 'abby');
+  });
+
+  test('8. sur grand écran, seul le bouton de la colonne d’appui est affiché', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto('/logiciels/abby');
+    await expect(page.locator('a[data-emplacement="fiche-abby-haut"]')).toBeHidden();
+    await expect(page.locator('a[data-emplacement="fiche-abby"]')).toBeVisible();
+  });
 });
