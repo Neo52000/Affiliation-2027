@@ -272,6 +272,22 @@ describe('recommander — recette : inconnues, incompatibilités, égalités', (
     expect(res.exAequo.map((r) => r.slug)).toEqual(['abby', 'tiime']);
   });
 
+  it('27 ter. un besoin que la fiche dit absent est signalé, sans exclure ni changer le score', () => {
+    // Plombier : Tiime en tête (fiche métier) ; son compte pro est inconnu (null).
+    const reponses = { metierSlug: 'plombier', besoinComptePro: true };
+    const avant = resultat(reponses).recommande!;
+    expect(avant.slug).toBe('tiime');
+    // Donnée inconnue : à confirmer, jamais présentée comme absente.
+    expect(avant.aConfirmer).toContain('compte professionnel intégré');
+    expect(avant.manques).toEqual([]);
+
+    const outils = OUTILS.map((o) => (o.slug === 'tiime' ? { ...o, comptePro: false } : o));
+    const apres = resultat(reponses, outils).recommande!;
+    expect(apres.slug).toBe('tiime');
+    expect(apres.manques).toEqual(['compte professionnel intégré']);
+    expect(apres.aConfirmer).not.toContain('compte professionnel intégré');
+  });
+
   it('28. sans égalité en tête, exAequo est vide', () => {
     expect(resultat({ metierSlug: 'plombier' }).exAequo).toEqual([]);
   });

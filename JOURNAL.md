@@ -717,3 +717,8 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 - « loyer » cité parmi les factures électroniques à recevoir (kinésithérapeute, orthophoniste, ostéopathe, psychologue, sage-femme, auto-école) : une location nue exonérée, ou consentie par un bailleur particulier, ne donne pas lieu à facture électronique ;
 - pizzeria : les commissions d'une plateforme de livraison établie hors de France relèvent de l'e-reporting, pas d'une facture reçue via une plateforme agréée ;
 - agriculteur : l'obligation de réception pour l'exploitant au remboursement forfaitaire agricole est à confirmer sur la documentation DGFiP.
+
+## Quiz : besoins vérifiés absents affichés (2026-10-23)
+
+- Un besoin coché (compte pro, accès expert-comptable, comptabilité au-delà de 50 factures) que la fiche dit absent (`false`) était ignoré en silence. Il s'affiche désormais sous le logiciel : « Ne propose pas (vérifié) : … ». Le score et l'ordre ne changent pas ; seuls les indispensables excluent. Une donnée inconnue (`null`) reste « À confirmer ».
+- Sans effet visible tant que les fiches n'ont aucun `false` sur ces trois besoins (TODO #31).
