@@ -29,7 +29,7 @@ export default function RappelEmail({ metiers }: Props) {
     if (etat.phase === 'envoi') return;
     setEtat({ phase: 'envoi' });
     try {
-      const reponse = await fetch('/.netlify/functions/rappel-email', {
+      const reponse = await fetch('/api/rappel', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ email, metier: metier || null, consentement }),

@@ -64,8 +64,9 @@ function lireObjet(corps: ArrayBuffer): Record<string, unknown> | null {
 
 /**
  * Contrôle du corps des écritures sensibles : on ne crée et ne propose que des
- * branches back-office/AAAAMMJJ-HHMMSS-xxxx, et on ne modifie une demande que
- * pour la fermer (ni base, ni titre, ni corps).
+ * branches back-office/AAAAMMJJ-HHMMSS-xxxx, on ne modifie une demande que
+ * pour la fermer (ni base, ni titre, ni corps), et on ne la fusionne qu'en
+ * squash sur un commit précis (la branche est vérifiée ensuite : mergeAutorise).
  */
 function corpsAutorise(methode: string, route: string, corps: ArrayBuffer): string | null {
   const estBranche = (v: unknown) => typeof v === 'string' && BRANCHE_BACK_OFFICE.test(v);
@@ -87,7 +88,50 @@ function corpsAutorise(methode: string, route: string, corps: ArrayBuffer): stri
       ? null
       : 'Seule la fermeture d’une demande est autorisée.';
   }
+  if (methode === 'PUT') {
+    const d = lireObjet(corps);
+    const ok =
+      d !== null &&
+      Object.keys(d).sort().join(',') === 'merge_method,sha' &&
+      d['merge_method'] === 'squash' &&
+      typeof d['sha'] === 'string' &&
+      /^[0-9a-f]{6,64}$/.test(d['sha']);
+    return ok ? null : 'Mise en ligne attendue en squash, sur un commit précis.';
+  }
   return null;
+}
+
+/**
+ * Une mise en ligne ne vise qu'une demande du back office : branche
+ * back-office/… de ce dépôt (jamais un fork), au commit vérifié par l'éditeur.
+ * Lu chez GitHub avec le jeton de la requête ; tout doute refuse.
+ */
+async function mergeAutorise(
+  depot: string,
+  numero: string,
+  sha: string,
+  entetes: Record<string, string>,
+  f: typeof fetch,
+): Promise<boolean> {
+  try {
+    const r = await f(`https://api.github.com/repos/${depot}/pulls/${numero}`, {
+      method: 'GET',
+      redirect: 'error',
+      headers: entetes,
+    });
+    if (!r.ok) return false;
+    const pr = (await r.json()) as {
+      head?: { ref?: unknown; sha?: unknown; repo?: { full_name?: unknown } | null };
+    };
+    return (
+      pr.head?.repo?.full_name === depot &&
+      typeof pr.head.ref === 'string' &&
+      BRANCHE_BACK_OFFICE.test(pr.head.ref) &&
+      pr.head.sha === sha
+    );
+  } catch {
+    return false;
+  }
 }
 
 export async function relayer(
@@ -119,18 +163,26 @@ export async function relayer(
     if (refus) return erreur(403, refus);
   }
 
+  const lecture = {
+    authorization: auth,
+    accept: 'application/vnd.github+json',
+    'x-github-api-version': '2022-11-28',
+    'user-agent': 'back-office-affiliation-2027',
+  };
+  const fusion = requete.method === 'PUT' ? /^\/pulls\/(\d+)\/merge$/.exec(route) : null;
+  if (fusion && corps) {
+    const sha = String(lireObjet(corps)?.['sha']);
+    if (!(await mergeAutorise(depot, fusion[1]!, sha, lecture, f))) {
+      return erreur(403, 'Seule une demande back-office/… de ce dépôt peut être mise en ligne.');
+    }
+  }
+
   let reponse: Response;
   try {
     reponse = await f(`https://api.github.com${chemin}${url.search}`, {
       method: requete.method,
       redirect: 'error',
-      headers: {
-        authorization: auth,
-        accept: 'application/vnd.github+json',
-        'x-github-api-version': '2022-11-28',
-        'user-agent': 'back-office-affiliation-2027',
-        ...(corps ? { 'content-type': 'application/json' } : {}),
-      },
+      headers: { ...lecture, ...(corps ? { 'content-type': 'application/json' } : {}) },
       ...(corps ? { body: corps } : {}),
     });
   } catch {
