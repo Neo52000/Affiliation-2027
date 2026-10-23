@@ -102,6 +102,12 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
           {typographier(reco.aConfirmer.join(', '))}.
         </p>
       )}
+      {reco.manques.length > 0 && (
+        <p class="mt-1 text-sm">
+          <span class="font-semibold">Ne propose pas (vérifié)&nbsp;:</span>{' '}
+          {typographier(reco.manques.join(', '))}.
+        </p>
+      )}
     </>
   );
 

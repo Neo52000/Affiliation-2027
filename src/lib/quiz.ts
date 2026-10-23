@@ -57,6 +57,11 @@ export interface Recommandation {
   raisons: string[];
   /** Besoins exprimés dont la donnée n'est pas encore vérifiée pour cet outil. */
   aConfirmer: string[];
+  /**
+   * Besoins exprimés que la fiche dit absents (donnée vérifiée à false) : affichés
+   * sans exclure l'outil ni changer son score, seuls les indispensables excluent.
+   */
+  manques: string[];
 }
 
 export interface Exclusion {
@@ -158,6 +163,7 @@ export function recommander(
     let score = 0;
     const raisons: string[] = [];
     const aConfirmer: string[] = [];
+    const manques: string[] = [];
 
     const rangMetier = recosMetier.indexOf(o.slug);
     if (rangMetier >= 0) {
@@ -169,12 +175,14 @@ export function recommander(
         score += 3;
         raisons.push('compte professionnel intégré');
       } else if (o.comptePro === null) aConfirmer.push('compte professionnel intégré');
+      else manques.push('compte professionnel intégré');
     }
     if (reponses.expertComptable) {
       if (o.lienExpertComptable === true) {
         score += 2;
         raisons.push('accès dédié pour l’expert-comptable');
       } else if (o.lienExpertComptable === null) aConfirmer.push('accès pour l’expert-comptable');
+      else manques.push('accès pour l’expert-comptable');
     }
     if (reponses.statut === 'micro' && o.cibles.some((c) => c.toLowerCase().includes('micro'))) {
       score += 2;
@@ -189,6 +197,7 @@ export function recommander(
         score += 1;
         raisons.push('comptabilité intégrée, utile à ce volume');
       } else if (o.compta === null) aConfirmer.push('comptabilité intégrée');
+      else manques.push('comptabilité intégrée');
     }
     for (const f of indispensables) {
       const v = o.fonctions?.[f];
@@ -197,7 +206,7 @@ export function recommander(
     }
     if (o.plateformeAgreee !== true) aConfirmer.push('statut de plateforme agréée');
 
-    return { o, score, raisons, aConfirmer };
+    return { o, score, raisons, aConfirmer, manques };
   });
 
   // L'ordre alphabétique ne sert qu'à afficher les ex æquo dans un ordre stable :
@@ -211,6 +220,7 @@ export function recommander(
     recommandeParMetier: recosMetier.includes(s.o.slug),
     raisons: s.raisons,
     aConfirmer: s.aConfirmer,
+    manques: s.manques,
   });
 
   const [premier, ...reste] = tries;
