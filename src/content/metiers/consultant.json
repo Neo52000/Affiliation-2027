@@ -176,5 +176,51 @@
     "h1": "Quel logiciel de facturation choisir quand on est consultant ?",
     "description": "Comparez les logiciels de facturation pour consultant : TJM, forfaits, acomptes et fonctions vérifiées. Choisissez selon votre statut.",
     "ordre_commercial": true
-  }
+  },
+  "scenarios": [
+    {
+      "titre": "1. Devis d'une mission mixte : forfait de cadrage et jours au TJM",
+      "objectif": "Faire accepter le périmètre et le prix avant de commencer la mission.",
+      "etapes": [
+        "Créer le client (raison sociale, adresse, numéro de TVA intracommunautaire s'il est assujetti dans l'UE).",
+        "Ajouter une ligne au forfait pour le cadrage, une ligne au TJM avec le nombre de jours prévus, et les frais refacturés estimés.",
+        "Indiquer les conditions : acompte demandé à la commande, échéances par jalon, pénalités de retard et indemnité forfaitaire de 40 €.",
+        "Envoyer le devis et conserver la version acceptée par le client."
+      ],
+      "exemple": "Cadrage au forfait 2 400 € HT, 6 jours à 850 € HT (5 100 € HT), frais estimés 180 € HT : devis de 7 680 € HT, soit 9 216 € TTC avec une TVA à 20 %.",
+      "fonction": "devis"
+    },
+    {
+      "titre": "2. Facture d'acompte à la commande",
+      "objectif": "Encaisser une partie du prix dès l'acceptation, sans attendre la fin de la mission.",
+      "etapes": [
+        "Transformer le devis accepté en facture d'acompte, en pourcentage ou en montant.",
+        "Vérifier que la facture d'acompte porte sa propre numérotation et renvoie au devis.",
+        "Pour une prestation de services, la TVA de l'acompte est due à son encaissement : la déclarer sur la période où le client paie."
+      ],
+      "exemple": "Acompte de 30 % : 2 304 € HT, TVA 460,80 €, soit 2 764,80 € TTC.",
+      "fonction": "acomptes"
+    },
+    {
+      "titre": "3. Facture de solde après la restitution",
+      "objectif": "Facturer les jours réellement consommés et déduire l'acompte déjà facturé.",
+      "etapes": [
+        "Reprendre le devis et ajuster le nombre de jours selon le relevé visé par le client.",
+        "Déduire l'acompte sur une ligne qui cite la facture d'acompte (numéro et date).",
+        "Contrôler le total, puis envoyer la facture en rappelant la clause de transfert des livrables si elle dépend du paiement."
+      ],
+      "exemple": "Mission réalisée comme prévue : 7 680 € HT moins l'acompte de 2 304 € HT, soit 5 376 € HT, TVA 1 075,20 €, total 6 451,20 € TTC (voir l'exemple de facture ci-dessous).",
+      "fonction": "acomptes"
+    },
+    {
+      "titre": "4. Export pour l'expert-comptable",
+      "objectif": "Transmettre les ventes de la période sans ressaisie.",
+      "etapes": [
+        "Exporter les factures de la période et les encaissements correspondants, au format attendu par le cabinet (FEC ou fichier d'écritures).",
+        "Joindre les factures d'acompte et de solde de la mission, pour que la TVA soit rattachée aux bons encaissements."
+      ],
+      "exemple": "La facture d'acompte (2 764,80 € TTC) et la facture de solde (6 451,20 € TTC) partent dans l'export de leurs périodes d'encaissement respectives. En franchise en base, les mêmes montants s'entendent sans TVA, avec la mention « TVA non applicable, article 293 B du CGI ».",
+      "fonction": "export_comptable"
+    }
+  ]
 }

@@ -172,6 +172,24 @@ export const metierSchema = z.object({
     })
     .optional(),
   /**
+   * Scénarios de facturation du métier (plan SEO, brief consultant) : un parcours
+   * concret par étape, et la fonctionnalité qu'il exige, lue dans la fiche de
+   * chaque logiciel recommandé. Aucun résultat de test n'y figure : tant que
+   * nos essais ne sont pas faits, seule la disponibilité déclarée est affichée.
+   */
+  scenarios: z
+    .array(
+      z.object({
+        titre: z.string().min(1),
+        objectif: z.string().min(1),
+        etapes: z.array(z.string().min(1)).min(1),
+        /** Exemple chiffré, cohérent avec exemple_facture. */
+        exemple: z.string().min(1),
+        fonction: z.enum(['devis', 'acomptes', 'export_comptable', 'lien_expert_comptable']),
+      }),
+    )
+    .optional(),
+  /**
    * Cas concret (TODO.md #40) : une situation type et ses étapes de facturation,
    * chacune rattachée à la fonction logicielle qu'elle sollicite. La page croise
    * ces étapes avec les fiches des logiciels recommandés (Oui / Non / À vérifier) :
