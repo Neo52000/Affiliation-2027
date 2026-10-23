@@ -388,6 +388,11 @@ export function clientGitHub(
       if (noms.some((n) => !estAutorise(n))) {
         blocages.push('la demande modifie des fichiers hors des données du back office');
       }
+      // GitHub plafonne la liste à 100 fichiers par page : au-delà, les suivants
+      // échapperaient au contrôle. Une publication du back office en touche 1 à 3.
+      if (fichiers.length >= 100) {
+        blocages.push('la demande modifie trop de fichiers pour être vérifiée');
+      }
       if (p.chemins) {
         // Inclusion, pas égalité : une image renvoyée à l'identique ne change pas
         // l'arbre et n'apparaît donc pas dans les fichiers de la demande.

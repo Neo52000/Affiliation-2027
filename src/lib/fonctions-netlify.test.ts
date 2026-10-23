@@ -69,7 +69,7 @@ describe.runIf(!EDITEUR_IDENTIFIE)('collecte fermée tant que l’éditeur n’e
       expect(r.headers.get('location')).toMatch(/\/newsletter\/indisponible$/);
       const rappel = (await import('../../netlify/functions/rappel-email.mts')).default;
       const r2 = await rappel(
-        new Request('https://site.example/.netlify/functions/rappel-email', {
+        new Request('https://site.example/api/rappel', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ email: 'a@exemple.fr', consentement: true }),
