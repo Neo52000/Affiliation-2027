@@ -189,5 +189,51 @@
     "h1": "Quel logiciel de facturation choisir pour votre activité de plombier ?",
     "description": "Comparez les logiciels de facturation pour plombier : devis, acomptes, TVA multi-taux et usage mobile. Fonctions vérifiées et obligations utiles.",
     "ordre_commercial": true
-  }
+  },
+  "scenarios": [
+    {
+      "titre": "1. Devis préalable d'un remplacement de chauffe-eau",
+      "objectif": "Remettre le devis obligatoire avant l'intervention et appliquer le bon taux.",
+      "etapes": [
+        "Créer le client, avec l'adresse de l'immeuble des travaux.",
+        "Ajouter fournitures, dépose et main-d'œuvre au taux de 10 % (logement achevé depuis plus de deux ans, fournitures posées par l'entreprise).",
+        "Porter la mention certifiant les conditions du taux réduit et l'assurance décennale (assureur, couverture géographique).",
+        "Faire accepter le devis avant d'intervenir."
+      ],
+      "exemple": "Chauffe-eau 420 € HT, raccords 45 € HT, dépose 90 € HT, 3 heures à 55 € HT : 720 € HT, TVA à 10 % de 72 €, total 792 € TTC.",
+      "fonction": "devis"
+    },
+    {
+      "titre": "2. Facture sur place après l'intervention",
+      "objectif": "Émettre la facture depuis le chantier, sans ressaisie au bureau.",
+      "etapes": [
+        "Ouvrir le devis accepté depuis le téléphone et le transformer en facture.",
+        "Ajuster les quantités réellement posées ou les heures passées.",
+        "Envoyer la facture au client avant de quitter le chantier."
+      ],
+      "exemple": "Intervention conforme au devis : facture de 792 € TTC, avec les mêmes mentions que le devis.",
+      "fonction": "app_mobile"
+    },
+    {
+      "titre": "3. Acompte puis solde d'un chantier de rénovation",
+      "objectif": "Financer un chantier long et suivre la TVA de chaque encaissement.",
+      "etapes": [
+        "Transformer le devis signé en facture d'acompte : elle est obligatoire si le client est un professionnel ou une personne morale.",
+        "Déclarer la TVA de l'acompte sur la période où il est encaissé.",
+        "À la fin du chantier, émettre la facture de solde en déduisant l'acompte sur une ligne qui cite sa facture."
+      ],
+      "exemple": "Rénovation d'une salle de bains de 6 000 € HT à 10 % dans un logement de plus de deux ans : acompte de 30 % de 1 800 € HT (1 980 € TTC), puis solde de 4 200 € HT (4 620 € TTC).",
+      "fonction": "acomptes"
+    },
+    {
+      "titre": "4. Export pour l'expert-comptable",
+      "objectif": "Transmettre ventes et taux de TVA sans ressaisie.",
+      "etapes": [
+        "Exporter les factures de la période et les encaissements correspondants, au format attendu par le cabinet (FEC ou fichier d'écritures).",
+        "Joindre les factures d'acompte et de solde, pour que la TVA soit rattachée aux bons encaissements."
+      ],
+      "exemple": "En sous-traitance pour une autre entreprise du bâtiment, la facture est émise hors taxe avec la mention « Autoliquidation ». En franchise en base, elle porte « TVA non applicable, art. 293 B du CGI ».",
+      "fonction": "export_comptable"
+    }
+  ]
 }

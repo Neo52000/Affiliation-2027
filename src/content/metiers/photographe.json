@@ -176,5 +176,51 @@
     "h1": "Quel logiciel de facturation choisir pour votre activité de photographe ?",
     "description": "Comparez les logiciels de facturation pour photographe : TVA multi-taux, cession de droits, acomptes et fonctions vérifiées.",
     "ordre_commercial": true
-  }
+  },
+  "scenarios": [
+    {
+      "titre": "1. Devis d'un reportage d'entreprise à trois taux de TVA",
+      "objectif": "Chiffrer prise de vue, cession de droits et tirage sans erreur de taux.",
+      "etapes": [
+        "Créer le client professionnel (raison sociale, SIREN).",
+        "Ajouter la prise de vue et la post-production au taux de 20 %.",
+        "Ajouter la cession de droits sur une ligne distincte à 10 %, en précisant supports, durée et territoire.",
+        "Ajouter le tirage signé et numéroté à 5,5 %, puis vérifier que le total de TVA détaille chaque taux."
+      ],
+      "exemple": "Journée de prise de vue 850 € HT et post-production 300 € HT à 20 % (TVA 230 €), cession de droits 400 € HT à 10 % (TVA 40 €), tirage 4/30 à 180 € HT à 5,5 % (TVA 9,90 €) : 1 730 € HT, soit 2 009,90 € TTC.",
+      "fonction": "devis"
+    },
+    {
+      "titre": "2. Acompte de réservation d'un mariage",
+      "objectif": "Bloquer la date et encaisser une partie du prix à la signature du contrat.",
+      "etapes": [
+        "Créer le client particulier et le devis du reportage (forfait prise de vue et post-production à 20 %).",
+        "Transformer le devis signé en facture d'acompte, datée du jour de l'encaissement.",
+        "Déclarer la TVA de l'acompte sur la période où il est encaissé."
+      ],
+      "exemple": "Forfait mariage de 2 000 € HT : acompte de 30 % à la réservation, soit 600 € HT, TVA 120 €, total 720 € TTC.",
+      "fonction": "acomptes"
+    },
+    {
+      "titre": "3. Solde du mariage après la livraison",
+      "objectif": "Facturer le reste dû en déduisant l'acompte.",
+      "etapes": [
+        "Reprendre le devis du mariage et déduire l'acompte sur une ligne qui cite sa facture (numéro et date).",
+        "Envoyer la facture de solde avec la livraison des fichiers.",
+        "Pour un client particulier, à l'échéance applicable à votre entreprise, ces ventes relèvent de l'e-reporting et non de la facture électronique."
+      ],
+      "exemple": "2 000 € HT moins l'acompte de 600 € HT : 1 400 € HT, TVA 280 €, total 1 680 € TTC.",
+      "fonction": "acomptes"
+    },
+    {
+      "titre": "4. Export pour l'expert-comptable",
+      "objectif": "Transmettre ventes et taux de TVA de la période sans ressaisie.",
+      "etapes": [
+        "Exporter les factures de la période et les encaissements correspondants, au format attendu par le cabinet (FEC ou fichier d'écritures).",
+        "Joindre les factures d'acompte et de solde, pour que la TVA soit rattachée aux bons encaissements."
+      ],
+      "exemple": "L'export doit isoler les trois taux du reportage d'entreprise (230 €, 40 € et 9,90 € de TVA). En franchise en base, aucune ligne ne porte de taux, pas même la cession de droits : la facture indique « TVA non applicable, article 293 B du CGI ».",
+      "fonction": "export_comptable"
+    }
+  ]
 }

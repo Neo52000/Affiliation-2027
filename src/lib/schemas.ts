@@ -185,7 +185,13 @@ export const metierSchema = z.object({
         etapes: z.array(z.string().min(1)).min(1),
         /** Exemple chiffré, cohérent avec exemple_facture. */
         exemple: z.string().min(1),
-        fonction: z.enum(['devis', 'acomptes', 'export_comptable', 'lien_expert_comptable']),
+        fonction: z.enum([
+          'devis',
+          'acomptes',
+          'app_mobile',
+          'export_comptable',
+          'lien_expert_comptable',
+        ]),
       }),
     )
     .optional(),
