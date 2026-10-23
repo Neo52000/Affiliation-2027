@@ -10,6 +10,7 @@ import {
   type Recommandation,
 } from '../../lib/quiz';
 import { affiliateLink } from '../../lib/affiliate';
+import { envoyerMesure } from '../../lib/mesure-client';
 import { de, typographier } from '../../lib/typographie';
 
 interface MetierOption {
@@ -46,7 +47,11 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
   // Le résultat apparaît sous le formulaire : le focus y est déplacé, et son
   // titre est la première chose annoncée.
   useEffect(() => {
-    if (resultat) titreResultat.current?.focus();
+    if (!resultat) return;
+    titreResultat.current?.focus();
+    // Quiz terminé : seul le logiciel retenu est transmis (mesure agrégée, sans cookie).
+    const retenu = resultat.recommande?.slug ?? resultat.exAequo[0]?.slug;
+    if (retenu) envoyerMesure({ type: 'quiz_termine', outil: retenu, emplacement: 'quiz' });
   }, [resultat]);
 
   const calculer = (e: Event) => {
@@ -108,6 +113,7 @@ export default function Quiz({ metiers, outils, recosParMetier }: Props) {
           rel={lien.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
           class="btn-cta"
           data-emplacement={`quiz-${slug}`}
+          data-outil={slug}
         >
           Aller sur le site {de(nom)}
         </a>

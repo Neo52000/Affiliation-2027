@@ -59,7 +59,7 @@ Fait dans le code (PR #45) : origine et nom centralisés, canonicals sans `.html
 | 32  | Tests réels selon le protocole (`src/content/tests`) : garder « Test à venir » tant qu'ils ne sont pas faits                                                                                                                 | Notes publiées                   |
 | 33  | Liens d'affiliation : ouvrir les programmes, saisir les liens vérifiés dans `/admin` ; la Transparence suit automatiquement                                                                                                  | Revenus                          |
 | 34  | Auteur réel et relecture des contenus fiscaux ; moyen de signaler une erreur                                                                                                                                                 | E-E-A-T                          |
-| 35  | Mesure terrain (LCP, INP, CLS au 75e centile) et plan d'analytics sans données personnelles, après mise à jour de la page confidentialité                                                                                    | Pilotage                         |
+| 35  | Mesure terrain (LCP, INP, CLS au 75e centile). Analytics sans cookie fait le 2026-10-23 (`/api/mesure`, totaux dans `/admin`) : vérifier sur la prévisualisation que Netlify Blobs est actif                                 | Pilotage                         |
 | 36  | `pnpm test:e2e` : `astro preview` d'Astro 7 passe en arrière-plan, Playwright croit le serveur arrêté. Contournement local : lancer `pnpm preview` puis `pnpm exec playwright test` (32 tests verts le 2026-10-14)           | Tests e2e en local               |
 
 ## Plan SEO et affiliation du 2026-10-15

@@ -717,3 +717,10 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 - « loyer » cité parmi les factures électroniques à recevoir (kinésithérapeute, orthophoniste, ostéopathe, psychologue, sage-femme, auto-école) : une location nue exonérée, ou consentie par un bailleur particulier, ne donne pas lieu à facture électronique ;
 - pizzeria : les commissions d'une plateforme de livraison établie hors de France relèvent de l'e-reporting, pas d'une facture reçue via une plateforme agréée ;
 - agriculteur : l'obligation de réception pour l'exploitant au remboursement forfaitaire agricole est à confirmer sur la documentation DGFiP.
+
+## Mesure sans cookie : quiz terminé et clic éditeur (2026-10-23)
+
+- Fonction Netlify `/api/mesure` (logique et tests : `src/lib/mesure.ts`) : POST d'un événement `quiz_termine` ou `clic_editeur`, validé (type, outil connu d'`affiliation.json`, emplacement en slug), stocké dans Netlify Blobs sous une clé vide `AAAA-MM-JJ/type/outil/emplacement/id`. Ni IP, ni navigateur, ni page d'origine ; l'id aléatoire évite seulement d'écraser un événement concurrent. Limite : 30 envois par minute et par IP.
+- Navigateur (`src/lib/mesure-client.ts`) : `sendBeacon`, script chargé par `Base.astro` qui écoute les clics sur `a[data-outil]` (boutons `AffiliateButton` et quiz) ; le quiz envoie le logiciel retenu à l'affichage du résultat, jamais les réponses.
+- Lecture : GET `/api/mesure?jours=30` avec le jeton du back office, accepté seulement si GitHub lui donne le droit d'écriture sur le dépôt. `/admin` affiche l'entonnoir par logiciel (quiz terminés, clics éditeur). Les inscriptions validées restent à lire chez chaque programme d'affiliation.
+- Page confidentialité : section « Mesure d'audience agrégée ».
