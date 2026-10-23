@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   normaliserMetier,
+  outilRetenu,
   recommander,
   trouverMetier,
   type OutilFacts,
@@ -270,6 +271,13 @@ describe('recommander — recette : inconnues, incompatibilités, égalités', (
     // Micro sans métier : Abby et Tiime ciblent les micro-entrepreneurs (+2 chacun).
     const res = resultat({ statut: 'micro' });
     expect(res.exAequo.map((r) => r.slug)).toEqual(['abby', 'tiime']);
+  });
+
+  it('27 bis. la mesure n’attribue un quiz terminé à aucun logiciel en cas d’égalité', () => {
+    expect(outilRetenu(resultat({ statut: 'micro' }))).toBe('aucun');
+    expect(outilRetenu(resultat({ metierSlug: 'plombier' }))).toBe('tiime');
+    const outils = OUTILS.map((o) => ({ ...o, fonctions: { devis: false } }));
+    expect(outilRetenu(resultat({ indispensables: ['devis'] }, outils))).toBe('aucun');
   });
 
   it('28. sans égalité en tête, exAequo est vide', () => {
