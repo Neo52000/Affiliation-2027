@@ -717,3 +717,12 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 - « loyer » cité parmi les factures électroniques à recevoir (kinésithérapeute, orthophoniste, ostéopathe, psychologue, sage-femme, auto-école) : une location nue exonérée, ou consentie par un bailleur particulier, ne donne pas lieu à facture électronique ;
 - pizzeria : les commissions d'une plateforme de livraison établie hors de France relèvent de l'e-reporting, pas d'une facture reçue via une plateforme agréée ;
 - agriculteur : l'obligation de réception pour l'exploitant au remboursement forfaitaire agricole est à confirmer sur la documentation DGFiP.
+
+## Durcissement serveur et back office (2026-10-23)
+
+Audit de bugs en lecture seule, défauts reproduits puis corrigés avec un test qui échouait avant :
+
+- Rappel d'échéance : logique sortie dans `src/lib/rappel.ts` (testée), même garde-fous que la newsletter. Origine refusée (403), JSON exigé (415 : un `text/plain` venu d'un autre site ne déclenche plus d'envoi), corps borné (413), Brevo injoignable → 502 JSON au lieu d'un plantage. La fonction passe sur `/api/rappel` avec une limite de 5 envois par minute et par IP.
+- `estUrlSure` : le site lui-même est reconnu aussi avec un point final (`netlify.app.`) ou en `www.`, y compris sur le domaine définitif (boucle de redirection `/go/` impossible).
+- Relais `/admin/gh` : une mise en ligne n'est relayée qu'en squash, sur le commit vérifié, pour une branche `back-office/…` de ce dépôt (lue chez GitHub avant la fusion) ; jamais une demande de fork ou d'une autre branche.
+- Back office : une demande de 100 fichiers ou plus est bloquée (liste GitHub tronquée, fichiers suivants non vérifiables).
