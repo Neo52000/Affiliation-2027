@@ -742,6 +742,7 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 
 - `affiliateLink()` renvoie désormais `rel` et `mention` ; `AffiliateButton.astro` et le quiz les affichent tels quels, sans littéral recopié. Le bouton du quiz reçoit aussi la classe `mention-affiliee`.
 - Test `src/lib/affiliate-actif.test.ts` : branche « lien actif » vérifiée avec un fichier d'affiliation simulé, et garde-fou qui échoue si un composant réécrit `sponsored` ou « lien affilié » en dur.
+
 ## Mesure : quiz commencé (2026-10-23)
 
 - Troisième événement `quiz_commence`, envoyé à la première saisie dans le formulaire (ou à l'envoi direct), une fois par affichage. `outil` vaut alors `aucun` ; `quiz_termine` l'accepte aussi quand aucun logiciel n'est compatible, pour que le taux de complétion soit exact. Un clic éditeur exige toujours un logiciel connu.
@@ -750,6 +751,7 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 ## Mesure : une égalité au quiz n'est attribuée à aucun logiciel (2026-10-23)
 
 - Correction : en cas d'égalité en tête, `quiz_termine` était attribué au premier logiciel par ordre alphabétique (`recommande` vaut toujours le premier trié), ce qui faussait l'entonnoir et contredisait la règle « pas de gagnant sur une égalité ». `outilRetenu()` (`src/lib/quiz.ts`) renvoie désormais `aucun` dans ce cas et sans logiciel compatible ; `/api/mesure` accepte `aucun` pour un quiz terminé, jamais pour un clic éditeur.
+
 ## Durcissement serveur et back office (2026-10-23)
 
 Audit de bugs en lecture seule, défauts reproduits puis corrigés avec un test qui échouait avant :

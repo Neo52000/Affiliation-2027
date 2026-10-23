@@ -97,6 +97,8 @@ test('quiz : un seul « quiz commencé » et un « quiz terminé » envoyés à 
   await expect
     .poll(() => envois.map((e) => (JSON.parse(e) as { type: string }).type).sort())
     .toEqual(['quiz_commence', 'quiz_termine']);
+});
+
 test.describe('fiche outil sur mobile', () => {
   test.use({ viewport: { width: 393, height: 851 } });
 
