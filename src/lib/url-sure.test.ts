@@ -34,6 +34,8 @@ describe('estUrlSure', () => {
     ['port explicite', 'https://exemple.fr:8443/'],
     ['le site lui-même (Netlify)', 'https://affiliation2027.netlify.app/go/tiime'],
     ['une prévisualisation du site', 'https://deploy-preview-3--affiliation2027.netlify.app/'],
+    ['le site avec un point final', 'https://affiliation2027.netlify.app./go/tiime'],
+    ['le site en www.', 'https://www.affiliation2027.netlify.app/go/tiime'],
     ['schéma en majuscules', 'HTTPS://exemple.fr/'],
     ['sans barres obliques', 'https:exemple.fr/x'],
     ['une seule barre oblique', 'https:/exemple.fr/x'],
