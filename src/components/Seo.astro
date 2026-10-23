@@ -1,6 +1,7 @@
 ---
 import { SITE } from '../config';
 import { canonicalUrl, jsonLdSur, validateMeta } from '../lib/seo';
+import { jetonsVerificationGoogle } from '../lib/search-console';
 
 interface Props {
   title: string;
@@ -15,6 +16,10 @@ const { title, description, updatedAt, noindex = false } = Astro.props;
 // Base unique : SITE.url (src/config.ts), aussi `site` d'astro.config.mjs.
 const site = `${SITE.url}/`;
 const canonical = canonicalUrl(site, Astro.url.pathname);
+// Search Console : jeton(s) posé(s) dans Netlify (docs/SEARCH_CONSOLE.md).
+const verificationGoogle = jetonsVerificationGoogle(
+  globalThis.process?.env?.['GOOGLE_SITE_VERIFICATION'],
+);
 
 if (import.meta.env.DEV) {
   for (const v of validateMeta(title, description)) {
@@ -27,6 +32,10 @@ if (import.meta.env.DEV) {
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 {noindex && <meta name="robots" content="noindex" />}
+
+{verificationGoogle.map((j) => (
+  <meta name="google-site-verification" content={j} />
+))}
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
