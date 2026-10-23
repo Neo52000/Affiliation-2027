@@ -732,3 +732,8 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 - Libellés des fonctions partagés (`src/lib/fonctions.ts`) entre la fiche logiciel et le cas concret.
 - Effet attendu et assumé : tant que devis, acomptes, app mobile et export comptable restent `null`, le tableau affiche « À vérifier » ; il se remplit dès le relevé TODO #31.
 - Relevé des tarifs (TODO #31) tenté le 2026-10-23 : les 6 sites éditeurs sont refusés par le proxy de l'environnement, rien n'a été saisi.
+
+## Format du quiz centralisé (2026-10-23)
+
+- `src/lib/quiz-libelles.ts` : « cinq questions et une facultative » (et sa variante métier connu) défini une seule fois, utilisé par les 9 pages et composants qui annoncent le quiz.
+- Test `quiz-libelles.test.ts` : le format correspond aux questions numérotées de `Quiz.tsx`, et aucune page ni composant ne le réécrit en dur.
