@@ -1,4 +1,37 @@
 {
-  "date_maj": "2026-10-09",
-  "campagnes": []
+  "date_maj": "2026-10-23",
+  "campagnes": [
+    {
+      "id": "legalplace-accueil-2026",
+      "annonceur": "LegalPlace",
+      "annonceur_legal": "StartPlace, SAS, SIREN 814 428 785",
+      "outil": null,
+      "emplacement": "accueil",
+      "familles": [],
+      "titre": "Créez votre entreprise en ligne avec LegalPlace",
+      "texte": "Statuts, immatriculation et formalités juridiques de votre société, réalisés en ligne.",
+      "cta": "Découvrir LegalPlace",
+      "url": "https://c3po.link/QhdPpxjbXP",
+      "image": null,
+      "debut": "2026-10-23",
+      "fin": "2027-10-23",
+      "active": true
+    },
+    {
+      "id": "legalplace-guides-2026",
+      "annonceur": "LegalPlace",
+      "annonceur_legal": "StartPlace, SAS, SIREN 814 428 785",
+      "outil": null,
+      "emplacement": "guides",
+      "familles": [],
+      "titre": "Créez votre entreprise en ligne avec LegalPlace",
+      "texte": "Statuts, immatriculation et formalités juridiques de votre société, réalisés en ligne.",
+      "cta": "Découvrir LegalPlace",
+      "url": "https://c3po.link/QhdPpxjbXP",
+      "image": null,
+      "debut": "2026-10-23",
+      "fin": "2027-10-23",
+      "active": true
+    }
+  ]
 }
