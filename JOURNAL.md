@@ -737,3 +737,7 @@ La réception est obligatoire pour toutes les entreprises établies en France et
 
 - `src/lib/quiz-libelles.ts` : « cinq questions et une facultative » (et sa variante métier connu) défini une seule fois, utilisé par les 9 pages et composants qui annoncent le quiz.
 - Test `quiz-libelles.test.ts` : le format correspond aux questions numérotées de `Quiz.tsx`, et aucune page ni composant ne le réécrit en dur.
+
+## Mesure : une égalité au quiz n'est attribuée à aucun logiciel (2026-10-23)
+
+- Correction : en cas d'égalité en tête, `quiz_termine` était attribué au premier logiciel par ordre alphabétique (`recommande` vaut toujours le premier trié), ce qui faussait l'entonnoir et contredisait la règle « pas de gagnant sur une égalité ». `outilRetenu()` (`src/lib/quiz.ts`) renvoie désormais `aucun` dans ce cas et sans logiciel compatible ; `/api/mesure` accepte `aucun` pour un quiz terminé, jamais pour un clic éditeur.
