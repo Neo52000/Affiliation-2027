@@ -50,10 +50,10 @@
     "e_reporting": true,
     "compte_pro": true,
     "compta": true,
-    "devis": null,
-    "acomptes": null,
-    "app_mobile": null,
-    "export_comptable": null,
+    "devis": true,
+    "acomptes": true,
+    "app_mobile": true,
+    "export_comptable": true,
     "lien_expert_comptable": null
   },
   "notes": {
@@ -94,6 +94,21 @@
       "objet": "Programme d'affiliation (Affilae)",
       "url": "https://www.indy.fr/affiliation/",
       "date_releve": "2026-10-04"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://wikicompta.indy.fr/fr/articles/8245697-comment-gerer-mes-factures-d-acomptes-sur-indy",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://wikicompta.indy.fr/fr/articles/6930016-offre-gratuite-offre-payante-quelle-difference",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://www.indy.fr/logiciel-comptabilite/",
+      "date_releve": "2026-10-23"
     }
   ]
 }
