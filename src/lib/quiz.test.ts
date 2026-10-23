@@ -287,6 +287,8 @@ describe('recommander — recette : inconnues, incompatibilités, égalités', (
     expect(apres.slug).toBe('tiime');
     expect(apres.manques).toEqual(['compte professionnel intégré']);
     expect(apres.aConfirmer).not.toContain('compte professionnel intégré');
+  });
+
   it('27 bis. la mesure n’attribue un quiz terminé à aucun logiciel en cas d’égalité', () => {
     expect(outilRetenu(resultat({ statut: 'micro' }))).toBe('aucun');
     expect(outilRetenu(resultat({ metierSlug: 'plombier' }))).toBe('tiime');
