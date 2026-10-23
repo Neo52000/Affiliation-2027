@@ -765,3 +765,12 @@ Audit de bugs en lecture seule, défauts reproduits puis corrigés avec un test 
 - `estUrlSure` : le site lui-même est reconnu aussi avec un point final (`netlify.app.`) ou en `www.`, y compris sur le domaine définitif (boucle de redirection `/go/` impossible).
 - Relais `/admin/gh` : une mise en ligne n'est relayée qu'en squash, sur le commit vérifié, pour une branche `back-office/…` de ce dépôt (lue chez GitHub avant la fusion) ; jamais une demande de fork ou d'une autre branche.
 - Back office : une demande de 100 fichiers ou plus est bloquée (liste GitHub tronquée, fichiers suivants non vérifiables).
+
+## Première annonce : LegalPlace (2026-10-23)
+
+- Deux campagnes dans `src/data/publicites.json` (accueil et guides, du 23 octobre 2026 au 23 octobre 2027), lien d'affiliation fourni par l'éditeur du site, sans image en attendant le visuel officiel (à téléverser par `/admin`, 640 × 360 px au moins, 300 Ko au plus).
+- Pas de page famille : LegalPlace exploite une plateforme de facturation électronique (LegalPlace PDP, SAS, SIREN 991 362 112, registre national des entreprises), concurrente des logiciels comparés ; même règle qu'un éditeur comparé, appliquée par choix éditorial.
+- Annonceur légal publié sur `/transparence` : StartPlace, SAS, SIREN 814 428 785 (présidente de LegalPlace PDP au registre), choisi par l'éditeur du site ; à confirmer sur les mentions légales de legalplace.fr.
+- Visuel officiel ajouté (`src/assets/publicites/legalplace-societe.webp`, 640 × 360) : bannière 874 × 208 fournie par l'éditeur du site, recentrée sur son fond pour atteindre le minimum de 360 px, sans retouche du contenu.
+- `sharp` déclaré en dépendance : l'optimisation d'image d'Astro en a besoin et le build échouait dès la première annonce illustrée (y compris depuis `/admin`).
+- Encart publicitaire : sur un encart large (accueil), image en colonne à gauche (320 px) au lieu d'être étirée sur toute la largeur ; requête de conteneur, donc empilé dans la colonne des guides et sur mobile.
