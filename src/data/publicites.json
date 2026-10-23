@@ -12,7 +12,10 @@
       "texte": "Statuts, immatriculation et formalités juridiques de votre société, réalisés en ligne.",
       "cta": "Découvrir LegalPlace",
       "url": "https://c3po.link/QhdPpxjbXP",
-      "image": null,
+      "image": {
+        "fichier": "legalplace-societe.webp",
+        "alt": "LegalPlace : créez et gérez votre société simplement. Comptabilité, compte professionnel, domiciliation."
+      },
       "debut": "2026-10-23",
       "fin": "2027-10-23",
       "active": true
@@ -28,7 +31,10 @@
       "texte": "Statuts, immatriculation et formalités juridiques de votre société, réalisés en ligne.",
       "cta": "Découvrir LegalPlace",
       "url": "https://c3po.link/QhdPpxjbXP",
-      "image": null,
+      "image": {
+        "fichier": "legalplace-societe.webp",
+        "alt": "LegalPlace : créez et gérez votre société simplement. Comptabilité, compte professionnel, domiciliation."
+      },
       "debut": "2026-10-23",
       "fin": "2027-10-23",
       "active": true

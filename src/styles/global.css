@@ -844,6 +844,19 @@ html:not(.js) .js-seul {
   height: auto;
 }
 
+/* Encart large (accueil) : image (640 px au plus en source) en colonne à gauche, jamais
+   agrandie. Mesuré sur l'encart, pas l'écran : dans la colonne des guides, il reste empilé. */
+.espace-pub {
+  container-type: inline-size;
+}
+
+@container (min-width: 44rem) {
+  .espace-pub-corps:has(> .espace-pub-image) {
+    grid-template-columns: minmax(0, 20rem) 1fr;
+    align-items: center;
+  }
+}
+
 /* ---------------------------------------------------------------------------
    Utilitaires divers
    --------------------------------------------------------------------------- */
