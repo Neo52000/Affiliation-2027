@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { DESCRIPTION_MAX } from './seo';
-import { coutDouzeMois, enteteLogiciel, prixEntreeDouzeMois } from './tarifs';
+import { coutDouzeMois, coutFonction, enteteLogiciel, prixEntreeDouzeMois } from './tarifs';
 
 const plan = (o: Partial<Parameters<typeof coutDouzeMois>[0]>) => ({
   nom: 'Offre',
@@ -65,5 +65,36 @@ describe('enteteLogiciel', () => {
     for (const t of [true, false])
       for (const l of [true, false])
         expect(enteteLogiciel('Pennylane', t, l).description.length).toBeLessThan(DESCRIPTION_MAX);
+  });
+});
+
+describe('coutFonction', () => {
+  const plans = [
+    plan({ nom: 'Start', montant: 108, periodicite: 'an' }),
+    plan({ nom: 'Start (mensuel)', montant: 11 }),
+    plan({ nom: 'Starter', montant: 5 }),
+    plan({ nom: 'Pro', montant: null }),
+  ];
+  const source = 'https://exemple.fr/aide';
+
+  it('0 € pour une fonction incluse dans l’offre gratuite', () => {
+    expect(
+      coutFonction({ plans, offre_minimale: { devis: { offre: 'gratuite', source } } }, 'devis'),
+    ).toEqual({ montant: 0, base: 'HT', offre: 'gratuite' });
+  });
+
+  it('offre nommée : le moins cher de ses variantes, sans les offres au nom voisin', () => {
+    expect(
+      coutFonction({ plans, offre_minimale: { acomptes: { offre: 'Start', source } } }, 'acomptes'),
+    ).toEqual({ montant: 108, base: 'HT', offre: 'Start' });
+  });
+
+  it('null si l’offre est inconnue, sans prix relevé ou non déterminée', () => {
+    const sans = (offre: string) =>
+      coutFonction({ plans, offre_minimale: { devis: { offre, source } } }, 'devis');
+    expect(sans('Inconnue')).toBeNull();
+    expect(sans('Pro')).toBeNull();
+    expect(coutFonction({ plans, offre_minimale: {} }, 'devis')).toBeNull();
+    expect(coutFonction({ plans }, 'devis')).toBeNull();
   });
 });

@@ -5,6 +5,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import ExempleFacture from '../../components/ExempleFacture.astro';
 import OutilsMetier from '../../components/OutilsMetier.astro';
+import ScenariosMetier from '../../components/ScenariosMetier.astro';
 import ScenarioMetier from '../../components/ScenarioMetier.astro';
 import BandeauTransparence from '../../components/BandeauTransparence.astro';
 import { FAMILLE_LABELS } from '../../lib/familles';
@@ -154,6 +155,9 @@ const faqJsonLd = {
       </section>
 
       {commercial && <OutilsMetier metierSlug={d.slug} recommandes={recommandes} paires={paires} />}
+      {commercial && d.scenarios && (
+        <ScenariosMetier scenarios={d.scenarios} outils={recommandes.map((r) => r.outil)} />
+      )}
 
       <section aria-labelledby="specificites" class="mt-10">
         <h2 id="specificites" class="titre-section">
@@ -204,6 +208,9 @@ const faqJsonLd = {
 
       {!commercial && (
         <OutilsMetier metierSlug={d.slug} recommandes={recommandes} paires={paires} />
+      )}
+      {!commercial && d.scenarios && (
+        <ScenariosMetier scenarios={d.scenarios} outils={recommandes.map((r) => r.outil)} />
       )}
 
       <section aria-labelledby="checklist" class="mt-10">

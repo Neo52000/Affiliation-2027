@@ -48,13 +48,13 @@
     "emission": true,
     "reception": true,
     "e_reporting": true,
-    "compte_pro": null,
+    "compte_pro": true,
     "compta": true,
-    "devis": null,
-    "acomptes": null,
-    "app_mobile": null,
-    "export_comptable": null,
-    "lien_expert_comptable": null
+    "devis": true,
+    "acomptes": true,
+    "app_mobile": true,
+    "export_comptable": true,
+    "lien_expert_comptable": true
   },
   "notes": {
     "conformite": null,
@@ -73,6 +73,24 @@
     "Offre Free sans rapprochement automatique des justificatifs et des transactions",
     "Archivage à valeur probante : réservé à l'offre Smart, payante"
   ],
+  "offre_minimale": {
+    "devis": {
+      "offre": "gratuite",
+      "source": "https://www.tiime.fr/tarifs"
+    },
+    "acomptes": {
+      "offre": "gratuite",
+      "source": "https://www.tiime.fr/tarifs"
+    },
+    "app_mobile": {
+      "offre": "gratuite",
+      "source": "https://www.tiime.fr/tarifs"
+    },
+    "export_comptable": {
+      "offre": "gratuite",
+      "source": "https://www.tiime.fr/tarifs"
+    }
+  },
   "statut_test": "a_tester",
   "date_maj": "2026-10-23",
   "sources": [
@@ -104,6 +122,21 @@
     {
       "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://support.tiime.fr/fr/articles/26311-comment-mes-justificatifs-sont-ils-traites",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://support.tiime.fr/fr/articles/26190-comment-exporter-mes-factures-devis-et-clients",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://www.tiime.fr/ec/invitation-client",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://blog.tiime.fr/lessentiel-du-compte-pro-tiime",
       "date_releve": "2026-10-23"
     }
   ]

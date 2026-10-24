@@ -11,6 +11,7 @@ import {
   publicitesSchema,
 } from './schemas';
 import { memeEditeur } from './publicites';
+import { plansDeLOffre } from './tarifs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const readJson = (p: string) => JSON.parse(readFileSync(join(ROOT, p), 'utf8')) as unknown;
@@ -159,6 +160,27 @@ describe('src/content/outils + src/content/tests', () => {
           ).not.toBeNull();
           expect(plan.url_source, `${data.slug}/${plan.nom} : prix sans URL source`).not.toBeNull();
         }
+      }
+    }
+  });
+
+  it('chaque offre minimale désigne la gratuité ou un plan relevé, avec une source listée', () => {
+    for (const { data } of outils) {
+      const urls = new Set(data.sources.map((s) => s.url));
+      for (const [fonction, o] of Object.entries(data.offre_minimale ?? {})) {
+        if (!o) continue;
+        expect(urls.has(o.source), `${data.slug}/${fonction} : source absente de sources`).toBe(
+          true,
+        );
+        if (o.offre === 'gratuite') {
+          expect(data.offre_gratuite?.valeur, `${data.slug} : pas d’offre gratuite`).toBe(true);
+        } else {
+          expect(
+            plansDeLOffre(data.plans, o.offre).length,
+            `${data.slug}/${fonction} : offre « ${o.offre} » absente des plans`,
+          ).toBeGreaterThan(0);
+        }
+        expect(data.fonctionnalites[fonction as keyof typeof data.fonctionnalites]).toBe(true);
       }
     }
   });

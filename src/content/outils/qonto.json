@@ -50,11 +50,11 @@
     "e_reporting": true,
     "compte_pro": true,
     "compta": null,
-    "devis": null,
-    "acomptes": null,
-    "app_mobile": null,
-    "export_comptable": null,
-    "lien_expert_comptable": null
+    "devis": true,
+    "acomptes": true,
+    "app_mobile": true,
+    "export_comptable": true,
+    "lien_expert_comptable": true
   },
   "notes": {
     "conformite": null,
@@ -73,6 +73,20 @@
     "Factures récurrentes, relances automatiques et signature électronique des devis : module payant en supplément (Facturation automatisée)",
     "Tenue comptable par un expert-comptable : service distinct et payant (Qonto Comptabilité)"
   ],
+  "offre_minimale": {
+    "devis": {
+      "offre": "gratuite",
+      "source": "https://qonto.com/fr/invoicing/quotes"
+    },
+    "acomptes": {
+      "offre": "gratuite",
+      "source": "https://qonto.com/fr/invoicing/free-software"
+    },
+    "app_mobile": {
+      "offre": "gratuite",
+      "source": "https://qonto.com/fr/invoicing/free-software"
+    }
+  },
   "statut_test": "a_tester",
   "date_maj": "2026-10-23",
   "sources": [
@@ -109,6 +123,21 @@
     {
       "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://accounting.qonto.com/fr",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://qonto.com/fr/invoicing/quotes",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://qonto.com/fr/invoicing/free-software",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://qonto.com/fr/accounting",
       "date_releve": "2026-10-23"
     }
   ]

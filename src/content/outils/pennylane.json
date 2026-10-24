@@ -58,12 +58,12 @@
     "emission": true,
     "reception": true,
     "e_reporting": true,
-    "compte_pro": null,
+    "compte_pro": true,
     "compta": true,
-    "devis": null,
-    "acomptes": null,
+    "devis": true,
+    "acomptes": true,
     "app_mobile": null,
-    "export_comptable": null,
+    "export_comptable": true,
     "lien_expert_comptable": true
   },
   "notes": {
@@ -83,6 +83,12 @@
     "Offre gratuite réservée aux micro-entreprises, limitée à 1 utilisateur et à 1 200 factures par an",
     "Si l'activité sort du régime micro, il faut passer à une offre payante"
   ],
+  "offre_minimale": {
+    "acomptes": {
+      "offre": "Basique",
+      "source": "https://help.pennylane.com/fr/articles/18629-creer-et-modifier-des-factures-d-acompte-intermediaires-ou-de-solde"
+    }
+  },
   "statut_test": "a_tester",
   "date_maj": "2026-10-23",
   "sources": [
@@ -114,6 +120,31 @@
     {
       "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://www.pennylane.com/fr/facture-electronique-gratuite",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://www.pennylane.com/fr/offres-compte-pro",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://help.pennylane.com/fr/articles/18646-transformer-un-devis-en-facture",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://help.pennylane.com/fr/articles/85537-saisir-des-acomptes-sur-pennylane",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://help.pennylane.com/fr/articles/18662-exporter-un-fec",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Offre incluant la fonction selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://help.pennylane.com/fr/articles/18629-creer-et-modifier-des-factures-d-acompte-intermediaires-ou-de-solde",
       "date_releve": "2026-10-23"
     }
   ]

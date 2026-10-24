@@ -78,13 +78,13 @@
     "emission": true,
     "reception": true,
     "e_reporting": true,
-    "compte_pro": null,
-    "compta": null,
-    "devis": null,
-    "acomptes": null,
-    "app_mobile": null,
-    "export_comptable": null,
-    "lien_expert_comptable": null
+    "compte_pro": false,
+    "compta": true,
+    "devis": true,
+    "acomptes": true,
+    "app_mobile": true,
+    "export_comptable": true,
+    "lien_expert_comptable": true
   },
   "notes": {
     "conformite": null,
@@ -103,6 +103,20 @@
     "Offre gratuite sans télédéclaration Urssaf ni connexion bancaire : ces fonctions sont réservées aux offres payantes",
     "Plusieurs utilisateurs : seulement avec l'offre Business, la plus complète"
   ],
+  "offre_minimale": {
+    "devis": {
+      "offre": "gratuite",
+      "source": "https://abby.fr/tarifs"
+    },
+    "acomptes": {
+      "offre": "Start",
+      "source": "https://abby.fr/tarifs"
+    },
+    "app_mobile": {
+      "offre": "gratuite",
+      "source": "https://abby.fr/tarifs"
+    }
+  },
   "statut_test": "a_tester",
   "date_maj": "2026-10-23",
   "sources": [
@@ -129,6 +143,21 @@
     {
       "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://aide.abby.fr/fr/articles/15276582-abby-est-il-gratuit",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://blog.abby.fr/abby-quickbooks",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://abby.fr/logiciel-comptabilite",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://abby.fr/",
       "date_releve": "2026-10-23"
     }
   ]

@@ -47,6 +47,8 @@ export const FONCTIONS_OUTIL = [
   'lien_expert_comptable',
 ] as const;
 
+const offreMinimale = z.object({ offre: z.string().min(1), source: url });
+
 export const outilSchema = z
   .object({
     nom: z.string().min(1),
@@ -113,6 +115,21 @@ export const outilSchema = z
     }),
     points_forts: z.array(z.string()),
     points_faibles: z.array(z.string()),
+    /**
+     * Offre la moins chère qui inclut chaque fonction, selon l'éditeur : « gratuite »
+     * ou début du nom d'un plan de `plans` (« Start » couvre « Start (mensuel) »).
+     * Fonction absente = offre non déterminée, aucun coût n'est affiché.
+     */
+    offre_minimale: z
+      .object({
+        devis: offreMinimale,
+        acomptes: offreMinimale,
+        app_mobile: offreMinimale,
+        export_comptable: offreMinimale,
+        lien_expert_comptable: offreMinimale,
+      })
+      .partial()
+      .optional(),
     statut_test: z.enum(['a_tester', 'teste']),
     date_maj: dateIso,
     sources: z.array(z.object({ objet: z.string(), url, date_releve: dateIso })),
@@ -170,6 +187,30 @@ export const metierSchema = z.object({
       /** true : la section des logiciels passe juste après « En bref ». */
       ordre_commercial: z.boolean(),
     })
+    .optional(),
+  /**
+   * Scénarios de facturation du métier (plan SEO, brief consultant) : un parcours
+   * concret par étape, et la fonctionnalité qu'il exige, lue dans la fiche de
+   * chaque logiciel recommandé. Aucun résultat de test n'y figure : tant que
+   * nos essais ne sont pas faits, seule la disponibilité déclarée est affichée.
+   */
+  scenarios: z
+    .array(
+      z.object({
+        titre: z.string().min(1),
+        objectif: z.string().min(1),
+        etapes: z.array(z.string().min(1)).min(1),
+        /** Exemple chiffré, cohérent avec exemple_facture. */
+        exemple: z.string().min(1),
+        fonction: z.enum([
+          'devis',
+          'acomptes',
+          'app_mobile',
+          'export_comptable',
+          'lien_expert_comptable',
+        ]),
+      }),
+    )
     .optional(),
   /**
    * Cas concret (TODO.md #40) : une situation type et ses étapes de facturation,

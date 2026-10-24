@@ -71,4 +71,4 @@ scripts/
 Configuration du site (nom, origine publique surchargeable par `SITE_URL`, éditeur légal,
 téléphones, contact) : point d'entrée unique `src/config.ts`. Toute valeur encore
 entre crochets « [...] » fait échouer le build (`scripts/check-placeholders.ts`,
-en fin de `postbuild`) : voir `TODO.md`.
+en fin de `postbuild`) : voir `TODO.md`. Search Console : `docs/SEARCH_CONSOLE.md`.

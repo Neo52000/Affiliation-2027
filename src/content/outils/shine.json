@@ -70,11 +70,11 @@
     "e_reporting": true,
     "compte_pro": true,
     "compta": null,
-    "devis": null,
-    "acomptes": null,
+    "devis": true,
+    "acomptes": true,
     "app_mobile": null,
-    "export_comptable": null,
-    "lien_expert_comptable": null
+    "export_comptable": true,
+    "lien_expert_comptable": true
   },
   "notes": {
     "conformite": null,
@@ -124,6 +124,21 @@
     {
       "objet": "Limites selon l'éditeur, extrait indexé (page non consultée directement)",
       "url": "https://help.shine.fr/shine-facture/fr/articles/13419459-comparer-les-offres-free-start-et-plus",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://www.shine.fr/devis/",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://help.shine.fr/shine-facture/fr/articles/14658728-creer-une-facture-d-acompte",
+      "date_releve": "2026-10-23"
+    },
+    {
+      "objet": "Fonctionnalités selon l'éditeur, extrait indexé (page non consultée directement)",
+      "url": "https://www.shine.fr/comptabilite/",
       "date_releve": "2026-10-23"
     }
   ]
